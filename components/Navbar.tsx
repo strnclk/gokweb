@@ -38,7 +38,6 @@ export default function Navbar() {
             <Link href="/products" className={`transition font-medium text-lg ${isActive('/products') ? 'text-purple-600 font-bold border-b-2 border-purple-600' : 'text-gray-700 hover:text-purple-600'}`}>Ürünler</Link>
             <Link href="/eflow" className={`transition font-medium text-lg ${isActive('/eflow') ? 'text-purple-600 font-bold border-b-2 border-purple-600' : 'text-gray-700 hover:text-purple-600'}`}>E-Flow</Link>
             <Link href="/about" className={`transition font-medium text-lg ${isActive('/about') ? 'text-purple-600 font-bold border-b-2 border-purple-600' : 'text-gray-700 hover:text-purple-600'}`}>Hakkımızda</Link>
-            <Link href="/blog" className={`transition font-medium text-lg ${isActive('/blog') ? 'text-purple-600 font-bold border-b-2 border-purple-600' : 'text-gray-700 hover:text-purple-600'}`}>Blog</Link>
             <Link href="/contact" className={`transition font-medium text-lg ${isActive('/contact') ? 'text-purple-600 font-bold border-b-2 border-purple-600' : 'text-gray-700 hover:text-purple-600'}`}>İletişim</Link>
             <Link href="/contact" className="px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 text-lg">
               Teklif Al
@@ -60,7 +59,6 @@ export default function Navbar() {
               <Link href="/products" className={`transition font-medium text-lg px-6 ${isActive('/products') ? 'text-purple-600 font-bold border-b-2 border-purple-600' : 'text-gray-700 hover:text-purple-600'}`}>Ürünler</Link>
               <Link href="/eflow" className={`transition font-medium text-lg px-6 ${isActive('/eflow') ? 'text-purple-600 font-bold border-b-2 border-purple-600' : 'text-gray-700 hover:text-purple-600'}`}>E-Dönüşüm</Link>
               <Link href="/about" className={`transition font-medium text-lg px-6 ${isActive('/about') ? 'text-purple-600 font-bold border-b-2 border-purple-600' : 'text-gray-700 hover:text-purple-600'}`}>Hakkımızda</Link>
-              <Link href="/blog" className={`transition font-medium text-lg px-6 ${isActive('/blog') ? 'text-purple-600 font-bold border-b-2 border-purple-600' : 'text-gray-700 hover:text-purple-600'}`}>Blog</Link>
               <Link href="/contact" className={`transition font-medium text-lg px-6 ${isActive('/contact') ? 'text-purple-600 font-bold border-b-2 border-purple-600' : 'text-gray-700 hover:text-purple-600'}`}>İletişim</Link>
               <Link href="/contact" className="mx-6 px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full text-lg">
                 Teklif Al

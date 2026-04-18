@@ -62,7 +62,6 @@ export default function Footer() {
               <li><Link href="/hakkimizda" className="text-slate-400 hover:text-white transition-colors duration-200">Hakkımızda</Link></li>
               <li><Link href="/iletisim" className="text-slate-400 hover:text-white transition-colors duration-200">İletişim</Link></li>
               <li><Link href="/destek" className="text-slate-400 hover:text-white transition-colors duration-200">Destek</Link></li>
-              <li><Link href="/blog" className="text-slate-400 hover:text-white transition-colors duration-200">Blog</Link></li>
             </ul>
           </div>
         </div>
