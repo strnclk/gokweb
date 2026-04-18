@@ -34,7 +34,7 @@ export default function CTASection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
           transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl mb-8"
+          className="text-5xl md:text-7xl mb-8 text-gray-900"
         >
           İşinizi dijitalleştirmeye<br />hazır mısınız?
         </motion.h2>
@@ -43,7 +43,7 @@ export default function CTASection() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl text-gray-600 mb-12"
+          className="text-xl text-gray-900 mb-12"
         >
           Size özel çözümlerimiz hakkında bilgi almak için hemen iletişime geçin.
         </motion.p>
@@ -63,7 +63,7 @@ export default function CTASection() {
           </button>
           <button 
             onClick={() => router.push('/contact')}
-            className="px-10 py-5 border-2 border-gray-300 rounded-full hover:bg-gray-50 transition-all duration-300 hover:scale-105 text-lg"
+            className="px-10 py-5 border-2 border-gray-300 text-gray-900 rounded-full hover:bg-gray-50 transition-all duration-300 hover:scale-105 text-lg"
           >
             Demo İsteyin
           </button>

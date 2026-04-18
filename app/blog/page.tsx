@@ -67,18 +67,18 @@ export default function BlogPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-6xl md:text-7xl font-bold leading-tight mb-6"
+            className="text-6xl md:text-7xl font-bold leading-tight mb-6 text-gray-900"
           >
             Blog
             <br />
-            <span >Teknoloji ve Dijital Dönüşüm</span>
+            <span className="text-gray-900">Teknoloji ve Dijital Dönüşüm</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed text-gray-900"
           >
             ERP, CRM, Mikro yazılım ve dijital dönüşüm hakkında en güncel bilgiler ve ipuçları
           </motion.p>
@@ -94,8 +94,8 @@ export default function BlogPage() {
           className="max-w-7xl mx-auto px-6"
         >
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Son Yazılar</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Son Yazılar</h2>
+            <p className="text-xl text-gray-900 max-w-2xl mx-auto">
               ERP, CRM, Mikro yazılım ve dijital dönüşüm hakkında en güncel bilgiler
             </p>
           </div>
@@ -115,9 +115,9 @@ export default function BlogPage() {
                   <span className="text-gray-500 text-sm">{post.readTime}</span>
                 </div>
                 <h2 className="text-xl font-bold mb-3 text-gray-900">{post.title}</h2>
-                <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
+                <p className="text-gray-900 mb-4 line-clamp-3">{post.excerpt}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-500 text-sm">{post.date}</span>
+                  <span className="text-gray-900 text-sm">{post.date}</span>
                   <a
                     href={`/blog/${post.slug}`}
                     className="text-blue-600 font-medium hover:text-blue-700 transition-colors"
@@ -139,8 +139,8 @@ export default function BlogPage() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto px-6 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Dijital Dönüşüm Hakkında Daha Fazla Bilgi Alın</h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Dijital Dönüşüm Hakkında Daha Fazla Bilgi Alın</h2>
+          <p className="text-xl text-gray-900 mb-8">
             İşletmeniz için en uygun teknoloji çözümlerini birlikte belirleyelim.
           </p>
           <a

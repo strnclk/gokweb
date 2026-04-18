@@ -22,7 +22,7 @@ export default function HeroSection() {
           </h1>
         </div>
 
-        <p className="text-xl md:text-2xl text-gray-800 mb-12 max-w-3xl mx-auto">
+        <p className="text-xl md:text-2xl text-gray-900 mb-12 max-w-3xl mx-auto">
           Mikro ERP ve E-Dönüşüm çözümleriyle tanışın
         </p>
 
@@ -38,7 +38,7 @@ export default function HeroSection() {
           <button 
             onClick={() => router.push('/contact')}
             aria-label="İletişime Geç - İletişim sayfasına gidin"
-            className="px-8 py-4 border border-gray-300 rounded-full hover:bg-gray-50 transition-all duration-300 hover:scale-105"
+            className="px-8 py-4 border border-gray-300 text-gray-900 rounded-full hover:bg-gray-50 transition-all duration-300 hover:scale-105"
           >
             İletişime Geç
           </button>

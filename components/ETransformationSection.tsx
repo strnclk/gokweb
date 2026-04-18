@@ -34,8 +34,8 @@ export default function ETransformationSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-7xl mb-6">E-Dönüşüm</h2>
-          <p className="text-2xl text-gray-600">Dijital dönüşümünüzü tamamlayın</p>
+          <h2 className="text-5xl md:text-7xl mb-6 text-gray-900">E-Dönüşüm</h2>
+          <p className="text-2xl text-gray-900">Dijital dönüşümünüzü tamamlayın</p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8">
@@ -58,8 +58,8 @@ export default function ETransformationSection() {
               <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.gradient} text-white mb-6`}>
                 {item.icon}
               </div>
-              <h4 className="text-3xl mb-3">{item.title}</h4>
-              <p className="text-gray-600 text-lg">{item.desc}</p>
+              <h4 className="text-3xl mb-3 text-gray-900">{item.title}</h4>
+              <p className="text-gray-900 text-lg">{item.desc}</p>
             </motion.div>
           ))}
         </div>
