@@ -1,8 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-import { Link } from 'next/link';
-import { ArrowRight } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
@@ -48,16 +45,6 @@ export default function AboutPage() {
           >
             2005 yılından beri işletmelerin dijital dönüşümünde güvenilir ortağınız.
           </motion.p>
-          
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
-          >
-            İletişime Geç
-            <ArrowRight className="w-5 h-5" />
-          </motion.button>
         </div>
       </section>
 
@@ -185,59 +172,59 @@ export default function AboutPage() {
       </section>
 
       {/* Awards Section */}
-      <section className="py-32 bg-gradient-to-b from-pink-50 to-blue-50">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Basarilarimiz ve Ödüllerimiz</h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              Mikro Yazilim is ortakliginda kazandigimiz basarilar
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Başarılarımız ve Ödüllerimiz</h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Mikro Yazılım iş ortaklığında kazandığımız başarılar
             </p>
           </motion.div>
           
           {/* Awards Carousel */}
           <div className="overflow-hidden">
-            <div className="flex gap-8 animate-scroll">
+            <div className="flex gap-6 animate-scroll">
               {[
                 { year: '2025', awards: [
-                  'Mikro Yazilim is ortaklarina sagladigimiz egitim ve gelisim katkilari için tesekkür plaketi',
-                  'Türkiye genelinde En Çok Mikro Fly Satisi Yapan 3. Is Ortagi'
+                  'Mikro Yazılım iş ortaklarımıza sağladığımız eğitim ve gelişim katkıları için teşekkür plaketi',
+                  'Türkiye genelinde En Çok Mikro Fly Satışı Yapan 3. İş Ortağı'
                 ]},
                 { year: '2024', awards: [
-                  'Türkiye genelinde En Çok Mikro Fly Satisi Yapan Is Ortagi',
-                  'Marmara bölgesinde En Çok Yeni Müsteri Kazandiran Is Ortagi'
+                  'Türkiye genelinde En Çok Mikro Fly Satışı Yapan İş Ortağı',
+                  'Marmara bölgesinde En Çok Yeni Müşteri Kazandıran İş Ortağı'
                 ]},
                 { year: '2023', awards: [
-                  'Türkiye genelinde En Çok Mikro Jump Satisi Yapan 2. Is Ortagi',
-                  'Marmara bölgesinde En Çok Net Satisi Yapan Is Ortagi',
-                  'Marmara bölgesinde En Çok Cross-Sell Satisi Yapan Is Ortagi',
-                  'Türkiye genelinde En Çok Cross-Sell Satisi Yapan Is Ortagi'
+                  'Türkiye genelinde En Çok Mikro Jump Satışı Yapan 2. İş Ortağı',
+                  'Marmara bölgesinde En Çok Net Satışı Yapan İş Ortağı',
+                  'Marmara bölgesinde En Çok Cross-Sell Satışı Yapan İş Ortağı',
+                  'Türkiye genelinde En Çok Cross-Sell Satışı Yapan İş Ortağı'
                 ]},
                 { year: '2022', awards: [
-                  'Türkiye genelinde En Çok Cross-Sell Satisi Yapan 3. Is Ortagi'
+                  'Türkiye genelinde En Çok Cross-Sell Satışı Yapan 3. İş Ortağı'
                 ]},
                 { year: '2021', awards: [
-                  'Türkiye genelinde En Çok Mikro Online Hesabim Satisi Yapan 2. Is Ortagi',
-                  'Bölgesinde En Çok Mikro Online Hesabim Satisi Yapan Is Ortagi'
+                  'Türkiye genelinde En Çok Mikro Online Hesabım Satışı Yapan 2. İş Ortağı',
+                  'Bölgesinde En Çok Mikro Online Hesabım Satışı Yapan İş Ortağı'
                 ]}
               ].map((yearData, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: 50 }}
+                  initial={{ opacity: 0, x: 30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="flex-shrink-0 w-80 bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-blue-100 hover:bg-white/80 transition-all hover:shadow-lg"
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="flex-shrink-0 w-80 bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300 transition-all duration-300"
                 >
-                  <div className="text-4xl font-bold text-blue-600 mb-6">{yearData.year}</div>
-                  <div className="space-y-4">
+                  <div className="text-3xl font-bold text-slate-900 mb-4">{yearData.year}</div>
+                  <div className="space-y-3">
                     {yearData.awards.map((award, awardIndex) => (
                       <div key={awardIndex} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-gray-700 text-sm leading-relaxed">{award}</p>
+                        <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-slate-700 text-sm leading-relaxed">{award}</p>
                       </div>
                     ))}
                   </div>
@@ -250,15 +237,15 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-16 text-center"
+            transition={{ duration: 0.4, delay: 0.3 }}
+            className="mt-12 text-center"
           >
-            <div className="inline-flex items-center gap-6 px-8 py-4 bg-white/60 backdrop-blur-sm rounded-full border border-blue-100">
-              <span className="text-blue-600 font-bold">+10 Ödül</span>
-              <span className="text-gray-500">|</span>
-              <span className="text-blue-600 font-bold">Türkiye Genelinde Dereceler</span>
-              <span className="text-gray-500">|</span>
-              <span className="text-blue-600 font-bold">Mikro Yazilim Resmi Is Ortagi</span>
+            <div className="inline-flex items-center gap-6 px-6 py-3 bg-slate-900 rounded-lg">
+              <span className="text-white font-semibold text-sm">+15 Ödül</span>
+              <span className="text-slate-400">|</span>
+              <span className="text-white font-semibold text-sm">Türkiye Genelinde Dereceler</span>
+              <span className="text-slate-400">|</span>
+              <span className="text-white font-semibold text-sm">Mikro Yazılım Resmi İş Ortağı</span>
             </div>
           </motion.div>
         </div>
@@ -270,12 +257,13 @@ export default function AboutPage() {
           100% { transform: translateX(-50%); }
         }
         .animate-scroll {
-          animation: scroll 30s linear infinite;
+          animation: scroll 40s linear infinite;
         }
         .animate-scroll:hover {
           animation-play-state: paused;
         }
       `}</style>
+
 
       {/* Why Us Section */}
       <section className="py-32 bg-gradient-to-b from-blue-50 to-purple-50">
@@ -294,16 +282,15 @@ export default function AboutPage() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: '10+ Yil Deneyim', desc: '2005 yilindan beri sektörde lider konumdayiz' },
-              { title: 'Mikro Yazilim Is Ortakligi', desc: 'Resmi Mikro Yazilim is ortakligi ile güvende' },
-              { title: '10+ Ödül', desc: 'Türkiye genelinde kazandigimiz basarilar' },
-              { title: 'Özel Çözümler', desc: 'Her müsteriye özel yazilim çözümleri' },
-              { title: 'Hizli Destek', desc: '7/24 teknik destek ve hizmet' },
-              { title: 'Esnek Fiyatlandirma', desc: 'Her bütçeye uygun çözüm paketleri' },
+              { title: '15+ Yıl Deneyim', desc: '2005 yılından beri sektörde lider konumdayız' },
+              { title: 'Mikro Yazılım İş Ortaklığı', desc: 'Resmi Mikro Yazılım iş ortaklığı ile güvende' },
+              { title: '15+ Ödül', desc: 'Türkiye genelinde kazandığımız başarılar' },
+              { title: 'Özel Çözümler', desc: 'Her müşteriye özel yazılım çözümleri' },
+              { title: 'Hızlı Destek', desc: '7/24 teknik destek ve hizmet' },
+              { title: 'Esnek Fiyatlandırma', desc: 'Her bütçeye uygun çözüm paketleri' },
               { title: 'Lokal Destek', desc: 'Türkiye\'de yerel destek ve hizmet' },
-              { title: 'Güvenilirlik', desc: 'Müsteri memnuniyeti odakli hizmet' },
+              { title: 'Güvenilirlik', desc: 'Müşteri memnuniyeti odaklı hizmet' },
               { title: 'Teknoloji', desc: 'En güncel teknolojileri takip ediyoruz' },
-              { title: 'Büyüme', desc: 'Iletmenizle birlikte büyüyoruz' }
             ].map((reason, index) => (
               <motion.div
                 key={index}

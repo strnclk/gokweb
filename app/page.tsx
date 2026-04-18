@@ -1,19 +1,34 @@
 import { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
-import ProductShowcase from '@/components/ProductShowcase';
-import CompaniesSection from '@/components/CompaniesSection';
-import EFlowSection from '@/components/EFlowSection';
-import ETransformationSection from '@/components/ETransformationSection';
-import TrustSection from '@/components/TrustSection';
-import CTASection from '@/components/CTASection';
-import SEOSection from '@/components/SEOSection';
-import Footer from '@/components/Footer';
+import dynamic from 'next/dynamic';
+
+const ProductShowcase = dynamic(() => import('@/components/ProductShowcase'), { 
+  loading: () => <div className="h-64 animate-pulse bg-gray-100" />
+});
+const CompaniesSection = dynamic(() => import('@/components/CompaniesSection'), {
+  loading: () => <div className="h-64 animate-pulse bg-gray-100" />
+});
+const ETransformationSection = dynamic(() => import('@/components/ETransformationSection'), {
+  loading: () => <div className="h-64 animate-pulse bg-gray-100" />
+});
+const TrustSection = dynamic(() => import('@/components/TrustSection'), {
+  loading: () => <div className="h-64 animate-pulse bg-gray-100" />
+});
+const CTASection = dynamic(() => import('@/components/CTASection'), {
+  loading: () => <div className="h-64 animate-pulse bg-gray-100" />
+});
+const SEOSection = dynamic(() => import('@/components/SEOSection'), {
+  loading: () => <div className="h-64 animate-pulse bg-gray-100" />
+});
+const Footer = dynamic(() => import('@/components/Footer'), {
+  loading: () => <div className="h-64 animate-pulse bg-gray-100" />
+});
 
 export const metadata: Metadata = {
-  title: "Anadolu Yakasi Mikro Bayii | ERP CRM Çözümleri | Gökkusagi Yazilim",
-  description: "Anadolu Yakasi'nda resmi Mikro bayii. Mikro program sati, ERP hizmeti, CRM çözümleri, e-fatura entegrasyonu. Ataehir'den tüm Türkiye'ye hizmet.",
-  keywords: "Anadolu yakasi mikro bayii, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataehir mikro bayii, Istanbul mikro bayii, e-fatura, e-defter, Mikro v3, Mikro 14, özel yazilim",
+  title: "Anadolu Yakası Mikro Bayii | ERP CRM Çözümleri | Gökkuşağı Yazılım",
+  description: "Anadolu Yakası'nda resmi Mikro bayii. Mikro program satışı, ERP hizmeti, CRM çözümleri, e-fatura entegrasyonu. Ataşehir'den tüm Türkiye'ye hizmet.",
+  keywords: "Anadolu yakası mikro bayii, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayii, İstanbul mikro bayii, e-fatura, e-defter, Mikro v3, Mikro 14, özel yazılım",
 };
 
 export default function Home() {
@@ -23,7 +38,6 @@ export default function Home() {
       <HeroSection />
       <ProductShowcase />
       <CompaniesSection />
-      <EFlowSection />
       <ETransformationSection />
       <TrustSection />
       <CTASection />

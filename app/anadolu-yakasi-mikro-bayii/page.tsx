@@ -5,12 +5,12 @@ import Footer from '@/components/Footer';
 import { Phone, MapPin, Clock, CheckCircle, Star, Users, Award, TrendingUp } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Anadolu Yakasi Resmi Mikro Bayii | ERP CRM Çözümleri | Gökkusagi Yazilim",
-  description: "Anadolu Yakasi'nda resmi Mikro bayii olarak Mikro program sati, ERP hizmeti, CRM çözümleri, teknik destek ve kurulum hizmetleri. Ataehir'den tüm Anadolu Yakasi'na hizmet.",
-  keywords: "Anadolu yakasi mikro bayii, Ataehir mikro bayii, Kadiköy mikro bayii, Üsküdar mikro bayii, Maltepe mikro bayii, Kartal mikro bayii, Pendik mikro bayii, Mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP sati, Mikro v3, Mikro 14",
+  title: "Anadolu Yakası Resmi Mikro Bayii | ERP CRM Çözümleri | Gökkuşağı Yazılım",
+  description: "Anadolu Yakası'nda resmi Mikro bayii olarak Mikro program satışı, ERP hizmeti, CRM çözümleri, teknik destek ve kurulum hizmetleri. Ataşehir'den tüm Anadolu Yakası'na hizmet.",
+  keywords: "Anadolu yakası mikro bayii, Ataşehir mikro bayii, Kadıköy mikro bayii, Üsküdar mikro bayii, Maltepe mikro bayii, Kartal mikro bayii, Pendik mikro bayii, Mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP satışı, Mikro v3, Mikro 14",
   openGraph: {
-    title: "Anadolu Yakasi Resmi Mikro Bayii | Gökkusagi Yazilim",
-    description: "Anadolu Yakasi'nda resmi Mikro bayii. Mikro program sati, ERP hizmeti, CRM çözümleri ve teknik destek.",
+    title: "Anadolu Yakası Resmi Mikro Bayii | Gökkuşağı Yazılım",
+    description: "Anadolu Yakası'nda resmi Mikro bayii. Mikro program satışı, ERP hizmeti, CRM çözümleri ve teknik destek.",
     url: "https://gokkusagiyazilim.com.tr/anadolu-yakasi-mikro-bayii",
     locale: "tr_TR",
     type: "website",
@@ -20,15 +20,15 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Gökkusagi Yazilim ve Danismanlik - Anadolu Yakasi Mikro Bayii",
-  description: "Anadolu Yakasi'nda resmi Mikro bayii olarak Mikro program sati, ERP hizmeti, CRM çözümleri ve teknik destek hizmetleri.",
+  name: "Gökkuşağı Yazılım ve Danışmanlık - Anadolu Yakası Mikro Bayii",
+  description: "Anadolu Yakası'nda resmi Mikro bayii olarak Mikro program satışı, ERP hizmeti, CRM çözümleri ve teknik destek hizmetleri.",
   url: "https://gokkusagiyazilim.com.tr/anadolu-yakasi-mikro-bayii",
   telephone: "+905398563578",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "içerenköy Mah. Eryilmazlar Sokak No:2 Kemal Bey Is Merkezi Kat:4 Daire:18",
-    addressLocality: "Ataehir",
-    addressRegion: "Istanbul",
+    streetAddress: "İçerenköy Mah. Eryılmazlar Sokak No:2 Kemal Bey İş Merkezi Kat:4 Daire:18",
+    addressLocality: "Ataşehir",
+    addressRegion: "İstanbul",
     postalCode: "34746",
     addressCountry: "TR"
   },
@@ -38,8 +38,8 @@ const jsonLd = {
     longitude: "29.1244"
   },
   areaServed: [
-    "Ataehir",
-    "Kadiköy", 
+    "Ataşehir",
+    "Kadıköy", 
     "Üsküdar",
     "Maltepe",
     "Kartal",
@@ -53,12 +53,12 @@ const jsonLd = {
   ],
   openingHours: "Mo-Fr 09:00-18:00",
   serviceType: [
-    "Mikro program sati",
+    "Mikro program satışı",
     "ERP hizmeti",
     "CRM çözümleri",
     "Teknik destek",
-    "Kurulum ve egitim",
-    "Özel yazilim gelistirme"
+    "Kurulum ve eğitim",
+    "Özel yazılım geliştirme"
   ],
   paymentAccepted: ["Cash", "Credit Card", "Bank Transfer"],
   priceRange: "$$$"
@@ -68,29 +68,29 @@ export default function AnadoluYakasiMikroBayiiPage() {
   const services = [
     {
       icon: CheckCircle,
-      title: "Mikro Program Sati",
-      description: "Mikro v3, Mikro 14, Mikro ERP gibi tüm Mikro yazilim ürünlerinin resmi sati ve lisanslama"
+      title: "Mikro Program Satışı",
+      description: "Mikro v3, Mikro 14, Mikro ERP gibi tüm Mikro yazılım ürünlerinin resmi satışı ve lisanslama"
     },
     {
       icon: Users,
       title: "Teknik Destek",
-      description: "7/24 teknik destek hizmeti, uzman ekip ile sorunlariniza aninda çözüm"
+      description: "7/24 teknik destek hizmeti, uzman ekip ile sorunlarınıza anında çözüm"
     },
     {
       icon: TrendingUp,
       title: "ERP Hizmeti",
-      description: "Isletmenize özel ERP çözümleri, süreç optimizasyonu ve verimlilik arti"
+      description: "İşletmenize özel ERP çözümleri, süreç optimizasyonu ve verimlilik artışı"
     },
     {
       icon: Award,
       title: "CRM Çözümleri",
-      description: "Müteri ili ki yönetimi, sati otomasyonu ve CRM entegrasyon hizmetleri"
+      description: "Müşteri ilişki yönetimi, satış otomasyonu ve CRM entegrasyon hizmetleri"
     }
   ];
 
   const areas = [
-    "Ataehir Mikro Bayii",
-    "Kadiköy Mikro Bayii", 
+    "Ataşehir Mikro Bayii",
+    "Kadıköy Mikro Bayii", 
     "Üsküdar Mikro Bayii",
     "Maltepe Mikro Bayii",
     "Kartal Mikro Bayii",
@@ -102,14 +102,14 @@ export default function AnadoluYakasiMikroBayiiPage() {
   ];
 
   const products = [
-    "Mikro v3 Muhasebe Programi",
+    "Mikro v3 Muhasebe Programı",
     "Mikro 14 ERP",
     "Mikro CRM",
     "Mikro e-Fatura",
     "Mikro e-Defter",
     "Mikro Bordro",
     "Mikro Stok Takip",
-    "Mikro Sipari Yönetimi"
+    "Mikro Sipariş Yönetimi"
   ];
 
   return (
@@ -128,10 +128,10 @@ export default function AnadoluYakasiMikroBayiiPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Anadolu Yakasi Resmi Mikro Bayii
+                Anadolu Yakası Resmi Mikro Bayii
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-blue-100">
-                Ataehir merkezden tüm Anadolu Yakasi'na Mikro program sati, ERP hizmeti ve CRM çözümleri
+                Ataşehir merkezden tüm Anadolu Yakası'na Mikro program satışı, ERP hizmeti ve CRM çözümleri
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
@@ -162,23 +162,23 @@ export default function AnadoluYakasiMikroBayiiPage() {
                 <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                 <h3 className="text-xl font-bold mb-2">Merkez Konum</h3>
                 <p className="text-gray-600">
-                  içerenköy Mah. Eryilmazlar Sokak No:2<br />
-                  Kemal Bey Is Merkezi Kat:4 Daire:18<br />
-                  Ataehir, Istanbul
+                  İçerenköy Mah. Eryılmazlar Sokak No:2<br />
+                  Kemal Bey İş Merkezi Kat:4 Daire:18<br />
+                  Ataşehir, İstanbul
                 </p>
               </div>
               <div className="text-center">
                 <Clock className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Çali Saatleri</h3>
+                <h3 className="text-xl font-bold mb-2">Çalışma Saatleri</h3>
                 <p className="text-gray-600">
                   Pazartesi - Cuma: 09:00 - 18:00<br />
                   Cumartesi: 10:00 - 16:00<br />
-                  Pazar: Kapali
+                  Pazar: Kapalı
                 </p>
               </div>
               <div className="text-center">
                 <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Iletiim</h3>
+                <h3 className="text-xl font-bold mb-2">İletişim</h3>
                 <p className="text-gray-600">
                   Telefon: +90 539 856 35 78<br />
                   E-posta: info@gokkusagiyazilim.com.tr<br />
@@ -197,7 +197,7 @@ export default function AnadoluYakasiMikroBayiiPage() {
                 Mikro Bayii Hizmetlerimiz
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Anadolu Yakasi'nda resmi Mikro bayii olarak kapsamli hizmetler sunuyoruz
+                Anadolu Yakası'nda resmi Mikro bayii olarak kapsamlı hizmetler sunuyoruz
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -219,10 +219,10 @@ export default function AnadoluYakasiMikroBayiiPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Hizmet Verdigimiz Bölgeler
+                Hizmet Verdiğimiz Bölgeler
               </h2>
               <p className="text-xl text-gray-600">
-                Anadolu Yakasi'nin tüm ilçelerine hizmet veriyoruz
+                Anadolu Yakası'nın tüm ilçelerine hizmet veriyoruz
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -244,7 +244,7 @@ export default function AnadoluYakasiMikroBayiiPage() {
                 Mikro Ürünleri
               </h2>
               <p className="text-xl text-gray-600">
-                Tüm Mikro yazilim ürünlerinin resmi sati ve destek hizmeti
+                Tüm Mikro yazılım ürünlerinin resmi satışı ve destek hizmeti
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -268,7 +268,7 @@ export default function AnadoluYakasiMikroBayiiPage() {
                 Neden Bizi Tercih Etmelisiniz?
               </h2>
               <p className="text-xl text-gray-600">
-                Anadolu Yakasi'nda güvenilir Mikro bayii
+                Anadolu Yakası'nda güvenilir Mikro bayii
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -277,21 +277,21 @@ export default function AnadoluYakasiMikroBayiiPage() {
                   <Star className="w-10 h-10 text-yellow-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Resmi Bayii</h3>
-                <p className="text-gray-600">Mikro yazilim yetkili resmi bayii olarak orijinal ürünler ve güncel lisanslar</p>
+                <p className="text-gray-600">Mikro yazılım yetkili resmi bayii olarak orijinal ürünler ve güncel lisanslar</p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Users className="w-10 h-10 text-green-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Uzman Ekip</h3>
-                <p className="text-gray-600">Yillarin deneyimiyle Mikro yazilim uzman kadrosu</p>
+                <p className="text-gray-600">Yılların deneyimiyle Mikro yazılım uzman kadrosu</p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <TrendingUp className="w-10 h-10 text-blue-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Hizli Destek</h3>
-                <p className="text-gray-600">7/24 teknik destek ve aninda müdahale imkani</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Hızlı Destek</h3>
+                <p className="text-gray-600">7/24 teknik destek ve anında müdahale imkanı</p>
               </div>
             </div>
           </div>
@@ -301,10 +301,10 @@ export default function AnadoluYakasiMikroBayiiPage() {
         <section className="py-20 bg-gradient-to-br from-blue-600 to-purple-600 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Anadolu Yakasi'nda Mikro Çözümleri için Bize Ula
+              Anadolu Yakası'nda Mikro Çözümleri için Bize Ulaşın
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Size özel çözümlerimiz ve competitive fiyatlarla hizmet vermek için buradayiz
+              Size özel çözümlerimiz ve rekabetçi fiyatlarla hizmet vermek için buradayız
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 

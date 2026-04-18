@@ -15,7 +15,7 @@ export default function MaintenancePage() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const gameContainerRef = useRef<HTMLDivElement>(null);
   const lastFrameRef = useRef<number | null>(null);
-  const obstacleIntervalRef = useRef<number | null>(null);
+  const obstacleIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const gravity = 0.5;
   const jumpPower = 12;

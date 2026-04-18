@@ -5,12 +5,12 @@ import Footer from '@/components/Footer';
 import { Phone, Users, TrendingUp, Target, BarChart, MessageSquare, CheckCircle, Star, ArrowRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "CRM Çözümleri | Müteri Ili ki Yönetimi | Anadolu Yakasi Mikro Bayii",
-  description: "Anadolu Yakasi'nda profesyonel CRM çözümleri. Müteri ili ki yönetimi, sati otomasyonu, Mikro CRM entegrasyonu ve özel CRM yazilim hizmetleri.",
-  keywords: "CRM çözümleri, müteri ili ki yönetimi, sati otomasyonu, Mikro CRM, CRM yazilim, Anadolu yakasi CRM, Ataehir CRM, Istanbul CRM, CRM programi, CRM sistemleri, müteri takip yazilimi",
+  title: "CRM Çözümleri | Müteri İlişki Yönetimi | Anadolu Yakası Mikro Bayii",
+  description: "Anadolu Yakası'nda profesyonel CRM çözümleri. Müteri ilişki yönetimi, satış otomasyonu, Mikro CRM entegrasyonu ve özel CRM yazılım hizmetleri.",
+  keywords: "CRM çözümleri, müşteri ilişki yönetimi, satış otomasyonu, Mikro CRM, CRM yazılım, Anadolu yakası CRM, Ataşehir CRM, İstanbul CRM, CRM programı, CRM sistemleri, müşteri takip yazılımı",
   openGraph: {
-    title: "CRM Çözümleri | Müteri Ili ki Yönetimi | Gökkusagi Yazilim",
-    description: "Anadolu Yakasi'nda profesyonel CRM çözümleri ve müteri ili ki yönetimi hizmetleri.",
+    title: "CRM Çözümleri | Müteri İlişki Yönetimi | Gökkuşağı Yazılım",
+    description: "Anadolu Yakası'nda profesyonel CRM çözümleri ve müşteri ilişki yönetimi hizmetleri.",
     url: "https://gokkusagiyazilim.com.tr/crm-cozumleri",
     locale: "tr_TR",
     type: "website",
@@ -20,52 +20,52 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
-  name: "CRM Çözümleri ve Müteri Ili ki Yönetimi",
-  description: "Anadolu Yakasi'nda profesyonel CRM çözümleri, müteri ili ki yönetimi, sati otomasyonu ve Mikro CRM entegrasyon hizmetleri.",
+  name: "CRM Çözümleri ve Müteri İlişki Yönetimi",
+  description: "Anadolu Yakası'nda profesyonel CRM çözümleri, müşteri ilişki yönetimi, satış otomasyonu ve Mikro CRM entegrasyon hizmetleri.",
   provider: {
     "@type": "Organization",
-    name: "Gökkusagi Yazilim ve Danismanlik",
+    name: "Gökkuşağı Yazılım ve Danışmanlık",
     url: "https://gokkusagiyazilim.com.tr",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "içerenköy Mah. Eryilmazlar Sokak No:2 Kemal Bey Is Merkezi Kat:4 Daire:18",
-      addressLocality: "Ataehir",
-      addressRegion: "Istanbul",
+      streetAddress: "İçerenköy Mah. Eryılmazlar Sokak No:2 Kemal Bey İş Merkezi Kat:4 Daire:18",
+      addressLocality: "Ataşehir",
+      addressRegion: "İstanbul",
       postalCode: "34746",
       addressCountry: "TR"
     }
   },
   serviceType: "CRM Çözümleri",
-  areaServed: "Anadolu Yakasi, Istanbul",
-  keywords: "CRM çözümleri, müteri ili ki yönetimi, sati otomasyonu, Mikro CRM"
+  areaServed: "Anadolu Yakası, İstanbul",
+  keywords: "CRM çözümleri, müşteri ilişki yönetimi, satış otomasyonu, Mikro CRM"
 };
 
 export default function CRMCozumleriPage() {
   const features = [
     {
       icon: Users,
-      title: "Müteri Yönetimi",
-      description: "Tüm müteri bilgilerini tek yerden yönetin, ili ki güçlendirin"
+      title: "Müşteri Yönetimi",
+      description: "Tüm müşteri bilgilerini tek yerden yönetin, ilişki güçlendirin"
     },
     {
       icon: Target,
-      title: "Sati Otomasyonu",
-      description: "Sati süreçlerini otomatikle, verimliligi artir"
+      title: "Satış Otomasyonu",
+      description: "Satış süreçlerini otomatikleştirin, verimliliği artırın"
     },
     {
       icon: BarChart,
       title: "Raporlama ve Analiz",
-      description: "Detayli raporlarla performansinizi takip edin"
+      description: "Detaylı raporlarla performansınızı takip edin"
     },
     {
       icon: MessageSquare,
-      title: "Iletiim Yönetimi",
-      description: "Müteri iletiimini merkezi yönetim sistemi"
+      title: "İletişim Yönetimi",
+      description: "Müşteri iletişimini merkezi yönetim sistemi"
     },
     {
       icon: TrendingUp,
       title: "Performans Takibi",
-      description: "Sati ekibi performansini gerçek zamanli takip edin"
+      description: "Satış ekibi performansını gerçek zamanlı takip edin"
     },
     {
       icon: CheckCircle,
@@ -75,32 +75,32 @@ export default function CRMCozumleriPage() {
   ];
 
   const benefits = [
-    "Sati verimliliinde %40 arti",
-    "Müteri memnuniyetinde %35 iyileme",
-    "Sati döngüsünde %50 hizlanma",
-    "Müteri kayip oraninda %25 azalma",
-    "Ekip verimliliinde %30 arti",
-    "ROI'de %200'e varan geri dönü"
+    "Satış verimliliğinde %40 artış",
+    "Müşteri memnuniyetinde %35 iyileşme",
+    "Satış döngüsünde %50 hızlanma",
+    "Müşteri kayıp oranında %25 azalma",
+    "Ekip verimliliğinde %30 artış",
+    "ROI'de %200'e varan geri dönüş"
   ];
 
   const crmSolutions = [
     {
       name: "Mikro CRM",
-      description: "Mikro yazilim ürünleriyle tam uyumlu, entegre CRM çözümü",
+      description: "Mikro yazılım ürünleriyle tam uyumlu, entegre CRM çözümü",
       features: ["Mikro ERP entegrasyonu", "Otomatik veri senkronizasyonu", "Tekrarlayan otomasyonu", "Raporlama ve analiz"],
       price: "Özel Fiyat"
     },
     {
-      name: "Özel CRM Yazilim",
-      description: "Iletmenize özel olarak tasarlanan CRM çözümleri",
-      features: ["Özel modül gelistirme", "Mevcut sistem entegrasyonu", "Mobil uyumlu arayüz", "Bulut tabanli altyapi"],
-      price: "Proje Bazli"
+      name: "Özel CRM Yazılım",
+      description: "İşletmenize özel olarak tasarlanan CRM çözümleri",
+      features: ["Özel modül geliştirme", "Mevcut sistem entegrasyonu", "Mobil uyumlu arayüz", "Bulut tabanlı altyapı"],
+      price: "Proje Bazlı"
     },
     {
-      name: "Sati Otomasyon CRM",
-      description: "Sati süreçlerini otomatikleiren akil CRM çözümü",
-      features: ["Otomatik lead yönetimi", "Sati pipeline takibi", "E-posta otomasyonu", "Performans yönetimi"],
-      price: "Aylik 750 TL'den baslayan fiyatlarla"
+      name: "Satış Otomasyon CRM",
+      description: "Satış süreçlerini otomatikleştiren akıllı CRM çözümü",
+      features: ["Otomatik lead yönetimi", "Satış pipeline takibi", "E-posta otomasyonu", "Performans yönetimi"],
+      price: "Aylık 750 TL'den başlayan fiyatlarla"
     }
   ];
 
@@ -120,10 +120,10 @@ export default function CRMCozumleriPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                CRM Çözümleri ile Müteri Ili ki Güçlendirin
+                CRM Çözümleri ile Müteri İlişki Güçlendirin
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-purple-100">
-                Anadolu Yakasi'nda profesyonel CRM çözümleri. Müteri yönetimi, sati otomasyonu ve performans takibi.
+                Anadolu Yakası'nda profesyonel CRM çözümleri. Müşteri yönetimi, satış otomasyonu ve performans takibi.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a 
@@ -154,7 +154,7 @@ export default function CRMCozumleriPage() {
                 CRM Çözümlerimizin Özellikleri
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Müteri ili ki yönetiminden sati otomasyonuna kadar tüm süreçlerinizi optimize edin
+                Müşteri ilişki yönetiminden satış otomasyonuna kadar tüm süreçlerinizi optimize edin
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -176,10 +176,10 @@ export default function CRMCozumleriPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                CRM Çözümleriyle Elde Edeceiniz Faydalar
+                CRM Çözümleriyle Elde Edeceğiniz Faydalar
               </h2>
               <p className="text-xl text-gray-600">
-                Isletmenize katacaii degeri görün
+                İşletmenize katacağı değeri görün
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -203,7 +203,7 @@ export default function CRMCozumleriPage() {
                 CRM Çözüm Seçenekleri
               </h2>
               <p className="text-xl text-gray-600">
-                Iletmenizin ihtiyacina uygun CRM çözümünü seçin
+                İşletmenizin ihtiyacına uygun CRM çözümünü seçin
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -222,7 +222,7 @@ export default function CRMCozumleriPage() {
                   <div className="pt-6 border-t border-gray-100">
                     <p className="text-lg font-semibold text-purple-600 mb-4">{solution.price}</p>
                     <button className="w-full bg-purple-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-purple-700 transition-all">
-                      Detayli Bilgi
+                      Detaylı Bilgi
                     </button>
                   </div>
                 </div>
@@ -239,7 +239,7 @@ export default function CRMCozumleriPage() {
                 Neden CRM Çözümlerimizi Tercih Etmelisiniz?
               </h2>
               <p className="text-xl text-purple-100">
-                Anadolu Yakasi'nda güvenilir CRM çözüm orta
+                Anadolu Yakası'nda güvenilir CRM çözüm ortağı
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -248,21 +248,21 @@ export default function CRMCozumleriPage() {
                   <Star className="w-10 h-10 text-yellow-400" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Uzman Ekip</h3>
-                <p className="text-purple-100">Yillarin CRM deneyimiyle size özel çözümler sunuyoruz</p>
+                <p className="text-purple-100">Yılların CRM deneyimiyle size özel çözümler sunuyoruz</p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Users className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Yerel Destek</h3>
-                <p className="text-purple-100">Anadolu Yakasi'nda yerel teknik destek ve hizmet</p>
+                <p className="text-purple-100">Anadolu Yakası'nda yerel teknik destek ve hizmet</p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Target className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">Ölçeklenebilir Çözümler</h3>
-                <p className="text-purple-100">Iletmenizle birlikte büyüyen esnek CRM sistemleri</p>
+                <p className="text-purple-100">İşletmenizle birlikte büyüyen esnek CRM sistemleri</p>
               </div>
             </div>
           </div>
@@ -275,7 +275,7 @@ export default function CRMCozumleriPage() {
               CRM Çözümleri için Ücretsiz Demo Talebinde Bulunun
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Size özel CRM çözümlerimizi görün ve isletmeniz için potansiyeli keifedin
+              Size özel CRM çözümlerimizi görün ve işletmeniz için potansiyeli keşfedin
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
