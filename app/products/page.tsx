@@ -157,13 +157,7 @@ export default function ProductsPage() {
                     </div>
                     
                     <div className="flex gap-4">
-                      <button 
-                        onClick={() => router.push(product.route)}
-                        className="px-6 py-3 border border-gray-300 rounded-full hover:bg-gray-50 transition-colors"
-                      >
-                        Detaylar
-                      </button>
-                      <button 
+                      <button
                         onClick={() => router.push('/contact')}
                         className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
                       >
