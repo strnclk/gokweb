@@ -53,7 +53,7 @@ export default function ETransformationSection() {
                 scale: isInView ? 1 : 0.9
               }}
               transition={{ duration: 0.8, delay: 0.2 + index * 0.15 }}
-              className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+              className="bg-white p-10 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2"
             >
               <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${item.gradient} text-white mb-6`}>
                 {item.icon}

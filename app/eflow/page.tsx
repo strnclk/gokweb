@@ -118,7 +118,7 @@ export default function EFlowPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-slate-300 transition-all duration-300"
+                className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-slate-300 "
               >
                 <h3 className="text-lg font-bold mb-2 text-slate-900">{feature.title}</h3>
                 <p className="text-slate-600 text-sm">{feature.desc}</p>
@@ -151,7 +151,7 @@ export default function EFlowPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300 transition-all duration-300"
+                className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300"
               >
                 <h3 className="text-lg font-bold mb-2 text-slate-900">{process.title}</h3>
                 <p className="text-slate-600 text-sm">{process.desc}</p>
@@ -212,7 +212,7 @@ export default function EFlowPage() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white p-8 rounded-xl border border-slate-200 hover:border-slate-300 transition-shadow duration-300"
+              className="bg-white p-8 rounded-xl border border-slate-200 hover:border-slate-300 "
             >
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold mb-2 text-slate-900">Kontörlü Sistem</h3>
@@ -249,7 +249,7 @@ export default function EFlowPage() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white p-8 rounded-xl border border-slate-200 hover:border-slate-300 transition-shadow duration-300"
+              className="bg-white p-8 rounded-xl border border-slate-200 hover:border-slate-300 "
             >
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold mb-2 text-slate-900">Lisans Sistemi</h3>
@@ -298,7 +298,7 @@ export default function EFlowPage() {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={() => router.push('/contact')}
-              className="bg-white text-slate-900 py-3 px-8 rounded-lg font-medium hover:bg-slate-100 transition-all duration-300"
+              className="bg-white text-slate-900 py-3 px-8 rounded-lg font-medium hover:bg-slate-100"
             >
               İletişime Geç
             </motion.button>

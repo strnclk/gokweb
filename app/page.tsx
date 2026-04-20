@@ -6,7 +6,7 @@ import dynamic from 'next/dynamic';
 const ProductShowcase = dynamic(() => import('@/components/ProductShowcase'), { 
   loading: () => <div className="h-64 animate-pulse bg-gray-100" />
 });
-const CompaniesSection = dynamic(() => import('@/components/CompaniesSection'), {
+const IndustryScenariosSection = dynamic(() => import('@/components/IndustryScenariosSection'), {
   loading: () => <div className="h-64 animate-pulse bg-gray-100" />
 });
 const ETransformationSection = dynamic(() => import('@/components/ETransformationSection'), {
@@ -37,7 +37,7 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <ProductShowcase />
-      <CompaniesSection />
+      <IndustryScenariosSection />
       <ETransformationSection />
       <TrustSection />
       <CTASection />

@@ -1,64 +1,99 @@
 'use client';
 
+import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
+import { Target, Award, Users, Zap, Shield, Heart, Clock, TrendingUp, CheckCircle, Star, Trophy, Briefcase, Code, Database } from 'lucide-react';
 
 export default function AboutPage() {
+  const stats = [
+    { value: '19+', label: 'Yıllık Deneyim', icon: Clock },
+    { value: '500+', label: 'Mutlu Müşteri', icon: Users },
+    { value: '15+', label: 'Ödül', icon: Trophy },
+    { value: '100%', label: 'Müşteri Memnuniyeti', icon: Heart }
+  ];
+
   const services = [
-    'Mikro ERP Entegrasyonu',
-    'E-Fatura Yönetimi',
-    'E-Ticaret Entegrasyonu',
-    'Özel Yazılım'
+    { title: 'Mikro ERP Entegrasyonu', icon: Database, desc: 'İşletmenizin tüm süreçlerini tek bir platformda yönetin' },
+    { title: 'E-Fatura Yönetimi', icon: Code, desc: 'E-fatura, e-defter ve e-arşiv süreçlerini otomatikleştirin' },
+    { title: 'E-Ticaret Entegrasyonu', icon: Briefcase, desc: 'Tüm pazar yerlerini tek bir panelden yönetin' },
+    { title: 'Özel Yazılım', icon: Zap, desc: 'İşletmenize özel çözümler geliştiriyoruz' }
   ];
 
   const values = [
-    { title: 'Güvenilirlik', desc: 'Müşterilerimize her zaman güvenilir çözümler sunuyoruz' },
-    { title: 'Müşteri Odaklılık', desc: 'Müşteri memnuniyeti bizim önceliğimizdir' },
-    { title: 'Kalite', desc: 'En yüksek kalite standartlarına uyuyoruz' },
-    { title: 'Takım Ruhu', desc: 'Birlikte çalışarak başarıya ulaşıyoruz' }
+    { title: 'Güvenilirlik', desc: 'Müşterilerimize her zaman güvenilir çözümler sunuyoruz', icon: Shield },
+    { title: 'Müşteri Odaklılık', desc: 'Müşteri memnuniyeti bizim önceliğimizdir', icon: Heart },
+    { title: 'Kalite', desc: 'En yüksek kalite standartlarına uyuyoruz', icon: CheckCircle },
+    { title: 'Takım Ruhu', desc: 'Birlikte çalışarak başarıya ulaşıyoruz', icon: Users }
+  ];
+
+  const reasons = [
+    { title: '15+ Yıl Deneyim', desc: '2005 yılından beri sektörde lider konumdayız', icon: TrendingUp },
+    { title: 'Mikro Yazılım İş Ortaklığı', desc: 'Resmi Mikro Yazılım iş ortaklığı ile güvende', icon: Award },
+    { title: '15+ Ödül', desc: 'Türkiye genelinde kazandığımız başarılar', icon: Trophy },
+    { title: 'Özel Çözümler', desc: 'Her müşteriye özel yazılım çözümleri', icon: Target },
+    { title: 'Hızlı Destek', desc: '7/24 teknik destek ve hizmet', icon: Zap },
+    { title: 'Esnek Fiyatlandırma', desc: 'Her bütçeye uygun çözüm paketleri', icon: Briefcase },
+    { title: 'Lokal Destek', desc: 'Türkiye\'de yerel destek ve hizmet', icon: Users },
+    { title: 'Güvenilirlik', desc: 'Müşteri memnuniyeti odaklı hizmet', icon: Shield },
+    { title: 'Teknoloji', desc: 'En güncel teknolojileri takip ediyoruz', icon: Code }
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-white">
       <Navbar />
-      
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6">
+      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-6xl md:text-7xl font-bold leading-tight mb-6"
+            className="text-6xl md:text-7xl font-bold leading-tight mb-6 text-gray-900"
           >
             Hakkımızda
             <br />
             <span className="text-gray-600">Gökkuşağı Yazılım</span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-500 mb-12 max-w-3xl mx-auto leading-relaxed"
+            transition={{ duration: 0.8}}
+            className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
             2005 yılından beri işletmelerin dijital dönüşümünde güvenilir ortağınız.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8}}
+            className="flex flex-wrap justify-center gap-12"
+          >
+            {stats.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-5xl md:text-6xl font-bold text-blue-600 mb-2">{stat.value}</div>
+                <div className="text-gray-600 text-sm">{stat.label}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
       </section>
 
       {/* Story Section */}
-      <section className="py-32 bg-gradient-to-b from-blue-50 to-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="grid lg:grid-cols-2 gap-16 items-center"
           >
             <div>
-              <h2 className="text-4xl md:text-5xl font-bold mb-8">Hikayemiz</h2>
+              <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Hikayemiz</h2>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
                   Gökkuşağı Yazılım, 2005 yılında İstanbul'da kuruldu. Kurulduğumuz günden bu yana, işletmelerin dijital dönüşümüne katkıda bulunuyoruz.
@@ -71,38 +106,45 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-12 flex items-center justify-center">
-              <div className="text-6xl font-bold text-blue-600">2005</div>
+            <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl p-16 flex items-center justify-center shadow-lg">
+              <div className="text-center">
+                <div className="text-8xl font-bold text-blue-600 mb-4">2005</div>
+                <div className="text-gray-600 text-lg">Kuruluş Yılı</div>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-32 bg-gradient-to-b from-white to-purple-50">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Hizmetlerimiz</h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Hizmetlerimiz</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Size sunduğumuz çözümler
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {services.map((service, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="text-center p-8 rounded-2xl bg-white/60 backdrop-blur-sm border border-purple-100 hover:bg-white/80 transition-all hover:shadow-lg"
+                transition={{ duration: 0.6 }}
+                className="bg-white rounded-2xl p-8 shadow-md hover:shadow-xl  border border-gray-100 hover:border-blue-200"
               >
-                <h3 className="text-lg font-semibold">{service}</h3>
+                <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                  <service.icon className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 text-center">{service.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed text-center">{service.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -110,30 +152,33 @@ export default function AboutPage() {
       </section>
 
       {/* Values Section */}
-      <section className="py-32 bg-gradient-to-b from-purple-50 to-blue-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Değerlerimiz</h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Değerlerimiz</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Bizi farklı kılan değerler
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="text-center p-8 rounded-2xl bg-white/60 backdrop-blur-sm border border-blue-100 hover:bg-white/80 transition-all hover:shadow-lg"
+                transition={{ duration: 0.6}}
+                className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 hover:shadow-lg border border-gray-100"
               >
-                <h3 className="text-xl font-bold mb-3">{value.title}</h3>
+                <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
+                  <value.icon className="w-7 h-7 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900">{value.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{value.desc}</p>
               </motion.div>
             ))}
@@ -142,29 +187,29 @@ export default function AboutPage() {
       </section>
 
       {/* Mission Vision Section */}
-      <section className="py-32 bg-white">
+      <section className="py-24 bg-gradient-to-br from-blue-600 to-purple-600">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-12"
+              className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20"
             >
-              <h3 className="text-2xl font-bold mb-6">Misyonumuz</h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                İşletmelerin dijital dönüşümüne katkıda bulunarak, verimliliklerini artırmak ve rekabet avantajı sağlamak.
+              <h3 className="text-2xl font-bold mb-6 text-white">Misyonumuz</h3>
+              <p className="text-lg text-blue-50 leading-relaxed">
+                İşletmelerin dijital dönüşümüne katkıda bulunarak, verimliliklerini artırmak ve rekabet avantajı sağlamak. Mikro ERP, e-dönüşüm ve özel yazılım çözümlerimizle, küçük ve orta ölçekli işletmelerin büyüme yolculuklarında güvenilir bir ortak oluyoruz. Müşterilerimizin ihtiyaçlarını anlayarak, onlara en uygun teknoloji çözümlerini sunuyor ve dijital çağın gereksinimlerine uyum sağlamalarına yardımcı oluyoruz.
               </p>
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-3xl p-12"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8}}
+              className="bg-white/10 backdrop-blur-sm rounded-3xl p-12 border border-white/20"
             >
-              <h3 className="text-2xl font-bold mb-6">Vizyonumuz</h3>
-              <p className="text-lg text-gray-600 leading-relaxed">
-                Türkiye'nin lider yazılım çözümleri sağlayıcısı olmak ve global ölçekte rekabet edebilebilir çözümler sunmak.
+              <h3 className="text-2xl font-bold mb-6 text-white">Vizyonumuz</h3>
+              <p className="text-lg text-blue-50 leading-relaxed">
+                Türkiye'nin lider yazılım çözümleri sağlayıcısı olmak ve global ölçekte rekabet edebilebilir çözümler sunmak. Yenilikçi teknolojileri takip ederek, müşterilerimize her zaman en güncel ve en iyi çözümleri sunmayı hedefliyoruz. Sektördeki deneyimimiz ve uzmanlığımızla, işletmelerin dijital dönüşüm yolculuklarında öncü bir rol oynamak ve sürdürülebilir başarı sağlamak istiyoruz.
               </p>
             </motion.div>
           </div>
@@ -172,141 +217,116 @@ export default function AboutPage() {
       </section>
 
       {/* Awards Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Başarılarımız ve Ödüllerimiz</h2>
-            <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Başarılarımız ve Ödüllerimiz</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Mikro Yazılım iş ortaklığında kazandığımız başarılar
             </p>
           </motion.div>
-          
-          {/* Awards Carousel */}
+
           <div className="overflow-hidden">
             <div className="flex gap-6 animate-scroll">
               {[
-                { year: '2025', awards: [
-                  'Mikro Yazılım iş ortaklarımıza sağladığımız eğitim ve gelişim katkıları için teşekkür plaketi',
-                  'Türkiye genelinde En Çok Mikro Fly Satışı Yapan 3. İş Ortağı'
-                ]},
-                { year: '2024', awards: [
-                  'Türkiye genelinde En Çok Mikro Fly Satışı Yapan İş Ortağı',
-                  'Marmara bölgesinde En Çok Yeni Müşteri Kazandıran İş Ortağı'
-                ]},
-                { year: '2023', awards: [
-                  'Türkiye genelinde En Çok Mikro Jump Satışı Yapan 2. İş Ortağı',
-                  'Marmara bölgesinde En Çok Net Satışı Yapan İş Ortağı',
-                  'Marmara bölgesinde En Çok Cross-Sell Satışı Yapan İş Ortağı',
-                  'Türkiye genelinde En Çok Cross-Sell Satışı Yapan İş Ortağı'
-                ]},
-                { year: '2022', awards: [
-                  'Türkiye genelinde En Çok Cross-Sell Satışı Yapan 3. İş Ortağı'
-                ]},
-                { year: '2021', awards: [
-                  'Türkiye genelinde En Çok Mikro Online Hesabım Satışı Yapan 2. İş Ortağı',
-                  'Bölgesinde En Çok Mikro Online Hesabım Satışı Yapan İş Ortağı'
-                ]}
-              ].map((yearData, index) => (
+                { year: '2025', award: 'Mikro Yazılım iş ortaklarımıza sağladığımız eğitim ve gelişim katkıları için teşekkür plaketi', icon: Trophy },
+                { year: '2025', award: 'Türkiye genelinde En Çok Mikro Fly Satışı Yapan 3. İş Ortağı', icon: Award },
+                { year: '2024', award: 'Türkiye genelinde En Çok Mikro Fly Satışı Yapan İş Ortağı', icon: Star },
+                { year: '2024', award: 'Marmara bölgesinde En Çok Yeni Müşteri Kazandıran İş Ortağı', icon: Target },
+                { year: '2023', award: 'Türkiye genelinde En Çok Mikro Jump Satışı Yapan 2. İş Ortağı', icon: Trophy },
+                { year: '2023', award: 'Marmara bölgesinde En Çok Net Satışı Yapan İş Ortağı', icon: Award },
+                { year: '2023', award: 'Marmara bölgesinde En Çok Cross-Sell Satışı Yapan İş Ortağı', icon: Star },
+                { year: '2023', award: 'Türkiye genelinde En Çok Cross-Sell Satışı Yapan İş Ortağı', icon: Target },
+                { year: '2022', award: 'Türkiye genelinde En Çok Cross-Sell Satışı Yapan 3. İş Ortağı', icon: Trophy },
+                { year: '2021', award: 'Türkiye genelinde En Çok Mikro Online Hesabım Satışı Yapan 2. İş Ortağı', icon: Award },
+                { year: '2021', award: 'Bölgesinde En Çok Mikro Online Hesabım Satışı Yapan İş Ortağı', icon: Star }
+              ].map((item, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="flex-shrink-0 w-80 bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300 transition-all duration-300"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="flex-shrink-0 w-80 bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-md "
                 >
-                  <div className="text-3xl font-bold text-slate-900 mb-4">{yearData.year}</div>
-                  <div className="space-y-3">
-                    {yearData.awards.map((award, awardIndex) => (
-                      <div key={awardIndex} className="flex items-start gap-3">
-                        <div className="w-1.5 h-1.5 bg-slate-900 rounded-full mt-2 flex-shrink-0"></div>
-                        <p className="text-slate-700 text-sm leading-relaxed">{award}</p>
-                      </div>
-                    ))}
+                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    <item.icon className="w-6 h-6 text-white" />
                   </div>
+                  <div className="text-2xl font-bold text-gray-900 mb-3">{item.year}</div>
+                  <p className="text-gray-700 text-sm leading-relaxed">{item.award}</p>
+                </motion.div>
+              ))}
+              {[...Array(11)].map((_, index) => (
+                <motion.div
+                  key={`duplicate-${index}`}
+                  className="flex-shrink-0 w-80 bg-gray-50 rounded-xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-md"
+                >
+                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
+                    {[Trophy, Award, Star, Target][index % 4] && React.createElement([Trophy, Award, Star, Target][index % 4], { className: "w-6 h-6 text-white" })}
+                  </div>
+                  <div className="text-2xl font-bold text-gray-900 mb-3">2023</div>
+                  <p className="text-gray-700 text-sm leading-relaxed">Türkiye genelinde dereceler</p>
                 </motion.div>
               ))}
             </div>
           </div>
-          
-          {/* Awards Summary */}
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.3 }}
-            className="mt-12 text-center"
+            className="mt-16 text-center"
           >
-            <div className="inline-flex items-center gap-6 px-6 py-3 bg-slate-900 rounded-lg">
+            <div className="inline-flex items-center gap-8 px-8 py-4 bg-gray-900 rounded-xl">
               <span className="text-white font-semibold text-sm">+15 Ödül</span>
-              <span className="text-slate-400">|</span>
+              <span className="text-gray-400">|</span>
               <span className="text-white font-semibold text-sm">Türkiye Genelinde Dereceler</span>
-              <span className="text-slate-400">|</span>
+              <span className="text-gray-400">|</span>
               <span className="text-white font-semibold text-sm">Mikro Yazılım Resmi İş Ortağı</span>
             </div>
           </motion.div>
         </div>
       </section>
 
-      <style jsx>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-scroll {
-          animation: scroll 40s linear infinite;
-        }
-        .animate-scroll:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
-
-
       {/* Why Us Section */}
-      <section className="py-32 bg-gradient-to-b from-blue-50 to-purple-50">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-20"
+            className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Neden Biz?</h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
-              Bizi tercih etmeniz için 10 neden
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">Neden Biz?</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              Bizi tercih etmeniz için 9 neden
             </p>
           </motion.div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { title: '15+ Yıl Deneyim', desc: '2005 yılından beri sektörde lider konumdayız' },
-              { title: 'Mikro Yazılım İş Ortaklığı', desc: 'Resmi Mikro Yazılım iş ortaklığı ile güvende' },
-              { title: '15+ Ödül', desc: 'Türkiye genelinde kazandığımız başarılar' },
-              { title: 'Özel Çözümler', desc: 'Her müşteriye özel yazılım çözümleri' },
-              { title: 'Hızlı Destek', desc: '7/24 teknik destek ve hizmet' },
-              { title: 'Esnek Fiyatlandırma', desc: 'Her bütçeye uygun çözüm paketleri' },
-              { title: 'Lokal Destek', desc: 'Türkiye\'de yerel destek ve hizmet' },
-              { title: 'Güvenilirlik', desc: 'Müşteri memnuniyeti odaklı hizmet' },
-              { title: 'Teknoloji', desc: 'En güncel teknolojileri takip ediyoruz' },
-            ].map((reason, index) => (
+            {reasons.map((reason, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y:20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.05 }}
-                className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-purple-100 hover:bg-white/80 transition-all hover:shadow-lg"
+                transition={{ duration: 0.6}}
+                className="bg-gray-50 rounded-2xl p-6 hover:bg-white hover:shadow-xl border border-gray-100 hover:border-blue-200"
               >
-                <h3 className="text-lg font-bold mb-3">{reason.title}</h3>
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                  <reason.icon className="w-6 h-6 text-blue-600" />
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-gray-900">{reason.title}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed">{reason.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
-      
+
       <Footer />
     </div>
   );
