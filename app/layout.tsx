@@ -109,6 +109,22 @@ export default function RootLayout({
         <meta charSet="utf-8" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Google Analytics - Statik Export için Doðru Yöntem */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PX95LTH6QB"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-PX95LTH6QB');
+          `}
+        </Script>
+        
         <Script
           id="json-ld"
           type="application/ld+json"

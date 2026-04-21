@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export', // Statik export için
   images: {
+    unoptimized: true, // Statik export için gerekli
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
@@ -14,6 +16,7 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizeCss: true,
   },
+  trailingSlash: true, // Statik routing için
 };
 
 export default nextConfig;

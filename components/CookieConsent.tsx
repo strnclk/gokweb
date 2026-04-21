@@ -66,9 +66,7 @@ export function CookieConsent({ onAccept, onReject }: CookieConsentProps) {
                   Çerez Politikamiz
                 </h3>
                 <p className="text-sm text-gray-600 mb-3">
-                  Web sitemizdeki deneyiminizi iyilestirmek için Google Analytics ve Microsoft Clarity 
-                  kullanarak analiz çerezleri kullaniyoruz. Bu çerezler, ziyaretçi davranislarini 
-                  anlamamiza ve site performansini optimize etmemize yardimci olur.
+                 Web sitemizde kullanıcı deneyimini geliştirmek için Google Analytics ve Microsoft Clarity gibi analiz araçları kullanılmaktadır. Bu araçlar aracılığıyla elde edilen veriler anonimdir ve yalnızca site performansını iyileştirmek amacıyla kullanılmaktadır.
                 </p>
                 <div className="flex items-center gap-2 text-xs text-gray-500">
                   <Shield className="w-3 h-3" />

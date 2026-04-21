@@ -9,12 +9,22 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const stored = localStorage.getItem('cookie-consent');
-    setConsent(stored === 'true');
+
+    if (stored === null) {
+      setConsent(null); // 👈 ilk giriş → banner göster
+    } else {
+      setConsent(stored === 'true'); // true / false
+    }
   }, []);
 
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'true');
     setConsent(true);
+
+    // 👇 Analytics’i anında tetikle (çok önemli)
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('config', process.env.NEXT_PUBLIC_GA_ID);
+    }
   };
 
   const handleReject = () => {
@@ -24,7 +34,8 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      {consent && (
+      {/* ✅ Analytics sadece kabul edilince */}
+      {consent === true && (
         <>
           <Script
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
@@ -41,14 +52,15 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
           </Script>
         </>
       )}
-      
+
+      {/* ✅ İlk girişte cookie */}
       {consent === null && (
         <CookieConsent
           onAccept={handleAccept}
           onReject={handleReject}
         />
       )}
-      
+
       {children}
     </>
   );
