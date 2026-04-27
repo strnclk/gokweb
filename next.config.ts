@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   experimental: {
-    optimizeCss: true,
+    // optimizeCss: true, // Critters modül sorunu için geçici olarak devre dışı
   },
   trailingSlash: true, // Statik routing için
 };

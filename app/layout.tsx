@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import Script from "next/script";
 import { AnalyticsProvider } from "@/components/AnalyticsProvider";
 import "./globals.css";
 
-const inter = Inter({
+const poppins = Poppins({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
@@ -83,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="tr" className={inter.variable}>
+    <html lang="tr" className={poppins.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -93,7 +94,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className="min-h-screen font-sans antialiased">
+      <body className="min-h-screen font-poppins antialiased">
         {/* ✅ JSON-LD doğru yerde */}
         <Script
           id="json-ld"
