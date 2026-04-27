@@ -1,9 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export', // Statik export için
   images: {
-    unoptimized: true, // Statik export için gerekli
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
@@ -16,7 +14,10 @@ const nextConfig: NextConfig = {
   experimental: {
     // optimizeCss: true, // Critters modül sorunu için geçici olarak devre dışı
   },
-  trailingSlash: true, // Statik routing için
+  // Turbopack configuration at root level
+  turbopack: {
+    root: process.cwd(), // Explicitly set the root directory
+  },
 };
 
 export default nextConfig;

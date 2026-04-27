@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
 import { AnalyticsProvider } from "@/components/AnalyticsProvider";
+import GravityParticlesClient from "@/components/GravityParticlesClient";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -102,8 +103,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        {/* ✅ Analytics sadece consent ile */}
-        <AnalyticsProvider>{children}</AnalyticsProvider>
+        {/* Geçici olarak devre dışı - test için */}
+        {children}
       </body>
     </html>
   );

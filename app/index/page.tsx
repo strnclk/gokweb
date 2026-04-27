@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { ChevronUp, MessageCircle, ArrowRight, CheckCircle, Zap, Shield, Users, TrendingUp, Cpu, Cloud, Database, Smartphone, Globe, Code, BarChart, Phone, Mail, MapPin, Star, Heart } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,30 +9,65 @@ export default function IndexPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollableHeight = documentHeight - windowHeight;
-      
-      if (scrollableHeight > 0) {
-        setScrollProgress((scrollPosition / scrollableHeight) * 100);
-      } else {
-        setScrollProgress(0);
-      }
-      
-      setShowScrollTop(scrollPosition > 300);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  const handleScroll = useCallback(() => {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollableHeight = documentHeight - windowHeight;
+    
+    if (scrollableHeight > 0) {
+      setScrollProgress((scrollPosition / scrollableHeight) * 100);
+    } else {
+      setScrollProgress(0);
+    }
+    
+    setShowScrollTop(scrollPosition > 300);
   }, []);
+
+  useEffect(() => {
+    const isDev = process.env.NODE_ENV === 'development';
+    let ticking = false;
+    
+    const throttledScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+      }
+    };
+    
+    // Development mode: use passive listeners and reduce scroll frequency
+    const scrollOptions = isDev ? { passive: true } : { passive: true };
+    
+    if (isDev) {
+      // In development, throttle more aggressively
+      let scrollTimeout: NodeJS.Timeout;
+      const devThrottledScroll = () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+          throttledScroll();
+        }, 100); // 100ms throttle in dev
+      };
+      
+      window.addEventListener('scroll', devThrottledScroll, scrollOptions);
+      return () => {
+        clearTimeout(scrollTimeout);
+        window.removeEventListener('scroll', devThrottledScroll);
+      };
+    } else {
+      // Production: normal throttling
+      window.addEventListener('scroll', throttledScroll, scrollOptions);
+      return () => window.removeEventListener('scroll', throttledScroll);
+    }
+  }, [handleScroll]);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const products = [
+  const products = useMemo(() => [
     {
       name: 'MikroRun',
       description: 'Mikro ERP entegrasyonu için otomatik raporlama sistemi',
@@ -51,9 +86,9 @@ export default function IndexPage() {
       icon: Globe,
       color: 'from-green-500 to-teal-500'
     }
-  ];
+  ], []);
 
-  const features = [
+  const features = useMemo(() => [
     {
       title: 'Hızlı Entegrasyon',
       description: 'Sistemlerinize hızlı ve sorunsuz entegrasyon',
@@ -84,7 +119,7 @@ export default function IndexPage() {
       description: 'Her yerden erişim imkanı',
       icon: Cloud
     }
-  ];
+  ], []);
 
   const whatsappNumber = '905398563578';
   const email = 'satis@gokkusagiyazilim.com.tr';

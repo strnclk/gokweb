@@ -4,13 +4,15 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'motion/react';
-import { Menu, X, ChevronDown, Package, Building, Zap, Briefcase, Factory, FileText, GitCompare } from 'lucide-react';
+import { Menu, X, ChevronDown, Package, Building, Zap, Briefcase, Factory, FileText, GitCompare, Workflow, FolderOpen, Star, TrendingUp } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMikroDropdownOpen, setIsMikroDropdownOpen] = useState(false);
+  const [isEflowDropdownOpen, setIsEflowDropdownOpen] = useState(false);
+  const [isSectoralDropdownOpen, setIsSectoralDropdownOpen] = useState(false);
 
   const isActive = (path: string) => {
     if (path === '/') return pathname === '/';
@@ -39,18 +41,18 @@ export default function Navbar() {
             {/* Mikro Dropdown */}
             <div className="relative">
               <button 
-                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                onClick={() => setIsMikroDropdownOpen(!isMikroDropdownOpen)}
                 className={`flex items-center gap-2 transition font-semibold text-lg relative group ${isActive('/products') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}
               >
                 <Package className="w-4 h-4" />
                 Mikro
-                <ChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-4 h-4 transition-transform ${isMikroDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               {!isActive('/products') && (
                 <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 z-10"></div>
               )}
               
-              {isDropdownOpen && (
+              {isMikroDropdownOpen && (
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -86,14 +88,41 @@ export default function Navbar() {
               )}
             </Link>
 
-            {/* E-Flow */}
-            <Link href="/eflow" className={`flex items-center gap-2 transition font-semibold text-lg relative group ${isActive('/eflow') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}>
-              <Zap className="w-4 h-4" />
-              E-Flow
+            {/* E-Flow Dropdown */}
+            <div className="relative">
+              <button 
+                onClick={() => setIsEflowDropdownOpen(!isEflowDropdownOpen)}
+                className={`flex items-center gap-2 transition font-semibold text-lg relative group ${isActive('/eflow') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}
+              >
+                <Zap className="w-4 h-4" />
+                E-Flow
+                <ChevronDown className={`w-4 h-4 transition-transform ${isEflowDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
               {!isActive('/eflow') && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 z-10"></div>
               )}
-            </Link>
+              
+              {isEflowDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50"
+                >
+                  <Link href="/eflow" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                    <Zap className="w-4 h-4" />
+                    E-Flow
+                  </Link>
+                  <Link href="/eflow-bpm" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                    <Workflow className="w-4 h-4" />
+                    BPM Çözümleri
+                  </Link>
+                  <Link href="/eflow-dms" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                    <FolderOpen className="w-4 h-4" />
+                    DMS Çözümleri
+                  </Link>
+                </motion.div>
+              )}
+            </div>
 
             {/* Hizmetler */}
             <Link href="/services" className={`flex items-center gap-2 transition font-semibold text-lg relative group ${isActive('/services') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}>
@@ -104,14 +133,37 @@ export default function Navbar() {
               )}
             </Link>
 
-            {/* Sektörel Çözümler */}
-            <Link href="/sectoral-solutions" className={`flex items-center gap-2 transition font-semibold text-lg relative group ${isActive('/sectoral-solutions') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}>
-              <Factory className="w-4 h-4" />
-              Sektörel Çözümler
+            {/* Sektörel Çözümler Dropdown */}
+            <div className="relative">
+              <button 
+                onClick={() => setIsSectoralDropdownOpen(!isSectoralDropdownOpen)}
+                className={`flex items-center gap-2 transition font-semibold text-lg relative group ${isActive('/sectoral-solutions') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}
+              >
+                <Factory className="w-4 h-4" />
+                Sektörel Çözümler
+                <ChevronDown className={`w-4 h-4 transition-transform ${isSectoralDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
               {!isActive('/sectoral-solutions') && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 z-10"></div>
               )}
-            </Link>
+              
+              {isSectoralDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50"
+                >
+                  <Link href="/sectoral-solutions" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                    <Factory className="w-4 h-4" />
+                    Sektörel Çözümler
+                  </Link>
+                  <Link href="/featured-works" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                    <Star className="w-4 h-4" />
+                    Öne Çıkan Çalışmalarımız
+                  </Link>
+                </motion.div>
+              )}
+            </div>
 
             {/* Blog */}
             <Link href="/blog" className={`flex items-center gap-2 transition font-semibold text-lg relative group ${isActive('/blog') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}>
@@ -144,18 +196,18 @@ export default function Navbar() {
               {/* Mikro Dropdown - Mobil */}
               <div className="px-6">
                 <button 
-                  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                  onClick={() => setIsMikroDropdownOpen(!isMikroDropdownOpen)}
                   className={`flex items-center gap-2 transition font-semibold text-xl w-full text-left relative group ${isActive('/products') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}
                 >
                   <Package className="w-5 h-5" />
                   Mikro
-                  <ChevronDown className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} />
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isMikroDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {!isActive('/products') && (
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 )}
                 
-                {isDropdownOpen && (
+                {isMikroDropdownOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -191,13 +243,41 @@ export default function Navbar() {
                 )}
               </Link>
 
-              <Link href="/eflow" className={`flex items-center gap-2 transition font-semibold text-xl px-6 relative group ${isActive('/eflow') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}>
-                <Zap className="w-5 h-5" />
-                E-Flow
+              {/* E-Flow Dropdown - Mobil */}
+              <div className="px-6">
+                <button 
+                  onClick={() => setIsEflowDropdownOpen(!isEflowDropdownOpen)}
+                  className={`flex items-center gap-2 transition font-semibold text-xl w-full text-left relative group ${isActive('/eflow') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}
+                >
+                  <Zap className="w-5 h-5" />
+                  E-Flow
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isEflowDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
                 {!isActive('/eflow') && (
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 )}
-              </Link>
+                
+                {isEflowDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-2 ml-4 space-y-2"
+                  >
+                    <Link href="/eflow" className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition rounded">
+                      <Zap className="w-4 h-4" />
+                      E-Flow Ana Sayfa
+                    </Link>
+                    <Link href="/eflow-bpm" className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition rounded">
+                      <Workflow className="w-4 h-4" />
+                      BPM Çözümleri
+                    </Link>
+                    <Link href="/eflow-dms" className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition rounded">
+                      <FolderOpen className="w-4 h-4" />
+                      DMS Çözümleri
+                    </Link>
+                  </motion.div>
+                )}
+              </div>
 
               <Link href="/services" className={`flex items-center gap-2 transition font-semibold text-xl px-6 relative group ${isActive('/services') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}>
                 <Briefcase className="w-5 h-5" />
@@ -207,13 +287,37 @@ export default function Navbar() {
                 )}
               </Link>
 
-              <Link href="/sectoral-solutions" className={`flex items-center gap-2 transition font-semibold text-xl px-6 relative group ${isActive('/sectoral-solutions') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}>
-                <Factory className="w-5 h-5" />
-                Sektörel Çözümler
+              {/* Sektörel Çözümler Dropdown - Mobil */}
+              <div className="px-6">
+                <button 
+                  onClick={() => setIsSectoralDropdownOpen(!isSectoralDropdownOpen)}
+                  className={`flex items-center gap-2 transition font-semibold text-xl w-full text-left relative group ${isActive('/sectoral-solutions') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}
+                >
+                  <Factory className="w-5 h-5" />
+                  Sektörel Çözümler
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isSectoralDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
                 {!isActive('/sectoral-solutions') && (
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 )}
-              </Link>
+                
+                {isSectoralDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-2 ml-4 space-y-2"
+                  >
+                    <Link href="/sectoral-solutions" className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition rounded">
+                      <Factory className="w-4 h-4" />
+                      Sektörel Çözümler
+                    </Link>
+                    <Link href="/featured-works" className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition rounded">
+                      <Star className="w-4 h-4" />
+                      Öne Çıkan Çalışmalarımız
+                    </Link>
+                  </motion.div>
+                )}
+              </div>
 
               <Link href="/blog" className={`flex items-center gap-2 transition font-semibold text-xl px-6 relative group ${isActive('/blog') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}>
                 <FileText className="w-5 h-5" />
