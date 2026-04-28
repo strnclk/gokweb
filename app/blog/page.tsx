@@ -1,12 +1,9 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-
-export const metadata: Metadata = {
-  title: 'Blog | ERP CRM E-Dönüşüm Yazıları | Gökkuşağı Yazılım',
-  description: 'Mikro ERP, e-dönüşüm, dijital dönüşüm ve iş yönetimi hakkında güncel yazılar, rehberler ve sektörel analizler.',
-  keywords: 'mikro blog, ERP blog, e-dönüşüm yazıları, dijital dönüşüm, iş yönetimi, sektörel analiz, mikro rehber',
-};
+import BlogPopup from '@/components/BlogPopup';
 
 const featuredPost = {
   title: '2026\'da ERP Sistemlerinde Öne Çıkan 5 Trend',
@@ -15,6 +12,22 @@ const featuredPost = {
   date: '25 Nisan 2026',
   readTime: '8 dk',
   gradient: 'from-purple-600 to-blue-600',
+  content: `
+    <h2>Yapay Zeka Destekli Otomasyon</h2>
+    <p>2026'da ERP sistemlerinde yapay zeka entegrasyonu standart haline geliyor. AI destekli otomasyon, rutin görevleri otomatize ederek çalışanların daha stratejik işlere odaklanmasını sağlıyor.</p>
+    
+    <h2>Bulut ERP Geçişleri</h2>
+    <p>Geleneksel on-premise ERP sistemlerinden bulut tabanlı çözümlere geçiş hız kazanıyor. Bulut ERP, daha düşük maliyetler, kolay ölçeklenebilirlik ve uzaktan erişim imkanı sunuyor.</p>
+    
+    <h2>Gerçek Zamanlı Analitik</h2>
+    <p>Gerçek zamanlı veri analitiği, işletmelerin anında kararlar almasını sağlıyor. Dashboard'lar ve raporlar artık saniyelik gecikmelerle güncelleniyor.</p>
+    
+    <h2>Mobil ERP</h2>
+    <p>Mobil ERP uygulamaları, yöneticilerin her yerden sisteme erişebilmesini sağlıyor. Satış ekipleri sahadan, yöneticiler seyahatlerden işlerini yönetebiliyor.</p>
+    
+    <h2>Sürdürülebilirlik ve ESG</h2>
+    <p>ERP sistemleri artık çevresel, sosyal ve yönetişim (ESG) metriklerini takip ediyor. Karbon ayak izi, enerji tüketimi ve sürdürülebilirlik KPI'ları standart özellikler haline geliyor.</p>
+  `
 };
 
 const categories = [
@@ -34,6 +47,25 @@ const posts = [
     date: '22 Nisan 2026',
     readTime: '6 dk',
     gradient: 'from-blue-500 to-blue-600',
+    content: `
+      <h2>E-Fatura Nedir?</h2>
+      <p>E-fatura, Gelir İdaresi Başkanlığı (GİB) tarafından belirlenen standartlara uygun olarak elektronik ortamda oluşturulan, gönderilen ve saklanan fatura türüdür.</p>
+      
+      <h2>Kimler E-Fatura Kullanmak Zorunda?</h2>
+      <p>2024 yılı itibarıyla yıllık cirosu 5 milyon TL ve üzeri olan mükellefler e-fatura kullanmak zorundadır. Bu limit her yıl güncellenmektedir.</p>
+      
+      <h2>E-Fatura Avantajları</h2>
+      <ul>
+        <li>Kağıt ve baskı maliyetlerinden tasarruf</li>
+        <li>Arşivleme kolaylığı</li>
+        <li>Hızlı ve güvenli gönderim</li>
+        <li>Otomatik muhasebe entegrasyonu</li>
+        <li>Çevre dostu çözüm</li>
+      </ul>
+      
+      <h2>E-Fatura Geçiş Süreci</h2>
+      <p>E-fatura sistemine geçiş için GİB portalı üzerinden başvuru yapılması gerekir. Başvuru sonrası entegrasyon süreci başlar.</p>
+    `
   },
   {
     title: 'Mikro ERP ile Verimliliğinizi Artırın',
@@ -42,6 +74,24 @@ const posts = [
     date: '18 Nisan 2026',
     readTime: '7 dk',
     gradient: 'from-green-500 to-green-600',
+    content: `
+      <h2>Mikro ERP Nedir?</h2>
+      <p>Mikro ERP, Türk işletmeleri için özel olarak geliştirilmiş kapsamlı bir iş kaynakları planlama (ERP) sistemidir.</p>
+      
+      <h2>Verimlilik Artışı</h2>
+      <p>Mikro ERP kullanan işletmelerde ortalama %40 verimlilik artışı gözlemlenmiştir. Bu artış süreç otomasyonu ve veri entegrasyonu sayesinde gerçekleşir.</p>
+      
+      <h2>Gerçek Müşteri Hikayeleri</h2>
+      <p>1000+ müşteri ile Mikro ERP, farklı sektörlerde başarıyla kullanılmaktadır. Üretim, perakende, inşaat ve hizmet sektörlerinde referanslarımız bulunmaktadır.</p>
+      
+      <h2>İstatistikler</h2>
+      <ul>
+        <li>%40 operasyonel verimlilik artışı</li>
+        <li>%25 stok maliyeti azalması</li>
+        <li>%60 daha hızlı raporlama</li>
+        <li>%90 müşteri memnuniyeti</li>
+      </ul>
+    `
   },
   {
     title: 'İnşaat Sektöründe ERP Kullanımı',
@@ -50,6 +100,24 @@ const posts = [
     date: '15 Nisan 2026',
     readTime: '5 dk',
     gradient: 'from-orange-500 to-orange-600',
+    content: `
+      <h2>İnşaat Sektöründe ERP</h2>
+      <p>İnşaat sektörü karmaşık proje yönetimi gerektirir. ERP sistemleri bu süreçleri optimize eder.</p>
+      
+      <h2>Proje Yönetimi</h2>
+      <p>Bütçe takibi, ilerleme raporlaması ve sözleşme yönetimi ERP ile kolaylaşır.</p>
+      
+      <h2>Maliyet Kontrolü</h2>
+      <p>Malzeme, işçilik ve ekipman maliyetleri gerçek zamanlı takip edilir.</p>
+      
+      <h2>Avantajlar</h2>
+      <ul>
+        <li>Merkezi proje yönetimi</li>
+        <li>Gerçek zamanlı maliyet takibi</li>
+        <li>Otomatik faturalandırma</li>
+        <li>Şantiye stok yönetimi</li>
+      </ul>
+    `
   },
   {
     title: 'E-Defter Geçiş Süreci: Adım Adım',
@@ -58,6 +126,21 @@ const posts = [
     date: '12 Nisan 2026',
     readTime: '9 dk',
     gradient: 'from-indigo-500 to-indigo-600',
+    content: `
+      <h2>E-Defter Nedir?</h2>
+      <p>E-defter, kağıt defter yerine elektronik ortamda tutulan ve GİB sistemine gönderilen defter türüdür.</p>
+      
+      <h2>Geçiş Süreci</h2>
+      <p>E-defter sistemine geçiş için öncelikle e-fatura kullanıcısı olmak gerekir. Sonrasında GİB portalı üzerinden başvuru yapılır.</p>
+      
+      <h2>Avantajları</h2>
+      <ul>
+        <li>Kağıt tasarrufu</li>
+        <li>Kolay arşivleme</li>
+        <li>Hızlı erişim</li>
+        <li>Güvenli saklama</li>
+      </ul>
+    `
   },
   {
     title: 'Dijital Dönüşümde Başarının 5 Anahtarı',
@@ -66,6 +149,22 @@ const posts = [
     date: '8 Nisan 2026',
     readTime: '6 dk',
     gradient: 'from-violet-500 to-violet-600',
+    content: `
+      <h2>Liderlik Destek</h2>
+      <p>Üst yönetimin desteği dijital dönüşümün başarısı için kritik öneme sahiptir.</p>
+      
+      <h2>Stratejik Planlama</h2>
+      <p>Açık hedefler ve yol haritası belirlenmelidir.</p>
+      
+      <h2>Personel Eğitimi</h2>
+      <p>Çalışanların yeni sistemlere adapte olması için eğitim şarttır.</p>
+      
+      <h2>Doğru Teknoloji Seçimi</h2>
+      <p>İşletmeye uygun ERP ve dijital çözümler seçilmelidir.</p>
+      
+      <h2>Sürekli İyileştirme</h2>
+      <p>Dijital dönüşüm bir süreçtir, sürekli iyileştirme gerekir.</p>
+    `
   },
   {
     title: 'Mikro FLY vs RUN vs JUMP Karşılaştırması',
@@ -74,6 +173,19 @@ const posts = [
     date: '5 Nisan 2026',
     readTime: '10 dk',
     gradient: 'from-emerald-500 to-emerald-600',
+    content: `
+      <h2>Mikro FLY</h2>
+      <p>KOBİ'ler için ideal, temel ERP fonksiyonları içerir.</p>
+      
+      <h2>Mikro RUN</h2>
+      <p>Orta ölçekli işletmeler için gelişmiş özellikler sunar.</p>
+      
+      <h2>Mikro JUMP</h2>
+      <p>Büyük ölçekli işletmeler ve çoklu şube yapısı için tasarlanmıştır.</p>
+      
+      <h2>Karşılaştırma</h2>
+      <p>Her ürün farklı kullanıcı ihtiyaçlarına hitap eder. İşletmenizin büyüklüğüne ve gereksinimlerine göre seçim yapmalısınız.</p>
+    `
   },
   {
     title: 'Üretim Sektöründe Stok Yönetimi',
@@ -82,6 +194,16 @@ const posts = [
     date: '1 Nisan 2026',
     readTime: '7 dk',
     gradient: 'from-pink-500 to-pink-600',
+    content: `
+      <h2>Stok Yönetimi</h2>
+      <p>Üretim işletmelerinde stok yönetimi kritik öneme sahiptir.</p>
+      
+      <h2>MRP Sistemleri</h2>
+      <p>Malzeme gereksinim planlama sistemleri, stok maliyetlerini optimize eder.</p>
+      
+      <h2>Otomasyon</h2>
+      <p>Barcode ve RFID sistemleri ile stok takibi otomatize edilir.</p>
+    `
   },
   {
     title: 'KOBİ\'ler İçin ERP Seçim Rehberi',
@@ -90,10 +212,28 @@ const posts = [
     date: '28 Mart 2026',
     readTime: '8 dk',
     gradient: 'from-red-500 to-red-600',
+    content: `
+      <h2>KOBİ'ler İçin ERP</h2>
+      <p>KOBİ'lerin ERP seçerken dikkat etmesi gereken kriterler farklıdır.</p>
+      
+      <h2>Maliyet Analizi</h2>
+      <p>Lisans, kurulum ve eğitim maliyetleri hesaplanmalıdır.</p>
+      
+      <h2>Kolay Kullanım</h2>
+      <p>Kullanıcı dostu arayüz önemlidir.</p>
+      
+      <h2>Ölçeklenebilirlik</h2>
+      <p>İşletme büyüdükçe sistemin de büyümesi gerekir.</p>
+    `
   },
 ];
 
 export default function BlogPage() {
+  const [selectedCategory, setSelectedCategory] = useState('Tümü');
+
+  const filteredPosts = selectedCategory === 'Tümü' 
+    ? posts 
+    : posts.filter(post => post.category === selectedCategory);
   return (
     <div className="bg-white">
       <Navbar />
@@ -154,9 +294,13 @@ export default function BlogPage() {
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap gap-3">
             {categories.map((cat, i) => (
-              <button key={i} className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${i === 0 ? 'bg-slate-900 text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:border-slate-900 hover:text-slate-900'}`}>
+              <button 
+                key={i} 
+                onClick={() => setSelectedCategory(cat.name)}
+                className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${selectedCategory === cat.name ? 'bg-slate-900 text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:border-slate-900 hover:text-slate-900'}`}
+              >
                 {cat.name}
-                <span className={`ml-2 text-xs ${i === 0 ? 'text-gray-400' : 'text-gray-400'}`}>({cat.count})</span>
+                <span className={`ml-2 text-xs ${selectedCategory === cat.name ? 'text-gray-400' : 'text-gray-400'}`}>({cat.count})</span>
               </button>
             ))}
           </div>
@@ -171,7 +315,7 @@ export default function BlogPage() {
           </div>
 
           <div className="divide-y divide-gray-200">
-            {posts.map((post, index) => (
+            {filteredPosts.map((post, index) => (
               <article key={index} className="py-10 first:pt-0 last:pb-0 group cursor-pointer">
                 <div className="grid lg:grid-cols-12 gap-6 items-start">
                   {/* Tarih ve Kategori */}
@@ -249,6 +393,8 @@ export default function BlogPage() {
           </div>
         </div>
       </section>
+
+      <BlogPopup posts={[featuredPost, ...posts]} />
 
       <Footer />
     </div>

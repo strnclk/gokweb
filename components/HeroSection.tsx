@@ -9,6 +9,14 @@ const GravityParticles = lazy(() => import('./GravityParticles'));
 export default function HeroSection() {
   const router = useRouter();
 
+  const handleTeklifAlClick = () => {
+    router.push('/contact');
+  };
+
+  const handleIletisimClick = () => {
+    router.push('/contact');
+  };
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-50">
       <Suspense fallback={null}>
@@ -27,16 +35,16 @@ export default function HeroSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button 
-            onClick={() => router.push('/contact')}
+          <button
+            onClick={handleTeklifAlClick}
             aria-label="Teklif Al - İletişim sayfasına gidin"
-            className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
+            className="px-8 py-4 bg-gray-900 text-white rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
           >
             Teklif Al
             <ArrowRight className="w-5 h-5" />
           </button>
-          <button 
-            onClick={() => router.push('/contact')}
+          <button
+            onClick={handleIletisimClick}
             aria-label="İletişime Geç - İletişim sayfasına gidin"
             className="px-8 py-4 border border-gray-300 text-gray-900 rounded-full hover:bg-gray-50 transition-all duration-300 hover:scale-105"
           >

@@ -1,6 +1,6 @@
 'use client';
 
-import { FolderOpen, FileText, Shield, Search, Clock, Users, Settings, Database, Cloud, Lock, Share2, Download, Upload, CheckCircle, AlertCircle, TrendingUp, Target, Award, Zap } from 'lucide-react';
+import { FolderOpen, FileText, Shield, Search, Clock, Users, Settings, Database, Cloud, Lock, Share2, Download, Upload, CheckCircle, AlertCircle, TrendingUp, Target, Award, Zap, ArrowRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
@@ -144,98 +144,62 @@ export default function EflowDmsPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-teal-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-20 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="flex items-center justify-center"
-            >
-              <div className="w-[350px] h-[350px] rounded-3xl overflow-hidden flex items-center justify-center bg-white/20 backdrop-blur-md border-2 border-white/30 p-6 shadow-2xl">
-                <div className="w-full h-full flex items-center justify-center">
-                  <FolderOpen size={120} className="text-gray-900" />
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-gray-900"
-            >
-              <div className="mb-4">
-                <span className="inline-block px-4 py-2 bg-green-100 backdrop-blur-md rounded-full text-sm font-semibold text-green-600 mb-4">
-                  E-Flow Platform
-                </span>
-              </div>
-              <h1 className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight">
-                E-Flow
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600">DMS</span>
-              </h1>
-              <p className="text-2xl md:text-3xl text-gray-700 font-semibold mb-6">Doküman Yönetim Sistemi</p>
-              <p className="text-lg text-gray-600 mb-10 leading-relaxed">Dokümanlarınızı dijitalleştirin, güvenli bir şekilde saklayın ve kolayca erişin.</p>
-              
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    className="text-center"
-                  >
-                    <div className="text-3xl md:text-4xl font-bold text-green-600 mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                onClick={scrollToContact}
-                className="inline-block px-12 py-5 bg-gradient-to-r from-green-400 to-emerald-600 text-white font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-2"
-              >
-                Demo İsteyin
-              </motion.button>
-            </motion.div>
+      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-10">
+            <div className="w-32 h-32 mx-auto bg-slate-900 rounded-2xl flex items-center justify-center">
+              <FolderOpen size={64} className="text-white" />
+            </div>
           </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-slate-900"
+          >
+            E-Flow
+            <br />
+            <span className="text-slate-600">DMS</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg md:text-xl text-slate-500 mb-10 max-w-4xl mx-auto leading-relaxed"
+          >
+            Doküman Yönetim Sistemi - Dokümanlarınızı dijitalleştirin, güvenli bir şekilde saklayın ve kolayca erişin
+          </motion.p>
+
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            onClick={scrollToContact}
+            className="inline-flex items-center gap-2 px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium"
+          >
+            Demo İsteyin
+            <ArrowRight className="w-5 h-5" />
+          </motion.button>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600">
-                DMS Özellikleri
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">DMS Özellikleri</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Doküman yönetimini dönüştürecek güçlü özellikler
             </p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -243,16 +207,14 @@ export default function EflowDmsPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="group"
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300"
                 >
-                  <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon size={40} />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">{feature.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mb-4">
+                    <Icon size={24} className="text-white" />
                   </div>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900">{feature.title}</h3>
+                  <p className="text-slate-600 text-sm">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -261,69 +223,58 @@ export default function EflowDmsPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 bg-gradient-to-br from-green-50 to-teal-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600">
-                DMS Avantajları
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">DMS Avantajları</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
               İşletmeniz için somut faydalar
             </p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="flex items-center gap-6 p-8 bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg flex-shrink-0">
-                    {benefit.number}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2 text-gray-900">{benefit.title}</h3>
-                    <p className="text-gray-600">{benefit.description}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200 hover:border-slate-300"
+              >
+                <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
+                  {benefit.number}
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900">{benefit.title}</h3>
+                  <p className="text-slate-600 text-sm">{benefit.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Industries Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-blue-600">
-                Sektörel Çözümler
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Sektörel Çözümler</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Her sektörün ihtiyacına özel DMS çözümleri
             </p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
               return (
@@ -331,16 +282,14 @@ export default function EflowDmsPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="group"
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300 text-center"
                 >
-                  <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full text-center">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${industry.color} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon size={40} />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">{industry.name}</h3>
-                    <p className="text-gray-600">{industry.description}</p>
+                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Icon size={24} className="text-white" />
                   </div>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900">{industry.name}</h3>
+                  <p className="text-slate-600 text-sm">{industry.description}</p>
                 </motion.div>
               );
             })}
@@ -349,28 +298,21 @@ export default function EflowDmsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 via-green-900 to-teal-900 text-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
+            className="bg-slate-900 p-8 rounded-xl text-center"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Dokümanlarınızı
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
-                Dönüştürün
-              </span>
-            </h2>
-            <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto">
-              E-Flow DMS ile doküman yönetimini dijitalleştirin ve verimliliği artırın
-            </p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">Dokümanlarınızı Dönüştürün</h2>
+            <p className="text-base mb-6 text-slate-300">E-Flow DMS ile doküman yönetimini dijitalleştirin</p>
             <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={scrollToContact}
-              className="inline-block px-12 py-5 bg-gradient-to-r from-green-400 to-emerald-600 text-white font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-2"
+              className="bg-white text-slate-900 py-3 px-8 rounded-lg font-medium hover:bg-slate-100"
             >
               Ücretsiz Demo İsteyin
             </motion.button>
@@ -378,24 +320,7 @@ export default function EflowDmsPage() {
         </div>
       </section>
 
-      {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          onClick={scrollToTop}
-          className="fixed bottom-6 left-6 w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center text-white cursor-pointer shadow-2xl hover:shadow-3xl hover:-translate-y-1 overflow-hidden z-50"
-        >
-          <div className="absolute inset-0 bg-white/15 rounded-full overflow-hidden">
-            <div 
-              className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-red-400 via-yellow-400 via-sky-400 via-pink-400 to-blue-400"
-              style={{ width: `${scrollProgress}%` }}
-            ></div>
-          </div>
-          <span className="relative z-10 text-2xl">↑</span>
-        </motion.button>
-      )}
+     
       
       <Footer />
     </div>

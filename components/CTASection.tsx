@@ -10,6 +10,14 @@ export default function CTASection() {
   const ref = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
 
+  const handleTeklifAlClick = () => {
+    router.push('/contact');
+  };
+
+  const handleDemoClick = () => {
+    router.push('/contact');
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -54,15 +62,15 @@ export default function CTASection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <button 
-            onClick={() => router.push('/contact')}
-            className="px-10 py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg flex items-center justify-center gap-2"
+          <button
+            onClick={handleTeklifAlClick}
+            className="px-10 py-5 bg-gray-900 text-white rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg flex items-center justify-center gap-2"
           >
             Teklif Al
             <ArrowRight className="w-5 h-5" />
           </button>
-          <button 
-            onClick={() => router.push('/contact')}
+          <button
+            onClick={handleDemoClick}
             className="px-10 py-5 border-2 border-gray-300 text-gray-900 rounded-full hover:bg-gray-50 transition-all duration-300 hover:scale-105 text-lg"
           >
             Demo İsteyin

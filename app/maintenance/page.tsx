@@ -227,21 +227,7 @@ export default function MaintenancePage() {
         </div>
       </div>
 
-      {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-6 left-6 w-14 h-14 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white cursor-pointer shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-white/15 rounded-full overflow-hidden">
-            <div 
-              className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-red-400 via-yellow-400 via-sky-400 via-pink-400 to-blue-400 transition-all duration-200"
-              style={{ width: `${scrollProgress}%` }}
-            ></div>
-          </div>
-          <span className="relative z-10 text-2xl">↑</span>
-        </button>
-      )}
+    
       
       <Footer />
     </div>

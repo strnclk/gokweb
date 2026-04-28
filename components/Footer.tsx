@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { MessageCircle } from 'lucide-react';
+import ChatBot from './ChatBot';
 
 export default function Footer() {
   return (
@@ -38,7 +39,6 @@ export default function Footer() {
               <li><Link href="/mikro-run" className="text-slate-400 hover:text-white transition-colors duration-200">Mikro Run</Link></li>
               <li><Link href="/mikro-jump" className="text-slate-400 hover:text-white transition-colors duration-200">Mikro Jump</Link></li>
               <li><Link href="/eflow" className="text-slate-400 hover:text-white transition-colors duration-200">E-Flow</Link></li>
-              <li><Link href="/bulut-cozumler" className="text-slate-400 hover:text-white transition-colors duration-200">Bulut Çözümler</Link></li>
             </ul>
           </div>
 
@@ -46,11 +46,11 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white">Hizmetler</h4>
             <ul className="space-y-3">
-              <li><Link href="/hizmetler/erp" className="text-slate-400 hover:text-white transition-colors duration-200">ERP Entegrasyonları</Link></li>
-              <li><Link href="/hizmetler/web" className="text-slate-400 hover:text-white transition-colors duration-200">Web Uygulamaları</Link></li>
-              <li><Link href="/hizmetler/mobil" className="text-slate-400 hover:text-white transition-colors duration-200">Mobil Çözümler</Link></li>
-              <li><Link href="/hizmetler/eticaret" className="text-slate-400 hover:text-white transition-colors duration-200">E-ticaret</Link></li>
-              <li><Link href="/hizmetler/mikro" className="text-slate-400 hover:text-white transition-colors duration-200">Mikro Destek</Link></li>
+              <li><span className="text-slate-400">ERP Entegrasyonları</span></li>
+              <li><span className="text-slate-400">Web Uygulamaları</span></li>
+              <li><span className="text-slate-400">Mobil Çözümler</span></li>
+              <li><span className="text-slate-400">E-ticaret</span></li>
+              <li><span className="text-slate-400">Mikro Destek</span></li>
             </ul>
           </div>
 
@@ -59,9 +59,9 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-6 text-white">Hızlı Linkler</h4>
             <ul className="space-y-3">
               <li><Link href="/" className="text-slate-400 hover:text-white transition-colors duration-200">Ana Sayfa</Link></li>
-              <li><Link href="/hakkimizda" className="text-slate-400 hover:text-white transition-colors duration-200">Hakkımızda</Link></li>
-              <li><Link href="/iletisim" className="text-slate-400 hover:text-white transition-colors duration-200">İletişim</Link></li>
-              <li><Link href="/destek" className="text-slate-400 hover:text-white transition-colors duration-200">Destek</Link></li>
+              <li><Link href="/about" className="text-slate-400 hover:text-white transition-colors duration-200">Hakkımızda</Link></li>
+              <li><Link href="/contact" className="text-slate-400 hover:text-white transition-colors duration-200">İletişim</Link></li>
+              <li><Link href="/contact" className="text-slate-400 hover:text-white transition-colors duration-200">Destek</Link></li>
             </ul>
           </div>
         </div>
@@ -144,6 +144,9 @@ export default function Footer() {
     >
       <MessageCircle className="w-8 h-8 text-white" />
     </a>
+    
+    {/* ChatBot */}
+    <ChatBot />
     </>
   );
 }

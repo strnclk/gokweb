@@ -2,7 +2,8 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Phone, MapPin, Clock, CheckCircle, Star, Users, Award, TrendingUp } from 'lucide-react';
+import ContactButtons from '@/components/ContactButtons';
+import { MapPin, Clock, CheckCircle, Star, Users, Award, TrendingUp } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: "Anadolu Yakası Resmi Mikro Bayii | ERP CRM Çözümleri | Gökkuşağı Yazılım",
@@ -131,25 +132,9 @@ export default function AnadoluYakasiMikroBayiiPage() {
                 Anadolu Yakası Resmi Mikro Bayii
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-blue-100">
-                Ataşehir merkezden tüm Anadolu Yakası'na Mikro program satışı, ERP hizmeti ve CRM çözümleri
+                Ataşehir merkezden tüm Anadolu Yakası'na Mikro program satışı, ERP hizmeti ve CRM çözümler
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a 
-                  href="tel:+905398563578"
-                  className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-50 transition-all inline-flex items-center justify-center gap-2"
-                >
-                  <Phone className="w-5 h-5" />
-                  Hemen Ara: +90 539 856 35 78
-                </a>
-                <a 
-                  href="https://wa.me/905398563578"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 transition-all inline-flex items-center justify-center gap-2"
-                >
-                  WhatsApp ile Teklif Al
-                </a>
-              </div>
+              <ContactButtons />
             </div>
           </div>
         </section>
@@ -160,11 +145,11 @@ export default function AnadoluYakasiMikroBayiiPage() {
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">Merkez Konum</h3>
+                <h3 className="text-xl font-bold mb-2">Konum</h3>
                 <p className="text-gray-600">
                   İçerenköy Mah. Eryılmazlar Sokak No:2<br />
                   Kemal Bey İş Merkezi Kat:4 Daire:18<br />
-                  Ataşehir, İstanbul
+                  Ataşehir/İstanbul
                 </p>
               </div>
               <div className="text-center">
@@ -172,17 +157,7 @@ export default function AnadoluYakasiMikroBayiiPage() {
                 <h3 className="text-xl font-bold mb-2">Çalışma Saatleri</h3>
                 <p className="text-gray-600">
                   Pazartesi - Cuma: 09:00 - 18:00<br />
-                  Cumartesi: 10:00 - 16:00<br />
-                  Pazar: Kapalı
-                </p>
-              </div>
-              <div className="text-center">
-                <Phone className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                <h3 className="text-xl font-bold mb-2">İletişim</h3>
-                <p className="text-gray-600">
-                  Telefon: +90 539 856 35 78<br />
-                  E-posta: info@gokkusagiyazilim.com.tr<br />
-                  Web: gokkusagiyazilim.com.tr
+                  Cumartesi: 10:00 - 14:00
                 </p>
               </div>
             </div>

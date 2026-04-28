@@ -1,6 +1,6 @@
 'use client';
 
-import { Landmark, Package, Receipt, BarChart, Users, Wallet, Globe, ShoppingCart, Star, TrendingUp, Award, Clock } from 'lucide-react';
+import { Landmark, Package, Receipt, BarChart, Users, Wallet, Globe, ShoppingCart, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target, Zap } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
@@ -40,10 +40,10 @@ export default function MikroFlyPage() {
   };
 
   const stats = [
-    { value: '5', label: 'Dakika Kurulum', icon: Clock },
-    { value: '10+', label: 'Pazar Yeri', icon: Globe },
-    { value: '99%', label: 'Memnuniyet', icon: Star },
-    { value: '24/7', label: 'Destek', icon: Award }
+    { value: '85%', label: 'Verimlilik', icon: TrendingUp },
+    { value: '60%', label: 'Maliyet Düşüşü', icon: Target },
+    { value: '95%', label: 'Hız', icon: Zap },
+    { value: '3x', label: 'Performans', icon: Award }
   ];
 
   const features = [
@@ -51,184 +51,155 @@ export default function MikroFlyPage() {
       icon: Landmark,
       title: 'Muhasebe',
       description: 'Temel muhasebe işlemleri, defter kefi, mizan',
-      color: 'from-blue-500 to-cyan-600'
+      descriptionDetail: 'Finansal raporlama ve analiz'
     },
     {
       icon: Package,
       title: 'Stok Takibi',
       description: 'Stok yönetimi, depo takibi, barkod sistemi',
-      color: 'from-purple-500 to-pink-600'
+      descriptionDetail: 'Otomatik stok bildirimleri'
     },
     {
       icon: Receipt,
       title: 'Fatura',
       description: 'Fatura kesme, e-fatura entegrasyonu',
-      color: 'from-green-500 to-emerald-600'
+      descriptionDetail: 'E-defter uyumluluğu'
     },
     {
       icon: BarChart,
       title: 'Raporlama',
       description: 'Detaylı raporlar, analizler, grafikler',
-      color: 'from-orange-500 to-red-600'
+      descriptionDetail: 'Özel dashboard tasarımı'
     },
     {
       icon: Users,
       title: 'Cari Hesap',
       description: 'Müşteri ve tedarikçi takibi, borç alacak yönetimi',
-      color: 'from-indigo-500 to-purple-600'
+      descriptionDetail: 'Otomatik vade takibi'
     },
     {
       icon: Wallet,
       title: 'Kasa',
       description: 'Kasa takibi, banka hesapları, para hareketleri',
-      color: 'from-teal-500 to-cyan-600'
-    }
-  ];
-
-  const integrations = [
-    {
-      icon: ShoppingCart,
-      name: 'Trendyol',
-      description: 'Otomatik sipariş senkronizasyonu',
-      color: 'from-yellow-400 to-orange-500'
-    },
-    {
-      icon: ShoppingCart,
-      name: 'Hepsiburada',
-      description: 'Stok ve sipariş yönetimi',
-      color: 'from-orange-400 to-red-500'
-    },
-    {
-      icon: Globe,
-      name: 'N11',
-      description: 'Çoklu platform desteği',
-      color: 'from-blue-400 to-indigo-500'
-    },
-    {
-      icon: ShoppingCart,
-      name: 'Amazon',
-      description: 'Global pazar yeri entegrasyonu',
-      color: 'from-purple-400 to-pink-500'
+      descriptionDetail: 'Çoklu para birimi desteği'
     }
   ];
 
   const benefits = [
     {
       number: '01',
-      title: 'Kolay Kullanım',
-      description: 'Sezgisel arayüzü ile kısa sürede adapte olabilirsiniz',
-      icon: Star
+      title: 'Dijital Dönüşüm',
+      description: 'Muhasebe süreçlerinizi tamamen dijitalleştirin',
+      icon: Zap
     },
     {
       number: '02',
-      title: 'Hızlı Kurulum',
-      description: '5 dakikada kurulum, hemen kullanmaya başlayın',
+      title: 'Verimlilik Artışı',
+      description: 'Otomasyon ile %85 verimlilik artışı sağlayın',
       icon: TrendingUp
     },
     {
       number: '03',
-      title: 'Uygun Fiyat',
-      description: 'Bütçenize uygun fiyat seçenekleri',
-      icon: Award
+      title: 'Maliyet Optimizasyonu',
+      description: 'Manuel işleri azaltarak maliyetlerinizi %60 düşürün',
+      icon: Target
     },
     {
       number: '04',
       title: 'Yasal Uyum',
-      description: 'Tüm yasal düzenlemelere uyumlu',
-      icon: Clock
+      description: 'Tüm yasal düzenlemelere tam uyumlu',
+      icon: Award
+    }
+  ];
+
+  const modules = [
+    {
+      name: 'Trendyol Entegrasyonu',
+      icon: ShoppingCart,
+      description: 'Otomatik sipariş senkronizasyonu',
+      features: ['Sipariş senkronizasyonu', 'Stok güncellemesi', 'Faturalandırma']
+    },
+    {
+      name: 'Hepsiburada Entegrasyonu',
+      icon: ShoppingCart,
+      description: 'Stok ve sipariş yönetimi',
+      features: ['Çoklu mağaza yönetimi', 'Otomatik fiyat güncelleme', 'Kargo takibi']
+    },
+    {
+      name: 'N11 Entegrasyonu',
+      icon: Globe,
+      description: 'Çoklu platform desteği',
+      features: ['Merkezi stok yönetimi', 'Komisyon takibi', 'Performans analizi']
+    },
+    {
+      name: 'Amazon Entegrasyonu',
+      icon: Globe,
+      description: 'Global pazar yeri entegrasyonu',
+      features: ['Çoklu ülke desteği', 'Döviz kuru takibi', 'Gümrük yönetimi']
     }
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-20 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="flex items-center justify-center"
-            >
-              <div className="w-[350px] h-[350px] rounded-3xl overflow-hidden flex items-center justify-center bg-white/20 backdrop-blur-md border-2 border-white/30 p-6 shadow-2xl">
-                <img src="/mikro-fly-logo.png" alt="Mikro FLY" className="w-full h-full object-contain rounded-2xl hover:scale-105 transition-transform duration-300" />
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-gray-900"
-            >
-              <h1 className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight">
-                Mikro
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600">FLY</span>
-              </h1>
-              <p className="text-2xl md:text-3xl text-gray-700 font-semibold mb-6">E-ticaret odaklı muhasebe çözümü</p>
-              <p className="text-lg text-gray-600 mb-10 leading-relaxed">E-ticaret işletmeleri için tasarlanmış, pazar yeri entegrasyonlu ve hızlı muhasebe programı.</p>
-              
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    className="text-center"
-                  >
-                    <div className="text-3xl md:text-4xl font-bold text-green-600 mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                onClick={scrollToContact}
-                className="inline-block px-12 py-5 bg-gradient-to-r from-green-400 to-emerald-600 text-white font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-2"
-              >
-                Teklif Al
-              </motion.button>
-            </motion.div>
+      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-10">
+            <div className="w-32 h-32 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg">
+              <img src="/mikro-fly-logo.png" alt="Mikro FLY" className="w-full h-full object-contain" />
+            </div>
           </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-gray-900"
+          >
+            Mikro
+            <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">FLY</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg md:text-xl text-gray-500 mb-10 max-w-4xl mx-auto leading-relaxed"
+          >
+            E-ticaret odaklı muhasebe çözümü - E-ticaret işletmeleri için tasarlanmış
+          </motion.p>
+
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            onClick={scrollToContact}
+            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-colors font-medium"
+          >
+            Teklif Al
+            <ArrowRight className="w-5 h-5" />
+          </motion.button>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600">
-                Özellikler
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Özellikler</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Mikro FLY'un e-ticaret işletmenizi nasıl hızlandıracağını keşfedin
             </p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -236,16 +207,15 @@ export default function MikroFlyPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="group"
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="bg-white p-6 rounded-xl border border-gray-200 hover:border-blue-300"
                 >
-                  <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon size={40} />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">{feature.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center mb-4">
+                    <Icon size={24} className="text-white" />
                   </div>
+                  <h3 className="text-lg font-bold mb-2 text-gray-900">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm mb-2">{feature.description}</p>
+                  <p className="text-gray-500 text-xs italic">{feature.descriptionDetail}</p>
                 </motion.div>
               );
             })}
@@ -253,42 +223,44 @@ export default function MikroFlyPage() {
         </div>
       </section>
 
-      {/* Integrations Section */}
-      <section className="py-24 bg-gradient-to-br from-green-50 to-teal-50">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Modules Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600">
-                Pazar Yeri Entegrasyonları
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Pazar Yeri Entegrasyonları</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Tüm popüler pazar yerleriyle otomatik senkronizasyon
             </p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {integrations.map((integration, index) => {
-              const Icon = integration.icon;
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {modules.map((module, index) => {
+              const Icon = module.icon;
               return (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="group"
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-blue-300 min-h-[280px] flex flex-col"
                 >
-                  <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full text-center">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${integration.color} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon size={40} />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">{integration.name}</h3>
-                    <p className="text-gray-600">{integration.description}</p>
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Icon size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-gray-900 text-center">{module.name}</h3>
+                  <p className="text-gray-600 text-center text-sm mb-4">{module.description}</p>
+                  <div className="space-y-2 flex-grow">
+                    {module.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-xs text-gray-600">
+                        <CheckCircle size={12} className="mr-2 text-blue-600" />
+                        {feature}
+                      </div>
+                    ))}
                   </div>
                 </motion.div>
               );
@@ -298,90 +270,64 @@ export default function MikroFlyPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600">
-                Neden Mikro FLY?
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              E-ticaret işletmeniz için özel avantajlar
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Avantajlar</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              E-ticaret işletmeniz için somut ve ölçülebilir faydalar
             </p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="flex items-center gap-6 p-8 bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-teal-600 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg flex-shrink-0">
-                    {benefit.number}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2 text-gray-900">{benefit.title}</h3>
-                    <p className="text-gray-600">{benefit.description}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-blue-300"
+              >
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
+                  {benefit.number}
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-2 text-gray-900">{benefit.title}</h3>
+                  <p className="text-gray-600 text-sm">{benefit.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-gray-900 to-slate-900 text-white text-center">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
+            className="bg-gradient-to-r from-blue-900 to-cyan-900 p-8 rounded-xl text-center"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Mikro FLY ile Tanışın</h2>
-            <p className="text-xl text-white/90 mb-10">E-ticaret işletmenizi dijital dönüşüme hazırlayın</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">Mikro FLY ile Tanışın</h2>
+            <p className="text-base mb-6 text-blue-100">E-ticaret işletmenizi dijital dönüşüme hazırlayın</p>
             <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={scrollToContact}
-              className="inline-block px-12 py-5 bg-gradient-to-r from-green-400 to-emerald-600 text-white font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-2"
+              className="bg-white text-blue-900 py-3 px-8 rounded-lg font-medium hover:bg-blue-50"
             >
               Ücretsiz Demo İsteyin
             </motion.button>
           </motion.div>
         </div>
       </section>
-
-      {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          onClick={scrollToTop}
-          className="fixed bottom-6 left-6 w-16 h-16 bg-gradient-to-r from-green-600 to-teal-600 rounded-full flex items-center justify-center text-white cursor-pointer shadow-2xl hover:shadow-3xl hover:-translate-y-1 overflow-hidden z-50"
-        >
-          <div className="absolute inset-0 bg-white/15 rounded-full overflow-hidden">
-            <div 
-              className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-red-400 via-yellow-400 via-sky-400 via-pink-400 to-blue-400"
-              style={{ width: `${scrollProgress}%` }}
-            ></div>
-          </div>
-          <span className="relative z-10 text-2xl">↑</span>
-        </motion.button>
-      )}
       
       <Footer />
     </div>

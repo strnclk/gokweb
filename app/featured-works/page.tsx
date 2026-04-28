@@ -179,103 +179,61 @@ export default function FeaturedWorksPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-indigo-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-20 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="flex items-center justify-center"
-            >
-              <div className="w-[350px] h-[350px] rounded-3xl overflow-hidden flex items-center justify-center bg-white/20 backdrop-blur-md border-2 border-white/30 p-6 shadow-2xl">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="relative">
-                    <Star size={100} className="text-white" />
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                      <TrendingUp size={16} className="text-blue-600" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-gray-900"
-            >
-              <div className="mb-4">
-                <span className="inline-block px-4 py-2 bg-blue-100 backdrop-blur-md rounded-full text-sm font-semibold text-blue-600 mb-4">
-                  Başarı Hikayeleri
-                </span>
-              </div>
-              <h1 className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight">
-                Öne Çıkan
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Çalışmalarımız</span>
-              </h1>
-              <p className="text-2xl md:text-3xl text-gray-700 font-semibold mb-6">Finansal Dönüşüm Projeleri</p>
-              <p className="text-lg text-gray-600 mb-10 leading-relaxed">Finansal yönetim, nakit akışı ve raporlama alanında gerçekleştirdiğimiz başarılı projelerimiz.</p>
-              
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    className="text-center"
-                  >
-                    <div className="text-3xl md:text-4xl font-bold text-blue-600 mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                onClick={scrollToContact}
-                className="inline-block px-12 py-5 bg-gradient-to-r from-yellow-400 to-blue-600 text-white font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-2"
-              >
-                Proje Talebi
-              </motion.button>
-            </motion.div>
+      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-10">
+            <div className="w-32 h-32 mx-auto bg-slate-900 rounded-2xl flex items-center justify-center">
+              <Star size={64} className="text-white" />
+            </div>
           </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-slate-900"
+          >
+            Öne Çıkan
+            <br />
+            <span className="text-slate-600">Çalışmalarımız</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg md:text-xl text-slate-500 mb-10 max-w-4xl mx-auto leading-relaxed"
+          >
+            Finansal Dönüşüm Projeleri - Finansal yönetim, nakit akışı ve raporlama alanında gerçekleştirdiğimiz başarılı projelerimiz
+          </motion.p>
+
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            onClick={scrollToContact}
+            className="inline-block px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium"
+          >
+            Proje Talebi
+          </motion.button>
         </div>
       </section>
 
       {/* Financial Services Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                Finansal Çözümlerimiz
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Finansal Çözümlerimiz</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Finansal yönetim alanında sunduğumuz kapsamlı hizmetler
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6">
             {financialServices.map((service, index) => {
               const Icon = service.icon;
               return (
@@ -283,18 +241,18 @@ export default function FeaturedWorksPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className={`bg-gradient-to-br ${service.bgGradient} p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2  border border-gray-100`}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300"
                 >
-                  <div className={`w-20 h-20 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 text-white shadow-lg`}>
-                    <Icon size={40} />
+                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mb-4">
+                    <Icon size={24} className="text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900">{service.title}</h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900">{service.title}</h3>
+                  <p className="text-slate-600 text-sm mb-4 leading-relaxed">{service.description}</p>
                   <div className="space-y-2">
                     {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-gray-700">
-                        <CheckCircle size={16} className="mr-2 text-green-500" />
+                      <div key={idx} className="flex items-center text-sm text-slate-700">
+                        <CheckCircle size={16} className="mr-2 text-slate-500" />
                         {feature}
                       </div>
                     ))}
@@ -307,25 +265,21 @@ export default function FeaturedWorksPage() {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                Başarı Hikayeleri
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Başarı Hikayeleri</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Gerçek müşterilerimiz için gerçekleştirdiğimiz başarılı projeler
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
             {caseStudies.map((study, index) => {
               const Icon = study.icon;
               return (
@@ -333,36 +287,36 @@ export default function FeaturedWorksPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2  border border-gray-100"
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${study.color} rounded-2xl flex items-center justify-center mb-6 text-white shadow-lg`}>
-                    <Icon size={32} />
+                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mb-4">
+                    <Icon size={24} className="text-white" />
                   </div>
                   <div className="mb-4">
-                    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-semibold rounded-full mb-2">
+                    <span className="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-sm font-semibold rounded-full mb-2">
                       {study.industry}
                     </span>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">{study.title}</h3>
+                    <h3 className="text-lg font-bold text-slate-900 mb-2">{study.title}</h3>
                   </div>
                   
-                  <div className="space-y-4 mb-6">
+                  <div className="space-y-3 mb-4">
                     <div>
-                      <h4 className="font-semibold text-gray-700 mb-1">Mevcut Durum:</h4>
-                      <p className="text-gray-600 text-sm">{study.challenge}</p>
+                      <h4 className="font-semibold text-slate-700 mb-1 text-sm">Mevcut Durum:</h4>
+                      <p className="text-slate-600 text-sm">{study.challenge}</p>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-gray-700 mb-1">Çözüm:</h4>
-                      <p className="text-gray-600 text-sm">{study.solution}</p>
+                      <h4 className="font-semibold text-slate-700 mb-1 text-sm">Çözüm:</h4>
+                      <p className="text-slate-600 text-sm">{study.solution}</p>
                     </div>
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold text-gray-700 mb-2">Sonuçlar:</h4>
+                    <h4 className="font-semibold text-slate-700 mb-2 text-sm">Sonuçlar:</h4>
                     <div className="space-y-1">
                       {study.results.map((result, idx) => (
-                        <div key={idx} className="flex items-center text-sm text-green-600 font-medium">
-                          <CheckCircle size={14} className="mr-2" />
+                        <div key={idx} className="flex items-center text-sm text-slate-600 font-medium">
+                          <CheckCircle size={14} className="mr-2 text-slate-500" />
                           {result}
                         </div>
                       ))}
@@ -376,25 +330,21 @@ export default function FeaturedWorksPage() {
       </section>
 
       {/* Technologies Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                Kullandığımız Teknolojiler
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Kullandığımız Teknolojiler</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Projelerimizde kullandığımız modern teknolojiler
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {technologies.map((tech, index) => {
               const Icon = tech.icon;
               return (
@@ -402,14 +352,14 @@ export default function FeaturedWorksPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="text-center group"
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300 text-center"
                 >
-                  <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 ">
-                    <Icon size={40} />
+                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Icon size={24} className="text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">{tech.name}</h3>
-                  <p className="text-gray-600">{tech.description}</p>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900">{tech.name}</h3>
+                  <p className="text-slate-600 text-sm">{tech.description}</p>
                 </motion.div>
               );
             })}
@@ -418,63 +368,29 @@ export default function FeaturedWorksPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-600 text-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
+            className="bg-slate-900 p-8 rounded-xl text-center"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Finansal Dönüşüm
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-blue-200">
-                Başlangıcnız
-              </span>
-            </h2>
-            <p className="text-xl text-white/90 mb-10 max-w-3xl mx-auto">
-              Finansal yönetim süreçlerinizi optimize etmek ve kârlılığınızı artırmak için bize ulaşın
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                onClick={scrollToContact}
-                className="inline-block px-12 py-5 bg-white text-blue-600 font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-2"
-              >
-                Danışmanlık Talebi
-              </motion.button>
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="inline-block px-12 py-5 bg-white/20 backdrop-blur-md text-white font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-2 border-2 border-white/30"
-              >
-                Referanslar
-              </motion.button>
-            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">Finansal Dönüşüm Başlangıcı</h2>
+            <p className="text-base mb-6 text-slate-300">Finansal yönetim süreçlerinizi optimize etmek için bize ulaşın</p>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={scrollToContact}
+              className="bg-white text-slate-900 py-3 px-8 rounded-lg font-medium hover:bg-slate-100"
+            >
+              Danışmanlık Talebi
+            </motion.button>
           </motion.div>
         </div>
       </section>
 
-      {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          onClick={scrollToTop}
-          className="fixed bottom-6 left-6 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white cursor-pointer shadow-2xl hover:shadow-3xl hover:-translate-y-1 overflow-hidden z-50"
-        >
-          <div className="absolute inset-0 bg-white/15 rounded-full overflow-hidden">
-            <div 
-              className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-yellow-400 via-blue-400 via-purple-400 to-indigo-400"
-              style={{ width: `${scrollProgress}%` }}
-            ></div>
-          </div>
-          <span className="relative z-10 text-2xl">↑</span>
-        </motion.button>
-      )}
+    
       
       <Footer />
     </div>

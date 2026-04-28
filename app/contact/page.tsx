@@ -1,142 +1,138 @@
-'use client';
-
-import { useState } from 'react';
-import { Phone, Mail, MapPin, Send, ArrowRight } from 'lucide-react';
+import { Metadata } from 'next';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
+import ContactForm from '@/components/ContactForm';
+
+export const metadata: Metadata = {
+  title: 'İletişim | ERP CRM Çözümleri | Gökkuşağı Yazılım',
+  description: 'Gökkuşağı Yazılım ile iletişime geçin. Mikro ERP, CRM ve e-dönüşüm çözümleri için ücretsiz danışmanlık alın. Ataşehir ofisimizle irtibata geçin.',
+  keywords: 'Gökkuşağı Yazılım iletişim, ERP danışmanlık, Mikro bayii iletişim, Ataşehir iletişim, İstanbul iletişim, ERP fiyat teklifi, CRM danışmanlık, e-fatura danışmanlık',
+  openGraph: {
+    title: 'İletişim | ERP CRM Çözümleri | Gökkuşağı Yazılım',
+    description: 'Gökkuşağı Yazılım ile iletişime geçin. Mikro ERP, CRM ve e-dönüşüm çözümleri için ücretsiz danışmanlık alın.',
+    type: 'website',
+  },
+};
+
+const whatsappNumber = '905398563578';
+const email = 'satis@gokkusagiyazilim.com.tr';
+const address = 'İçerenköy Mah. Eryılmazlar Sokak No:2 Kemal Bey İş Merkezi Kat:4 Daire:18 Ataşehir/İstanbul';
+
+const contactMethods = [
+  {
+    icon: Phone,
+    title: 'Telefon',
+    value: whatsappNumber,
+    link: `tel:+90${whatsappNumber}`
+  },
+  {
+    icon: Mail,
+    title: 'E-posta',
+    value: email,
+    link: `mailto:${email}`
+  },
+  {
+    icon: MapPin,
+    title: 'Adres',
+    value: 'Ataşehir, İstanbul',
+    link: null
+  }
+];
 
 export default function ContactPage() {
-  const whatsappNumber = '905398563578';
-  const email = 'satis@gokkusagiyazilim.com.tr';
-  const address = 'İçerenköy Mah. Eryılmazlar Sokak No:2 Kemal Bey İş Merkezi Kat:4 Daire:18 Ataşehir/İstanbul';
-
-  const contactMethods = [
-    {
-      icon: Phone,
-      title: 'Telefon',
-      value: whatsappNumber,
-      link: `tel:+90${whatsappNumber}`
-    },
-    {
-      icon: Mail,
-      title: 'E-posta',
-      value: email,
-      link: `mailto:${email}`
-    },
-    {
-      icon: MapPin,
-      title: 'Adres',
-      value: 'Ataşehir, İstanbul',
-      link: null
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-white text-black">
       <Navbar />
-      
+
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-6xl md:text-7xl font-bold leading-tight mb-6"
-          >
+      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="w-24 h-24 mx-auto bg-slate-900 rounded-2xl flex items-center justify-center mb-8">
+            <Mail className="w-12 h-12 text-white" />
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-slate-900">
             İletişim
-            <br />
-            <span className="text-gray-600">Gökkuşağı Yazılım</span>
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-500 mb-12 max-w-3xl mx-auto leading-relaxed"
-          >
+          </h1>
+          <p className="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
             Projelerinizi konuşalım, birlikte başaralım
-          </motion.p>
+          </p>
         </div>
       </section>
 
       {/* Contact Info Section */}
-      <section className="py-32 bg-gradient-to-b from-blue-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">İletişim Bilgileri</h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">İletişim Bilgileri</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Size nasıl yardımcı olabiliriz?
             </p>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-3 gap-12">
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
             {contactMethods.map((method, index) => (
-              <motion.div
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                className="text-center p-8 rounded-2xl bg-white/60 backdrop-blur-sm border border-blue-100 hover:bg-white/80 hover:shadow-lg"
+                className="text-center p-6 rounded-xl bg-white border border-slate-200 hover:border-slate-300 transition-all"
               >
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <method.icon className="w-8 h-8 text-blue-600" />
+                <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                  <method.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-3">{method.title}</h3>
+                <h3 className="text-lg font-bold mb-2 text-slate-900">{method.title}</h3>
                 {method.link ? (
                   <a
                     href={method.link}
-                    className="text-gray-600 hover:text-blue-600 transition-colors"
+                    className="text-slate-600 hover:text-slate-900 transition-colors text-sm"
                   >
                     {method.value}
                   </a>
                 ) : (
-                  <p className="text-gray-600">{method.value}</p>
+                  <p className="text-slate-600 text-sm">{method.value}</p>
                 )}
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      
+      {/* Contact Form Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Mesaj Gönderin</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              Size en kısa sürede dönüş yapacağız
+            </p>
+          </div>
+
+          <ContactForm />
+        </div>
+      </section>
+
+
       {/* Map Section */}
-      <section className="py-32 bg-gradient-to-b from-purple-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Konum</h2>
-            <p className="text-xl text-gray-500 max-w-2xl mx-auto leading-relaxed">
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Konum</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
               Bizi ziyaret edin
             </p>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 border border-blue-100 overflow-hidden shadow-lg"
-          >
+          </div>
+
+          <div className="bg-white rounded-xl p-6 border border-slate-200 overflow-hidden shadow-md">
             <iframe
               src="https://maps.google.com/maps?q=Eryilmazlar+Sokak+No:2+Icerenkoy+Atasehir+Istanbul&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="400"
-              className="rounded-2xl"
+              className="rounded-lg"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
             ></iframe>
-          </motion.div>
+          </div>
         </div>
       </section>
 

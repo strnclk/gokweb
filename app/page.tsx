@@ -3,13 +3,13 @@ import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 import dynamic from 'next/dynamic';
 
-const ProductShowcase = dynamic(() => import('@/components/ProductShowcase'), { 
+const ImageCarousel = dynamic(() => import('@/components/ImageCarousel'), {
+  loading: () => <div className="h-[600px] animate-pulse bg-gray-100" />
+});
+const AboutSection = dynamic(() => import('@/components/AboutSection'), {
   loading: () => <div className="h-64 animate-pulse bg-gray-100" />
 });
 const IndustryScenariosSection = dynamic(() => import('@/components/IndustryScenariosSection'), {
-  loading: () => <div className="h-64 animate-pulse bg-gray-100" />
-});
-const ETransformationSection = dynamic(() => import('@/components/ETransformationSection'), {
   loading: () => <div className="h-64 animate-pulse bg-gray-100" />
 });
 const TrustSection = dynamic(() => import('@/components/TrustSection'), {
@@ -33,16 +33,18 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="bg-white">
-      <Navbar />
-      <HeroSection />
-      <ProductShowcase />
-      <IndustryScenariosSection />
-      <ETransformationSection />
-      <TrustSection />
-      <CTASection />
-      <SEOSection />
-      <Footer />
+    <div className="relative" style={{ backgroundImage: 'url(/rainbow-removebg.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', minHeight: '100vh' }}>
+      <div className="relative z-10 bg-white/90">
+        <Navbar />
+        <HeroSection />
+        <ImageCarousel />
+        <AboutSection />
+        <IndustryScenariosSection />
+        <TrustSection />
+        <CTASection />
+        <SEOSection />
+        <Footer />
+      </div>
     </div>
   );
 }

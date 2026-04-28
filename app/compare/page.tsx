@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -8,57 +9,63 @@ import { motion } from 'motion/react';
 import { Check, Star, Users, Zap, Shield, Database, Globe, Clock, DollarSign, Building2, TrendingUp, Package, Settings, HelpCircle, ChevronRight, Lightbulb, Cpu, Target, Award, Trophy } from 'lucide-react';
 
 export default function ComparePage() {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(0);
   const [userAnswers, setUserAnswers] = useState<Record<string, string>>({});
   const [recommendations, setRecommendations] = useState<any[]>([]);
   const [showResults, setShowResults] = useState(false);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   const stats = [
     { value: '3', label: 'Akıllı Soru', icon: Target },
-    { value: '5+', label: 'Ürün/Hizmet', icon: Package },
-    { value: '95%', label: 'Doğruluk Oranı', icon: Award },
-    { value: '100%', label: 'Ücretsiz', icon: Trophy }
+    { value: '5+', label: 'Çözüm Seçeneği', icon: Package },
+    { value: '95%', label: 'Doğruluk Oranı', icon: Award }
   ];
 
   const products = [
     {
-      id: 'mikro-v14',
-      name: 'Mikro V14',
-      category: 'ERP',
-      price: 'İletişime Geçin',
-      rating: 4.8,
-      description: 'Kapsamlı ERP çözümü için gelişmiş özellikler',
-      features: ['Finansal Yönetim', 'Stok Takibi', 'CRM', 'Raporlama', 'E-Fatura'],
-      pros: ['Gelişmiş özellikler', 'Kapsamlı raporlama', 'Esnek yapı'],
-      cons: ['Yüksek fiyat', 'Karmaşık kurulum'],
-      icon: Database,
-      color: 'bg-blue-500'
+      id: 'mikro-run',
+      name: 'Mikro Run',
+      category: 'Performans ERP',
+      rating: 4.7,
+      description: 'Büyüyen işletmeler için gelişmiş muhasebe ve yönetim çözümü',
+      features: ['Finansal Yönetim', 'Stok Takibi', 'Raporlama', 'Banka Entegrasyonu', 'Çoklu Kullanıcı'],
+      pros: ['Gelişmiş özellikler', 'Performans analizi', 'Çoklu kullanıcı'],
+      cons: ['Orta seviye kurulum'],
+      icon: Cpu
     },
     {
       id: 'mikro-jump',
       name: 'Mikro Jump',
-      category: 'Starter ERP',
-      price: '₺9.990/ay',
+      category: 'Başlangıç ERP',
       rating: 4.5,
       description: 'KOBİler için ideal başlangıç ERP çözümü',
       features: ['Finansal Yönetim', 'Stok Takibi', 'Fatura Yönetimi', 'Raporlama'],
-      pros: ['Uygun fiyat', 'Kolay kullanım', 'Hızlı kurulum'],
-      cons: ['Sınırlı özellikler', 'Küçük işletmeler için'],
-      icon: Zap,
-      color: 'bg-green-500'
+      pros: ['Kolay kullanım', 'Hızlı kurulum'],
+      cons: ['Sınırlı özellikler'],
+      icon: Zap
     },
     {
       id: 'mikro-fly',
       name: 'Mikro Fly',
-      category: 'E-Ticaret',
-      price: '₺14.990/ay',
+      category: 'E-Ticaret ERP',
       rating: 4.6,
       description: 'E-ticaret entegrasyonu için özel çözüm',
       features: ['Pazar Yeri Entegrasyonu', 'Otomatik Sipariş', 'Stok Senkronizasyonu'],
-      pros: ['Pazar yenti entegrasyonu', 'Otomasyon', 'Kolay kullanım'],
-      cons: ['Sadece e-ticaret', 'Bağımlılık'],
-      icon: Globe,
-      color: 'bg-purple-500'
+      pros: ['Pazar yeri entegrasyonu', 'Otomasyon'],
+      cons: ['Sadece e-ticaret'],
+      icon: Globe
+    },
+    {
+      id: 'mikro-v14',
+      name: 'Mikro V14',
+      category: 'Kurumsal ERP',
+      rating: 4.8,
+      description: 'Kapsamlı ERP çözümü için gelişmiş özellikler',
+      features: ['Finansal Yönetim', 'Stok Takibi', 'CRM', 'Raporlama', 'E-Fatura'],
+      pros: ['Gelişmiş özellikler', 'Kapsamlı raporlama', 'Esnek yapı'],
+      cons: ['Karmaşık kurulum'],
+      icon: Database
     }
   ];
 
@@ -67,27 +74,23 @@ export default function ComparePage() {
       id: 'erp-entegrasyon',
       name: 'ERP Entegrasyon Hizmeti',
       category: 'Profesyonel Hizmet',
-      price: 'Proje Bazlı',
       rating: 4.7,
       description: 'Mevcut sistemlerinize ERP entegrasyonu',
       features: ['Sistem Analizi', 'Özelleştirme', 'Veri Migration', 'Eğitim', 'Destek'],
       pros: ['Tam entegrasyon', 'Özelleştirme', 'Uzman destek'],
-      cons: ['Yüksek maliyet', 'Zaman alıcı'],
-      icon: Users,
-      color: 'bg-indigo-500'
+      cons: ['Zaman alıcı'],
+      icon: Users
     },
     {
       id: 'eflow-entegrasyon',
       name: 'E-Flow Entegrasyonu',
       category: 'E-Dönüşüm',
-      price: '₺2.990/ay',
       rating: 4.4,
       description: 'E-fatura, e-defter, e-arşiv çözümleri',
       features: ['E-Fatura', 'E-Defter', 'E-Arşiv', 'GIB Entegrasyonu'],
-      pros: ['Yasal uyum', 'Otomasyon', 'Kolay kullanım'],
-      cons: ['Sadece e-dönüşüm', 'Bağımlılık'],
-      icon: Shield,
-      color: 'bg-red-500'
+      pros: ['Yasal uyum', 'Otomasyon'],
+      cons: ['Sadece e-dönüşüm'],
+      icon: Shield
     }
   ];
 
@@ -128,57 +131,70 @@ export default function ComparePage() {
 
   const generateRecommendations = () => {
     console.log('Generating recommendations...');
-    const scores: Record<string, number> = {};
+    setIsAnalyzing(true);
     
-    [...products, ...services].forEach(item => {
-      scores[item.id] = 0;
-    });
-
-    const companySize = userAnswers.company_size;
-    if (companySize === '1-10') {
-      scores['mikro-jump'] += 30;
-    } else if (companySize === '11-50') {
-      scores['mikro-jump'] += 30;
-      scores['mikro-fly'] += 25;
-    } else if (companySize === '51-200') {
-      scores['mikro-v14'] += 30;
-      scores['erp-entegrasyon'] += 25;
-    } else if (companySize === '200+') {
-      scores['mikro-v14'] += 35;
-      scores['erp-entegrasyon'] += 30;
-    }
-
-    const industry = userAnswers.industry;
-    if (industry === 'ecommerce') {
-      scores['mikro-fly'] += 40;
-    } else if (industry === 'retail') {
-      scores['mikro-jump'] += 30;
-    } else if (industry === 'manufacturing') {
-      scores['mikro-v14'] += 35;
-    }
-
-    const mainNeed = userAnswers.main_need;
-    if (mainNeed === 'finance') {
-      scores['mikro-v14'] += 30;
-    } else if (mainNeed === 'inventory') {
-      scores['mikro-jump'] += 30;
-    } else if (mainNeed === 'ecommerce_integration') {
-      scores['mikro-fly'] += 45;
-    } else if (mainNeed === 'legal_compliance') {
-      scores['eflow-entegrasyon'] += 40;
-    }
-
-    const sortedItems = Object.entries(scores)
-      .sort(([,a], [,b]) => b - a)
-      .slice(0, 3)
-      .map(([id, score]) => {
-        const item = [...products, ...services].find(p => p.id === id);
-        return { ...item, score, matchPercentage: Math.round((score / 100) * 100) };
+    // Simulate analysis time
+    setTimeout(() => {
+      const scores: Record<string, number> = {};
+      
+      [...products, ...services].forEach(item => {
+        scores[item.id] = 0;
       });
 
-    console.log('Recommendations generated:', sortedItems);
-    setRecommendations(sortedItems);
-    setShowResults(true);
+      const companySize = userAnswers.company_size;
+      if (companySize === '1-10') {
+        scores['mikro-jump'] += 30;
+      } else if (companySize === '11-50') {
+        scores['mikro-run'] += 25;
+        scores['mikro-jump'] += 30;
+        scores['mikro-fly'] += 25;
+      } else if (companySize === '51-200') {
+        scores['mikro-run'] += 30;
+        scores['mikro-v14'] += 30;
+        scores['erp-entegrasyon'] += 25;
+      } else if (companySize === '200+') {
+        scores['mikro-run'] += 25;
+        scores['mikro-v14'] += 35;
+        scores['erp-entegrasyon'] += 30;
+      }
+
+      const industry = userAnswers.industry;
+      if (industry === 'ecommerce') {
+        scores['mikro-fly'] += 40;
+      } else if (industry === 'retail') {
+        scores['mikro-run'] += 25;
+        scores['mikro-jump'] += 30;
+      } else if (industry === 'manufacturing') {
+        scores['mikro-run'] += 30;
+        scores['mikro-v14'] += 35;
+      }
+
+      const mainNeed = userAnswers.main_need;
+      if (mainNeed === 'finance') {
+        scores['mikro-run'] += 25;
+        scores['mikro-v14'] += 30;
+      } else if (mainNeed === 'inventory') {
+        scores['mikro-run'] += 25;
+        scores['mikro-jump'] += 30;
+      } else if (mainNeed === 'ecommerce_integration') {
+        scores['mikro-fly'] += 45;
+      } else if (mainNeed === 'legal_compliance') {
+        scores['eflow-entegrasyon'] += 40;
+      }
+
+      const sortedItems = Object.entries(scores)
+        .sort(([,a], [,b]) => b - a)
+        .slice(0, 3)
+        .map(([id, score]) => {
+          const item = [...products, ...services].find(p => p.id === id);
+          return { ...item, score, matchPercentage: Math.round((score / 100) * 100) };
+        });
+
+      console.log('Recommendations generated:', sortedItems);
+      setRecommendations(sortedItems);
+      setIsAnalyzing(false);
+      setShowResults(true);
+    }, 2000);
   };
 
   const handleAnswer = (questionId: string, answer: string) => {
@@ -220,31 +236,37 @@ export default function ComparePage() {
             transition={{ duration: 0.8 }}
             className="text-6xl md:text-7xl font-bold leading-tight mb-6 text-gray-900"
           >
-            Akıllı Çözüm
+            İşletmeniz İçin
             <br />
-            <span className="text-gray-600">Öneri Sistemi</span>
+            <span className="text-gray-600">Doğru Çözümü Bulun</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8}}
-            className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-xl md:text-2xl text-gray-600 mb-16 max-w-3xl mx-auto leading-relaxed"
           >
-            İşletmenizin ihtiyaçlarını analiz ederek size en uygun teknoloji ve paket önerilerini sunuyoruz.
+            İşletmenizin ihtiyaçlarını analiz ederek size en uygun ERP ve e-dönüşüm çözümlerini öneriyoruz.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8}}
-            className="flex flex-wrap justify-center gap-12"
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="flex flex-wrap justify-center gap-16"
           >
             {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-5xl md:text-6xl font-bold text-blue-600 mb-2">{stat.value}</div>
-                <div className="text-gray-600 text-sm">{stat.label}</div>
-              </div>
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-5xl md:text-6xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                <div className="text-gray-500 text-sm">{stat.label}</div>
+              </motion.div>
             ))}
           </motion.div>
         </div>
@@ -259,13 +281,13 @@ export default function ComparePage() {
                   <span className="text-sm font-medium text-gray-600">
                     Soru {currentStep + 1} / {questionnaire.length}
                   </span>
-                  <span className="text-sm font-medium text-blue-600">
+                  <span className="text-sm font-medium text-gray-900">
                     {Math.round(((currentStep + 1) / questionnaire.length) * 100)}% Tamamlandı
                   </span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
                   <div 
-                    className="bg-blue-600 h-2 rounded-full transition-all"
+                    className="bg-gray-900 h-2 rounded-full transition-all"
                     style={{ width: `${((currentStep + 1) / questionnaire.length) * 100}%` }}
                   />
                 </div>
@@ -291,23 +313,23 @@ export default function ComparePage() {
                         }}
                         className={`relative p-4 rounded-lg border-2 cursor-pointer transition-all text-left ${
                           isSelected 
-                            ? 'border-blue-500 bg-blue-50' 
+                            ? 'border-gray-900 bg-gray-50' 
                             : 'border-gray-200 hover:border-gray-300 bg-white'
                         }`}
                       >
                         {isSelected && (
-                          <div className="absolute top-2 right-2 bg-blue-500 text-white rounded-full p-1">
+                          <div className="absolute top-2 right-2 bg-gray-900 text-white rounded-full p-1">
                             <Check className="w-3 h-3" />
                           </div>
                         )}
                         
                         <div className="flex items-center">
                           <div className={`w-10 h-10 rounded-lg flex items-center justify-center mr-3 ${
-                            isSelected ? 'bg-blue-500' : 'bg-gray-100'
+                            isSelected ? 'bg-gray-900' : 'bg-gray-100'
                           }`}>
                             <Icon className={`w-5 h-5 ${isSelected ? 'text-white' : 'text-gray-600'}`} />
                           </div>
-                          <span className={`font-medium ${isSelected ? 'text-blue-600' : 'text-gray-900'}`}>
+                          <span className={`font-medium ${isSelected ? 'text-gray-900' : 'text-gray-900'}`}>
                             {option.label}
                           </span>
                         </div>
@@ -330,13 +352,51 @@ export default function ComparePage() {
                 <button
                   onClick={nextStep}
                   disabled={!userAnswers[questionnaire[currentStep].id]}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="px-6 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  {currentStep === questionnaire.length - 1 ? 'Önerileri Getir' : 'Sonraki'}
+                  {currentStep === questionnaire.length - 1 ? 'Önerileri Gör' : 'Sonraki'}
                   <ChevronRight className="w-4 h-4 ml-2 inline" />
                 </button>
               </div>
             </div>
+          </div>
+        </section>
+      )}
+
+      {isAnalyzing && (
+        <section className="py-20 px-4">
+          <div className="max-w-2xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="mb-8"
+            >
+              <div className="w-20 h-20 mx-auto mb-6 relative">
+                <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                  className="w-full h-full border-4 border-gray-200 border-t-gray-900 rounded-full"
+                />
+              </div>
+            </motion.div>
+            
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-2xl font-bold text-gray-900 mb-4"
+            >
+              İhtiyaçlarınız Analiz Ediliyor
+            </motion.h2>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              className="text-gray-600"
+            >
+              En uygun çözümleri belirlemek için verilerinizi inceliyoruz...
+            </motion.p>
           </div>
         </section>
       )}
@@ -358,20 +418,36 @@ export default function ComparePage() {
                 const Icon = item.icon;
                 
                 return (
-                  <div key={item.id} className={`bg-white rounded-xl shadow-lg p-6 border-2 ${
-                    index === 0 ? 'border-blue-500' : 'border-gray-200'
-                  }`}>
+                  <motion.div
+                    key={item.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                    className={`bg-white rounded-lg shadow-sm p-6 border-2 relative ${
+                      index === 0 ? 'border-gray-900 shadow-lg scale-105 z-10' : 'border-gray-200'
+                    }`}
+                  >
                     {index === 0 && (
-                      <div className="text-center mb-4">
-                        <span className="bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                          En Uygun
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: 0.3 + index * 0.15 }}
+                        className="text-center mb-4"
+                      >
+                        <span className="bg-gray-900 text-white px-3 py-1 rounded-full text-xs font-medium">
+                          EN UYGUN
                         </span>
-                      </div>
+                      </motion.div>
                     )}
                     
-                    <div className={`${item.color} w-12 h-12 rounded-lg flex items-center justify-center mb-4 mx-auto`}>
-                      <Icon className="w-6 h-6 text-white" />
-                    </div>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.2 + index * 0.15 }}
+                      className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 mx-auto bg-gray-100`}
+                    >
+                      <Icon className="w-6 h-6 text-gray-900" />
+                    </motion.div>
                     
                     <h3 className="text-xl font-bold text-gray-900 mb-2">{item.name}</h3>
                     <p className="text-sm text-gray-500 mb-3">{item.category}</p>
@@ -379,21 +455,22 @@ export default function ComparePage() {
                     
                     <div className="flex items-center justify-between mb-4">
                       <div className="flex items-center">
-                        <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                        <span className="ml-1 text-sm font-medium">{item.rating}</span>
+                        <Star className="w-4 h-4 text-gray-400 fill-current" />
+                        <span className="ml-1 text-sm font-medium text-gray-600">{item.rating}</span>
                       </div>
-                      <span className="text-lg font-bold text-blue-600">{item.price}</span>
                     </div>
 
                     <div className="mb-4">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-sm font-medium text-gray-700">Eşleşme Oranı</span>
-                        <span className="text-sm font-bold text-green-600">{item.matchPercentage}%</span>
+                        <span className="text-sm font-bold text-gray-900">{item.matchPercentage}%</span>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2">
-                        <div 
-                          className="bg-green-500 h-2 rounded-full"
-                          style={{ width: `${item.matchPercentage}%` }}
+                        <motion.div 
+                          initial={{ width: 0 }}
+                          animate={{ width: `${item.matchPercentage}%` }}
+                          transition={{ duration: 0.8, delay: 0.5 + index * 0.15 }}
+                          className="bg-gray-900 h-2 rounded-full"
                         />
                       </div>
                     </div>
@@ -401,17 +478,36 @@ export default function ComparePage() {
                     <div className="space-y-2 mb-6">
                       <div className="text-sm font-medium text-gray-700 mb-2">Neden uygun?</div>
                       {item.pros.slice(0, 2).map((pro: string, i: number) => (
-                        <div key={i} className="flex items-center text-sm text-green-600">
-                          <Check className="w-3 h-3 mr-2 flex-shrink-0" />
+                        <motion.div
+                          key={i}
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          transition={{ delay: 0.6 + index * 0.15 + i * 0.1 }}
+                          className="flex items-center text-sm text-gray-600"
+                        >
+                          <Check className="w-3 h-3 mr-2 flex-shrink-0 text-gray-900" />
                           {pro}
-                        </div>
+                        </motion.div>
                       ))}
                     </div>
 
-                    <button className="w-full px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                    <motion.button 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.8 + index * 0.15 }}
+                      onClick={() => {
+                        if (item.id === 'mikro-run') router.push('/mikro-run');
+                        else if (item.id === 'mikro-jump') router.push('/mikro-jump');
+                        else if (item.id === 'mikro-fly') router.push('/mikro-fly');
+                        else if (item.id === 'mikro-v14') router.push('/mikro-run');
+                        else if (item.id === 'erp-entegrasyon') router.push('/services');
+                        else if (item.id === 'eflow-entegrasyon') router.push('/eflow-detail');
+                      }}
+                      className="w-full px-4 py-2 bg-gray-900 text-white rounded-md hover:bg-gray-800"
+                    >
                       Detaylı İncele
-                    </button>
-                  </div>
+                    </motion.button>
+                  </motion.div>
                 );
               })}
             </div>
@@ -428,19 +524,106 @@ export default function ComparePage() {
         </section>
       )}
 
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-purple-600">
+      {/* Comparison Table Section */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              Mikro Ürün Karşılaştırması
+            </h2>
+            <p className="text-lg text-gray-600">
+              İşletmenizin ihtiyaçlarına en uygun Mikro çözümünü karşılaştırın
+            </p>
+          </div>
+
+          <div className="bg-white rounded-lg shadow-sm overflow-hidden">
+            <table className="w-full">
+              <thead>
+                <tr className="bg-gray-900 text-white">
+                  <th className="px-6 py-4 text-left font-medium">Özellik</th>
+                  <th className="px-6 py-4 text-center font-medium">Mikro Run</th>
+                  <th className="px-6 py-4 text-center font-medium">Mikro Jump</th>
+                  <th className="px-6 py-4 text-center font-medium">Mikro Fly</th>
+                  <th className="px-6 py-4 text-center font-medium">Mikro V14</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-200">
+                  <td className="px-6 py-4 text-gray-700 font-medium">Hedef Kitle</td>
+                  <td className="px-6 py-4 text-center text-gray-600">Büyüyen İşletmeler</td>
+                  <td className="px-6 py-4 text-center text-gray-600">KOBİler</td>
+                  <td className="px-6 py-4 text-center text-gray-600">E-Ticaret</td>
+                  <td className="px-6 py-4 text-center text-gray-600">Büyük İşletmeler</td>
+                </tr>
+                <tr className="border-b border-gray-200 bg-gray-50">
+                  <td className="px-6 py-4 text-gray-700 font-medium">Finansal Yönetim</td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                </tr>
+                <tr className="border-b border-gray-200">
+                  <td className="px-6 py-4 text-gray-700 font-medium">Stok Takibi</td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                </tr>
+                <tr className="border-b border-gray-200 bg-gray-50">
+                  <td className="px-6 py-4 text-gray-700 font-medium">CRM</td>
+                  <td className="px-6 py-4 text-center"><span className="text-gray-400">-</span></td>
+                  <td className="px-6 py-4 text-center"><span className="text-gray-400">-</span></td>
+                  <td className="px-6 py-4 text-center"><span className="text-gray-400">-</span></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                </tr>
+                <tr className="border-b border-gray-200">
+                  <td className="px-6 py-4 text-gray-700 font-medium">E-Fatura</td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                </tr>
+                <tr className="border-b border-gray-200 bg-gray-50">
+                  <td className="px-6 py-4 text-gray-700 font-medium">Pazar Yeri Entegrasyonu</td>
+                  <td className="px-6 py-4 text-center"><span className="text-gray-400">-</span></td>
+                  <td className="px-6 py-4 text-center"><span className="text-gray-400">-</span></td>
+                  <td className="px-6 py-4 text-center"><Check className="w-5 h-5 mx-auto text-gray-900" /></td>
+                  <td className="px-6 py-4 text-center"><span className="text-gray-400">-</span></td>
+                </tr>
+                <tr className="border-b border-gray-200">
+                  <td className="px-6 py-4 text-gray-700 font-medium">Raporlama</td>
+                  <td className="px-6 py-4 text-center">Performans</td>
+                  <td className="px-6 py-4 text-center">Temel</td>
+                  <td className="px-6 py-4 text-center">E-Ticaret Odaklı</td>
+                  <td className="px-6 py-4 text-center">Gelişmiş</td>
+                </tr>
+                <tr className="bg-gray-50">
+                  <td className="px-6 py-4 text-gray-700 font-medium">Kurulum Zorluğu</td>
+                  <td className="px-6 py-4 text-center text-gray-600">Orta</td>
+                  <td className="px-6 py-4 text-center text-gray-600">Düşük</td>
+                  <td className="px-6 py-4 text-center text-gray-600">Orta</td>
+                  <td className="px-6 py-4 text-center text-gray-600">Yüksek</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-gray-900">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
             Karar Vermekte Zorlanıyor musunuz?
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-gray-300 mb-8">
             Uzmanlarımız size en uygun çözümü seçmenizde yardımcı olabilir.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-6 py-3 bg-white text-blue-600 rounded-md hover:bg-gray-100 font-medium">
+            <button className="px-6 py-3 bg-white text-gray-900 rounded-md hover:bg-gray-100 font-medium">
               Ücretsiz Danışmanlık
             </button>
-            <button className="px-6 py-3 bg-white/10 border border-white/20 text-white rounded-md hover:bg-white/20 font-medium">
+            <button className="px-6 py-3 bg-gray-800 border border-gray-700 text-white rounded-md hover:bg-gray-700 font-medium">
               Detaylı Analiz
             </button>
           </div>

@@ -96,6 +96,22 @@ export default function RootLayout({
       </head>
 
       <body className="min-h-screen font-poppins antialiased">
+        {/* Google Ads Global Site Tag */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-1036040582"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'AW-1036040582');
+          `}
+        </Script>
+
         {/* ✅ JSON-LD doğru yerde */}
         <Script
           id="json-ld"

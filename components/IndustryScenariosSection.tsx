@@ -9,42 +9,42 @@ const industries = [
     icon: Building,
     title: 'İnşaat',
     description: 'Proje yönetimi ve maliyet kontrolü',
-    color: 'from-blue-500 to-cyan-500',
+    color: 'from-gray-700 to-gray-800',
     features: ['Proje Takip', 'Maliyet Analizi', 'Raporlama']
   },
   {
     icon: Factory,
     title: 'Üretim',
     description: 'Üretim planlaması ve stok yönetimi',
-    color: 'from-purple-500 to-pink-500',
+    color: 'from-gray-700 to-gray-800',
     features: ['Üretim Planlama', 'Kalite Kontrol', 'Stok Yönetimi']
   },
   {
     icon: ShoppingBag,
     title: 'Perakende',
     description: 'Satış ve envanter yönetimi',
-    color: 'from-green-500 to-teal-500',
+    color: 'from-gray-700 to-gray-800',
     features: ['POS Entegrasyonu', 'Envanter', 'Müşteri Yönetimi']
   },
   {
     icon: Truck,
     title: 'Lojistik',
     description: 'Nakliye ve dağıtım yönetimi',
-    color: 'from-orange-500 to-red-500',
+    color: 'from-gray-700 to-gray-800',
     features: ['Filo Yönetimi', 'Rota Optimizasyonu', 'Takip Sistemi']
   },
   {
     icon: Users,
     title: 'Hizmet',
     description: 'Müşteri hizmetleri ve destek yönetimi',
-    color: 'from-indigo-500 to-purple-500',
+    color: 'from-gray-700 to-gray-800',
     features: ['CRM', 'Destek Sistemi', 'Performans Analizi']
   },
   {
     icon: TrendingUp,
     title: 'Finans',
     description: 'Muhasebe ve finansal yönetim',
-    color: 'from-yellow-500 to-orange-500',
+    color: 'from-gray-700 to-gray-800',
     features: ['Muhasebe', 'Bütçeleme', 'Raporlama']
   }
 ];
@@ -73,7 +73,7 @@ export default function IndustryScenariosSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onMouseEnter={() => setHoveredIndustry(index)}
               onMouseLeave={() => setHoveredIndustry(null)}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-100"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl  cursor-pointer border border-gray-100"
             >
               <div className={`w-16 h-16 bg-gradient-to-br ${industry.color} rounded-2xl flex items-center justify-center mb-6`}>
                 <industry.icon className="w-8 h-8 text-white" />
@@ -95,25 +95,8 @@ export default function IndustryScenariosSection() {
                   </div>
                 ))}
               </div>
-
-              <motion.button
-                className="mt-6 flex items-center gap-2 text-blue-600 font-semibold hover:gap-3 transition-all"
-                whileHover={{ x: 5 }}
-              >
-                Detayları Gör <ArrowRight className="w-4 h-4" />
-              </motion.button>
             </motion.div>
           ))}
-        </div>
-
-        <div className="mt-16 text-center">
-          <motion.button
-            className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Tüm Sektörleri Görün
-          </motion.button>
         </div>
       </div>
     </section>

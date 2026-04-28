@@ -157,104 +157,63 @@ export default function EflowBpmPage() {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       <Navbar />
       
-      {/* Hero Section - E-Flow BPM Specific */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-orange-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-          <div className="absolute top-40 right-10 w-72 h-72 bg-red-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-          <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-        </div>
-        
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-2 gap-20 items-center">
-            <motion.div 
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="flex items-center justify-center"
-            >
-              <div className="w-[350px] h-[350px] rounded-3xl overflow-hidden flex items-center justify-center bg-white/20 backdrop-blur-md border-2 border-white/30 p-6 shadow-2xl">
-                <div className="w-full h-full flex items-center justify-center">
-                  <div className="relative">
-                    <Workflow size={100} className="text-white" />
-                    <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
-                      <Zap size={16} className="text-orange-600" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-            
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-gray-900"
-            >
-              <div className="mb-4">
-                <span className="inline-block px-4 py-2 bg-orange-100 backdrop-blur-md rounded-full text-sm font-semibold text-orange-600 mb-4">
-                  E-Flow Platform
-                </span>
-              </div>
-              <h1 className="text-6xl md:text-8xl font-extrabold mb-6 leading-tight">
-                E-Flow
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">BPM</span>
-              </h1>
-              <p className="text-2xl md:text-3xl text-gray-700 font-semibold mb-6">İş Süçleri Yönetim Platformu</p>
-              <p className="text-lg text-gray-600 mb-10 leading-relaxed">İş süreçlerinizi akıllı otomasyonla dönüştürün. Verimliliği maksimize edin, maliyetleri minimize edin.</p>
-              
-              {/* Stats */}
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-                {stats.map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: index * 0.1 }}
-                    className="text-center"
-                  >
-                    <div className="text-3xl md:text-4xl font-bold text-orange-600 mb-1">{stat.value}</div>
-                    <div className="text-sm text-gray-600">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                onClick={scrollToContact}
-                className="inline-block px-12 py-5 bg-gradient-to-r from-yellow-400 to-orange-600 text-white font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-2"
-              >
-                Süreç Analizi Başlat
-              </motion.button>
-            </motion.div>
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <div className="mb-10">
+            <div className="w-32 h-32 mx-auto bg-slate-900 rounded-2xl flex items-center justify-center">
+              <Workflow size={64} className="text-white" />
+            </div>
           </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-slate-900"
+          >
+            E-Flow
+            <br />
+            <span className="text-slate-600">BPM</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg md:text-xl text-slate-500 mb-10 max-w-4xl mx-auto leading-relaxed"
+          >
+            İş Süreçleri Yönetim Platformu - İş süreçlerinizi akıllı otomasyonla dönüştürün
+          </motion.p>
+
+          <motion.button
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            onClick={scrollToContact}
+            className="inline-flex items-center gap-2 px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium"
+          >
+            Süreç Analizi Başlat
+            <ArrowRight className="w-5 h-5" />
+          </motion.button>
         </div>
       </section>
 
-      {/* Features Section - Enhanced */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Features Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
-                Akıllı BPM Özellikleri
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              İş süreçlerinizi dönüştürecek güçlü ve akıllı özellikler
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">BPM Özellikleri</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
+              İş süreçlerinizi yönetmek için geliştirilmiş güçlü özellikler
             </p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -262,17 +221,15 @@ export default function EflowBpmPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="group"
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300"
                 >
-                  <div className="bg-gradient-to-br from-gray-50 to-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
-                    <div className={`w-20 h-20 bg-gradient-to-br ${feature.color} rounded-2xl flex items-center justify-center mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon size={40} />
-                    </div>
-                    <h3 className="text-2xl font-bold mb-4 text-gray-900">{feature.title}</h3>
-                    <p className="text-gray-600 mb-4 leading-relaxed">{feature.description}</p>
-                    <p className="text-sm text-gray-500 italic">{feature.descriptionDetail}</p>
+                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mb-4">
+                    <Icon size={24} className="text-white" />
                   </div>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900">{feature.title}</h3>
+                  <p className="text-slate-600 text-sm mb-2">{feature.description}</p>
+                  <p className="text-slate-500 text-xs italic">{feature.descriptionDetail}</p>
                 </motion.div>
               );
             })}
@@ -280,26 +237,22 @@ export default function EflowBpmPage() {
         </div>
       </section>
 
-      {/* Modules Section - New */}
-      <section className="py-24 bg-gradient-to-br from-orange-50 to-red-50">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Modules Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
-                BPM Modülleri
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">BPM Modülleri</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
               İşletmenizin ihtiyacına özel modüler çözümler
             </p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {modules.map((module, index) => {
               const Icon = module.icon;
               return (
@@ -307,23 +260,21 @@ export default function EflowBpmPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="group"
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-slate-300"
                 >
-                  <div className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 border border-gray-100 h-full">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${module.color} rounded-2xl flex items-center justify-center mx-auto mb-6 text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                      <Icon size={32} />
-                    </div>
-                    <h3 className="text-xl font-bold mb-3 text-gray-900 text-center">{module.name}</h3>
-                    <p className="text-gray-600 mb-4 text-center text-sm">{module.description}</p>
-                    <div className="space-y-2">
-                      {module.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center text-xs text-gray-500">
-                          <CheckCircle size={12} className="mr-2 text-green-500" />
-                          {feature}
-                        </div>
-                      ))}
-                    </div>
+                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <Icon size={24} className="text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900 text-center">{module.name}</h3>
+                  <p className="text-slate-600 text-center text-sm mb-4">{module.description}</p>
+                  <div className="space-y-2">
+                    {module.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-center text-xs text-slate-600">
+                        <CheckCircle size={12} className="mr-2 text-slate-900" />
+                        {feature}
+                      </div>
+                    ))}
                   </div>
                 </motion.div>
               );
@@ -332,108 +283,67 @@ export default function EflowBpmPage() {
         </div>
       </section>
 
-      {/* Benefits Section - Enhanced */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      {/* Benefits Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-red-600">
-                BPM Avantajları
-              </span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">BPM Avantajları</h2>
+            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
               İşletmeniz için somut ve ölçülebilir faydalar
             </p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            {benefits.map((benefit, index) => {
-              const Icon = benefit.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.8, delay: index * 0.1 }}
-                  className="flex items-center gap-6 p-8 bg-gradient-to-br from-gray-50 to-white rounded-3xl shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-                >
-                  <div className={`w-20 h-20 bg-gradient-to-br ${benefit.color} rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg flex-shrink-0`}>
-                    {benefit.number}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2 text-gray-900">{benefit.title}</h3>
-                    <p className="text-gray-600">{benefit.description}</p>
-                  </div>
-                </motion.div>
-              );
-            })}
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {benefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="flex items-start gap-4 p-6 bg-white rounded-xl border border-slate-200 hover:border-slate-300"
+              >
+                <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
+                  {benefit.number}
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold mb-2 text-slate-900">{benefit.title}</h3>
+                  <p className="text-slate-600 text-sm">{benefit.description}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section - Enhanced */}
-      <section className="py-24 bg-gradient-to-br from-orange-600 via-red-600 to-pink-600 text-white">
-        <div className="max-w-7xl mx-auto px-6 text-center">
+      {/* CTA Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
+            className="bg-slate-900 p-8 rounded-xl text-center"
           >
-            <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              İş Süçlerinizi
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-orange-200">
-                Dönüştürün
-              </span>
-            </h2>
-            <p className="text-xl  mb-10 max-w-3xl mx-auto">
-              E-Flow BPM ile iş süreçlerinizi akıllı otomasyona dönüştürün ve rekabette öne geçin
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                onClick={scrollToContact}
-                className="inline-block px-12 py-5 bg-white text-orange-600 font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-2"
-              >
-                Ücretsiz Demo İsteyin
-              </motion.button>
-              <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="inline-block px-12 py-5 bg-white/20 backdrop-blur-md text-white font-bold text-xl rounded-full shadow-2xl hover:shadow-3xl hover:-translate-y-2 border-2 border-white/30"
-              >
-                Süreç Analizi
-              </motion.button>
-            </div>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">İş Süreçlerinizi Dönüştürün</h2>
+            <p className="text-base mb-6 text-slate-300">E-Flow BPM ile iş süreçlerinizi akıllı otomasyona dönüştürün</p>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              onClick={scrollToContact}
+              className="bg-white text-slate-900 py-3 px-8 rounded-lg font-medium hover:bg-slate-100"
+            >
+              Ücretsiz Demo İsteyin
+            </motion.button>
           </motion.div>
         </div>
       </section>
 
-      {/* Scroll to Top Button */}
-      {showScrollTop && (
-        <motion.button
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          onClick={scrollToTop}
-          className="fixed bottom-6 left-6 w-16 h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-full flex items-center justify-center text-white cursor-pointer shadow-2xl hover:shadow-3xl hover:-translate-y-1 overflow-hidden z-50"
-        >
-          <div className="absolute inset-0 bg-white/15 rounded-full overflow-hidden">
-            <div 
-              className="absolute top-0 left-0 bottom-0 bg-gradient-to-r from-yellow-400 via-orange-400 via-red-400 to-pink-400"
-              style={{ width: `${scrollProgress}%` }}
-            ></div>
-          </div>
-          <span className="relative z-10 text-2xl">↑</span>
-        </motion.button>
-      )}
+      
       
       <Footer />
     </div>

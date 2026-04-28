@@ -1,0 +1,139 @@
+'use client';
+
+import { motion } from 'motion/react';
+import { CheckCircle, TrendingUp, Target, Database, Globe, Shield, Star, Code, Users } from 'lucide-react';
+
+export default function AboutSection() {
+  return (
+    <>
+      {/* About Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+                Hakkımızda
+              </h2>
+              <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+                Gökkuşağı Yazılım olarak 19 yılı aşkın süredir işletmelerin dijital dönüşüm yolculuklarında yanınızdayız. Mikro ERP, e-dönüşüm çözümleri ve özel yazılım geliştirme alanlarında uzman ekibimizle müşterilerimize değer katıyoruz.
+              </p>
+              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                İstanbul merkezli ofisimizden Türkiye genelinde hizmet veriyor, yerel ve küresel standartlarda çözümler sunuyoruz. Müşteri memnuniyeti odaklı yaklaşımımızla iş süreçlerinizi optimize etmenize yardımcı oluyoruz.
+              </p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="text-center p-6 bg-gray-50 rounded-xl">
+                  <div className="text-4xl font-bold text-gray-900 mb-2">19+</div>
+                  <div className="text-gray-600">Yıl Deneyim</div>
+                </div>
+                <div className="text-center p-6 bg-gray-50 rounded-xl">
+                  <div className="text-4xl font-bold text-gray-900 mb-2">500+</div>
+                  <div className="text-gray-600">Tamamlanan Proje</div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-gray-900 rounded-2xl p-12 text-white">
+              <h3 className="text-2xl font-bold mb-6">Neden Gökkuşağı Yazılım?</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <span>Uzman teknik ekibimizle profesyonel destek</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <span>Özelleştirilebilir çözümler</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <span>7/24 kesintisiz teknik destek</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <span>Yenilikçi teknolojiler</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 flex-shrink-0 mt-1" />
+                  <span>Müşteri odaklı yaklaşım</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Vision Mission Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Vizyonumuz & Misyonumuz
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6">
+                <TrendingUp className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Vizyonumuz</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Türkiye'nin önde gelen yazılım çözümleri sağlayıcısı olarak, işletmelerin dijital dönüşümünde lider rol oynamak ve yenilikçi teknolojilerle sektör standartlarını belirlemek.
+              </p>
+            </div>
+            <div className="bg-white rounded-2xl p-8 shadow-lg">
+              <div className="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mb-6">
+                <Target className="w-8 h-8 text-purple-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Misyonumuz</h3>
+              <p className="text-gray-600 leading-relaxed">
+                Müşterilerimizin iş hedeflerine ulaşmaları için güvenilir, ölçeklenebilir ve kullanıcı dostu yazılım çözümleri sunarak sürdürülebilir büyüme sağlamak.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Works Section */}
+      <section className="py-20 bg-gray-900 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Başarı Hikayeleri
+            </h2>
+            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+              İş ortaklarımızla gerçekleştirdiğimiz dönüşüm projeleri
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:bg-gray-800 transition-all">
+              <div className="text-5xl font-bold text-gray-500 mb-4">01</div>
+              <h3 className="text-lg font-bold mb-3">Üretim ERP Entegrasyonu</h3>
+              <p className="text-gray-400 text-sm mb-4">Büyük ölçekli üretim firması için uçtan uca ERP dönüşümü. 6 ayda tamamlanan proje ile %40 verimlilik artışı.</p>
+              <div className="border-t border-gray-700 pt-4">
+                <div className="text-xs text-gray-500">SEKTÖR</div>
+                <div className="text-sm font-medium">Otomotiv Yan Sanayi</div>
+              </div>
+            </div>
+            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:bg-gray-800 transition-all">
+              <div className="text-5xl font-bold text-gray-500 mb-4">02</div>
+              <h3 className="text-lg font-bold mb-3">Pazaryeri Entegrasyonu</h3>
+              <p className="text-gray-400 text-sm mb-4">Perakende zinciri için 12 pazaryeri entegrasyonu. Otomatik sipariş yönetimi ile %25 satış artışı.</p>
+              <div className="border-t border-gray-700 pt-4">
+                <div className="text-xs text-gray-500">SEKTÖR</div>
+                <div className="text-sm font-medium">Perakende</div>
+              </div>
+            </div>
+            <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:bg-gray-800 transition-all">
+              <div className="text-5xl font-bold text-gray-500 mb-4">03</div>
+              <h3 className="text-lg font-bold mb-3">E-Dönüşüm Dönüşümü</h3>
+              <p className="text-gray-400 text-sm mb-4">Lojistik şirketi için GİB uyumlu e-fatura ve e-defter sistemi. Aylık %15 operasyonel maliyet tasarrufu.</p>
+              <div className="border-t border-gray-700 pt-4">
+                <div className="text-xs text-gray-500">SEKTÖR</div>
+                <div className="text-sm font-medium">Lojistik</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </>
+  );
+}

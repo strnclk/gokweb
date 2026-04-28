@@ -9,28 +9,28 @@ const eServices = [
     icon: FileText,
     title: 'E-Fatura',
     description: 'Elektronik fatura gönderme ve alma sistemi',
-    color: 'from-blue-500 to-cyan-500',
+    color: 'from-gray-700 to-gray-800',
     benefits: ['Kolay entegrasyon', 'Maliyet tasarrufu', 'Hızlı gönderim']
   },
   {
     icon: Receipt,
     title: 'E-Defter',
     description: 'Dijital defter tutma ve raporlama',
-    color: 'from-purple-500 to-pink-500',
+    color: 'from-gray-700 to-gray-800',
     benefits: ['Otomatik kayıt', 'Güvenli saklama', 'Anlık erişim']
   },
   {
     icon: Database,
     title: 'E-Arşiv',
     description: 'Belgelerin dijital arşivlenmesi',
-    color: 'from-green-500 to-teal-500',
+    color: 'from-gray-700 to-gray-800',
     benefits: ['Uzun süreli saklama', 'Hızlı erişim', 'Güvenli yedekleme']
   },
   {
     icon: Shield,
     title: 'E-İmza',
     description: 'Dijital imza ve doğrulama sistemi',
-    color: 'from-orange-500 to-red-500',
+    color: 'from-gray-700 to-gray-800',
     benefits: ['Hukuki geçerlilik', 'Güvenli doğrulama', 'Kolay kullanım']
   }
 ];
@@ -119,23 +119,23 @@ export default function ETransformationSection() {
         </div>
 
         {/* CTA */}
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-12 text-center text-white">
+        <div className="bg-gray-900 rounded-3xl p-12 text-center text-white">
           <h3 className="text-3xl font-bold mb-4">
             E-Dönüşümünüzü Başlatın
           </h3>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Size özel e-dönüşüm çözümleriyle dijital geleceğe adım atın
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <motion.button
-              className="px-8 py-4 bg-white text-blue-600 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 hover:scale-105"
+              className="px-8 py-4 bg-white text-gray-900 rounded-full font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-105"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               Ücretsiz Danışmanlık
             </motion.button>
             <motion.button
-              className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
+              className="px-8 py-4 border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
