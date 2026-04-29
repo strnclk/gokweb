@@ -1,6 +1,6 @@
 'use client';
 
-import { Landmark, Package, Receipt, BarChart, Users, Wallet, Globe, ShoppingCart, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target, Zap } from 'lucide-react';
+import { Landmark, Package, Receipt, BarChart, Users, Wallet, Globe, ShoppingCart, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target, Zap, Factory } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
@@ -48,40 +48,40 @@ export default function MikroFlyPage() {
 
   const features = [
     {
-      icon: Landmark,
-      title: 'Muhasebe',
-      description: 'Temel muhasebe işlemleri, defter kefi, mizan',
-      descriptionDetail: 'Finansal raporlama ve analiz'
-    },
-    {
       icon: Package,
-      title: 'Stok Takibi',
-      description: 'Stok yönetimi, depo takibi, barkod sistemi',
-      descriptionDetail: 'Otomatik stok bildirimleri'
+      title: 'Stok/Ürün Yönetimi',
+      description: 'Stok ve ürün takibi, depo yönetimi',
+      descriptionDetail: 'Barkod sistemi ile otomasyon'
     },
     {
       icon: Receipt,
-      title: 'Fatura',
-      description: 'Fatura kesme, e-fatura entegrasyonu',
-      descriptionDetail: 'E-defter uyumluluğu'
+      title: 'Hizmet ve Masraf Yönetimi',
+      description: 'Hizmet ve masraf kalemlerinin takibi',
+      descriptionDetail: 'Detaylı maliyet analizi'
+    },
+    {
+      icon: Users,
+      title: 'Satın Alma ve Tedarikçi',
+      description: 'Satın alma süreçleri, tedarikçi yönetimi',
+      descriptionDetail: 'Otomatik sipariş oluşturma'
+    },
+    {
+      icon: Landmark,
+      title: 'Genel Muhasebe ve Sabit Kıymet',
+      description: 'Ön muhasebe ve genel muhasebe işlemleri',
+      descriptionDetail: 'Sabit kıymet takibi ve amortisman'
     },
     {
       icon: BarChart,
-      title: 'Raporlama',
+      title: 'Karar Destek',
       description: 'Detaylı raporlar, analizler, grafikler',
       descriptionDetail: 'Özel dashboard tasarımı'
     },
     {
-      icon: Users,
-      title: 'Cari Hesap',
-      description: 'Müşteri ve tedarikçi takibi, borç alacak yönetimi',
-      descriptionDetail: 'Otomatik vade takibi'
-    },
-    {
-      icon: Wallet,
-      title: 'Kasa',
-      description: 'Kasa takibi, banka hesapları, para hareketleri',
-      descriptionDetail: 'Çoklu para birimi desteği'
+      icon: Factory,
+      title: 'Üretim Yönetimi',
+      description: 'İş emri yönetimi, MRP planlama',
+      descriptionDetail: 'Kalite kontrol ve izleme'
     }
   ];
 
@@ -168,7 +168,7 @@ export default function MikroFlyPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-500 mb-10 max-w-4xl mx-auto leading-relaxed"
           >
-            E-ticaret odaklı muhasebe çözümü - E-ticaret işletmeleri için tasarlanmış
+50+ çalışanlı büyük ve orta ölçekli işletmeler için kapsamlı ERP çözümü
           </motion.p>
 
           <motion.button
@@ -265,6 +265,51 @@ export default function MikroFlyPage() {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Product Showcase Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+                Mikro FLY'ı <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">Yakından Tanıyın</span>
+              </h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                50+ çalışanlı büyük ve orta ölçekli işletmeler için kapsamlı ERP çözümü. Ön muhasebe, genel muhasebe, personel takibi ve E-Dönüşüm süreçlerinizi yönetin.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
+                  E-Fatura, E-Arşiv, E-İrsaliye, E-Defter
+                </div>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
+                  Personel takibi ve bordro
+                </div>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
+                  Üretim yönetimi ve karar destek
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/10 to-cyan-600/10 rounded-2xl blur-xl" />
+              <img src="/mikrofly.webp" alt="Mikro FLY Ekran Görünümü" className="relative w-full rounded-xl shadow-xl border border-gray-200/50" />
+            </motion.div>
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 'use client';
 
-import { Landmark, Package, Receipt, BarChart, GitBranch, Wallet, Zap, Cpu, Cloud, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target } from 'lucide-react';
+import { Landmark, Package, Receipt, BarChart, GitBranch, Wallet, Zap, Cpu, Cloud, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target, Users } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
@@ -48,40 +48,40 @@ export default function MikroRunPage() {
 
   const features = [
     {
-      icon: Landmark,
-      title: 'Muhasebe',
-      description: 'Temel muhasebe işlemleri, defter kefi, mizan',
-      descriptionDetail: 'Finansal raporlama ve analiz'
-    },
-    {
       icon: Package,
-      title: 'Stok Takibi',
-      description: 'Stok yönetimi, depo takibi, barkod sistemi',
-      descriptionDetail: 'Otomatik stok bildirimleri'
+      title: 'Stok/Ürün Yönetimi',
+      description: 'Stok ve ürün takibi, depo yönetimi',
+      descriptionDetail: 'Barkod sistemi ile otomasyon'
     },
     {
       icon: Receipt,
-      title: 'Fatura',
-      description: 'Fatura kesme, e-fatura entegrasyonu',
-      descriptionDetail: 'E-defter uyumluluğu'
+      title: 'Hizmet ve Masraf Yönetimi',
+      description: 'Hizmet ve masraf kalemlerinin takibi',
+      descriptionDetail: 'Detaylı maliyet analizi'
+    },
+    {
+      icon: Users,
+      title: 'Satın Alma ve Tedarikçi',
+      description: 'Satın alma süreçleri, tedarikçi yönetimi',
+      descriptionDetail: 'Otomatik sipariş oluşturma'
+    },
+    {
+      icon: Landmark,
+      title: 'Satış ve Müşteri Yönetimi',
+      description: 'Satış süreçleri, müşteri takibi',
+      descriptionDetail: 'CRM entegrasyonu'
     },
     {
       icon: BarChart,
-      title: 'Raporlama',
-      description: 'Detaylı raporlar, analizler, grafikler',
-      descriptionDetail: 'Özel dashboard tasarımı'
+      title: 'Ön Muhasebe',
+      description: 'Basit ön muhasebe işlemleri',
+      descriptionDetail: 'Mali müşavir ile entegrasyon'
     },
     {
-      icon: GitBranch,
-      title: 'Cari Hesap',
-      description: 'Müşteri ve tedarikçi takibi, borç alacak yönetimi',
-      descriptionDetail: 'Otomatik vade takibi'
-    },
-    {
-      icon: Wallet,
-      title: 'Kasa',
-      description: 'Kasa takibi, banka hesapları, para hareketleri',
-      descriptionDetail: 'Çoklu para birimi desteği'
+      icon: Receipt,
+      title: 'E-Dönüşüm',
+      description: 'E-Fatura, E-Arşiv, E-İrsaliye',
+      descriptionDetail: 'GİB uyumlu gönderim'
     }
   ];
 
@@ -168,7 +168,7 @@ export default function MikroRunPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-500 mb-10 max-w-4xl mx-auto leading-relaxed"
           >
-            Hızlı ve pratik muhasebe çözümü - Küçük ve orta ölçekli işletmeler için tasarlanmış
+5'ten az çalışanlı küçük ölçekli işletmeler için hızlı ve pratik muhasebe çözümü
           </motion.p>
 
           <motion.button
@@ -265,6 +265,51 @@ export default function MikroRunPage() {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Product Showcase Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-rose-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-rose-200/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+                Mikro RUN'ı <span className="text-rose-900">Yakından Tanıyın</span>
+              </h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+5'ten az çalışanlı küçük ölçekli işletmeler için hızlı ve pratik muhasebe çözümü. Ön muhasebeyi basit şekilde yönetin, genel muhasebeyi mali müşavirle takip edin.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  E-Fatura, E-Arşiv, E-İrsaliye, E-Defter
+                </div>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  Basit ön muhasebe yönetimi
+                </div>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  Mali müşavir ile genel muhasebe
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-rose-900/10 rounded-2xl blur-xl" />
+              <img src="/mikrorun.webp" alt="Mikro RUN Ekran Görünümü" className="relative w-full rounded-xl shadow-xl border border-gray-200/50" />
+            </motion.div>
           </div>
         </div>
       </section>

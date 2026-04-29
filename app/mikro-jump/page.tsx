@@ -48,40 +48,40 @@ export default function MikroJumpPage() {
 
   const features = [
     {
-      icon: Landmark,
-      title: 'Muhasebe',
-      description: 'Temel muhasebe işlemleri, defter kefi, mizan',
-      descriptionDetail: 'Finansal raporlama ve analiz'
-    },
-    {
       icon: Package,
-      title: 'Stok Takibi',
-      description: 'Stok yönetimi, depo takibi, barkod sistemi',
-      descriptionDetail: 'Otomatik stok bildirimleri'
+      title: 'Stok/Ürün Yönetimi',
+      description: 'Stok ve ürün takibi, depo yönetimi',
+      descriptionDetail: 'Barkod sistemi ile otomasyon'
     },
     {
       icon: Receipt,
-      title: 'Fatura',
-      description: 'Fatura kesme, e-fatura entegrasyonu',
-      descriptionDetail: 'E-defter uyumluluğu'
-    },
-    {
-      icon: BarChart,
-      title: 'Raporlama',
-      description: 'Detaylı raporlar, analizler, grafikler',
-      descriptionDetail: 'Özel dashboard tasarımı'
-    },
-    {
-      icon: Users,
-      title: 'Cari Hesap',
-      description: 'Müşteri ve tedarikçi takibi, borç alacak yönetimi',
-      descriptionDetail: 'Otomatik vade takibi'
+      title: 'Hizmet ve Masraf Yönetimi',
+      description: 'Hizmet ve masraf kalemlerinin takibi',
+      descriptionDetail: 'Detaylı maliyet analizi'
     },
     {
       icon: Wallet,
-      title: 'Kasa',
-      description: 'Kasa takibi, banka hesapları, para hareketleri',
-      descriptionDetail: 'Çoklu para birimi desteği'
+      title: 'Finans Yönetimi',
+      description: 'Ön muhasebe ve genel muhasebe işlemleri',
+      descriptionDetail: 'Bütçe ve nakit akış yönetimi'
+    },
+    {
+      icon: BarChart,
+      title: 'Bütçe Yönetimi',
+      description: 'Bütçe planlama ve takip',
+      descriptionDetail: 'Gerçekleşen-bütçe karşılaştırması'
+    },
+    {
+      icon: Users,
+      title: 'Satın Alma ve Tedarikçi',
+      description: 'Satın alma süreçleri, tedarikçi yönetimi',
+      descriptionDetail: 'Otomatik sipariş oluşturma'
+    },
+    {
+      icon: Landmark,
+      title: 'Satış ve Müşteri Yönetimi',
+      description: 'Satış süreçleri, müşteri takibi',
+      descriptionDetail: 'CRM entegrasyonu'
     }
   ];
 
@@ -168,7 +168,7 @@ export default function MikroJumpPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-500 mb-10 max-w-4xl mx-auto leading-relaxed"
           >
-            Gelişmiş muhasebe ve ERP çözümü - Büyük ve orta ölçekli işletmeler için tasarlanmış
+5-50 çalışanlı orta ölçekli işletmeler için gelişmiş muhasebe ve ERP çözümü
           </motion.p>
 
           <motion.button
@@ -265,6 +265,51 @@ export default function MikroJumpPage() {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Product Showcase Section */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-indigo-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+                Mikro JUMP'ı <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">Yakından Tanıyın</span>
+              </h2>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+5-50 çalışanlı orta ölçekli işletmeler için gelişmiş ERP çözümü. Birden fazla sektörde faaliyet gösteren firmalara hitap eder. Ön muhasebe, genel muhasebe ve E-Dönüşüm süreçlerinizi yönetin.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
+                  E-Fatura, E-Arşiv, E-İrsaliye, E-Defter
+                </div>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
+                  Personel takibi ve bordro
+                </div>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
+                  Finans ve bütçe yönetimi
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/10 to-indigo-600/10 rounded-2xl blur-xl" />
+              <img src="/mikrojump.webp" alt="Mikro JUMP Ekran Görünümü" className="relative w-full rounded-xl shadow-xl border border-gray-200/50" />
+            </motion.div>
           </div>
         </div>
       </section>

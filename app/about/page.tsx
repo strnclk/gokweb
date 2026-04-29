@@ -64,7 +64,7 @@ export default function AboutPage() {
             transition={{ duration: 0.8}}
             className="text-xl md:text-2xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            2005 yılından beri işletmelerin dijital dönüşümünde güvenilir ortağınız.
+            GÖKKUŞAĞI Yazılım ve Danışmanlık olarak 2005 yılında teknolojik yenilikler ve yazılım çözümleri sunmak amacıyla faaliyete geçtik.
           </motion.p>
 
           <motion.div
@@ -96,13 +96,16 @@ export default function AboutPage() {
               <h2 className="text-4xl md:text-5xl font-bold mb-8 text-gray-900">Hikayemiz</h2>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  Gökkuşağı Yazılım, 2005 yılında İstanbul'da kuruldu. Kurulduğumuz günden bu yana, işletmelerin dijital dönüşümüne katkıda bulunuyoruz.
+                  GÖKKUŞAĞI Yazılım ve Danışmanlık olarak 2005 yılında teknolojik yenilikler ve yazılım çözümleri sunmak amacıyla faaliyete geçtik. İnsana ve teknolojiye olan bağlılığımızla, deneyimli ekibimizle dijital dönüşüm alanında işletmelere özel çözümler geliştirmeye devam ediyoruz.
                 </p>
                 <p>
-                  Mikro ERP entegrasyonu, e-fatura yönetimi, e-ticaret çözümleri ve özel yazılım geliştirme alanlarında uzmanlaşmış ekibimizle, müşterilerimize en iyi çözümleri sunuyoruz.
+                  Sağladığımız hizmetler arasında ERP entegrasyonları, web uygulamaları, hızlı satış yazılımları, mobil çözümler, el terminali yazılımları, e-ticaret ve pazar yeri entegrasyonları ile pos ve banka entegrasyonları yer alıyor. Mikro Yazılım uygulamalarının satış ve desteğini sağlıyor, Mikro kullanıcılarının yıllık yazılım ve donanım bakım destek hizmetlerini sunuyoruz.
                 </p>
                 <p>
-                  Amacımız, işletmelerin verimliliğini artırmak ve dijital çağa hazırlamak.
+                  Ayrıca, finansal yapı, rapor ve analiz danışmanlığı ile bilgisayar ve çevre birimleri satış ve desteği hizmetleri de vermekteyiz.
+                </p>
+                <p>
+                  Kurumların ihtiyaçlarını detaylı bir şekilde analiz ederek en uygun yazılım paketini tespit ediyor ve kurulumunu gerçekleştiriyoruz. Ticari uygulamaların verimliliği, doğru kurulum ve entegrasyon ile mümkündür. GÖKKUŞAĞI olarak, farklı sektörlerde edindiğimiz bilgi birikimi ve deneyim sayesinde en doğru kurulumu en hızlı şekilde gerçekleştiriyoruz.
                 </p>
               </div>
             </div>
@@ -198,7 +201,7 @@ export default function AboutPage() {
             >
               <h3 className="text-2xl font-bold mb-6 text-white">Misyonumuz</h3>
               <p className="text-lg text-blue-50 leading-relaxed">
-                İşletmelerin dijital dönüşümüne katkıda bulunarak, verimliliklerini artırmak ve rekabet avantajı sağlamak. Mikro ERP, e-dönüşüm ve özel yazılım çözümlerimizle, küçük ve orta ölçekli işletmelerin büyüme yolculuklarında güvenilir bir ortak oluyoruz. Müşterilerimizin ihtiyaçlarını anlayarak, onlara en uygun teknoloji çözümlerini sunuyor ve dijital çağın gereksinimlerine uyum sağlamalarına yardımcı oluyoruz.
+                Yenilikçi çözümler sunarak, müşterilerimizin beklentilerini aşan, en üst düzeyde hizmet kalitesini sağlayan bir anlayışla hareket ediyoruz. Sektördeki liderliğimizi pekiştirmek ve sürdürülebilir başarıyı yakalamak adına, sürekli gelişen teknoloji ve pazar dinamiklerine uyum sağlayarak kaliteli ürünler ve hizmetler geliştirmeyi taahhüt ediyoruz. İnsan odaklı yaklaşımımız sayesinde, yalnızca müşterilerimize değil, çalışanlarımıza ve iş ortaklarımıza da değer katmayı hedefliyoruz. Çalışanlarımızın yetkinliklerini artırarak, inovasyonu teşvik eden bir çalışma ortamı oluşturuyor; paydaşlarımızla güçlü ve uzun vadeli iş birlikleri kurarak sektörümüzde fark yaratıyoruz.
               </p>
             </motion.div>
             <motion.div
@@ -209,7 +212,7 @@ export default function AboutPage() {
             >
               <h3 className="text-2xl font-bold mb-6 text-white">Vizyonumuz</h3>
               <p className="text-lg text-blue-50 leading-relaxed">
-                Türkiye'nin lider yazılım çözümleri sağlayıcısı olmak ve global ölçekte rekabet edebilebilir çözümler sunmak. Yenilikçi teknolojileri takip ederek, müşterilerimize her zaman en güncel ve en iyi çözümleri sunmayı hedefliyoruz. Sektördeki deneyimimiz ve uzmanlığımızla, işletmelerin dijital dönüşüm yolculuklarında öncü bir rol oynamak ve sürdürülebilir başarı sağlamak istiyoruz.
+                İleri teknolojiler ve sürdürülebilir uygulamaları temel alarak, sektörde güvenilirliğin ve mükemmelliğin simgesi haline gelmeyi amaçlıyoruz. Küresel ölçekte müşterilerimizin hayatını kolaylaştıran, iş süreçlerini daha verimli hale getiren yenilikçi çözümler geliştirerek, yalnızca bugün değil, geleceğin iş dünyasına da yön veren bir marka olmayı hedefliyoruz. Çevreye duyarlı üretim süreçleri, etik değerler ve sürekli iyileştirme anlayışıyla hareket ederek, toplum ve ekonomi için katma değer yaratmayı önemsiyoruz.
               </p>
             </motion.div>
           </div>

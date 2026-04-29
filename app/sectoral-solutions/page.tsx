@@ -1,72 +1,125 @@
-import { Metadata } from 'next';
+'use client';
+
+import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import SectoralCarousel from '@/components/SectoralCarousel';
-
-export const metadata: Metadata = {
-  title: 'Sektörel Çözümler | Sektöre Özel ERP Yazılımları | Gökkuşağı Yazılım',
-  description: 'İnşaat, üretim, perakende, lojistik, gıda, tekstil, otomotiv ve daha fazla sektör için özel ERP çözümleri. Mikro sektörel çözümler.',
-  keywords: 'sektörel çözümler, inşaat ERP, üretim ERP, perakende ERP, lojistik ERP, gıda ERP, tekstil ERP, otomotiv ERP, mikro sektör',
-};
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { ArrowRight, Sparkles, Cpu, Database, Zap, Shield, TrendingUp, Building2, Factory, ShoppingCart, Truck, Users, Briefcase, CheckCircle2 } from 'lucide-react';
 
 export default function SectoralSolutionsPage() {
+  const scrollToContact = () => {
+    const message = 'Merhaba%20Sektörel%20Çözümler%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim?';
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=905398563578&text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
+  const sectors = [
+    { icon: Building2, name: 'İnşaat', desc: 'Proje yönetimi, malzeme takibi, bütçe kontrolü' },
+    { icon: Factory, name: 'Üretim', desc: 'Üretim planlama, stok yönetimi, kalite kontrol' },
+    { icon: ShoppingCart, name: 'Perakende', desc: 'Satış noktası, envanter, müşteri ilişkileri' },
+    { icon: Truck, name: 'Lojistik', desc: 'Filo yönetimi, rota optimizasyonu, kargo takibi' },
+    { icon: Users, name: 'Gıda', desc: 'Üretim izleme, son kullanma tarihi, kalite sertifikasyonu' },
+    { icon: Briefcase, name: 'Tekstil', desc: 'Tasarım, üretim, dağıtım, mağaza yönetimi' },
+    { icon: Cpu, name: 'Otomotiv', desc: 'Parça takibi, servis yönetimi, satış sonrası destek' },
+    { icon: Database, name: 'Sağlık', desc: 'Hasta yönetimi, stok takibi, faturalandırma' },
+  ];
+
   return (
     <div className="bg-white">
       <Navbar />
 
-      {/* Hero - Aynı kalıyor */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-50">
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <div className="mb-6">
-            <h1 className="text-6xl md:text-8xl tracking-tight text-gray-900">
-              Sektörel<br />Çözümler
-            </h1>
-          </div>
-          <p className="text-xl md:text-2xl text-gray-900 mb-12 max-w-3xl mx-auto">
-            Her sektörün ihtiyacına özel olarak tasarlanmış ERP çözümleri
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2">
-              Ücretsiz Demo
-            </button>
-            <button className="px-8 py-4 border border-gray-300 text-gray-900 rounded-full hover:bg-gray-50 transition-all duration-300 hover:scale-105">
-              Broşür İndir
-            </button>
-          </div>
+      {/* Hero Section - Modern SaaS Design */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
+        {/* Rainbow Background Image */}
+        <div className="absolute inset-0 pointer-events-none opacity-30" style={{ zIndex: 1 }}>
+          <img src="/rainbw.png" alt="Rainbow Background" className="w-full h-full object-cover" />
         </div>
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10">
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex items-start justify-center p-2">
-            <div className="w-1.5 h-1.5 bg-gray-400 rounded-full" />
+        
+        {/* Left Side - Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+          <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-medium mb-6"
+            >
+              <Sparkles size={14} />
+              Sektörel ERP Çözümleri
+            </motion.div>
+            
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+            >
+              Her Sektör İçin
+              <br />
+              <span className="bg-gradient-to-r from-red-600 via-blue-600 to-yellow-600 bg-clip-text text-transparent">Özel Çözümler</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed mx-auto"
+            >
+              İnşattan üretime, perakendeden lojistiğe kadar her sektörün ihtiyacına özel ERP çözümleri ile işletmenizi dijitalleştirin
+            </motion.p>
+
+            
           </div>
         </div>
       </section>
 
-      {/* İstatistikler - Güven veren rakamlar */}
-      <section className="px-6 py-20 bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">8</div>
-              <div className="text-gray-500 text-sm uppercase tracking-wider font-medium">Sektör</div>
+      {/* Sektörler - Grid Cards */}
+      <section className="px-6 py-20 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-medium mb-4">
+              <Sparkles size={14} />
+              Sektörler
             </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">50+</div>
-              <div className="text-gray-500 text-sm uppercase tracking-wider font-medium">Sektörel Modül</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">500+</div>
-              <div className="text-gray-500 text-sm uppercase tracking-wider font-medium">Mutlu Müşteri</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">19+</div>
-              <div className="text-gray-500 text-sm uppercase tracking-wider font-medium">Yıl Deneyim</div>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Her Sektör İçin Özel Çözümler
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              8 farklı sektör için özel olarak tasarlanmış ERP çözümleri ile işletmenizi dijitalleştirin
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {sectors.map((sector, index) => {
+              const Icon = sector.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                >
+                  <Card className="h-full hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-gray-300 group">
+                    <CardContent className="p-6">
+                      <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center mb-4 group-hover:bg-blue-50 transition-colors">
+                        <Icon size={24} className="text-gray-700 group-hover:text-blue-600 transition-colors" />
+                      </div>
+                      <h3 className="text-lg font-bold mb-2 text-gray-900">{sector.name}</h3>
+                      <p className="text-sm text-gray-600 leading-relaxed">{sector.desc}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
-
-      {/* Sektörler - 3D Carousel */}
-      <SectoralCarousel />
 
       {/* Süreç - Nasıl Çalışırız */}
       <section className="px-6 py-20 bg-white">

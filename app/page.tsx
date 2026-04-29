@@ -41,7 +41,6 @@ export default function Home() {
         <AboutSection />
         <IndustryScenariosSection />
         <TrustSection />
-        <CTASection />
         <SEOSection />
         <Footer />
       </div>

@@ -4,9 +4,13 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { ArrowRight, Building2, Factory, ShoppingCart, Truck, Users, Briefcase } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { ArrowRight, Building2, Factory, ShoppingCart, Truck, Users, Briefcase, Sparkles, Target, Zap, Shield, TrendingUp, CheckCircle2, ChevronRight } from 'lucide-react';
 
 export default function VerticalSolutionsPage() {
+  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
+
   const scrollToContact = () => {
     const message = 'Merhaba%20Dikey%20Çözümler%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim?';
     const whatsappUrl = `https://api.whatsapp.com/send?phone=905398563578&text=${message}`;
@@ -15,57 +19,80 @@ export default function VerticalSolutionsPage() {
 
   const industries = [
     {
-      icon: Building2,
-      name: 'İnşaat',
-      description: 'Proje takibi, maliyet yönetimi, personel planlama'
+      icon: ShoppingCart,
+      name: 'Hızlı Satış Çözümleri',
+      description: 'Hızlı sipariş alma, mobil satış, POS entegrasyonu',
+      color: 'from-blue-600 to-blue-700',
+      features: ['Mobil POS', 'Sipariş Yönetimi', 'Ödeme Entegrasyonu']
     },
     {
       icon: Factory,
-      name: 'Üretim',
-      description: 'İş emri yönetimi, MRP planlama, kalite kontrol'
+      name: 'Üretim Yönetimi Çözümleri',
+      description: 'İş emri yönetimi, MRP planlama, üretim takibi',
+      color: 'from-blue-600 to-blue-700',
+      features: ['MRP Planlama', 'İş Emri', 'Kapasite Planlama']
     },
     {
-      icon: ShoppingCart,
-      name: 'Perakende',
-      description: 'Satış noktası yönetimi, stok takibi, müşteri analizi'
+      icon: Shield,
+      name: 'Kalite Yönetimi Çözümleri',
+      description: 'Kalite kontrol, uyum yönetimi, denetim takibi',
+      color: 'from-blue-600 to-blue-700',
+      features: ['Kalite Kontrol', 'Uyum Yönetimi', 'Denetim Takibi']
     },
     {
       icon: Truck,
-      name: 'Lojistik',
-      description: 'Fleet yönetimi, rota optimizasyonu, kargo takibi'
+      name: 'Depo ve Lojistik Yönetimi',
+      description: 'Stok yönetimi, rota optimizasyonu, kargo takibi',
+      color: 'from-blue-600 to-blue-700',
+      features: ['Stok Yönetimi', 'Rota Optimizasyonu', 'Kargo Takibi']
     },
     {
       icon: Users,
-      name: 'Hizmet',
-      description: 'CRM, proje yönetimi, personel takibi'
+      name: 'B2B Bayi Yönetimi',
+      description: 'Bayi ağ yönetimi, sipariş otomasyonu, performans analizi',
+      color: 'from-blue-600 to-blue-700',
+      features: ['Bayi Ağ Yönetimi', 'Sipariş Otomasyonu', 'Performans Analizi']
     },
     {
       icon: Briefcase,
-      name: 'Finans',
-      description: 'Muhasebe, bütçeleme, risk yönetimi'
+      name: 'Süreç Yönetimi Çözümü',
+      description: 'İş akışı otomasyonu, süreç optimizasyonu, BPM',
+      color: 'from-blue-600 to-blue-700',
+      features: ['İş Akışı Otomasyonu', 'Süreç Optimizasyonu', 'BPM']
+    },
+    {
+      icon: TrendingUp,
+      name: 'Raporlama ve Analiz Çözümleri',
+      description: 'Dashboard, BI raporlama, veri analitiği',
+      color: 'from-blue-600 to-blue-700',
+      features: ['Dashboard', 'BI Raporlama', 'Veri Analitiği']
     }
   ];
 
   const benefits = [
     {
-      number: '01',
+      icon: Target,
       title: 'Sektörel Uzmanlık',
-      description: 'Her sektör için özel olarak geliştirilmiş çözümler'
+      description: 'Her sektör için özel olarak geliştirilmiş çözümler',
+      color: 'from-blue-500 to-indigo-600'
     },
     {
-      number: '02',
+      icon: Zap,
       title: 'Hızlı Entegrasyon',
-      description: 'Mevcut sistemlerinizle kolay entegrasyon'
+      description: 'Mevcut sistemlerinizle kolay entegrasyon',
+      color: 'from-amber-500 to-orange-600'
     },
     {
-      number: '03',
+      icon: Shield,
       title: 'Sürekli Destek',
-      description: '7/24 teknik destek ve danışmanlık hizmeti'
+      description: '7/24 teknik destek ve danışmanlık hizmeti',
+      color: 'from-green-500 to-emerald-600'
     },
     {
-      number: '04',
+      icon: TrendingUp,
       title: 'Ölçeklenebilirlik',
-      description: 'İşletmenizin büyümesiyle birlikte ölçeklenir'
+      description: 'İşletmenizin büyümesiyle birlikte ölçeklenir',
+      color: 'from-purple-500 to-violet-600'
     }
   ];
 
@@ -74,43 +101,120 @@ export default function VerticalSolutionsPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-gray-900"
-          >
-            Mikro Dikey
-            <br />
-            <span className="text-gray-600">Çözümler</span>
-          </motion.h1>
+      <section className="relative min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center px-6 overflow-hidden bg-white pt-16 md:pt-0">
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-20 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-100/50 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-100/30 to-purple-100/30 rounded-full blur-3xl" />
+        
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="text-center lg:text-left">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+            >
+              Mikro Dikey
+              <br />
+              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Çözümler</span>
+            </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-500 mb-10 max-w-4xl mx-auto leading-relaxed"
-          >
-            Her sektörün ihtiyacına özel olarak tasarlanmış ERP çözümleri
-          </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+            >
+              Her sektörün ihtiyacına özel olarak tasarlanmış ERP çözümleri ile işletmenizi dijitalleştirin
+            </motion.p>
 
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            onClick={scrollToContact}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors font-medium"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <Button
+                onClick={scrollToContact}
+                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 font-medium shadow-xl"
+              >
+                Ücretsiz Demo
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+              <Button
+                variant="outline"
+                className="px-8 py-4 bg-white border-gray-300 text-gray-900 rounded-xl hover:bg-gray-50 font-medium"
+              >
+                Daha Fazla Bilgi
+              </Button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0"
+            >
+              {[
+                { label: 'Sektör', value: '20+' },
+                { label: 'Müşteri', value: '500+' },
+                { label: 'Yıl', value: '15+' }
+              ].map((stat, i) => (
+                <div key={i} className="text-center">
+                  <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
+                  <div className="text-xs text-gray-500">{stat.label}</div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 50, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="relative flex justify-center"
           >
-            Ücretsiz Demo
-            <ArrowRight className="w-5 h-5" />
-          </motion.button>
+            <div className="relative">
+              {/* Çapraz dekoratif kare */}
+              <motion.div
+                animate={{ rotate: [0, 5, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-200 to-purple-200 rounded-lg rotate-12 opacity-60"
+              />
+              <motion.div
+                animate={{ rotate: [0, -5, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
+                className="absolute -bottom-8 -left-8 w-28 h-28 bg-gradient-to-br from-purple-200 to-blue-200 rounded-lg -rotate-12 opacity-60"
+              />
+              
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 rounded-2xl blur-2xl opacity-50" />
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => setIsImageModalOpen(true)}
+                className="relative w-full max-w-sm mx-auto rounded-2xl shadow-2xl cursor-pointer overflow-hidden"
+              >
+                <img 
+                  src="/dikey.png" 
+                  alt="Mikro Dikey Çözümler" 
+                  className="w-full rounded-2xl"
+                />
+                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
+                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                    </svg>
+                  </div>
+                </div>
+              </motion.button>
+            </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Industries Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -118,28 +222,37 @@ export default function VerticalSolutionsPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Sektörler</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Dikey Çözümler</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Her sektör için özel ERP çözümleri
+              İşletmeniz için özel olarak tasarlanmış çözümler
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
+              const isLastCard = index === industries.length - 1;
               return (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300"
+                  className={isLastCard ? 'lg:col-start-2' : ''}
                 >
-                  <div className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-4">
-                    <Icon size={24} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-gray-900">{industry.name}</h3>
-                  <p className="text-gray-600 text-sm">{industry.description}</p>
+                  <Card className="h-full hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-gray-300 group hover:scale-105">
+                    <CardContent className="p-4">
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
+                          <Icon size={24} className="text-gray-700 group-hover:text-blue-600 transition-colors" />
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-bold mb-2 text-gray-900">{industry.name}</h3>
+                          <p className="text-gray-600 text-sm leading-relaxed">{industry.description}</p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
                 </motion.div>
               );
             })}
@@ -148,7 +261,7 @@ export default function VerticalSolutionsPage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -156,6 +269,10 @@ export default function VerticalSolutionsPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full text-purple-700 text-sm font-medium mb-6">
+              <CheckCircle2 size={14} />
+              Neden Dikey Çözümler?
+            </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Neden Dikey Çözümler?</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
               İşletmeniz için somut ve ölçülebilir faydalar
@@ -169,15 +286,21 @@ export default function VerticalSolutionsPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-gray-300"
+                className="group"
               >
-                <div className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
-                  {benefit.number}
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-2 text-gray-900">{benefit.title}</h3>
-                  <p className="text-gray-600 text-sm">{benefit.description}</p>
-                </div>
+                <Card className="h-full hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-gray-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
+                        <benefit.icon size={24} className="text-gray-700 group-hover:text-blue-600 transition-colors" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold mb-2 text-gray-900">{benefit.title}</h3>
+                        <p className="text-gray-600 text-sm leading-relaxed">{benefit.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </motion.div>
             ))}
           </div>
@@ -186,27 +309,81 @@ export default function VerticalSolutionsPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-gray-900 p-8 rounded-xl text-center"
+            className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-10 md:p-16 rounded-3xl text-center overflow-hidden"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">Sektörünüze Uygun Çözümü Bulun</h2>
-            <p className="text-base mb-6 text-gray-300">Uzmanlarımız size en uygun Mikro dikey çözümü seçmenize yardımcı olsun</p>
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={scrollToContact}
-              className="bg-white text-gray-900 py-3 px-8 rounded-lg font-medium hover:bg-gray-100"
-            >
-              Teklif Al
-            </motion.button>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl" />
+            
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/80 text-sm font-medium mb-6">
+                <Sparkles size={14} />
+                Başlayın
+              </div>
+              <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">
+                Sektörünüze Uygun Çözümü Bulun
+              </h2>
+              <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Uzmanlarımız size en uygun Mikro dikey çözümü seçmenize yardımcı olsun
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  onClick={scrollToContact}
+                  className="px-8 py-4 bg-white text-gray-900 rounded-xl hover:bg-gray-100 font-semibold shadow-xl"
+                >
+                  Teklif Al
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Button>
+                <Button
+                  variant="outline"
+                  className="px-8 py-4 bg-white/10 border-white/30 text-white rounded-xl hover:bg-white/20 font-semibold"
+                >
+                  İletişime Geç
+                </Button>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
       
+      {/* Image Modal */}
+      {isImageModalOpen && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setIsImageModalOpen(false)}
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.8, opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative max-w-4xl max-h-[90vh]"
+          >
+            <button
+              onClick={() => setIsImageModalOpen(false)}
+              className="absolute -top-12 right-0 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
+            >
+              <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <img 
+              src="/dikey.png" 
+              alt="Mikro Dikey Çözümler" 
+              className="w-full h-full object-contain rounded-2xl"
+            />
+          </motion.div>
+        </motion.div>
+      )}
+
       <Footer />
     </div>
   );

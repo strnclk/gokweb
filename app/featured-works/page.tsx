@@ -179,42 +179,172 @@ export default function FeaturedWorksPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-10">
-            <div className="w-32 h-32 mx-auto bg-slate-900 rounded-2xl flex items-center justify-center">
-              <Star size={64} className="text-white" />
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-20 w-96 h-96 bg-slate-100 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-gray-100 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-slate-50 to-gray-50 rounded-full blur-3xl" />
+        
+        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="inline-flex items-center gap-2 px-4 py-2 bg-slate-50 border border-slate-200 rounded-full text-slate-700 text-sm font-medium mb-6"
+              >
+                <Star size={14} />
+                Öne Çıkan Çalışmalar
+              </motion.div>
+              
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.1 }}
+                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+              >
+                Öne Çıkan
+                <br />
+                <span className="bg-gradient-to-r from-slate-600 to-gray-600 bg-clip-text text-transparent">Çalışmalarımız</span>
+              </motion.h1>
+
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed"
+              >
+                Finansal yönetim, nakit akışı ve raporlama alanında gerçekleştirdiğimiz başarılı projelerimizle işletmenizi dijitalleştirin
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="flex flex-col sm:flex-row gap-4 mb-12"
+              >
+                <button
+                  onClick={scrollToContact}
+                  className="px-8 py-4 bg-gradient-to-r from-slate-700 to-gray-700 text-white rounded-xl hover:from-slate-800 hover:to-gray-800 font-medium shadow-xl"
+                >
+                  Proje Talebi
+                  <ArrowRight className="w-4 h-4 ml-2 inline" />
+                </button>
+                <button className="px-8 py-4 bg-white border-gray-300 text-gray-900 rounded-xl hover:bg-gray-50 font-medium">
+                  Daha Fazla Bilgi
+                </button>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="grid grid-cols-2 gap-6"
+              >
+                {stats.map((stat, i) => (
+                  <div key={i} className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-lg bg-gray-100 flex items-center justify-center">
+                      <stat.icon size={20} className="text-gray-700" />
+                    </div>
+                    <div>
+                      <div className="text-xl font-bold text-gray-900">{stat.value}</div>
+                      <div className="text-xs text-gray-500">{stat.label}</div>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+
+            {/* Right Side - Visual Element */}
+            <div className="hidden lg:block relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative"
+              >
+                {/* Main Card */}
+                <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-2xl">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-slate-600 to-gray-600 flex items-center justify-center">
+                      <TrendingUp size={24} className="text-white" />
+                    </div>
+                    <div>
+                      <div className="text-gray-900 font-semibold">Finansal Raporlama</div>
+                      <div className="text-gray-500 text-sm">Proje Özeti</div>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-4">
+                    <div className="bg-gray-50 rounded-xl p-4">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-gray-600 text-sm">Kârlılık Artışı</span>
+                        <span className="text-emerald-600 font-bold">+35%</span>
+                      </div>
+                      <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: '75%' }}
+                          transition={{ duration: 1, delay: 0.5 }}
+                          className="h-full bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-50 rounded-xl p-4">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-gray-600 text-sm">Verimlilik</span>
+                        <span className="text-slate-600 font-bold">+42%</span>
+                      </div>
+                      <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: '82%' }}
+                          transition={{ duration: 1, delay: 0.6 }}
+                          className="h-full bg-gradient-to-r from-slate-500 to-slate-600 rounded-full"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gray-50 rounded-xl p-4">
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-gray-600 text-sm">Müşteri Memnuniyeti</span>
+                        <span className="text-gray-600 font-bold">+28%</span>
+                      </div>
+                      <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: '90%' }}
+                          transition={{ duration: 1, delay: 0.7 }}
+                          className="h-full bg-gradient-to-r from-gray-500 to-gray-600 rounded-full"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Elements */}
+                <motion.div
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-4 -right-4 bg-gradient-to-r from-slate-600 to-gray-600 rounded-2xl p-4 shadow-xl"
+                >
+                  <div className="text-white font-bold text-lg">+500</div>
+                  <div className="text-white/80 text-xs">Proje</div>
+                </motion.div>
+                
+                <motion.div
+                  animate={{ y: [0, 10, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -bottom-4 -left-4 bg-white rounded-2xl p-4 shadow-xl border border-gray-200"
+                >
+                  <div className="text-gray-900 font-bold text-lg">95%</div>
+                  <div className="text-gray-500 text-xs">Memnuniyet</div>
+                </motion.div>
+              </motion.div>
             </div>
           </div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-slate-900"
-          >
-            Öne Çıkan
-            <br />
-            <span className="text-slate-600">Çalışmalarımız</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-slate-500 mb-10 max-w-4xl mx-auto leading-relaxed"
-          >
-            Finansal Dönüşüm Projeleri - Finansal yönetim, nakit akışı ve raporlama alanında gerçekleştirdiğimiz başarılı projelerimiz
-          </motion.p>
-
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            onClick={scrollToContact}
-            className="inline-block px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium"
-          >
-            Proje Talebi
-          </motion.button>
         </div>
       </section>
 
@@ -233,29 +363,34 @@ export default function FeaturedWorksPage() {
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="flex flex-col gap-6">
             {financialServices.map((service, index) => {
               const Icon = service.icon;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300"
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  className="bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300 group"
                 >
-                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mb-4">
-                    <Icon size={24} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">{service.title}</h3>
-                  <p className="text-slate-600 text-sm mb-4 leading-relaxed">{service.description}</p>
-                  <div className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-sm text-slate-700">
-                        <CheckCircle size={16} className="mr-2 text-slate-500" />
-                        {feature}
+                  <div className="flex items-start gap-6">
+                    <div className="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-slate-100 transition-colors">
+                      <Icon size={32} className="text-gray-700 group-hover:text-slate-600 transition-colors" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold mb-2 text-gray-900">{service.title}</h3>
+                      <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
+                      <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                        {service.features.map((feature, idx) => (
+                          <div key={idx} className="flex items-center text-sm text-gray-700">
+                            <CheckCircle size={14} className="mr-2 text-gray-500 flex-shrink-0" />
+                            {feature}
+                          </div>
+                        ))}
                       </div>
-                    ))}
+                    </div>
                   </div>
                 </motion.div>
               );

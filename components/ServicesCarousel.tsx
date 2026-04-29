@@ -32,7 +32,7 @@ export default function ServicesCarousel() {
   };
 
   return (
-    <section className="relative h-[600px] bg-gray-900 overflow-hidden">
+    <section className="relative h-[500px] md:h-[600px] bg-gray-900 overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentServiceIndex}
@@ -46,23 +46,23 @@ export default function ServicesCarousel() {
           <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-900/70" />
           
           <div className="relative h-full flex items-center">
-            <div className="max-w-7xl mx-auto px-6 w-full">
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                  <div className="flex items-center gap-4 mb-6">
-                    <span className="text-6xl font-bold text-white/20">{services[currentServiceIndex].num}</span>
-                    <div className={`w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center shadow-md`}>
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={services[currentServiceIndex].icon}/></svg>
+                  <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
+                    <span className="text-4xl md:text-6xl font-bold text-white/20">{services[currentServiceIndex].num}</span>
+                    <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl bg-white/20 flex items-center justify-center shadow-md`}>
+                      <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={services[currentServiceIndex].icon}/></svg>
                     </div>
                   </div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 md:mb-4">
                     {services[currentServiceIndex].title}
                   </h2>
-                  <p className="text-xl text-gray-200 mb-8 leading-relaxed">
+                  <p className="text-base md:text-lg lg:text-xl text-gray-200 mb-6 md:mb-8 leading-relaxed">
                     {services[currentServiceIndex].desc}
                   </p>
                   <div className="grid grid-cols-2 gap-3 mb-8">
@@ -73,16 +73,16 @@ export default function ServicesCarousel() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  className="relative"
+                  className="relative hidden lg:block"
                 >
-                  <div className="bg-white/10 rounded-2xl p-12 text-white relative overflow-hidden backdrop-blur-sm">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+                  <div className="bg-white/10 rounded-2xl p-8 md:p-12 text-white relative overflow-hidden backdrop-blur-sm">
+                    <div className="absolute top-0 right-0 w-24 md:w-32 h-24 md:h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+                    <div className="absolute bottom-0 left-0 w-20 md:w-24 h-20 md:h-24 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
                     <div className="relative">
-                      <div className="text-8xl font-bold text-white/20 mb-4">{services[currentServiceIndex].num}</div>
-                      <h3 className="text-2xl font-bold mb-3">{services[currentServiceIndex].title}</h3>
-                      <div className="space-y-3">
-                        {services[currentServiceIndex].features.map((f,i)=>(<div key={i} className="flex items-center gap-3"><div className="w-6 h-6 bg-white/20 rounded-md flex items-center justify-center flex-shrink-0"><svg className="w-3.5 h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/></svg></div><span className="text-sm text-white/90">{f}</span></div>))}
+                      <div className="text-6xl md:text-8xl font-bold text-white/20 mb-3 md:mb-4">{services[currentServiceIndex].num}</div>
+                      <h3 className="text-xl md:text-2xl font-bold mb-2 md:mb-3">{services[currentServiceIndex].title}</h3>
+                      <div className="space-y-2 md:space-y-3">
+                        {services[currentServiceIndex].features.map((f,i)=>(<div key={i} className="flex items-center gap-2 md:gap-3"><div className="w-5 h-5 md:w-6 md:h-6 bg-white/20 rounded-md flex items-center justify-center flex-shrink-0"><svg className="w-3 h-3 md:w-3.5 md:h-3.5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7"/></svg></div><span className="text-xs md:text-sm text-white/90">{f}</span></div>))}
                       </div>
                     </div>
                   </div>
@@ -96,29 +96,29 @@ export default function ServicesCarousel() {
       {/* Navigation Arrows */}
       <button
         onClick={prevService}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all"
+        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
       <button
         onClick={nextService}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all"
+        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>
 
       {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+      <div className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 flex gap-2 md:gap-3">
         {services.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentServiceIndex(index)}
-            className={`w-3 h-3 rounded-full transition-all ${
-              index === currentServiceIndex ? 'bg-white w-8' : 'bg-white/50'
+            className={`w-2.5 h-2.5 md:w-3 md:h-3 rounded-full transition-all ${
+              index === currentServiceIndex ? 'bg-white w-6 md:w-8' : 'bg-white/50'
             }`}
           />
         ))}

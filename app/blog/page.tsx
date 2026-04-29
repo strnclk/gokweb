@@ -1,9 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BlogPopup from '@/components/BlogPopup';
+import { Sparkles, BookOpen, TrendingUp, Clock } from 'lucide-react';
 
 const featuredPost = {
   title: '2026\'da ERP Sistemlerinde Öne Çıkan 5 Trend',
@@ -230,6 +231,7 @@ const posts = [
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = useState('Tümü');
+  const [selectedPost, setSelectedPost] = useState<any>(null);
 
   const filteredPosts = selectedCategory === 'Tümü' 
     ? posts 
@@ -238,22 +240,75 @@ export default function BlogPage() {
     <div className="bg-white">
       <Navbar />
 
-      {/* Hero - Diğer sayfalarla aynı */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-white to-gray-50">
+      {/* Hero - Modern Estetik Tasarım */}
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50">
+        {/* Dekoratif Elementler */}
+        <div className="absolute top-20 right-20 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-blue-200/30 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-purple-100/20 to-blue-100/20 rounded-full blur-3xl" />
+        
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <div className="mb-6">
-            <h1 className="text-6xl md:text-8xl tracking-tight text-gray-900">
-              Blog
-            </h1>
-          </div>
-          <p className="text-xl md:text-2xl text-gray-900 mb-12 max-w-3xl mx-auto">
-            ERP, e-dönüşüm ve dijital dönüşüm hakkında güncel yazılar
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full text-purple-700 text-sm font-medium mb-6"
+          >
+            <Sparkles size={14} />
+            Blog
+          </motion.div>
+          
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+          >
+            ERP, E-Dönüşüm ve
+            <br />
+            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Dijital Dönüşüm</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed"
+          >
+            Güncel trendler, uzman görüşleri ve pratik rehberlerle işletmenizin dijital dönüşüm yolculuğuna rehberlik ediyoruz
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12"
+          >
+            {[
+              { icon: BookOpen, label: '24', desc: 'Yazı' },
+              { icon: TrendingUp, label: '6', desc: 'Kategori' },
+              { icon: Clock, label: '15K+', desc: 'Okuyucu' },
+              { icon: Sparkles, label: '19+', desc: 'Yıl' }
+            ].map((stat, i) => (
+              <div key={i} className="text-center">
+                <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-white shadow-md flex items-center justify-center">
+                  <stat.icon size={24} className="text-purple-600" />
+                </div>
+                <div className="text-2xl font-bold text-gray-900">{stat.label}</div>
+                <div className="text-xs text-gray-500">{stat.desc}</div>
+              </div>
+            ))}
+          </motion.div>
         </div>
+
         <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10">
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex items-start justify-center p-2">
-            <div className="w-1.5 h-1.5 bg-gray-400 rounded-full" />
-          </div>
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="w-6 h-10 border-2 border-purple-400 rounded-full flex items-start justify-center p-2"
+          >
+            <div className="w-1.5 h-1.5 bg-purple-400 rounded-full" />
+          </motion.div>
         </div>
       </section>
 
@@ -280,7 +335,10 @@ export default function BlogPage() {
               </div>
               <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">{featuredPost.title}</h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">{featuredPost.excerpt}</p>
-              <button className="px-8 py-4 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all duration-300 font-medium shadow-md hover:shadow-lg border border-slate-800 flex items-center gap-2">
+              <button 
+                onClick={() => setSelectedPost(featuredPost)}
+                className="px-8 py-4 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all duration-300 font-medium shadow-md hover:shadow-lg border border-slate-800 flex items-center gap-2"
+              >
                 Devamını Oku
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </button>
@@ -316,7 +374,11 @@ export default function BlogPage() {
 
           <div className="divide-y divide-gray-200">
             {filteredPosts.map((post, index) => (
-              <article key={index} className="py-10 first:pt-0 last:pb-0 group cursor-pointer">
+              <article 
+                key={index} 
+                className="py-10 first:pt-0 last:pb-0 group cursor-pointer"
+                onClick={() => setSelectedPost(post)}
+              >
                 <div className="grid lg:grid-cols-12 gap-6 items-start">
                   {/* Tarih ve Kategori */}
                   <div className="lg:col-span-2 flex lg:flex-col gap-3 lg:gap-1">
@@ -370,31 +432,67 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* İstatistikler */}
-      <section className="px-6 py-20 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-gray-900 mb-2">24</div>
-              <div className="text-gray-500">Yazı</div>
+      {/* Post Popup */}
+      {selectedPost && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={() => setSelectedPost(null)}
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+        >
+          <motion.div
+            initial={{ scale: 0.95, y: 20 }}
+            animate={{ scale: 1, y: 0 }}
+            exit={{ scale: 0.95, y: 20 }}
+            transition={{ duration: 0.2 }}
+            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className={`bg-gradient-to-r ${selectedPost.gradient} p-6 text-white`}>
+              <div className="flex justify-between items-start gap-4">
+                <div>
+                  <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-3">{selectedPost.category}</span>
+                  <h2 className="text-2xl md:text-3xl font-bold leading-tight">{selectedPost.title}</h2>
+                  <div className="flex items-center gap-4 text-sm text-white/80 mt-2">
+                    <span>{selectedPost.date}</span>
+                    <span>·</span>
+                    <span>{selectedPost.readTime} okuma</span>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setSelectedPost(null)}
+                  className="w-10 h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-gray-900 mb-2">6</div>
-              <div className="text-gray-500">Kategori</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-gray-900 mb-2">15K+</div>
-              <div className="text-gray-500">Aylık Okuyucu</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-gray-900 mb-2">19+</div>
-              <div className="text-gray-500">Yıl Deneyim</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <BlogPopup posts={[featuredPost, ...posts]} />
+            {/* Content */}
+            <div className="p-6 md:p-8 overflow-y-auto max-h-[60vh]">
+              <div
+                className="space-y-6 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-gray-900 [&>h2]:mb-4 [&>h2]:leading-tight [&>p]:text-gray-700 [&>p]:leading-relaxed [&>p]:mb-4 [&>ul]:list-disc [&>ul]:pl-6 [&>ul]:space-y-2 [&>ul]:text-gray-700 [&>li]:leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: selectedPost.content }}
+              />
+            </div>
+
+            {/* Footer */}
+            <div className="p-6 border-t border-gray-200 flex justify-between items-center">
+              <button
+                onClick={() => setSelectedPost(null)}
+                className="px-6 py-3 text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                Kapat
+              </button>
+              <button className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors">
+                Paylaş
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
 
       <Footer />
     </div>
