@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { MessageCircle } from 'lucide-react';
-import ChatBot from './ChatBot';
 
 export default function Footer() {
   return (
@@ -144,9 +143,6 @@ export default function Footer() {
     >
       <MessageCircle className="w-8 h-8 text-white" />
     </a>
-    
-    {/* ChatBot */}
-    <ChatBot />
     </>
   );
 }

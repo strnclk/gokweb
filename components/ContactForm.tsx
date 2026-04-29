@@ -15,11 +15,27 @@ export default function ContactForm() {
   });
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setShowSuccessPopup(true);
-    setFormData({ name: '', email: '', phone: '', company: '', subject: '', message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setShowSuccessPopup(true);
+        setFormData({ name: '', email: '', phone: '', company: '', subject: '', message: '' });
+      } else {
+        alert(data.error || 'Bir hata oluştu');
+      }
+    } catch (error) {
+      alert('Bir hata oluştu');
+    }
   };
 
   return (

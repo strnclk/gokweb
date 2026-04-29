@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Sparkles, BookOpen, TrendingUp, Clock } from 'lucide-react';
+import { Sparkles, BookOpen, TrendingUp, Clock, CheckCircle2 } from 'lucide-react';
 
 const featuredPost = {
   title: '2026\'da ERP Sistemlerinde Öne Çıkan 5 Trend',
@@ -230,8 +230,35 @@ const posts = [
 ];
 
 export default function BlogPage() {
+  const [selectedPost, setSelectedPost] = useState<typeof posts[0] | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('Tümü');
-  const [selectedPost, setSelectedPost] = useState<any>(null);
+  const [newsletterEmail, setNewsletterEmail] = useState('');
+  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
+  const [newsletterError, setNewsletterError] = useState('');
+
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setNewsletterError('');
+
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: newsletterEmail })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setNewsletterSubmitted(true);
+        setNewsletterEmail('');
+      } else {
+        setNewsletterError(data.error || 'Bir hata oluştu');
+      }
+    } catch (error) {
+      setNewsletterError('Bir hata oluştu');
+    }
+  };
 
   const filteredPosts = selectedCategory === 'Tümü' 
     ? posts 
@@ -419,16 +446,34 @@ export default function BlogPage() {
           <p className="text-lg text-gray-400 mb-8">
             ERP ve e-dönüşüm dünyasındaki gelişmelerden haberdar olmak için bültenimize abone olun
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-            <input
-              type="email"
-              placeholder="E-posta adresiniz"
-              className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
-            />
-            <button className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
-              Abone Ol
-            </button>
-          </div>
+          
+          {newsletterSubmitted ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="flex items-center justify-center gap-3 text-emerald-400"
+            >
+              <CheckCircle2 size={24} />
+              <span className="text-lg font-medium">Aboneliğiniz başarıyla tamamlandı!</span>
+            </motion.div>
+          ) : (
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+              <input
+                type="email"
+                placeholder="E-posta adresiniz"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
+              />
+              <button type="submit" className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
+                Abone Ol
+              </button>
+            </form>
+          )}
+          
+          {newsletterError && (
+            <div className="mt-4 text-red-400 text-sm">{newsletterError}</div>
+          )}
         </div>
       </section>
 

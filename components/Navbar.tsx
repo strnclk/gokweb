@@ -176,7 +176,7 @@ export default function Navbar() {
 
             {/* Teklif Al Butonu */}
             <Link href="/contact" className="px-6 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full hover:shadow-lg transition-all duration-300 hover:scale-105 text-lg font-semibold">
-              Teklif Al
+              Teklif Al / İletişim
             </Link>
           </div>
 
