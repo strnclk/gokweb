@@ -1,142 +1,36 @@
 'use client';
 
-import { FolderOpen, FileText, Shield, Search, Clock, Users, Settings, Database, Cloud, Lock, Share2, Download, Upload, CheckCircle, AlertCircle, TrendingUp, Target, Award, Zap, ArrowRight } from 'lucide-react';
-import { useState, useEffect } from 'react';
+import { FolderOpen, FileText, Shield, Search, Clock, Users, Lock, Share2, CheckCircle, TrendingUp, Target, Award, Zap, ArrowRight, Sparkles, Download, Brain, Smartphone, PenTool, History, Star, Eye, Archive, Trash2, BarChart3 } from 'lucide-react';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export default function EflowDmsPage() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const router = useRouter();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollableHeight = documentHeight - windowHeight;
-      
-      if (scrollableHeight > 0) {
-        setScrollProgress((scrollPosition / scrollableHeight) * 100);
-      } else {
-        setScrollProgress(0);
-      }
-      
-      setShowScrollTop(scrollPosition > 300);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const scrollToContact = () => {
-    const message = 'Merhaba%20E-Flow%20DMS%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim?';
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=905398563578&text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
-  const stats = [
-    { value: '70%', label: 'Depolama Tasarrufu', icon: Database },
-    { value: '90%', label: 'Hız Artışı', icon: Zap },
-    { value: '100%', label: 'Güvenlik', icon: Shield },
-    { value: '24/7', label: 'Erişim', icon: Cloud }
+  const capabilities = [
+    { title: 'Tüm dosyalarınız tek bir noktada', icon: FolderOpen },
+    { title: 'OCR Teknolojisi', icon: Brain },
+    { title: 'Son Kullanılanlar', icon: Clock },
+    { title: 'Form İçerikli Klasör Oluşturma', icon: FileText },
+    { title: 'E-İmza / Mobil İmza', icon: PenTool },
+    { title: 'Doküman Versiyonlama', icon: History },
+    { title: 'Kullanıcı yetkilendirme sistemi', icon: Lock },
+    { title: 'Favorilerim', icon: Star }
   ];
 
   const features = [
-    {
-      icon: FolderOpen,
-      title: 'Doküman Yönetimi',
-      description: 'Tüm dokümanlarınızı merkezi bir sistemde yönetin ve organize edin',
-      color: 'from-blue-500 to-cyan-600'
-    },
-    {
-      icon: Search,
-      title: 'Akıllı Arama',
-      description: 'Dokümanları içinde metin arama ile saniyeler içinde bulun',
-      color: 'from-purple-500 to-pink-600'
-    },
-    {
-      icon: Shield,
-      title: 'Güvenli Depolama',
-      description: 'Banka düzeyinde şifreleme ile dokümanlarınızı güvende tutun',
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      icon: Users,
-      title: 'Yetki Yönetimi',
-      description: 'Kullanıcı bazlı yetkilendirme ile erişimi kontrol edin',
-      color: 'from-orange-500 to-red-600'
-    },
-    {
-      icon: Clock,
-      title: 'Versiyon Kontrolü',
-      description: 'Doküman versiyonlarını takip edin ve geri dönebilirsiniz',
-      color: 'from-indigo-500 to-purple-600'
-    },
-    {
-      icon: Share2,
-      title: 'Paylaşım ve İşbirliği',
-      description: 'Dokümanları güvenli bir şekilde paylaşın ve işbirliği yapın',
-      color: 'from-teal-500 to-cyan-600'
-    }
-  ];
-
-  const benefits = [
-    {
-      number: '01',
-      title: 'Kağıtsız Ofis',
-      description: 'Kağıt kullanımını %70 azaltarak çevre dostu bir ofis oluşturun',
-      icon: Target
-    },
-    {
-      number: '02',
-      title: 'Hızlı Erişim',
-      description: 'Dokümanlara saniyeler içinde erişin ve verimliliği artırın',
-      icon: Zap
-    },
-    {
-      number: '03',
-      title: 'Güvenlik',
-      description: 'Tüm dokümanlarınızı en üst düzey güvenlik ile koruyun',
-      icon: Shield
-    },
-    {
-      number: '04',
-      title: 'Maliyet Tasarrufu',
-      description: 'Depolama ve baskı maliyetlerinden %70 tasarruf edin',
-      icon: TrendingUp
-    }
-  ];
-
-  const industries = [
-    {
-      name: 'Hukuk',
-      description: 'Dava dosyaları, sözleşmeler, yasal belgeler',
-      icon: FileText,
-      color: 'from-blue-500 to-indigo-600'
-    },
-    {
-      name: 'Sağlık',
-      description: 'Hasta dosyaları, tıbbi raporlar, laboratuvar sonuçları',
-      icon: Shield,
-      color: 'from-green-500 to-emerald-600'
-    },
-    {
-      name: 'Eğitim',
-      description: 'Öğrenci dosyaları, ders materyalleri, sınav belgeleri',
-      icon: Users,
-      color: 'from-purple-500 to-pink-600'
-    },
-    {
-      name: 'İnsan Kaynakları',
-      description: 'Personel dosyaları, iş sözleşmeleri, performans değerlendirmeleri',
-      icon: Award,
-      color: 'from-orange-500 to-red-600'
-    }
+    { title: 'Doküman depolama ve organizasyon', desc: 'Belgelerinizi sistematik bir şekilde saklayın.', icon: FolderOpen },
+    { title: 'Belge arama ve erişim kolaylığı', desc: 'Belgelerinize anında erişim sağlayın.', icon: Search },
+    { title: 'Versiyon kontrolü', desc: 'Belgelerinizin farklı versiyonlarını kaydedin ve en güncel sürüme kolay ulaşın.', icon: History },
+    { title: 'Çevrimiçi işbirliği', desc: 'Aynı doküman üzerinde ekip arkadaşlarınızla eş zamanlı olarak çalışın.', icon: Users },
+    { title: 'Uyumluluk ve denetim', desc: 'Belge yönetim süreçlerinin yasal düzenlemelere ve şirket politikalarına uygunluğunu sağlayın ve denetim süreçlerini kolaylaştırın.', icon: Shield },
+    { title: 'Güvenli doküman paylaşımı', desc: 'Belgeleri yetkilendirilmiş kişilerle güvenli bir şekilde paylaşın ve veri ihlallerine karşı korunun.', icon: Share2 },
+    { title: 'İzleme ve raporlama', desc: 'Belgelerin kullanımını izleyin, kimlerin ne zaman eriştiğini ve değişikliklerini raporlayın.', icon: BarChart3 },
+    { title: 'İmha ve arşivleme', desc: 'Gerekli olmayan belgeleri güvenli şekilde imha edin veya uzun süreli saklama için arşivleyin.', icon: Archive },
+    { title: 'Hız ve verimlilik', desc: 'Belgeleri düzenli depolayarak, arama ve iş süreçlerini hızlandırın, verimliliğizi artırın.', icon: Zap }
   ];
 
   return (
@@ -144,59 +38,232 @@ export default function EflowDmsPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-10">
-            <div className="w-32 h-32 mx-auto bg-slate-900 rounded-2xl flex items-center justify-center">
-              <FolderOpen size={64} className="text-white" />
-            </div>
+      <section className="relative min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center px-6 overflow-hidden bg-white pt-16 md:pt-0">
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-20 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-100/50 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-100/30 to-purple-100/30 rounded-full blur-3xl" />
+        
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#40949c]/10 border border-[#40949c]/20 rounded-full text-[#40949c] text-sm font-medium mb-6"
+            >
+              <Sparkles size={14} />
+              No-Code DMS Platform
+            </motion.div>
+            
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-gray-900"
+            >
+              İş süreçlerinizin
+              <br />
+              <span className="bg-gradient-to-r from-[#40949c] to-[#ed4f37] bg-clip-text text-transparent">parçası olan dosyaları yönetin</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+            >
+              No-code platformda geliştirilen E-Flow DMS ile işinizin bir parçası olan dokümanlarınızı tamamen dijital ortamda depolayın, organize edin ve ihtiyacınız olan dokümana her an erişim sağlayın.
+            </motion.p>
+
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              onClick={() => router.push('/contact')}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#ed4f37] text-white rounded-xl hover:bg-[#d64530] transition-colors font-semibold shadow-lg hover:shadow-xl"
+            >
+              Teklif Al
+              <ArrowRight className="w-5 h-5" />
+            </motion.button>
           </div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-slate-900"
-          >
-            E-Flow
-            <br />
-            <span className="text-slate-600">DMS</span>
-          </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-slate-500 mb-10 max-w-4xl mx-auto leading-relaxed"
+          <motion.div
+            initial={{ opacity: 0, x: 50, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="relative flex justify-center"
           >
-            Doküman Yönetim Sistemi - Dokümanlarınızı dijitalleştirin, güvenli bir şekilde saklayın ve kolayca erişin
-          </motion.p>
-
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            onClick={scrollToContact}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium"
-          >
-            Demo İsteyin
-            <ArrowRight className="w-5 h-5" />
-          </motion.button>
+            <div className="relative">
+              <div className="w-64 h-64 bg-gradient-to-br from-[#40949c] to-[#ed4f37] rounded-3xl flex items-center justify-center">
+                <FolderOpen size={96} className="text-white" />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 rounded-3xl blur-2xl opacity-40" />
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-slate-50">
+      {/* Description Section */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
-          <motion.div
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-white p-8 rounded-xl border border-gray-200"
+          >
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              E-Flow DMS ile iş akışınızda yer alan form, tablo, sunum, rapor, fatura gibi tüm dokümanları merkezi bir sistemde saklayın. Üstelik fiziksel olarak üretilmiş dokümanlar da dahil her türden dosyayı sisteminize ekleyerek daha etkili kullanın. Böylece belgelerin kaybolma riski azalır, zaman ve kaynak tasarrufu sağlanır, iş birliği kolaylaşır ve gerektiğinde belgelerin geçmişi ve revizyonları takip edilebilir.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              E-Flow DMS aynı zamanda belge tabanlı iş akışlarını otomatikleştirme ve dijital dönüşüm süreçlerine katkı sağlama konularında da önemli bir rol oynar.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* OCR & E-İmza Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">DMS Özellikleri</h2>
-            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Doküman yönetimini dönüştürecek güçlü özellikler
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Yeni eklenen E-imza, Mobil imza ve yapay zeka destekli OCR teknolojisi ile:</h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="bg-gray-50 p-6 rounded-xl border border-gray-200"
+            >
+              <div className="w-12 h-12 bg-[#40949c]/10 rounded-xl flex items-center justify-center mb-4">
+                <PenTool size={24} className="text-[#40949c]" />
+              </div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900">Elektronik ve Mobil İmza</h3>
+              <p className="text-gray-600 text-sm">Dokümanlarınıza elektronik ve mobil imza ekleyerek onay süreçlerini hızlandırır.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="bg-gray-50 p-6 rounded-xl border border-gray-200"
+            >
+              <div className="w-12 h-12 bg-[#40949c]/10 rounded-xl flex items-center justify-center mb-4">
+                <Brain size={24} className="text-[#40949c]" />
+              </div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900">OCR Teknolojisi</h3>
+              <p className="text-gray-600 text-sm">OCR teknolojisi sayesinde fatura, fiş gibi belgelerdeki veriler otomatik olarak okunur ve sistemde ilgili alanlara aktarılır.</p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+              className="bg-gray-50 p-6 rounded-xl border border-gray-200"
+            >
+              <div className="w-12 h-12 bg-[#40949c]/10 rounded-xl flex items-center justify-center mb-4">
+                <Zap size={24} className="text-[#40949c]" />
+              </div>
+              <h3 className="text-lg font-bold mb-2 text-gray-900">Gelişmiş Özellikler</h3>
+              <p className="text-gray-600 text-sm">Bu gelişmiş özellikler, manuel işlemleri azaltır, hata riskini minimize eder ve iş süreçlerinizi daha verimli hale getirir.</p>
+            </motion.div>
+          </div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="mt-8 bg-gray-50 p-6 rounded-xl border border-gray-200"
+          >
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Her yerden erişim imkânı sunan mobil uygulaması ve kişiselleştirilebilir ekranlarıyla E-Flow DMS, doküman yönetiminde ihtiyaçlarınıza özel esnek çözümler sunar.
             </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Capabilities Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Dijital Doküman Merkezimizin Yetenekleri</h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {capabilities.map((capability, index) => {
+              const Icon = capability.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                  className="bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg text-center"
+                >
+                  <div className="w-12 h-12 bg-[#40949c]/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <Icon size={24} className="text-[#40949c]" />
+                  </div>
+                  <h3 className="text-base font-bold text-gray-900">{capability.title}</h3>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* AI Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Yapay zeka destekli E-Flow DMS ile dijital ve esnek doküman yönetimi</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              E-Flow DMS ile iş süreçlerinizin parçası olan belgelerinizi merkezi bir platformda toplayarak yönetim sürecinizi tamamen dijitalleştirin.
+            </p>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="bg-gray-50 p-8 rounded-xl border border-gray-200"
+          >
+            <p className="text-lg text-gray-700 leading-relaxed mb-4">
+              No-Code platformunda geliştirilen yapay zeka destekli E-Flow DMS, doküman yönetimini tamamen dijital bir platformda yapmaya olanak tanır. Form, tablo, sunum, rapor ve fatura vb. tüm belgelerinizi tek bir merkezde saklayarak, her an erişim imkânı sağlar, belgelerin kaybolma riskini azaltır. DMS mobil uygulaması, belgelere her yerden erişmeyi sağlar.
+            </p>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              E-Flow DMS ekranlar kişisel kullanımıza en uygun şekilde uyarlanabilir.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">E-Flow DMS'in iş akışınızın verimliliğini arttıracak güçlü özellikleri</h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -207,89 +274,14 @@ export default function EflowDmsPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300"
+                  transition={{ delay: index * 0.05 }}
+                  className="bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg"
                 >
-                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mb-4">
-                    <Icon size={24} className="text-white" />
+                  <div className="w-12 h-12 bg-[#40949c]/10 rounded-xl flex items-center justify-center mb-4">
+                    <Icon size={24} className="text-[#40949c]" />
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">{feature.title}</h3>
-                  <p className="text-slate-600 text-sm">{feature.description}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">DMS Avantajları</h2>
-            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              İşletmeniz için somut faydalar
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex items-start gap-4 p-6 bg-slate-50 rounded-xl border border-slate-200 hover:border-slate-300"
-              >
-                <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
-                  {benefit.number}
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">{benefit.title}</h3>
-                  <p className="text-slate-600 text-sm">{benefit.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Sektörel Çözümler</h2>
-            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Her sektörün ihtiyacına özel DMS çözümleri
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {industries.map((industry, index) => {
-              const Icon = industry.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300 text-center"
-                >
-                  <div className="w-12 h-12 bg-slate-900 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Icon size={24} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">{industry.name}</h3>
-                  <p className="text-slate-600 text-sm">{industry.description}</p>
+                  <h3 className="text-lg font-bold mb-2 text-gray-900">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm">{feature.desc}</p>
                 </motion.div>
               );
             })}
@@ -299,28 +291,32 @@ export default function EflowDmsPage() {
 
       {/* CTA Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-slate-900 p-8 rounded-xl text-center"
+            className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-10 md:p-16 rounded-3xl text-center overflow-hidden"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">Dokümanlarınızı Dönüştürün</h2>
-            <p className="text-base mb-6 text-slate-300">E-Flow DMS ile doküman yönetimini dijitalleştirin</p>
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={scrollToContact}
-              className="bg-white text-slate-900 py-3 px-8 rounded-lg font-medium hover:bg-slate-100"
-            >
-              Ücretsiz Demo İsteyin
-            </motion.button>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#40949c]/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#ed4f37]/10 rounded-full blur-3xl" />
+            
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/80 text-sm font-medium mb-6">
+                <Sparkles size={14} />
+                Başlayın
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                E-Flow DMS hakkında daha fazla bilgi edinin.
+              </h2>
+              <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                  E-Flow DMS, işletmelerin belge yönetim süreçlerini otomatikleştiren, verimliliği artıran ve iş süreçlerini kolaylaştıran kapsamlı bir belge yönetim sistemidir. 
+              </p>
+             
+            </div>
           </motion.div>
         </div>
       </section>
-
-     
       
       <Footer />
     </div>

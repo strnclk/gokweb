@@ -1,10 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Send, CheckCircle2, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function ContactForm() {
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -14,6 +16,18 @@ export default function ContactForm() {
     message: ''
   });
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+
+  useEffect(() => {
+    const messageParam = searchParams.get('message');
+    const subjectParam = searchParams.get('subject');
+    
+    if (messageParam) {
+      setFormData(prev => ({ ...prev, message: messageParam }));
+    }
+    if (subjectParam) {
+      setFormData(prev => ({ ...prev, subject: subjectParam }));
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

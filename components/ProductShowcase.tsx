@@ -8,11 +8,10 @@ export default function ProductShowcase() {
         image="/eflow3-logo.png"
         title="Dijital Dönüşüm"
         subtitle="E-Dönüşüm çözümleriyle tanışın"
-        description="E-fatura, e-defter ve e-arşiv süreçlerinizi otomatikleştirin. GİB uyumlu ve hızlı entegrasyon."
+        description="E-fatura, e-defter ve e-arşiv süreçlerinizi otomatikleştirin.Hızlı entegrasyon."
         features={[
           "E-Fatura Entegrasyonu",
           "E-Defter Otomasyonu",
-          "GİB Uyumlu Altyapı",
           "Hızlı Kurulum",
           "7/24 Destek",
           "Güvenli Veri İşleme"

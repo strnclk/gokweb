@@ -9,8 +9,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Building2, Factory, ShoppingCart, Truck, Users, Briefcase, Sparkles, Target, Zap, Shield, TrendingUp, CheckCircle2, ChevronRight } from 'lucide-react';
 
 export default function VerticalSolutionsPage() {
-  const [isImageModalOpen, setIsImageModalOpen] = useState(false);
-
   const scrollToContact = () => {
     const message = 'Merhaba%20Dikey%20Çözümler%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim?';
     const whatsappUrl = `https://api.whatsapp.com/send?phone=905398563578&text=${message}`;
@@ -132,34 +130,13 @@ export default function VerticalSolutionsPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-            >
-              <Button
-                onClick={scrollToContact}
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 font-medium shadow-xl"
-              >
-                Ücretsiz Demo
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
-              <Button
-                variant="outline"
-                className="px-8 py-4 bg-white border-gray-300 text-gray-900 rounded-xl hover:bg-gray-50 font-medium"
-              >
-                Daha Fazla Bilgi
-              </Button>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0"
             >
               {[
                 { label: 'Sektör', value: '20+' },
                 { label: 'Müşteri', value: '500+' },
-                { label: 'Yıl', value: '15+' }
+                { label: 'Yıl', value: '19+' }
               ].map((stat, i) => (
                 <div key={i} className="text-center">
                   <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
@@ -175,39 +152,36 @@ export default function VerticalSolutionsPage() {
             transition={{ duration: 1, delay: 0.2 }}
             className="relative flex justify-center"
           >
-            <div className="relative">
-              {/* Çapraz dekoratif kare */}
-              <motion.div
-                animate={{ rotate: [0, 5, 0] }}
-                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-200 to-purple-200 rounded-lg rotate-12 opacity-60"
-              />
-              <motion.div
-                animate={{ rotate: [0, -5, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -bottom-8 -left-8 w-28 h-28 bg-gradient-to-br from-purple-200 to-blue-200 rounded-lg -rotate-12 opacity-60"
-              />
-              
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 rounded-2xl blur-2xl opacity-50" />
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                onClick={() => setIsImageModalOpen(true)}
-                className="relative w-full max-w-sm mx-auto rounded-2xl shadow-2xl cursor-pointer overflow-hidden"
-              >
+            <div className="relative w-[400px] h-[400px]">
+              {/* Mikro Run Logo */}
+              <div className="absolute top-0 left-0 w-40 h-40 bg-gradient-to-br from-red-100 to-red-200 rounded-2xl rotate-6 shadow-lg flex items-center justify-center p-4">
                 <img 
-                  src="/dikey.png" 
-                  alt="Mikro Dikey Çözümler" 
-                  className="w-full rounded-2xl"
+                  src="/mikro-run-logo.png" 
+                  alt="Mikro Run" 
+                  className="w-full h-full object-contain"
                 />
-                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors flex items-center justify-center opacity-0 hover:opacity-100">
-                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-                    </svg>
-                  </div>
-                </div>
-              </motion.button>
+              </div>
+
+              {/* Mikro Jump Logo */}
+              <div className="absolute top-20 right-0 w-40 h-40 bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl -rotate-6 shadow-lg flex items-center justify-center p-4">
+                <img 
+                  src="/mikro-jump-logo.png" 
+                  alt="Mikro Jump" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* Mikro Fly Logo */}
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-40 h-40 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl rotate-3 shadow-lg flex items-center justify-center p-4">
+                <img 
+                  src="/mikro-fly-logo.png" 
+                  alt="Mikro Fly" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* Decorative blur */}
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-purple-100 rounded-3xl blur-3xl opacity-40" />
             </div>
           </motion.div>
         </div>
@@ -349,40 +323,6 @@ export default function VerticalSolutionsPage() {
           </motion.div>
         </div>
       </section>
-      
-      {/* Image Modal */}
-      {isImageModalOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={() => setIsImageModalOpen(false)}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4"
-        >
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            onClick={(e) => e.stopPropagation()}
-            className="relative max-w-4xl max-h-[90vh]"
-          >
-            <button
-              onClick={() => setIsImageModalOpen(false)}
-              className="absolute -top-12 right-0 w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors"
-            >
-              <svg className="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-            <img 
-              src="/dikey.png" 
-              alt="Mikro Dikey Çözümler" 
-              className="w-full h-full object-contain rounded-2xl"
-            />
-          </motion.div>
-        </motion.div>
-      )}
 
       <Footer />
     </div>

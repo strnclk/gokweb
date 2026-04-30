@@ -124,7 +124,7 @@ export default function AboutSection() {
             <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 hover:bg-gray-800 transition-all">
               <div className="text-5xl font-bold text-gray-500 mb-4">03</div>
               <h3 className="text-lg font-bold mb-3">E-Dönüşüm Dönüşümü</h3>
-              <p className="text-gray-400 text-sm mb-4">Lojistik şirketi için GİB uyumlu e-fatura ve e-defter sistemi. Aylık %15 operasyonel maliyet tasarrufu.</p>
+              <p className="text-gray-400 text-sm mb-4">Lojistik şirketi için e-fatura ve e-defter sistemi. Aylık %15 operasyonel maliyet tasarrufu.</p>
               <div className="border-t border-gray-700 pt-4">
                 <div className="text-xs text-gray-500">SEKTÖR</div>
                 <div className="text-sm font-medium">Lojistik</div>

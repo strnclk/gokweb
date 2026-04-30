@@ -2,310 +2,272 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Sparkles, CheckCircle2, Zap, Shield, TrendingUp, BarChart, Smartphone, Users, Target, Clock } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 export default function EFlowPage() {
   const router = useRouter();
 
-  const bpmFeatures = [
-    { title: "Sürükle-Bırak Teknolojisi", desc: "Hiçbir kodlama bilgisine sahip olmadan E-Flow'un sürükle bırak yapısı ile iş süreçlerinizi tasarlayın ve yönetin." },
-    { title: "Yapay Zeka Entegrasyonu", desc: "E-Flow'un ChatGPT entegrasyonu ile mevcut süreçlere kolayca erişin, süreç tasarımını hızla gerçekleştirin." },
-    { title: "ERP Entegrasyonu", desc: "Hazır entegrasyon bileşenleri aracılığı ile en çok tercih edilen ERP uygulamaları ile kolay entegrasyon sağlayın." },
-    { title: "Mobil Uygulama", desc: "Süreçlerinizi herhangi bir ek operasyon gerektirmeden mobil uygulama üzerinden yönetin, işinize kesintisiz ulaşın." },
-    { title: "Kiralama Modeli", desc: "Sunucu ve ilk yatırım maliyeti olmadan, SaaS modeliyle daima güncel sürüme sahip olun." },
-    { title: "Web ve Mobil Uyumlu", desc: "İşlerinizi her an ve her yerden kolaylıkla yönetin, iş süreçlerinize kesintisiz devam edin." }
-  ];
-
-  const processes = [
-    { title: "Çoklu Kanal Yönetimi", desc: "Tüm pazar yerleri ve e-ticaret sitenizi tek bir panelden yönetin" },
-    { title: "Otomatik Sipariş Yönetimi", desc: "Siparişleri otomatik olarak işleyin ve kargo takibi yapın" },
-    { title: "Envanter Takibi", desc: "Gerçek zamanlı envanter yönetimi ve stok optimizasyonu" },
-    { title: "Fiyat Yönetimi", desc: "Dinamik fiyatlandırma ve kampanya yönetimi" },
-    { title: "Müşteri İlişkileri", desc: "CRM entegrasyonu ve müşteri memnuniyet takibi" },
-    { title: "Raporlama ve Analiz", desc: "Detaylı satış raporları ve performans analizleri" }
+  const whyEflow = [
+    { title: "Kod yazma bilgisine gerek olmadan iş süreci tasarla", desc: "Teknik bilgi gerektirmeden iş süreçlerinizi kolayca tasarlayın" },
+    { title: "İhtiyaçlar değiştikçe süreç üzerinde kolaylıkla uyarla", desc: "Esnek yapı ile değişen gereksinimlere hızlıca uyum sağlayın" },
+    { title: "Geliştiricilere veya BT ekiplerine bağımlı kalma", desc: "Citizen Developer olarak süreçlere aktif katılım sağlayın" }
   ];
 
   const advantages = [
-    { title: "%85", subtitle: "Zaman Tasarrufu", desc: "Manuel işlemleri otomatikleştirerek zamanınızı %85 oranında tasarruf edin" },
-    { title: "3x", subtitle: "Satış Artışı", desc: "Çoklu kanal satış ile gelirlerinizi 3 katına kadar artırın" },
-    { title: "%99.9", subtitle: "Sistem Uptime", desc: "Kesintisiz hizmet ile iş sürekliliği sağlayın" },
-    { title: "0", subtitle: "İnsan Hatası", desc: "Otomatik süreçlerle insan hatasını minimum seviyeye indirin" }
+    { title: "Kolay kurulum ve entegrasyon", icon: Zap },
+    { title: "Ölçeklenebilir ve esnek yapı", icon: TrendingUp },
+    { title: "Yüksek güvenlik ve veri koruma", icon: Shield },
+    { title: "Mobil erişim ve kullanıcı dostu arayüz", icon: Smartphone },
+    { title: "Güçlü raporlama ve analiz araçları", icon: BarChart },
+    { title: "İş ve BT uyumunu sağlayın", icon: Users }
+  ];
+
+  const features = [
+    { title: "Esnek tasarım imkanı", desc: "Limitlerinizi kendiniz belirleyin", icon: Target },
+    { title: "Akıllıca süreç tasarımı", desc: "Görsel modelleme ile verileri hızla işleyin", icon: Zap },
+    { title: "Tekrar kullanılabilir bileşenler", desc: "Tasarlanan süreçleri tekrar kullanarak zaman kazanın", icon: Clock }
   ];
 
   return (
-    <div className="min-h-screen bg-white text-black">
+    <div className="min-h-screen bg-white">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-10">
-            <img src="/eflow3-logo.png" alt="E-Flow" className="w-40 h-40 mx-auto object-contain" />
+      <section className="relative min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center px-6 overflow-hidden bg-white pt-16 md:pt-0">
+        {/* Decorative Elements */}
+        <div className="absolute top-20 right-20 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-100/50 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-100/30 to-purple-100/30 rounded-full blur-3xl" />
+        
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center relative z-10">
+          <div className="text-center lg:text-left">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-[#40949c]/10 border border-[#40949c]/20 rounded-full text-[#40949c] text-sm font-medium mb-6"
+            >
+              <Sparkles size={14} />
+              No-Code Platform
+            </motion.div>
+            
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+            >
+              Neden E-Flow?
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed"
+            >
+              Kendi iş süreçlerinizi yaratmak, işte bu kadar kolay!
+            </motion.p>
+
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+              onClick={() => router.push('/contact')}
+              className="inline-flex items-center gap-2 px-8 py-4 bg-[#ed4f37] text-white rounded-xl hover:bg-[#d64530] transition-colors font-semibold shadow-lg hover:shadow-xl"
+            >
+              Teklif Al
+              <ArrowRight className="w-5 h-5" />
+            </motion.button>
           </div>
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-slate-900"
+
+          <motion.div
+            initial={{ opacity: 0, x: 50, scale: 0.9 }}
+            animate={{ opacity: 1, x: 0, scale: 1 }}
+            transition={{ delay: 0.2 }}
+            className="relative flex justify-center"
           >
-            E-Flow
-            <br />
-            <span className="text-slate-600">No-Code İş Süreçleri Yönetim Platformu</span>
-          </motion.h1>
+            <div className="relative">
+              <img src="/eflow3-logo.png" alt="E-Flow" className="w-80 h-80 object-contain" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 rounded-3xl blur-2xl opacity-40" />
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why E-Flow Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{}}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Neden mi E-Flow?</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              E-Flow'un sağladığı en büyük avantajlardan biri, kullanıcı dostu arayüzü ile herkesin kolayca adapte olabilmesidir. İş süreçlerinizi dijitalleştirirken, teknik bilgiye gerek kalmadan sorunsuz bir geçiş yapabilirsiniz.
+            </p>
+          </motion.div>
           
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-slate-500 mb-10 max-w-4xl mx-auto leading-relaxed"
-          >
-            Sürükle-bırak teknolojisi ile iş süreçlerinizi tasarlayın, yapay zeka entegrasyonu ile hızlandırın, ERP sistemleriyle entegre edin.
-          </motion.p>
-          
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            onClick={() => router.push('/contact')}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-colors font-medium"
-          >
-            Teklif Al
-            <ArrowRight className="w-5 h-5" />
-          </motion.button>
+          <div className="grid md:grid-cols-3 gap-6">
+            {whyEflow.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg"
+              >
+                <h3 className="text-lg font-bold mb-2 text-gray-900">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* What is E-Flow Section */}
-      <section className="py-20 bg-slate-50">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{}}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">E-Flow Nedir?</h2>
-            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              E-Flow (E-Flow Workflows) bir no-code platform olup, özellikle iş süreçlerinin dijitalleştirilmesi ve otomasyonu için geliştirilmiştir. 
-              No-code platformlar, yazılım geliştirme konusunda teknik bilgi gerektirmeyen, kullanıcı dostu arayüzlerle iş süreçlerini oluşturmayı ve yönetmeyi sağlar.
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Farklı ölçekteki organizasyonlar için iş süreçleri geliştirme platformu</h2>
+            <p className="text-2xl font-semibold text-[#40949c] mb-4">"E-Flow BPM"</p>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Çoğu BPM uygulamasındaki bileşenlerde kodlamaya ihtiyaç vardır. Netoloji'nin No-code platform geliştiricileri, kullanıcıların görsel modelleme ögeleri olarak kullanacağı temel kodları yazmıştır. E-Flow ile bir süreç tasarlamaya başladığınızda aslında zaten yazılmış olan kodları derler ve kullanırsınız. İşte bu nedenle E-Flow kullanırken kod bilgisine ihtiyacınız olmaz.
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* BPM Features Section */}
+      {/* Features Section */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{}}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">EFLOW BPM Özellikleri</h2>
-            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              İş süreçlerinizi yönetmek için geliştirilmiş güçlü özellikler
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">İş süreçlerinizi akıllıca tasarlayın</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Görsel modelleme ile veriler hızla işlenir ve yönetilir. Sürükle-bırak arayüzü kodlama gereksinimini tamamen ortadan kaldırır. Bu sayede sınırsız olasılıkların kapıları açılır. Karmaşık veri modellerini oluşturmak kolaylaşır.
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {bpmFeatures.map((feature, index) => (
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {features.map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-slate-50 p-6 rounded-xl border border-slate-200 hover:border-slate-300 "
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
               >
-                <h3 className="text-lg font-bold mb-2 text-slate-900">{feature.title}</h3>
-                <p className="text-slate-600 text-sm">{feature.desc}</p>
+                <div className="w-16 h-16 bg-[#40949c]/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <feature.icon size={32} className="text-[#40949c]" />
+                </div>
+                <h3 className="text-xl font-bold mb-2 text-gray-900">{feature.title}</h3>
+                <p className="text-gray-600">{feature.desc}</p>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* E-Commerce Processes Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            transition={{}}
+            className="bg-gray-50 p-8 rounded-xl"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">E-Flow Süreçleri</h2>
-            <p className="text-lg text-slate-600 mb-2">E-ticaret ve Pazar Yeri Entegrasyonu</p>
-            <p className="text-base text-slate-500 max-w-4xl mx-auto">
-              Tüm pazar yerleri ve e-ticaret sitenizi tek bir panelden yönetin, otomatik süreçlerle verimliliği artırın.
+            <h3 className="text-2xl font-bold mb-4 text-gray-900">Tasarlanan süreçleri tekrar kullanarak zaman kazanın</h3>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Tasarlanan süreçlerin bileşenleri, yenilerini oluştururken tekrar kullanılabilir. Oluşturulan süreçler başkalarının kullanımı için paylaşıma açılabilir. Geleneksel geliştirme modellerinin saatler süren işleri sadece iki tıklamayla gerçekleşir.
             </p>
           </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-            {processes.map((process, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-white p-6 rounded-xl border border-slate-200 hover:border-slate-300"
-              >
-                <h3 className="text-lg font-bold mb-2 text-slate-900">{process.title}</h3>
-                <p className="text-slate-600 text-sm">{process.desc}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* Advantages Section */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{}}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl md:text-4xl mb-8 text-slate-900">E-Flow Avantajları</h3>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">E-Flow'un Avantajları</h2>
           </motion.div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {advantages.map((advantage, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-slate-900 text-white p-6 rounded-xl text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                className="bg-white p-6 rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-lg"
               >
-                <div className="text-4xl font-bold mb-2">{advantage.title}</div>
-                <div className="text-base font-semibold mb-2">{advantage.subtitle}</div>
-                <p className="text-slate-300 text-sm">{advantage.desc}</p>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-[#40949c]/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <advantage.icon size={24} className="text-[#40949c]" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold mb-2 text-gray-900">{advantage.title}</h3>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section className="py-20 bg-slate-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-slate-900">Sistem Seçenekleri</h2>
-            <p className="text-lg text-slate-600 mb-2">İhtiyacınıza Uygun Fiyatlandırma Modeli</p>
-            <p className="text-base text-slate-500 max-w-4xl mx-auto">
-              İşletmenizin büyüklüğüne ve işlem hacminize göre en uygun sistemi seçin.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-white p-8 rounded-xl border border-slate-200 hover:border-slate-300 "
-            >
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2 text-slate-900">Kontörlü Sistem</h3>
-                <p className="text-base text-slate-600">Esnek kullanım, işlem başına ödeme</p>
-              </div>
-              
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold mb-3 text-slate-900">Kontör Sistemi Nedir?</h4>
-                <p className="text-slate-600 mb-4 text-sm">
-                  Kontörlü sistemde, yaptığınız her işlem (sipariş, ürün ekleme, entegrasyon vb) için belirli miktarlarda kontör harcarsınız. Sadece kullandığınız kadar ödeme yaparsınız.
-                </p>
-                
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-slate-900 mr-2 text-sm">✓</span>
-                    <span className="text-slate-700 text-sm">Esnek kullanım - ihtiyacınız kadar kontör yükleyin</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-slate-900 mr-2 text-sm">✓</span>
-                    <span className="text-slate-700 text-sm">İşlem başına maliyet - bütçe kontrolü kolay</span>
-                  </li>
-                  
-                  <li className="flex items-start">
-                    <span className="text-slate-900 mr-2 text-sm">✓</span>
-                    <span className="text-slate-700 text-sm">Başlangıç için düşük maliyet</span>
-                  </li>
-                </ul>
-              </div>
-              
-           
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="bg-white p-8 rounded-xl border border-slate-200 hover:border-slate-300 "
-            >
-              <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold mb-2 text-slate-900">Lisans Sistemi</h3>
-                <p className="text-base text-slate-600">Sabit aylık ücret, sınırsız kullanım</p>
-              </div>
-              
-              <div className="mb-6">
-                <h4 className="text-lg font-semibold mb-3 text-slate-900">Lisans Sistemi Nedir?</h4>
-                <p className="text-slate-600 mb-4 text-sm">
-                  Lisans sisteminde, yıllık sabit ücret ödeyerek tüm özellikleri sınırsız kullanabilirsiniz. Yüksek işlem hacmi olan işletmeler için ekonomiktir.
-                </p>
-                
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <span className="text-slate-900 mr-2 text-sm">✓</span>
-                    <span className="text-slate-700 text-sm">Sınırsız işlem - ek maliyet yok</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-slate-900 mr-2 text-sm">✓</span>
-                    <span className="text-slate-700 text-sm">Tüm özellikler tam erişim</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-slate-900 mr-2 text-sm">✓</span>
-                    <span className="text-slate-700 text-sm">Öncelikli teknik destek</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-slate-900 mr-2 text-sm">✓</span>
-                    <span className="text-slate-700 text-sm">Kurulum ve eğitim dahil</span>
-                  </li>
-                </ul>
-              </div>
-              
-             
-            </motion.div>
-          </div>
-
+      {/* CTA Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-center bg-slate-900 p-8 rounded-xl"
+            transition={{}}
+            className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 p-10 md:p-16 rounded-3xl text-center overflow-hidden"
           >
-            <h3 className="text-2xl md:text-3xl font-bold mb-3 text-white">E-Flow ile Firma Gücünüzü Arttırın</h3>
-            <p className="text-base mb-6 text-slate-300">Ücretsiz demo talep edin ve E-Flow'un gücünü keşfedin</p>
-            <motion.button
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => router.push('/contact')}
-              className="bg-white text-slate-900 py-3 px-8 rounded-lg font-medium hover:bg-slate-100"
-            >
-              İletişime Geç
-            </motion.button>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#40949c]/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#ed4f37]/10 rounded-full blur-3xl" />
+            
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/80 text-sm font-medium mb-6">
+                <Sparkles size={14} />
+                Başlayın
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                E-Flow ile Verimliliğinizi
+                <br />
+                <span className="bg-gradient-to-r from-[#40949c] to-[#ed4f37] bg-clip-text text-transparent">Zirveye Taşıyın.</span>
+              </h2>
+              <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+                İş süreçlerinizi dijitalleştirerek daha verimli, hızlı ve hatasız bir çalışma ortamı yaratın. E-flow, size sadece zaman kazandırmakla kalmaz, aynı zamanda işlerinizi daha etkili bir şekilde yönetmenize olanak tanır. Hedeflerinize ulaşırken size güçlü bir dijital partner sunar.
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => router.push('/contact')}
+                className="px-8 py-4 bg-white text-gray-900 rounded-xl hover:bg-gray-100 font-semibold shadow-xl"
+              >
+                İletişime Geç
+                <ArrowRight className="w-4 h-4 ml-2 inline" />
+              </motion.button>
+            </div>
           </motion.div>
         </div>
       </section>
-
       
       <Footer />
     </div>

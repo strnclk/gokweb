@@ -6,13 +6,13 @@ import ContactButtons from '@/components/ContactButtons';
 import { MapPin, Clock, CheckCircle, Star, Users, Award, TrendingUp } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: "Anadolu Yakası Resmi Mikro Bayii | ERP CRM Çözümleri | Gökkuşağı Yazılım",
-  description: "Anadolu Yakası'nda resmi Mikro bayii olarak Mikro program satışı, ERP hizmeti, CRM çözümleri, teknik destek ve kurulum hizmetleri. Ataşehir'den tüm Anadolu Yakası'na hizmet.",
-  keywords: "Anadolu yakası mikro bayii, Ataşehir mikro bayii, Kadıköy mikro bayii, Üsküdar mikro bayii, Maltepe mikro bayii, Kartal mikro bayii, Pendik mikro bayii, Mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP satışı, Mikro v3, Mikro 14",
+  title: "Anadolu Yakası Resmi Mikro Bayi | ERP CRM Çözümleri | Gökkuşağı Yazılım",
+  description: "Anadolu Yakası'nda resmi Mikro Bayi olarak Mikro program satışı, ERP hizmeti, CRM çözümleri, teknik destek ve kurulum hizmetleri. Ataşehir'den tüm Anadolu Yakası'na hizmet.",
+  keywords: "Anadolu yakası mikro Bayi, Ataşehir mikro Bayi, Kadıköy mikro Bayi, Üsküdar mikro Bayi, Maltepe mikro Bayi, Kartal mikro Bayi, Pendik mikro Bayi, Mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP satışı, Mikro v3, Mikro 14",
   openGraph: {
-    title: "Anadolu Yakası Resmi Mikro Bayii | Gökkuşağı Yazılım",
-    description: "Anadolu Yakası'nda resmi Mikro bayii. Mikro program satışı, ERP hizmeti, CRM çözümleri ve teknik destek.",
-    url: "https://gokkusagiyazilim.com.tr/anadolu-yakasi-mikro-bayii",
+    title: "Anadolu Yakası Resmi Mikro Bayi | Gökkuşağı Yazılım",
+    description: "Anadolu Yakası'nda resmi Mikro Bayi. Mikro program satışı, ERP hizmeti, CRM çözümleri ve teknik destek.",
+    url: "https://gokkusagiyazilim.com.tr/anadolu-yakasi-mikro-Bayi",
     locale: "tr_TR",
     type: "website",
   },
@@ -21,9 +21,9 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Gökkuşağı Yazılım ve Danışmanlık - Anadolu Yakası Mikro Bayii",
-  description: "Anadolu Yakası'nda resmi Mikro bayii olarak Mikro program satışı, ERP hizmeti, CRM çözümleri ve teknik destek hizmetleri.",
-  url: "https://gokkusagiyazilim.com.tr/anadolu-yakasi-mikro-bayii",
+  name: "Gökkuşağı Yazılım ve Danışmanlık - Anadolu Yakası Mikro Bayi",
+  description: "Anadolu Yakası'nda resmi Mikro Bayi olarak Mikro program satışı, ERP hizmeti, CRM çözümleri ve teknik destek hizmetleri.",
+  url: "https://gokkusagiyazilim.com.tr/anadolu-yakasi-mikro-Bayi",
   telephone: "+905398563578",
   address: {
     "@type": "PostalAddress",
@@ -65,7 +65,7 @@ const jsonLd = {
   priceRange: "$$$"
 };
 
-export default function AnadoluYakasiMikroBayiiPage() {
+export default function AnadoluYakasiMikroBayiPage() {
   const services = [
     {
       icon: CheckCircle,
@@ -90,16 +90,16 @@ export default function AnadoluYakasiMikroBayiiPage() {
   ];
 
   const areas = [
-    "Ataşehir Mikro Bayii",
-    "Kadıköy Mikro Bayii", 
-    "Üsküdar Mikro Bayii",
-    "Maltepe Mikro Bayii",
-    "Kartal Mikro Bayii",
-    "Pendik Mikro Bayii",
-    "Sancaktepe Mikro Bayii",
-    "Sultanbeyli Mikro Bayii",
-    "Tuzla Mikro Bayii",
-    "Çekmeköy Mikro Bayii"
+    "Ataşehir Mikro Bayi",
+    "Kadıköy Mikro Bayi", 
+    "Üsküdar Mikro Bayi",
+    "Maltepe Mikro Bayi",
+    "Kartal Mikro Bayi",
+    "Pendik Mikro Bayi",
+    "Sancaktepe Mikro Bayi",
+    "Sultanbeyli Mikro Bayi",
+    "Tuzla Mikro Bayi",
+    "Çekmeköy Mikro Bayi"
   ];
 
   const products = [
@@ -129,7 +129,7 @@ export default function AnadoluYakasiMikroBayiiPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Anadolu Yakası Resmi Mikro Bayii
+                Anadolu Yakası Resmi Mikro Bayi
               </h1>
               <p className="text-xl md:text-2xl mb-8 text-blue-100">
                 Ataşehir merkezden tüm Anadolu Yakası'na Mikro program satışı, ERP hizmeti ve CRM çözümler
@@ -169,10 +169,10 @@ export default function AnadoluYakasiMikroBayiiPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Mikro Bayii Hizmetlerimiz
+                Mikro Bayi Hizmetlerimiz
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Anadolu Yakası'nda resmi Mikro bayii olarak kapsamlı hizmetler sunuyoruz
+                Anadolu Yakası'nda resmi Mikro Bayi olarak kapsamlı hizmetler sunuyoruz
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -243,7 +243,7 @@ export default function AnadoluYakasiMikroBayiiPage() {
                 Neden Bizi Tercih Etmelisiniz?
               </h2>
               <p className="text-xl text-gray-600">
-                Anadolu Yakası'nda güvenilir Mikro bayii
+                Anadolu Yakası'nda güvenilir Mikro Bayi
               </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
@@ -251,8 +251,8 @@ export default function AnadoluYakasiMikroBayiiPage() {
                 <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Star className="w-10 h-10 text-yellow-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">Resmi Bayii</h3>
-                <p className="text-gray-600">Mikro yazılım yetkili resmi bayii olarak orijinal ürünler ve güncel lisanslar</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">Resmi Bayi</h3>
+                <p className="text-gray-600">Mikro yazılım yetkili resmi Bayi olarak orijinal ürünler ve güncel lisanslar</p>
               </div>
               <div className="text-center">
                 <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">

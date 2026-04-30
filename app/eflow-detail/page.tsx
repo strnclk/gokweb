@@ -39,11 +39,6 @@ export default function EFlowDetailPage() {
       icon: Zap
     },
     {
-      title: 'GİB Entegrasyonu',
-      description: 'Gelir İdaresi Başkanlığı ile tam entegrasyon',
-      icon: Globe
-    },
-    {
       title: 'Gerçek Zamanlı Takip',
       description: 'Tüm fatura işlemlerini anlık takip',
       icon: TrendingUp

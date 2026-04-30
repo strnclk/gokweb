@@ -45,7 +45,7 @@ export default function GibPage() {
     { code: '1002', status: 'Hata', description: 'VKN/TC kimlik no hatalı', cause: 'Vergi numarası veya TC kimlik no hatalı', solution: 'VKN/TC no kontrol edin', action: 'Doğru numarayı girin' },
     { code: '1003', status: 'Hata', description: 'Tarih format hatası', cause: 'Tarih formatı doğru değil', solution: 'Tarih formatını kontrol edin', action: 'DD.MM.YYYY formatında girin' },
     { code: '2001', status: 'Uyarı', description: 'Mükellef bulunamadı', cause: 'Girilen VKN/TC no sistemde kayıtlı değil', solution: 'VKN/TC no doğruluğunu kontrol edin', action: 'Kayıt oluşturun' },
-    { code: '2002', status: 'Uyarı', description: 'E-Fatura mükellefi değil', cause: 'Mükellef E-Fatura sistemine kayıtlı değil', solution: 'E-Fatura başvurusu yapın', action: 'GİB portalına başvurun' },
+    { code: '2002', status: 'Uyarı', description: 'E-Fatura mükellefi değil', cause: 'Mükellef E-Fatura sistemine kayıtlı değil', solution: 'E-Fatura başvurusu yapın', action: 'Portal üzerinden başvurun' },
     { code: '3001', status: 'Hata', description: 'İmza doğrulama hatası', cause: 'İmza geçersiz veya süresi dolmuş', solution: 'İmza sertifikasını yenileyin', action: 'Yeni sertifika alın' },
     { code: '3002', status: 'Hata', description: 'Sertifika hatası', cause: 'Sertifika geçersiz', solution: 'Sertifika doğruluğunu kontrol edin', action: 'Geçerli sertifika kullanın' },
     { code: '4001', status: 'Hata', description: 'Ağ hatası', cause: 'İnternet bağlantısı sorunu', solution: 'İnternet bağlantısını kontrol edin', action: 'Bağlantıyı yenileyin' },
@@ -74,10 +74,10 @@ export default function GibPage() {
       {/* Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          GİB Durum Kodları
+          Durum Kodları
         </h1>
         <p className="text-lg text-gray-600 mb-8">
-          GİB entegrasyonunda kullanılan durum kodları ve açıklamaları
+          Entegrasyon durum kodları ve açıklamaları
         </p>
 
         {/* Table */}

@@ -65,7 +65,7 @@ export default function HeroSection() {
             className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-8"
           >
             <Zap size={14} />
-            Resmi Mikro Bayii
+            Resmi Mikro Bayi
           </motion.div>
 
           <motion.h1

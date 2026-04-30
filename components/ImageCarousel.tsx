@@ -1,52 +1,36 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const slides = [
-  {
-    image: '/rainbow.jpg',
-    title: 'Dijital Dönüşüm',
-    description: 'İşletmenizi geleceğe taşıyan çözümler',
-    features: ['Yapay Zeka Entegrasyonu', 'Bulut Tabanlı Altyapı', 'Gerçek Zamanlı Analitik', 'Otomasyon Süreçleri'],
-    stats: ['5K+ İşletme', '%40 Verimlilik', '7/24 Destek'],
-    link: '/services'
-  },
-  {
-    image: '/rainbow.jpg',
-    title: 'Mikro ERP',
-    description: 'Kapsamlı iş yönetim sistemi',
-    features: ['Finansal Yönetim', 'Stok Takibi', 'Üretim Planlama', 'Raporlama'],
-    stats: ['15+ Modül', '1000+ Müşteri', '19+ Yıl Deneyim'],
-    link: '/mikro-fly'
-  },
-  {
-    image: '/rainbow.jpg',
-    title: 'E-Dönüşüm',
-    description: 'GİB uyumlu dijital çözümler',
-    features: ['E-Fatura', 'E-Defter', 'E-Arşiv', 'E-İrsaliye'],
-    stats: ['GİB Uyumlu', 'Sıfır Hata', 'Otomatik Entegrasyon'],
-    link: '/services'
-  },
-  {
-    image: '/rainbow.jpg',
-    title: 'CRM Çözümleri',
-    description: 'Müşteri ilişkileri yönetimi',
-    features: ['Satış Yönetimi', 'Pazarlama Otomasyonu', 'Müşteri Analizi', 'Hedef Takibi'],
-    stats: ['+20% Satış', '+35% Memnuniyet', 'Gerçek Zamanlı'],
-    link: '/services'
-  },
-  {
-    image: '/rainbow.jpg',
-    title: 'Sektörel Çözümler',
-    description: 'Her sektör için özelleştirilmiş ERP',
-    features: ['İnşaat', 'Üretim', 'Perakende', 'Hizmet'],
-    stats: ['10+ Sektör', 'Özel Modüller', 'Esnek Yapı'],
-    link: '/sectoral-solutions'
-  }
-];
-
 export default function ImageCarousel() {
+  const slides = useMemo(() => [
+    {
+      image: '/rainbow.jpg',
+      title: 'Yazılımdan Daha Fazlası',
+      description: 'Yazılım bağımlılığının olmadığı, abonelik ve kiralama modeline sayesinde, düşük ilk yatırım maliyeti ile kullanmanın keyfini sunuyoruz.',
+      features: ['Abonelik Modeli', 'Kiralama Seçeneği', 'Düşük Yatırım Maliyeti', 'Yazılım Bağımsız'],
+      stats: ['Esnek Ödeme', 'Kolay Kullanım', 'Hızlı Kurulum'],
+      link: '/services'
+    },
+    {
+      image: '/rainbow.jpg',
+      title: '7/24 Destek Hizmeti',
+      description: 'Yaşadığınız soruna kolayca çare bulabileceğiniz bir altyapıya ve dilediğinizde bizden daima yardım alabileceğiniz destek hizmetlerine sahibiz.',
+      features: ['Sürekli Destek', 'Hızlı Çözüm', 'Uzman Ekip', 'Kolay Erişim'],
+      stats: ['7/24 Ulaşılabilir', 'Anlık Yanıt', 'Profesyonel'],
+      link: '/contact'
+    },
+    {
+      image: '/rainbow.jpg',
+      title: 'Deneyime Dayalı Güven',
+      description: '25 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
+      features: ['25 Yıl Deneyim', 'Müşteri Odaklı', 'Güvenilir', 'Özelleştirilebilir'],
+      stats: ['25+ Yıl', 'Onlarca Müşteri', 'Kanıtlanmış Başarı'],
+      link: '/about'
+    }
+  ], []);
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -55,7 +39,7 @@ export default function ImageCarousel() {
     }, 5000);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
 
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % slides.length);

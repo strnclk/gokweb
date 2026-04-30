@@ -42,8 +42,8 @@ export default function FeaturedWorksPage() {
   const stats = [
     { value: '500+', label: 'Başarılı Proje', icon: Award },
     { value: '95%', label: 'Müşteri Memnuniyeti', icon: Star },
-    { value: '15+', label: 'Yıl Deneyim', icon: Clock },
-    { value: '24/7', label: 'Destek', icon: Shield }
+    { value: '19+', label: 'Yıl Deneyim', icon: Clock },
+    { value: '7/24', label: 'Destek', icon: Shield }
   ];
 
   const financialServices = [

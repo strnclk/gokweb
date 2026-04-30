@@ -34,9 +34,8 @@ export default function MikroRunPage() {
   };
 
   const scrollToContact = () => {
-    const message = 'Merhaba%20Mikro%20RUN%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim?';
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=905398563578&text=${message}`;
-    window.open(whatsappUrl, '_blank');
+    const message = 'Merhaba, Mikro RUN hakkında bilgi almak istiyorum.';
+    window.location.href = `/contact?message=${encodeURIComponent(message)}&subject=teklif`;
   };
 
   const stats = [
@@ -50,92 +49,104 @@ export default function MikroRunPage() {
     {
       icon: Package,
       title: 'Stok/Ürün Yönetimi',
-      description: 'Stok ve ürün takibi, depo yönetimi',
-      descriptionDetail: 'Barkod sistemi ile otomasyon'
-    },
-    {
-      icon: Receipt,
-      title: 'Hizmet ve Masraf Yönetimi',
-      description: 'Hizmet ve masraf kalemlerinin takibi',
-      descriptionDetail: 'Detaylı maliyet analizi'
-    },
-    {
-      icon: Users,
-      title: 'Satın Alma ve Tedarikçi',
-      description: 'Satın alma süreçleri, tedarikçi yönetimi',
-      descriptionDetail: 'Otomatik sipariş oluşturma'
+      description: 'Stok ve ürün takibi',
+      descriptionDetail: 'Depo yönetimi'
     },
     {
       icon: Landmark,
       title: 'Satış ve Müşteri Yönetimi',
-      description: 'Satış süreçleri, müşteri takibi',
-      descriptionDetail: 'CRM entegrasyonu'
+      description: 'Satış süreçleri',
+      descriptionDetail: 'Müşteri takibi'
     },
     {
-      icon: BarChart,
-      title: 'Ön Muhasebe',
-      description: 'Basit ön muhasebe işlemleri',
-      descriptionDetail: 'Mali müşavir ile entegrasyon'
+      icon: Users,
+      title: 'Satın Alma ve Tedarikçi Yönetimi',
+      description: 'Satın alma süreçleri',
+      descriptionDetail: 'Tedarikçi yönetimi'
+    },
+    {
+      icon: Wallet,
+      title: 'Masraf Yönetimi',
+      description: 'Masraf kalemlerinin takibi',
+      descriptionDetail: 'Detaylı maliyet analizi'
     },
     {
       icon: Receipt,
-      title: 'E-Dönüşüm',
-      description: 'E-Fatura, E-Arşiv, E-İrsaliye',
-      descriptionDetail: 'GİB uyumlu gönderim'
+      title: 'E-Dönüşüm Çözümleri',
+      description: 'E-Fatura, E-Arşiv',
+      descriptionDetail: 'E-İrsaliye, E-Defter'
+    },
+    {
+      icon: BarChart,
+      title: 'Raporlama',
+      description: 'Detaylı raporlar',
+      descriptionDetail: 'Analiz ve istatistikler'
     }
   ];
 
   const benefits = [
     {
       number: '01',
-      title: 'Dijital Dönüşüm',
-      description: 'Muhasebe süreçlerinizi tamamen dijitalleştirin',
+      title: 'Yazılımdan Daha Fazlası',
+      description: 'Yazılım bağımlılığının olmadığı, abonelik ve kiralama modeline sayesinde, düşük ilk yatırım maliyeti ile kullanmanın keyfini sunuyoruz.',
       icon: Zap
     },
     {
       number: '02',
-      title: 'Verimlilik Artışı',
-      description: 'Otomasyon ile %85 verimlilik artışı sağlayın',
+      title: '7/24 Destek Hizmeti',
+      description: 'Yaşadığınız soruna kolayca çare bulabileceğiniz bir altyapıya ve dilediğinizde bizden daima yardım alabileceğiniz destek hizmetlerine sahibiz.',
       icon: TrendingUp
     },
     {
       number: '03',
-      title: 'Maliyet Optimizasyonu',
-      description: 'Manuel işleri azaltarak maliyetlerinizi %60 düşürün',
-      icon: Target
-    },
-    {
-      number: '04',
-      title: 'Yasal Uyum',
-      description: 'Tüm yasal düzenlemelere tam uyumlu',
+      title: 'Deneyime Dayalı Güven',
+      description: '25 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
       icon: Award
     }
   ];
 
   const modules = [
     {
-      name: 'Talep Yönetimi',
+      name: 'e-Fatura',
       icon: FileText,
-      description: 'Satın alma, izin, bütçe taleplerini dijitalleştirin',
-      features: ['Talep oluşturma', 'Onay akışları', 'Takip ve raporlama']
+      description: 'Elektronik fatura kesme ve yönetim',
+      features: [ 'Otomatik gönderim', 'Arşivleme']
     },
     {
-      name: 'Performans Yönetimi',
+      name: 'e-Arşiv Fatura',
       icon: Activity,
-      description: 'Çalışan performansını ölçün ve yönetin',
-      features: ['Hedef belirleme', 'Değerlendirme', '360° feedback']
+      description: 'Elektronik arşiv fatura sistemi',
+      features: ['Yasal uyum', 'Güvenli depolama', 'Hızlı erişim']
     },
     {
-      name: 'Proje Yönetimi',
+      name: 'e-İrsaliye',
       icon: Layers,
-      description: 'Projeleri planlayın, takip edin ve tamamlayın',
-      features: ['Planlama', 'Kaynak yönetimi', 'İlerleme takibi']
+      description: 'Elektronik irsaliye yönetimi',
+      features: ['Sevkiyat takibi', 'Otomatik eşleşme', 'Raporlama']
     },
     {
-      name: 'Finansal Yönetim',
+      name: 'e-Defter',
       icon: BarChart,
-      description: 'Bütçe ve finansal süreçleri yönetin',
-      features: ['Bütçeleme', 'Gider takibi', 'Raporlama']
+      description: 'Elektronik defter sistemi',
+      features: ['Yasal uyum', 'Otomatik kayıt', 'Yedekleme']
+    },
+    {
+      name: 'e-Mutabakat',
+      icon: CheckCircle,
+      description: 'Elektronik mutabakat sistemi',
+      features: ['Hızlı mutabakat', 'Otomatik eşleşme', 'Raporlama']
+    },
+    {
+      name: 'e-Bordro',
+      icon: Clock,
+      description: 'Elektronik bordro sistemi',
+      features: ['SGK entegrasyonu', 'Otomatik hesaplama', 'Bildirim']
+    },
+    {
+      name: 'e-SMMM',
+      icon: Star,
+      description: 'SMM elektronik sistem',
+      features: ['Yasal uyum', 'Otomatik bildirim', 'Takip']
     }
   ];
 
@@ -168,7 +179,7 @@ export default function MikroRunPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-500 mb-10 max-w-4xl mx-auto leading-relaxed"
           >
-5'ten az çalışanlı küçük ölçekli işletmeler için hızlı ve pratik muhasebe çözümü
+Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüşüm paketidir. Kolay kullanım, sade ve anlaşılır menülerle, hazır fatura tasarımı, e-fatura kesme özelliği ve anahtar teslim e-fatura çözümleri sunar. Mikro RUN, tüm finansal ve organizasyonel süreçlerinizi yönetmek için mükemmel bir destek sağlar.
           </motion.p>
 
           <motion.button
@@ -193,9 +204,9 @@ export default function MikroRunPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Özellikler</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Mikro Run Ana Paket</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Mikro RUN'un işletmenizi nasıl hızlandıracağını keşfedin
+              Mikro Run Ana pakette Neler Var?
             </p>
           </motion.div>
 
@@ -232,13 +243,13 @@ export default function MikroRunPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Modüller</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Mikro Run e-Dönüşüm Çözümleri</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              İşletmenizin ihtiyacına özel modüler çözümler
+              Mikro RUN İşletmelerin dijital dönüşüm sürecinde ihtiyaç duyduğu tüm e-Dönüşüm çözümlerini tek bir platformda sunarak, iş süreçlerinizi kolaylaştırır ve hızlandırır.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="flex flex-wrap justify-center gap-6">
             {modules.map((module, index) => {
               const Icon = module.icon;
               return (
@@ -247,7 +258,7 @@ export default function MikroRunPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-rose-300 min-h-[280px] flex flex-col"
+                  className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-rose-300 min-h-[280px] flex flex-col w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
                 >
                   <div className="w-12 h-12 bg-rose-900 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <Icon size={24} className="text-white" />
@@ -280,24 +291,46 @@ export default function MikroRunPage() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
-                Mikro RUN'ı <span className="text-rose-900">Yakından Tanıyın</span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Neden <br /> Gökkuşağı Yazılım ve Danışmanlık <br /> ile Mikro Yazılım'a Geçmelisiniz?
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-5'ten az çalışanlı küçük ölçekli işletmeler için hızlı ve pratik muhasebe çözümü. Ön muhasebeyi basit şekilde yönetin, genel muhasebeyi mali müşavirle takip edin.
+              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 25 yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
               </p>
+              <h3 className="text-lg font-bold mb-3 text-gray-900">Mikro Yazılım Geçiş Sürecini Nasıl Yönetiyoruz:</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  E-Fatura, E-Arşiv, E-İrsaliye, E-Defter
+                  Ön Görüşme
+                </div>
+                
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  İşletmenize En Uygun Paket Seçimi
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Basit ön muhasebe yönetimi
+                  Teklif ve Teklif Onayı
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Mali müşavir ile genel muhasebe
+                  Uyarlama ve Aktarım (Ücretsiz)
+                </div>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  Detay Analiz (Ücretsiz)
+                </div>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  Eğitim (Ücretsiz)
+                </div>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  Proje Teslimi
+                </div>
+                <div className="flex items-center gap-3 text-sm text-gray-600">
+                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  Uzaktan veya Yerinde Destek
                 </div>
               </div>
             </motion.div>
@@ -323,28 +356,36 @@ export default function MikroRunPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Avantajlar</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Mikro Run ile İşlerinizi Geleceğe Taşıyın!</h2>
             <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              İşletmeniz için somut ve ölçülebilir faydalar
+              Mikro Run, işletmenizin ihtiyaçlarına özel çözümler sunarak muhasebe ve iş yönetimini kolaylaştırır. Modern teknolojilerle desteklenen bu yazılım, her zaman güncel kalarak değişen mevzuat ve iş gereksinimlerine hızlıca uyum sağlar. Kullanıcı dostu arayüzü sayesinde karmaşık işlemleri basit adımlarla yönetebilir, işinizi daha verimli hale getirebilirsiniz.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {benefits.map((benefit, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              'Kolay Ve İşlevsel Çözümler',
+              'Daima Güncel Sistem',
+              'Anahtar Teslim e-Fatura',
+              '7/24 Canlı Destek Hizmeti',
+              'Güvenli Yedekleme',
+              'E-Ticaret Entegrasyonu',
+              'Mobil Uygulama Desteği',
+              'Masaüstü veya Bulut Uygulama',
+              'Masraf Yönetimi',
+              '1 Ek Kullanıcı',
+              'Sektörel Çözümler',
+              'Ek Çözümler'
+            ].map((feature, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex items-start gap-4 p-6 bg-white rounded-xl border border-gray-200 hover:border-rose-300"
+                className="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-rose-300"
               >
-                <div className="w-12 h-12 bg-rose-900 rounded-lg flex items-center justify-center text-white text-lg font-bold flex-shrink-0">
-                  {benefit.number}
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-2 text-gray-900">{benefit.title}</h3>
-                  <p className="text-gray-600 text-sm">{benefit.description}</p>
-                </div>
+                <CheckCircle size={20} className="text-rose-900 flex-shrink-0" />
+                <span className="text-gray-700 text-sm font-medium">{feature}</span>
               </motion.div>
             ))}
           </div>
@@ -360,17 +401,70 @@ export default function MikroRunPage() {
             transition={{ duration: 0.6 }}
             className="bg-rose-900 p-8 rounded-xl text-center"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">Mikro RUN ile Tanışın</h2>
-            <p className="text-base mb-6 text-rose-100">İşletmenizi dijital dönüşüme hazırlayın</p>
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">Mikro Run İle İlgili Detaylı Bilgi ve Sunum İçin Bize Ulaşabilirsiniz</h2>
+            <p className="text-base mb-6 text-rose-100">Mikro RUN, ek çözümler ve özellikleriyle İlgili detaylı bilgi almak, demo ve sunum talep etmek İçin bizimle İletişime geçin!</p>
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               onClick={scrollToContact}
               className="bg-white text-rose-900 py-3 px-8 rounded-lg font-medium hover:bg-rose-50"
             >
-              Ücretsiz Demo İsteyin
+              İletişime Geç
             </motion.button>
           </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Mikro Run Hakkında Merak Edilenler</h2>
+            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Mikro Run ürünü hakkında sık sorulan soruları sizin İçin cevapladık.
+            </p>
+          </motion.div>
+
+          <div className="space-y-4">
+            {[
+              {
+                question: 'Mikro Run ile Neler Yapabilirsiniz?',
+                answer: 'Mikro Run, küçük ölçekli işletmelerin temel iş süreçlerini etkin bir şekilde yönetmelerine yardımcı olan bir ticari yazılımdır. Mikro Run ile: Stok takibi yapabilir, ürünlerinizi kolayca yönetebilirsiniz. Satış ve satın alma işlemlerini hızlı ve hatasız bir şekilde gerçekleştirebilirsiniz. Fatura ve irsaliye işlemlerini düzenleyebilir, e-Fatura ve e-Arşiv entegrasyonları sayesinde elektronik ortamda işlem yapabilirsiniz. Cari hesap takibi ile müşteri ve tedarikçi ilişkilerinizi yönetebilir, alacak ve borçlarınızı kontrol edebilirsiniz. Banka ve kasa işlemlerinizi kaydedebilir, finansal durumunuzu anlık olarak izleyebilirsiniz. Raporlama ve analiz araçları sayesinde işletmenizin performansını değerlendirip stratejik kararlar alabilirsiniz.'
+              },
+              {
+                question: 'Mikro Run\'ı Kimler Tercih Etmeli?',
+                answer: 'Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüşüm paketidir.'
+              },
+              {
+                question: 'Mikro Run Çalışması için Başka Bir Yazılım Almalı mıyım?',
+                answer: 'Hayır, Mikro Run tam kapsamlı bir çözüm sunar ve ek bir yazılıma ihtiyaç duymaz.'
+              },
+              {
+                question: 'Mikro Run Birden Fazla Şirket ile Çalışabilir mi?',
+                answer: 'Evet, Mikro Run birden fazla şirketi yönetebilir.'
+              },
+              {
+                question: 'Mikro Run\'da Stoklara Tanımladığım Tüm Ürünlerin Adet, Birim, Fiyat ve Gruplarını Listeleyebilir miyim?',
+                answer: 'Evet, Mikro Run stok yönetimi özellikleri ile ürünlerinizi detaylı olarak listeleyebilir ve yönetebilirsiniz.'
+              }
+            ].map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                className="bg-white p-6 rounded-xl border border-gray-200"
+              >
+                <h3 className="text-lg font-bold mb-3 text-gray-900">{faq.question}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{faq.answer}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
       

@@ -53,6 +53,18 @@ export default function Footer() {
             </ul>
           </div>
 
+          {/* İstanbul İlçeleri */}
+          <div>
+            <h4 className="text-lg font-semibold mb-6 text-white">İstanbul İlçeleri</h4>
+            <ul className="space-y-3">
+              <li><Link href="/atasehir-mikro-bayi" className="text-slate-400 hover:text-white transition-colors duration-200">Ataşehir Mikro Bayi</Link></li>
+              <li><Link href="/beylikduzu-mikro-bayi" className="text-slate-400 hover:text-white transition-colors duration-200">Beylikdüzü Mikro Bayi</Link></li>
+              <li><Link href="/kadikoy-mikro-bayi" className="text-slate-400 hover:text-white transition-colors duration-200">Kadıköy Mikro Bayi</Link></li>
+              <li><Link href="/uskudar-mikro-bayi" className="text-slate-400 hover:text-white transition-colors duration-200">Üsküdar Mikro Bayi</Link></li>
+              <li><Link href="/umraniye-mikro-bayi" className="text-slate-400 hover:text-white transition-colors duration-200">Ümraniye Mikro Bayi</Link></li>
+            </ul>
+          </div>
+
           {/* Quick links */}
           <div>
             <h4 className="text-lg font-semibold mb-6 text-white">Hızlı Linkler</h4>
@@ -127,7 +139,7 @@ export default function Footer() {
             <div className="flex space-x-6 text-sm">
               <Link href="/gizlilik" className="text-slate-400 hover:text-white transition-colors">Gizlilik Politikası</Link>
               <Link href="/kullanim" className="text-slate-400 hover:text-white transition-colors">Kullanım Koşulları</Link>
-              <Link href="/kvkk" className="text-slate-400 hover:text-white transition-colors">KVKK</Link>
+              <Link href="/cerezler" className="text-slate-400 hover:text-white transition-colors">Çerez Politikası</Link>
             </div>
           </div>
         </div>

@@ -13,6 +13,7 @@ export default function Navbar() {
   const [isMikroDropdownOpen, setIsMikroDropdownOpen] = useState(false);
   const [isEflowDropdownOpen, setIsEflowDropdownOpen] = useState(false);
   const [isSectoralDropdownOpen, setIsSectoralDropdownOpen] = useState(false);
+  const [isVerticalDropdownOpen, setIsVerticalDropdownOpen] = useState(false);
 
   const isActive = (path: string) => {
     if (path === '/') return pathname === '/';
@@ -79,14 +80,37 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Mikro Dikey Çözümler */}
-            <Link href="/vertical-solutions" className={`flex items-center gap-2 transition font-semibold text-lg relative group ${isActive('/vertical-solutions') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}>
-              <Building className="w-4 h-4" />
-              Mikro Dikey Çözümler
-              {!isActive('/vertical-solutions') && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+            {/* Mikro Dikey Çözümler Dropdown */}
+            <div className="relative">
+              <button 
+                onClick={() => setIsVerticalDropdownOpen(!isVerticalDropdownOpen)}
+                className={`flex items-center gap-2 transition font-semibold text-lg relative group ${isActive('/vertical-solutions') || isActive('/solutions') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}
+              >
+                <Building className="w-4 h-4" />
+                Mikro Dikey Çözümler
+                <ChevronDown className={`w-4 h-4 transition-transform ${isVerticalDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {!isActive('/vertical-solutions') && !isActive('/solutions') && (
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 z-10"></div>
               )}
-            </Link>
+              
+              {isVerticalDropdownOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden z-50"
+                >
+                  <Link href="/vertical-solutions" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                    <Building className="w-4 h-4" />
+                    Mikro Dikey Çözümler
+                  </Link>
+                  <Link href="/solutions" className="flex items-center gap-3 px-4 py-3 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition">
+                    <TrendingUp className="w-4 h-4" />
+                    Çözümleri Görüntüle
+                  </Link>
+                </motion.div>
+              )}
+            </div>
 
             {/* E-Flow Dropdown */}
             <div className="relative">
@@ -234,14 +258,37 @@ export default function Navbar() {
                 )}
               </div>
 
-              {/* Diğer Menü Öğeleri - Mobil */}
-              <Link href="/vertical-solutions" className={`flex items-center gap-2 transition font-semibold text-xl px-6 relative group ${isActive('/vertical-solutions') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}>
-                <Building className="w-5 h-5" />
-                Mikro Dikey Çözümler
-                {!isActive('/vertical-solutions') && (
+              {/* Mikro Dikey Çözümler Dropdown - Mobil */}
+              <div className="px-6">
+                <button 
+                  onClick={() => setIsVerticalDropdownOpen(!isVerticalDropdownOpen)}
+                  className={`flex items-center gap-2 transition font-semibold text-xl w-full text-left relative group ${isActive('/vertical-solutions') || isActive('/solutions') ? 'text-purple-600 font-bold' : 'text-gray-800 hover:text-purple-600'}`}
+                >
+                  <Building className="w-5 h-5" />
+                  Mikro Dikey Çözümler
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isVerticalDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {!isActive('/vertical-solutions') && !isActive('/solutions') && (
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 )}
-              </Link>
+                
+                {isVerticalDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="mt-2 ml-4 space-y-2"
+                  >
+                    <Link href="/vertical-solutions" className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition rounded">
+                      <Building className="w-4 h-4" />
+                      Mikro Dikey Çözümler
+                    </Link>
+                    <Link href="/solutions" className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-purple-50 hover:text-purple-600 transition rounded">
+                      <TrendingUp className="w-4 h-4" />
+                      Çözümleri Görüntüle
+                    </Link>
+                  </motion.div>
+                )}
+              </div>
 
               {/* E-Flow Dropdown - Mobil */}
               <div className="px-6">

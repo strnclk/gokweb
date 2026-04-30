@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title:
     "Gökkuşağı Yazılım ve Danışmanlık | Anadolu Yakası Mikro Bayii | ERP CRM Çözümleri",
   description:
-    "Anadolu Yakası'nda resmi Mikro bayii olarak ERP hizmeti, CRM çözümleri, Mikro program entegrasyonu ve özel yazılım geliştirme hizmetleri. Ataşehir'den tüm Türkiye'ye hizmet.",
+    "Anadolu Yakası'nda resmi Mikro bayi olarak ERP hizmeti, CRM çözümleri, Mikro program entegrasyonu ve özel yazılım geliştirme hizmetleri. Ataşehir'den tüm Türkiye'ye hizmet.",
   keywords:
     "Anadolu yakası mikro bayii, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayii, İstanbul mikro bayii, ERP entegrasyonu, Mikro entegrasyon, özel yazılım, IT danışmanlık, e-dönüşüm",
   authors: [{ name: "Gökkuşağı Yazılım ve Danışmanlık" }],
@@ -61,10 +61,11 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "LocalBusiness",
   name: "Gökkuşağı Yazılım ve Danışmanlık",
   url: "https://gokkusagiyazilim.com.tr",
   logo: "https://gokkusagiyazilim.com.tr/logo.png",
+  description: "Anadolu Yakası'nda resmi Mikro bayi olarak ERP hizmeti, CRM çözümleri, Mikro program entegrasyonu ve özel yazılım geliştirme hizmetleri.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ataşehir",
@@ -77,6 +78,70 @@ const jsonLd = {
     contactType: "sales",
   },
   sameAs: ["https://www.linkedin.com/company/gokkusagiyazilim"],
+  serviceArea: [
+    {
+      "@type": "City",
+      name: "Ataşehir"
+    },
+    {
+      "@type": "City",
+      name: "Beylikdüzü"
+    },
+    {
+      "@type": "City",
+      name: "Kadıköy"
+    },
+    {
+      "@type": "City",
+      name: "Üsküdar"
+    },
+    {
+      "@type": "City",
+      name: "Ümraniye"
+    },
+    {
+      "@type": "City",
+      name: "Kartal"
+    },
+    {
+      "@type": "City",
+      name: "Maltepe"
+    },
+    {
+      "@type": "City",
+      name: "Pendik"
+    },
+    {
+      "@type": "City",
+      name: "Tuzla"
+    },
+    {
+      "@type": "City",
+      name: "Sultanbeyli"
+    },
+    {
+      "@type": "City",
+      name: "Sancaktepe"
+    },
+    {
+      "@type": "City",
+      name: "Çekmeköy"
+    },
+    {
+      "@type": "City",
+      name: "Şile"
+    }
+  ],
+  areaServed: {
+    "@type": "City",
+    name: "İstanbul"
+  },
+  priceRange: "$$",
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "50"
+  }
 };
 
 export default function RootLayout({

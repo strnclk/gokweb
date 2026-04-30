@@ -73,7 +73,7 @@ export default function SEOSection() {
           <div>
             <h3 className="text-2xl mb-4 text-gray-900">Neden Gökkuşağı Yazılım?</h3>
             <p className="text-lg text-gray-900">
-              19 yılı aşkın deneyimimiz ve 500'den fazla mutlu müşterimizle, Türkiye'nin lider mikro ERP ve e-dönüşüm çözümleri sağlayıcısıyız. Mikro Fly, Mikro Run ve Mikro Jump ürünlerimiz ile her ölçekteki işletmeye özel çözümler sunuyoruz. E-fatura, e-defter ve e-arşiv sistemlerimiz tamamen yerli ve GİB onaylıdır. 7/24 uzman desteğimizle yanınızdayız.
+              19 yılı aşkın deneyimimiz ve 500'den fazla mutlu müşterimizle, Türkiye'nin lider mikro ERP ve e-dönüşüm çözümleri sağlayıcısıyız. Mikro Fly, Mikro Run ve Mikro Jump ürünlerimiz ile her ölçekteki işletmeye özel çözümler sunuyoruz. E-fatura, e-defter ve e-arşiv sistemlerimiz tamamen yerlidir. 7/24 uzman desteğimizle yanınızdayız.
             </p>
           </div>
         </motion.div>
