@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import Link from 'next/link';
 import { ArrowRight, Building2, Factory, ShoppingCart, Truck, Users, Briefcase, Sparkles, Target, Zap, Shield, TrendingUp, CheckCircle2, ChevronRight } from 'lucide-react';
 
 export default function VerticalSolutionsPage() {
@@ -312,12 +313,14 @@ export default function VerticalSolutionsPage() {
                   Teklif Al
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-                <Button
-                  variant="outline"
-                  className="px-8 py-4 bg-white/10 border-white/30 text-white rounded-xl hover:bg-white/20 font-semibold"
-                >
-                  İletişime Geç
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    className="px-8 py-4 bg-white/10 border-white/30 text-white rounded-xl hover:bg-white/20 font-semibold"
+                  >
+                    İletişime Geç
+                  </Button>
+                </Link>
               </div>
             </div>
           </motion.div>

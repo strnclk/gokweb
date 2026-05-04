@@ -16,6 +16,7 @@ export default function ContactForm() {
     message: ''
   });
   const [showSuccessPopup, setShowSuccessPopup] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const messageParam = searchParams.get('message');
@@ -31,6 +32,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
 
     try {
       const response = await fetch('/api/contact', {
@@ -49,6 +51,8 @@ export default function ContactForm() {
       }
     } catch (error) {
       alert('Bir hata oluştu');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -144,10 +148,20 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="w-full px-8 py-4 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2"
+        disabled={isLoading}
+        className="w-full px-8 py-4 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Mesaj Gönder
-        <Send className="w-5 h-5" />
+        {isLoading ? (
+          <>
+            <img src="/icon.png" alt="Loading" className="w-5 h-5 animate-spin" />
+            Gönderiliyor...
+          </>
+        ) : (
+          <>
+            Mesaj Gönder
+            <Send className="w-5 h-5" />
+          </>
+        )}
       </button>
     </motion.form>
 

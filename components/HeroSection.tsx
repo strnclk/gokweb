@@ -287,13 +287,36 @@ export default function HeroSection({ district }: HeroSectionProps) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            <Image 
-              src="/yetkili.png" 
-              alt="Gökkuşağı Yazılım - Resmi Mikro Yetkili Bayii" 
-              width={64} 
-              height={64}
-              className="h-16 mx-auto opacity-80 hover:opacity-100 transition-opacity" 
-            />
+            <div className="flex items-center justify-center gap-6 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+              <Image 
+                src="/yetkili.png" 
+                alt="Gökkuşağı Yazılım - Resmi Mikro Yetkili Bayii" 
+                width={80} 
+                height={80}
+                className="h-20 w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
+              />
+              <Image 
+                src="/mikro-run-logo.png" 
+                alt="Mikro Run" 
+                width={80} 
+                height={80}
+                className="h-20 w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
+              />
+              <Image 
+                src="/mikro-jump-logo.png" 
+                alt="Mikro Jump" 
+                width={80} 
+                height={80}
+                className="h-20 w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
+              />
+              <Image 
+                src="/mikro-fly-logo.png" 
+                alt="Mikro Fly" 
+                width={80} 
+                height={80}
+                className="h-20 w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
+              />
+            </div>
           </motion.div>
         </div>
       </div>

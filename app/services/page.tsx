@@ -68,6 +68,7 @@ export default function ServicesPage() {
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
             <Button
+              onClick={scrollToContact}
               variant="outline"
               className="px-8 py-4 bg-white border-gray-300 text-gray-900 rounded-xl hover:bg-gray-50 font-medium"
             >
@@ -136,6 +137,7 @@ export default function ServicesPage() {
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
                 <Button
+                  onClick={scrollToContact}
                   variant="outline"
                   className="px-6 md:px-8 py-3 md:py-4 bg-white border-gray-300 text-gray-900 rounded-xl hover:bg-gray-50 font-semibold text-sm md:text-base"
                 >

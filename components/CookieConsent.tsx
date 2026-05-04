@@ -3,12 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Cookie, X, Shield } from 'lucide-react';
 
-interface CookieConsentProps {
-  onAccept: () => void;
-  onReject: () => void;
-}
-
-export function CookieConsent({ onAccept, onReject }: CookieConsentProps) {
+export function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
   const [isMinimized, setIsMinimized] = useState(false);
 
@@ -28,13 +23,11 @@ export function CookieConsent({ onAccept, onReject }: CookieConsentProps) {
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'accepted');
     setIsVisible(false);
-    onAccept();
   };
 
   const handleReject = () => {
     localStorage.setItem('cookie-consent', 'rejected');
     setIsVisible(false);
-    onReject();
   };
 
   const handleMinimize = () => {

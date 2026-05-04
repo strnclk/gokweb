@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
 import { AnalyticsProvider } from "@/components/AnalyticsProvider";
+import { CookieConsent } from "@/components/CookieConsent";
 import GravityParticlesClient from "@/components/GravityParticlesClient";
 import "./globals.css";
 
@@ -304,8 +305,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
         />
 
-        {/* Geçici olarak devre dışı - test için */}
-        {children}
+        <AnalyticsProvider>
+          {children}
+          
+          <CookieConsent />
+        </AnalyticsProvider>
       </body>
     </html>
   );

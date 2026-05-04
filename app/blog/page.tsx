@@ -395,33 +395,6 @@ const posts = [
 export default function BlogPage() {
   const [selectedPost, setSelectedPost] = useState<typeof posts[0] | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('Tümü');
-  const [newsletterEmail, setNewsletterEmail] = useState('');
-  const [newsletterSubmitted, setNewsletterSubmitted] = useState(false);
-  const [newsletterError, setNewsletterError] = useState('');
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setNewsletterError('');
-
-    try {
-      const response = await fetch('/api/newsletter', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: newsletterEmail })
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setNewsletterSubmitted(true);
-        setNewsletterEmail('');
-      } else {
-        setNewsletterError(data.error || 'Bir hata oluştu');
-      }
-    } catch (error) {
-      setNewsletterError('Bir hata oluştu');
-    }
-  };
 
   const filteredPosts = selectedCategory === 'Tümü' 
     ? posts 
@@ -601,44 +574,6 @@ export default function BlogPage() {
         </div>
       </section>
 
-      {/* Bülten - Profesyonel CTA */}
-      <section className="px-6 py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div className="max-w-3xl mx-auto text-center">
-          <span className="inline-block px-4 py-1 bg-white/10 backdrop-blur-sm rounded-full text-sm font-medium mb-6">Bülten</span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Güncel Kalın</h2>
-          <p className="text-lg text-gray-400 mb-8">
-            ERP ve e-dönüşüm dünyasındaki gelişmelerden haberdar olmak için bültenimize abone olun
-          </p>
-          
-          {newsletterSubmitted ? (
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="flex items-center justify-center gap-3 text-emerald-400"
-            >
-              <CheckCircle2 size={24} />
-              <span className="text-lg font-medium">Aboneliğiniz başarıyla tamamlandı!</span>
-            </motion.div>
-          ) : (
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
-              <input
-                type="email"
-                placeholder="E-posta adresiniz"
-                value={newsletterEmail}
-                onChange={(e) => setNewsletterEmail(e.target.value)}
-                className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-purple-400 transition-colors"
-              />
-              <button type="submit" className="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:shadow-lg transition-all duration-300 hover:scale-105">
-                Abone Ol
-              </button>
-            </form>
-          )}
-          
-          {newsletterError && (
-            <div className="mt-4 text-red-400 text-sm">{newsletterError}</div>
-          )}
-        </div>
-      </section>
 
       {/* Post Popup */}
       {selectedPost && (
