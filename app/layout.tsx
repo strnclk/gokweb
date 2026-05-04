@@ -81,6 +81,138 @@ const jsonLd = {
   serviceArea: [
     {
       "@type": "City",
+      name: "Adalar"
+    },
+    {
+      "@type": "City",
+      name: "Arnavutköy"
+    },
+    {
+      "@type": "City",
+      name: "Avcılar"
+    },
+    {
+      "@type": "City",
+      name: "Bağcılar"
+    },
+    {
+      "@type": "City",
+      name: "Bahçelievler"
+    },
+    {
+      "@type": "City",
+      name: "Bakırköy"
+    },
+    {
+      "@type": "City",
+      name: "Başakşehir"
+    },
+    {
+      "@type": "City",
+      name: "Bayrampaşa"
+    },
+    {
+      "@type": "City",
+      name: "Beşiktaş"
+    },
+    {
+      "@type": "City",
+      name: "Beyoğlu"
+    },
+    {
+      "@type": "City",
+      name: "Büyükçekmece"
+    },
+    {
+      "@type": "City",
+      name: "Çatalca"
+    },
+    {
+      "@type": "City",
+      name: "Çekmeköy"
+    },
+    {
+      "@type": "City",
+      name: "Esenler"
+    },
+    {
+      "@type": "City",
+      name: "Esenyurt"
+    },
+    {
+      "@type": "City",
+      name: "Eyüpsultan"
+    },
+    {
+      "@type": "City",
+      name: "Fatih"
+    },
+    {
+      "@type": "City",
+      name: "Gaziosmanpaşa"
+    },
+    {
+      "@type": "City",
+      name: "Güngören"
+    },
+    {
+      "@type": "City",
+      name: "Kağıthane"
+    },
+    {
+      "@type": "City",
+      name: "Kartal"
+    },
+    {
+      "@type": "City",
+      name: "Küçükçekmece"
+    },
+    {
+      "@type": "City",
+      name: "Maltepe"
+    },
+    {
+      "@type": "City",
+      name: "Pendik"
+    },
+    {
+      "@type": "City",
+      name: "Sancaktepe"
+    },
+    {
+      "@type": "City",
+      name: "Sarıyer"
+    },
+    {
+      "@type": "City",
+      name: "Şile"
+    },
+    {
+      "@type": "City",
+      name: "Silivri"
+    },
+    {
+      "@type": "City",
+      name: "Sultanbeyli"
+    },
+    {
+      "@type": "City",
+      name: "Sultangazi"
+    },
+    {
+      "@type": "City",
+      name: "Şişli"
+    },
+    {
+      "@type": "City",
+      name: "Tuzla"
+    },
+    {
+      "@type": "City",
+      name: "Zeytinburnu"
+    },
+    {
+      "@type": "City",
       name: "Ataşehir"
     },
     {
@@ -98,38 +230,6 @@ const jsonLd = {
     {
       "@type": "City",
       name: "Ümraniye"
-    },
-    {
-      "@type": "City",
-      name: "Kartal"
-    },
-    {
-      "@type": "City",
-      name: "Maltepe"
-    },
-    {
-      "@type": "City",
-      name: "Pendik"
-    },
-    {
-      "@type": "City",
-      name: "Tuzla"
-    },
-    {
-      "@type": "City",
-      name: "Sultanbeyli"
-    },
-    {
-      "@type": "City",
-      name: "Sancaktepe"
-    },
-    {
-      "@type": "City",
-      name: "Çekmeköy"
-    },
-    {
-      "@type": "City",
-      name: "Şile"
     }
   ],
   areaServed: {
@@ -142,6 +242,19 @@ const jsonLd = {
     ratingValue: "4.9",
     reviewCount: "50"
   }
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Ana Sayfa",
+      item: "https://gokkusagiyazilim.com.tr"
+    }
+  ]
 };
 
 export default function RootLayout({
@@ -182,6 +295,13 @@ export default function RootLayout({
           id="json-ld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+
+        {/* ✅ BreadcrumbList JSON-LD */}
+        <Script
+          id="breadcrumb-json-ld"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
         />
 
         {/* Geçici olarak devre dışı - test için */}

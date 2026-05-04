@@ -10,12 +10,12 @@ export default function Footer() {
       
       <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
         {/* Main content grid */}
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-8 mb-16">
           
           {/* Company info */}
           <div className="space-y-6">
             <div>
-              <h3 className="text-3xl font-bold text-white">
+              <h3 className="text-2xl font-bold text-white">
                 Gökkuşağı Yazılım
               </h3>
               <p className="text-gray-300 mt-2 text-sm leading-relaxed">
@@ -32,8 +32,8 @@ export default function Footer() {
           
           {/* Products */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Ürünler</h4>
-            <ul className="space-y-3">
+            <h4 className="text-lg font-semibold mb-4 text-white">Ürünler</h4>
+            <ul className="space-y-2 text-sm">
               <li><Link href="/mikro-fly" className="text-slate-400 hover:text-white transition-colors duration-200">Mikro Fly</Link></li>
               <li><Link href="/mikro-run" className="text-slate-400 hover:text-white transition-colors duration-200">Mikro Run</Link></li>
               <li><Link href="/mikro-jump" className="text-slate-400 hover:text-white transition-colors duration-200">Mikro Jump</Link></li>
@@ -43,37 +43,74 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Hizmetler</h4>
-            <ul className="space-y-3">
-              <li><span className="text-slate-400">ERP Entegrasyonları</span></li>
-              <li><span className="text-slate-400">Web Uygulamaları</span></li>
-              <li><span className="text-slate-400">Mobil Çözümler</span></li>
-              <li><span className="text-slate-400">E-ticaret</span></li>
-              <li><span className="text-slate-400">Mikro Destek</span></li>
-            </ul>
-          </div>
-
-          {/* İstanbul İlçeleri */}
-          <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">İstanbul İlçeleri</h4>
-            <ul className="space-y-3">
-              <li><Link href="/atasehir-mikro-bayi" className="text-slate-400 hover:text-white transition-colors duration-200">Ataşehir Mikro Bayi</Link></li>
-              <li><Link href="/beylikduzu-mikro-bayi" className="text-slate-400 hover:text-white transition-colors duration-200">Beylikdüzü Mikro Bayi</Link></li>
-              <li><Link href="/kadikoy-mikro-bayi" className="text-slate-400 hover:text-white transition-colors duration-200">Kadıköy Mikro Bayi</Link></li>
-              <li><Link href="/uskudar-mikro-bayi" className="text-slate-400 hover:text-white transition-colors duration-200">Üsküdar Mikro Bayi</Link></li>
-              <li><Link href="/umraniye-mikro-bayi" className="text-slate-400 hover:text-white transition-colors duration-200">Ümraniye Mikro Bayi</Link></li>
+            <h4 className="text-lg font-semibold mb-4 text-white">Hizmetler</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/solutions" className="text-slate-400 hover:text-white transition-colors duration-200">ERP Entegrasyonları</Link></li>
+              <li><Link href="/solutions" className="text-slate-400 hover:text-white transition-colors duration-200">Web Uygulamaları</Link></li>
+              <li><Link href="/solutions" className="text-slate-400 hover:text-white transition-colors duration-200">Mobil Çözümler</Link></li>
+              <li><Link href="/solutions" className="text-slate-400 hover:text-white transition-colors duration-200">E-ticaret</Link></li>
+              <li><Link href="/contact" className="text-slate-400 hover:text-white transition-colors duration-200">Mikro Destek</Link></li>
             </ul>
           </div>
 
           {/* Quick links */}
           <div>
-            <h4 className="text-lg font-semibold mb-6 text-white">Hızlı Linkler</h4>
-            <ul className="space-y-3">
+            <h4 className="text-lg font-semibold mb-4 text-white">Hızlı Linkler</h4>
+            <ul className="space-y-2 text-sm">
               <li><Link href="/" className="text-slate-400 hover:text-white transition-colors duration-200">Ana Sayfa</Link></li>
               <li><Link href="/about" className="text-slate-400 hover:text-white transition-colors duration-200">Hakkımızda</Link></li>
               <li><Link href="/contact" className="text-slate-400 hover:text-white transition-colors duration-200">İletişim</Link></li>
               <li><Link href="/contact" className="text-slate-400 hover:text-white transition-colors duration-200">Destek</Link></li>
             </ul>
+          </div>
+
+          {/* İstanbul İlçeleri */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-white">İstanbul İlçeleri</h4>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1 text-xs">
+              <ul className="space-y-1">
+                <li><Link href="/atasehir-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Ataşehir</Link></li>
+                <li><Link href="/beylikduzu-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Beylikdüzü</Link></li>
+                <li><Link href="/kadikoy-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Kadıköy</Link></li>
+                <li><Link href="/uskudar-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Üsküdar</Link></li>
+                <li><Link href="/umraniye-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Ümraniye</Link></li>
+                <li><Link href="/adalar-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Adalar</Link></li>
+                <li><Link href="/arnavutkoy-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Arnavutköy</Link></li>
+                <li><Link href="/avcilar-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Avcılar</Link></li>
+                <li><Link href="/bagcilar-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Bağcılar</Link></li>
+                <li><Link href="/bahcelievler-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Bahçelievler</Link></li>
+                <li><Link href="/bakirkoy-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Bakırköy</Link></li>
+                <li><Link href="/basaksehir-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Başakşehir</Link></li>
+                <li><Link href="/bayrampasa-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Bayrampaşa</Link></li>
+                <li><Link href="/besiktas-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Beşiktaş</Link></li>
+                <li><Link href="/beyoglu-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Beyoğlu</Link></li>
+                <li><Link href="/buyukcekmece-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Büyükçekmece</Link></li>
+                <li><Link href="/catalca-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Çatalca</Link></li>
+                <li><Link href="/cekmekoy-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Çekmeköy</Link></li>
+                <li><Link href="/esenler-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Esenler</Link></li>
+                <li><Link href="/esenyurt-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Esenyurt</Link></li>
+              </ul>
+              <ul className="space-y-1">
+                <li><Link href="/eyupsultan-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Eyüpsultan</Link></li>
+                <li><Link href="/fatih-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Fatih</Link></li>
+                <li><Link href="/gaziosmanpasa-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Gaziosmanpaşa</Link></li>
+                <li><Link href="/gungoren-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Güngören</Link></li>
+                <li><Link href="/kagithane-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Kağıthane</Link></li>
+                <li><Link href="/kartal-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Kartal</Link></li>
+                <li><Link href="/kucukcekmece-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Küçükçekmece</Link></li>
+                <li><Link href="/maltepe-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Maltepe</Link></li>
+                <li><Link href="/pendik-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Pendik</Link></li>
+                <li><Link href="/sancaktepe-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Sancaktepe</Link></li>
+                <li><Link href="/sariyer-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Sarıyer</Link></li>
+                <li><Link href="/sile-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Şile</Link></li>
+                <li><Link href="/silivri-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Silivri</Link></li>
+                <li><Link href="/sultanbeyli-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Sultanbeyli</Link></li>
+                <li><Link href="/sultangazi-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Sultangazi</Link></li>
+                <li><Link href="/sisli-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Şişli</Link></li>
+                <li><Link href="/tuzla-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Tuzla</Link></li>
+                <li><Link href="/zeytinburnu-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Zeytinburnu</Link></li>
+              </ul>
+            </div>
           </div>
         </div>
 

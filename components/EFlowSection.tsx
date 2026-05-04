@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 
 export default function EFlowSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -34,7 +35,13 @@ export default function EFlowSection() {
           className="text-center mb-16"
         >
           <div className="mb-8">
-            <img src="/eflow3-logo.png" alt="E-Flow" className="w-48 h-48 mx-auto object-contain" />
+            <Image 
+              src="/eflow3-logo.png" 
+              alt="E-Flow BPM ve DMS İş Süreç Yönetim Sistemi" 
+              width={192}
+              height={192}
+              className="w-48 h-48 mx-auto object-contain" 
+            />
           </div>
           <h2 className="text-5xl md:text-7xl mb-6">E-Flow</h2>
           <p className="text-2xl md:text-3xl text-gray-600 mb-4">No-Code İş Süreçleri Yönetim Platformu</p>

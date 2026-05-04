@@ -24,23 +24,23 @@ const SEOSection = dynamic(() => import('@/components/SEOSection'), {
 });
 
 export const metadata: Metadata = {
-  title: "Beylikdüzü Mikro Bayi | Gökkuşağı Yazılım - ERP ve CRM Çözümleri",
-  description: "Beylikdüzü'de Mikro program, ERP ve CRM çözümleri. Resmi Mikro bayi olarak satış, kurulum, eğitim ve destek hizmetleri. Ücretsiz demo talep edin.",
-  keywords: "beylikdüzü mikro bayi, beylikdüzü mikro program, beylikdüzü erp, beylikdüzü crm, beylikdüzü yazılım, mikro bayi beylikdüzü",
+  title: "Beşiktaş Mikro Bayi | Gökkuşağı Yazılım - ERP ve CRM Çözümleri",
+  description: "Beşiktaş'ta Mikro program, ERP ve CRM çözümleri. Resmi Mikro bayi olarak satış, kurulum, eğitim ve destek hizmetleri. Ücretsiz demo talep edin.",
+  keywords: "besiktas mikro bayi, beşiktaş mikro program, beşiktaş erp, beşiktaş crm, beşiktaş yazılım, mikro bayi beşiktaş",
   alternates: {
-    canonical: "https://gokkusagiyazilim.com.tr/beylikduzu-mikro-bayi",
+    canonical: "https://gokkusagiyazilim.com.tr/besiktas-mikro-bayi",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Gökkuşağı Yazılım ve Danışmanlık - Beylikdüzü Mikro Bayi",
-  url: "https://gokkusagiyazilim.com.tr/beylikduzu-mikro-bayi",
-  description: "Beylikdüzü'de Mikro program, ERP ve CRM çözümleri. Resmi Mikro bayi olarak satış, kurulum, eğitim ve destek hizmetleri.",
+  name: "Gökkuşağı Yazılım ve Danışmanlık - Beşiktaş Mikro Bayi",
+  url: "https://gokkusagiyazilim.com.tr/besiktas-mikro-bayi",
+  description: "Beşiktaş'ta Mikro program, ERP ve CRM çözümleri. Resmi Mikro bayi olarak satış, kurulum, eğitim ve destek hizmetleri.",
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Beylikdüzü",
+    addressLocality: "Beşiktaş",
     addressRegion: "İstanbul",
     addressCountry: "TR",
   },
@@ -51,12 +51,12 @@ const jsonLd = {
   },
   areaServed: {
     "@type": "City",
-    name: "Beylikdüzü"
+    name: "Beşiktaş"
   },
   priceRange: "$$",
 };
 
-export default function BeylikduzuMikroBayi() {
+export default function BesiktasMikroBayi() {
   return (
     <div className="relative" style={{ backgroundImage: 'url(/rainbow-removebg.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', minHeight: '100vh' }}>
       <div className="relative z-10 bg-white/90">
@@ -65,7 +65,7 @@ export default function BeylikduzuMikroBayi() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Navbar />
-        <HeroSection district="Beylikdüzü" />
+        <HeroSection district="Beşiktaş" />
         <ImageCarousel />
         <AboutSection />
         <IndustryScenariosSection />

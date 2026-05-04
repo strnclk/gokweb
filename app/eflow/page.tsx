@@ -1,11 +1,12 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { motion } from 'motion/react';
 import { ArrowRight, Sparkles, CheckCircle2, Zap, Shield, TrendingUp, BarChart, Smartphone, Users, Target, Clock } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { motion } from 'motion/react';
+import Image from 'next/image';
 
 export default function EFlowPage() {
   const router = useRouter();
@@ -91,7 +92,13 @@ export default function EFlowPage() {
             className="relative flex justify-center"
           >
             <div className="relative">
-              <img src="/eflow3-logo.png" alt="E-Flow" className="w-80 h-80 object-contain" />
+              <Image 
+                src="/eflow3-logo.png" 
+                alt="E-Flow BPM ve DMS İş Süreç Yönetim Platformu" 
+                width={320}
+                height={320}
+                className="w-80 h-80 object-contain" 
+              />
               <div className="absolute inset-0 bg-gradient-to-r from-blue-200 to-purple-200 rounded-3xl blur-2xl opacity-40" />
             </div>
           </motion.div>

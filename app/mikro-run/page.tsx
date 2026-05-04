@@ -1,10 +1,14 @@
 'use client';
 
-import { Landmark, Package, Receipt, BarChart, GitBranch, Wallet, Zap, Cpu, Cloud, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target, Users } from 'lucide-react';
+import { Landmark, Package, Receipt, BarChart, Users, Wallet, Brain, Cpu, Globe, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target, Zap, Shield } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { motion } from 'motion/react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 export default function MikroRunPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -159,7 +163,13 @@ export default function MikroRunPage() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-10">
             <div className="w-32 h-32 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg">
-              <img src="/mikro-run-logo.png" alt="Mikro RUN" className="w-full h-full object-contain" />
+              <Image 
+                src="/mikro-run-logo.png" 
+                alt="Mikro RUN - KOBİ ERP ve İş Yönetim Çözümü" 
+                width={128}
+                height={128}
+                className="w-full h-full object-contain" 
+              />
             </div>
           </div>
           <motion.h1
@@ -341,7 +351,13 @@ Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüş�
               className="relative"
             >
               <div className="absolute -inset-4 bg-rose-900/10 rounded-2xl blur-xl" />
-              <img src="/mikrorun.webp" alt="Mikro RUN Ekran Görünümü" className="relative w-full rounded-xl shadow-xl border border-gray-200/50" />
+              <Image 
+                src="/mikrorun.webp" 
+                alt="Mikro RUN KOBİ ERP ve İş Yönetim Sistemi Ekran Görünümü" 
+                width={800}
+                height={600}
+                className="relative w-full rounded-xl shadow-xl border border-gray-200/50" 
+              />
             </motion.div>
           </div>
         </div>

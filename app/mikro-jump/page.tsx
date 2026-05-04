@@ -2,9 +2,13 @@
 
 import { Landmark, Package, Receipt, BarChart, Users, Wallet, Brain, Cpu, Globe, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target, Zap } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { motion } from 'motion/react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 export default function MikroJumpPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -160,7 +164,13 @@ export default function MikroJumpPage() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-10">
             <div className="w-32 h-32 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg">
-              <img src="/mikro-jump-logo.png" alt="Mikro JUMP" className="w-full h-full object-contain" />
+              <Image 
+                src="/mikro-jump-logo.png" 
+                alt="Mikro JUMP - Hızlı Satış ve Pazarlama Çözümü" 
+                width={128}
+                height={128}
+                className="w-full h-full object-contain" 
+              />
             </div>
           </div>
           <motion.h1
@@ -345,7 +355,13 @@ export default function MikroJumpPage() {
               className="relative"
             >
               <div className="absolute -inset-4 bg-gradient-to-r from-purple-600/10 to-indigo-600/10 rounded-2xl blur-xl" />
-              <img src="/mikrojump.webp" alt="Mikro JUMP Ekran Görünümü" className="relative w-full rounded-xl shadow-xl border border-gray-200/50" />
+              <Image 
+                src="/mikrojump.webp" 
+                alt="Mikro JUMP Hızlı Satış ve Pazarlama Sistemi Ekran Görünümü" 
+                width={800}
+                height={600}
+                className="relative w-full rounded-xl shadow-xl border border-gray-200/50" 
+              />
             </motion.div>
           </div>
         </div>

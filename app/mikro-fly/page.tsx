@@ -1,10 +1,14 @@
 'use client';
 
-import { Landmark, Package, Receipt, BarChart, Users, Wallet, Globe, ShoppingCart, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target, Zap, Factory } from 'lucide-react';
+import { Landmark, Package, Receipt, BarChart, Users, Wallet, Brain, Cpu, Globe, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target, Zap, Shield, Cloud, Factory } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { Metadata } from "next";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import { motion } from 'motion/react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 
 export default function MikroFlyPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -195,7 +199,13 @@ export default function MikroFlyPage() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-10">
             <div className="w-32 h-32 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg">
-              <img src="/mikro-fly-logo.png" alt="Mikro FLY" className="w-full h-full object-contain" />
+              <Image 
+                src="/mikro-fly-logo.png" 
+                alt="Mikro FLY - Bulut Tabanlı ERP Sistemi" 
+                width={128}
+                height={128}
+                className="w-full h-full object-contain" 
+              />
             </div>
           </div>
           <motion.h1
@@ -380,7 +390,13 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
               className="relative"
             >
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-600/10 to-cyan-600/10 rounded-2xl blur-xl" />
-              <img src="/mikrofly.webp" alt="Mikro FLY Ekran Görünümü" className="relative w-full rounded-xl shadow-xl border border-gray-200/50" />
+              <Image 
+                src="/mikrofly.webp" 
+                alt="Mikro FLY Bulut Tabanlı ERP Sistemi Ekran Görünümü" 
+                width={800}
+                height={600}
+                className="relative w-full rounded-xl shadow-xl border border-gray-200/50" 
+              />
             </motion.div>
           </div>
         </div>
