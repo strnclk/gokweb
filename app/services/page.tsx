@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import ServicesCarousel from '@/components/ServicesCarousel';
 import { Button } from '@/components/ui/button';
 import { Sparkles, ArrowRight, CheckCircle2, Zap, Shield, TrendingUp } from 'lucide-react';
@@ -83,7 +84,7 @@ export default function ServicesPage() {
             className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto"
           >
             {[
-              { icon: Zap, label: '19+ Yıl', desc: 'Sektör deneyimi' },
+              { icon: Zap, label: '20+ Yıl', desc: 'Sektör deneyimi' },
               { icon: CheckCircle2, label: '500+', desc: 'Tamamlanan proje' },
               { icon: Shield, label: '%99.9', desc: 'Sistem uptime' },
               { icon: TrendingUp, label: '7/24', desc: 'Teknik destek' }
@@ -98,6 +99,7 @@ export default function ServicesPage() {
             ))}
           </motion.div>
         </div>
+        <ScrollIndicator />
       </section>
 
       {/* Çözümlerimiz Carousel */}

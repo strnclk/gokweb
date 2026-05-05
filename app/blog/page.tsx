@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import { Sparkles, BookOpen, TrendingUp, Clock, CheckCircle2 } from 'lucide-react';
 
 const featuredPost = {
@@ -429,50 +430,19 @@ export default function BlogPage() {
           >
             ERP, E-Dönüşüm ve
             <br />
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Dijital Dönüşüm</span>
+            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Dijital Dönüşüm Rehberi</span>
           </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            Güncel trendler, uzman görüşleri ve pratik rehberlerle işletmenizin dijital dönüşüm yolculuğuna rehberlik ediyoruz
+            ERP sistemleri, e-dönüşüm uygulamaları ve dijital dönüşüm stratejileri hakkında kapsamlı rehberler ve ipuçları
           </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12"
-          >
-            {[
-              { icon: BookOpen, label: '24', desc: 'Yazı' },
-              { icon: TrendingUp, label: '6', desc: 'Kategori' },
-              { icon: Clock, label: '15K+', desc: 'Okuyucu' },
-              { icon: Sparkles, label: '19+', desc: 'Yıl' }
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-white shadow-md flex items-center justify-center">
-                  <stat.icon size={24} className="text-purple-600" />
-                </div>
-                <div className="text-2xl font-bold text-gray-900">{stat.label}</div>
-                <div className="text-xs text-gray-500">{stat.desc}</div>
-              </div>
-            ))}
-          </motion.div>
         </div>
-
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-10">
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-            className="w-6 h-10 border-2 border-purple-400 rounded-full flex items-start justify-center p-2"
-          >
-            <div className="w-1.5 h-1.5 bg-purple-400 rounded-full" />
-          </motion.div>
-        </div>
+        <ScrollIndicator />
       </section>
 
       {/* Featured Post - Öne Çıkan */}

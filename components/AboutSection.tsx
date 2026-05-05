@@ -22,7 +22,7 @@ export default function AboutSection() {
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="text-center p-6 bg-gray-50 rounded-xl">
-                  <div className="text-4xl font-bold text-gray-900 mb-2">19+</div>
+                  <div className="text-4xl font-bold text-gray-900 mb-2">20+</div>
                   <div className="text-gray-600">Yıl Deneyim</div>
                 </div>
                 <div className="text-center p-6 bg-gray-50 rounded-xl">

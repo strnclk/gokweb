@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle, Zap, Shield, TrendingUp } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import ScrollIndicator from './ScrollIndicator';
 
 interface HeroSectionProps {
   district?: string;
@@ -219,7 +220,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
             className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-8"
           >
             <Zap size={14} />
-            Resmi Mikro Bayi
+            Resmi Mikro İş Ortağı
           </motion.div>
 
           <motion.h1
@@ -242,7 +243,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed"
           >
-            {districtDescription || 'Mikro ERP ve E-Dönüşüm çözümleriyle işletmenizi dijital çağa hazırlayın. 19+ yıllık deneyimle yanınızdayız.'}
+            {districtDescription || 'Mikro ERP ve E-Dönüşüm çözümleriyle işletmenizi dijital çağa hazırlayın. 20+ yıllık deneyimle yanınızdayız.'}
           </motion.p>
 
           <motion.div
@@ -321,21 +322,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex items-start justify-center p-2">
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="w-1.5 h-1.5 bg-gray-400 rounded-full"
-          />
-        </div>
-      </motion.div>
+      <ScrollIndicator />
     </section>
   );
 }

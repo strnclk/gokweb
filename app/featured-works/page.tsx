@@ -1,10 +1,11 @@
 'use client';
 
-import { TrendingUp, DollarSign, BarChart3, PieChart, FileText, Calculator, ArrowRight, Star, Award, Target, Zap, Shield, Clock, Users, Briefcase, Building, CheckCircle, AlertCircle, Database } from 'lucide-react';
+import { TrendingUp, DollarSign, BarChart3, PieChart, Calculator, ArrowRight, Star, Award, Target, Zap, Shield, Clock, Users, Briefcase, CheckCircle, AlertCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollIndicator from '@/components/ScrollIndicator';
 
 export default function FeaturedWorksPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -42,7 +43,7 @@ export default function FeaturedWorksPage() {
   const stats = [
     { value: '500+', label: 'Başarılı Proje', icon: Award },
     { value: '95%', label: 'Müşteri Memnuniyeti', icon: Star },
-    { value: '19+', label: 'Yıl Deneyim', icon: Clock },
+    { value: '20+', label: 'Yıl Deneyim', icon: Clock },
     { value: '7/24', label: 'Destek', icon: Shield }
   ];
 
@@ -151,28 +152,6 @@ export default function FeaturedWorksPage() {
     }
   ];
 
-  const technologies = [
-    {
-      name: 'Mikro ERP',
-      description: 'Entegre ERP çözümleri',
-      icon: Building
-    },
-    {
-      name: 'Power BI',
-      description: 'İş zekası ve veri analizi',
-      icon: BarChart3
-    },
-    {
-      name: 'Excel VBA',
-      description: 'Özelleştirilmiş otomasyon',
-      icon: FileText
-    },
-    {
-      name: 'SQL',
-      description: 'Veritabanı yönetimi',
-      icon: Database
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
@@ -280,12 +259,12 @@ export default function FeaturedWorksPage() {
                     <div className="bg-gray-50 rounded-xl p-4">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-gray-600 text-sm">Kârlılık Artışı</span>
-                        <span className="text-emerald-600 font-bold">+35%</span>
+                        <span className="text-emerald-600 font-bold">+85%</span>
                       </div>
                       <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
-                          animate={{ width: '75%' }}
+                          animate={{ width: '85%' }}
                           transition={{ duration: 1, delay: 0.5 }}
                           className="h-full bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full"
                         />
@@ -295,12 +274,12 @@ export default function FeaturedWorksPage() {
                     <div className="bg-gray-50 rounded-xl p-4">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-gray-600 text-sm">Verimlilik</span>
-                        <span className="text-purple-600 font-bold">+42%</span>
+                        <span className="text-purple-600 font-bold">+96%</span>
                       </div>
                       <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
-                          animate={{ width: '82%' }}
+                          animate={{ width: '96%' }}
                           transition={{ duration: 1, delay: 0.6 }}
                           className="h-full bg-gradient-to-r from-purple-500 to-purple-600 rounded-full"
                         />
@@ -310,12 +289,12 @@ export default function FeaturedWorksPage() {
                     <div className="bg-gray-50 rounded-xl p-4">
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-gray-600 text-sm">Müşteri Memnuniyeti</span>
-                        <span className="text-blue-600 font-bold">+28%</span>
+                        <span className="text-blue-600 font-bold">+82%</span>
                       </div>
                       <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                         <motion.div
                           initial={{ width: 0 }}
-                          animate={{ width: '90%' }}
+                          animate={{ width: '82%' }}
                           transition={{ duration: 1, delay: 0.7 }}
                           className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
                         />
@@ -346,6 +325,7 @@ export default function FeaturedWorksPage() {
             </div>
           </div>
         </div>
+        <ScrollIndicator />
       </section>
 
       {/* Financial Services Section */}
@@ -464,43 +444,6 @@ export default function FeaturedWorksPage() {
         </div>
       </section>
 
-      {/* Technologies Section */}
-      <section className="py-20 bg-purple-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-purple-900">Kullandığımız Teknolojiler</h2>
-            <p className="text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed">
-              Projelerimizde kullandığımız modern teknolojiler
-            </p>
-          </motion.div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {technologies.map((tech, index) => {
-              const Icon = tech.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white p-6 rounded-xl border border-purple-200 hover:border-purple-300 text-center"
-                >
-                  <div className="w-12 h-12 bg-purple-900 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Icon size={24} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-slate-900">{tech.name}</h3>
-                  <p className="text-slate-600 text-sm">{tech.description}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-white">

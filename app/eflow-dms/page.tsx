@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollIndicator from '@/components/ScrollIndicator';
 
 export default function EflowDmsPage() {
   const router = useRouter();
@@ -102,6 +103,7 @@ export default function EflowDmsPage() {
             </div>
           </motion.div>
         </div>
+        <ScrollIndicator />
       </section>
 
       {/* Description Section */}

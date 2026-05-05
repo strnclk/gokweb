@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { Phone, Mail, MapPin, Sparkles } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import ContactForm from '@/components/ContactForm';
 import ContactContent from '@/components/ContactContent';
 
@@ -52,6 +53,7 @@ export default function ContactPage() {
         contactMethods={contactMethods}
         ContactForm={ContactForm}
       />
+      <ScrollIndicator />
       <Footer />
     </div>
   );

@@ -6,6 +6,7 @@ import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
+import ScrollIndicator from "@/components/ScrollIndicator";
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from 'motion/react';
@@ -239,6 +240,7 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
             <ArrowRight className="w-5 h-5" />
           </motion.button>
         </div>
+        <ScrollIndicator />
       </section>
 
       {/* Features Section */}

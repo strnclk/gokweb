@@ -19,14 +19,14 @@ export default function Footer() {
                 Gökkuşağı Yazılım
               </h3>
               <p className="text-gray-300 mt-2 text-sm leading-relaxed">
-                2005'ten beri dijital dönüşümün öncüsü. 19+ yıllık deneyimimizle işletmelere özel teknoloji çözümleri sunuyoruz.
+                2005'ten beri dijital dönüşümün öncüsü. 20+ yıllık deneyimimizle işletmelere özel teknoloji çözümleri sunuyoruz.
               </p>
             </div>
             
             {/* Professional indicators */}
             <div className="flex items-center space-x-2">
               <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-              <span className="text-sm text-slate-300">Mikro Yazılım Yetkili Bayisi</span>
+              <span className="text-sm text-slate-300">Mikro Yazılım İş Ortağı</span>
             </div>
           </div>
           
@@ -181,7 +181,7 @@ export default function Footer() {
                 &copy; 2026 Gökkuşağı Yazılım. Tüm hakları saklıdır.
               </p>
               <p className="text-slate-500 text-xs mt-1">
-                Mikro Yazılım Yetkili Bayisi • 19+ Yıllık Deneyim
+                Mikro Yazılım İş Ortağı • 20+ Yıllık Deneyim
               </p>
             </div>
             

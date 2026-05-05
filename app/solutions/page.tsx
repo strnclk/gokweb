@@ -6,6 +6,7 @@ import { Settings, Building, Landmark, FileText, Users, Zap, Building2, Info, Ch
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollIndicator from '@/components/ScrollIndicator';
 
 export default function SolutionsPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -46,7 +47,7 @@ export default function SolutionsPage() {
       <Navbar />
       
       {/* Hero Section - Modern SaaS Design */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-white">
         {/* Rainbow Background Image */}
         <div className="absolute inset-0 pointer-events-none opacity-30" style={{ zIndex: 1 }}>
           <img src="/rainbw.png" alt="Rainbow Background" className="w-full h-full object-cover" />

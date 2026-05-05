@@ -8,7 +8,7 @@ import { Target, Award, Users, Zap, Shield, Heart, Clock, TrendingUp, CheckCircl
 
 export default function AboutPage() {
   const stats = [
-    { value: '19+', label: 'Yıllık Deneyim', icon: Clock },
+    { value: '20+', label: 'Yıllık Deneyim', icon: Clock },
     { value: '500+', label: 'Mutlu Müşteri', icon: Users },
     { value: '15+', label: 'Ödül', icon: Trophy },
     { value: '100%', label: 'Müşteri Memnuniyeti', icon: Heart }

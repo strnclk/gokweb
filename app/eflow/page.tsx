@@ -6,6 +6,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, Sparkles, CheckCircle2, Zap, Shield, TrendingUp, BarChart, Smartphone, Users, Target, Clock } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import Image from 'next/image';
 
 export default function EFlowPage() {
@@ -103,6 +104,7 @@ export default function EFlowPage() {
             </div>
           </motion.div>
         </div>
+        <ScrollIndicator />
       </section>
 
       {/* Why E-Flow Section */}

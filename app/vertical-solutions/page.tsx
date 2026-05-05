@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import ScrollIndicator from '@/components/ScrollIndicator';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
@@ -137,7 +138,7 @@ export default function VerticalSolutionsPage() {
               {[
                 { label: 'Sektör', value: '20+' },
                 { label: 'Müşteri', value: '500+' },
-                { label: 'Yıl', value: '19+' }
+                { label: 'Yıl', value: '20+' }
               ].map((stat, i) => (
                 <div key={i} className="text-center">
                   <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
@@ -186,6 +187,7 @@ export default function VerticalSolutionsPage() {
             </div>
           </motion.div>
         </div>
+        <ScrollIndicator />
       </section>
 
       {/* Industries Section */}
