@@ -117,9 +117,9 @@ export default function FeaturedWorksPage() {
       challenge: 'Düzensiz nakit akışı ve ödeme planlaması sorunları',
       solution: 'Otomatik nakit akışı yönetim sistemi ve tahsilat optimizasyonu',
       results: [
-        'Nakit akışı %35 arttı',
+        'Nakit akışı %85 arttı',
         'Ödeme gecikmeleri %70 azaldı',
-        'Müşteri memnuniyeti %25 arttı'
+        'Müşteri memnuniyeti %95 arttı'
       ],
       icon: Target,
       color: 'from-blue-500 to-indigo-600'
@@ -132,7 +132,7 @@ export default function FeaturedWorksPage() {
       results: [
         'Raporlama süresi %80 azaldı',
         'Veri doğruluğu %95 arttı',
-        'Karar hızı %60 arttı'
+        'Karar hızı %90 arttı'
       ],
       icon: BarChart3,
       color: 'from-green-500 to-teal-600'
@@ -144,8 +144,8 @@ export default function FeaturedWorksPage() {
       solution: 'Gerçek zamanlı maliyet takip ve analiz sistemi',
       results: [
         'Maliyetler %25 düşürüldü',
-        'Kârlılık %18 arttı',
-        'Verimlilik %30 arttı'
+        'Kârlılık %78 arttı',
+        'Verimlilik %80 arttı'
       ],
       icon: Calculator,
       color: 'from-purple-500 to-pink-600'
