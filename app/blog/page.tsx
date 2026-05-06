@@ -45,14 +45,14 @@ const categories = [
 
 const posts = [
   {
-    title: 'E-Fatura Nedir? 2026 Kapsamlı Rehber - GİB, Zorunluluklar ve Avantajlar',
+    title: 'E-Fatura Nedir? 2026 Kapsamlı Rehber',
     excerpt: 'E-fatura sistemine geçiş yapmak isteyen işletmeler için adım adım rehber.',
     category: 'E-Dönüşüm',
     date: '22 Nisan 2026',
     readTime: '6 dk',
     gradient: 'from-blue-500 to-blue-600',
     slug: 'e-fatura-nedir-2026-rehber-gib-zorunluluk-avantajlar',
-    metaDescription: 'E-fatura nedir? 2026 yılında kimler e-fatura kullanmak zorunda? E-fatura avantajları, geçiş süreci ve GİB portalı hakkında detaylı rehber. İşletmeler için e-dönüşüm.',
+    metaDescription: 'E-fatura nedir? 2026 yılında kimler e-fatura kullanmak zorunda? E-fatura avantajları, geçiş süreci . İşletmeler için e-dönüşüm.',
     content: `
       <h2>E-Fatura Nedir?</h2>
       <p>E-fatura, belirlenen standartlara uygun olarak elektronik ortamda oluşturulan, gönderilen ve saklanan fatura türüdür. Türkiye'de e-fatura sistemi 2010 yılında başlamış olup, 2026 itibarıyla 2 milyondan fazla mükellef tarafından kullanılmaktadır. İstanbul'da Ataşehir, Beylikdüzü, Kadıköy gibi ilçelerde faaliyet gösteren işletmeler, e-fatura sistemine hızla geçiş yapmaktadır. Gökkuşağı Yazılım olarak İstanbul'un tüm ilçelerinde e-fatura entegrasyon hizmeti sunuyoruz.</p>
@@ -168,14 +168,14 @@ const posts = [
     `
   },
   {
-    title: 'E-Defter Geçiş Süreci: Adım Adım Rehber - GİB ve Zorunluluklar',
+    title: 'E-Defter Geçiş Süreci: Adım Adım Rehber',
     excerpt: 'Kağıt defterden e-deftere geçiş sürecinde izlemeniz gereken adımlar, dikkat etmeniz gereken noktalar ve ipuçları.',
     category: 'E-Dönüşüm',
     date: '12 Nisan 2026',
     readTime: '9 dk',
     gradient: 'from-indigo-500 to-indigo-600',
     slug: 'e-defter-gecis-sureci-adim-adim-rehber-gib-zorunluluklar',
-    metaDescription: 'E-defter geçiş süreci: Kimler e-defter kullanmak zorunda? GİB başvurusu, avantajlar ve adım adım rehber. Kağıt defterden e-deftere geçiş.',
+    metaDescription: 'E-defter geçiş süreci: Kimler e-defter kullanmak zorunda? Kağıt defterden e-deftere geçiş.',
     content: `
       <h2>E-Defter Nedir?</h2>
       <p>E-defter, kağıt defter yerine elektronik ortamda tutulan defter türüdür. 6736 Sayılı Kanun kapsamında, mükelleflerin yevmiye defter, büyük defter ve envanter defterlerini elektronik ortamda tutmaları ve saklamaları zorunludur. 2026 itibarıyla 1.5 milyondan fazla mükellef e-defter kullanmaktadır. Kağıt defterlerin saklanma zorunluluğu ortadan kalkar, elektronik ortamda güvenli saklama sağlanır.</p>
