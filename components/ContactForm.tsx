@@ -1,11 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { Send, CheckCircle2, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-export default function ContactForm() {
+function ContactFormInner() {
   const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: '',
@@ -210,5 +210,13 @@ export default function ContactForm() {
       )}
     </AnimatePresence>
     </>
+  );
+}
+
+export default function ContactForm() {
+  return (
+    <Suspense fallback={<div className="bg-white rounded-2xl p-8 border border-gray-200 shadow-lg">Yükleniyor...</div>}>
+      <ContactFormInner />
+    </Suspense>
   );
 }

@@ -54,7 +54,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-white/80 backdrop-blur-xl shadow-xl border-b border-gray-100/50' : 'bg-transparent'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 ${isScrolled ? 'bg-white/80 backdrop-blur-xl shadow-xl border-b border-gray-100/50' : 'bg-transparent'}`}>
       <div className="max-w-screen-2xl mx-auto px-6">
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-8">
@@ -73,7 +73,7 @@ export default function Navbar() {
                     opacity: currentContact === index ? 1 : 0,
                     x: currentContact === index ? 0 : -10
                   }}
-                  className="flex items-center gap-2 hover:scale-105 transition-transform  group absolute top-1/2 -translate-y-1/2"
+                  className="flex items-center gap-2 hover:scale-105 group absolute top-1/2 -translate-y-1/2"
                 >
                   <contact.icon size={18} className="text-gray-700 group-hover:text-blue-600 transition-colors" />
                   <span className="text-sm font-semibold bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent whitespace-nowrap">{contact.text}</span>
@@ -247,7 +247,7 @@ export default function Navbar() {
             </Link>
 
             {/* Teklif Al Butonu */}
-            <Link href="/contact" className="px-5 py-2.5 bg-white text-gray-800 rounded-full border border-gray-200 hover:shadow-xl hover:from-purple-600 hover:via-pink-500 hover:to-blue-600 hover:bg-gradient-to-r hover:text-white hover:border-transparent transition-all duration-300 hover:scale-105 text-sm font-semibold">
+            <Link href="/contact" className="px-5 py-2.5 bg-white text-gray-800 rounded-full border border-gray-200 hover:shadow-xl hover:from-red-500 hover:via-yellow-500 hover:via-green-500 hover:via-blue-500 hover:to-purple-500 hover:bg-gradient-to-r hover:text-white hover:border-transparent transition-all duration-300 hover:scale-105 text-sm font-semibold">
               Teklif Al
             </Link>
           </div>
@@ -423,13 +423,16 @@ export default function Navbar() {
               </Link>
 
               {/* Teklif Al Butonu - Mobil */}
-              <Link href="/contact" className="mx-6 px-6 py-3 bg-white text-gray-800 rounded-full border border-gray-200 hover:shadow-xl hover:from-purple-600 hover:via-pink-500 hover:to-blue-600 hover:bg-gradient-to-r hover:text-white hover:border-transparent transition-all duration-300 text-base font-semibold">
+              <Link href="/contact" className="mx-6 px-6 py-3 bg-white text-gray-800 rounded-full border border-gray-200 hover:shadow-xl hover:from-red-500 hover:via-yellow-500 hover:via-green-500 hover:via-blue-500 hover:to-purple-500 hover:bg-gradient-to-r hover:text-white hover:border-transparent transition-all duration-300 text-base font-semibold">
                 Teklif Al
               </Link>
             </div>
           </motion.div>
         )}
       </div>
+      
+      {/* Gökkuşağı Çizgisi */}
+      <div className="h-0.5 bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500" />
     </nav>
   );
 }

@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
     // Şirket için e-posta içeriği
     const companyMailOptions = {
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
-      to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
+      to: 'cagatay.yozgatli@gokkusagiyazilim.com.tr',
       subject: `Yeni İletişim Formu: ${subject}`,
       html: `
         <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto; padding: 0;">
@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
               Sorularınız için bize aşağıdaki bilgilerden ulaşabilirsiniz:
             </p>
             <div style="margin: 0 0 30px 0; padding: 20px; background: #f8f9fa; border-radius: 8px;">
-              <p style="margin: 0 0 10px 0; color: #333; font-size: 14px;"><strong>E-posta:</strong> ${process.env.CONTACT_EMAIL || process.env.SMTP_USER}</p>
+              <p style="margin: 0 0 10px 0; color: #333; font-size: 14px;"><strong>E-posta:</strong> cagatay.yozgatli@gokkusagiyazilim.com.tr</p>
               <p style="margin: 0 0 10px 0; color: #333; font-size: 14px;"><strong>Telefon:</strong> +90 539 856 35 78</p>
               <p style="margin: 0; color: #333; font-size: 14px;"><strong>Web Sitesi:</strong> <a href="${baseUrl}" style="color: #667eea; text-decoration: none;">${baseUrl}</a></p>
             </div>

@@ -35,55 +35,14 @@ const featuredPost = {
 };
 
 const categories = [
-  { name: 'Tümü', count: 24 },
+  { name: 'Tümü', count: 22 },
   { name: 'ERP', count: 8 },
-  { name: 'E-Dönüşüm', count: 6 },
   { name: 'Dijital Dönüşüm', count: 5 },
   { name: 'Sektörel Çözümler', count: 3 },
   { name: 'Mikro Ürünler', count: 2 },
 ];
 
 const posts = [
-  {
-    title: 'E-Fatura Nedir? 2026 Kapsamlı Rehber',
-    excerpt: 'E-fatura sistemine geçiş yapmak isteyen işletmeler için adım adım rehber.',
-    category: 'E-Dönüşüm',
-    date: '22 Nisan 2026',
-    readTime: '6 dk',
-    gradient: 'from-blue-500 to-blue-600',
-    slug: 'e-fatura-nedir-2026-rehber-gib-zorunluluk-avantajlar',
-    metaDescription: 'E-fatura nedir? 2026 yılında kimler e-fatura kullanmak zorunda? E-fatura avantajları, geçiş süreci . İşletmeler için e-dönüşüm.',
-    content: `
-      <h2>E-Fatura Nedir?</h2>
-      <p>E-fatura, belirlenen standartlara uygun olarak elektronik ortamda oluşturulan, gönderilen ve saklanan fatura türüdür. Türkiye'de e-fatura sistemi 2010 yılında başlamış olup, 2026 itibarıyla 2 milyondan fazla mükellef tarafından kullanılmaktadır. İstanbul'da Ataşehir, Beylikdüzü, Kadıköy gibi ilçelerde faaliyet gösteren işletmeler, e-fatura sistemine hızla geçiş yapmaktadır. Gökkuşağı Yazılım olarak İstanbul'un tüm ilçelerinde e-fatura entegrasyon hizmeti sunuyoruz.</p>
-      
-      <h2>Kimler E-Fatura Kullanmak Zorunda?</h2>
-      <p>2026 yılı itibarıyla yıllık cirosu 1 milyon TL ve üzeri olan mükellefler e-fatura kullanmak zorundadır. Bu limit her yıl güncellenmektedir. Ayrıca özel sektör faturalarında 10.000 TL ve üzeri, kamu faturalarında ise 5.000 TL ve üzeri tutarlı faturalar zorunlu olarak e-fatura olarak kesilmelidir. İsteğe bağlı e-fatura kullanımı da mümkündür ve küçük işletmeler için büyük avantajlar sunar. Ümraniye, Üsküdar, Kartal gibi İstanbul ilçelerindeki KOBİ'ler de e-fatura kullanımına hızla geçmektedir.</p>
-      
-      <h2>E-Fatura Avantajları</h2>
-      <ul>
-        <li>Kağıt ve baskı maliyetlerinden %70-80 oranında tasarruf</li>
-        <li>Arşivleme kolaylığı - 10 yıl yasal saklama süresi boyunca güvenli saklama</li>
-        <li>Hızlı ve güvenli gönderim - faturalar saniyeler içinde alıcıya ulaşıyor</li>
-        <li>Otomatik muhasebe entegrasyonu - muhasebe kayıtları otomatik oluşuyor</li>
-        <li>Çevre dostu çözüm - yılda ortalama 500.000 ağaç tasarrufu sağlanıyor</li>
-        <li>İade ve iade kabul süreçlerinde %50 zaman tasarrufu</li>
-        <li>Yanlış fatura kesme riskini %90 azaltıyor</li>
-      </ul>
-      
-      <h2>İstanbul'da E-Fatura Hizmeti</h2>
-      <p>Gökkuşağı Yazılım olarak İstanbul'un tüm ilçelerinde e-fatura entegrasyon hizmeti sunuyoruz. Ataşehir merkezli ofisimizden Beylikdüzü'ye, Kadıköy'den Ümraniye'ye kadar tüm İstanbul ilçelerine yerinde kurulum ve destek hizmeti sağlıyoruz. Maltepe, Pendik, Tuzla gibi Anadolu Yakası ilçelerindeki işletmeler için özel e-fatura çözümleri sunuyoruz.</p>
-      
-      <h2>İpuçları ve Öneriler</h2>
-      <ul>
-        <li>ERP sisteminiz ile uyumlu entegratör seçin</li>
-        <li>Personelinizi e-fatura kullanımı konusunda eğitin</li>
-        <li>Geçiş öncesi tüm süreçlerinizi gözden geçirin</li>
-        <li>Yedekleme sistemleri kurun</li>
-        <li>İstanbul ilçelerinde yerinde destek alın</li>
-      </ul>
-    `
-  },
   {
     title: 'Mikro ERP ile Verimliliğinizi Artırın - 2026 İstatistikler ve Müşteri Hikayeleri',
     excerpt: 'Mikro ERP çözümlerinin işletme verimliliğine etkisini rakamlarla inceleyelim. Gerçek müşteri hikayeleri ve istatistikler.',
@@ -95,7 +54,7 @@ const posts = [
     metaDescription: 'Mikro ERP ile işletme verimliliğinizi %40 artırın. Gerçek müşteri hikayeleri, istatistikler ve Mikro ERP avantajları. Türk işletmeleri için ideal ERP çözümü.',
     content: `
       <h2>Mikro ERP Nedir?</h2>
-      <p>Mikro ERP, Türk işletmeleri için özel olarak geliştirilmiş kapsamlı bir iş kaynakları planlama (ERP) sistemidir. 30 yılı aşkın deneyimi ile Mikro Yazılım, Türkiye'de 50.000'den fazla işletmeye hizmet vermektedir. Mikro ERP, üretim, satın alma, satış, stok, muhasebe, finans ve insan kaynakları gibi tüm iş süreçlerini tek bir platformda birleştirir. Türk mevzuatına tam uyumlu, Türkçe arayüzü ve yerel destek avantajları ile öne çıkar. Gökkuşağı Yazılım olarak İstanbul'un tüm ilçelerinde Mikro ERP satış ve kurulum hizmeti sunuyoruz.</p>
+      <p>Mikro ERP, Türk işletmeleri için özel olarak geliştirilmiş kapsamlı bir iş kaynakları planlama (ERP) sistemidir. 30 yılı aşkın deneyimi ile Mikro Yazılım, Türkiye'de 50.000'den fazla işletmeye hizmet vermektedir. Mikro ERP, üretim, satın alma, satış, stok, muhasebe, finans ve insan kaynakları gibi tüm iş süreçlerini tek bir platformda birleştirir. Türkçe arayüzü ve yerel destek avantajları ile öne çıkar. Gökkuşağı Yazılım olarak İstanbul'un tüm ilçelerinde Mikro ERP satış ve kurulum hizmeti sunuyoruz.</p>
       
       <h2>Verimlilik Artışı</h2>
       <p>Mikro ERP kullanan işletmelerde ortalama %40 operasyonel verimlilik artışı gözlemlenmiştir. Bu artış süreç otomasyonu, veri entegrasyonu ve hata azaltımı sayesinde gerçekleşir. Manuel işlemlerin otomatize edilmesi, çalışanların daha stratejik işlere odaklanmasını sağlar. İşletmeler, siparişten sevkiyata kadar geçen süreyi %60 kısaltarak müşteri memnuniyetini artırır. Ataşehir, Beylikdüzü, Kadıköy gibi İstanbul ilçelerindeki işletmeler, Mikro ERP ile verimliliklerini %40 artırıyor.</p>
@@ -117,7 +76,7 @@ const posts = [
       <p>Gökkuşağı Yazılım olarak İstanbul'un tüm ilçelerinde Mikro ERP satış, kurulum ve destek hizmeti sunuyoruz. Ataşehir merkezli ofisimizden Beylikdüzü'ye, Kadıköy'den Ümraniye'ye kadar tüm İstanbul ilçelerine yerinde kurulum ve eğitim hizmeti sağlıyoruz. Maltepe, Pendik, Tuzla gibi Anadolu Yakası ilçelerindeki işletmeler için özel Mikro ERP çözümleri sunuyoruz.</p>
       
       <h2>Özellikler</h2>
-      <p>Mikro ERP, modüler yapısı ile işletmenizin ihtiyaçlarına göre özelleştirilebilir. Temel modüller: Finansal Yönetim, Üretim Yönetimi, Stok Yönetimi, Satın Alma, Satış, CRM, İnsan Kaynakları ve Raporlama. Her modül birbiriyle entegre çalışarak veri bütünlüğünü sağlar. Ayrıca Mikro ERP, e-fatura, e-defter, e-irsaliye gibi e-dönüşüm uygulamaları ile tam uyumludur.</p>
+      <p>Mikro ERP, modüler yapısı ile işletmenizin ihtiyaçlarına göre özelleştirilebilir. Temel modüller: Finansal Yönetim, Üretim Yönetimi, Stok Yönetimi, Satın Alma, Satış, CRM, İnsan Kaynakları ve Raporlama. Her modül birbiriyle entegre çalışarak veri bütünlüğünü sağlar.</p>
     `
   },
   {
@@ -168,43 +127,6 @@ const posts = [
     `
   },
   {
-    title: 'E-Defter Geçiş Süreci: Adım Adım Rehber',
-    excerpt: 'Kağıt defterden e-deftere geçiş sürecinde izlemeniz gereken adımlar, dikkat etmeniz gereken noktalar ve ipuçları.',
-    category: 'E-Dönüşüm',
-    date: '12 Nisan 2026',
-    readTime: '9 dk',
-    gradient: 'from-indigo-500 to-indigo-600',
-    slug: 'e-defter-gecis-sureci-adim-adim-rehber-gib-zorunluluklar',
-    metaDescription: 'E-defter geçiş süreci: Kimler e-defter kullanmak zorunda? Kağıt defterden e-deftere geçiş.',
-    content: `
-      <h2>E-Defter Nedir?</h2>
-      <p>E-defter, kağıt defter yerine elektronik ortamda tutulan defter türüdür. 6736 Sayılı Kanun kapsamında, mükelleflerin yevmiye defter, büyük defter ve envanter defterlerini elektronik ortamda tutmaları ve saklamaları zorunludur. 2026 itibarıyla 1.5 milyondan fazla mükellef e-defter kullanmaktadır. Kağıt defterlerin saklanma zorunluluğu ortadan kalkar, elektronik ortamda güvenli saklama sağlanır.</p>
-      
-      <h2>Kimler E-Defter Kullanmak Zorunda?</h2>
-      <p>2026 yılı itibarıyla e-fatura kullanıcısı olan tüm mükellefler e-defter kullanmak zorundadır. Ayrıca yıllık cirosu 3 milyon TL ve üzeri olan mükellefler de e-defter kullanmak zorundadır. İsteğe bağlı e-defter kullanımı da mümkündür ve küçük işletmeler için avantajlar sunar. E-defter kullanımı, defter beyanname yükümlülüğünü de ortadan kaldırır.</p>
-
-      <h2>Avantajları</h2>
-      <ul>
-        <li>Kağıt tasarrufu - yılda ortalama 300.000 sayfa kağıt tasarrufu</li>
-        <li>Kolay arşivleme - 10 yıl yasal saklama süresi boyunca güvenli saklama</li>
-        <li>Hızlı erişim - defterlere saniyeler içinde erişim</li>
-        <li>Defter beyanname yükümlülüğü kalkar</li>
-        <li>Audit süreçlerinde zaman tasarrufu - %70 daha hızlı denetim</li>
-        <li>Defter tutma maliyetlerinden %60 tasarruf</li>
-        <li>Gerçek zamanlı defter görünürlüğü</li>
-      </ul>
-      
-      <h2>Dikkat Edilmesi Gerekenler</h2>
-      <ul>
-        <li>Doğru entegratör seçin - ERP sisteminizle uyumlu olmalı</li>
-        <li>Personelinizi eğitin</li>
-        <li>Yedekleme sistemleri kurun</li>
-        <li>Düzenli olarak defterleri kontrol edin</li>
-        <li>Meşruhatları düzenli tutun</li>
-      </ul>
-    `
-  },
-  {
     title: 'Dijital Dönüşümde Başarının 5 Anahtarı - Strateji ve Uygulama Rehberi',
     excerpt: 'İşletmelerin dijital dönüşüm sürecinde başarılı olmalarını sağlayan 5 kritik faktör ve uygulama stratejileri.',
     category: 'Dijital Dönüşüm',
@@ -224,7 +146,7 @@ const posts = [
       <p>Çalışanların yeni sistemlere adapte olması için eğitim şarttır. Dijital dönüşüm sadece teknoloji değişimi değil, aynı zamanda kültürel değişimdir. Çalışanların %70'i yeni teknolojilere direnç gösterir, bu nedenle eğitim ve değişim yönetimi kritik önem taşır. Kapsamlı eğitim programları, workshop'lar ve sürekli destek ile personelin adaptasyonu hızlandırılır. Eğitim, projenin başarısında %45 etkili bir faktördür.</p>
       
       <h2>4. Doğru Teknoloji Seçimi</h2>
-      <p>İşletmeye uygun ERP ve dijital çözümler seçilmelidir. Teknoloji seçimi, işletmenin ihtiyaçlarına, büyüklüğüne ve sektörüne göre yapılmalıdır. Yanlış teknoloji seçimi, projenin başarısızlık riskini %60 artırır. ERP sistemi seçerken ölçeklenebilirlik, entegrasyon kolaylığı, kullanıcı dostu arayüz ve yerel destek gibi kriterler göz önünde bulundurulmalıdır. Ayrıca e-dönüşüm uygulamaları ile uyumluluk da kritik önem taşır.</p>
+      <p>İşletmeye uygun ERP ve dijital çözümler seçilmelidir. Teknoloji seçimi, işletmenin ihtiyaçlarına, büyüklüğüne ve sektörüne göre yapılmalıdır. Yanlış teknoloji seçimi, projenin başarısızlık riskini %60 artırır. ERP sistemi seçerken ölçeklenebilirlik, entegrasyon kolaylığı, kullanıcı dostu arayüz ve yerel destek gibi kriterler göz önünde bulundurulmalıdır.</p>
       
       <h2>5. Sürekli İyileştirme</h2>
       <p>Dijital dönüşüm bir süreçtir, sürekli iyileştirme gerekir. Dijital dönüşüm tek seferlik bir proje değil, sürekli evrilen bir yolculuktur. Başarılı işletmeler, dijital dönüşüm sürecinde sürekli geri bildirim alır, performansı ölçer ve iyileştirmeler yapar. Agil metodolojiler ve iteratif yaklaşım, sürekli iyileştirmeyi kolaylaştırır. Dijital dönüşüm projelerinin %75'i sürekli iyileştirme ile başarıya ulaşır.</p>
@@ -356,8 +278,8 @@ const posts = [
       <h2>Ölçeklenebilirlik</h2>
       <p>İşletme büyüdükçe sistemin de büyümesi gerekir. KOBİ'ler hızlı büyüme potansiyeline sahiptir, bu nedenle ERP'nin ölçeklenebilir olması şarttır. Kullanıcı sayısı, modül sayısı ve veri hacmi kolayca artırılmalıdır. Mikro FLY'den RUN'a veya JUMP'a geçiş, sorunsuz olmalıdır. Ölçeklenebilir olmayan ERP, işletme büyümesini engeller ve ek maliyetler yaratır.</p>
       
-      <h2>Yerel Uyumluluk</h2>
-      <p>Türk mevzuatına uyum ve yerel destek kritik öneme sahiptir. E-fatura, e-defter, e-irsaliye gibi e-dönüşüm uygulamaları ile tam uyumluluk şarttır. Türk muhasebe standartlarına uygun raporlama, SGK entegrasyonu ve yerel vergi kuralları desteklenmelidir. Yerel destek, sorunlara hızlı çözüm sağlar. Yabancı ERP çözümleri, yerel uyumlulukta sorun yaşayabilir.</p>
+      <h2>Yerel Destek</h2>
+      <p>Yerel destek kritik öneme sahiptir. Türkçe arayüz, yerel terminoloji ve tanıdık iş akışları adaptasyonu hızlandırır. Yerel destek, sorunlara hızlı çözüm sağlar. Yabancı ERP çözümleri, yerel destek konusunda sorun yaşayabilir.</p>
       
       <h2>Seçim Kriterleri</h2>
       <ul>
@@ -366,7 +288,7 @@ const posts = [
         <li>Kullanım kolaylığı</li>
         <li>Toplam sahip olma maliyeti</li>
         <li>Ölçeklenebilirlik</li>
-        <li>Yerel uyumluluk ve destek</li>
+        <li>Yerel destek</li>
         <li>Entegrasyon kolaylığı</li>
         <li>Mobil uygulama desteği</li>
       </ul>
@@ -428,7 +350,7 @@ export default function BlogPage() {
             transition={{ duration: 0.8, delay: 0.1 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
           >
-            ERP, E-Dönüşüm ve
+            ERP ve
             <br />
             <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Dijital Dönüşüm Rehberi</span>
           </motion.h1>
@@ -439,7 +361,7 @@ export default function BlogPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed"
           >
-            ERP sistemleri, e-dönüşüm uygulamaları ve dijital dönüşüm stratejileri hakkında kapsamlı rehberler ve ipuçları
+            ERP sistemleri ve dijital dönüşüm stratejileri hakkında kapsamlı rehberler ve ipuçları
           </motion.p>
         </div>
         <ScrollIndicator />
