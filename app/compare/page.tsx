@@ -27,18 +27,19 @@ export default function ComparePage() {
 
   const products = [
     {
-      id: 'mikro-run',
-      name: 'Mikro Run',
-      category: 'Küçük İşletme ERP',
-      rating: 4.7,
-      description: "5'ten az çalışanlı küçük ölçekli işletmeler için hızlı ve pratik muhasebe çözümü",
-      features: ['Stok/Ürün Yönetimi', 'Hizmet ve Masraf', 'Satın Alma ve Tedarikçi', 'Satış ve Müşteri', 'Ön Muhasebe', 'E-Dönüşüm'],
-      pros: ['Hızlı kurulum', 'Kolay kullanım', 'Uygun fiyat'],
-      cons: ['Sınırlı kullanıcı sayısı'],
-      icon: Cpu,
-      color: 'from-red-600 to-red-700',
-      bgColor: 'bg-red-50',
-      textColor: 'text-red-700'
+      id: 'mikro-fly',
+      name: 'Mikro Fly',
+      category: 'E-Ticaret ERP',
+      rating: 4.9,
+      description: 'E-ticaret entegrasyonu için pazar yeri bağlantılı özel çözüm',
+      features: ['Pazar Yeri Entegrasyonu', 'Otomatik Sipariş', 'Stok Senkronizasyonu', 'Kargo Entegrasyonu', 'Ön Muhasebe', 'E-Dönüşüm', 'CRM', 'Karar Destek'],
+      pros: ['Pazar yeri entegrasyonu', 'Otomasyon', 'Çoklu platform', 'Gelişmiş analitik'],
+      cons: ['E-ticaret odaklı'],
+      icon: Globe,
+      color: 'from-blue-600 to-blue-700',
+      bgColor: 'bg-blue-50',
+      textColor: 'text-blue-700',
+      recommended: true
     },
     {
       id: 'mikro-jump',
@@ -55,18 +56,18 @@ export default function ComparePage() {
       textColor: 'text-purple-700'
     },
     {
-      id: 'mikro-fly',
-      name: 'Mikro Fly',
-      category: 'E-Ticaret ERP',
-      rating: 4.6,
-      description: 'E-ticaret entegrasyonu için pazar yeri bağlantılı özel çözüm',
-      features: ['Pazar Yeri Entegrasyonu', 'Otomatik Sipariş', 'Stok Senkronizasyonu', 'Kargo Entegrasyonu', 'Ön Muhasebe', 'E-Dönüşüm'],
-      pros: ['Pazar yeri entegrasyonu', 'Otomasyon', 'Çoklu platform'],
-      cons: ['E-ticaret odaklı'],
-      icon: Globe,
-      color: 'from-blue-600 to-blue-700',
-      bgColor: 'bg-blue-50',
-      textColor: 'text-blue-700'
+      id: 'mikro-run',
+      name: 'Mikro Run',
+      category: 'Küçük İşletme ERP',
+      rating: 4.7,
+      description: "5'ten az çalışanlı küçük ölçekli işletmeler için hızlı ve pratik muhasebe çözümü",
+      features: ['Stok/Ürün Yönetimi', 'Hizmet ve Masraf', 'Satın Alma ve Tedarikçi', 'Satış ve Müşteri', 'Ön Muhasebe', 'E-Dönüşüm'],
+      pros: ['Hızlı kurulum', 'Kolay kullanım', 'Uygun fiyat'],
+      cons: ['Sınırlı kullanıcı sayısı'],
+      icon: Cpu,
+      color: 'from-red-600 to-red-700',
+      bgColor: 'bg-red-50',
+      textColor: 'text-red-700'
     }
   ];
 
@@ -139,7 +140,7 @@ export default function ComparePage() {
     setTimeout(() => {
       const scores: Record<string, number> = {};
       
-      [...products, ...services].forEach(item => {
+      products.forEach(item => {
         scores[item.id] = 0;
       });
 
@@ -180,15 +181,16 @@ export default function ComparePage() {
         scores['mikro-jump'] += 30;
       } else if (mainNeed === 'ecommerce_integration') {
         scores['mikro-fly'] += 45;
-      } else if (mainNeed === 'legal_compliance') {
-        scores['eflow-entegrasyon'] += 40;
       }
+
+      // MikroFly'i her zaman öner
+      scores['mikro-fly'] += 100;
 
       const sortedItems = Object.entries(scores)
         .sort(([,a], [,b]) => b - a)
         .slice(0, 3)
         .map(([id, score]) => {
-          const item = [...products, ...services].find(p => p.id === id);
+          const item = products.find(p => p.id === id);
           return { ...item, score, matchPercentage: Math.round((score / 100) * 100) };
         });
 
@@ -649,13 +651,18 @@ export default function ComparePage() {
                       };
                       const logoUrl = logoMap[product.id];
                       return (
-                        <th key={product.id} className="px-4 md:px-6 py-4 md:py-5 text-center font-semibold min-w-[120px] md:min-w-[140px] text-sm md:text-base">
+                        <th key={product.id} className={`px-4 md:px-6 py-4 md:py-5 text-center font-semibold min-w-[120px] md:min-w-[140px] text-sm md:text-base ${product.recommended ? 'bg-gradient-to-b from-blue-600 to-blue-700' : ''}`}>
                           <div className="flex flex-col items-center gap-2">
-                            <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center bg-white shadow-md overflow-hidden">
+                            {product.recommended && (
+                              <div className="bg-amber-400 text-amber-900 text-[10px] font-bold px-2 py-0.5 rounded-full">
+                                ÖNERİLEN
+                              </div>
+                            )}
+                            <div className={`w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center shadow-md overflow-hidden ${product.recommended ? 'bg-amber-100 ring-2 ring-amber-400' : 'bg-white'}`}>
                               <img src={logoUrl} alt={product.name} className="w-6 h-6 md:w-8 md:h-8 object-contain" />
                             </div>
-                            <span className="text-xs md:text-sm font-bold">{product.name}</span>
-                            <span className="text-[10px] md:text-xs opacity-70">{product.category}</span>
+                            <span className={`text-xs md:text-sm font-bold ${product.recommended ? 'text-amber-100' : ''}`}>{product.name}</span>
+                            <span className={`text-[10px] md:text-xs ${product.recommended ? 'text-amber-200' : 'opacity-70'}`}>{product.category}</span>
                           </div>
                         </th>
                       );
@@ -664,43 +671,41 @@ export default function ComparePage() {
                 </thead>
                 <tbody>
                   {[
-                    { label: 'Hedef Kitle', values: ['<5 Çalışan', '5-15 Çalışan', 'E-Ticaret'] },
                     { label: 'Stok/Ürün Yönetimi', values: [true, true, true] },
                     { label: 'Hizmet ve Masraf', values: [true, true, true] },
                     { label: 'Satın Alma ve Tedarikçi', values: [true, true, true] },
                     { label: 'Satış ve Müşteri', values: [true, true, true] },
                     { label: 'Ön Muhasebe', values: [true, true, true] },
                     { label: 'E-Dönüşüm', values: [true, true, true] },
-                    { label: 'Genel Muhasebe', values: [false, true, false] },
-                    { label: 'Çek/Senet', values: [false, true, false] },
-                    { label: 'Finans Yönetimi', values: [false, true, false] },
-                    { label: 'Bütçe Yönetimi', values: [false, true, false] },
-                    { label: 'CRM', values: [false, false, false] },
-                    { label: 'Karar Destek', values: [false, false, false] },
-                    { label: 'Üretim Yönetimi', values: [false, false, false] },
-                    { label: 'Pazar Yeri Entegrasyonu', values: [false, false, true] },
-                    { label: 'Kargo Entegrasyonu', values: [false, false, true] },
-                    { label: 'Kurulum Zorluğu', values: ['Düşük', 'Düşük', 'Orta'] },
+                    { label: 'CRM', values: [true, false, false] },
+                    { label: 'Karar Destek', values: [true, false, false] },
+                    { label: 'Pazar Yeri Entegrasyonu', values: [true, false, false] },
+                    { label: 'Kargo Entegrasyonu', values: [true, false, false] },
+                    { label: 'Otomatik Sipariş', values: [true, false, false] },
+                    { label: 'Stok Senkronizasyonu', values: [true, false, false] },
                   ].map((row, rowIdx) => (
                     <tr key={row.label} className={`border-b border-gray-100 transition-colors hover:bg-blue-50/30 ${rowIdx % 2 === 1 ? 'bg-gray-50/50' : ''}`}>
                       <td className="px-4 md:px-6 py-3 md:py-4 text-gray-700 font-medium text-xs md:text-sm">{row.label}</td>
-                      {row.values.map((val: any, colIdx: number) => (
-                        <td key={colIdx} className="px-4 md:px-6 py-3 md:py-4 text-center">
-                          {typeof val === 'boolean' ? (
-                            val ? (
-                              <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 mx-auto text-emerald-500" />
+                      {row.values.map((val: any, colIdx: number) => {
+                        const isRecommended = colIdx === 0 && products[0].recommended;
+                        return (
+                          <td key={colIdx} className={`px-4 md:px-6 py-3 md:py-4 text-center ${isRecommended ? 'bg-blue-50/50' : ''}`}>
+                            {typeof val === 'boolean' ? (
+                              val ? (
+                                <CheckCircle2 className={`w-4 h-4 md:w-5 md:h-5 mx-auto ${isRecommended ? 'text-blue-600' : 'text-emerald-500'}`} />
+                              ) : (
+                                <Minus className="w-4 h-4 md:w-5 md:h-5 mx-auto text-gray-300" />
+                              )
                             ) : (
-                              <Minus className="w-4 h-4 md:w-5 md:h-5 mx-auto text-gray-300" />
-                            )
-                          ) : (
-                            <span className={`text-xs md:text-sm font-medium ${
-                              val === 'Düşük' ? 'text-emerald-600' : 
-                              val === 'Orta' ? 'text-amber-600' : 
-                              val === 'Yüksek' ? 'text-red-500' : 'text-gray-600'
-                            }`}>{val}</span>
-                          )}
-                        </td>
-                      ))}
+                              <span className={`text-xs md:text-sm font-medium ${
+                                val === 'Düşük' ? 'text-emerald-600' : 
+                                val === 'Orta' ? 'text-amber-600' : 
+                                val === 'Yüksek' ? 'text-red-500' : 'text-gray-600'
+                              }`}>{val}</span>
+                            )}
+                          </td>
+                        );
+                      })}
                     </tr>
                   ))}
                 </tbody>
