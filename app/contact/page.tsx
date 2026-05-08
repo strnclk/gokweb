@@ -3,7 +3,6 @@ import { Phone, Mail, MapPin, Sparkles } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollIndicator from '@/components/ScrollIndicator';
-import ContactForm from '@/components/ContactForm';
 import ContactContent from '@/components/ContactContent';
 
 export const metadata: Metadata = {
@@ -47,11 +46,10 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white text-black">
       <Navbar />
-      <ContactContent 
+      <ContactContent
         whatsappNumber={whatsappNumber}
         email={email}
         contactMethods={contactMethods}
-        ContactForm={ContactForm}
       />
       <ScrollIndicator />
       <Footer />

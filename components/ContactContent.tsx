@@ -18,10 +18,9 @@ interface ContactContentProps {
     value: string;
     link: string | null;
   }>;
-  ContactForm: React.ComponentType;
 }
 
-export default function ContactContent({ whatsappNumber, email, contactMethods, ContactForm }: ContactContentProps) {
+export default function ContactContent({ whatsappNumber, email, contactMethods }: ContactContentProps) {
   return (
     <>
       {/* Hero Section - Profesyonel Modern Tasarım */}
@@ -177,7 +176,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods, 
             </p>
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="max-w-2xl mx-auto">
             {/* Contact Info */}
             <div className="space-y-6">
               {contactMethods.map((method, index) => {
@@ -209,20 +208,6 @@ export default function ContactContent({ whatsappNumber, email, contactMethods, 
                   </motion.div>
                 );
               })}
-            </div>
-
-            {/* Contact Form */}
-            <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="mb-6"
-              >
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Mesaj Gönderin</h3>
-                <p className="text-gray-600 text-sm">Size en kısa sürede dönüş yapacağız</p>
-              </motion.div>
-              <ContactForm />
             </div>
           </div>
         </div>
