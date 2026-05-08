@@ -291,6 +291,21 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Google Analytics GA4 */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PX95LTH6QB"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PX95LTH6QB');
+          `}
+        </Script>
+
         {/* ✅ JSON-LD doğru yerde */}
         <Script
           id="json-ld"

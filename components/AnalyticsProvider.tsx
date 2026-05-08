@@ -23,7 +23,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
 
     // 👇 Analytics’i anında tetikle (çok önemli)
     if (typeof window !== 'undefined' && (window as any).gtag) {
-      (window as any).gtag('config', process.env.NEXT_PUBLIC_GA_ID);
+      (window as any).gtag('config', 'G-PX95LTH6QB');
     }
   };
 
@@ -38,7 +38,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
       {consent === true && (
         <>
           <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+            src="https://www.googletagmanager.com/gtag/js?id=G-PX95LTH6QB"
             strategy="afterInteractive"
           />
           <Script id="ga-script" strategy="afterInteractive">
@@ -47,7 +47,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
               function gtag(){dataLayer.push(arguments);}
               window.gtag = gtag;
               gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+              gtag('config', 'G-PX95LTH6QB');
             `}
           </Script>
         </>
