@@ -7,7 +7,7 @@ export default function AboutSection() {
   return (
     <>
       {/* About Section */}
-      <section className="py-20 bg-white">
+      <section className="py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -61,7 +61,7 @@ export default function AboutSection() {
       </section>
 
       {/* Vision Mission Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-12 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -92,7 +92,7 @@ export default function AboutSection() {
       </section>
 
       {/* Featured Works Section */}
-      <section className="py-20 bg-gray-900 text-white">
+      <section className="py-12 sm:py-20 bg-gray-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">

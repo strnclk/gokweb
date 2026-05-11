@@ -54,7 +54,7 @@ export default function IndustryScenariosSection() {
   const [hoveredIndustry, setHoveredIndustry] = useState<number | null>(null);
 
   return (
-    <section className="py-20 relative bg-cover bg-center bg-fixed" style={{ backgroundImage: 'url(/rainbw.png)' }}>
+    <section className="py-12 sm:py-20 relative bg-cover bg-center sm:bg-fixed" style={{ backgroundImage: 'url(/rainbw.png)' }}>
       <div className="absolute inset-0 bg-white/60" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">

@@ -50,7 +50,7 @@ export default function ImageCarousel() {
   };
 
   return (
-    <section className="relative h-[600px] bg-gray-900 overflow-hidden">
+    <section className="relative h-[400px] sm:h-[500px] md:h-[600px] bg-gray-900 overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
@@ -68,25 +68,25 @@ export default function ImageCarousel() {
           </div>
           
           <div className="relative h-full flex items-center">
-            <div className="max-w-7xl mx-auto px-6 w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="max-w-3xl"
+                className="max-w-full sm:max-w-3xl"
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
                   {slides[currentIndex].title}
                 </h2>
-                <p className="text-xl text-gray-200 mb-6">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200 mb-4 sm:mb-6">
                   {slides[currentIndex].description}
                 </p>
                 
                 {/* Features */}
-                <div className="mb-6">
-                  <div className="flex flex-wrap gap-2">
+                <div className="mb-4 sm:mb-6">
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {slides[currentIndex].features.map((feature, idx) => (
-                      <span key={idx} className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white">
+                      <span key={idx} className="px-2 sm:px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm text-white">
                         {feature}
                       </span>
                     ))}
@@ -94,10 +94,10 @@ export default function ImageCarousel() {
                 </div>
 
                 {/* Stats */}
-                <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex flex-wrap gap-3 sm:gap-4 mb-6 sm:mb-8">
                   {slides[currentIndex].stats.map((stat, idx) => (
                     <div key={idx} className="text-center">
-                      <div className="text-2xl font-bold text-white">{stat}</div>
+                      <div className="text-lg sm:text-xl md:text-2xl font-bold text-white">{stat}</div>
                     </div>
                   ))}
                 </div>

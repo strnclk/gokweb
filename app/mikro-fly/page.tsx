@@ -196,7 +196,7 @@ export default function MikroFlyPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
+      <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center px-4 sm:px-6 bg-white pt-20 md:pt-0">
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-10">
             <div className="w-32 h-32 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg">
@@ -213,7 +213,7 @@ export default function MikroFlyPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-gray-900"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 text-gray-900"
           >
             Mikro
             <br />
@@ -224,7 +224,7 @@ export default function MikroFlyPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-500 mb-10 max-w-4xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-gray-500 mb-8 sm:mb-10 max-w-4xl mx-auto leading-relaxed"
           >
 Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin co-pilotu Mikro Fly ile tanışın! Hangi sektörde olursanız olun, tüm operasyonlarınızı tek bir programda kârlı ve verimli bir şekilde yönetin. Mikro Fly, büyük İşletmeler için tasarlanmış güçlü bir ticari yazılım çözümü olarak işletmenizin her adımında yanınızda. Başarıya uçuşunuzu şimdi başlatın!
           </motion.p>
@@ -234,18 +234,17 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
             onClick={scrollToContact}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-colors font-medium"
+            className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-lg hover:from-blue-700 hover:to-cyan-700 transition-colors font-medium"
           >
             Teklif Al
             <ArrowRight className="w-5 h-5" />
           </motion.button>
         </div>
-        <ScrollIndicator />
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 sm:py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -258,7 +257,7 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -283,8 +282,8 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
       </section>
 
       {/* Modules Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -297,7 +296,7 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-6">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             {modules.map((module, index) => {
               const Icon = module.icon;
               return (
@@ -306,7 +305,7 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-blue-300 min-h-[280px] flex flex-col w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+                  className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-blue-300 min-h-[280px] flex flex-col w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
                 >
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-lg flex items-center justify-center mx-auto mb-4">
                     <Icon size={24} className="text-white" />
@@ -329,11 +328,11 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
       </section>
 
       {/* Product Showcase Section */}
-      <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-        <div className="max-w-6xl mx-auto px-6 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="py-12 sm:py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-blue-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-cyan-100/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -405,8 +404,8 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 sm:py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -419,7 +418,7 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               'Mikro Fly e-Dönüşüm Çözümleri',
               'Mikro Fly Sektörel Çözümler',
@@ -443,13 +442,13 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-blue-900 to-cyan-900 p-8 rounded-xl text-center"
+            className="bg-gradient-to-r from-blue-900 to-cyan-900 p-6 sm:p-8 rounded-xl text-center"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">Mikro Fly İle İlgili Detaylı Bilgi ve Sunum İçin Bize Ulaşabilirsiniz</h2>
             <p className="text-base mb-6 text-blue-100">Mikro FLY, ek çözümler ve özellikleriyle İlgili detaylı bilgi almak, demo ve sunum talep etmek İçin bizimle İletişime geçin!</p>
@@ -466,8 +465,8 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 sm:py-20 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

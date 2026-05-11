@@ -16,6 +16,18 @@ export default function Navbar() {
   const [isVerticalDropdownOpen, setIsVerticalDropdownOpen] = useState(false);
   const [currentContact, setCurrentContact] = useState(0);
 
+  // Mobil menü açıldığında body scroll'u engelle
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
   const contactInfo = [
     { type: 'phone', icon: Phone, text: '0539 856 35 78', link: 'tel:05398563578' },
     { type: 'email', icon: Mail, text: 'satis@gokkusagiyazilim.com.tr', link: 'mailto:satis@gokkusagiyazilim.com.tr' }
@@ -41,13 +53,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close dropdowns when clicking outside
+  // Close dropdowns when clicking outside (desktop only)
   useEffect(() => {
     const handleClickOutside = () => {
-      setIsMikroDropdownOpen(false);
-      setIsEflowDropdownOpen(false);
-      setIsSectoralDropdownOpen(false);
-      setIsVerticalDropdownOpen(false);
+      if (window.innerWidth >= 1280) {
+        setIsMikroDropdownOpen(false);
+        setIsEflowDropdownOpen(false);
+        setIsSectoralDropdownOpen(false);
+        setIsVerticalDropdownOpen(false);
+      }
     };
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
@@ -101,7 +115,7 @@ export default function Navbar() {
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isMikroDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               {!isActive('/products') && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
               )}
               
               <div className={`absolute top-full left-0 w-56 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-100/50 overflow-hidden z-50 transition-all duration-200 ${isMikroDropdownOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
@@ -143,7 +157,7 @@ export default function Navbar() {
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isVerticalDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               {!isActive('/vertical-solutions') && !isActive('/solutions') && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
               )}
               
               <div className={`absolute top-full left-0 w-56 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-100/50 overflow-hidden z-50 transition-all duration-200 ${isVerticalDropdownOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
@@ -176,7 +190,7 @@ export default function Navbar() {
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isEflowDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               {!isActive('/eflow') && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
               )}
               
               <div className={`absolute top-full left-0 w-56 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-100/50 overflow-hidden z-50 transition-all duration-200 ${isEflowDropdownOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
@@ -200,7 +214,7 @@ export default function Navbar() {
               <Briefcase className="w-4 h-4" />
               Hizmetler
               {!isActive('/services') && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
               )}
             </Link>
 
@@ -222,7 +236,7 @@ export default function Navbar() {
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isSectoralDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               {!isActive('/sectoral-solutions') && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
               )}
               
               <div className={`absolute top-full left-0 w-56 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-100/50 overflow-hidden z-50 transition-all duration-200 ${isSectoralDropdownOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
@@ -242,7 +256,7 @@ export default function Navbar() {
               <FileText className="w-4 h-4" />
               Blog
               {!isActive('/blog') && (
-                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
               )}
             </Link>
 
@@ -262,43 +276,48 @@ export default function Navbar() {
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="xl:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100/50 py-4"
+            className="xl:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100/50 py-4 overflow-visible"
           >
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-3 relative z-10 overflow-visible">
               {/* Mikro Dropdown - Mobil */}
-              <div className="px-6">
-                <button 
-                  onClick={() => setIsMikroDropdownOpen(!isMikroDropdownOpen)}
-                  className={`flex items-center gap-2 transition-all duration-300 font-medium text-base w-full text-left relative group ${isActive('/products') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
+              <div className="px-6 relative z-20 overflow-visible">
+                <div
+                  onClick={() => {
+                    setIsMikroDropdownOpen(!isMikroDropdownOpen);
+                    setIsVerticalDropdownOpen(false);
+                    setIsEflowDropdownOpen(false);
+                    setIsSectoralDropdownOpen(false);
+                  }}
+                  className={`flex items-center gap-2 transition-all duration-300 font-medium text-base w-full text-left relative group z-40 cursor-pointer select-none active:opacity-70 py-2 -mx-2 px-2 rounded-lg touch-manipulation ${isActive('/products') ? 'text-blue-600 font-semibold bg-blue-50' : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'}`}
                 >
                   <Package className="w-4 h-4" />
                   Mikro
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isMikroDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
+                </div>
                 {!isActive('/products') && (
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
                 )}
                 
                 {isMikroDropdownOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mt-2 ml-4 space-y-1"
+                    className="mt-2 ml-4 space-y-1 relative z-30 overflow-visible"
                   >
-                    <Link href="/mikro-run" className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
+                    <Link href="/mikro-run" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
                       <Package className="w-4 h-4" />
                       Mikro Run
                     </Link>
-                    <Link href="/mikro-jump" className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
+                    <Link href="/mikro-jump" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
                       <Package className="w-4 h-4" />
                       Mikro Jump
                     </Link>
-                    <Link href="/mikro-fly" className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
+                    <Link href="/mikro-fly" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
                       <Package className="w-4 h-4" />
                       Mikro Fly
                     </Link>
                     <div className="border-t border-gray-100 my-1 mx-4"></div>
-                    <Link href="/compare" className="flex items-center gap-3 px-4 py-2.5 text-blue-600 hover:bg-blue-50/80 font-semibold transition-all duration-200 rounded-lg">
+                    <Link href="/compare" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-blue-600 hover:bg-blue-50/80 font-semibold transition-all duration-200 rounded-lg">
                       <GitCompare className="w-4 h-4" />
                       Ürünleri Karşılaştır
                     </Link>
@@ -307,30 +326,43 @@ export default function Navbar() {
               </div>
 
               {/* Mikro Dikey Çözümler Dropdown - Mobil */}
-              <div className="px-6">
-                <button 
-                  onClick={() => setIsVerticalDropdownOpen(!isVerticalDropdownOpen)}
-                  className={`flex items-center gap-2 transition-all duration-300 font-medium text-base w-full text-left relative group ${isActive('/vertical-solutions') || isActive('/solutions') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
+              <div className="px-6 relative z-20 overflow-visible">
+                <div 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsVerticalDropdownOpen(!isVerticalDropdownOpen);
+                    setIsMikroDropdownOpen(false);
+                    setIsEflowDropdownOpen(false);
+                    setIsSectoralDropdownOpen(false);
+                  }}
+                  onTouchStart={(e) => {
+                    e.stopPropagation();
+                    setIsVerticalDropdownOpen(!isVerticalDropdownOpen);
+                    setIsMikroDropdownOpen(false);
+                    setIsEflowDropdownOpen(false);
+                    setIsSectoralDropdownOpen(false);
+                  }}
+                  className={`flex items-center gap-2 transition-all duration-300 font-medium text-base w-full text-left relative group z-40 cursor-pointer ${isActive('/vertical-solutions') || isActive('/solutions') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
                 >
                   <Building className="w-4 h-4" />
                   Mikro Dikey Çözümler
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isVerticalDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
+                </div>
                 {!isActive('/vertical-solutions') && !isActive('/solutions') && (
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
                 )}
                 
                 {isVerticalDropdownOpen && (
                   <motion.div
                     initial={{ opacity: 0, y: -10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="mt-2 ml-4 space-y-1"
+                    className="mt-2 ml-4 space-y-1 relative z-30 overflow-visible"
                   >
-                    <Link href="/vertical-solutions" className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
+                    <Link href="/vertical-solutions" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
                       <Building className="w-4 h-4" />
                       Mikro Dikey Çözümler
                     </Link>
-                    <Link href="/solutions" className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
+                    <Link href="/solutions" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
                       <TrendingUp className="w-4 h-4" />
                       Çözümleri Görüntüle
                     </Link>
@@ -339,17 +371,30 @@ export default function Navbar() {
               </div>
 
               {/* E-Flow Dropdown - Mobil */}
-              <div className="px-6">
-                <button 
-                  onClick={() => setIsEflowDropdownOpen(!isEflowDropdownOpen)}
-                  className={`flex items-center gap-2 transition-all duration-300 font-medium text-base w-full text-left relative group ${isActive('/eflow') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
+              <div className="px-6 relative z-20 overflow-visible">
+                <div 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsEflowDropdownOpen(!isEflowDropdownOpen);
+                    setIsMikroDropdownOpen(false);
+                    setIsVerticalDropdownOpen(false);
+                    setIsSectoralDropdownOpen(false);
+                  }}
+                  onTouchStart={(e) => {
+                    e.stopPropagation();
+                    setIsEflowDropdownOpen(!isEflowDropdownOpen);
+                    setIsMikroDropdownOpen(false);
+                    setIsVerticalDropdownOpen(false);
+                    setIsSectoralDropdownOpen(false);
+                  }}
+                  className={`flex items-center gap-2 transition-all duration-300 font-medium text-base w-full text-left relative group z-40 cursor-pointer ${isActive('/eflow') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
                 >
                   <Zap className="w-4 h-4" />
                   E-Flow
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isEflowDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
+                </div>
                 {!isActive('/eflow') && (
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
                 )}
                 
                 {isEflowDropdownOpen && (
@@ -358,15 +403,15 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     className="mt-2 ml-4 space-y-1"
                   >
-                    <Link href="/eflow" className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
+                    <Link href="/eflow" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
                       <Zap className="w-4 h-4" />
                       E-Flow Ana Sayfa
                     </Link>
-                    <Link href="/eflow-bpm" className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
+                    <Link href="/eflow-bpm" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
                       <Workflow className="w-4 h-4" />
                       BPM Çözümleri
                     </Link>
-                    <Link href="/eflow-dms" className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
+                    <Link href="/eflow-dms" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
                       <FolderOpen className="w-4 h-4" />
                       DMS Çözümleri
                     </Link>
@@ -374,26 +419,39 @@ export default function Navbar() {
                 )}
               </div>
 
-              <Link href="/services" className={`flex items-center gap-2 transition-all duration-300 font-medium text-base px-6 relative group ${isActive('/services') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>
+              <Link href="/services" onClick={() => setIsMenuOpen(false)} className={`flex items-center gap-2 transition-all duration-300 font-medium text-base px-6 relative group ${isActive('/services') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>
                 <Briefcase className="w-4 h-4" />
                 Hizmetler
                 {!isActive('/services') && (
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
                 )}
               </Link>
 
               {/* Sektörel Çözümler Dropdown - Mobil */}
-              <div className="px-6">
-                <button 
-                  onClick={() => setIsSectoralDropdownOpen(!isSectoralDropdownOpen)}
-                  className={`flex items-center gap-2 transition-all duration-300 font-medium text-base w-full text-left relative group ${isActive('/sectoral-solutions') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
+              <div className="px-6 relative z-20 overflow-visible">
+                <div 
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsSectoralDropdownOpen(!isSectoralDropdownOpen);
+                    setIsMikroDropdownOpen(false);
+                    setIsVerticalDropdownOpen(false);
+                    setIsEflowDropdownOpen(false);
+                  }}
+                  onTouchStart={(e) => {
+                    e.stopPropagation();
+                    setIsSectoralDropdownOpen(!isSectoralDropdownOpen);
+                    setIsMikroDropdownOpen(false);
+                    setIsVerticalDropdownOpen(false);
+                    setIsEflowDropdownOpen(false);
+                  }}
+                  className={`flex items-center gap-2 transition-all duration-300 font-medium text-base w-full text-left relative group z-40 cursor-pointer ${isActive('/sectoral-solutions') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}
                 >
                   <Factory className="w-4 h-4" />
                   Sektörel Çözümler
                   <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isSectoralDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
+                </div>
                 {!isActive('/sectoral-solutions') && (
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
                 )}
                 
                 {isSectoralDropdownOpen && (
@@ -402,11 +460,11 @@ export default function Navbar() {
                     animate={{ opacity: 1, y: 0 }}
                     className="mt-2 ml-4 space-y-1"
                   >
-                    <Link href="/sectoral-solutions" className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
+                    <Link href="/sectoral-solutions" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
                       <Factory className="w-4 h-4" />
                       Sektörel Çözümler
                     </Link>
-                    <Link href="/featured-works" className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
+                    <Link href="/featured-works" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
                       <Star className="w-4 h-4" />
                       Öne Çıkan Çalışmalarımız
                     </Link>
@@ -414,16 +472,16 @@ export default function Navbar() {
                 )}
               </div>
 
-              <Link href="/blog" className={`flex items-center gap-2 transition-all duration-300 font-medium text-base px-6 relative group ${isActive('/blog') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>
+              <Link href="/blog" onClick={() => setIsMenuOpen(false)} className={`flex items-center gap-2 transition-all duration-300 font-medium text-base px-6 relative group ${isActive('/blog') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>
                 <FileText className="w-4 h-4" />
                 Blog
                 {!isActive('/blog') && (
-                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
                 )}
               </Link>
 
               {/* Teklif Al Butonu - Mobil */}
-              <Link href="/contact" className="mx-6 px-6 py-3 bg-white text-gray-800 rounded-full border border-gray-200 hover:shadow-xl hover:from-red-500 hover:via-yellow-500 hover:via-green-500 hover:via-blue-500 hover:to-purple-500 hover:bg-gradient-to-r hover:text-white hover:border-transparent transition-all duration-300 text-base font-semibold">
+              <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="mx-6 px-6 py-3 bg-white text-gray-800 rounded-full border border-gray-200 hover:shadow-xl hover:from-red-500 hover:via-yellow-500 hover:via-green-500 hover:via-blue-500 hover:to-purple-500 hover:bg-gradient-to-r hover:text-white hover:border-transparent transition-all duration-300 text-base font-semibold">
                 Teklif Al
               </Link>
             </div>

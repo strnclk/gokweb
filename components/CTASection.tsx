@@ -36,7 +36,7 @@ export default function CTASection() {
   }, []);
 
   return (
-    <section ref={ref} className="min-h-screen flex items-center justify-center px-6 py-32 bg-white">
+    <section ref={ref} className="min-h-[60vh] sm:min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 sm:py-32 bg-white">
       <div className="max-w-4xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

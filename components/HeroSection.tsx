@@ -205,7 +205,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
   }, [displayText, isDeleting, currentWordIndex]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-20">
       {/* Decorative elements */}
       <div className="absolute top-20 right-20 w-72 h-72 bg-blue-100/40 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl" />
@@ -287,35 +287,36 @@ export default function HeroSection({ district }: HeroSectionProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
+            className="hidden sm:block"
           >
-            <div className="flex items-center justify-center gap-6 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+            <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg">
               <Image 
                 src="/yetkili.png" 
                 alt="Gökkuşağı Yazılım - Resmi Mikro Yetkili Bayii" 
                 width={80} 
                 height={80}
-                className="h-20 w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
+                className="h-16 w-16 sm:h-20 sm:w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
               />
               <Image 
                 src="/mikro-run-logo.png" 
                 alt="Mikro Run" 
                 width={80} 
                 height={80}
-                className="h-20 w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
+                className="h-16 w-16 sm:h-20 sm:w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
               />
               <Image 
                 src="/mikro-jump-logo.png" 
                 alt="Mikro Jump" 
                 width={80} 
                 height={80}
-                className="h-20 w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
+                className="h-16 w-16 sm:h-20 sm:w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
               />
               <Image 
                 src="/mikro-fly-logo.png" 
                 alt="Mikro Fly" 
                 width={80} 
                 height={80}
-                className="h-20 w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
+                className="h-16 w-16 sm:h-20 sm:w-20 object-contain opacity-80 hover:opacity-100 transition-opacity" 
               />
             </div>
           </motion.div>

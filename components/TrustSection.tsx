@@ -27,7 +27,7 @@ export default function TrustSection() {
   }, []);
 
   return (
-    <section ref={ref} className="min-h-screen flex items-center justify-center px-6 py-32 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <section ref={ref} className="min-h-[60vh] sm:min-h-screen flex items-center justify-center px-4 sm:px-6 py-16 sm:py-32 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

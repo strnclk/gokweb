@@ -9,7 +9,7 @@ export default function ScrollIndicator() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ delay: 1 }}
-      className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 cursor-pointer"
+      className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-0 cursor-pointer hidden sm:block"
       onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
     >
       <motion.div

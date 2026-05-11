@@ -158,13 +158,13 @@ export default function FeaturedWorksPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
+      <section className="relative min-h-[80vh] md:min-h-screen flex items-center overflow-hidden bg-white pt-20 md:pt-0">
         {/* Decorative Elements */}
-        <div className="absolute top-20 right-20 w-96 h-96 bg-blue-100 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-100 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-50 to-purple-50 rounded-full blur-3xl" />
+        <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-blue-100 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 sm:bottom-20 sm:left-20 w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-purple-100 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] bg-gradient-to-r from-blue-50 to-purple-50 rounded-full blur-3xl" />
         
-        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <motion.div
@@ -181,7 +181,7 @@ export default function FeaturedWorksPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900"
               >
                 Öne Çıkan
                 <br />
@@ -192,7 +192,7 @@ export default function FeaturedWorksPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed"
+                className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-xl leading-relaxed"
               >
                 Finansal yönetim, nakit akışı ve raporlama alanında gerçekleştirdiğimiz başarılı projelerimizle işletmenizi dijitalleştirin
               </motion.p>
@@ -205,12 +205,12 @@ export default function FeaturedWorksPage() {
               >
                 <button
                   onClick={scrollToContact}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-700 to-purple-700 text-white rounded-xl hover:from-blue-800 hover:to-purple-800 font-medium shadow-xl"
+                  className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-700 to-purple-700 text-white rounded-xl hover:from-blue-800 hover:to-purple-800 font-medium shadow-xl"
                 >
                   Proje Talebi
                   <ArrowRight className="w-4 h-4 ml-2 inline" />
                 </button>
-                <button className="px-8 py-4 bg-white border-blue-300 text-gray-900 rounded-xl hover:bg-blue-50 font-medium">
+                <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white border-blue-300 text-gray-900 rounded-xl hover:bg-blue-50 font-medium">
                   Daha Fazla Bilgi
                 </button>
               </motion.div>
@@ -325,12 +325,11 @@ export default function FeaturedWorksPage() {
             </div>
           </div>
         </div>
-        <ScrollIndicator />
       </section>
 
       {/* Financial Services Section */}
-      <section className="py-20 bg-blue-50">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 sm:py-20 bg-blue-50">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -362,7 +361,7 @@ export default function FeaturedWorksPage() {
                     <div className="flex-1">
                       <h3 className="text-xl font-bold mb-2 text-gray-900">{service.title}</h3>
                       <p className="text-gray-600 mb-4 leading-relaxed">{service.description}</p>
-                      <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
                         {service.features.map((feature, idx) => (
                           <div key={idx} className="flex items-center text-sm text-gray-700">
                             <CheckCircle size={14} className="mr-2 text-blue-500 flex-shrink-0" />
@@ -380,8 +379,8 @@ export default function FeaturedWorksPage() {
       </section>
 
       {/* Case Studies Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -394,7 +393,7 @@ export default function FeaturedWorksPage() {
             </p>
           </motion.div>
           
-          <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {caseStudies.map((study, index) => {
               const Icon = study.icon;
               return (
@@ -446,13 +445,13 @@ export default function FeaturedWorksPage() {
 
 
       {/* CTA Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="py-12 sm:py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-blue-900 to-purple-900 p-8 rounded-xl text-center"
+            className="bg-gradient-to-r from-blue-900 to-purple-900 p-6 sm:p-8 rounded-xl text-center"
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">Finansal Dönüşüm Başlangıcı</h2>
             <p className="text-base mb-6 text-slate-300">Finansal yönetim süreçlerinizi optimize etmek için bize ulaşın</p>

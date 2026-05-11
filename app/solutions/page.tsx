@@ -47,13 +47,13 @@ export default function SolutionsPage() {
       <Navbar />
       
       {/* Hero Section - Modern SaaS Design */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-white">
+      <section className="relative min-h-[50vh] sm:min-h-[60vh] flex items-center overflow-hidden bg-white">
         {/* Rainbow Background Image */}
         <div className="absolute inset-0 pointer-events-none opacity-30" style={{ zIndex: 1 }}>
           <img src="/rainbw.png" alt="Rainbow Background" className="w-full h-full object-cover" />
         </div>
         
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export default function SolutionsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900"
             >
               Her Ölçekten İşletmenin
               <br />
@@ -80,7 +80,7 @@ export default function SolutionsPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl leading-relaxed mx-auto"
+              className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl leading-relaxed mx-auto"
             >
               Depo ve lojistikten hızlı satışa, üretimden kalite yönetimine kadar işinize kolaylık ve işletmenize kârlılık sağlayacak Mikro API ile güvenli entegrasyon sağlayan çözümler
             </motion.p>
@@ -89,7 +89,7 @@ export default function SolutionsPage() {
       </section>
 
       {/* Solutions Section */}
-      <section id="solutions" className="px-6 py-20 bg-white">
+      <section id="solutions" className="px-4 sm:px-6 py-12 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -110,10 +110,10 @@ export default function SolutionsPage() {
           </motion.div>
 
           {/* Tab Navigation */}
-          <div className="flex justify-center gap-3 mb-8 flex-wrap">
+          <div className="flex justify-center gap-2 sm:gap-3 mb-6 sm:mb-8 flex-wrap">
             <button
               onClick={() => setActiveTab('hizli-satis')}
-              className={`px-5 py-3 rounded-lg font-medium transition-all text-sm ${
+              className={`px-3 sm:px-5 py-2 sm:py-3 rounded-lg font-medium transition-all text-xs sm:text-sm ${
                 activeTab === 'hizli-satis'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
@@ -124,7 +124,7 @@ export default function SolutionsPage() {
             </button>
             <button
               onClick={() => setActiveTab('uretim-yonetimi')}
-              className={`px-5 py-3 rounded-lg font-medium transition-all text-sm ${
+              className={`px-3 sm:px-5 py-2 sm:py-3 rounded-lg font-medium transition-all text-xs sm:text-sm ${
                 activeTab === 'uretim-yonetimi'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
@@ -135,7 +135,7 @@ export default function SolutionsPage() {
             </button>
             <button
               onClick={() => setActiveTab('kalite-yonetimi')}
-              className={`px-5 py-3 rounded-lg font-medium transition-all text-sm ${
+              className={`px-3 sm:px-5 py-2 sm:py-3 rounded-lg font-medium transition-all text-xs sm:text-sm ${
                 activeTab === 'kalite-yonetimi'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
@@ -146,7 +146,7 @@ export default function SolutionsPage() {
             </button>
             <button
               onClick={() => setActiveTab('depo-lojistik')}
-              className={`px-5 py-3 rounded-lg font-medium transition-all text-sm ${
+              className={`px-3 sm:px-5 py-2 sm:py-3 rounded-lg font-medium transition-all text-xs sm:text-sm ${
                 activeTab === 'depo-lojistik'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
@@ -157,7 +157,7 @@ export default function SolutionsPage() {
             </button>
             <button
               onClick={() => setActiveTab('b2b-bayi')}
-              className={`px-5 py-3 rounded-lg font-medium transition-all text-sm ${
+              className={`px-3 sm:px-5 py-2 sm:py-3 rounded-lg font-medium transition-all text-xs sm:text-sm ${
                 activeTab === 'b2b-bayi'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
@@ -168,7 +168,7 @@ export default function SolutionsPage() {
             </button>
             <button
               onClick={() => setActiveTab('surec-yonetimi')}
-              className={`px-5 py-3 rounded-lg font-medium transition-all text-sm ${
+              className={`px-3 sm:px-5 py-2 sm:py-3 rounded-lg font-medium transition-all text-xs sm:text-sm ${
                 activeTab === 'surec-yonetimi'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
@@ -179,7 +179,7 @@ export default function SolutionsPage() {
             </button>
             <button
               onClick={() => setActiveTab('raporlama-analiz')}
-              className={`px-5 py-3 rounded-lg font-medium transition-all text-sm ${
+              className={`px-3 sm:px-5 py-2 sm:py-3 rounded-lg font-medium transition-all text-xs sm:text-sm ${
                 activeTab === 'raporlama-analiz'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
@@ -190,7 +190,7 @@ export default function SolutionsPage() {
             </button>
             <button
               onClick={() => setActiveTab('restoran-yonetimi')}
-              className={`px-5 py-3 rounded-lg font-medium transition-all text-sm ${
+              className={`px-3 sm:px-5 py-2 sm:py-3 rounded-lg font-medium transition-all text-xs sm:text-sm ${
                 activeTab === 'restoran-yonetimi'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
@@ -201,7 +201,7 @@ export default function SolutionsPage() {
             </button>
             <button
               onClick={() => setActiveTab('diger')}
-              className={`px-5 py-3 rounded-lg font-medium transition-all text-sm ${
+              className={`px-3 sm:px-5 py-2 sm:py-3 rounded-lg font-medium transition-all text-xs sm:text-sm ${
                 activeTab === 'diger'
                   ? 'bg-red-600 text-white shadow-md'
                   : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
@@ -221,7 +221,7 @@ export default function SolutionsPage() {
                 transition={{ duration: 0.3 }}
                 className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
                       <ShoppingCart size={28} className="text-red-600" />
@@ -254,7 +254,7 @@ export default function SolutionsPage() {
                 transition={{ duration: 0.3 }}
                 className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Factory size={28} className="text-red-600" />
@@ -292,7 +292,7 @@ export default function SolutionsPage() {
                 transition={{ duration: 0.3 }}
                 className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Shield size={28} className="text-red-600" />
@@ -327,7 +327,7 @@ export default function SolutionsPage() {
                 transition={{ duration: 0.3 }}
                 className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Truck size={28} className="text-red-600" />
@@ -364,7 +364,7 @@ export default function SolutionsPage() {
                 transition={{ duration: 0.3 }}
                 className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Store size={28} className="text-red-600" />
@@ -402,7 +402,7 @@ export default function SolutionsPage() {
                 transition={{ duration: 0.3 }}
                 className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Workflow size={28} className="text-red-600" />
@@ -446,7 +446,7 @@ export default function SolutionsPage() {
                 transition={{ duration: 0.3 }}
                 className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
                       <BarChart size={28} className="text-red-600" />
@@ -484,7 +484,7 @@ export default function SolutionsPage() {
                 transition={{ duration: 0.3 }}
                 className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <div className="p-8">
+                <div className="p-4 sm:p-6 md:p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <div className="w-14 h-14 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
                       <UtensilsCrossed size={28} className="text-red-600" />

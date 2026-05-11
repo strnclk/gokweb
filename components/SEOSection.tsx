@@ -25,7 +25,7 @@ export default function SEOSection() {
   }, []);
 
   return (
-    <section ref={ref} className="px-6 py-32 bg-gray-50">
+    <section ref={ref} className="px-4 sm:px-6 py-16 sm:py-32 bg-gray-50">
       <div className="max-w-6xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}

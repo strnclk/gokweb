@@ -39,3 +39,10 @@ body {
 .animate-scroll:hover {
   animation-play-state: paused;
 }
+
+/* Mobilde fixed background performans için devre dışı */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll !important;
+  }
+}

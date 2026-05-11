@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Subtle gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 to-transparent pointer-events-none" />
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-20">
         {/* Main content grid */}
         <div className="grid lg:grid-cols-5 md:grid-cols-2 gap-8 mb-16">
           

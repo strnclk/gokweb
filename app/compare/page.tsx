@@ -230,12 +230,12 @@ export default function ComparePage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-white py-12 md:py-0">
-        <div className="absolute top-20 right-20 w-72 h-72 bg-blue-100/40 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-96 h-96 bg-purple-100/30 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-full blur-3xl" />
+      <section className="relative min-h-[50vh] sm:min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-white pt-32 sm:pt-24 md:pt-20 lg:pt-0">
+        <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:w-72 lg:w-72 lg:h-72 bg-blue-100/40 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 sm:bottom-20 sm:left-20 w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 bg-purple-100/30 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-full blur-3xl" />
 
-        <div className="max-w-4xl mx-auto text-center px-6 relative z-10">
+        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -250,7 +250,7 @@ export default function ComparePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl md:text-7xl font-bold leading-tight mb-6 text-gray-900"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl md:text-7xl font-bold leading-tight mb-6 text-gray-900"
           >
             İşletmeniz İçin
             <br />
@@ -261,7 +261,7 @@ export default function ComparePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-600 mb-16 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed"
           >
             İşletmenizin ihtiyaçlarını analiz ederek size en uygun ERP ve e-dönüşüm çözümlerini öneriyoruz.
           </motion.p>
@@ -270,7 +270,7 @@ export default function ComparePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-12"
+            className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12"
           >
             {stats.map((stat, index) => {
               const Icon = stat.icon;
@@ -292,17 +292,16 @@ export default function ComparePage() {
             })}
           </motion.div>
         </div>
-        <ScrollIndicator />
       </section>
 
       {!showResults && !isAnalyzing && (
-        <section className="py-12 md:py-20 px-4 md:px-6 bg-gray-50">
+        <section className="py-8 sm:py-12 md:py-20 px-4 md:px-6 bg-gray-50">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="bg-white rounded-2xl shadow-xl border border-gray-200 p-6 md:p-12"
+              className="bg-white rounded-2xl shadow-xl border border-gray-200 p-4 sm:p-6 md:p-8 lg:p-12"
             >
               <div className="mb-10">
                 <div className="flex justify-between items-center mb-4">
@@ -323,12 +322,12 @@ export default function ComparePage() {
                 </div>
               </div>
 
-              <div className="mb-10">
-                <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+              <div className="mb-8 sm:mb-10">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6 sm:mb-8">
                   {questionnaire[currentStep].question}
                 </h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 gap-3 sm:gap-4">
                   {questionnaire[currentStep].options.map((option, idx) => {
                     const Icon = option.icon;
                     const isSelected = userAnswers[questionnaire[currentStep].id] === option.value;
@@ -341,7 +340,7 @@ export default function ComparePage() {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: idx * 0.05 }}
-                        className={`relative p-5 rounded-xl border-2 cursor-pointer transition-all text-left group ${
+                        className={`relative p-4 sm:p-5 rounded-xl border-2 cursor-pointer transition-all text-left group ${
                           isSelected 
                             ? 'border-blue-600 bg-blue-50/50 shadow-md' 
                             : 'border-gray-200 hover:border-blue-300 bg-white hover:shadow-sm'
@@ -394,7 +393,7 @@ export default function ComparePage() {
       )}
 
       {isAnalyzing && (
-        <section className="py-16 md:py-24 px-4 md:px-6 bg-gray-50">
+        <section className="py-12 sm:py-16 md:py-24 px-4 md:px-6 bg-gray-50">
           <div className="max-w-2xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -458,7 +457,7 @@ export default function ComparePage() {
       )}
 
       {showResults && (
-        <section className="py-12 md:py-20 px-4 md:px-6 bg-gray-50">
+        <section className="py-8 sm:py-12 md:py-20 px-4 md:px-6 bg-gray-50">
           <div className="max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -477,7 +476,7 @@ export default function ComparePage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-14">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-10 md:mb-14">
               {recommendations.map((item, index) => {
                 const Icon = item.icon;
                 const isTop = index === 0;
@@ -612,7 +611,7 @@ export default function ComparePage() {
       )}
 
       {/* Comparison Table Section */}
-      <section className="py-12 md:py-20 px-4 md:px-6 bg-white">
+      <section className="py-8 sm:py-12 md:py-20 px-4 md:px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -639,10 +638,10 @@ export default function ComparePage() {
             className="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden"
           >
             <div className="overflow-x-auto">
-              <table className="w-full min-w-[600px]">
+              <table className="w-full min-w-[500px] sm:min-w-[600px]">
                 <thead>
                   <tr className="bg-gradient-to-r from-gray-900 to-gray-800 text-white">
-                    <th className="px-4 md:px-6 py-4 md:py-5 text-left font-semibold min-w-[140px] md:min-w-[180px] text-sm md:text-base">Özellik</th>
+                    <th className="px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5 text-left font-semibold min-w-[120px] sm:min-w-[140px] md:min-w-[180px] text-xs sm:text-sm md:text-base">Özellik</th>
                     {products.map((product) => {
                       const logoMap: Record<string, string> = {
                         'mikro-run': '/mikro-run-logo.png',
@@ -651,7 +650,7 @@ export default function ComparePage() {
                       };
                       const logoUrl = logoMap[product.id];
                       return (
-                        <th key={product.id} className={`px-4 md:px-6 py-4 md:py-5 text-center font-semibold min-w-[120px] md:min-w-[140px] text-sm md:text-base ${product.recommended ? 'bg-gradient-to-b from-blue-600 to-blue-700' : ''}`}>
+                        <th key={product.id} className={`px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5 text-center font-semibold min-w-[100px] sm:min-w-[120px] md:min-w-[140px] text-xs sm:text-sm md:text-base ${product.recommended ? 'bg-gradient-to-b from-blue-600 to-blue-700' : ''}`}>
                           <div className="flex flex-col items-center gap-2">
                             {product.recommended && (
                               <div className="bg-amber-400 text-amber-900 text-[10px] font-bold px-2 py-0.5 rounded-full">
@@ -685,11 +684,11 @@ export default function ComparePage() {
                     { label: 'Stok Senkronizasyonu', values: [true, false, false] },
                   ].map((row, rowIdx) => (
                     <tr key={row.label} className={`border-b border-gray-100 transition-colors hover:bg-blue-50/30 ${rowIdx % 2 === 1 ? 'bg-gray-50/50' : ''}`}>
-                      <td className="px-4 md:px-6 py-3 md:py-4 text-gray-700 font-medium text-xs md:text-sm">{row.label}</td>
+                      <td className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-gray-700 font-medium text-xs md:text-sm">{row.label}</td>
                       {row.values.map((val: any, colIdx: number) => {
                         const isRecommended = colIdx === 0 && products[0].recommended;
                         return (
-                          <td key={colIdx} className={`px-4 md:px-6 py-3 md:py-4 text-center ${isRecommended ? 'bg-blue-50/50' : ''}`}>
+                          <td key={colIdx} className={`px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-center ${isRecommended ? 'bg-blue-50/50' : ''}`}>
                             {typeof val === 'boolean' ? (
                               val ? (
                                 <CheckCircle2 className={`w-4 h-4 md:w-5 md:h-5 mx-auto ${isRecommended ? 'text-blue-600' : 'text-emerald-500'}`} />
