@@ -1,0 +1,46 @@
+# https://www.robotstxt.org/robotstxt.html
+
+# Tüm genel arama motorları
+User-agent: *
+Allow: /
+
+# --- AI arama & asistan botları (görünürlük için açık bırakıldı) ---
+# OpenAI / ChatGPT
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+# Anthropic / Claude
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Google (Gemini / AI Overviews) & Apple Intelligence
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Common Crawl (birçok modelin eğitim veri kaynağı)
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://gokkusagiyazilim.com.tr/sitemap.xml
