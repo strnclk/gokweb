@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 import { 
   Users, Target, BarChart3, MessageSquare, Phone, Mail, 
@@ -106,6 +107,11 @@ export default function CRMCozumleriPage() {
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-3xl mx-auto">
+            <Breadcrumb
+              items={[{ label: 'Anasayfa', href: '/' }, { label: 'Sektörel Çözümler', href: '/sectoral-solutions' }, { label: 'CRM Çözümleri' }]}
+              accentClass="hover:text-blue-600"
+              className="justify-center mb-6"
+            />
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-orange-50 border border-orange-200/50 rounded-full text-orange-600 text-xs sm:text-sm font-bold shadow-sm mb-6">
               <Sparkles className="w-3.5 h-3.5" />
               Müşteri İlişkileri Yönetimi

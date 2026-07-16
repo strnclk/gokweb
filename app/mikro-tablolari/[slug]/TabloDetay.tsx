@@ -90,6 +90,12 @@ export default function TabloDetay({
     <main className="max-w-[1080px] mx-auto px-5 pt-24 pb-16 text-gray-900">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-[13px] text-gray-500 pt-4">
+        <Link href="/" className="text-blue-600 no-underline hover:underline">
+          Anasayfa
+        </Link>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-[13px] h-[13px]">
+          <path d="M9 6l6 6-6 6" />
+        </svg>
         <Link href="/mikro-tablolari" className="text-blue-600 no-underline hover:underline">
           Mikro Tablolar
         </Link>

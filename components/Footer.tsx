@@ -47,14 +47,14 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-white">Hizmetler</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/services/#mikro-erp-kurulumu" className="text-slate-300 hover:text-white transition-colors duration-200">ERP Entegrasyonları</Link></li>
+              <li><Link href="/services/mikro-erp-kurulumu" className="text-slate-300 hover:text-white transition-colors duration-200">ERP Entegrasyonları</Link></li>
               <li><Link href="/custom-software" className="text-slate-300 hover:text-white transition-colors duration-200">Web Uygulamaları</Link></li>
               <li><Link href="/custom-software" className="text-slate-300 hover:text-white transition-colors duration-200">Mobil Çözümler</Link></li>
               <li><Link href="/mikro-fly" className="text-slate-300 hover:text-white transition-colors duration-200">E-ticaret</Link></li>
-              <li><Link href="/services/#teknik-destek" className="text-slate-300 hover:text-white transition-colors duration-200">Mikro Destek</Link></li>
+              <li><Link href="/services/teknik-destek" className="text-slate-300 hover:text-white transition-colors duration-200">Mikro Destek</Link></li>
               <li><Link href="/custom-software" className="text-slate-300 hover:text-white transition-colors duration-200">Özel Yazılım</Link></li>
-              <li><Link href="/services/#danismanlik" className="text-slate-300 hover:text-white transition-colors duration-200">IT Danışmanlık</Link></li>
-              <li><Link href="/services/#e-donusum-entegrasyonu" className="text-slate-300 hover:text-white transition-colors duration-200">E-Dönüşüm</Link></li>
+              <li><Link href="/services/danismanlik" className="text-slate-300 hover:text-white transition-colors duration-200">IT Danışmanlık</Link></li>
+              <li><Link href="/services/e-donusum-entegrasyonu" className="text-slate-300 hover:text-white transition-colors duration-200">E-Dönüşüm</Link></li>
             </ul>
           </div>
 

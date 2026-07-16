@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata = {
   title: 'Çerez Politikası | Gökkuşağı Yazılım ve Danışmanlık',
@@ -15,6 +16,11 @@ export default function CerezlerPage() {
       <div className="relative bg-cover bg-center pt-32 pb-16" style={{ backgroundImage: 'url(/rainbw.png)' }}>
         <div className="absolute inset-0 bg-white/80" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Breadcrumb
+            items={[{ label: 'Anasayfa', href: '/' }, { label: 'Çerez Politikası' }]}
+            accentClass="hover:text-blue-600"
+            className="mb-6"
+          />
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Çerez Politikası
           </h1>

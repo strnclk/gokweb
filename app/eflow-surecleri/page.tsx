@@ -18,6 +18,7 @@ import {
 import type { LucideIcon } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 import Image from 'next/image';
 import Link from 'next/link';
 import ProcessSimulator from './ProcessSimulator';
@@ -114,6 +115,11 @@ export default function EflowSurecleriPage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
           {/* Left Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <Breadcrumb
+              items={[{ label: 'Anasayfa', href: '/' }, { label: 'E-Flow', href: '/eflow' }, { label: 'E-Flow Süreçleri' }]}
+              accentClass="hover:text-purple-600"
+              className="justify-center lg:justify-start mb-6"
+            />
             <div className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-purple-100 border border-purple-200 rounded-full text-purple-600 text-sm font-semibold mb-6">
               <Sparkles
                 size={14}

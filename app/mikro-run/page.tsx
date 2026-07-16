@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 import HeroSection from "@/components/HeroSection";
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -157,23 +158,43 @@ export default function MikroRunPage() {
   const faqlar = [
     {
       question: 'Mikro Run ile Neler Yapabilirsiniz?',
-      answer: 'Mikro Run, küçük ölçekli işletmelerin temel iş süreçlerini etkin bir şekilde yönetmelerine yardımcı olan bir ticari yazılımdır. Mikro Run ile: Stok takibi yapabilir, ürünlerinizi kolayca yönetebilirsiniz. Satış ve satın alma işlemlerini hızlı ve hatasız bir şekilde gerçekleştirebilirsiniz. Fatura ve irsaliye işlemlerini düzenleyebilir, e-Fatura ve e-Arşiv entegrasyonları sayesinde elektronik ortamda işlem yapabilirsiniz. Cari hesap takibi ile müşteri ve tedarikçi ilişkilerinizi yönetebilir, alacak ve borçlarınızı kontrol edebilirsiniz. Banka ve kasa işlemlerinizi kaydedebilir, finansal durumunuzu anlık olarak izleyebilirsiniz. Raporlama ve analiz araçları sayesinde işletmenizin performansını değerlendirip stratejik kararlar alabilirsiniz.'
+      answer: 'Mikro Run ile stok ve ürün takibi, fatura ve irsaliye düzenleme, e-Fatura/e-Arşiv gönderimi, cari hesap alacak-borç yönetimi ve kasa/banka hareketlerinin anlık takibini yapabilirsiniz.'
     },
     {
       question: 'Mikro Run\'ı Kimler Tercih Etmeli?',
-      answer: 'Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüşüm paketidir.'
+      answer: 'Esnaf, serbest meslek sahipleri, yeni kurulan girişimler ve 5 çalışan altındaki mikro ölçekli işletmeler için ideal bir ön muhasebe ve e-Dönüşüm paketidir.'
     },
     {
       question: 'Mikro Run Çalışması için Başka Bir Yazılım Almalı mıyım?',
-      answer: 'Hayır, Mikro Run tam kapsamlı bir çözüm sunar ve ek bir yazılıma ihtiyaç duymaz.'
+      answer: 'Hayır, Mikro Run tam kapsamlı bir ön muhasebe altyapısı sunar ve çalışması için ek bir yazılım lisansına ihtiyaç duymaz.'
+    },
+    {
+      question: 'Mikro Run ile e-Fatura ve e-Arşiv Faturası Kesebilir miyim?',
+      answer: 'Evet, hazır e-Fatura ve e-Arşiv entegrasyonu sayesinde GİB ile uyumlu şekilde saniyeler içinde e-fatura düzenleyebilirsiniz.'
     },
     {
       question: 'Mikro Run Birden Fazla Şirket ile Çalışabilir mi?',
-      answer: 'Evet, Mikro Run birden fazla şirketi yönetebilir.'
+      answer: 'Evet, tek bir lisans üzerinden birden fazla firmanın ön muhasebe kayıtlarını ayrı ayrı tutabilirsiniz.'
     },
     {
-      question: 'Mikro Run\'da Stoklara Tanımladığım Tüm Ürünlerin Adet, Birim, Fiyat ve Gruplarını Listeleyebilir miyim?',
-      answer: 'Evet, Mikro Run stok yönetimi özellikleri ile ürünlerinizi detaylı olarak listeleyebilir ve yönetebilirsiniz.'
+      question: 'Mikro Run\'da Stok Ürünlerinin Fiyat, Adet ve Birimlerini Listeleyebilir miyim?',
+      answer: 'Evet, gelişmiş stok yönetimi modülü ile ürünlerinizin miktar, birim, grup ve fiyat detaylarını anlık olarak listeleyebilirsiniz.'
+    },
+    {
+      question: 'Mikro Run Bulut Üzerinden veya Mobil Cihazlardan Kullanılabilir mi?',
+      answer: 'Evet, Mikro Run masaüstü ve bulut seçenekleriyle hem web hem de mobil uygulama desteği üzerinden güvenle erişilebilir.'
+    },
+    {
+      question: 'İleride İşletmem Büyüdüğünde Mikro Jump veya Fly\'a Geçiş Yapabilir miyim?',
+      answer: 'Evet, veri kaybı yaşamadan tek tıkla Mikro Jump veya Mikro Fly üst segment çözümlere kolayca yükseltme yapabilirsiniz.'
+    },
+    {
+      question: 'Mikro Run Kullanımı İçin Özel Eğitim Gerekli mi?',
+      answer: 'Sade ve kullanıcı dostu arayüzü sayesinde muhasebe bilgisi olmayan personel dahi birkaç saatlik ücretsiz oryantasyon eğitimiyle kullanmaya başlayabilir.'
+    },
+    {
+      question: 'Verilerimiz Otomatik Olarak Yedekleniyor mu?',
+      answer: 'Evet, güvenli otomatik yedekleme altyapısı ile ticari verileriniz olası donanım arızalarına ve siber risklere karşı şifreli olarak korunur.'
     }
   ];
   const faqJsonLd = {
@@ -199,6 +220,11 @@ export default function MikroRunPage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6 bg-white pt-32 md:pt-44 pb-24">
         <div className="max-w-6xl mx-auto text-center">
+          <Breadcrumb
+            items={[{ label: 'Anasayfa', href: '/' }, { label: 'Ürünler' }, { label: 'Mikro Run' }]}
+            accentClass="hover:text-blue-600"
+            className="justify-center mb-8"
+          />
           <div className="mb-10">
             <div className="w-32 h-32 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg">
               <Image 

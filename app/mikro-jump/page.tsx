@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Breadcrumb from "@/components/Breadcrumb";
 import HeroSection from "@/components/HeroSection";
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -169,80 +170,44 @@ export default function MikroJumpPage() {
       answer: 'Evet, personele veya departmanlara zimmetlenen demirbaş ve malzemeleri kaydedip zimmet giriş/çıkış hareketlerini takip edebilirsiniz.'
     },
     {
-      question: 'Mikro Jump SQL2014 Versiyonunda Çalışıyor Mu?',
-      answer: 'Mikro Jump, Microsoft SQL Server veritabanı üzerinde çalışır. Desteklenen SQL Server sürümleri zaman zaman güncellendiğinden, kurulum öncesi güncel sistem gereksinimlerini ekibimizle teyit etmenizi öneririz.'
+      question: 'Mikro Jump ile Üretim Takibi Yapabilir Miyim?',
+      answer: 'Evet, reçete/BOM tanımları, iş emirleri ve üretim hareketleri ile üretim süreçlerinizi detaylı olarak takip edebilirsiniz.'
     },
     {
-      question: 'İş Makinesi Kiralaması Yapıyorum. Operasyonlarımı Mikro Jump Üzerinden Yürütebilir Miyim?',
-      answer: 'Evet, kiralama süreçlerinizi (sözleşme, teslim/iade, faturalama ve takip) Mikro Jump üzerinden yönetebilirsiniz; kiralama sektörüne yönelik ek çözümlerle süreç uçtan uca takip edilebilir.'
-    },
-    {
-      question: 'Mikro Jump ile Personel Kartlarında Toplu Değişiklik Yapabilir Miyim?',
-      answer: 'Evet, personel kartlarındaki alanlarda toplu güncelleme yaparak çok sayıda kaydı tek işlemle düzenleyebilirsiniz.'
+      question: 'Mikro Jump ile E-Fatura ve E-Arşiv Faturası Kesebilir Miyim?',
+      answer: 'Evet, entegre e-Dönüşüm modülü ile e-Fatura, e-Arşiv, e-İrsaliye ve e-Defter süreçlerinizi mevzuata tam uyumlu yönetebilirsiniz.'
     },
     {
       question: 'Mikro Jump Üzerinden Kasalarla ve Yeni Nesil ÖKC\'ler ile Haberleşebilir Miyim?',
-      answer: 'Evet, yeni nesil ödeme kaydedici cihazlar (ÖKC) ve kasalarla veri alışverişi yaparak satış ve tahsilat verilerini sisteme aktarabilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Üretim Takibi Yapabilir Miyim?',
-      answer: 'Evet, reçete/BOM tanımları, iş emirleri ve üretim hareketleri ile üretim süreçlerinizi takip edebilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Bankalardan Ekstre Aktarımı Yapabilir Miyim?',
-      answer: 'Evet, banka hesap ekstrelerinizi elektronik olarak aktarıp banka/kasa hareketlerinizle eşleştirebilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Ondalıklı/Tartılı Ürün Kaydı ve Satışı Yapabilir Miyim?',
-      answer: 'Evet, kilogram gibi ondalıklı/tartılı birimlerle çalışan ürünleri tanımlayıp bu birimlerle alım-satım yapabilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Birden Fazla Şirket ile Çalışabilir Miyim?',
-      answer: 'Evet, tek kurulum üzerinden birden fazla şirketi ayrı ayrı tanımlayıp yönetebilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile İrsaliyeyi Faturalaştırabilir Miyim?',
-      answer: 'Evet, düzenlediğiniz irsaliyeleri tek tek veya toplu olarak faturaya dönüştürebilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Yeni Tasarlanan Stok Kartı Üzerinden Yetkilendirme Yapabilir Miyim?',
-      answer: 'Evet, stok kartları ve ilgili işlemler için kullanıcı/rol bazlı yetkilendirme tanımlayarak erişimi kontrol edebilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Cari Kartı Oluştururken Karttan Çıkmadan Adres ve Yetkili Kartlarını da Oluşturabilir Miyim?',
-      answer: 'Evet, cari kartı oluştururken aynı ekrandan ilgili adres ve yetkili kişi kayıtlarını da girebilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Satış Bütçesi Yapabilir Miyim?',
-      answer: 'Evet, dönemsel satış hedefleri/bütçeleri tanımlayıp gerçekleşen satışlarla karşılaştırmalı olarak takip edebilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Stok Kartlarındaki Grup Alanlarının İsmini Değiştirince Raporlar da Değişir Mi?',
-      answer: 'Evet, grup alanı adlarında yaptığınız değişiklikler ilgili raporlara da yansır; raporlarınız güncel tanımlarla görüntülenir.'
-    },
-    {
-      question: 'Mikro Jump ile Satın Alma Şartı Girebilir Miyim?',
-      answer: 'Evet, tedarikçi/ürün bazında fiyat, vade ve iskonto gibi satın alma şartları tanımlayabilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Evraklara Excel\'den Aktarım Yapabilir Miyim?',
-      answer: 'Evet, Excel\'den veri aktararak evrak/satır girişlerini toplu şekilde oluşturabilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile E-Arşiv Faturası Kesebilir Miyim?',
-      answer: 'Evet, e-Dönüşüm modülü ile e-Fatura ve e-Arşiv fatura düzenleyebilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Bütçe Takibi Yapabilir Miyim?',
-      answer: 'Evet, gelir/gider bütçeleri oluşturup gerçekleşen tutarlarla karşılaştırmalı bütçe takibi yapabilirsiniz.'
+      answer: 'Evet, yeni nesil ödeme kaydedici cihazlar (ÖKC) ve kasalarla veri alışverişi yaparak satış ve tahsilat verilerini sisteme otomatik aktarabilirsiniz.'
     },
     {
       question: 'Mikro Jump ile Stoklarımı Detaylı Takip Edebilir Miyim?',
-      answer: 'Evet, depo, parti/lot, seri numarası ve varyant gibi detaylarla stoklarınızı ayrıntılı takip edebilirsiniz.'
+      answer: 'Evet, depo, parti/lot, seri numarası ve varyant gibi detaylarla stoklarınızı ayrıntılı şekilde takip edebilirsiniz.'
+    },
+    {
+      question: 'Mikro Jump ile Birden Fazla Şirket ile Çalışabilir Miyim?',
+      answer: 'Evet, tek kurulum üzerinden birden fazla şirketi ayrı ayrı tanımlayıp konsolide veya bağımsız yönetebilirsiniz.'
     },
     {
       question: 'Mikro Jump ile Şube Bazlı Takip Yapabilir Miyim?',
-      answer: 'Evet, şube/depo bazında hareketlerinizi ayrı ayrı takip edip şube kırılımında raporlayabilirsiniz.'
+      answer: 'Evet, şube/depo bazında hareketlerinizi ayrı ayrı takip edip şube kırılımında finans ve stok raporları alabilirsiniz.'
+    },
+    {
+      question: 'Mikro Jump ile Bankalardan Ekstre Aktarımı Yapabilir Miyim?',
+      answer: 'Evet, banka hesap ekstrelerinizi elektronik olarak aktarıp banka/kasa hareketlerinizle otomatik eşleştirebilirsiniz.'
+    },
+    {
+      question: 'Mikro Jump ile Satış ve Bütçe Takibi Yapabilir Miyim?',
+      answer: 'Evet, dönemsel gelir/gider bütçeleri ve satış hedefleri tanımlayıp gerçekleşen rakamlarla karşılaştırmalı takip edebilirsiniz.'
+    },
+    {
+      question: 'Mikro Jump ile Evraklara Excel\'den Aktarım Yapabilir Miyim?',
+      answer: 'Evet, Excel toplu veri aktarım aracı ile fatura, stok ve cari satır girişlerini tek tıkla oluşturabilirsiniz.'
+    },
+    {
+      question: 'İş Makinesi Kiralaması / Hizmet Operasyonlarımı Mikro Jump ile Yürütebilir Miyim?',
+      answer: 'Evet, kiralama ve hizmet sözleşmeleri, teslim/iade takibi ve periyodik faturalama süreçlerini Mikro Jump üzerinden yönetebilirsiniz.'
     }
   ];
   const faqJsonLd = {
@@ -268,6 +233,11 @@ export default function MikroJumpPage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-6 bg-white pt-32 md:pt-44 pb-24">
         <div className="max-w-6xl mx-auto text-center">
+          <Breadcrumb
+            items={[{ label: 'Anasayfa', href: '/' }, { label: 'Ürünler' }, { label: 'Mikro Jump' }]}
+            accentClass="hover:text-blue-600"
+            className="justify-center mb-8"
+          />
           <div className="mb-10">
             <div className="w-32 h-32 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg">
               <Image 

@@ -6,6 +6,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, Sparkles, CheckCircle2, Zap, Shield, TrendingUp, BarChart, Smartphone, Users, Target, Clock, Coins, Factory, Truck, Play, Check, X } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -128,6 +129,11 @@ export default function EFlowPage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
           {/* Left Side: Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <Breadcrumb
+              items={[{ label: 'Anasayfa', href: '/' }, { label: 'E-Flow' }]}
+              accentClass="hover:text-teal-600"
+              className="justify-center lg:justify-start mb-6"
+            />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

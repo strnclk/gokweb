@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import Breadcrumb from '@/components/Breadcrumb';
 
 const IFADELER = ['Bilgi Merkezi', 'Tablo Kütüphanesi', 'Entegrasyon Rehberi', 'SQL Referansı'];
 
@@ -44,6 +45,11 @@ export default function MikroHero({
 
   return (
     <div className="text-center pt-28 [background:radial-gradient(900px_420px_at_50%_0,rgba(147,51,234,0.08),transparent_70%)]">
+      <Breadcrumb
+        items={[{ label: 'Anasayfa', href: '/' }, { label: 'Ürünler' }, { label: 'Mikro Tabloları' }]}
+        accentClass="hover:text-blue-600"
+        className="justify-center mb-6"
+      />
       <span className="inline-flex items-center gap-1.5 bg-rose-50 text-rose-600 font-semibold text-[13px] px-4 py-1.5 rounded-full mb-5">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-[15px] h-[15px]">
           <path d="M13 2L3 14h9l-1 8 10-12h-9z" />

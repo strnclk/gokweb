@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
@@ -23,7 +24,8 @@ export default function VerticalSolutionsPage() {
       description: 'Hızlı sipariş alma, mobil satış, POS entegrasyonu',
       color: 'from-blue-600 to-blue-700',
       tab: 'hizli-satis',
-      features: ['Mobil POS', 'Sipariş Yönetimi', 'Ödeme Entegrasyonu']
+      features: ['Mobil POS', 'Sipariş Yönetimi', 'Ödeme Entegrasyonu'],
+      valueProp: 'Saha ve mağazada mobil POS ile anında sipariş ve tahsilat.'
     },
     {
       icon: Factory,
@@ -31,7 +33,8 @@ export default function VerticalSolutionsPage() {
       description: 'İş emri yönetimi, MRP planlama, üretim takibi',
       color: 'from-blue-600 to-blue-700',
       tab: 'uretim-yonetimi',
-      features: ['MRP Planlama', 'İş Emri', 'Kapasite Planlama']
+      features: ['MRP Planlama', 'İş Emri', 'Kapasite Planlama'],
+      valueProp: 'İş emrinden kapasiteye üretimin her adımını tek ekrandan yönetin.'
     },
     {
       icon: Shield,
@@ -39,7 +42,8 @@ export default function VerticalSolutionsPage() {
       description: 'Kalite kontrol, uyum yönetimi, denetim takibi',
       color: 'from-blue-600 to-blue-700',
       tab: 'kalite-yonetimi',
-      features: ['Kalite Kontrol', 'Uyum Yönetimi', 'Denetim Takibi']
+      features: ['Kalite Kontrol', 'Uyum Yönetimi', 'Denetim Takibi'],
+      valueProp: 'Denetim ve uyum süreçlerini uçtan uca kayıt altına alın.'
     },
     {
       icon: Truck,
@@ -47,7 +51,8 @@ export default function VerticalSolutionsPage() {
       description: 'Stok yönetimi, rota optimizasyonu, kargo takibi',
       color: 'from-blue-600 to-blue-700',
       tab: 'depo-lojistik',
-      features: ['Stok Yönetimi', 'Rota Optimizasyonu', 'Kargo Takibi']
+      features: ['Stok Yönetimi', 'Rota Optimizasyonu', 'Kargo Takibi'],
+      valueProp: 'Stoktan sevkiyata gerçek zamanlı depo ve rota kontrolü.'
     },
     {
       icon: Users,
@@ -55,7 +60,8 @@ export default function VerticalSolutionsPage() {
       description: 'Bayi ağ yönetimi, sipariş otomasyonu, performans analizi',
       color: 'from-blue-600 to-blue-700',
       tab: 'b2b-bayi',
-      features: ['Bayi Ağ Yönetimi', 'Sipariş Otomasyonu', 'Performans Analizi']
+      features: ['Bayi Ağ Yönetimi', 'Sipariş Otomasyonu', 'Performans Analizi'],
+      valueProp: 'Bayi siparişlerini otomatikleştirip performansı anlık izleyin.'
     },
     {
       icon: Briefcase,
@@ -63,7 +69,8 @@ export default function VerticalSolutionsPage() {
       description: 'İş akışı otomasyonu, süreç optimizasyonu, BPM',
       color: 'from-blue-600 to-blue-700',
       tab: 'surec-yonetimi',
-      features: ['İş Akışı Otomasyonu', 'Süreç Optimizasyonu', 'BPM']
+      features: ['İş Akışı Otomasyonu', 'Süreç Optimizasyonu', 'BPM'],
+      valueProp: 'İş akışlarını otomatikleştirerek manuel iş yükünü azaltın.'
     },
     {
       icon: TrendingUp,
@@ -71,7 +78,8 @@ export default function VerticalSolutionsPage() {
       description: 'Dashboard, BI raporlama, veri analitiği',
       color: 'from-blue-600 to-blue-700',
       tab: 'raporlama-analiz',
-      features: ['Dashboard', 'BI Raporlama', 'Veri Analitiği']
+      features: ['Dashboard', 'BI Raporlama', 'Veri Analitiği'],
+      valueProp: 'Canlı dashboardlarla veriye dayalı kararları hızla alın.'
     },
     {
       icon: UtensilsCrossed,
@@ -79,7 +87,8 @@ export default function VerticalSolutionsPage() {
       description: 'QR menü, masa yönetimi, hızlı sipariş ve ödeme',
       color: 'from-blue-600 to-blue-700',
       tab: 'restoran-yonetimi',
-      features: ['QR Menü', 'Masa Yönetimi', 'Paket Sipariş']
+      features: ['QR Menü', 'Masa Yönetimi', 'Paket Sipariş'],
+      valueProp: 'QR menüden masa ve pakete tüm restoran operasyonu tek yerde.'
     },
     {
       icon: Building2,
@@ -87,7 +96,8 @@ export default function VerticalSolutionsPage() {
       description: 'İşletmenize özel diğer sektörel Mikro çözümleri',
       color: 'from-blue-600 to-blue-700',
       tab: 'diger',
-      features: ['Sektörel Çözümler', 'Özel Entegrasyon', 'Danışmanlık']
+      features: ['Sektörel Çözümler', 'Özel Entegrasyon', 'Danışmanlık'],
+      valueProp: 'İşletmenize özel entegrasyon ve danışmanlıkla esnek çözümler.'
     }
   ];
 
@@ -131,6 +141,11 @@ export default function VerticalSolutionsPage() {
         
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
           <div className="text-center lg:text-left">
+            <Breadcrumb
+              items={[{ label: 'Anasayfa', href: '/' }, { label: 'Çözümler', href: '/solutions' }, { label: 'Mikro Dikey Çözümler' }]}
+              accentClass="hover:text-blue-600"
+              className="justify-center lg:justify-start mb-6"
+            />
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -321,37 +336,69 @@ export default function VerticalSolutionsPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-2">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 35 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  viewport={{ once: true, margin: "-40px" }}
+                  transition={{ duration: 0.6, delay: index * 0.08, ease: [0.21, 0.45, 0.27, 0.9] }}
                 >
                   <Link href={`/solutions/#${industry.tab}`} className="block h-full">
-                    <Card className="h-full hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-gray-300 group hover:scale-105 cursor-pointer">
-                      <CardContent className="p-5 sm:p-6 flex flex-col justify-between h-full">
+                    <Card className="h-full relative overflow-hidden transition-all duration-300 ease-out border-gray-200/90 hover:border-blue-400/80 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2.5 bg-white hover:bg-gradient-to-b hover:from-white hover:to-blue-50/20 group cursor-pointer rounded-2xl">
+                      {/* Top Accent Gradient Bar on Hover */}
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                      <CardContent className="p-7 flex flex-col justify-between h-full space-y-6">
                         <div className="space-y-4">
                           {/* Header Row */}
                           <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
-                                <Icon size={20} className="text-gray-700 group-hover:text-blue-600 transition-colors" />
+                            <div className="flex items-center gap-3.5">
+                              <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:shadow-md group-hover:shadow-blue-500/25 transition-all duration-300">
+                                <Icon size={22} className="text-slate-700 group-hover:text-white transition-colors duration-300" />
                               </div>
-                              <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                              <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">
                                 {industry.name}
                               </h3>
                             </div>
-                            <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
+                            <div className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center group-hover:bg-blue-50 group-hover:border-blue-200 transition-all duration-300">
+                              <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all duration-300" />
+                            </div>
                           </div>
-                          
-                          {/* Description (Full Width) */}
-                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+
+                          {/* Description (Full Width - High Contrast Text) */}
+                          <p className="text-slate-700 text-sm sm:text-base font-medium leading-relaxed">
                             {industry.description}
                           </p>
+                        </div>
+
+                        {/* Footer Section: Pill Badges by default, Value Proposition on Hover */}
+                        <div className="pt-4 border-t border-slate-100 mt-auto">
+                          <div className="relative min-h-[64px] flex items-center">
+                            {/* Default Pill Badges (Fades out on hover) */}
+                            <div className="w-full flex flex-wrap gap-1.5 transition-all duration-300 group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
+                              {industry.features.map((feat, fidx) => (
+                                <span
+                                  key={fidx}
+                                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-100/90 border border-slate-200 text-slate-800 shadow-2xs"
+                                >
+                                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                                  {feat}
+                                </span>
+                              ))}
+                            </div>
+
+                            {/* Hover Value Proposition Banner (Sharp 100% Visible Box) */}
+                            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+                              <div className="w-full flex items-center gap-2.5 px-3.5 py-2.5 bg-blue-50/95 border-2 border-blue-500/80 rounded-xl text-xs sm:text-sm font-bold text-blue-800 shadow-md shadow-blue-500/10">
+                                <Sparkles className="w-4 h-4 text-blue-600 shrink-0" />
+                                <span className="leading-snug">{industry.valueProp}</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </CardContent>
                     </Card>

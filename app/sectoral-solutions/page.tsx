@@ -3,6 +3,7 @@
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -32,21 +33,15 @@ const faqJsonLdSektorel = {
 };
 
 export default function SectoralSolutionsPage() {
-  const scrollToContact = () => {
-    const message = 'Merhaba%20Sektörel%20Çözümler%20hakk%C4%B1nda%20bilgi%20alabilir%20miyim?';
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=905398563578&text=${message}`;
-    window.open(whatsappUrl, '_blank');
-  };
-
   const sectors = [
-    { icon: Building2, name: 'İnşaat', desc: 'Hak-ediş hesaplama, satın alma süreci, proje yönetimi', href: '/sectoral-solutions/solutions/#insaat' },
-    { icon: Factory, name: 'Üretim', desc: 'MES çözümleri, üretim planlama, makine entegrasyonu', href: '/sectoral-solutions/solutions/#uretim' },
-    { icon: ShoppingCart, name: 'Perakende', desc: 'Hızlı satış, POS entegrasyonu, kampanya yönetimi', href: '/sectoral-solutions/solutions/#perakende' },
-    { icon: Truck, name: 'Lojistik', desc: 'Barkod yönetimi, depo yönetimi, nakliye takibi', href: '/sectoral-solutions/solutions/#lojistik' },
-    { icon: Users, name: 'Gıda', desc: 'Parti/lot takibi, kalite yönetimi, izlenebilirlik', href: '/sectoral-solutions/solutions/#gida' },
-    { icon: Briefcase, name: 'Tekstil', desc: 'Mağazacılık çözümleri, renk/beden takibi, fason yönetim', href: '/sectoral-solutions/solutions/#tekstil' },
-    { icon: Cpu, name: 'Otomotiv', desc: 'Seri no takibi, teknik servis yönetimi, parça envanteri', href: '/sectoral-solutions/solutions/#otomotiv' },
-    { icon: Database, name: 'Sağlık', desc: 'ÜTS entegrasyonu, (lot) reload takibi, son kullanma kontrolü', href: '/sectoral-solutions/solutions/#saglik' },
+    { icon: Building2, name: 'İnşaat', desc: 'Hak-ediş hesaplama, satın alma süreci, proje yönetimi', href: '/sectoral-solutions/solutions/#insaat', features: ['Hak-ediş', 'Satın Alma', 'Proje Yönetimi'], valueProp: 'Hak-ediş ve satın almadan proje takibine inşaatın tümü tek sistemde.' },
+    { icon: Factory, name: 'Üretim', desc: 'MES çözümleri, üretim planlama, makine entegrasyonu', href: '/sectoral-solutions/solutions/#uretim', features: ['MES', 'Üretim Planlama', 'Makine Entegrasyonu'], valueProp: 'MES ve makine entegrasyonuyla üretimi anlık izleyin ve planlayın.' },
+    { icon: ShoppingCart, name: 'Perakende', desc: 'Hızlı satış, POS entegrasyonu, kampanya yönetimi', href: '/sectoral-solutions/solutions/#perakende', features: ['Hızlı Satış', 'POS', 'Kampanya'], valueProp: 'Hızlı satış ve POS entegrasyonuyla mağazada kesintisiz deneyim.' },
+    { icon: Truck, name: 'Lojistik', desc: 'Barkod yönetimi, depo yönetimi, nakliye takibi', href: '/sectoral-solutions/solutions/#lojistik', features: ['Barkod', 'Depo', 'Nakliye Takibi'], valueProp: 'Barkodlu depo yönetimiyle sevkiyatı uçtan uca izleyin.' },
+    { icon: Users, name: 'Gıda', desc: 'Parti/lot takibi, kalite yönetimi, izlenebilirlik', href: '/sectoral-solutions/solutions/#gida', features: ['Lot Takibi', 'Kalite', 'İzlenebilirlik'], valueProp: 'Parti/lot takibiyle gıdada tam izlenebilirlik ve kalite kontrolü.' },
+    { icon: Briefcase, name: 'Tekstil', desc: 'Mağazacılık çözümleri, renk/beden takibi, fason yönetim', href: '/sectoral-solutions/solutions/#tekstil', features: ['Renk/Beden', 'Mağazacılık', 'Fason'], valueProp: 'Renk/beden ve fason yönetimiyle tekstilin tüm akışını kontrol edin.' },
+    { icon: Cpu, name: 'Otomotiv', desc: 'Seri no takibi, teknik servis yönetimi, parça envanteri', href: '/sectoral-solutions/solutions/#otomotiv', features: ['Seri No', 'Teknik Servis', 'Parça Envanteri'], valueProp: 'Seri no ve parça envanteriyle servis süreçlerini eksiksiz yönetin.' },
+    { icon: Database, name: 'Sağlık', desc: 'ÜTS entegrasyonu, (lot) reload takibi, son kullanma kontrolü', href: '/sectoral-solutions/solutions/#saglik', features: ['ÜTS', 'Lot Takibi', 'SKT Kontrolü'], valueProp: 'ÜTS entegrasyonu ve SKT kontrolüyle sağlıkta tam uyum.' },
   ];
 
   return (
@@ -65,6 +60,11 @@ export default function SectoralSolutionsPage() {
         {/* Left Side - Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
           <div className="text-center">
+            <Breadcrumb
+              items={[{ label: 'Anasayfa', href: '/' }, { label: 'Sektörel Çözümler' }]}
+              accentClass="hover:text-blue-600"
+              className="justify-center mb-6"
+            />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ export default function SectoralSolutionsPage() {
               yine 3 kart düşer; son satırdaki iki kartı (Otomotiv, Sağlık) bir
               sütun kaydırmak ise onları tam ortaya alır — 3'lü gridde kartlar
               tek sütun geniş olduğu için bu ortalama mümkün değildi. */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-2 sm:gap-2">
+          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8">
             {sectors.map((sector, index) => {
               const Icon = sector.icon;
               const isFirstOfLastRow = index === sectors.length - 2;
@@ -135,26 +135,57 @@ export default function SectoralSolutionsPage() {
                   className={`lg:col-span-2 ${isFirstOfLastRow ? 'lg:col-start-2' : ''}`}
                 >
                   <Link href={sector.href} className="block h-full">
-                    <Card className="h-full hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-gray-300 group hover:scale-105 cursor-pointer">
-                      <CardContent className="p-5 sm:p-6 flex flex-col justify-between h-full">
+                    <Card className="h-full relative overflow-hidden transition-all duration-300 ease-out border-gray-200/90 hover:border-blue-400/80 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2.5 bg-white hover:bg-gradient-to-b hover:from-white hover:to-blue-50/20 group cursor-pointer rounded-2xl">
+                      {/* Top Accent Gradient Bar on Hover */}
+                      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                      <CardContent className="p-7 flex flex-col justify-between h-full space-y-6">
                         <div className="space-y-4">
                           {/* Header Row */}
                           <div className="flex items-center justify-between">
-                            <div className="flex items-center gap-3">
-                              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-gray-50 border border-gray-200 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
-                                <Icon size={20} className="text-gray-700 group-hover:text-blue-600 transition-colors" />
+                            <div className="flex items-center gap-3.5">
+                              <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:border-blue-600 group-hover:shadow-md group-hover:shadow-blue-500/25 transition-all duration-300">
+                                <Icon size={22} className="text-slate-700 group-hover:text-white transition-colors duration-300" />
                               </div>
-                              <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
+                              <h3 className="text-lg sm:text-xl font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors duration-300">
                                 {sector.name}
                               </h3>
                             </div>
-                            <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
+                            <div className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center group-hover:bg-blue-50 group-hover:border-blue-200 transition-all duration-300">
+                              <ChevronRight className="w-4 h-4 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-0.5 transition-all duration-300" />
+                            </div>
                           </div>
 
-                          {/* Description (Full Width) */}
-                          <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                          {/* Description (Full Width - High Contrast Text) */}
+                          <p className="text-slate-700 text-sm sm:text-base font-medium leading-relaxed">
                             {sector.desc}
                           </p>
+                        </div>
+
+                        {/* Footer Section: Pill Badges by default, Value Proposition on Hover */}
+                        <div className="pt-4 border-t border-slate-100 mt-auto">
+                          <div className="relative min-h-[64px] flex items-center">
+                            {/* Default Pill Badges (Fades out on hover) */}
+                            <div className="w-full flex flex-wrap gap-1.5 transition-all duration-300 group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
+                              {sector.features.map((feat, fidx) => (
+                                <span
+                                  key={fidx}
+                                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-slate-100/90 border border-slate-200 text-slate-800 shadow-2xs"
+                                >
+                                  <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
+                                  {feat}
+                                </span>
+                              ))}
+                            </div>
+
+                            {/* Hover Value Proposition Banner (Sharp 100% Visible Box) */}
+                            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+                              <div className="w-full flex items-center gap-2.5 px-3.5 py-2.5 bg-blue-50/95 border-2 border-blue-500/80 rounded-xl text-xs sm:text-sm font-bold text-blue-800 shadow-md shadow-blue-500/10">
+                                <Sparkles className="w-4 h-4 text-blue-600 shrink-0" />
+                                <span className="leading-snug">{sector.valueProp}</span>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </CardContent>
                     </Card>
@@ -182,7 +213,7 @@ export default function SectoralSolutionsPage() {
               { step: '03', title: 'Uygulama', desc: 'Profesyonel ekibimizle kurulum ve entegrasyonu gerçekleştiriyoruz.' },
               { step: '04', title: 'Destek', desc: '7/24 teknik destek ve sürekli iyileştirme ile yanınızdayız.' },
             ].map((item, i) => (
-              <div key={i} className="relative">
+              <div key={i} className="relative text-center">
                 <div className="text-6xl font-bold bg-gradient-to-br from-blue-600 via-violet-600 to-purple-600 bg-clip-text text-transparent mb-4">{item.step}</div>
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
@@ -221,13 +252,11 @@ export default function SectoralSolutionsPage() {
           <p className="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
             Uzman ekibimiz işletmenizin ihtiyaçlarını analiz ederek size en uygun sektörel çözümü öneriyor
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onClick={scrollToContact} className="px-10 py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg font-semibold">
+          <div className="flex justify-center">
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full hover:shadow-2xl transition-all duration-300 hover:scale-105 text-lg font-semibold">
               Ücretsiz Danışmanlık
-            </button>
-            <button onClick={scrollToContact} className="px-10 py-5 border-2 border-gray-200 text-gray-900 rounded-full hover:bg-gray-50 transition-all duration-300 hover:scale-105 text-lg font-semibold">
-              Demo Talep Et
-            </button>
+              <ArrowRight className="w-5 h-5" />
+            </Link>
           </div>
         </div>
       </section>

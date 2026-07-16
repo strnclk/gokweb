@@ -6,6 +6,7 @@ import { ArrowRight, CheckCircle, Zap, Shield, TrendingUp, Boxes, FileText, User
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+import Breadcrumb from './Breadcrumb';
 
 interface HeroSectionProps {
   district?: string;
@@ -212,6 +213,13 @@ export default function HeroSection({ district }: HeroSectionProps) {
       <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-pink-400/10 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDuration: '10s' }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        {district && (
+          <Breadcrumb
+            items={[{ label: 'Anasayfa', href: '/' }, { label: `${district} Mikro Bayii` }]}
+            accentClass="hover:text-blue-600"
+            className="justify-center mb-8"
+          />
+        )}
         <div className={district ? "flex justify-center" : "grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"}>
 
           {/* Left Side: Content floating directly on background without card */}

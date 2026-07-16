@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 
 const sssDms = [
@@ -67,6 +68,11 @@ export default function EflowDmsPage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
           {/* Left: Text Content */}
           <div className="lg:col-span-6 text-center lg:text-left flex flex-col items-center lg:items-start">
+            <Breadcrumb
+              items={[{ label: 'Anasayfa', href: '/' }, { label: 'E-Flow', href: '/eflow' }, { label: 'E-Flow DMS' }]}
+              accentClass="hover:text-indigo-600"
+              className="justify-center lg:justify-start mb-6"
+            />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

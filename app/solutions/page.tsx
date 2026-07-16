@@ -7,6 +7,7 @@ import type { LucideIcon } from 'lucide-react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 
 const sssSolutions = [
   { soru: 'Hangi çözüm kategorileri sunuyorsunuz?', cevap: 'Hızlı satış, üretim yönetimi, kalite, depo ve lojistik, B2B bayi, süreç yönetimi, raporlama ve restoran yönetimi gibi 9 farklı kategoride çözüm sunuyoruz.' },
@@ -124,6 +125,11 @@ export default function SolutionsPage() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
           <div className="text-center">
+            <Breadcrumb
+              items={[{ label: 'Anasayfa', href: '/' }, { label: 'Çözümler' }]}
+              accentClass="hover:text-blue-600"
+              className="justify-center mb-6"
+            />
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

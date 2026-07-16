@@ -2,6 +2,7 @@
 
 import { Phone, Mail, MapPin, Sparkles, CheckCircle2, Zap, Users, Target } from 'lucide-react';
 import { motion } from 'motion/react';
+import Breadcrumb from '@/components/Breadcrumb';
 
 const iconMap: Record<string, any> = {
   Phone,
@@ -34,6 +35,11 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Sol Taraf - İçerik */}
             <div className="text-center lg:text-left">
+              <Breadcrumb
+                items={[{ label: 'Anasayfa', href: '/' }, { label: 'İletişim' }]}
+                accentClass="hover:text-blue-600"
+                className="justify-center lg:justify-start mb-6"
+              />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

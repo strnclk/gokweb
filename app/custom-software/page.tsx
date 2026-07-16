@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Breadcrumb from '@/components/Breadcrumb';
 import GravityParticles from '@/components/GravityParticles';
 import {
   Plug, BarChart3, ShoppingCart, Store, Smartphone, Webhook,
@@ -228,6 +229,12 @@ export default function CustomSoftwarePage() {
         <GravityParticles />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
           <div className="text-center">
+            <Breadcrumb
+              items={[{ label: 'Anasayfa', href: '/' }, { label: 'Özel Yazılım' }]}
+              accentClass="hover:text-white"
+              light
+              className="justify-center mb-8"
+            />
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
               Mikro’ya Özel Yazılım ve Entegrasyon
             </h1>

@@ -14,10 +14,6 @@ export default function CTASection() {
     router.push('/contact');
   };
 
-  const handleDemoClick = () => {
-    router.push('/contact');
-  };
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -68,12 +64,6 @@ export default function CTASection() {
           >
             Teklif Al
             <ArrowRight className="w-5 h-5" />
-          </button>
-          <button
-            onClick={handleDemoClick}
-            className="px-10 py-5 border-2 border-gray-300 text-gray-900 rounded-full hover:bg-gray-50 transition-all duration-300 hover:scale-105 text-lg"
-          >
-            Demo İsteyin
           </button>
         </motion.div>
       </div>
