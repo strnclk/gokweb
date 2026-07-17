@@ -3,6 +3,8 @@
 import { Phone, Mail, MapPin, Sparkles, CheckCircle2, Zap, Users, Target } from 'lucide-react';
 import { motion } from 'motion/react';
 import Breadcrumb from '@/components/Breadcrumb';
+import GoogleReviewQR from '@/components/GoogleReviewQR';
+import { GOOGLE_REVIEWS_URL } from '@/lib/constants';
 
 const iconMap: Record<string, any> = {
   Phone,
@@ -158,6 +160,46 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
                     <div>
                       <h4 className="text-gray-900 font-semibold mb-1">Sürekli Destek</h4>
                       <p className="text-gray-600 text-sm">7/24 teknik destek ve danışmanlık</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Müşteri Deneyim Köşesi - Sosyal Kanıt */}
+                <div className="mt-6 pt-6 border-t border-gray-100">
+                  <h4 className="text-sm font-semibold text-gray-900 mb-3">Deneyiminizi Bizimle Paylaşın</h4>
+                  <div className="flex items-center gap-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 p-3">
+                    {/* QR Kod - marka renginde, hafif gölgeli kutu */}
+                    <a
+                      href={GOOGLE_REVIEWS_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-shrink-0 rounded-lg bg-white p-1.5 shadow-md ring-1 ring-gray-100 transition-transform duration-300 hover:scale-105"
+                      aria-label="Google Yorumları sayfasını aç"
+                    >
+                      <GoogleReviewQR url={GOOGLE_REVIEWS_URL} size={92} />
+                    </a>
+
+                    {/* CTA - Google logosu ve marka renkli metin */}
+                    <div className="min-w-0">
+                      <p className="text-xs text-gray-500 leading-relaxed mb-2">
+                        Deneyimleriniz bizim için değerli. Kodu okutun veya tıklayın.
+                      </p>
+                      <a
+                        href={GOOGLE_REVIEWS_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-blue-800 hover:text-blue-900 transition-colors group/cta"
+                      >
+                        <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-gray-100">
+                          <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" aria-hidden="true">
+                            <path fill="#4285F4" d="M23.52 12.27c0-.79-.07-1.54-.2-2.27H12v4.51h6.47a5.53 5.53 0 0 1-2.4 3.63v3h3.87c2.26-2.09 3.58-5.17 3.58-8.87z" />
+                            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.94-2.91l-3.87-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.28v3.09A12 12 0 0 0 12 24z" />
+                            <path fill="#FBBC05" d="M5.27 14.28a7.2 7.2 0 0 1 0-4.56V6.63H1.28a12 12 0 0 0 0 10.74l3.99-3.09z" />
+                            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42A11.97 11.97 0 0 0 12 0 12 12 0 0 0 1.28 6.63l3.99 3.09C6.22 6.86 8.87 4.75 12 4.75z" />
+                          </svg>
+                        </span>
+                        Google'da bizi değerlendirin
+                      </a>
                     </div>
                   </div>
                 </div>

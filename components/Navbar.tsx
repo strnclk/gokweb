@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'motion/react';
 import { Menu, X, ChevronDown, Package, Building, Zap, Briefcase, Factory, FileText, GitCompare, Workflow, FolderOpen, Star, TrendingUp, Phone, Mail, Layers, LifeBuoy, Route, Users, Settings, Receipt, Code2, Compass, GraduationCap } from 'lucide-react';
+import MikroHorseIcon from '@/components/MikroHorseIcon';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -117,15 +118,15 @@ export default function Navbar() {
               
               <div className={`absolute top-full left-0 w-56 bg-white/95 backdrop-blur-xl rounded-xl shadow-2xl border border-gray-100/50 overflow-hidden z-50 transition-all duration-200 ${isMikroDropdownOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'}`}>
                 <Link href="/mikro-run" className="flex items-center gap-3 px-5 py-3 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200">
-                  <Package className="w-4 h-4" />
+                  <MikroHorseIcon src="/mikro-run-horse.png" />
                   Mikro Run
                 </Link>
                 <Link href="/mikro-jump" className="flex items-center gap-3 px-5 py-3 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200">
-                  <Package className="w-4 h-4" />
+                  <MikroHorseIcon src="/mikro-jump-horse.png" />
                   Mikro Jump
                 </Link>
                 <Link href="/mikro-fly" className="flex items-center gap-3 px-5 py-3 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200">
-                  <Package className="w-4 h-4" />
+                  <MikroHorseIcon src="/mikro-fly-horse.png" />
                   Mikro Fly
                 </Link>
                 <Link href="/mikro-tablolari" className="flex items-center gap-3 px-5 py-3 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200">
@@ -383,15 +384,15 @@ export default function Navbar() {
                     className="mt-2 ml-4 space-y-1 relative z-30 overflow-visible"
                   >
                     <Link href="/mikro-run" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
-                      <Package className="w-4 h-4" />
+                      <MikroHorseIcon src="/mikro-run-horse.png" />
                       Mikro Run
                     </Link>
                     <Link href="/mikro-jump" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
-                      <Package className="w-4 h-4" />
+                      <MikroHorseIcon src="/mikro-jump-horse.png" />
                       Mikro Jump
                     </Link>
                     <Link href="/mikro-fly" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
-                      <Package className="w-4 h-4" />
+                      <MikroHorseIcon src="/mikro-fly-horse.png" />
                       Mikro Fly
                     </Link>
                     <Link href="/mikro-tablolari" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
