@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 import { 
   Settings, TrendingUp, BarChart3, Database, Phone, Mail, 
@@ -107,11 +106,6 @@ export default function MESYonetimPage() {
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-3xl mx-auto">
-            <Breadcrumb
-              items={[{ label: 'Anasayfa', href: '/' }, { label: 'Sektörel Çözümler', href: '/sectoral-solutions' }, { label: 'MES Yönetim' }]}
-              accentClass="hover:text-blue-600"
-              className="justify-center mb-6"
-            />
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-amber-50 border border-amber-200/50 rounded-full text-amber-600 text-xs sm:text-sm font-bold shadow-sm mb-6">
               <Sparkles className="w-3.5 h-3.5" />
               Üretim Sahası Yönetim Sistemi (MES)
@@ -216,7 +210,7 @@ export default function MESYonetimPage() {
               <span className="text-xs font-bold bg-amber-100 text-amber-700 px-3 py-1 rounded-full uppercase tracking-wider">
                 Endüstriyel Veri Entegrasyonu
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-black">
                 Kayıpsız Üretim: Mikro ERP ile Canlı SQL Senkronizasyonu
               </h3>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">

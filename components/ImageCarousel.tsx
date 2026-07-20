@@ -95,27 +95,13 @@ export default function ImageCarousel() {
           </div>
           
           <div className="relative h-full flex items-center">
-            {/* Büyük QR - sağdaki boş alanda (yalnızca md+) */}
-            {currentSlide.isReview && (
-              <motion.a
-                href={currentSlide.qrUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="hidden md:block absolute right-24 lg:right-64 xl:right-[22rem] top-1/2 -translate-y-1/2 z-20 rounded-3xl bg-white p-4 shadow-2xl ring-1 ring-white/20 transition-transform duration-300 hover:scale-105"
-                aria-label="Google Yorumları sayfasını aç"
-              >
-                <GoogleReviewQR url={currentSlide.qrUrl!} size={240} />
-              </motion.a>
-            )}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+              <div className="flex items-center gap-8 lg:gap-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="max-w-full sm:max-w-3xl"
+                className="min-w-0 max-w-full sm:max-w-3xl"
               >
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
                   {currentSlide.title}
@@ -148,7 +134,7 @@ export default function ImageCarousel() {
                       href={currentSlide.qrUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="md:hidden mt-5 inline-block rounded-2xl bg-white p-2.5 shadow-lg ring-1 ring-white/20"
+                      className="lg:hidden mt-5 inline-block rounded-2xl bg-white p-2.5 shadow-lg ring-1 ring-white/20"
                       aria-label="Google Yorumları sayfasını aç"
                     >
                       <GoogleReviewQR url={currentSlide.qrUrl!} size={140} />
@@ -178,6 +164,24 @@ export default function ImageCarousel() {
                   </>
                 )}
               </motion.div>
+
+              {/* Büyük QR - metin bloğunun sağında, kapsayıcı içinde akar (yalnızca lg+).
+                  ml-auto ile sağ kenara yaslanır; gap sayesinde metinle asla çakışmaz. */}
+              {currentSlide.isReview && (
+                <motion.a
+                  href={currentSlide.qrUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="hidden lg:block ml-auto flex-shrink-0 z-20 rounded-3xl bg-white p-4 shadow-2xl ring-1 ring-white/20 transition-transform duration-300 hover:scale-105"
+                  aria-label="Google Yorumları sayfasını aç"
+                >
+                  <GoogleReviewQR url={currentSlide.qrUrl!} size={240} />
+                </motion.a>
+              )}
+              </div>
             </div>
           </div>
         </motion.div>

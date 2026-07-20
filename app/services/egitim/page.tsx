@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 import { 
   GraduationCap, Check, Sparkles, ArrowRight, Phone, BookOpen, Users, Milestone, Award, ChevronDown, CheckCircle2
@@ -43,11 +42,6 @@ export default function EgitimHizmetleriPage() {
           <img src="/rainbw.png" alt="Rainbow Background" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <Breadcrumb
-            items={[{ label: 'Anasayfa', href: '/' }, { label: 'Hizmetlerimiz', href: '/services' }, { label: 'Eğitim Hizmetleri' }]}
-            accentClass="hover:text-purple-600"
-            className="mb-8"
-          />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full text-purple-700 text-sm font-semibold mb-6">

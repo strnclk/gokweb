@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 import { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Breadcrumb from "@/components/Breadcrumb";
 import HeroSection from "@/components/HeroSection";
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -256,11 +255,6 @@ export default function MikroFlyPage() {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center px-4 sm:px-6 bg-white pt-32 md:pt-44 pb-24">
         <div className="max-w-6xl mx-auto text-center">
-          <Breadcrumb
-            items={[{ label: 'Anasayfa', href: '/' }, { label: 'Ürünler' }, { label: 'Mikro Fly' }]}
-            accentClass="hover:text-blue-600"
-            className="justify-center mb-8"
-          />
           <div className="mb-10">
             <div className="w-32 h-32 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg">
               <Image 

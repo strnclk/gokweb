@@ -1,6 +1,5 @@
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata = {
   title: 'Gizlilik Politikası | Gökkuşağı Yazılım ve Danışmanlık',
@@ -16,11 +15,6 @@ export default function GizlilikPage() {
       <div className="relative bg-cover bg-center pt-32 pb-16" style={{ backgroundImage: 'url(/rainbw.png)' }}>
         <div className="absolute inset-0 bg-white/80" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Breadcrumb
-            items={[{ label: 'Anasayfa', href: '/' }, { label: 'Gizlilik Politikası' }]}
-            accentClass="hover:text-blue-600"
-            className="mb-6"
-          />
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Gizlilik Politikası
           </h1>

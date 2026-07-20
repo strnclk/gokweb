@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <!-- İlçe sayfaları için yumuşak gökkuşağı "wash" arka planı: köşelerden yayılan,
+       şeffafa doğru sönen çok renkli soft gradyanlar. Ana sayfanın çizgilerinden
+       ve haritalı tasarımdan ayrışır; sade, net, gökkuşağıyla ilişkili. -->
+  <defs>
+    <radialGradient id="washA" cx="84%" cy="8%" r="82%">
+      <stop offset="0%"  stop-color="#A78BFA" stop-opacity="0.32"/>
+      <stop offset="26%" stop-color="#38BDF8" stop-opacity="0.22"/>
+      <stop offset="52%" stop-color="#34D399" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="washB" cx="10%" cy="94%" r="82%">
+      <stop offset="0%"  stop-color="#FB7185" stop-opacity="0.28"/>
+      <stop offset="30%" stop-color="#FB923C" stop-opacity="0.18"/>
+      <stop offset="56%" stop-color="#FBBF24" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="washC" cx="50%" cy="50%" r="60%">
+      <stop offset="0%"  stop-color="#F472B6" stop-opacity="0.10"/>
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#washA)"/>
+  <rect width="1600" height="900" fill="url(#washB)"/>
+  <rect width="1600" height="900" fill="url(#washC)"/>
+</svg>

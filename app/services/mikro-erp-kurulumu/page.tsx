@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 import { 
   Layers, Check, Sparkles, ArrowRight, Phone, Target, Zap, Shield, TrendingUp, CheckCircle2,
@@ -59,11 +58,6 @@ export default function MikroErpKurulumuPage() {
           <img src="/rainbw.png" alt="Rainbow Background" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <Breadcrumb
-            items={[{ label: 'Anasayfa', href: '/' }, { label: 'Hizmetlerimiz', href: '/services' }, { label: 'Mikro ERP Kurulumu' }]}
-            accentClass="hover:text-blue-600"
-            className="mb-8"
-          />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-semibold mb-6">

@@ -3,7 +3,6 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 import { 
   Truck, Package, ScanBarcode, QrCode, Sparkles, ArrowRight, Phone
@@ -21,11 +20,6 @@ export default function LojistikCozumleriPage() {
           <img src="/rainbw.png" alt="Rainbow Background" className="w-full h-full object-cover" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full text-center">
-          <Breadcrumb
-            items={[{ label: 'Anasayfa', href: '/' }, { label: 'Sektörel Çözümler', href: '/sectoral-solutions' }, { label: 'Lojistik' }]}
-            accentClass="hover:text-blue-600"
-            className="justify-center mb-8"
-          />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

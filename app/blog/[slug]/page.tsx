@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlogCover from '@/components/BlogCover';
 import BlogShare from '@/components/BlogShare';
+import GoogleReviewInline from '@/components/GoogleReviewInline';
 import { getAllBlogSlugs, getBlogPostBySlug, posts } from '@/lib/blog';
 
 const SITE = 'https://gokkusagiyazilim.com.tr';
@@ -216,6 +217,8 @@ export default async function BlogYaziPage({
         {/* Paylaş */}
         <div className="mt-10 pt-8 border-t border-gray-200">
           <BlogShare url={url} title={post.title} />
+          {/* Yazı sonu: minimal Google değerlendirme daveti (QR yok) */}
+          <GoogleReviewInline variant="link" className="mt-6" />
         </div>
 
         {/* Sıkça Sorulan Sorular */}

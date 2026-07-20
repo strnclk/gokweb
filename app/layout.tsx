@@ -4,6 +4,7 @@ import Script from "next/script";
 import { AnalyticsProvider } from "@/components/AnalyticsProvider";
 import GravityParticlesClient from "@/components/GravityParticlesClient";
 import ScrollToTop from "@/components/ScrollToTop";
+import SiteBreadcrumb from "@/components/SiteBreadcrumb";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -297,6 +298,10 @@ export default function RootLayout({
         <AnalyticsProvider>
           {children}
         </AnalyticsProvider>
+
+        {/* Site geneli breadcrumb — her sayfada navbar altında SABİT konum.
+            Eşleşmeyen rotalarda (anasayfa, ilçe, blog yazısı) kendini gizler. */}
+        <SiteBreadcrumb />
 
         {/* Tüm sayfalarda: aşağı inince görünen "yukarı çık" butonu */}
         <ScrollToTop />

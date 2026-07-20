@@ -6,7 +6,6 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 
 const sssBpm = [
@@ -112,11 +111,6 @@ export default function EflowBpmPage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
           {/* Hero Content Left */}
           <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
-            <Breadcrumb
-              items={[{ label: 'Anasayfa', href: '/' }, { label: 'E-Flow', href: '/eflow' }, { label: 'E-Flow BPM' }]}
-              accentClass="hover:text-teal-600"
-              className="justify-center lg:justify-start mb-6"
-            />
             <motion.div
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}

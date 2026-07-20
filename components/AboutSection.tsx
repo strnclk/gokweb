@@ -264,9 +264,7 @@ export default function AboutSection() {
               transition={{ type: "spring", stiffness: 80, damping: 15 }}
               className="p-[2px] bg-gradient-to-r from-violet-300 via-purple-300 to-indigo-300 rounded-2xl shadow-[0_12px_35px_rgba(139,92,246,0.18)] overflow-visible"
             >
-              <div className="w-full h-full bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100 rounded-[14px] p-10 md:p-14 text-slate-800 relative overflow-hidden flex flex-col justify-between">
-                {/* Subtle background mesh on dark bento card */}
-                <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.55)_1px,transparent_1px)] [background-size:22px_22px] pointer-events-none" />
+              <div className="w-full h-full bg-white rounded-[14px] p-10 md:p-14 text-slate-800 relative overflow-hidden flex flex-col justify-between">
                 
                 <div>
                   <div className="w-16 h-16 bg-white/80 border border-blue-200 rounded-xl flex items-center justify-center mb-6 shadow-sm">
@@ -288,9 +286,7 @@ export default function AboutSection() {
               transition={{ type: "spring", stiffness: 80, damping: 15 }}
               className="p-[2px] bg-gradient-to-r from-violet-300 via-purple-300 to-indigo-300 rounded-2xl shadow-[0_12px_35px_rgba(139,92,246,0.18)] overflow-visible"
             >
-              <div className="w-full h-full bg-gradient-to-br from-violet-100 via-purple-100 to-indigo-100 rounded-[14px] p-10 md:p-14 text-slate-800 relative overflow-hidden flex flex-col justify-between">
-                {/* Subtle background mesh on dark bento card */}
-                <div className="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.55)_1px,transparent_1px)] [background-size:22px_22px] pointer-events-none" />
+              <div className="w-full h-full bg-white rounded-[14px] p-10 md:p-14 text-slate-800 relative overflow-hidden flex flex-col justify-between">
                 
                 <div>
                   <div className="w-16 h-16 bg-white/80 border border-purple-200 rounded-xl flex items-center justify-center mb-6 shadow-sm">

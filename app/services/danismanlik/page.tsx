@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 import { 
   Compass, Check, Sparkles, ArrowRight, Phone, Eye, Target, BarChart2, TrendingUp, ChevronDown, CheckCircle2
@@ -37,11 +36,6 @@ export default function DanismanlikHizmetleriPage() {
           <img src="/rainbw.png" alt="Rainbow Background" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <Breadcrumb
-            items={[{ label: 'Anasayfa', href: '/' }, { label: 'Hizmetlerimiz', href: '/services' }, { label: 'Danışmanlık Hizmetleri' }]}
-            accentClass="hover:text-amber-600"
-            className="mb-8"
-          />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-sm font-semibold mb-6">

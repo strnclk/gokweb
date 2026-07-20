@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import ContactWidget from './ContactWidget';
+import GoogleReviewInline from './GoogleReviewInline';
 
 export default function Footer() {
   return (
@@ -28,6 +29,9 @@ export default function Footer() {
               <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
               <span className="text-sm text-slate-300">Mikro Yazılım İş Ortağı</span>
             </div>
+
+            {/* Google değerlendirme - göze batmayan, site geneli davet */}
+            <GoogleReviewInline variant="footer" />
           </div>
           
           {/* Products */}
@@ -66,7 +70,6 @@ export default function Footer() {
               <li><Link href="/#hakkimizda" className="text-slate-300 hover:text-white transition-colors duration-200">Hakkımızda</Link></li>
               <li><Link href="/blog" className="text-slate-300 hover:text-white transition-colors duration-200">Blog</Link></li>
               <li><Link href="/solutions" className="text-slate-300 hover:text-white transition-colors duration-200">Çözümler</Link></li>
-              <li><Link href="/compare" className="text-slate-300 hover:text-white transition-colors duration-200">Ürünler</Link></li>
               <li><Link href="/vertical-solutions" className="text-slate-300 hover:text-white transition-colors duration-200">Dikey Çözümler</Link></li>
               <li><Link href="/sectoral-solutions" className="text-slate-300 hover:text-white transition-colors duration-200">Sektörel Çözümler</Link></li>
               <li><Link href="/featured-works" className="text-slate-300 hover:text-white transition-colors duration-200">Referanslar</Link></li>
@@ -95,6 +98,7 @@ export default function Footer() {
                 <li><Link href="/basaksehir-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Başakşehir</Link></li>
                 <li><Link href="/bayrampasa-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Bayrampaşa</Link></li>
                 <li><Link href="/besiktas-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Beşiktaş</Link></li>
+                <li><Link href="/beykoz-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Beykoz</Link></li>
                 <li><Link href="/beyoglu-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Beyoğlu</Link></li>
                 <li><Link href="/buyukcekmece-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Büyükçekmece</Link></li>
                 <li><Link href="/catalca-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200 font-medium">Çatalca</Link></li>

@@ -2,7 +2,6 @@
 
 import { Phone, Mail, MapPin, Sparkles, CheckCircle2, Zap, Users, Target } from 'lucide-react';
 import { motion } from 'motion/react';
-import Breadcrumb from '@/components/Breadcrumb';
 import GoogleReviewQR from '@/components/GoogleReviewQR';
 import { GOOGLE_REVIEWS_URL } from '@/lib/constants';
 
@@ -37,11 +36,6 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Sol Taraf - İçerik */}
             <div className="text-center lg:text-left">
-              <Breadcrumb
-                items={[{ label: 'Anasayfa', href: '/' }, { label: 'İletişim' }]}
-                accentClass="hover:text-blue-600"
-                className="justify-center lg:justify-start mb-6"
-              />
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -167,7 +161,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
                 {/* Müşteri Deneyim Köşesi - Sosyal Kanıt */}
                 <div className="mt-6 pt-6 border-t border-gray-100">
                   <h4 className="text-sm font-semibold text-gray-900 mb-3">Deneyiminizi Bizimle Paylaşın</h4>
-                  <div className="flex items-center gap-4 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 p-3">
+                  <div className="flex items-center gap-4 rounded-xl bg-gradient-to-br from-slate-100 via-blue-50 to-slate-50 border border-slate-200 p-3">
                     {/* QR Kod - marka renginde, hafif gölgeli kutu */}
                     <a
                       href={GOOGLE_REVIEWS_URL}

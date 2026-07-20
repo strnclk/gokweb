@@ -6,7 +6,6 @@ import { motion } from 'motion/react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Breadcrumb from '@/components/Breadcrumb';
 
 const sssFeatured = [
   { soru: 'Hangi alanlarda projeler gerçekleştiriyorsunuz?', cevap: 'Finansal yönetim, nakit akışı, raporlama ve ERP entegrasyonu başta olmak üzere işletmelerin dijitalleşme ihtiyaçlarına yönelik projeler gerçekleştiriyoruz.' },
@@ -180,11 +179,6 @@ export default function FeaturedWorksPage() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] bg-gradient-to-r from-blue-50 to-purple-50 rounded-full blur-3xl" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
-          <Breadcrumb
-            items={[{ label: 'Anasayfa', href: '/' }, { label: 'Referanslar' }]}
-            accentClass="hover:text-blue-600"
-            className="mb-8"
-          />
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <motion.div

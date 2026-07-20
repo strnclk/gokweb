@@ -207,19 +207,33 @@ export default function HeroSection({ district }: HeroSectionProps) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50/10 pt-32 md:pt-44 pb-24 md:pb-28 bg-[radial-gradient(rgba(148,163,184,0.1)_1px,transparent_1px)] [background-size:24px_24px]">
-      {/* Decorative animated blobs */}
-      <div className="absolute top-20 right-10 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDuration: '8s' }} />
-      <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-purple-400/15 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDuration: '12s' }} />
-      <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-pink-400/10 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDuration: '10s' }} />
+      {/* Decorative animated blobs (mor/mavi toz bulutu) — yalnızca ana sayfada;
+          ilçe sayfalarında kaldırıldı (district set olduğunda gizli). */}
+      {!district && (
+        <>
+          <div className="absolute top-20 right-10 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDuration: '8s' }} />
+          <div className="absolute bottom-10 left-10 w-[450px] h-[450px] bg-purple-400/15 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDuration: '12s' }} />
+          <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-pink-400/10 rounded-full blur-3xl animate-pulse pointer-events-none" style={{ animationDuration: '10s' }} />
+        </>
+      )}
+
+      {/* Breadcrumb — sayfa tepesinden sabit offset (navbar altı); dikey ortalanan
+          içerikten bağımsız, tüm sayfalarda aynı konum. Bkz. PageBreadcrumb. */}
+      {district && (
+        <div className="absolute left-0 top-[100px] w-full z-30 pointer-events-none">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="pointer-events-auto inline-block">
+              <Breadcrumb
+                items={[{ label: 'Anasayfa', href: '/' }, { label: `${district} Mikro Bayii` }]}
+                accentClass="hover:text-blue-600"
+                className="justify-start"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
-        {district && (
-          <Breadcrumb
-            items={[{ label: 'Anasayfa', href: '/' }, { label: `${district} Mikro Bayii` }]}
-            accentClass="hover:text-blue-600"
-            className="justify-center mb-8"
-          />
-        )}
         <div className={district ? "flex justify-center" : "grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"}>
 
           {/* Left Side: Content floating directly on background without card */}

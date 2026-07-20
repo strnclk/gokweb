@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
 import { MessageCircle, Phone, Mail, X } from 'lucide-react';
 import { trackWhatsApp } from './ConversionTracking';
 
@@ -83,11 +82,7 @@ export default function ContactWidget() {
           const ortakClass =
             'flex items-center gap-3 bg-white rounded-full shadow-lg pl-5 pr-2 py-2 hover:shadow-xl hover:-translate-x-0.5 transition-all';
 
-          return s.dahili ? (
-            <Link key={s.ad} href={s.href} className={ortakClass} onClick={() => setAcik(false)}>
-              {icerik}
-            </Link>
-          ) : (
+          return (
             <a
               key={s.ad}
               href={s.href}

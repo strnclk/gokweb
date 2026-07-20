@@ -52,6 +52,21 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Akışkan ölçekleme (yalnızca masaüstü, ≥1024px).
+   Tailwind tipografi/boşluk VE max-w-* kapsayıcıları rem tabanlı olduğundan
+   (max-w-7xl = 80rem), root font-size'ı viewport'a göre değiştirince tüm site
+   birlikte ölçeklenir: küçük masaüstünde (~1280px) içerik hafifçe küçülüp
+   kenarlarda nefes alır, büyük monitörde (~2560px) büyüyüp boş alanı doldurur.
+   Böylece elle sayfa yakınlığı (zoom) ayarlama ihtiyacı büyük ölçüde kalkar.
+   Not: rem tabanlı media-query breakpoint'leri tarayıcının sabit 16px'ine göre
+   değerlendirildiği için bu kural Tailwind breakpoint'lerini KAYDIRMAZ.
+   Mobil/tablet (<1024px) kasıtlı olarak varsayılan 16px'te bırakılmıştır. */
+@media (min-width: 1024px) {
+  html {
+    font-size: clamp(15px, calc(10px + 0.39vw), 20px);
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);

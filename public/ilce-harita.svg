@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none" preserveAspectRatio="xMidYMid slice">
+  <!-- İlçe sayfaları için konum temalı arka plan: soluk topografi/harita çizgileri.
+       Çizgiler "bi tık" renklendirildi (yumuşak gökkuşağı tonları, düşük opaklık). -->
+
+  <!-- Topografi kümesi A (sol-alt) -->
+  <g fill="none" stroke-width="1.8" transform="rotate(-16 470 560)">
+    <ellipse cx="470" cy="560" rx="90"  ry="70"  stroke="#FB7185" opacity="0.48"/>
+    <ellipse cx="470" cy="560" rx="152" ry="118" stroke="#FB923C" opacity="0.46"/>
+    <ellipse cx="470" cy="560" rx="218" ry="168" stroke="#FBBF24" opacity="0.44"/>
+    <ellipse cx="470" cy="560" rx="288" ry="222" stroke="#34D399" opacity="0.42"/>
+    <ellipse cx="470" cy="560" rx="362" ry="280" stroke="#38BDF8" opacity="0.40"/>
+  </g>
+
+  <!-- Topografi kümesi B (sağ-üst) -->
+  <g fill="none" stroke-width="1.8" transform="rotate(22 1180 320)">
+    <ellipse cx="1180" cy="320" rx="80"  ry="60"  stroke="#A78BFA" opacity="0.48"/>
+    <ellipse cx="1180" cy="320" rx="142" ry="104" stroke="#38BDF8" opacity="0.46"/>
+    <ellipse cx="1180" cy="320" rx="208" ry="150" stroke="#34D399" opacity="0.44"/>
+    <ellipse cx="1180" cy="320" rx="278" ry="200" stroke="#FBBF24" opacity="0.42"/>
+    <ellipse cx="1180" cy="320" rx="350" ry="252" stroke="#FB7185" opacity="0.40"/>
+  </g>
+
+  <!-- Yol/akış çizgileri (harita hattı hissi) - hafif renkli -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M -40 700 C 300 660 540 690 800 600 C 1060 510 1330 500 1680 430" stroke="#818CF8" stroke-width="2" opacity="0.52"/>
+    <path d="M -40 760 C 320 720 560 748 820 664 C 1080 580 1340 556 1680 500" stroke="#F472B6" stroke-width="1.8" opacity="0.48"/>
+    <path d="M 120 -40 C 220 220 180 460 360 700 C 500 890 720 900 900 940" stroke="#2DD4BF" stroke-width="1.6" opacity="0.44"/>
+  </g>
+
+  <!-- Konum noktaları -->
+  <g opacity="0.48">
+    <circle cx="470" cy="560" r="7" fill="#FB7185"/>
+    <circle cx="1180" cy="320" r="7" fill="#A78BFA"/>
+  </g>
+</svg>

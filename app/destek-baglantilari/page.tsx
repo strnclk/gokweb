@@ -6,7 +6,6 @@ import {
 } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: 'Destek Bağlantıları | Uzak Destek Programları İndir | Gökkuşağı Yazılım',
@@ -155,11 +154,6 @@ export default function DestekBaglantilariPage() {
       {/* Hero — Navbar (fixed, h-20) ile çakışmaması için üstten pt-28/pt-36 boşluk */}
       <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/60 to-white border-b border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-32 sm:pt-40 pb-16 sm:pb-20 text-center">
-          <Breadcrumb
-            items={[{ label: 'Anasayfa', href: '/' }, { label: 'Ürünler' }, { label: 'Destek Bağlantıları' }]}
-            accentClass="hover:text-blue-600"
-            className="justify-center mb-8"
-          />
           <div className="mb-6 flex flex-col items-center gap-4">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-600 text-sm font-medium shadow-sm">
               <Headphones className="w-4 h-4 text-blue-600 animate-pulse" />

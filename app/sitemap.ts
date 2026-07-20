@@ -65,6 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'basaksehir-mikro-bayi',
     'bayrampasa-mikro-bayi',
     'besiktas-mikro-bayi',
+    'beykoz-mikro-bayi',
     'beyoglu-mikro-bayi',
     'buyukcekmece-mikro-bayi',
     'catalca-mikro-bayi',

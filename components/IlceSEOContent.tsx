@@ -1,5 +1,6 @@
 import { CheckCircle } from 'lucide-react';
 import { ilceler } from '@/lib/ilceler';
+import GoogleReviewInline from '@/components/GoogleReviewInline';
 
 // Sunucu bileşeni: 'use client' YOK — statik HTML olarak basılır, SEO'ya doğrudan katkı.
 // Tipografi sitenin baskın konvansiyonuna (AboutSection) göre: başlıklar font-bold text-gray-900,
@@ -55,6 +56,9 @@ export default function IlceSEOContent({ ilce }: { ilce: string }) {
             </details>
           ))}
         </div>
+
+        {/* Yerel güven: Google değerlendirme daveti (masaüstünde QR / mobilde buton) */}
+        <GoogleReviewInline variant="card" className="mt-12 max-w-4xl" />
       </div>
     </section>
   );

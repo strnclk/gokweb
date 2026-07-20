@@ -3,7 +3,6 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 import { 
   Users, TrendingUp, BarChart3, Database, Phone, Mail, 
@@ -107,11 +106,6 @@ export default function HRIKPage() {
         
         <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-3xl mx-auto">
-            <Breadcrumb
-              items={[{ label: 'Anasayfa', href: '/' }, { label: 'Sektörel Çözümler', href: '/sectoral-solutions' }, { label: 'HR (İK) Çözümleri' }]}
-              accentClass="hover:text-blue-600"
-              className="justify-center mb-6"
-            />
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-emerald-50 border border-emerald-200/50 rounded-full text-emerald-600 text-xs sm:text-sm font-bold shadow-sm mb-6">
               <Sparkles className="w-3.5 h-3.5" />
               İnsan Kaynakları Yönetimi
@@ -219,7 +213,7 @@ export default function HRIKPage() {
               <span className="text-xs font-bold bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full uppercase tracking-wider">
                 Resmi Muhasebe Senkronu
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black tracking-tight">
+              <h3 className="text-2xl sm:text-3xl font-black">
                 Puantaj Hatasız: Mikro Personel Entegrasyon Ayrıntısı
               </h3>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">

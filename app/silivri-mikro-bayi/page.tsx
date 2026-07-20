@@ -59,8 +59,8 @@ const jsonLd = {
 
 export default function SilivriMikroBayi() {
   return (
-    <div className="relative" style={{ backgroundImage: 'url(/rainbow-removebg.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', minHeight: '100vh' }}>
-      <div className="relative z-10 bg-white/90">
+    <div className="relative" style={{ backgroundColor: '#ffffff', backgroundImage: 'url(/ilce-wash.svg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', minHeight: '100vh' }}>
+      <div className="relative z-10 bg-white/40">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
