@@ -57,7 +57,7 @@ export default function SectoralSolutionsPage() {
         </div>
         
         {/* Left Side - Content */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -205,7 +205,7 @@ export default function SectoralSolutionsPage() {
               { step: '01', title: 'İhtiyaç Analizi', desc: 'Sektörünüzü ve iş süreçlerinizi detaylı analiz ediyoruz.' },
               { step: '02', title: 'Çözüm Tasarımı', desc: 'İhtiyaçlarınıza özel çözüm mimarisini tasarlıyoruz.' },
               { step: '03', title: 'Uygulama', desc: 'Profesyonel ekibimizle kurulum ve entegrasyonu gerçekleştiriyoruz.' },
-              { step: '04', title: 'Destek', desc: '7/24 teknik destek ve sürekli iyileştirme ile yanınızdayız.' },
+              { step: '04', title: 'Destek', desc: 'Uzman teknik destek ve sürekli iyileştirme ile yanınızdayız.' },
             ].map((item, i) => (
               <div key={i} className="relative text-center">
                 <div className="text-6xl font-bold bg-gradient-to-br from-blue-600 via-violet-600 to-purple-600 bg-clip-text text-transparent mb-4">{item.step}</div>
@@ -227,7 +227,7 @@ export default function SectoralSolutionsPage() {
         <div className="max-w-4xl mx-auto text-center">
           <svg className="w-12 h-12 text-gray-600 mx-auto mb-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.706 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.706 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
           <blockquote className="text-2xl md:text-3xl font-light leading-relaxed mb-8 text-gray-200">
-            Gökkuşağı Yazılım ile çalışmaya başladığımdan bu yana iş süreçlerimiz %90 daha verimli hale geldi. Sektörümüze özel çözümleri ve 7/24 destekleriyle gerçek bir çözüm ortağı.
+            Gökkuşağı Yazılım ile çalışmaya başladığımdan bu yana iş süreçlerimiz %90 daha verimli hale geldi. Sektörümüze özel çözümleri ve uzman destekleriyle gerçek bir çözüm ortağı.
           </blockquote>
           <div>
             <div className="font-semibold text-white">Ahmet Yılmaz</div>

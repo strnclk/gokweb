@@ -205,6 +205,50 @@ export const processes: ProcessDetail[] = [
       },
     ],
   },
+  {
+    id: 'whatsapp-entegrasyonu',
+    name: 'WhatsApp Entegrasyonu Süreci',
+    shortDesc:
+      'Müşteri ve ekip iletişimini WhatsApp üzerinden süreçlerinize bağlayarak talep ve bildirimleri tek bir akışta toplayın.',
+    longDesc:
+      'Dağınık WhatsApp mesajlarının kaybolduğu günleri geride bırakın. WhatsApp Entegrasyonu Süreci, müşterilerden veya ekipten gelen talep, sipariş ve bildirimlerin doğrudan E-Flow süreçlerine düşmesini sağlar; her mesaj ilgili kişiye yönlendirilir ve yanıtlar aynı kanaldan takip edilir.',
+    benefits: [
+      'Gelen WhatsApp mesajlarının içeriğine göre ilgili sürece veya ekibe yönlendirilmesi.',
+      'Sipariş, talep ve bilgi mesajlarının tek bir akışta toplanarak izlenmesi.',
+      'Onay, durum ve hatırlatma bildirimlerinin WhatsApp üzerinden iletilmesi.',
+      'Konuşma geçmişinin süreç kaydına bağlanarak takibin kolaylaşması.',
+    ],
+    steps: [
+      {
+        title: 'Mesaj & Talep Girişi',
+        role: 'Müşteri & Ekip (WhatsApp)',
+        desc: 'Müşteri ya da çalışan, talebini veya bilgisini WhatsApp üzerinden iletir; mesaj otomatik olarak ilgili sürece dahil edilir.',
+        icon: 'smartphone',
+        color: 'bg-green-500 text-white',
+      },
+      {
+        title: 'Otomatik Yönlendirme',
+        role: 'Süreç Motoru (Otomatik)',
+        desc: 'E-Flow, mesajın türüne ve içeriğine göre talebi doğru ekibe veya iş akışına yönlendirir.',
+        icon: 'cpu',
+        color: 'bg-amber-500 text-white',
+      },
+      {
+        title: 'Değerlendirme & Yanıt',
+        role: 'İlgili Ekip / Yetkili',
+        desc: 'İlgili kişi talebi inceleyerek gerekli adımı başlatır ve yanıtını aynı WhatsApp konuşması üzerinden iletir.',
+        icon: 'check',
+        color: 'bg-teal-500 text-white',
+      },
+      {
+        title: 'Kayıt & Takip',
+        role: 'Sistem (Otomatik)',
+        desc: 'Konuşma ve sonuç, ilgili süreç kaydına ve gerektiğinde ERP\'ye bağlanarak izlenebilir bir geçmiş oluşturur.',
+        icon: 'database',
+        color: 'bg-blue-600 text-white',
+      },
+    ],
+  },
 ];
 
 export const sss = [

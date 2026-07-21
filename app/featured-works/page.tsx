@@ -57,7 +57,7 @@ export default function FeaturedWorksPage() {
     { value: '500+', label: 'Başarılı Proje', icon: Award },
     { value: '95%', label: 'Müşteri Memnuniyeti', icon: Star },
     { value: '20+', label: 'Yıl Deneyim', icon: Clock },
-    { value: '7/24', label: 'Destek', icon: Shield }
+    { value: 'Uzman', label: 'Destek', icon: Shield }
   ];
 
   const financialServices = [

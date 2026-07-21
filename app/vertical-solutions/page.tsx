@@ -116,7 +116,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: Shield,
       title: 'Sürekli Destek',
-      description: '7/24 teknik destek ve danışmanlık hizmeti',
+      description: 'Uzman teknik destek ve danışmanlık hizmeti',
       color: 'from-green-500 to-emerald-600'
     },
     {
@@ -132,13 +132,13 @@ export default function VerticalSolutionsPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] sm:min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center px-4 sm:px-6 overflow-hidden bg-white pt-16 md:pt-0">
+      <section className="relative min-h-[50vh] sm:min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 md:pt-0">
         {/* Decorative Elements */}
         <div className="absolute top-20 right-20 w-48 h-48 sm:w-96 sm:h-96 bg-blue-100/50 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-20 w-40 h-40 sm:w-80 sm:h-80 bg-purple-100/50 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-gradient-to-r from-blue-100/30 to-purple-100/30 rounded-full blur-3xl" />
         
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
           <div className="text-center lg:text-left">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}

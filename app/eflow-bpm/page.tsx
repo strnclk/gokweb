@@ -103,12 +103,12 @@ export default function EflowBpmPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center px-6 overflow-hidden bg-gradient-to-br from-white via-[#f4fafb] to-[#fcfefe] pt-28 md:pt-36 pb-20">
+      <section className="relative min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-[#f4fafb] to-[#fcfefe] pt-28 md:pt-36 pb-20">
         {/* Decorative ambient glowing backdrops */}
         <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-80 h-80 bg-[#40949c]/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute bottom-10 left-10 sm:bottom-20 sm:left-20 w-72 h-72 bg-blue-100/40 rounded-full blur-3xl" />
         
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
           {/* Hero Content Left */}
           <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
             <motion.div

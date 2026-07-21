@@ -97,7 +97,7 @@ export default function MikroRunPage() {
     },
     {
       number: '02',
-      title: '7/24 Destek Hizmeti',
+      title: 'Uzman Destek Hizmeti',
       description: 'Yaşadığınız soruna kolayca çare bulabileceğiniz bir altyapıya ve dilediğinizde bizden daima yardım alabileceğiniz destek hizmetlerine sahibiz.',
       icon: TrendingUp
     },
@@ -217,8 +217,8 @@ export default function MikroRunPage() {
       />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white pt-32 md:pt-44 pb-24">
-        <div className="max-w-6xl mx-auto text-center">
+      <section className="relative min-h-screen flex items-center justify-center bg-white pt-32 md:pt-44 pb-24">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 text-center">
           <div className="mb-10">
             <div className="w-32 h-32 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg">
               <Image 
@@ -440,7 +440,7 @@ Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüş�
               'Kolay Ve İşlevsel Çözümler',
               'Daima Güncel Sistem',
               'Anahtar Teslim e-Fatura',
-              '7/24 Canlı Destek Hizmeti',
+              'Canlı Destek Hizmeti',
               'Güvenli Yedekleme',
               'E-Ticaret Entegrasyonu',
               'Mobil Uygulama Desteği',

@@ -13,7 +13,7 @@ export default function ProductShowcase() {
           "E-Fatura Entegrasyonu",
           "E-Defter Otomasyonu",
           "Hızlı Kurulum",
-          "7/24 Destek",
+          "Uzman Destek",
           "Güvenli Veri İşleme"
         ]}
         gradient="from-blue-600 to-blue-700"

@@ -14,7 +14,7 @@ export default function GizlilikPage() {
       {/* Hero Section */}
       <div className="relative bg-cover bg-center pt-32 pb-16" style={{ backgroundImage: 'url(/rainbw.png)' }}>
         <div className="absolute inset-0 bg-white/80" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Gizlilik Politikası
           </h1>

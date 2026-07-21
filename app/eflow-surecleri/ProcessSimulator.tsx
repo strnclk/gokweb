@@ -77,7 +77,7 @@ export default function ProcessSimulator() {
       <div
         role="tablist"
         aria-label="E-Flow süreçleri"
-        className="flex flex-wrap justify-center gap-3 mb-12"
+        className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-12"
       >
         {processes.map((proc, index) => {
           const isSelected = activeProcess === proc.id;
@@ -95,7 +95,7 @@ export default function ProcessSimulator() {
               tabIndex={isSelected ? 0 : -1}
               onClick={() => selectProcess(proc.id)}
               onKeyDown={(event) => onTabKeyDown(event, index)}
-              className={`px-6 py-3.5 rounded-2xl font-bold text-sm transition-all duration-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 ${
+              className={`px-4 py-3.5 rounded-2xl font-bold text-sm text-center leading-snug transition-all duration-300 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-600 ${
                 isSelected
                   ? 'bg-slate-900 text-white shadow-xl scale-105'
                   : 'bg-slate-100 hover:bg-slate-200 text-slate-600'

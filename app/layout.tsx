@@ -16,11 +16,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title:
-    "Gökkuşağı Yazılım ve Danışmanlık | Anadolu Yakası Mikro Bayii | ERP CRM Çözümleri",
+    "Gökkuşağı Yazılım ve Danışmanlık | Anadolu Yakası Mikro Bayi | ERP CRM Çözümleri",
   description:
     "Anadolu Yakası'nda resmi Mikro bayi olarak ERP hizmeti, CRM çözümleri, Mikro program entegrasyonu ve özel yazılım geliştirme hizmetleri. Ataşehir'den tüm Türkiye'ye hizmet.",
   keywords:
-    "Anadolu yakası mikro bayii, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayii, İstanbul mikro bayii, ERP entegrasyonu, Mikro entegrasyon, özel yazılım, IT danışmanlık, e-dönüşüm",
+    "Anadolu yakası mikro bayi, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayi, İstanbul mikro bayi, ERP entegrasyonu, Mikro entegrasyon, özel yazılım, IT danışmanlık, e-dönüşüm",
   authors: [{ name: "Gökkuşağı Yazılım ve Danışmanlık" }],
   creator: "Gökkuşağı Yazılım ve Danışmanlık",
   publisher: "Gökkuşağı Yazılım ve Danışmanlık",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Gökkuşağı Yazılım ve Danışmanlık | Anadolu Yakası Mikro Bayii",
+      "Gökkuşağı Yazılım ve Danışmanlık | Anadolu Yakası Mikro Bayi",
     description:
       "ERP, CRM ve Mikro entegrasyon çözümleri. Ataşehir merkezli hizmet.",
     url: "https://gokkusagiyazilim.com.tr",

@@ -98,7 +98,7 @@ export default function MikroJumpPage() {
     },
     {
       number: '02',
-      title: '7/24 Destek Hizmeti',
+      title: 'Uzman Destek Hizmeti',
       description: 'Yaşadığınız soruna kolayca çare bulabileceğiniz bir altyapıya ve dilediğinizde bizden daima yardım alabileceğiniz destek hizmetlerine sahibiz.',
       icon: TrendingUp
     },
@@ -230,8 +230,8 @@ export default function MikroJumpPage() {
       />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white pt-32 md:pt-44 pb-24">
-        <div className="max-w-6xl mx-auto text-center">
+      <section className="relative min-h-screen flex items-center justify-center bg-white pt-32 md:pt-44 pb-24">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 text-center">
           <div className="mb-10">
             <div className="w-32 h-32 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg">
               <Image 

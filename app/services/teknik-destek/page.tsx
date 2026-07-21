@@ -13,7 +13,7 @@ export default function TeknikDestekPage() {
   const [activeStep, setActiveStep] = useState(0);
 
   const supportSteps = [
-    { title: '1. Çağrı Kaydı & SLA Başlangıcı', desc: 'Destek talebiniz yardım masamıza ulaştığı an kategorize edilir ve SLA süreniz anında başlar.', detail: 'Kritik sistem duruşlarında bildirim yapıldığı dakika uzman mühendise otomatik nöbetçi çağrısı düşer.' },
+    { title: '1. Çağrı Kaydı & SLA Başlangıcı', desc: 'Destek talebiniz yardım masamıza ulaştığı an kategorize edilir ve SLA süreniz anında başlar.', detail: 'Talebiniz önceliğine göre sınıflandırılır ve konuya en uygun uzman mühendise yönlendirilir; kritik durumlarda hızlandırılmış süreç işletilir.' },
     { title: '2. Uzaktan / Yerinde Bağlantı', desc: 'AnyDesk / TeamViewer ile saniyeler içinde sunucunuza bağlanıp arızaya müdahale ediyoruz.', detail: 'Fiziksel donanım veya SQL veri tabanı çökmesi durumunda İstanbul içi yerinde müdahale ekibi yola çıkar.' },
     { title: '3. Kök Neden Analizi & Çözüm', desc: 'Sorunu anlık çözmekle kalmıyor, aynı hatanın tekrar etmemesi için root-cause analizi yapıyoruz.', detail: 'SQL sorgu kilitlenmeleri ve indeks bozulmaları tespit edilerek veritabanı sağlık parametreleri yenilenir.' },
     { title: '4. Periyodik SQL & Bulut Bakımı', desc: 'Belirli periyotlarla veritabanınızın yedekleme ve indeksleme bakımlarını otomatik yürütüyoruz.', detail: 'Verileriniz hem yerel NAS ünitesine hem de izole siber güvenlikli bulut sunucularına senkronize saklanır.' }
@@ -46,7 +46,7 @@ export default function TeknikDestekPage() {
             <div className="text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-sky-50 border border-sky-200 rounded-full text-sky-700 text-sm font-semibold mb-6">
                 <Sparkles size={14} className="text-sky-600" />
-                7/24 Kesintisiz İş Sürekliliği Garantisi
+                Kesintisiz İş Sürekliliği Garantisi
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-6">
                 Teknik Destek <br />
@@ -132,7 +132,7 @@ export default function TeknikDestekPage() {
                   </div>
 
                   <div className="p-3 bg-sky-50/70 border border-sky-200/70 rounded-xl flex items-center justify-between text-xs">
-                    <span className="font-bold text-sky-900">7/24 Nöbetçi Uzaktan & Yerinde Desteği</span>
+                    <span className="font-bold text-sky-900">Uzaktan & Yerinde Teknik Destek</span>
                     <span className="font-extrabold text-sky-700 bg-white px-2 py-0.5 rounded border border-sky-200">
                       Aktif Nöbet
                     </span>
@@ -149,7 +149,7 @@ export default function TeknikDestekPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-14">
             <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 bg-sky-50 border border-sky-200 px-3.5 py-1 rounded-full">
-              7/24 Şeffaf SLA Süreci
+              Şeffaf SLA Süreci
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">
               Teknik Destek &amp; Müdahale Adımları
@@ -211,7 +211,7 @@ export default function TeknikDestekPage() {
                   <div className="p-4.5 bg-gradient-to-r from-sky-50/70 to-blue-50/40 border border-sky-200/80 rounded-2xl text-xs sm:text-sm text-slate-800 font-medium leading-relaxed space-y-1">
                     <div className="font-extrabold text-sky-950 flex items-center gap-1.5 text-xs uppercase tracking-wider mb-1">
                       <Sparkles size={14} className="text-sky-600" />
-                      Mühendis Operasyon Prosedürü:
+                      Süreç Detayı:
                     </div>
                     <div>{supportSteps[activeStep].detail}</div>
                   </div>
@@ -220,9 +220,8 @@ export default function TeknikDestekPage() {
                 <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 font-semibold">
                   <span className="flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-sky-600" />
-                    Destek Takibi: Gökkuşağı Destek Portalı
+                    Destek Kanalları: Telefon, E-posta & Uzak Bağlantı
                   </span>
-                  <span className="font-extrabold text-sky-600 bg-sky-50 px-2.5 py-0.5 rounded border border-sky-200">İzole Bulut Yedekli</span>
                 </div>
               </div>
             </div>

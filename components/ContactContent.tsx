@@ -32,7 +32,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-purple-100/50 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-50/30 to-purple-50/30 rounded-full blur-3xl" />
         
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Sol Taraf - İçerik */}
             <div className="text-center lg:text-left">
@@ -104,7 +104,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
                   <div className="text-xs text-gray-500">Proje</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">7/24</div>
+                  <div className="text-2xl font-bold text-gray-900">Uzman</div>
                   <div className="text-xs text-gray-500">Destek</div>
                 </div>
               </motion.div>
@@ -153,7 +153,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
                     </div>
                     <div>
                       <h4 className="text-gray-900 font-semibold mb-1">Sürekli Destek</h4>
-                      <p className="text-gray-600 text-sm">7/24 teknik destek ve danışmanlık</p>
+                      <p className="text-gray-600 text-sm">Uzman teknik destek ve danışmanlık</p>
                     </div>
                   </div>
                 </div>
@@ -224,31 +224,54 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
             <div className="space-y-6">
               {contactMethods.map((method, index) => {
                 const Icon = iconMap[method.iconName];
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.25, delay: index * 0.04 }}
-                    className="flex items-start gap-4 p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 group"
-                  >
+                const isExternal = method.link?.startsWith('http');
+                const isPhone = method.iconName === 'Phone';
+                const asLink = !!method.link && !isPhone;
+                const cardClassName =
+                  'flex items-start gap-4 p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white border border-gray-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300 group';
+                const animProps = {
+                  initial: { opacity: 0, y: 20 },
+                  whileInView: { opacity: 1, y: 0 },
+                  viewport: { once: true, amount: 0.2 },
+                  transition: { duration: 0.25, delay: index * 0.04 },
+                };
+                const inner = (
+                  <>
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
                       <h3 className="text-lg font-bold mb-1 text-gray-900">{method.title}</h3>
-                      {method.link ? (
-                        <a
-                          href={method.link}
-                          className="text-gray-600 hover:text-blue-600 transition-colors text-sm font-medium"
-                        >
-                          {method.value}
-                        </a>
+                      {isPhone ? (
+                        <div className="space-y-0.5">
+                          <a href={method.link ?? undefined} className="block text-gray-600 hover:text-blue-600 transition-colors text-sm font-medium">
+                            {method.value}
+                          </a>
+                          <a href="tel:+902165748343" className="block text-gray-600 hover:text-blue-600 transition-colors text-sm font-medium">
+                            0216 574 83 43
+                          </a>
+                        </div>
                       ) : (
-                        <p className="text-gray-600 text-sm">{method.value}</p>
+                        <p className="text-gray-600 group-hover:text-blue-600 transition-colors text-sm font-medium">
+                          {method.value}
+                        </p>
                       )}
                     </div>
+                  </>
+                );
+                return asLink ? (
+                  <motion.a
+                    key={index}
+                    href={method.link!}
+                    {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                    {...animProps}
+                    className={`${cardClassName} cursor-pointer`}
+                  >
+                    {inner}
+                  </motion.a>
+                ) : (
+                  <motion.div key={index} {...animProps} className={cardClassName}>
+                    {inner}
                   </motion.div>
                 );
               })}

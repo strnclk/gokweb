@@ -7,7 +7,7 @@ import ContactContent from '@/components/ContactContent';
 export const metadata: Metadata = {
   title: 'İletişim | ERP CRM Çözümleri | Gökkuşağı Yazılım',
   description: 'Gökkuşağı Yazılım ile iletişime geçin. Mikro ERP, CRM ve e-dönüşüm çözümleri için ücretsiz danışmanlık alın. Ataşehir ofisimizle irtibata geçin.',
-  keywords: 'Gökkuşağı Yazılım iletişim, ERP danışmanlık, Mikro bayii iletişim, Ataşehir iletişim, İstanbul iletişim, ERP fiyat teklifi, CRM danışmanlık, e-fatura danışmanlık',
+  keywords: 'Gökkuşağı Yazılım iletişim, ERP danışmanlık, Mikro bayi iletişim, Ataşehir iletişim, İstanbul iletişim, ERP fiyat teklifi, CRM danışmanlık, e-fatura danışmanlık',
   alternates: { canonical: 'https://gokkusagiyazilim.com.tr/contact' },
   openGraph: {
     title: 'İletişim | ERP CRM Çözümleri | Gökkuşağı Yazılım',
@@ -51,7 +51,7 @@ const contactMethods = [
     iconName: 'Phone',
     title: 'Telefon',
     value: whatsappNumber,
-    link: `tel:+90${whatsappNumber}`
+    link: `tel:+90${whatsappNumber.replace(/\D/g, '').replace(/^0/, '')}`
   },
   {
     iconName: 'Mail',
@@ -63,7 +63,7 @@ const contactMethods = [
     iconName: 'MapPin',
     title: 'Adres',
     value: 'Ataşehir, İstanbul',
-    link: null
+    link: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
   }
 ];
 

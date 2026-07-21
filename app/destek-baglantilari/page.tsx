@@ -153,7 +153,7 @@ export default function DestekBaglantilariPage() {
 
       {/* Hero — Navbar (fixed, h-20) ile çakışmaması için üstten pt-28/pt-36 boşluk */}
       <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/60 to-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-32 sm:pt-40 pb-16 sm:pb-20 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-32 sm:pt-40 pb-16 sm:pb-20 text-center">
           <div className="mb-6 flex flex-col items-center gap-4">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-600 text-sm font-medium shadow-sm">
               <Headphones className="w-4 h-4 text-blue-600 animate-pulse" />

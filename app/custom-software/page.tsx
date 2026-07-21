@@ -226,7 +226,7 @@ export default function CustomSoftwarePage() {
       <section className="relative bg-gradient-to-br from-blue-600 via-purple-600 to-indigo-700 text-white overflow-hidden pt-20">
         <div className="absolute inset-0 bg-black/20"></div>
         <GravityParticles />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-40">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-28 md:py-40">
           <div className="text-center">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
               Mikro’ya Özel Yazılım ve Entegrasyon

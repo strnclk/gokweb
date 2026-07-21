@@ -107,11 +107,11 @@ export default function EflowSurecleriPage() {
       {/* min-h-svh: "small viewport height" — mobilde tarayıcı adres çubuğu
           açıkken bile hero tam olarak görünür alanı kaplar, böylece aşağıdaki
           beyaz bölüm scroll edilmeden görünmez ve içerik de taşmaz. */}
-      <section className="relative min-h-svh flex items-center justify-center px-6 overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50/30 to-[#fdfbff] pt-32 pb-20">
+      <section className="relative min-h-svh flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-purple-50/30 to-[#fdfbff] pt-32 pb-20">
         <div className="absolute top-20 right-20 w-[450px] h-[450px] bg-purple-500/5 rounded-full blur-[100px] animate-pulse" />
         <div className="absolute bottom-10 left-10 w-[350px] h-[350px] bg-indigo-500/5 rounded-full blur-[80px]" />
 
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
           {/* Left Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             <div className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-purple-100 border border-purple-200 rounded-full text-purple-600 text-sm font-semibold mb-6">

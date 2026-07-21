@@ -46,6 +46,7 @@ const MAP: Record<string, Crumb[]> = {
   '/eflow-bpm': [{ label: 'E-Flow', href: '/eflow' }, { label: 'E-Flow BPM' }],
   '/eflow-dms': [{ label: 'E-Flow', href: '/eflow' }, { label: 'E-Flow DMS' }],
   '/eflow-surecleri': [{ label: 'E-Flow', href: '/eflow' }, { label: 'E-Flow Süreçleri' }],
+  '/eflow-butce-merkezi': [{ label: 'E-Flow', href: '/eflow' }, { label: 'Bütçe Merkezi' }],
 
   '/mikro-fly': [{ label: 'Mikro Fly' }],
   '/mikro-run': [{ label: 'Mikro Run' }],
@@ -69,11 +70,10 @@ export default function SiteBreadcrumb() {
   // Sondaki '/' varsa temizle (trailingSlash: true ile uyum)
   const key = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
 
-  // Mikro tablo sayfaları (liste + tüm detaylar) tek, ortak breadcrumb taşır.
-  const tail =
-    key === '/mikro-tablolari' || key.startsWith('/mikro-tablolari/')
-      ? [{ label: 'Mikro Tabloları' }]
-      : MAP[key];
+  // Mikro tablo LİSTE sayfası ortak breadcrumb taşır; detay sayfaları
+  // (/mikro-tablolari/[slug]) kendi breadcrumb'ını üretir (TabloDetay), burada
+  // tekrar üretilmez — aksi halde iki breadcrumb üst üste biner.
+  const tail = key === '/mikro-tablolari' ? [{ label: 'Mikro Tabloları' }] : MAP[key];
 
   if (!tail) return null; // eşleşmeyen rota (anasayfa, ilçe, blog yazısı vb.)
 

@@ -194,7 +194,7 @@ export default function AboutSection() {
                       <Shield size={22} />
                     </div>
                     <span className="text-slate-200 text-sm md:text-base font-bold group-hover:text-white transition-colors leading-snug">
-                      7/24 kesintisiz teknik destek
+                      Uzman teknik destek
                     </span>
                   </li>
 
@@ -415,7 +415,7 @@ export default function AboutSection() {
                 </div>
                 
                 {/* Premium Corporate Typography: font-extrabold title and font-medium dark-gray body */}
-                <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">E-Dönüşüm Dönüşümü</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">E-Dönüşüm Hizmeti</h3>
                 <p className="text-slate-700 text-[14.5px] leading-relaxed font-medium mb-6">Lojistik şirketi için e-fatura ve e-defter sistemi. Aylık %15 operasyonel maliyet tasarrufu.</p>
               </div>
               

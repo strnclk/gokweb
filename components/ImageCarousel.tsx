@@ -36,10 +36,10 @@ export default function ImageCarousel() {
     },
     {
       image: '/rainbow.jpg',
-      title: '7/24 Destek Hizmeti',
+      title: 'Uzman Destek Hizmeti',
       description: 'Yaşadığınız soruna kolayca çare bulabileceğiniz bir altyapıya ve dilediğinizde bizden daima yardım alabileceğiniz destek hizmetlerine sahibiz.',
       features: ['Sürekli Destek', 'Hızlı Çözüm', 'Uzman Ekip', 'Kolay Erişim'],
-      stats: ['7/24 Ulaşılabilir', 'Anlık Yanıt', 'Profesyonel'],
+      stats: ['Kolay Ulaşılabilir', 'Anlık Yanıt', 'Profesyonel'],
       link: '/contact'
     },
     {

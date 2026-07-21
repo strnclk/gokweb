@@ -90,13 +90,13 @@ export default function TabloDetay({
     <main className="max-w-[1080px] mx-auto px-5 pt-24 pb-16 text-gray-900">
       {/* Breadcrumb */}
       <nav className="flex items-center gap-2 text-[13px] text-gray-500 pt-4">
-        <Link href="/" className="text-blue-600 no-underline hover:underline">
+        <Link href="/" className="text-gray-500 no-underline hover:text-gray-900 transition-colors">
           Anasayfa
         </Link>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-[13px] h-[13px]">
           <path d="M9 6l6 6-6 6" />
         </svg>
-        <Link href="/mikro-tablolari" className="text-blue-600 no-underline hover:underline">
+        <Link href="/mikro-tablolari" className="text-gray-500 no-underline hover:text-gray-900 transition-colors">
           Mikro Tablolar
         </Link>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="w-[13px] h-[13px]">
@@ -104,7 +104,7 @@ export default function TabloDetay({
         </svg>
         <Link
           href={`/mikro-tablolari?modul=${encodeURIComponent(tablo.modul)}`}
-          className="text-blue-600 no-underline hover:underline"
+          className="text-gray-500 no-underline hover:text-gray-900 transition-colors"
         >
           {tablo.modul}
         </Link>

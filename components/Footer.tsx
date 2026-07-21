@@ -144,7 +144,10 @@ export default function Footer() {
             
             <div>
               <h5 className="font-semibold text-white mb-3">Telefon</h5>
-              <p className="text-sm text-slate-300">0539 856 35 78</p>
+              <div className="space-y-1.5">
+                <a href="tel:+905398563578" className="block text-sm text-slate-300 hover:text-white transition-colors">0539 856 35 78</a>
+                <a href="tel:+902165748343" className="block text-sm text-slate-300 hover:text-white transition-colors">0216 574 83 43</a>
+              </div>
             </div>
             
             <div>

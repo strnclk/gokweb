@@ -104,7 +104,7 @@ export default function MESYonetimPage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(254,243,199,0.3),rgba(255,255,255,0))] -z-10" />
         <div className="absolute top-1/4 right-10 w-96 h-96 bg-amber-200/20 rounded-full blur-3xl -z-10" />
         
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-3xl mx-auto">
             <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-amber-50 border border-amber-200/50 rounded-full text-amber-600 text-xs sm:text-sm font-bold shadow-sm mb-6">
               <Sparkles className="w-3.5 h-3.5" />

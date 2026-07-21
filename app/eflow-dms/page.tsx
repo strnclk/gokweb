@@ -60,11 +60,11 @@ export default function EflowDmsPage() {
       <Navbar />
       
       {/* Hero Section - Featuring "Interactive Document Explorer Mockup" */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden bg-gradient-to-br from-white via-[#fcfdff] to-[#f5f8fd] pt-28 md:pt-36 pb-20">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-[#fcfdff] to-[#f5f8fd] pt-28 md:pt-36 pb-20">
         <div className="absolute top-10 right-10 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl" />
         
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
           {/* Left: Text Content */}
           <div className="lg:col-span-6 text-center lg:text-left flex flex-col items-center lg:items-start">
             <motion.div

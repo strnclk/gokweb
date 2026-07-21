@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'motion/react';
-import { Menu, X, ChevronDown, Package, Building, Zap, Briefcase, Factory, FileText, GitCompare, Workflow, FolderOpen, Star, TrendingUp, Phone, Mail, Layers, LifeBuoy, Route, Users, Settings, Receipt, Code2, Compass, GraduationCap } from 'lucide-react';
+import { Menu, X, ChevronDown, Package, Building, Zap, Briefcase, Factory, FileText, GitCompare, Workflow, FolderOpen, Star, TrendingUp, Phone, Mail, Layers, LifeBuoy, Route, Users, Settings, Receipt, Code2, Compass, GraduationCap, Wallet } from 'lucide-react';
 import MikroHorseIcon from '@/components/MikroHorseIcon';
 
 export default function Navbar() {
@@ -31,6 +31,7 @@ export default function Navbar() {
 
   const contactInfo = [
     { type: 'phone', icon: Phone, text: '0539 856 35 78', link: 'tel:05398563578' },
+    { type: 'phone2', icon: Phone, text: '0216 574 83 43', link: 'tel:+902165748343' },
     { type: 'email', icon: Mail, text: 'satis@gokkusagiyazilim.com.tr', link: 'mailto:satis@gokkusagiyazilim.com.tr' }
   ];
 
@@ -84,7 +85,7 @@ export default function Navbar() {
                     opacity: currentContact === index ? 1 : 0,
                     x: currentContact === index ? 0 : -10
                   }}
-                  className="flex items-center gap-2 hover:scale-105 group absolute top-1/2 -translate-y-1/2"
+                  className={`flex items-center gap-2 hover:scale-105 group absolute top-1/2 -translate-y-1/2 transition-opacity ${currentContact === index ? 'pointer-events-auto z-10' : 'pointer-events-none z-0'}`}
                 >
                   <contact.icon size={18} className="text-gray-700 group-hover:text-blue-600 transition-colors" />
                   <span className="text-sm font-semibold bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent whitespace-nowrap">{contact.text}</span>
@@ -217,6 +218,10 @@ export default function Navbar() {
                 <Link href="/eflow-dms" className="flex items-center gap-3 px-5 py-3 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200">
                   <FolderOpen className="w-4 h-4" />
                   DMS Çözümleri
+                </Link>
+                <Link href="/eflow-butce-merkezi" className="flex items-center gap-3 px-5 py-3 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200">
+                  <Wallet className="w-4 h-4" />
+                  Bütçe Merkezi
                 </Link>
               </div>
             </div>
@@ -506,6 +511,10 @@ export default function Navbar() {
                       <FolderOpen className="w-4 h-4" />
                       DMS Çözümleri
                     </Link>
+                    <Link href="/eflow-butce-merkezi" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
+                      <Wallet className="w-4 h-4" />
+                      Bütçe Merkezi
+                    </Link>
                   </motion.div>
                 )}
               </div>
@@ -650,6 +659,21 @@ export default function Navbar() {
                   <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
                 )}
               </Link>
+
+              {/* İletişim - Mobil */}
+              <div className="mx-6 mt-2 pt-4 border-t border-gray-100 flex flex-col gap-3">
+                {contactInfo.map((contact) => (
+                  <a
+                    key={contact.type}
+                    href={contact.link}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="flex items-center gap-2.5 group"
+                  >
+                    <contact.icon size={18} className="text-gray-700 group-hover:text-blue-600 transition-colors flex-shrink-0" />
+                    <span className="text-sm font-semibold bg-gradient-to-r from-red-500 via-yellow-500 via-green-500 via-blue-500 to-purple-500 bg-clip-text text-transparent">{contact.text}</span>
+                  </a>
+                ))}
+              </div>
 
               {/* Teklif Al Butonu - Mobil */}
               <Link href="/contact" onClick={() => setIsMenuOpen(false)} className="mx-6 px-6 py-3 bg-white text-gray-800 rounded-full border border-gray-200 hover:shadow-xl hover:from-red-500 hover:via-yellow-500 hover:via-green-500 hover:via-blue-500 hover:to-purple-500 hover:bg-gradient-to-r hover:text-white hover:border-transparent transition-all duration-300 text-base font-semibold">

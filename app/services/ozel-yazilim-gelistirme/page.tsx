@@ -263,13 +263,13 @@ export default function OzelYazilimGelistirmePage() {
               Özel Yazılım &amp; Entegrasyonlar Hakkında <span className="text-orange-600">Sıkça Sorulan Sorular</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2 font-medium">
-              Mikro API entegrasyonu, veritabanı güvenliği ve kaynak kod sahipliği hakkında merak edilenler.
+              Mikro API entegrasyonu, veritabanı güvenliği ve proje sahipliği hakkında merak edilenler.
             </p>
           </div>
           <div className="space-y-4">
             {[
               { q: 'Geliştirilen yazılım Mikro ERP güncellemelerinde bozulur mu?', a: 'Hayır. Geliştirdiğimiz entegrasyonları ve yazılımları Mikro\'nun standart veritabanı şemasına zarar vermeyecek şekilde, Mikro API ve store procedure (saklı yordam) standartlarına bağlı kalarak tasarlıyoruz. Bu sayede Mikro güncellense dahi yazılımlar çalışmaya devam eder.' },
-              { q: 'Yazılımın kaynak kodlarını veriyor musunuz?', a: 'Evet. İşletmenize özel olarak yazılan tüm web, mobil ve API projelerinin kaynak kodlarını ve SQL şemalarını proje tesliminde eksiksiz olarak teslim ediyoruz. Kaynak kod sahipliği tamamen sizin firmanıza ait olur.' },
+              { q: 'Geliştirdiğiniz yazılım ve veriler firmamıza mı ait olur?', a: 'Evet. İşletmenize özel geliştirdiğimiz web, mobil ve API projelerinde tüm verileriniz ve veritabanınız tamamen firmanıza aittir; çözümün kullanım hakları eksiksiz olarak size tanımlanır. Proje tesliminde ihtiyaç duyacağınız teknik dokümantasyon ve entegrasyon bilgilerini de paylaşıyoruz.' },
               { q: 'Pazar yeri entegrasyonu stokları ne kadar sürede günceller?', a: 'Geliştirdiğimiz pazar yeri entegrasyon servisleri, pazar yeri API hız sınırlarına bağlı olarak, Mikro\'da değişen stok miktarlarını Trendyol, Hepsiburada gibi platformlarda 1 ila 5 dakika içinde anlık olarak günceller.' }
             ].map((item, idx) => (
               <div key={idx} className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">

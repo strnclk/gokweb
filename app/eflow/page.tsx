@@ -119,13 +119,13 @@ export default function EFlowPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center px-6 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/20 to-[#f0f9fa] pt-28 md:pt-36 pb-20">
+      <section className="relative min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/20 to-[#f0f9fa] pt-28 md:pt-36 pb-20">
         {/* Decorative Elements */}
         <div className="absolute top-20 right-20 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s' }} />
         <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-100/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '15s' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#40949c]/5 to-blue-500/5 rounded-full blur-3xl" />
         
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
           {/* Left Side: Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             <motion.div
@@ -558,13 +558,17 @@ export default function EFlowPage() {
                     
                     {/* Mini Chart Mockup */}
                     <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
-                      <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-wide mb-3">Haftalık Akış Performansı</p>
-                      <div className="flex items-end justify-between h-16 pt-2 px-1">
-                        <div className="w-5 bg-slate-100 rounded-t-sm h-[30%]" />
-                        <div className="w-5 bg-slate-100 rounded-t-sm h-[45%]" />
-                        <div className="w-5 bg-slate-100 rounded-t-sm h-[60%]" />
-                        <div className="w-5 bg-gradient-to-t from-[#40949c] to-[#48a9b2] rounded-t-sm h-[85%]" />
-                        <div className="w-5 bg-[#40949c] rounded-t-sm h-full" />
+                      <div className="flex items-center justify-between mb-3">
+                        <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-wide">Haftalık Akış Performansı</p>
+                        <span className="text-[8px] text-[#40949c] font-extrabold">↑ Artan Trend</span>
+                      </div>
+                      <div className="flex items-end gap-1.5 h-16">
+                        <div className="flex-1 rounded-t-[4px] bg-[#40949c]/20 h-[32%]" />
+                        <div className="flex-1 rounded-t-[4px] bg-[#40949c]/35 h-[46%]" />
+                        <div className="flex-1 rounded-t-[4px] bg-[#40949c]/50 h-[58%]" />
+                        <div className="flex-1 rounded-t-[4px] bg-[#40949c]/65 h-[70%]" />
+                        <div className="flex-1 rounded-t-[4px] bg-[#40949c]/80 h-[85%]" />
+                        <div className="flex-1 rounded-t-[4px] bg-[#40949c] h-full" />
                       </div>
                     </div>
                   </div>
@@ -588,7 +592,7 @@ export default function EFlowPage() {
                 İş Süreçlerinizi
                 <br />
                 <span className="bg-gradient-to-r from-[#40949c] to-blue-600 bg-clip-text text-transparent">
-                  Akıllıca Modelleyn
+                  Akıllıca Modelleyin
                 </span>
               </h2>
 

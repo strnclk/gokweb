@@ -206,7 +206,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
   }, [displayText, isDeleting, currentWordIndex]);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50/10 pt-32 md:pt-44 pb-24 md:pb-28 bg-[radial-gradient(rgba(148,163,184,0.1)_1px,transparent_1px)] [background-size:24px_24px]">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-50/10 pt-24 md:pt-28 pb-10 md:pb-14 bg-[radial-gradient(rgba(148,163,184,0.1)_1px,transparent_1px)] [background-size:24px_24px]">
       {/* Decorative animated blobs (mor/mavi toz bulutu) — yalnızca ana sayfada;
           ilçe sayfalarında kaldırıldı (district set olduğunda gizli). */}
       {!district && (
@@ -224,7 +224,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
           <div className="max-w-7xl mx-auto px-6">
             <div className="pointer-events-auto inline-block">
               <Breadcrumb
-                items={[{ label: 'Anasayfa', href: '/' }, { label: `${district} Mikro Bayii` }]}
+                items={[{ label: 'Anasayfa', href: '/' }, { label: `${district} Mikro Bayi` }]}
                 accentClass="hover:text-blue-600"
                 className="justify-start"
               />
@@ -322,7 +322,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
                 {[
                   { value: '20+', label: 'Yıl Deneyim' },
                   { value: '500+', label: 'Mutlu Müşteri' },
-                  { value: '7/24', label: 'Teknik Destek' },
+                  { value: 'Uzman', label: 'Teknik Destek' },
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col items-center">
                     <span className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-[linear-gradient(90deg,#6366F1,#A855F7,#EC4899)]">
@@ -486,7 +486,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
 
                   {/* Footer: modern pill tags */}
                   <div className="flex items-center gap-1.5 mt-3 pt-3 border-t border-slate-100">
-                    {['Stok', 'B2B', 'Bulut', '7/24 Destek'].map((t, i) => (
+                    {['Stok', 'B2B', 'Bulut', 'Destek'].map((t, i) => (
                       <span
                         key={i}
                         className="px-2.5 py-1 rounded-full bg-slate-50 border border-slate-200/70 text-[9px] font-semibold text-slate-600"
@@ -508,7 +508,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
                 <div className="hidden xl:block absolute bottom-2 right-2 bg-slate-900 border border-slate-800 shadow-xl rounded-xl px-3 py-1.5 text-white z-20 hover:translate-y-0.5 transition-transform pointer-events-auto">
                   <div className="flex items-center gap-2 text-[10px] font-semibold">
                     <Zap size={12} className="text-amber-400 animate-bounce" />
-                    7/24 Teknik Destek
+                    Uzman Teknik Destek
                   </div>
                 </div>
 
@@ -530,7 +530,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
             <Link href="/vertical-solutions" aria-label="Mikro Dikey Çözümler sayfasına git" className="transition-all hover:scale-105 hover:opacity-100 opacity-80 duration-300">
               <Image
                 src="/yetkili.png"
-                alt="Gökkuşağı Yazılım - Resmi Mikro Yetkili Bayii"
+                alt="Gökkuşağı Yazılım - Resmi Mikro Yetkili Bayi"
                 width={90}
                 height={90}
                 className="h-16 w-16 sm:h-20 sm:w-20 object-contain"

@@ -270,7 +270,7 @@ export default function EgitimHizmetleriPage() {
           </div>
           <div className="space-y-4">
             {[
-              { q: 'Eğitimleri yerinde mi yoksa online mı düzenliyorsunuz?', a: 'Tercihinize göre her ikisini de uygulayabiliyoruz. Genellikle cana yakın ve etkileşimi artırmak amacıyla ilk eğitimleri firmanızda yerinde yüz yüze yapıyor, sonrasındaki telafi ve soru-cevap seanslarını ise uzaktan online olarak yürütüyoruz.' },
+              { q: 'Eğitimleri yerinde mi yoksa online mı düzenliyorsunuz?', a: 'Her ikisini de sunuyoruz. İhtiyacınıza ve tercihinize göre eğitimleri firmanızda yüz yüze ya da uzaktan online olarak düzenleyebiliyoruz; dilerseniz ikisini birlikte de planlayabiliriz.' },
               { q: 'Eğitim sonunda herhangi bir belge veya kılavuz paylaşıyor musunuz?', a: 'Evet. Eğitim verdiğimiz modüller için hazırladığımız adım kılavuzlarını, menü yollarını gösteren PDF dokümanlarını ve gerekirse sık yapılan işlemlerin ekran video kayıtlarını ekiplerinizle paylaşıyoruz.' },
               { q: 'Şirketimize yeni katılan personeller için sürekli eğitim desteği var mı?', a: 'Evet. Sürekli destek sözleşmelerimiz kapsamında veya tek seferlik eğitim paketleriyle, ekibinize yeni katılan personellere sıfırdan Mikro ERP oryantasyon eğitimleri sağlamaktayız.' }
             ].map((item, idx) => (

@@ -56,7 +56,7 @@ export default function ServicesPage() {
       color: 'from-sky-600 to-sky-700',
       id: 'teknik-destek',
       features: ['Uzaktan Bağlantı', 'SQL Bakım', 'Bulut Yedekleme'],
-      valueProp: '7/24 kesintisiz destek ile 2 saat içinde garantili müdahale.'
+      valueProp: 'Uzman destek ile 2 saat içinde garantili müdahale.'
     },
     {
       icon: GraduationCap,
@@ -90,7 +90,7 @@ export default function ServicesPage() {
   const heroCenter = { x: 280, y: 205 };
   const heroTags = [
     { label: 'ERP Kurulumu', Icon: Layers, x: 388, y: 66, ring: 'border-blue-200/60 shadow-lg shadow-blue-500/10', iconWrap: 'bg-blue-500/10 text-blue-600', dot: '#3b82f6', dur: 5.2 },
-    { label: '7/24 Destek', Icon: LifeBuoy, x: 150, y: 92, ring: 'border-sky-200/60 shadow-lg shadow-sky-500/10', iconWrap: 'bg-sky-500/10 text-sky-600', dot: '#0ea5e9', dur: 6.1 },
+    { label: 'Teknik Destek', Icon: LifeBuoy, x: 150, y: 92, ring: 'border-sky-200/60 shadow-lg shadow-sky-500/10', iconWrap: 'bg-sky-500/10 text-sky-600', dot: '#0ea5e9', dur: 6.1 },
     { label: 'e-Dönüşüm', Icon: Receipt, x: 112, y: 240, ring: 'border-emerald-200/60 shadow-lg shadow-emerald-500/10', iconWrap: 'bg-emerald-500/10 text-emerald-600', dot: '#10b981', dur: 5.6 },
     { label: 'Mikro Eğitimleri', Icon: GraduationCap, x: 444, y: 250, ring: 'border-purple-200/60 shadow-lg shadow-purple-500/10', iconWrap: 'bg-purple-500/10 text-purple-600', dot: '#a855f7', dur: 6.4 },
     { label: 'Özel Yazılım', Icon: Code2, x: 178, y: 408, ring: 'border-orange-200/60 shadow-lg shadow-orange-500/10', iconWrap: 'bg-orange-500/10 text-orange-600', dot: '#f97316', dur: 5.9 },
@@ -102,13 +102,13 @@ export default function ServicesPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] sm:min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center px-4 sm:px-6 overflow-hidden bg-white pt-16 md:pt-0">
+      <section className="relative min-h-[50vh] sm:min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 md:pt-0">
         {/* Decorative Elements */}
         <div className="absolute top-20 right-20 w-48 h-48 sm:w-96 sm:h-96 bg-blue-100/50 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-20 w-40 h-40 sm:w-80 sm:h-80 bg-purple-100/50 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-gradient-to-r from-blue-100/30 to-purple-100/30 rounded-full blur-3xl" />
         
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
           <div className="text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
