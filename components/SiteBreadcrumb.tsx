@@ -63,6 +63,9 @@ const MAP: Record<string, Crumb[]> = {
   '/cerezler': [{ label: 'Çerez Politikası' }],
 };
 
+// Koyu/renkli hero ile açılan sayfalar — breadcrumb açık renk (light) basılır.
+const LIGHT_ROUTES = new Set(['/custom-software']);
+
 export default function SiteBreadcrumb() {
   const pathname = usePathname();
   if (!pathname) return null;
@@ -81,7 +84,7 @@ export default function SiteBreadcrumb() {
     <div className="absolute left-0 top-[100px] w-full z-30 pointer-events-none">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="pointer-events-auto inline-block">
-          <Breadcrumb items={[HOME, ...tail]} className="justify-start" />
+          <Breadcrumb items={[HOME, ...tail]} className="justify-start" light={LIGHT_ROUTES.has(key)} />
         </div>
       </div>
     </div>

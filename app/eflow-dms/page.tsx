@@ -33,6 +33,8 @@ const faqJsonLdDms = {
 
 
 
+import EflowDmsWheel from '@/components/EflowDmsWheel';
+
 export default function EflowDmsPage() {
   const router = useRouter();
   
@@ -58,13 +60,13 @@ export default function EflowDmsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLdDms) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLdDms) }} />
       <Navbar />
-      
-      {/* Hero Section - Featuring "Interactive Document Explorer Mockup" */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-[#fcfdff] to-[#f5f8fd] pt-28 md:pt-36 pb-20">
+
+      {/* Hero Section */}
+      <section className="relative flex flex-col justify-start px-6 overflow-hidden bg-gradient-to-br from-white via-[#fcfdff] to-[#f5f8fd] pt-32 md:pt-36 pb-16">
         <div className="absolute top-10 right-10 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl" />
-        
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10 w-full">
           {/* Left: Text Content */}
           <div className="lg:col-span-6 text-center lg:text-left flex flex-col items-center lg:items-start">
             <motion.div
@@ -122,39 +124,14 @@ export default function EflowDmsPage() {
             </div>
           </div>
 
-          {/* Hero Visual Right (Floating Vault Composition) */}
+          {/* Hero Visual Right (Birebir 9 Balonlu İnteraktif e-flow DMS® Çark Bileşeni - EflowDmsWheel) */}
           <motion.div
-            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-6 relative flex justify-center items-center w-full h-[400px]"
+            className="lg:col-span-6 relative flex flex-col items-center justify-center w-full py-2"
           >
-            {/* Spinning decorative glass rings */}
-            <div className="absolute w-72 h-72 border border-dashed border-indigo-500/20 rounded-full animate-[spin_40s_linear_infinite]" />
-            <div className="absolute w-60 h-60 border border-slate-200 rounded-full animate-[spin_20s_linear_infinite]" style={{ animationDirection: 'reverse' }} />
-            
-            {/* Soft backdrop blur glow */}
-            <div className="absolute w-64 h-64 bg-gradient-to-tr from-indigo-500/20 to-[#40949c]/20 rounded-full blur-3xl" />
-            
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="relative w-48 h-48 sm:w-56 sm:h-56 bg-gradient-to-br from-slate-900 via-[#1e1b4b] to-indigo-950 rounded-[2.5rem] flex items-center justify-center shadow-[0_25px_60px_rgba(99,102,241,0.35)] border border-slate-700/50"
-            >
-              <FolderOpen size={64} className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]" />
-              
-              {/* Satellite node elements */}
-              <div className="absolute -top-3 -right-3 w-10 h-10 bg-white border border-slate-200 rounded-xl shadow-md flex items-center justify-center text-indigo-600">
-                <Brain size={18} />
-              </div>
-              <div className="absolute -bottom-3 -left-3 w-10 h-10 bg-white border border-slate-200 rounded-xl shadow-md flex items-center justify-center text-[#40949c]">
-                <Shield size={18} />
-              </div>
-            </motion.div>
+            <EflowDmsWheel />
           </motion.div>
         </div>
       </section>
@@ -287,7 +264,7 @@ export default function EflowDmsPage() {
                   <div key={index} className="relative flex flex-col md:flex-row items-center justify-between w-full">
                     {/* Left block */}
                     <div className={`w-full md:w-[45%] ${isLeft ? 'text-center md:text-right' : 'order-last text-center md:text-left'}`}>
-                      <div className="bg-[#f8fafc]/70 border border-slate-200/60 p-6 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-300">
+                      <div className="bg-[#f8fafc]/70 border border-slate-250/60 p-6 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-300">
                         <span className="text-4xl font-black bg-gradient-to-r from-indigo-600 via-violet-500 to-[#40949c] bg-clip-text text-transparent block mb-2">{node.step}</span>
                         <h3 className="text-lg font-black text-slate-800 mb-2">{node.title}</h3>
                         <p className="text-xs text-slate-500 font-medium leading-relaxed">{node.desc}</p>
@@ -528,7 +505,7 @@ export default function EflowDmsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 p-10 sm:p-16 rounded-[3rem] text-center overflow-hidden shadow-2xl border border-slate-800"
+            className="relative bg-gradient-to-br from-slate-900 via-slate-850 to-slate-950 p-10 sm:p-16 rounded-[3rem] text-center overflow-hidden shadow-2xl border border-slate-800"
           >
             {/* Glowing neon shapes inside CTA */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#40949c]/10 rounded-full blur-3xl pointer-events-none" />

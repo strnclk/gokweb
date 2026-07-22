@@ -6,11 +6,12 @@ import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlogCover from '@/components/BlogCover';
-import { Sparkles } from 'lucide-react';
+import { Sparkles, ArrowRight, Compass, Cloud, TrendingUp, Workflow } from 'lucide-react';
 import { featuredPost, posts, categories } from '@/lib/blog';
 
+
 // "6 Temmuz 2026" gibi Türkçe tarihi sıralanabilir bir sayıya çevirir.
-const trAylar = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+const trAylar = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
 const parseTrTarih = (tarih: string): number => {
   const [gun, ay, yil] = tarih.trim().split(/\s+/);
   const ayIndex = trAylar.indexOf(ay);
@@ -29,78 +30,198 @@ export default function BlogPage() {
     : sortedPosts.filter(post => post.category === selectedCategory);
 
   return (
-    <div className="bg-white">
+    <div className="bg-[#FAFBFD] min-h-screen">
       <Navbar />
 
-      {/* Hero - Modern Estetik Tasarım */}
-      <section className="relative min-h-[60vh] sm:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50">
-        {/* Dekoratif Elementler */}
-        <div className="absolute top-20 right-20 w-64 h-64 sm:w-96 sm:h-96 bg-purple-200/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-56 h-56 sm:w-80 sm:h-80 bg-blue-200/30 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-gradient-to-r from-purple-100/20 to-blue-100/20 rounded-full blur-3xl" />
+      {/* Hero Header - Kesintisiz, Çizgisiz Yumuşak Bütünlük Sağlayan Zemin */}
+      <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#A8E6E2] via-[#D8F5F2] via-75% to-[#FAFBFD] pt-32 md:pt-40 pb-16 lg:pb-24">
+        
+        {/* Soyut Geometrik Ağ & Üst Oval Gökyüzü/Turkuaz Işık Halesi */}
+        <div className="absolute inset-0 pointer-events-none select-none opacity-70">
+          <div className="absolute inset-0 opacity-[0.05] bg-center bg-cover pointer-events-none" style={{ backgroundImage: 'url(/rainbow-lines.svg)' }} />
+          <svg className="w-full h-full text-[#00A896]/20" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none">
+            <defs>
+              <pattern id="blog-hero-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+                <path d="M 44 0 L 0 0 0 44" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 3" />
+                <circle cx="44" cy="44" r="1.2" fill="#00A896" opacity="0.35" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#blog-hero-grid)" />
+          </svg>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-50 border border-purple-200 rounded-full text-purple-700 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
-          >
-            <Sparkles size={12} className="sm:size-[14px]" />
-            Blog
-          </motion.div>
+          {/* Derine Ve Aşağıya Doğru Genişleyen Oval Gökyüzü Mavisi & Turkuaz Işık Halesi */}
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[1150px] h-[520px] bg-gradient-to-b from-[#38BDF8]/35 via-[#00A896]/30 to-transparent rounded-full blur-[110px] pointer-events-none" />
+        </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-gray-900"
-          >
-            ERP ve
-            <br />
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Dijital Dönüşüm Rehberi</span>
-          </motion.h1>
+        {/* Hero İçerik Konteynırı & Yüzen 4 Cam Kutu */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          <div className="relative">
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-sm sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2"
-          >
-            ERP sistemleri ve dijital dönüşüm stratejileri hakkında kapsamlı rehberler ve ipuçları
-          </motion.p>
+            {/* Kutu 1: Üst Sol (Dijital Yol Haritası Analizi) - Optimal Çapraz Konumlandırma */}
+            <motion.div
+              initial={{ opacity: 0, y: -15, x: -15 }}
+              animate={{ opacity: 1, y: 0, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="absolute -top-8 left-0 xl:-left-4 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+            >
+              <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
+                <Compass className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#00A896] tracking-wider uppercase mb-0.5">YOL HARİTASI</div>
+                <div className="text-[15px] font-bold text-[#0F172A] leading-tight mb-1">Dijital Yol Haritası Analizi</div>
+                <div className="text-[13px] text-slate-500 font-medium flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#00A896] shrink-0" />
+                  <span>Stratejik Mimari Planlama</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Kutu 2: Üst Sağ (Bulut & Entegre Sunucular) - Optimal Çapraz Konumlandırma */}
+            <motion.div
+              initial={{ opacity: 0, y: -15, x: 15 }}
+              animate={{ opacity: 1, y: 0, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="absolute -top-5 right-0 xl:-right-4 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+            >
+              <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
+                <Cloud className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#00A896] tracking-wider uppercase mb-0.5">BULUT ALTYAPISI</div>
+                <div className="text-[15px] font-bold text-[#0F172A] leading-tight mb-1">Bulut & Entegre Sunucular</div>
+                <div className="text-[13px] text-slate-500 font-medium flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#00A896] shrink-0" />
+                  <span>%99.99 Veri Güvenliği</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Kutu 3: Alt Sol (Sektörel Teknoloji Trendleri) - Optimal Çapraz Konumlandırma */}
+            <motion.div
+              initial={{ opacity: 0, y: 15, x: -15 }}
+              animate={{ opacity: 1, y: 0, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="absolute -bottom-6 left-2 xl:-left-2 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+            >
+              <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
+                <TrendingUp className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#00A896] tracking-wider uppercase mb-0.5">SEKTÖREL TRENDLER</div>
+                <div className="text-[15px] font-bold text-[#0F172A] leading-tight mb-1">Sektörel Teknoloji Trendleri</div>
+                <div className="text-[13px] text-slate-500 font-medium flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#00A896] shrink-0" />
+                  <span>Veri Odaklı Metrikler</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Kutu 4: Alt Sağ (ERP Entegrasyon Modelleri) - Optimal Çapraz Konumlandırma */}
+            <motion.div
+              initial={{ opacity: 0, y: 15, x: 15 }}
+              animate={{ opacity: 1, y: 0, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.4 }}
+              className="absolute -bottom-8 right-2 xl:-right-2 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+            >
+              <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
+                <Workflow className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#00A896] tracking-wider uppercase mb-0.5">ENTEGRASYON</div>
+                <div className="text-[15px] font-bold text-[#0F172A] leading-tight mb-1">ERP Entegrasyon Modelleri</div>
+                <div className="text-[13px] text-slate-500 font-medium flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#00A896] shrink-0" />
+                  <span>Otomatik İş Akışları</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* MERKEZİ BAŞLIK VE AÇIKLAMA BLOĞU */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+              className="text-center max-w-4xl mx-auto py-8 sm:py-12 px-4 relative z-30 flex flex-col items-center"
+            >
+              {/* Yıldız ve 'Blog' Rozeti (Orijinal Canlı Turkuaz) */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#023744] border border-[#00B4D8]/30 rounded-full text-xs sm:text-sm font-bold tracking-wide mb-6 shadow-sm backdrop-blur-md">
+                <Sparkles className="w-4 h-4 text-[#00E5C0] animate-pulse" />
+                <span className="text-[#00E5C0] font-black">Blog</span>
+              </div>
+
+              {/* Orijinal Canlı Turkuaz Mavi -> Turkuaz -> Yeşil Gradient Başlık */}
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-[1.2] mb-6">
+                <span className="inline-block">
+                  ERP ve{' '}
+                  <span className="bg-gradient-to-r from-[#00B4D8] via-[#00A896] to-[#02C39A] bg-clip-text text-transparent">
+                    Dijital Dönüşüm
+                  </span>
+                </span>
+                <br />
+                <span className="inline-block bg-gradient-to-r from-[#00A896] via-[#00B8A9] to-[#02C39A] bg-clip-text text-transparent">
+                  Rehberi
+                </span>
+              </h1>
+
+              {/* 3 Spesifik Satıra Bölünmüş Alt Açıklama Metni */}
+              <p className="text-base sm:text-lg lg:text-xl text-slate-700 max-w-3xl leading-relaxed mb-8 font-medium">
+                ERP sistemleri ve dijital dönüşüm stratejileri hakkında <br className="hidden sm:inline" />
+                uzman rehberleri, sektör trendleri ve pratik uygulama <br className="hidden sm:inline" />
+                önerileri.
+              </p>
+
+              {/* Orijinal Eylem Butonu & Şık Hover Animasyonu */}
+              <div className="flex justify-center">
+                <a
+                  href="#rehberler"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('rehberler')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="group inline-flex items-center justify-center gap-3.5 px-9 py-4 bg-gradient-to-r from-[#032B3A] via-[#005F73] to-[#0A9396] hover:from-[#005F73] hover:via-[#0A9396] hover:to-[#02C39A] text-white font-extrabold text-base sm:text-lg rounded-xl shadow-lg shadow-[#032B3A]/20 hover:shadow-xl hover:shadow-[#005F73]/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                >
+                  <span>Tüm Rehberleri Keşfet</span>
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1.5 text-teal-300" />
+                </a>
+              </div>
+            </motion.div>
+
+          </div>
+
         </div>
       </section>
 
       {/* Featured Post - Öne Çıkan */}
-      <section className="px-4 sm:px-6 py-12 sm:py-20 bg-white">
+      <section id="rehberler" className="px-4 sm:px-6 py-12 sm:py-20 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8 sm:mb-12">
-            <span className="text-xs sm:text-sm font-semibold text-purple-600 uppercase tracking-wider">Öne Çıkan</span>
+            <span className="text-xs sm:text-sm font-semibold text-teal-700 uppercase tracking-wider">Öne Çıkan Rehber</span>
           </div>
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <div className={`h-64 sm:h-80 lg:h-full bg-gradient-to-br ${featuredPost.gradient} rounded-2xl flex items-center justify-center`}>
-              <div className="text-center text-white px-4 sm:px-8">
-                <span className="inline-block px-3 py-1 sm:px-4 sm:py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">{featuredPost.category}</span>
-                <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight">{featuredPost.title}</h2>
-                <p className="text-sm sm:text-lg text-white/80">{featuredPost.excerpt}</p>
+            <div className={`h-64 sm:h-80 lg:h-full bg-gradient-to-br ${featuredPost.gradient} rounded-2xl flex items-center justify-center p-6 text-center text-white`}>
+              <div>
+                <span className="inline-block px-3.5 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium mb-4">{featuredPost.category}</span>
+                <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-3 leading-tight">{featuredPost.title}</h2>
+                <p className="text-sm sm:text-lg text-white/90">{featuredPost.excerpt}</p>
               </div>
             </div>
             <div>
-              <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">
-                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-purple-100 text-purple-700 rounded-full font-medium">{featuredPost.category}</span>
+              <div className="flex items-center gap-3 text-xs sm:text-sm text-gray-500 mb-4">
+                <span className="px-3 py-1 bg-teal-50 text-teal-700 rounded-full font-medium">{featuredPost.category}</span>
                 <span>{featuredPost.date}</span>
                 <span>·</span>
                 <span>{featuredPost.readTime} okuma</span>
               </div>
-              <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">{featuredPost.title}</h2>
+              <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">{featuredPost.title}</h2>
               <p className="text-sm sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">{featuredPost.excerpt}</p>
               <Link
                 href={`/blog/${featuredPost.slug}`}
-                className="inline-flex px-6 py-3 sm:px-8 sm:py-4 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all duration-300 font-medium shadow-md hover:shadow-lg border border-slate-800 items-center gap-2 text-sm sm:text-base"
+                className="inline-flex px-6 py-3.5 bg-gradient-to-r from-[#031d28] to-[#092d3a] text-white rounded-xl hover:opacity-90 transition-all duration-300 font-semibold shadow-md items-center gap-2 text-sm sm:text-base"
               >
-                Devamını Oku
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                <span>Devamını Oku</span>
+                <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
@@ -108,10 +229,9 @@ export default function BlogPage() {
       </section>
 
       {/* Blog Yazıları - Filtre + Profesyonel Listeleme */}
-      <section className="px-4 sm:px-6 py-12 sm:py-20 bg-white">
+      <section className="px-4 sm:px-6 py-12 sm:py-20 bg-slate-50/50 border-t border-slate-100">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8 sm:mb-12">
-            {/* Dinamik başlık: seçili kategoriyi ve sonuç sayısını gösterir */}
             <div className="flex items-baseline flex-wrap gap-x-3 gap-y-1 mb-5 sm:mb-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
                 {selectedCategory === 'Tümü' ? 'Tüm Yazılar' : selectedCategory}
@@ -121,7 +241,6 @@ export default function BlogPage() {
               </span>
             </div>
 
-            {/* Konuya göre filtre — başlıkla aynı çatı altında, amaçlı bir kontrol */}
             <div className="flex flex-wrap gap-2 sm:gap-2.5">
               {categories.map((cat, i) => {
                 const active = selectedCategory === cat.name;
@@ -130,10 +249,10 @@ export default function BlogPage() {
                     key={i}
                     onClick={() => setSelectedCategory(cat.name)}
                     aria-pressed={active}
-                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
                       active
-                        ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white shadow-md shadow-purple-600/20'
-                        : 'bg-white text-gray-700 border border-gray-200 hover:border-purple-300 hover:text-purple-700'
+                        ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md shadow-teal-600/20'
+                        : 'bg-white text-gray-700 border border-gray-200 hover:border-teal-300 hover:text-teal-700'
                     }`}
                   >
                     {cat.name}
@@ -151,48 +270,46 @@ export default function BlogPage() {
           </div>
 
           {filteredPosts.length > 0 ? (
-          <div className="divide-y divide-gray-200">
-            {filteredPosts.map((post, index) => (
-              <article
-                key={index}
-                className="py-6 sm:py-10 first:pt-0 last:pb-0 group"
-              >
-                <Link href={`/blog/${post.slug}`} className="grid sm:grid-cols-[220px_1fr] gap-4 sm:gap-6 items-center">
-                  {/* Kapak */}
-                  <BlogCover
-                    gradient={post.gradient}
-                    category={post.category}
-                    className="w-full aspect-[16/10] rounded-xl"
-                    iconClassName="w-12 h-12"
-                  />
+            <div className="grid gap-6">
+              {filteredPosts.map((post, index) => (
+                <article
+                  key={index}
+                  className="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-7 shadow-xs hover:shadow-md transition-all duration-300 group"
+                >
+                  <Link href={`/blog/${post.slug}`} className="grid sm:grid-cols-[220px_1fr] gap-4 sm:gap-6 items-center">
+                    <BlogCover
+                      gradient={post.gradient}
+                      category={post.category}
+                      className="w-full aspect-[16/10] rounded-xl"
+                      iconClassName="w-12 h-12"
+                    />
 
-                  {/* İçerik */}
-                  <div>
-                    <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3">
-                      <span className={`inline-block px-2 py-0.5 sm:px-3 sm:py-1 bg-gradient-to-r ${post.gradient} text-white rounded-full text-xs font-medium`}>{post.category}</span>
-                      <span>{post.date}</span>
-                      <span>·</span>
-                      <span>{post.readTime} okuma</span>
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 mb-2 font-medium">
+                        <span className="inline-block px-2.5 py-0.5 bg-teal-50 text-teal-700 rounded-full text-xs font-medium">{post.category}</span>
+                        <span>{post.date}</span>
+                        <span>·</span>
+                        <span>{post.readTime} okuma</span>
+                      </div>
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors leading-tight">
+                        {post.title}
+                      </h3>
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+                      <span className="mt-3 text-teal-600 font-semibold text-xs sm:text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                        <span>Oku</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
                     </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors leading-tight">
-                      {post.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                    <span className="mt-3 text-purple-600 font-medium text-xs sm:text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Oku
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                    </span>
-                  </div>
-                </Link>
-              </article>
-            ))}
-          </div>
+                  </Link>
+                </article>
+              ))}
+            </div>
           ) : (
-            <div className="text-center py-16 sm:py-24">
-              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-purple-50 flex items-center justify-center">
-                <Sparkles className="w-6 h-6 text-purple-400" />
+            <div className="text-center py-16 sm:py-24 bg-white rounded-2xl border border-slate-200/80">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-teal-50 flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-teal-500" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-1">Bu konuda henüz yazı yok</h3>
               <p className="text-gray-500 text-sm mb-5">
@@ -200,7 +317,7 @@ export default function BlogPage() {
               </p>
               <button
                 onClick={() => setSelectedCategory('Tümü')}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 text-white text-sm font-medium hover:shadow-md hover:shadow-purple-600/20 transition-all"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-sm font-medium hover:shadow-md transition-all"
               >
                 Tüm yazıları göster
               </button>

@@ -31,6 +31,8 @@ const faqJsonLdBpm = {
   mainEntity: sssBpm.map((f) => ({ '@type': 'Question', name: f.soru, acceptedAnswer: { '@type': 'Answer', text: f.cevap } })),
 };
 
+import EflowBpmWheel from '@/components/EflowBpmWheel';
+
 export default function EflowBpmPage() {
   const router = useRouter();
   const [activeTab, setActiveTab] = useState<'finans' | 'ik' | 'lojistik'>('finans');
@@ -103,12 +105,12 @@ export default function EflowBpmPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-[#f4fafb] to-[#fcfefe] pt-28 md:pt-36 pb-20">
+      <section className="relative flex flex-col justify-start px-6 overflow-hidden bg-gradient-to-br from-white via-[#f4fafb] to-[#fcfefe] pt-32 md:pt-36 pb-16">
         {/* Decorative ambient glowing backdrops */}
-        <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-80 h-80 bg-[#40949c]/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }} />
+        <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-80 h-80 bg-[#40949c]/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute bottom-10 left-10 sm:bottom-20 sm:left-20 w-72 h-72 bg-blue-100/40 rounded-full blur-3xl" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-start relative z-10 w-full">
           {/* Hero Content Left */}
           <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
             <motion.div
@@ -177,39 +179,15 @@ export default function EflowBpmPage() {
             </motion.button>
           </div>
 
-          {/* Hero Visual Right (Floating Workflow Orb Composition) */}
+          {/* Hero Visual Right (Birebir 8 Dilimli İnteraktif 3D Vektör Çark Bileşeni - EflowBpmWheel) */}
           <motion.div
-            initial={{ opacity: 0, x: 50, scale: 0.95 }}
+            initial={{ opacity: 0, x: 40, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="lg:col-span-5 relative flex justify-center items-center w-full h-[400px]"
+            className="lg:col-span-5 relative flex flex-col items-center justify-center w-full py-2"
           >
-            {/* Spinning decorative glass rings */}
-            <div className="absolute w-72 h-72 border border-dashed border-[#40949c]/20 rounded-full animate-[spin_40s_linear_infinite]" />
-            <div className="absolute w-60 h-60 border border-slate-200 rounded-full animate-[spin_20s_linear_infinite]" style={{ animationDirection: 'reverse' }} />
-            
-            {/* Soft backdrop blur glow */}
-            <div className="absolute w-64 h-64 bg-gradient-to-tr from-[#40949c]/20 to-blue-500/20 rounded-full blur-3xl" />
-            
-            <motion.div
-              animate={{ y: [0, -12, 0] }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
-              className="relative w-48 h-48 sm:w-56 sm:h-56 bg-gradient-to-br from-slate-900 via-[#0a192f] to-[#40949c] rounded-[2.5rem] flex items-center justify-center shadow-[0_25px_60px_rgba(64,148,156,0.35)] border border-slate-700/50"
-            >
-              <Workflow size={64} className="text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.4)]" />
-              
-              {/* Satellite node elements */}
-              <div className="absolute -top-3 -right-3 w-10 h-10 bg-white border border-slate-200 rounded-xl shadow-md flex items-center justify-center text-[#40949c]">
-                <Zap size={18} />
-              </div>
-              <div className="absolute -bottom-3 -left-3 w-10 h-10 bg-white border border-slate-200 rounded-xl shadow-md flex items-center justify-center text-blue-600">
-                <CheckCircle size={18} />
-              </div>
-            </motion.div>
+            {/* İnteraktif Vektör Çark Bileşeni */}
+            <EflowBpmWheel />
           </motion.div>
         </div>
       </section>
@@ -678,7 +656,7 @@ export default function EflowBpmPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 p-10 sm:p-16 rounded-[3rem] text-center overflow-hidden shadow-2xl border border-slate-800"
+            className="relative bg-gradient-to-br from-slate-900 via-slate-850 to-slate-950 p-10 sm:p-16 rounded-[3rem] text-center overflow-hidden shadow-2xl border border-slate-800"
           >
             {/* Glowing neon shapes inside CTA */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#40949c]/10 rounded-full blur-3xl pointer-events-none" />
