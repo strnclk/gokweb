@@ -1,6 +1,6 @@
 'use client';
 
-import { Phone, Mail, MapPin, Sparkles, CheckCircle2, Zap, Users, Target } from 'lucide-react';
+import { Phone, Mail, MapPin, Sparkles, CheckCircle2, Zap, Users, Target, Star, ExternalLink } from 'lucide-react';
 import { motion } from 'motion/react';
 import GoogleReviewQR from '@/components/GoogleReviewQR';
 import { GOOGLE_REVIEWS_URL } from '@/lib/constants';
@@ -117,83 +117,112 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
               transition={{ duration: 0.8, delay: 0.2 }}
               className="hidden lg:block"
             >
-              <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-xl">
-                <h3 className="text-xl font-bold text-gray-900 mb-6">Neden Biz?</h3>
-                <div className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Zap className="w-5 h-5 text-blue-600" />
+              <div className="bg-white border border-gray-200 rounded-2xl p-7 shadow-xl">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Neden Biz?</h3>
+                <div className="grid grid-cols-2 gap-3.5 mb-6">
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-4 h-4 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="text-gray-900 font-semibold mb-1">Hızlı Entegrasyon</h4>
-                      <p className="text-gray-600 text-sm">Mevcut sistemlerinizle kolay entegrasyon</p>
+                      <h4 className="text-gray-900 font-semibold text-xs mb-0.5">Hızlı Entegrasyon</h4>
+                      <p className="text-gray-500 text-[11px] leading-tight">Mevcut sistemlerle kolay entegrasyon</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Users className="w-5 h-5 text-purple-600" />
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Users className="w-4 h-4 text-purple-600" />
                     </div>
                     <div>
-                      <h4 className="text-gray-900 font-semibold mb-1">Uzman Ekip</h4>
-                      <p className="text-gray-600 text-sm">20+ yıllık deneyimli profesyonel ekip</p>
+                      <h4 className="text-gray-900 font-semibold text-xs mb-0.5">Uzman Ekip</h4>
+                      <p className="text-gray-500 text-[11px] leading-tight">20+ yıllık deneyimli profesyonel kadro</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <Target className="w-5 h-5 text-pink-600" />
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Target className="w-4 h-4 text-pink-600" />
                     </div>
                     <div>
-                      <h4 className="text-gray-900 font-semibold mb-1">Ölçeklenebilir Çözümler</h4>
-                      <p className="text-gray-600 text-sm">İşletmenizle birlikte büyüyen sistemler</p>
+                      <h4 className="text-gray-900 font-semibold text-xs mb-0.5">Ölçeklenebilir</h4>
+                      <p className="text-gray-500 text-[11px] leading-tight">İşletmenizle birlikte büyüyen modüller</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                      <CheckCircle2 className="w-5 h-5 text-green-600" />
+                  <div className="flex items-start gap-3">
+                    <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                      <CheckCircle2 className="w-4 h-4 text-green-600" />
                     </div>
                     <div>
-                      <h4 className="text-gray-900 font-semibold mb-1">Sürekli Destek</h4>
-                      <p className="text-gray-600 text-sm">Uzman teknik destek ve danışmanlık</p>
+                      <h4 className="text-gray-900 font-semibold text-xs mb-0.5">Sürekli Destek</h4>
+                      <p className="text-gray-500 text-[11px] leading-tight">Uzman teknik destek ve danışmanlık</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Müşteri Deneyim Köşesi - Sosyal Kanıt */}
-                <div className="mt-6 pt-6 border-t border-gray-100">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-3">Deneyiminizi Bizimle Paylaşın</h4>
-                  <div className="flex items-center gap-4 rounded-xl bg-gradient-to-br from-slate-100 via-blue-50 to-slate-50 border border-slate-200 p-3">
-                    {/* QR Kod - marka renginde, hafif gölgeli kutu */}
-                    <a
-                      href={GOOGLE_REVIEWS_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-shrink-0 rounded-lg bg-white p-1.5 shadow-md ring-1 ring-gray-100 transition-transform duration-300 hover:scale-105"
-                      aria-label="Google Yorumları sayfasını aç"
-                    >
-                      <GoogleReviewQR url={GOOGLE_REVIEWS_URL} size={92} />
-                    </a>
+                {/* --- MÜŞTERİ DENEYİM KÖŞESİ (Prominent Eye-Catching QR & Social Proof Banner) --- */}
+                <div className="pt-5 border-t border-gray-200">
+                  <div className="relative overflow-hidden bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 rounded-2xl p-5 text-white shadow-2xl border border-indigo-700/50">
+                    {/* Arka plan parlama efekti */}
+                    <div className="absolute top-0 right-0 w-36 h-36 bg-blue-500/20 rounded-full blur-2xl" />
 
-                    {/* CTA - Google logosu ve marka renkli metin */}
-                    <div className="min-w-0">
-                      <p className="text-xs text-gray-500 leading-relaxed mb-2">
-                        Deneyimleriniz bizim için değerli. Kodu okutun veya tıklayın.
-                      </p>
-                      <a
-                        href={GOOGLE_REVIEWS_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-blue-800 hover:text-blue-900 transition-colors group/cta"
-                      >
-                        <span className="flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-gray-100">
-                          <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" aria-hidden="true">
-                            <path fill="#4285F4" d="M23.52 12.27c0-.79-.07-1.54-.2-2.27H12v4.51h6.47a5.53 5.53 0 0 1-2.4 3.63v3h3.87c2.26-2.09 3.58-5.17 3.58-8.87z" />
-                            <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.94-2.91l-3.87-3c-1.08.72-2.45 1.15-4.07 1.15-3.13 0-5.78-2.11-6.73-4.96H1.28v3.09A12 12 0 0 0 12 24z" />
-                            <path fill="#FBBC05" d="M5.27 14.28a7.2 7.2 0 0 1 0-4.56V6.63H1.28a12 12 0 0 0 0 10.74l3.99-3.09z" />
-                            <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42A11.97 11.97 0 0 0 12 0 12 12 0 0 0 1.28 6.63l3.99 3.09C6.22 6.86 8.87 4.75 12 4.75z" />
-                          </svg>
-                        </span>
-                        Google'da bizi değerlendirin
-                      </a>
+                    <div className="relative z-10">
+                      {/* Üst Başlık & Rozet */}
+                      <div className="flex items-center justify-between mb-4 pb-3 border-b border-white/10">
+                        <div className="flex items-center gap-2">
+                          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping" />
+                          <h5 className="text-xs font-black uppercase tracking-widest text-blue-200">
+                            Deneyimleriniz Bizim İçin Çok Değerli
+                          </h5>
+                        </div>
+                        <div className="flex items-center gap-1 bg-amber-400/20 text-amber-300 px-2.5 py-1 rounded-full border border-amber-400/40 text-xs font-bold shadow-inner">
+                          <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                          <span>5.0 / 5.0</span>
+                        </div>
+                      </div>
+
+                      {/* Ana İçerik Grid (QR Kod + CTA) */}
+                      <div className="flex items-center gap-5">
+                        {/* Büyütülmüş Dikkat Çekici QR Kod Kutusu */}
+                        <a
+                          href={GOOGLE_REVIEWS_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label="Google Haritalar Yorum Yap"
+                          className="w-32 h-32 min-w-[128px] min-h-[128px] bg-white rounded-2xl p-2 shadow-2xl border-2 border-blue-400/60 flex items-center justify-center hover:scale-105 transition-transform duration-300 cursor-pointer shrink-0 relative group"
+                        >
+                          <GoogleReviewQR url={GOOGLE_REVIEWS_URL} size={112} />
+                          <div className="absolute inset-0 bg-blue-900/10 opacity-0 group-hover:opacity-100 transition-opacity rounded-2xl flex items-center justify-center text-[10px] font-bold text-blue-900 bg-white/80 backdrop-blur-[1px]">
+                            Taramak İçin Tıklayın
+                          </div>
+                        </a>
+
+                        {/* Bilgi Metni & Google CTA Butonu */}
+                        <div className="flex-1 min-w-0 space-y-2.5">
+                          <div className="flex items-center gap-2 text-sm font-extrabold text-white">
+                            {/* Google Color G Icon */}
+                            <svg className="w-4 h-4 shrink-0 bg-white rounded-full p-0.5" viewBox="0 0 24 24">
+                              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z" />
+                              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z" />
+                            </svg>
+                            <span className="leading-tight">Google&apos;da Bizi Değerlendirin</span>
+                          </div>
+
+                          <p className="text-xs text-blue-100/90 leading-snug font-medium">
+                            Telefon kameranızı koda tutarak görüşlerinizi paylaşabilir, hizmet kalitemizi taçlandırabilirsiniz.
+                          </p>
+
+                          <a
+                            href={GOOGLE_REVIEWS_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-3.5 py-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold text-xs rounded-xl shadow-lg hover:shadow-amber-500/30 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+                          >
+                            <span>Google&apos;da Yorum Yapın</span>
+                            <ExternalLink className="w-3.5 h-3.5" />
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

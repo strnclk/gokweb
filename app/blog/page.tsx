@@ -63,7 +63,7 @@ export default function BlogPage() {
               initial={{ opacity: 0, y: -15, x: -15 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="absolute -top-8 left-0 xl:-left-4 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+              className="absolute -top-6 left-8 xl:left-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <Compass className="w-6 h-6" />
@@ -83,7 +83,7 @@ export default function BlogPage() {
               initial={{ opacity: 0, y: -15, x: 15 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
               transition={{ duration: 0.7, delay: 0.2 }}
-              className="absolute -top-5 right-0 xl:-right-4 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+              className="absolute -top-3 right-8 xl:right-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <Cloud className="w-6 h-6" />
@@ -103,7 +103,7 @@ export default function BlogPage() {
               initial={{ opacity: 0, y: 15, x: -15 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="absolute -bottom-6 left-2 xl:-left-2 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+              className="absolute bottom-0 left-0 xl:left-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <TrendingUp className="w-6 h-6" />
@@ -123,7 +123,7 @@ export default function BlogPage() {
               initial={{ opacity: 0, y: 15, x: 15 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
               transition={{ duration: 0.7, delay: 0.4 }}
-              className="absolute -bottom-8 right-2 xl:-right-2 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+              className="absolute bottom-0 right-0 xl:right-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <Workflow className="w-6 h-6" />
