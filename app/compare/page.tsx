@@ -15,7 +15,6 @@ const sssCompare = [
   { soru: 'Bu karşılaştırma aracı nasıl çalışıyor?', cevap: '3 kısa soruyla işletmenizin büyüklüğünü, sektörünü ve ana ihtiyacını analiz eder; size en uygun Mikro çözümünü eşleşme oranıyla önerir.' },
   { soru: 'Sonuçlar ne kadar güvenilir?', cevap: 'Sonuçlar yönlendirici bir öneri niteliğindedir. Kesin seçim için ihtiyaçlarınızı uzmanlarımızla birlikte değerlendirmenizi öneririz.' },
   { soru: 'Mikro Run, Jump ve Fly arasındaki fark nedir?', cevap: 'Mikro Run en küçük ölçek ve esnaf için; Mikro Jump büyüyen KOBİ’ler için; Mikro Fly ise kurumsal, e-ticaret ve UFRS ihtiyacı olan işletmeler içindir. Ölçeğinize göre doğru paketi öneririz.' },
-  { soru: 'Bu hizmet ücretli mi?', cevap: 'Hayır, çözüm danışmanı testi ücretsizdir. Dilerseniz sonrasında ücretsiz danışmanlık için bizimle iletişime geçebilirsiniz.' },
 ];
 
 const webAppJsonLd = {
@@ -661,7 +660,7 @@ export default function ComparePage() {
                       </div>
                     )}
 
-                    <Card className={`h-full pt-8 ${isTop ? 'border-2 border-blue-200 shadow-xl shadow-blue-100/50 ring-1 ring-blue-100' : 'border border-gray-200 shadow-md hover:shadow-lg'} transition-shadow`}>
+                    <Card className={`h-full pt-8 flex flex-col ${isTop ? 'border-2 border-blue-200 shadow-xl shadow-blue-100/50 ring-1 ring-blue-100' : 'border border-gray-200 shadow-md hover:shadow-lg'} transition-shadow`}>
                       <CardHeader className="items-center text-center pb-2">
                         <motion.div
                           initial={{ opacity: 0, scale: 0.8 }}
@@ -732,7 +731,8 @@ export default function ComparePage() {
                         </div>
                       </CardContent>
 
-                      <CardFooter>
+                      {/* mt-auto pins the footer to the card bottom so button alignment stays fixed regardless of content length */}
+                      <CardFooter className="mt-auto">
                         <Link
                           href={detayHref}
                           className={`w-full px-4 py-3 rounded-xl font-medium transition-all text-center inline-flex items-center justify-center ${

@@ -25,7 +25,7 @@ const industries = [
     title: 'Perakende',
     description: 'Satış ve envanter yönetimi',
     color: 'from-gray-700 to-gray-800',
-    features: ['POS Entegrasyonu', 'Envanter', 'Müşteri Yönetimi']
+    features: ['Banka Entegrasyonu', 'Envanter', 'Müşteri Yönetimi']
   },
   {
     icon: Truck,

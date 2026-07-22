@@ -140,7 +140,7 @@ export default function MikroFlyPage() {
     {
       number: '03',
       title: 'Deneyime Dayalı Güven',
-      description: '25 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
+      description: '20 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
       icon: Award
     }
   ];
@@ -193,31 +193,15 @@ export default function MikroFlyPage() {
   const flyFaqlar = [
     {
       question: 'Mikro FLY\'ı Kimler Tercih Etmeli?',
-      answer: 'Çalışan sayısı 50 ve üzeri olan, UFRS ve enflasyon muhasebesine uyum sağlamak isteyen, kurumsal yapısını daha ileri noktaya taşımak isteyen, üretim yönetiminde detaylı fiili maliyet takibi yapmayı hedefleyen, kurumsal hafıza oluşturmak isteyen işletmeler için Mikro FLY idealdir.'
-    },
-    {
-      question: 'Mikro FLY Kullanıcı Limiti Nedir?',
-      answer: 'Mikro FLY\'ta kullanıcı limiti yoktur, sınırsız kullanıcı ekleyebilirsiniz.'
+      answer: 'Kurumsal ölçekte faaliyet gösteren, UFRS ve enflasyon muhasebesine uyum sağlamak isteyen, kurumsal yapısını daha ileri noktaya taşımak isteyen, üretim yönetiminde detaylı fiili maliyet takibi yapmayı hedefleyen, kurumsal hafıza oluşturmak isteyen işletmeler için Mikro FLY idealdir.'
     },
     {
       question: 'Mikro FLY farklı faaliyet alanı olan grup şirketlerde kullanılabilir mi?',
       answer: 'Evet, Mikro FLY farklı faaliyet alanı olan grup şirketlerde kullanılabilir.'
     },
     {
-      question: 'Mikro FLY kasalarla ve yeni nesil ÖKC\'lerle veri transferi yapılabilir mi?',
-      answer: 'Evet, Mikro FLY kasalarla ve yeni nesil ÖKC\'lerle veri transferi yapılabilir.'
-    },
-    {
       question: 'Birden fazla şirketi olan holdingler de, Mikro FLY tüm şirketlerimiz ile entegre çalışabilir mi?',
       answer: 'Evet, holdingler için Mikro FLY tüm şirketleriniz ile entegre çalışabilir.'
-    },
-    {
-      question: 'Mikro FLY kiralama sektörüne ait bir ek çözüm var mı?',
-      answer: 'Evet, Mikro FLY\'ta kiralama sektörüne özel ek çözümler mevcuttur.'
-    },
-    {
-      question: 'Yabancı ortaklı işletmeler için Genel muhasebemizin hem VUK göre hem de UFRS\'ye göre tutmak mümkün mü?',
-      answer: 'Evet, yabancı ortaklı işletmeler için Genel muhasebe hem Vergi Usul Kanunu\'na (VUK) göre hem de UFRS\'ye göre tutulabilir ve her ikisine göre raporlanabilir.'
     },
     {
       question: 'Gelişmiş / ileri seviye muhasebeye uygun çözümleriniz var mı?',
@@ -226,10 +210,6 @@ export default function MikroFlyPage() {
     {
       question: 'Bordro ile birlikte norm kadro planlama, işe alım ve çalışanların performans değerlendirmelerini de takip etmek mümkün mü?',
       answer: 'Evet, bordro ile birlikte norm kadro planlama, işe alım ve çalışanların performans değerlendirmelerini de takip etmek mümkündür.'
-    },
-    {
-      question: 'Üretim yapan bir işletmede üretim sahasındaki makinelerin bakım işlemlerini takip edebilir miyiz?',
-      answer: 'Evet, üretim yapan bir işletmede üretim sahasındaki makinelerin bakım işlemlerini takip edebilirsiniz.'
     }
   ];
   const faqJsonLd = {
@@ -398,7 +378,7 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
                 Neden <br /> Gökkuşağı Yazılım ve Danışmanlık <br /> ile Mikro Fly'a Geçmelisiniz?
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 25 yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
+              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 20 yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
               </p>
               <h3 className="text-lg font-bold mb-3 text-gray-900">Mikro Fly Geçiş Sürecini Nasıl Yönetiyoruz:</h3>
               <div className="space-y-3">
@@ -420,15 +400,15 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  Uyarlama ve Aktarım (Ücretsiz)
+                  Uyarlama ve Aktarım
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  Detay Analiz (Ücretsiz)
+                  Detay Analiz
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  Eğitim (Ücretsiz)
+                  Eğitim
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
@@ -480,7 +460,8 @@ Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin 
               'Mikro Fly Sektörel Çözümler',
               'Mikro Fly İşletme Yönetimi Çözümleri',
               'Mikro Fly Entegrasyon Çözümleri',
-              'Mikro Fly İleri Seviye Üretim Yönetimi Çözümleri'
+              'Mikro Fly İleri Seviye Üretim Yönetimi Çözümleri',
+              'İleri Seviye Depo Takibi'
             ].map((feature, index) => (
               <motion.div
                 key={index}

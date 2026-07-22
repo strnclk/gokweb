@@ -8,7 +8,7 @@ const faqItems = [
   {
     icon: Settings,
     title: 'Mikro ERP Nedir ve Neden Önemlidir?',
-    description: 'Mikro ERP (Enterprise Resource Planning), işletmelerin tüm kaynaklarını planlama, yönetme ve optimize etme süreçlerini tek bir entegre sistemde toplayan kurumsal kaynak planlaması yazılımıdır. Mikro muhasebe programı özelliği ile finans yönetiminden stok takibine, satış süreçlerinden insan kaynakları yönetimine kadar tüm operasyonları kolaylaştırır. Küçük ve orta ölçekli işletmeler için özel olarak tasarlanan mikro ERP çözümleri, büyük kurumsal sistemlerin güçlü özelliklerini daha erişilebilir ve uygun maliyetli bir şekilde sunar.'
+    description: 'Mikro ERP (Enterprise Resource Planning), işletmelerin tüm kaynaklarını planlama, yönetme ve optimize etme süreçlerini tek bir entegre sistemde toplayan kurumsal kaynak planlaması yazılımıdır. Mikro muhasebe programı özelliği ile finans yönetiminden stok takibine, satış süreçlerinden insan kaynakları yönetimine kadar tüm operasyonları kolaylaştırır. Her ölçekteki işletme için tasarlanan mikro ERP çözümleri, güçlü kurumsal özellikleri erişilebilir ve uygun maliyetli bir şekilde sunar.'
   },
   {
     icon: FileText,
@@ -30,7 +30,7 @@ const faqItems = [
 export default function SEOSection() {
   const ref = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
-  const [openIndex, setOpenIndex] = useState<number | null>(0); // First item open by default
+  const [openIndex, setOpenIndex] = useState<number | null>(null); // All items closed by default
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,9 +61,9 @@ export default function SEOSection() {
           Mikro ERP ve E-Dönüşüm Rehberi
         </motion.h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-          {/* Left 2/3: Accordion List */}
-          <div className="lg:col-span-2 space-y-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Accordion List (side card removed; its text now lives at the bottom of the About section) */}
+          <div className="space-y-4">
             {faqItems.map((item, index) => {
               const isOpen = openIndex === index;
               const IconComponent = item.icon;
@@ -109,29 +109,6 @@ export default function SEOSection() {
               );
             })}
           </div>
-
-          {/* Right 1/3: Glowing Dark Accent Box */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0.95 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="lg:col-span-1 p-[2px] bg-gradient-to-r from-[#FF007F] via-[#7B2CBF] via-[#4361EE] to-[#FF007F] rounded-2xl shadow-[0_15px_40px_rgba(168,85,247,0.15)] overflow-visible lg:sticky lg:top-28"
-          >
-            <div className="w-full h-full bg-[#0E121F] rounded-[14px] p-8 text-white relative overflow-hidden flex flex-col justify-center">
-              {/* Mesh & Glows */}
-              <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-              <div className="absolute -top-12 -right-12 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-
-              <h3 className="text-xl md:text-2xl font-bold mb-4 relative z-10 flex items-center gap-2.5">
-                <span className="w-2.5 h-6 bg-purple-500 rounded-full animate-pulse" />
-                Neden Gökkuşağı Yazılım?
-              </h3>
-              <p className="text-slate-300 text-base leading-relaxed relative z-10 font-medium">
-                19 yılı aşkın deneyimimiz ve 500'den fazla mutlu müşterimizle, Türkiye'nin lider mikro ERP ve e-dönüşüm çözümleri sağlayıcısıyız. Mikro Fly, Mikro Run ve Mikro Jump ürünlerimiz ile her ölçekteki işletmeye özel çözümler sunuyoruz. E-fatura, e-defter ve e-arşiv sistemlerimiz tamamen yerlidir. Uzman desteğimizle yanınızdayız.
-              </p>
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>

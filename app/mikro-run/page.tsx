@@ -104,7 +104,7 @@ export default function MikroRunPage() {
     {
       number: '03',
       title: 'Deneyime Dayalı Güven',
-      description: '25 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
+      description: '20 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
       icon: Award
     }
   ];
@@ -164,24 +164,8 @@ export default function MikroRunPage() {
       answer: 'Esnaf, serbest meslek sahipleri, yeni kurulan girişimler ve 5 çalışan altındaki mikro ölçekli işletmeler için ideal bir ön muhasebe ve e-Dönüşüm paketidir.'
     },
     {
-      question: 'Mikro Run Çalışması için Başka Bir Yazılım Almalı mıyım?',
-      answer: 'Hayır, Mikro Run tam kapsamlı bir ön muhasebe altyapısı sunar ve çalışması için ek bir yazılım lisansına ihtiyaç duymaz.'
-    },
-    {
       question: 'Mikro Run ile e-Fatura ve e-Arşiv Faturası Kesebilir miyim?',
       answer: 'Evet, hazır e-Fatura ve e-Arşiv entegrasyonu sayesinde GİB ile uyumlu şekilde saniyeler içinde e-fatura düzenleyebilirsiniz.'
-    },
-    {
-      question: 'Mikro Run Birden Fazla Şirket ile Çalışabilir mi?',
-      answer: 'Evet, tek bir lisans üzerinden birden fazla firmanın ön muhasebe kayıtlarını ayrı ayrı tutabilirsiniz.'
-    },
-    {
-      question: 'Mikro Run\'da Stok Ürünlerinin Fiyat, Adet ve Birimlerini Listeleyebilir miyim?',
-      answer: 'Evet, gelişmiş stok yönetimi modülü ile ürünlerinizin miktar, birim, grup ve fiyat detaylarını anlık olarak listeleyebilirsiniz.'
-    },
-    {
-      question: 'Mikro Run Bulut Üzerinden veya Mobil Cihazlardan Kullanılabilir mi?',
-      answer: 'Evet, Mikro Run masaüstü ve bulut seçenekleriyle hem web hem de mobil uygulama desteği üzerinden güvenle erişilebilir.'
     },
     {
       question: 'İleride İşletmem Büyüdüğünde Mikro Jump veya Fly\'a Geçiş Yapabilir miyim?',
@@ -189,11 +173,7 @@ export default function MikroRunPage() {
     },
     {
       question: 'Mikro Run Kullanımı İçin Özel Eğitim Gerekli mi?',
-      answer: 'Sade ve kullanıcı dostu arayüzü sayesinde muhasebe bilgisi olmayan personel dahi birkaç saatlik ücretsiz oryantasyon eğitimiyle kullanmaya başlayabilir.'
-    },
-    {
-      question: 'Verilerimiz Otomatik Olarak Yedekleniyor mu?',
-      answer: 'Evet, güvenli otomatik yedekleme altyapısı ile ticari verileriniz olası donanım arızalarına ve siber risklere karşı şifreli olarak korunur.'
+      answer: 'Hayır, sade ve kullanıcı dostu arayüzü sayesinde özel bir eğitime gerek kalmadan kısa sürede kullanmaya başlayabilirsiniz. İhtiyaç duymanız halinde uzman ekibimiz kurulum sonrasında kapsamlı eğitim ve destek de sağlar.'
     }
   ];
   const faqJsonLd = {
@@ -362,7 +342,7 @@ Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüş�
                 Neden <br /> Gökkuşağı Yazılım ve Danışmanlık <br /> ile Mikro Yazılım'a Geçmelisiniz?
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 25 yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
+              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 20 yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
               </p>
               <h3 className="text-lg font-bold mb-3 text-gray-900">Mikro Yazılım Geçiş Sürecini Nasıl Yönetiyoruz:</h3>
               <div className="space-y-3">
@@ -381,15 +361,15 @@ Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüş�
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Uyarlama ve Aktarım (Ücretsiz)
+                  Uyarlama ve Aktarım
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Detay Analiz (Ücretsiz)
+                  Detay Analiz
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Eğitim (Ücretsiz)
+                  Eğitim
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
@@ -435,7 +415,8 @@ Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüş�
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* flex-wrap + justify-center centers the orphan items on the last row */}
+          <div className="flex flex-wrap justify-center gap-6">
             {[
               'Kolay Ve İşlevsel Çözümler',
               'Daima Güncel Sistem',
@@ -446,7 +427,6 @@ Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüş�
               'Mobil Uygulama Desteği',
               'Masaüstü veya Bulut Uygulama',
               'Masraf Yönetimi',
-              '1 Ek Kullanıcı',
               'Sektörel Çözümler',
               'Ek Çözümler'
             ].map((feature, index) => (
@@ -455,7 +435,7 @@ Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüş�
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-rose-300"
+                className="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-rose-300 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
               >
                 <CheckCircle size={20} className="text-rose-900 flex-shrink-0" />
                 <span className="text-gray-700 text-sm font-medium">{feature}</span>

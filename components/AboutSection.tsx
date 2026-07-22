@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView } from 'motion/react';
-import { TrendingUp, Target, Users, Code, Shield, Zap, Star } from 'lucide-react';
+import { TrendingUp, Target, Users, Code, Shield, Zap, Star, Package, Factory, Workflow, BarChart3, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface CounterProps {
   target: string;
@@ -65,6 +65,26 @@ export default function AboutSection() {
   // Track viewport intersection of the entire section to trigger counters simultaneously
   const isSectionInView = useInView(sectionRef, { once: false, amount: 0.1 });
 
+  // Success stories data: rendered as a horizontally slidable carousel (3 cards per page)
+  const successStories = [
+    { icon: TrendingUp, title: 'Üretim ERP Entegrasyonu', description: 'Büyük ölçekli üretim firması için uçtan uca ERP dönüşümü. 6 ayda tamamlanan proje ile %40 verimlilik artışı.', sector: 'Otomotiv Yan Sanayi' },
+    { icon: Zap, title: 'Pazaryeri Entegrasyonu', description: 'Perakende zinciri için 12 pazaryeri entegrasyonu. Otomatik sipariş yönetimi ile %25 satış artışı.', sector: 'Perakende' },
+    { icon: Shield, title: 'E-Dönüşüm Hizmeti', description: 'Lojistik şirketi için e-fatura ve e-defter sistemi. Aylık %15 operasyonel maliyet tasarrufu.', sector: 'Lojistik' },
+    { icon: Package, title: 'Barkodlu Depo Yönetimi', description: 'Gıda dağıtım firması için Mikro entegre depo yönetim sistemi. Barkodlu sayım ve sevkiyat ile hata oranında %90 azalma.', sector: 'Gıda & Dağıtım' },
+    { icon: Factory, title: 'MES Üretim Takibi', description: 'Tekstil üreticisi için sahadan gerçek zamanlı üretim verisi toplama. Fire oranında %30 iyileşme sağlandı.', sector: 'Tekstil' },
+    { icon: Users, title: 'CRM Satış Yönetimi', description: 'Yapı malzemeleri firması için mobil CRM kurulumu. Teklif dönüş süresi 3 kat hızlandı, müşteri takibi tek ekranda toplandı.', sector: 'İnşaat & Yapı Malzemeleri' },
+    { icon: Workflow, title: 'eFlow Süreç Otomasyonu', description: 'Sağlık grubu için satın alma ve onay süreçlerinin dijitalleştirilmesi. Onay süreleri %70 kısaldı.', sector: 'Sağlık' },
+    { icon: Code, title: 'Özel Yazılım Geliştirme', description: 'Kimya firması için Mikro ERP entegre kalite kontrol modülü. Raporlama süresi günlerden dakikalara indi.', sector: 'Kimya' },
+    { icon: BarChart3, title: 'Bütçe & Finansal Raporlama', description: 'Holding yapısı için konsolide bütçe ve raporlama sistemi. Ay sonu kapanış süreci 5 kat hızlandı.', sector: 'Enerji & Holding' },
+  ];
+
+  const STORIES_PER_PAGE = 3;
+  const storyPages = Array.from(
+    { length: Math.ceil(successStories.length / STORIES_PER_PAGE) },
+    (_, i) => successStories.slice(i * STORIES_PER_PAGE, (i + 1) * STORIES_PER_PAGE)
+  );
+  const [storyPage, setStoryPage] = useState(0);
+
   return (
     <>
       {/* 1. About Section: WARM LINEN/IVORY background (#FAF8F5) to ease eyes, matching light layout, while letting dark bento glow pop */}
@@ -117,7 +137,7 @@ export default function AboutSection() {
                 Dijital Dönüşüm Yolculuğunuzda Güvenilir Ortağınız
               </h3>
               <p className="text-base md:text-lg text-slate-600 mb-5 leading-relaxed font-semibold">
-                Gökkuşağı Yazılım olarak 19 yılı aşkın süredir işletmelerin dijital dönüşüm yolculuklarında yanınızdayız. Mikro ERP, e-dönüşüm çözümleri ve özel yazılım geliştirme alanlarında uzman ekibimizle müşterilerimize değer katıyoruz.
+                Gökkuşağı Yazılım olarak 20 yılı aşkın süredir işletmelerin dijital dönüşüm yolculuklarında yanınızdayız. Mikro ERP, e-dönüşüm çözümleri ve özel yazılım geliştirme alanlarında uzman ekibimizle müşterilerimize değer katıyoruz.
               </p>
               <p className="text-base md:text-lg text-slate-600 leading-relaxed font-semibold">
                 İstanbul merkezli ofisimizden Türkiye genelinde hizmet veriyor, yerel ve küresel standartlarda çözümler sunuyoruz. Müşteri memnuniyeti odaklı yaklaşımımızla iş süreçlerinizi optimize etmenize yardımcı oluyoruz.
@@ -134,7 +154,7 @@ export default function AboutSection() {
             >
               <Counter target="20" suffix="+" colorClass="from-blue-600 via-indigo-600 to-blue-700" trigger={isSectionInView} />
               <div className="text-slate-800 font-extrabold text-lg uppercase tracking-wider">Yıl Deneyim</div>
-              <div className="text-slate-500 text-sm mt-2 font-semibold">2007'den beri kurumsal güvenle</div>
+              <div className="text-slate-500 text-sm mt-2 font-semibold">2005'ten beri kurumsal güvenle</div>
             </motion.div>
 
             {/* Box 3: Projects Counter (Spans 1 column on desktop) - Crisp Light Card */}
@@ -219,6 +239,19 @@ export default function AboutSection() {
                   </li>
                 </ul>
               </div>
+            </motion.div>
+
+            {/* Box 5: Full-width closing statement (text moved here from the removed SEO-guide side card) */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="md:col-span-3 bg-white/90 border border-slate-200/40 p-8 md:p-10 rounded-2xl shadow-[0_8px_30px_rgba(230,225,215,0.25)]"
+            >
+              <p className="text-base md:text-lg text-slate-600 leading-relaxed font-semibold">
+                20 yılı aşkın deneyimimiz ve 500'den fazla mutlu müşterimizle, Türkiye'nin lider mikro ERP ve e-dönüşüm çözümleri sağlayıcısıyız. Mikro Fly, Mikro Run ve Mikro Jump ürünlerimiz ile her ölçekteki işletmeye özel çözümler sunuyoruz. E-fatura, e-defter ve e-arşiv sistemlerimiz tamamen yerlidir. Uzman desteğimizle yanınızdayız.
+              </p>
             </motion.div>
 
           </div>
@@ -314,7 +347,7 @@ export default function AboutSection() {
         <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
           <div className="text-center mb-16">
             {/* Highly readable, bold/black heading structure */}
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
@@ -323,7 +356,7 @@ export default function AboutSection() {
             >
               Başarı Hikayeleri
             </motion.h2>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
@@ -334,98 +367,91 @@ export default function AboutSection() {
             </motion.p>
           </div>
 
-          {/* Crisp, light white cards with enlarged icons and highly readable corporate typography */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch w-full">
-            {/* Story 1 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="relative bg-white rounded-2xl p-8 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.25)] transition-all duration-300 shadow-[0_12px_40px_rgba(0,0,0,0.15)] flex flex-col justify-between overflow-hidden group text-slate-800"
-            >
-              <div>
-                <div className="flex justify-between items-center mb-6">
-                  {/* Glowing blue themed icon badge - Enlarged to w-14 h-14 with size={26} icon */}
-                  <div className="w-14 h-14 bg-blue-50 border border-blue-100/80 text-blue-600 rounded-xl flex items-center justify-center shadow-sm">
-                    <TrendingUp size={26} />
-                  </div>
-                  {/* Highly visible modern gradient number from the button palette */}
-                  <span className="text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-mono select-none">01</span>
-                </div>
-                
-                {/* Premium Corporate Typography: font-extrabold title and font-medium dark-gray body */}
-                <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">Üretim ERP Entegrasyonu</h3>
-                <p className="text-slate-700 text-[14.5px] leading-relaxed font-medium mb-6">Büyük ölçekli üretim firması için uçtan uca ERP dönüşümü. 6 ayda tamamlanan proje ile %40 verimlilik artışı.</p>
-              </div>
-              
-              {/* Aligned border-t and sector info - Indigo tinted tag structure */}
-              <div className="border-t border-slate-100 pt-4 mt-auto">
-                <div className="text-[10px] font-extrabold text-indigo-600 tracking-widest uppercase">SEKTÖR</div>
-                <div className="text-sm font-bold text-slate-800 mt-1">Otomotiv Yan Sanayi</div>
-              </div>
-            </motion.div>
+          {/* Slidable success-story carousel: pages of 3 cards, keeping the existing crisp white card design.
+              Entrance animation lives on this wrapper only, so horizontal sliding never re-triggers it. */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative"
+          >
+            {/* Negative-margin + padding trick keeps card shadows/hover-scale visible despite overflow-hidden */}
+            <div className="overflow-hidden pt-2 -mt-2 pb-16 -mb-16 px-2 -mx-2">
+              <div
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${storyPage * 100}%)` }}
+              >
+                {storyPages.map((page, pageIndex) => (
+                  <div key={pageIndex} className="min-w-full grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch px-1">
+                    {page.map((story, cardIndex) => {
+                      const StoryIcon = story.icon;
+                      const storyNumber = String(pageIndex * STORIES_PER_PAGE + cardIndex + 1).padStart(2, '0');
+                      return (
+                        <div
+                          key={story.title}
+                          className="relative bg-white rounded-2xl p-8 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.25)] transition-all duration-300 shadow-[0_12px_40px_rgba(0,0,0,0.15)] flex flex-col justify-between overflow-hidden group text-slate-800"
+                        >
+                          <div>
+                            <div className="flex justify-between items-center mb-6">
+                              {/* Uniform blue icon badge across all cards - Enlarged to w-14 h-14 with size={26} icon */}
+                              <div className="w-14 h-14 bg-blue-50 border border-blue-100/80 text-blue-600 rounded-xl flex items-center justify-center shadow-sm">
+                                <StoryIcon size={26} />
+                              </div>
+                              {/* Highly visible modern gradient number from the button palette */}
+                              <span className="text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-mono select-none">{storyNumber}</span>
+                            </div>
 
-            {/* Story 2 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative bg-white rounded-2xl p-8 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.25)] transition-all duration-300 shadow-[0_12px_40px_rgba(0,0,0,0.15)] flex flex-col justify-between overflow-hidden group text-slate-800"
-            >
-              <div>
-                <div className="flex justify-between items-center mb-6">
-                  {/* Glowing indigo themed icon badge - Enlarged to w-14 h-14 with size={26} icon */}
-                  <div className="w-14 h-14 bg-indigo-50 border border-indigo-100/80 text-indigo-600 rounded-xl flex items-center justify-center shadow-sm">
-                    <Zap size={26} />
-                  </div>
-                  {/* Highly visible modern gradient number from the button palette */}
-                  <span className="text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-mono select-none">02</span>
-                </div>
-                
-                {/* Premium Corporate Typography: font-extrabold title and font-medium dark-gray body */}
-                <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">Pazaryeri Entegrasyonu</h3>
-                <p className="text-slate-700 text-[14.5px] leading-relaxed font-medium mb-6">Perakende zinciri için 12 pazaryeri entegrasyonu. Otomatik sipariş yönetimi ile %25 satış artışı.</p>
-              </div>
-              
-              {/* Aligned border-t and sector info - Indigo tinted tag structure */}
-              <div className="border-t border-slate-100 pt-4 mt-auto">
-                <div className="text-[10px] font-extrabold text-indigo-600 tracking-widest uppercase">SEKTÖR</div>
-                <div className="text-sm font-bold text-slate-800 mt-1">Perakende</div>
-              </div>
-            </motion.div>
+                            {/* Premium Corporate Typography: font-extrabold title and font-medium dark-gray body */}
+                            <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">{story.title}</h3>
+                            <p className="text-slate-700 text-[14.5px] leading-relaxed font-medium mb-6">{story.description}</p>
+                          </div>
 
-            {/* Story 3 */}
-            <motion.div 
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="relative bg-white rounded-2xl p-8 hover:scale-[1.02] hover:shadow-[0_20px_50px_rgba(0,0,0,0.25)] transition-all duration-300 shadow-[0_12px_40px_rgba(0,0,0,0.15)] flex flex-col justify-between overflow-hidden group text-slate-800"
-            >
-              <div>
-                <div className="flex justify-between items-center mb-6">
-                  {/* Glowing purple themed icon badge - Enlarged to w-14 h-14 with size={26} icon */}
-                  <div className="w-14 h-14 bg-purple-50 border border-purple-100/80 text-purple-600 rounded-xl flex items-center justify-center shadow-sm">
-                    <Shield size={26} />
+                          {/* Aligned border-t and sector info - Indigo tinted tag structure */}
+                          <div className="border-t border-slate-100 pt-4 mt-auto">
+                            <div className="text-[10px] font-extrabold text-indigo-600 tracking-widest uppercase">SEKTÖR</div>
+                            <div className="text-sm font-bold text-slate-800 mt-1">{story.sector}</div>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
-                  {/* Highly visible modern gradient number from the button palette */}
-                  <span className="text-4xl font-black bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent font-mono select-none">03</span>
-                </div>
-                
-                {/* Premium Corporate Typography: font-extrabold title and font-medium dark-gray body */}
-                <h3 className="text-xl font-bold text-slate-900 mb-3 tracking-tight">E-Dönüşüm Hizmeti</h3>
-                <p className="text-slate-700 text-[14.5px] leading-relaxed font-medium mb-6">Lojistik şirketi için e-fatura ve e-defter sistemi. Aylık %15 operasyonel maliyet tasarrufu.</p>
+                ))}
               </div>
-              
-              {/* Aligned border-t and sector info - Indigo tinted tag structure */}
-              <div className="border-t border-slate-100 pt-4 mt-auto">
-                <div className="text-[10px] font-extrabold text-indigo-600 tracking-widest uppercase">SEKTÖR</div>
-                <div className="text-sm font-bold text-slate-800 mt-1">Lojistik</div>
+            </div>
+
+            {/* Carousel controls: prev/next arrows + page dots, styled for the dark-purple section background */}
+            <div className="flex items-center justify-center gap-6 mt-10">
+              <button
+                onClick={() => setStoryPage((prev) => (prev - 1 + storyPages.length) % storyPages.length)}
+                aria-label="Önceki başarı hikayeleri"
+                className="w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+              >
+                <ChevronLeft size={22} />
+              </button>
+
+              <div className="flex items-center gap-2.5">
+                {storyPages.map((_, pageIndex) => (
+                  <button
+                    key={pageIndex}
+                    onClick={() => setStoryPage(pageIndex)}
+                    aria-label={`Başarı hikayeleri sayfa ${pageIndex + 1}`}
+                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      storyPage === pageIndex ? 'w-8 bg-white' : 'w-2.5 bg-white/40 hover:bg-white/60'
+                    }`}
+                  />
+                ))}
               </div>
-            </motion.div>
-          </div>
+
+              <button
+                onClick={() => setStoryPage((prev) => (prev + 1) % storyPages.length)}
+                aria-label="Sonraki başarı hikayeleri"
+                className="w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+              >
+                <ChevronRight size={22} />
+              </button>
+            </div>
+          </motion.div>
         </div>
       </section>
 

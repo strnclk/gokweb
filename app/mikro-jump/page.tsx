@@ -105,7 +105,7 @@ export default function MikroJumpPage() {
     {
       number: '03',
       title: 'Deneyime Dayalı Güven',
-      description: '25 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
+      description: '20 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
       icon: Award
     }
   ];
@@ -158,15 +158,7 @@ export default function MikroJumpPage() {
   const jumpFaqlar = [
     {
       question: 'Mikro Jump\'ı Kimler Tercih Etmeli?',
-      answer: 'Çalışan sayısı 5 ile 50 arasında olan, küçük ve orta ölçekli işletmeler, birden fazla sektörle ilgilenen ve birden fazla şubesi bulunan firmalar, sadece bir ürün değil, kurumsal bir çözüm ortağı arayan işletmeler, iş süreçlerini uçtan uca verimli ve kolay bir şekilde takip etmek isteyen, operasyonel verimliliğe önem veren şirketler, kontrollü büyümeyi hedefleyen ve ihtiyacından fazla fonksiyon satın almak istemeyen işletmeler, Mikro Jump\'ı tercih edebilir. Bu çözüm, işletmenizin ihtiyaçlarına uygun olarak ölçeklenebilir ve gereksiz maliyetlerden kaçınmanızı sağlar.'
-    },
-    {
-      question: 'Mikro Jump\'ı Aynı Anda Kaç Kullanıcı Kullanabilir?',
-      answer: 'Mikro Jump çok kullanıcılı çalışmayı destekler; aynı anda çalışabilecek kullanıcı sayısı sahip olduğunuz lisans paketine göre belirlenir. İhtiyacınıza uygun kullanıcı sayısı için bizimle iletişime geçebilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Zimmet Takibi Yapabilir Miyim?',
-      answer: 'Evet, personele veya departmanlara zimmetlenen demirbaş ve malzemeleri kaydedip zimmet giriş/çıkış hareketlerini takip edebilirsiniz.'
+      answer: 'Büyüme yolundaki küçük ve orta ölçekli işletmeler, birden fazla sektörle ilgilenen ve birden fazla şubesi bulunan firmalar, sadece bir ürün değil, kurumsal bir çözüm ortağı arayan işletmeler, iş süreçlerini uçtan uca verimli ve kolay bir şekilde takip etmek isteyen, operasyonel verimliliğe önem veren şirketler, kontrollü büyümeyi hedefleyen ve ihtiyacından fazla fonksiyon satın almak istemeyen işletmeler, Mikro Jump\'ı tercih edebilir. Bu çözüm, işletmenizin ihtiyaçlarına uygun olarak ölçeklenebilir ve gereksiz maliyetlerden kaçınmanızı sağlar.'
     },
     {
       question: 'Mikro Jump ile Üretim Takibi Yapabilir Miyim?',
@@ -177,36 +169,12 @@ export default function MikroJumpPage() {
       answer: 'Evet, entegre e-Dönüşüm modülü ile e-Fatura, e-Arşiv, e-İrsaliye ve e-Defter süreçlerinizi mevzuata tam uyumlu yönetebilirsiniz.'
     },
     {
-      question: 'Mikro Jump Üzerinden Kasalarla ve Yeni Nesil ÖKC\'ler ile Haberleşebilir Miyim?',
-      answer: 'Evet, yeni nesil ödeme kaydedici cihazlar (ÖKC) ve kasalarla veri alışverişi yaparak satış ve tahsilat verilerini sisteme otomatik aktarabilirsiniz.'
-    },
-    {
       question: 'Mikro Jump ile Stoklarımı Detaylı Takip Edebilir Miyim?',
       answer: 'Evet, depo, parti/lot, seri numarası ve varyant gibi detaylarla stoklarınızı ayrıntılı şekilde takip edebilirsiniz.'
     },
     {
-      question: 'Mikro Jump ile Birden Fazla Şirket ile Çalışabilir Miyim?',
-      answer: 'Evet, tek kurulum üzerinden birden fazla şirketi ayrı ayrı tanımlayıp konsolide veya bağımsız yönetebilirsiniz.'
-    },
-    {
       question: 'Mikro Jump ile Şube Bazlı Takip Yapabilir Miyim?',
       answer: 'Evet, şube/depo bazında hareketlerinizi ayrı ayrı takip edip şube kırılımında finans ve stok raporları alabilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Bankalardan Ekstre Aktarımı Yapabilir Miyim?',
-      answer: 'Evet, banka hesap ekstrelerinizi elektronik olarak aktarıp banka/kasa hareketlerinizle otomatik eşleştirebilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Satış ve Bütçe Takibi Yapabilir Miyim?',
-      answer: 'Evet, dönemsel gelir/gider bütçeleri ve satış hedefleri tanımlayıp gerçekleşen rakamlarla karşılaştırmalı takip edebilirsiniz.'
-    },
-    {
-      question: 'Mikro Jump ile Evraklara Excel\'den Aktarım Yapabilir Miyim?',
-      answer: 'Evet, Excel toplu veri aktarım aracı ile fatura, stok ve cari satır girişlerini tek tıkla oluşturabilirsiniz.'
-    },
-    {
-      question: 'İş Makinesi Kiralaması / Hizmet Operasyonlarımı Mikro Jump ile Yürütebilir Miyim?',
-      answer: 'Evet, kiralama ve hizmet sözleşmeleri, teslim/iade takibi ve periyodik faturalama süreçlerini Mikro Jump üzerinden yönetebilirsiniz.'
     }
   ];
   const faqJsonLd = {
@@ -375,7 +343,7 @@ export default function MikroJumpPage() {
                 Neden <br /> Gökkuşağı Yazılım ve Danışmanlık <br /> ile Mikro Jump'a Geçmelisiniz?
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 25 yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
+              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 20 yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
               </p>
               <h3 className="text-lg font-bold mb-3 text-gray-900">Mikro Jump Geçiş Sürecini Nasıl Yönetiyoruz:</h3>
               <div className="space-y-3">
@@ -397,15 +365,15 @@ export default function MikroJumpPage() {
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Uyarlama ve Aktarım (Ücretsiz)
+                  Uyarlama ve Aktarım
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Detay Analiz (Ücretsiz)
+                  Detay Analiz
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Eğitim (Ücretsiz)
+                  Eğitim
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
