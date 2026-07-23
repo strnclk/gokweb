@@ -170,6 +170,7 @@ export default function EflowBpmWheel() {
 
         {/* 2. SVG Radial 8-Segment Interactive Vector Wheel */}
         <svg
+          suppressHydrationWarning
           viewBox="0 0 500 500"
           className="w-full h-full drop-shadow-2xl relative z-10 overflow-visible"
         >

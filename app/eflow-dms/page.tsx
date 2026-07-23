@@ -62,7 +62,7 @@ export default function EflowDmsPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-start px-6 overflow-hidden bg-gradient-to-br from-white via-[#fcfdff] to-[#f5f8fd] pt-32 md:pt-36 pb-16">
+      <section className="relative flex flex-col justify-start px-6 overflow-hidden bg-gradient-to-br from-white via-[#fcfdff] to-[#f5f8fd] pt-24 sm:pt-28 pb-16">
         <div className="absolute top-10 right-10 w-96 h-96 bg-indigo-500/5 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl" />
 
@@ -128,7 +128,7 @@ export default function EflowDmsPage() {
           <motion.div
             initial={{ opacity: 0, x: 40, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-6 relative flex flex-col items-center justify-center w-full py-2"
           >
             <EflowDmsWheel />
@@ -430,7 +430,7 @@ export default function EflowDmsPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
+                  transition={{ delay: index * 0.03 }}
                   className="bg-white border border-slate-200/50 p-6 rounded-3xl shadow-sm hover:border-indigo-500 hover:shadow-md transition-all duration-200"
                 >
                   <div className="w-10 h-10 bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-600 mb-4">
@@ -456,7 +456,7 @@ export default function EflowDmsPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
+                  transition={{ delay: index * 0.03 }}
                   className="bg-white border border-slate-200/50 p-6 rounded-3xl shadow-sm hover:border-violet-500 hover:shadow-md transition-all duration-200"
                 >
                   <div className="w-10 h-10 bg-violet-500/10 rounded-xl flex items-center justify-center text-violet-600 mb-4">
@@ -482,7 +482,7 @@ export default function EflowDmsPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
+                  transition={{ delay: index * 0.03 }}
                   className="bg-white border border-slate-200/50 p-6 rounded-3xl shadow-sm hover:border-indigo-500 hover:shadow-md transition-all duration-200"
                 >
                   <div className="w-10 h-10 bg-indigo-500/10 rounded-xl flex items-center justify-center text-indigo-600 mb-4">
@@ -503,8 +503,8 @@ export default function EflowDmsPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
             className="relative bg-gradient-to-br from-slate-900 via-slate-850 to-slate-950 p-10 sm:p-16 rounded-[3rem] text-center overflow-hidden shadow-2xl border border-slate-800"
           >
             {/* Glowing neon shapes inside CTA */}

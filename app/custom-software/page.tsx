@@ -35,7 +35,7 @@ const kabiliyetler = [
       'Mikro ERP’nizi dış sistemlerle (pazar yeri, banka, kargo, GİB) çift yönlü bağlayan entegrasyonlar geliştiririz.',
     aciklama:
       'Verilerin elle taşınmasını ortadan kaldırır; sipariş, stok, cari ve belge akışını Mikro ile dış sistemler arasında otomatik ve hatasız hâle getiririz. Akış üzerinde hata izleme ve loglama ile süreç güvenli işler.',
-    kapsam: ['Pazar yeri entegrasyonu', 'Banka / POS entegrasyonu', 'Kargo entegrasyonu', 'GİB / e-Dönüşüm', 'Çift yönlü veri akışı', 'Hata izleme ve loglama'],
+    kapsam: ['Pazar yeri entegrasyonu', 'Banka entegrasyonu', 'Kargo entegrasyonu', 'GİB / e-Dönüşüm', 'Çift yönlü veri akışı', 'Hata izleme ve loglama'],
     kimIcin: 'Mikro kullanıp veriyi farklı sistemler arasında elle aktarmaktan kurtulmak isteyen işletmeler.',
     baglantilar: [
       { etiket: 'B2B / Bayi çözümleri', href: '/solutions/#b2b-bayi' },
@@ -151,7 +151,7 @@ const sss = [
   },
   {
     soru: 'Hangi pazar yerleri ve servislerle entegrasyon yapıyorsunuz?',
-    cevap: 'Popüler pazar yerleri, banka/POS sistemleri, kargo firmaları ve e-Dönüşüm servisleriyle entegrasyon geliştiriyoruz. İhtiyacınıza özel servisler için de web servisleri üzerinden çözüm üretiriz; kullandığınız sistemleri bize iletmeniz yeterli.',
+    cevap: 'Popüler pazar yerleri, banka sistemleri, kargo firmaları ve e-Dönüşüm servisleriyle entegrasyon geliştiriyoruz. İhtiyacınıza özel servisler için de web servisleri üzerinden çözüm üretiriz; kullandığınız sistemleri bize iletmeniz yeterli.',
   },
   {
     soru: 'Mikro veritabanından özel rapor alınabilir mi?',

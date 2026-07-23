@@ -9,13 +9,14 @@ import Footer from '@/components/Footer';
 import Image from 'next/image';
 import Link from 'next/link';
 
+
 export default function EFlowPage() {
   const router = useRouter();
 
-  const whyEflow = [
-    { title: "Kod yazma bilgisine gerek olmadan iş süreci tasarla", desc: "Teknik bilgi gerektirmeden iş süreçlerinizi kolayca tasarlayın" },
+  const whyEflow: { title: string; desc: React.ReactNode }[] = [
+    { title: "Sürükle-bırak yöntemiyle süreçlerinizi dakikalar içinde kurgulayın", desc: "Görsel modelleme araçları sayesinde onay akışlarını anında hayata geçirin" },
     { title: "İhtiyaçlar değiştikçe süreç üzerinde kolaylıkla uyarla", desc: "Esnek yapı ile değişen gereksinimlere hızlıca uyum sağlayın" },
-    { title: "Geliştiricilere veya BT ekiplerine bağımlı kalma", desc: "Citizen Developer olarak süreçlere aktif katılım sağlayın" }
+    { title: "Geliştiricilere veya BT ekiplerine bağımlı kalma", desc: <>İş birimlerinin kendi süreçlerini doğrudan yönetmesine ve onay süreçlerini<br />hızlandırmasına imkan tanıyın</> }
   ];
 
   const advantages = [
@@ -117,15 +118,15 @@ export default function EFlowPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Navbar />
-      
+
       {/* Hero Section */}
-      <section className="relative min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/20 to-[#f0f9fa] pt-28 md:pt-36 pb-20">
+      <section className="relative flex flex-col justify-start px-6 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/20 to-[#f0f9fa] pt-36 sm:pt-40 pb-16">
         {/* Decorative Elements */}
         <div className="absolute top-20 right-20 w-96 h-96 bg-blue-100/30 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '10s' }} />
         <div className="absolute bottom-20 left-20 w-80 h-80 bg-purple-100/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '15s' }} />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-[#40949c]/5 to-blue-500/5 rounded-full blur-3xl" />
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-center relative z-10 w-full">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-start relative z-10 w-full">
           {/* Left Side: Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
             <motion.div
@@ -141,7 +142,7 @@ export default function EFlowPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6 leading-[1.15]"
             >
               İş Süreçlerinizi
@@ -156,7 +157,7 @@ export default function EFlowPage() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
               className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
             >
               Kod yazmadan, sürükle-bırak yöntemiyle iş süreçlerinizi dakikalar içinde tasarlayın.
@@ -174,8 +175,8 @@ export default function EFlowPage() {
                 ]
               }}
               transition={{ 
-                opacity: { duration: 0.6, delay: 0.4 },
-                y: { duration: 0.6, delay: 0.4 },
+                opacity: { duration: 0.6, delay: 0.15 },
+                y: { duration: 0.6, delay: 0.15 },
                 boxShadow: {
                   repeat: Infinity,
                   duration: 2,
@@ -268,7 +269,7 @@ export default function EFlowPage() {
               >
                 <Image
                   src="/eflow3-logo.png"
-                  alt="E-Flow BPM logosu — İş Süreçleri Yönetimi yazılımı"
+                  alt="E-Flow BPM"
                   width={190}
                   height={190}
                   priority
@@ -293,7 +294,7 @@ export default function EFlowPage() {
               >
                 <Image
                   src="/netoloji-logo.svg"
-                  alt="Netoloji Yazılım logosu — E-Flow BPM üreticisi"
+                  alt="Netoloji Yazılım"
                   width={220}
                   height={66}
                   priority
@@ -315,7 +316,7 @@ export default function EFlowPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#40949c]/10 border border-[#40949c]/20 rounded-full text-[#40949c] text-sm font-semibold"
               >
                 <Zap size={14} className="text-amber-500" />
@@ -340,8 +341,8 @@ export default function EFlowPage() {
                     key={index}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
+                    viewport={{ once: false }}
+                    transition={{ delay: index * 0.03 }}
                     className="flex items-start gap-4 p-4 rounded-2xl hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all duration-200"
                   >
                     <div className="w-6 h-6 rounded-full bg-green-100 border border-green-200 flex items-center justify-center text-green-600 flex-shrink-0 mt-0.5">
@@ -360,8 +361,8 @@ export default function EFlowPage() {
             <motion.div
               initial={{ opacity: 0, x: 50, scale: 0.95 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6 }}
               className="lg:col-span-5 w-full flex justify-center"
             >
               <div className="relative group max-w-md w-full">
@@ -474,8 +475,8 @@ export default function EFlowPage() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 0.6, delay: index * 0.03 }}
                 className="text-center"
               >
                 <div className="text-4xl md:text-5xl font-black text-[#40949c] mb-2">{metric.value}</div>
@@ -493,7 +494,7 @@ export default function EFlowPage() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="space-y-6"
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
@@ -501,7 +502,7 @@ export default function EFlowPage() {
             </h2>
             <p className="text-2xl font-bold text-[#40949c]">"E-Flow BPM"</p>
             <p className="text-lg text-slate-600 leading-relaxed font-medium max-w-3xl mx-auto">
-              Çoğu BPM uygulamasındaki bileşenlerde kodlamaya ihtiyaç vardır. Netoloji'nin No-code platform geliştiricileri, kullanıcıların görsel modelleme ögeleri olarak kullanacağı temel kodları yazmıştır. E-Flow ile bir süreç tasarlamaya başladığınızda aslında zaten yazılmış olan kodları derler ve kullanırsınız. İşte bu nedenle E-Flow kullanırken kod bilgisine ihtiyacınız olmaz.
+              Çoğu BPM uygulamasındaki bileşenlerde kodlamaya ihtiyaç vardır. Netoloji'nin No-code platform geliştiricileri, kullanıcıların görsel modelleme ögeleri olarak kullanacağı temel kodları yazmıştır. E-Flow ile bir süreç tasarlamaya başladığınızda aslında zaten yazılmış olan kodları derler ve kullanırsınız. İşte bu sayede en karmaşık iş akışlarını bile çok daha kolay, anlaşılır ve hızlı bir yapıda hayata geçirebilirsiniz.
             </p>
           </motion.div>
         </div>
@@ -515,8 +516,8 @@ export default function EFlowPage() {
             <motion.div
               initial={{ opacity: 0, x: -50, scale: 0.95 }}
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6 }}
               className="lg:col-span-5 w-full flex justify-center order-last lg:order-first"
             >
               <div className="relative group max-w-md w-full">
@@ -558,17 +559,13 @@ export default function EFlowPage() {
                     
                     {/* Mini Chart Mockup */}
                     <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
-                      <div className="flex items-center justify-between mb-3">
-                        <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-wide">Haftalık Akış Performansı</p>
-                        <span className="text-[8px] text-[#40949c] font-extrabold">↑ Artan Trend</span>
-                      </div>
-                      <div className="flex items-end gap-1.5 h-16">
-                        <div className="flex-1 rounded-t-[4px] bg-[#40949c]/20 h-[32%]" />
-                        <div className="flex-1 rounded-t-[4px] bg-[#40949c]/35 h-[46%]" />
-                        <div className="flex-1 rounded-t-[4px] bg-[#40949c]/50 h-[58%]" />
-                        <div className="flex-1 rounded-t-[4px] bg-[#40949c]/65 h-[70%]" />
-                        <div className="flex-1 rounded-t-[4px] bg-[#40949c]/80 h-[85%]" />
-                        <div className="flex-1 rounded-t-[4px] bg-[#40949c] h-full" />
+                      <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-wide mb-3">Haftalık Akış Performansı</p>
+                      <div className="flex items-end justify-between h-16 pt-2 px-1">
+                        <div className="w-5 bg-slate-100 rounded-t-sm h-[30%]" />
+                        <div className="w-5 bg-slate-100 rounded-t-sm h-[45%]" />
+                        <div className="w-5 bg-slate-100 rounded-t-sm h-[60%]" />
+                        <div className="w-5 bg-gradient-to-t from-[#40949c] to-[#48a9b2] rounded-t-sm h-[85%]" />
+                        <div className="w-5 bg-[#40949c] rounded-t-sm h-full" />
                       </div>
                     </div>
                   </div>
@@ -581,7 +578,7 @@ export default function EFlowPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-[#40949c]/10 border border-[#40949c]/20 rounded-full text-[#40949c] text-sm font-semibold"
               >
                 <Sparkles size={14} className="text-amber-500" />
@@ -592,12 +589,12 @@ export default function EFlowPage() {
                 İş Süreçlerinizi
                 <br />
                 <span className="bg-gradient-to-r from-[#40949c] to-blue-600 bg-clip-text text-transparent">
-                  Akıllıca Modelleyin
+                  Akıllıca Modelleyn
                 </span>
               </h2>
 
               <p className="text-lg text-slate-600 leading-relaxed font-medium">
-                Görsel modelleme ile veriler hızla işlenir ve yönetilir. Sürükle-bırak arayüzü kodlama gereksinimini tamamen ortadan kaldırır. Bu sayede karmaşık veri modellerini oluşturmak kolaylaşır ve sınırsız olasılıkların kapıları açılır.
+                Görsel modelleme ile veriler hızla işlenir ve yönetilir. Sürükle-bırak arayüzü kodlama gereksinimini tamamen ortadan kaldırır.
               </p>
 
               <div className="grid sm:grid-cols-3 gap-6 w-full pt-4">
@@ -606,8 +603,8 @@ export default function EFlowPage() {
                     key={index}
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
+                    viewport={{ once: false }}
+                    transition={{ delay: index * 0.03 }}
                     className="flex flex-col items-center lg:items-start text-center lg:text-left"
                   >
                     <div className="w-10 h-10 bg-[#40949c]/10 rounded-xl flex items-center justify-center mb-3">
@@ -629,7 +626,7 @@ export default function EFlowPage() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
@@ -649,8 +646,8 @@ export default function EFlowPage() {
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: false }}
+                  transition={{ duration: 0.6, delay: index * 0.03 }}
                   whileHover={{ y: -8, scale: 1.02 }}
                   className="relative group bg-white hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] rounded-[2.25rem] p-8 border border-slate-200/60 hover:border-slate-200 transition-all duration-300 flex flex-col justify-between"
                   aria-label={item.ariaLabel}
@@ -718,8 +715,8 @@ export default function EFlowPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
             className="relative bg-gradient-to-br from-[#0B192C] via-[#0A192F] to-[#0d223f] p-10 md:p-16 rounded-[2.5rem] overflow-hidden shadow-2xl border border-slate-800"
           >
             {/* Glowing backdrop elements */}

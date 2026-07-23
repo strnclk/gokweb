@@ -1,7 +1,5 @@
 import { Layers, Building2, Cpu, Rocket, Receipt, Calculator, Database, Sparkles, type LucideIcon } from 'lucide-react';
 
-// Kategoriye göre kapak ikonu. Görsel dosyası değil, SVG/CSS ile üretilir:
-// telif yok, anında yüklenir, statik export'ta sorunsuz, her ekranda net.
 const KATEGORI_IKON: Record<string, LucideIcon> = {
   'ERP': Layers,
   'Sektörel Çözümler': Building2,
@@ -15,17 +13,38 @@ const KATEGORI_IKON: Record<string, LucideIcon> = {
 interface BlogCoverProps {
   gradient: string;
   category: string;
+  image?: string;
+  alt?: string;
   className?: string;
   iconClassName?: string;
+  objectPosition?: string;
 }
 
 export default function BlogCover({
   gradient,
   category,
+  image,
+  alt = '',
   className = '',
   iconClassName = 'w-20 h-20',
+  objectPosition = 'object-top',
 }: BlogCoverProps) {
   const Icon = KATEGORI_IKON[category] ?? Sparkles;
+
+  if (image) {
+    return (
+      <div className={`relative overflow-hidden bg-slate-100 ${className}`}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={image}
+          alt={alt || category}
+          loading="lazy"
+          className={`w-full h-full object-cover ${objectPosition} transition-transform duration-500 ease-out group-hover:scale-105`}
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-300 pointer-events-none" />
+      </div>
+    );
+  }
 
   return (
     <div

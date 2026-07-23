@@ -184,7 +184,7 @@ export default function FeaturedWorksPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.6 }}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6"
               >
                 <Star size={14} />
@@ -194,7 +194,7 @@ export default function FeaturedWorksPage() {
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900"
               >
                 Öne Çıkan
@@ -205,7 +205,7 @@ export default function FeaturedWorksPage() {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-xl leading-relaxed"
               >
                 Finansal yönetim, nakit akışı ve raporlama alanında gerçekleştirdiğimiz başarılı projelerimizle işletmenizi dijitalleştirin
@@ -214,7 +214,7 @@ export default function FeaturedWorksPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
                 className="flex flex-col sm:flex-row gap-4 mb-12"
               >
                 <button
@@ -235,7 +235,7 @@ export default function FeaturedWorksPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
                 className="grid grid-cols-2 gap-6"
               >
                 {stats.map((stat, i) => (
@@ -257,7 +257,7 @@ export default function FeaturedWorksPage() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative"
               >
                 {/* Main Card */}
@@ -282,7 +282,7 @@ export default function FeaturedWorksPage() {
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: '85%' }}
-                          transition={{ duration: 1, delay: 0.5 }}
+                          transition={{ duration: 0.6, delay: 0.15 }}
                           className="h-full bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full"
                         />
                       </div>
@@ -297,7 +297,7 @@ export default function FeaturedWorksPage() {
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: '96%' }}
-                          transition={{ duration: 1, delay: 0.6 }}
+                          transition={{ duration: 0.6, delay: 0.15 }}
                           className="h-full bg-gradient-to-r from-purple-500 to-purple-600 rounded-full"
                         />
                       </div>
@@ -312,7 +312,7 @@ export default function FeaturedWorksPage() {
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: '82%' }}
-                          transition={{ duration: 1, delay: 0.7 }}
+                          transition={{ duration: 0.6, delay: 0.15 }}
                           className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
                         />
                       </div>
@@ -367,8 +367,8 @@ export default function FeaturedWorksPage() {
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: index * 0.03 }}
+                  viewport={{ once: true }}
                   className="bg-white p-6 rounded-xl border border-blue-200 hover:border-blue-300 group"
                 >
                   <div className="flex items-start gap-6">
@@ -418,7 +418,7 @@ export default function FeaturedWorksPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  transition={{ duration: 0.4, delay: index * 0.03 }}
                   className="bg-white p-6 rounded-xl border border-blue-200 hover:border-blue-300"
                 >
                   <div className="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mb-4">

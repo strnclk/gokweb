@@ -16,7 +16,7 @@ export default function TrustSection({ compact = false }: { compact?: boolean })
           setIsInView(true);
         }
       },
-      { threshold: compact ? 0.15 : 0.3 }
+      { threshold: 0.1 }
     );
 
     if (ref.current) {
@@ -41,7 +41,7 @@ export default function TrustSection({ compact = false }: { compact?: boolean })
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className={`${compact ? 'text-4xl md:text-5xl' : 'text-5xl md:text-6xl'} font-bold text-center mb-20`}
         >
           Güvenilir Çözüm Ortağınız
@@ -55,7 +55,7 @@ export default function TrustSection({ compact = false }: { compact?: boolean })
             suffix="+"
             label="Müşteri"
             isInView={isInView}
-            delay={0.2}
+            delay={0.05}
           />
           <Counter
             compact={compact}
@@ -64,7 +64,7 @@ export default function TrustSection({ compact = false }: { compact?: boolean })
             suffix="+"
             label="Yıl Deneyim"
             isInView={isInView}
-            delay={0.4}
+            delay={0.1}
           />
           <Counter
             compact={compact}
@@ -73,7 +73,7 @@ export default function TrustSection({ compact = false }: { compact?: boolean })
             suffix="%"
             label="Uzman Destek"
             isInView={isInView}
-            delay={0.6}
+            delay={0.15}
           />
         </div>
       </div>

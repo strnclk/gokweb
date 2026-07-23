@@ -9,9 +9,6 @@ import { GOOGLE_REVIEWS_URL } from '@/lib/constants';
 const PHONE_DISPLAY = '0539 856 35 78';
 const PHONE_TEL = '+905398563578';
 const EMAIL = 'satis@gokkusagiyazilim.com.tr';
-const ADRES =
-  'İçerenköy Mah. Eryılmazlar Sokak No:2 Kemal Bey İş Merkezi Kat:4 Daire:18 Ataşehir/İstanbul';
-
 const kartlar = [
   { icon: MapPin, title: 'Adres', value: 'Ataşehir / İstanbul', href: GOOGLE_REVIEWS_URL, external: true },
   { icon: Phone, title: 'Telefon', value: PHONE_DISPLAY, href: `tel:${PHONE_TEL}`, external: false },
@@ -80,10 +77,6 @@ export default function IlceIletisim({ ilce }: { ilce: string }) {
 
         {/* Konum — gömülü harita (Teklif Al sayfasındaki ile aynı) */}
         <div className="rounded-2xl border border-gray-200 bg-gradient-to-br from-gray-50 to-white p-6 shadow-xl overflow-hidden">
-          <div className="flex items-start gap-3 max-w-xl mb-5">
-            <MapPin className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
-            <p className="text-gray-700 leading-relaxed">{ADRES}</p>
-          </div>
           <iframe
             src="https://maps.google.com/maps?q=Eryilmazlar+Sokak+No:2+Icerenkoy+Atasehir+Istanbul&t=&z=16&ie=UTF8&iwloc=&output=embed"
             width="100%"

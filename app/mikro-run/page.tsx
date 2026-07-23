@@ -1,6 +1,6 @@
 'use client';
 
-import { Landmark, Package, Receipt, BarChart, Users, Wallet, Cpu, Globe, Star, FileText, Activity, Layers, CheckCircle, ArrowRight, Zap, Shield, Sparkles } from 'lucide-react';
+import { Landmark, Package, Receipt, BarChart, Users, Wallet, Cpu, Globe, Star, FileText, Activity, Layers, CheckCircle, ArrowRight, Zap, Shield, Sparkles, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -75,7 +75,6 @@ export default function MikroRunPage() {
       description: 'Elektronik fatura kesme, alımı ve tüm resmi onaylı yönetim süreçlerini saniyeler içinde gerçekleştirin.',
       features: ['Otomatik Resmi İletim', 'Güvenli Bulut Arşivleme', 'Cari Hesap Otomatik Entegrasyonu'],
       stats: { speed: '< 2 sn', savings: '%85', compliance: '%100' },
-      steps: ['Fatura Taslağı', 'E-İmza & Onay', 'Resmi İletim', 'Alıcıya Anında Teslim']
     },
     {
       id: 'e-arsiv',
@@ -84,7 +83,6 @@ export default function MikroRunPage() {
       description: 'Resmi e-Arşiv portalı uyumlu, son kullanıcılara saniyeler içinde e-posta/SMS ile fatura iletimi.',
       features: ['Yasal Dijital Depolama', 'E-posta / SMS Fatura Gönderimi', 'Toplu Faturalama Desteği'],
       stats: { speed: '< 1.5 sn', savings: '%90', compliance: '%100' },
-      steps: ['Fatura Oluşturma', 'Dijital İmzalama', 'Müşteriye İletim', 'Otomatik Arşivleme']
     },
     {
       id: 'e-irsaliye',
@@ -93,7 +91,6 @@ export default function MikroRunPage() {
       description: 'Mal sevkiyatlarında kağıt irsaliye yerine geçen tam dijital sevkiyat ve anlık doğrulama altyapısı.',
       features: ['Sevkiyat ve Araç/Plaka Takibi', 'Otomatik Stok Eşleşmesi', 'Anlık Kabul/Ret Yanıtı'],
       stats: { speed: '< 3 sn', savings: '%75', compliance: '%100' },
-      steps: ['İrsaliye Düzenleme', 'Araç / Plaka Tanımı', 'Resmi Onay Süreci', 'Teslimat Doğrulama']
     },
     {
       id: 'e-mutabakat',
@@ -102,7 +99,6 @@ export default function MikroRunPage() {
       description: 'Müşteri ve tedarikçilerle cari bakiye mutabakatlarının tek tıkla dijital olarak yapılması ve takibi.',
       features: ['Otomatik E-posta Mutabakatı', 'Anlık Onay / İtiraz Bildirimi', 'Zamandan %90 Tasarruf'],
       stats: { speed: 'Anında', savings: '%90', compliance: 'Canlı Takip' },
-      steps: ['Cari Bakiye Çekimi', 'Mutabakat Gönderimi', 'Taraf Yanıtı', 'Otomatik Rapor']
     },
     {
       id: 'e-smmm',
@@ -111,7 +107,6 @@ export default function MikroRunPage() {
       description: 'Serbest Meslek Makbuzu sisteminin dijital ortamda düzenlenmesi, hesaplanması ve yasal iletimi.',
       features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Stopaj & KDV Hesabı', 'Anında Müşteri Teslimi'],
       stats: { speed: '< 2 sn', savings: '%95', compliance: '%100' },
-      steps: ['Makbuz Taslağı', 'Stopaj & KDV Hesabı', 'E-İmza & Onay', 'Müşteriye İletim']
     }
   ];
 
@@ -171,7 +166,7 @@ export default function MikroRunPage() {
             <defs>
               {/* Vibrant Arch Gradient 1 - Rich Magenta to Golden Amber */}
               <linearGradient id="wowArchGrad1" x1="1440" y1="900" x2="100" y2="50" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#E6007E" stopOpacity="0.5" />
+                <stop offset="0%" stopColor="#DC2626" stopOpacity="0.5" />
                 <stop offset="40%" stopColor="#f43f5e" stopOpacity="0.35" />
                 <stop offset="75%" stopColor="#f59e0b" stopOpacity="0.22" />
                 <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.04" />
@@ -180,27 +175,27 @@ export default function MikroRunPage() {
               {/* Vibrant Arch Gradient 2 - Violet Rose Glow */}
               <linearGradient id="wowArchGrad2" x1="1440" y1="900" x2="250" y2="150" gradientUnits="userSpaceOnUse">
                 <stop offset="0%" stopColor="#a855f7" stopOpacity="0.4" />
-                <stop offset="50%" stopColor="#E6007E" stopOpacity="0.28" />
+                <stop offset="50%" stopColor="#DC2626" stopOpacity="0.28" />
                 <stop offset="100%" stopColor="#fb7185" stopOpacity="0.04" />
               </linearGradient>
 
               {/* Vibrant Arch Gradient 3 - Warm Gold Magenta */}
               <linearGradient id="wowArchGrad3" x1="1440" y1="900" x2="400" y2="250" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#E6007E" stopOpacity="0.28" />
+                <stop offset="0%" stopColor="#DC2626" stopOpacity="0.28" />
                 <stop offset="60%" stopColor="#f59e0b" stopOpacity="0.16" />
                 <stop offset="100%" stopColor="#818cf8" stopOpacity="0.02" />
               </linearGradient>
 
               {/* Arch Soft Glass Ribbon Fill */}
               <linearGradient id="wowArchFill" x1="1440" y1="900" x2="50" y2="50" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#E6007E" stopOpacity="0.07" />
+                <stop offset="0%" stopColor="#DC2626" stopOpacity="0.07" />
                 <stop offset="50%" stopColor="#f43f5e" stopOpacity="0.03" />
                 <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
               </linearGradient>
               
               {/* Rich Radial Volumetric Glow from Bottom Right */}
               <radialGradient id="wowOriginGlow" cx="1350" cy="850" r="800" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#E6007E" stopOpacity="0.16" />
+                <stop offset="0%" stopColor="#DC2626" stopOpacity="0.16" />
                 <stop offset="35%" stopColor="#f43f5e" stopOpacity="0.08" />
                 <stop offset="70%" stopColor="#f59e0b" stopOpacity="0.03" />
                 <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
@@ -287,20 +282,20 @@ export default function MikroRunPage() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-pink-500/10 via-rose-500/10 to-amber-500/10 border border-pink-500/20 text-[#E6007E] text-xs font-semibold tracking-wide uppercase mb-6 shadow-sm"
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-500/10 via-red-500/10 to-amber-500/10 border border-red-500/20 text-[#DC2626] text-xs font-semibold tracking-wide uppercase mb-6 shadow-sm"
               >
-                <Zap className="w-3.5 h-3.5 text-[#E6007E]" />
+                <Zap className="w-3.5 h-3.5 text-[#DC2626]" />
                 <span>e-Dönüşüm ve Ön Muhasebe Çözümü</span>
               </motion.div>
 
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.6 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-none tracking-tight mb-6 text-[#0F172A]"
               >
                 Mikro{' '}
-                <span className="bg-gradient-to-r from-[#E6007E] via-orange-500 to-amber-500 bg-clip-text text-transparent inline-block drop-shadow-sm">
+                <span className="bg-gradient-to-r from-[#DC2626] via-orange-500 to-amber-500 bg-clip-text text-transparent inline-block drop-shadow-sm">
                   RUN
                 </span>
               </motion.h1>
@@ -308,7 +303,7 @@ export default function MikroRunPage() {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-base sm:text-lg text-slate-700 mb-8 leading-relaxed max-w-2xl font-normal"
               >
                 Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüşüm paketidir. Kolay kullanım, sade ve anlaşılır menülerle, hazır fatura tasarımı, e-fatura kesme özelliği ve anahtar teslim e-fatura çözümleri sunar. Mikro RUN, tüm finansal ve organizasyonel süreçlerinizi yönetmek için mükemmel bir destek sağlar.
@@ -317,17 +312,17 @@ export default function MikroRunPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
                 className="flex flex-wrap items-center gap-4"
               >
                 <div className="relative group">
                   {/* Animated Pulsing Glowing Aura behind the button */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[#E6007E] via-orange-500 to-amber-500 rounded-2xl blur-md opacity-75 group-hover:opacity-100 transition duration-500 group-hover:duration-200 animate-pulse pointer-events-none" />
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#DC2626] via-orange-500 to-amber-500 rounded-2xl blur-md opacity-75 group-hover:opacity-100 transition duration-500 group-hover:duration-200 animate-pulse pointer-events-none" />
 
                   {/* Main Eye-Catching Gradient Button */}
                   <button
                     onClick={scrollToContact}
-                    className="relative inline-flex items-center justify-center gap-3.5 px-9 py-4.5 bg-gradient-to-r from-[#E6007E] via-rose-500 to-amber-500 hover:from-[#c9006e] hover:via-orange-600 hover:to-amber-600 text-white rounded-xl font-bold text-lg tracking-wide shadow-xl shadow-[#E6007E]/30 hover:shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 overflow-hidden"
+                    className="relative inline-flex items-center justify-center gap-3.5 px-9 py-4.5 bg-gradient-to-r from-[#DC2626] via-red-500 to-amber-500 hover:from-[#B91C1C] hover:via-orange-600 hover:to-amber-600 text-white rounded-xl font-bold text-lg tracking-wide shadow-xl shadow-[#DC2626]/30 hover:shadow-2xl hover:shadow-orange-500/40 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 overflow-hidden"
                   >
                     {/* Shimmering light sweep overlay */}
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
@@ -344,12 +339,12 @@ export default function MikroRunPage() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative flex items-center justify-center p-4 sm:p-8"
               >
                 {/* Multi-layered Soft Glowing Ambient Aura behind the Horse Logo (Slower & Subtler) */}
-                <div className="absolute w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-tr from-pink-500/15 via-rose-500/18 to-amber-400/12 rounded-full blur-3xl pointer-events-none opacity-80" />
-                <div className="absolute w-64 h-64 sm:w-80 sm:h-80 bg-[#E6007E]/10 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-tr from-red-500/15 via-red-500/18 to-amber-400/12 rounded-full blur-3xl pointer-events-none opacity-80" />
+                <div className="absolute w-64 h-64 sm:w-80 sm:h-80 bg-[#DC2626]/10 rounded-full blur-2xl pointer-events-none" />
 
                 {/* Gentle Floating Logo (Slower 7.5s animation, 7px movement) */}
                 <motion.div
@@ -363,7 +358,7 @@ export default function MikroRunPage() {
                     width={440}
                     height={440}
                     priority
-                    className="w-full h-full object-contain filter drop-shadow-[0_15px_30px_rgba(230,0,126,0.20)] hover:drop-shadow-[0_22px_40px_rgba(230,0,126,0.30)] transition-all duration-500 transform hover:scale-105"
+                    className="w-full h-full object-contain filter drop-shadow-[0_15px_30px_rgba(220,38,38,0.20)] hover:drop-shadow-[0_22px_40px_rgba(220,38,38,0.30)] transition-all duration-500 transform hover:scale-105"
                   />
                 </motion.div>
               </motion.div>
@@ -378,7 +373,7 @@ export default function MikroRunPage() {
       {/* Features Section (Mikro Run Ana Paket - Porcelain Zemin & Yüzen Cam Kartlar) */}
       <section className="relative py-24 bg-[#F8FAFC] overflow-hidden pt-8">
         {/* Ambient Background Orb */}
-        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#E6007E]/5 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#DC2626]/5 rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <motion.div
@@ -402,20 +397,20 @@ export default function MikroRunPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className={`bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-xl hover:border-[#E6007E]/40 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between group md:col-span-1 lg:col-span-2 ${
+                  transition={{ duration: 0.4, delay: index * 0.03 }}
+                  className={`bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-xl hover:border-[#DC2626]/40 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between group md:col-span-1 lg:col-span-2 ${
                     isFirstInLastCenteredRow ? 'lg:col-start-2' : ''
                   }`}
                 >
                   {/* Renkli 3D Üst Vurgu Çıtası */}
-                  <div className="h-1.5 w-full bg-gradient-to-r from-[#E6007E] via-rose-500 to-amber-500" />
+                  <div className="h-1.5 w-full bg-gradient-to-r from-[#DC2626] via-red-500 to-amber-500" />
 
                   <div className="p-7 flex flex-col justify-between flex-grow">
                     <div>
-                      <div className="w-13 h-13 rounded-xl bg-gradient-to-br from-[#E6007E] to-rose-600 shadow-md shadow-[#E6007E]/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-13 h-13 rounded-xl bg-gradient-to-br from-[#DC2626] to-red-600 shadow-md shadow-[#DC2626]/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
                         <Icon size={24} className="text-white" />
                       </div>
-                      <h3 className="text-lg font-bold mb-2 text-slate-900 group-hover:text-[#E6007E] transition-colors">{feature.title}</h3>
+                      <h3 className="text-lg font-bold mb-2 text-slate-900 group-hover:text-[#DC2626] transition-colors">{feature.title}</h3>
                       <p className="text-slate-600 text-sm mb-4 leading-relaxed">{feature.description}</p>
                     </div>
                     <p className="text-slate-400 text-xs italic font-medium pt-3 border-t border-slate-100">{feature.descriptionDetail}</p>
@@ -428,9 +423,9 @@ export default function MikroRunPage() {
       </section>
 
       {/* Modules Section - İnteraktif Dijital Dönüşüm Ekosistemi (EDonusumShowcase - Luxe Light Glassmorphism) */}
-      <section className="relative py-24 bg-gradient-to-b from-[#F8FAFC] via-rose-50/30 to-[#F8FAFC] overflow-hidden">
+      <section className="relative py-24 bg-gradient-to-b from-[#F8FAFC] via-red-50/30 to-[#F8FAFC] overflow-hidden">
         {/* Background Glowing Ambient Orbs */}
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#E6007E]/5 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#DC2626]/5 rounded-full blur-[150px] pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-[150px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -440,20 +435,20 @@ export default function MikroRunPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#E6007E]/10 border border-[#E6007E]/20 text-[#E6007E] text-xs font-semibold tracking-wide uppercase mb-4 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#DC2626]/10 border border-[#DC2626]/20 text-[#DC2626] text-xs font-semibold tracking-wide uppercase mb-4 shadow-sm">
               <Sparkles className="w-4 h-4" />
               <span>İnteraktif e-Dönüşüm Ekosistemi</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-slate-900 tracking-tight">
-              Mikro RUN <span className="bg-gradient-to-r from-[#E6007E] via-rose-600 to-amber-500 bg-clip-text text-transparent">e-Dönüşüm Çözümleri</span>
+              Mikro RUN <span className="bg-gradient-to-r from-[#DC2626] via-red-600 to-amber-500 bg-clip-text text-transparent">e-Dönüşüm Çözümleri</span>
             </h2>
             <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-normal">
               İşletmenizin dijital dönüşüm sürecinde ihtiyaç duyduğu tüm yasal e-Dönüşüm çözümlerini tek tıkla canlı olarak deneyimleyin.
             </p>
           </motion.div>
 
-          {/* Dynamic Module Navigation Bar (Pills & Tabs - Light Luxe Glass) */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 p-2.5 rounded-2xl bg-white/90 backdrop-blur-xl border border-slate-200/80 shadow-lg shadow-slate-200/50">
+          {/* Dynamic Module Navigation Bar (Independent Bordered Pills) */}
+          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3.5 mb-12">
             {modules.map((mod, index) => {
               const Icon = mod.icon;
               const isActive = activeModuleIndex === index;
@@ -461,13 +456,13 @@ export default function MikroRunPage() {
                 <button
                   key={mod.id}
                   onClick={() => setActiveModuleIndex(index)}
-                  className={`flex items-center gap-2 px-4.5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                  className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:outline-none focus:ring-0 select-none ${
                     isActive
-                      ? 'bg-gradient-to-r from-[#E6007E] via-rose-600 to-amber-500 text-white shadow-lg shadow-[#E6007E]/30 scale-105'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80'
+                      ? 'bg-gradient-to-r from-[#DC2626] via-red-600 to-amber-500 text-white shadow-lg shadow-slate-900/15 border-0 scale-105 font-bold'
+                      : 'bg-white hover:bg-slate-50/80 text-slate-700 hover:text-slate-900 border border-slate-200/70 hover:border-slate-300'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-slate-500'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-[#DC2626]'}`} />
                   <span>{mod.name}</span>
                 </button>
               );
@@ -476,19 +471,19 @@ export default function MikroRunPage() {
 
           {/* Live Interactive Stage Panel */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            {/* Left Info Panel (Box 1 - Light Luxe Glass) */}
+            {/* Left Main Info Panel (Box 1 - Light Luxe Glass) */}
             <motion.div
               key={modules[activeModuleIndex].id}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="lg:col-span-6 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-xl shadow-slate-200/50 relative overflow-hidden"
+              className="lg:col-span-8 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-xl shadow-slate-200/50 relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-48 h-48 bg-[#E6007E]/5 rounded-full blur-3xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-48 h-48 bg-[#DC2626]/5 rounded-full blur-3xl pointer-events-none" />
 
               <div>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#E6007E] to-rose-600 flex items-center justify-center text-white shadow-lg shadow-[#E6007E]/25 shrink-0">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#DC2626] to-red-600 flex items-center justify-center text-white shadow-lg shadow-[#DC2626]/25 shrink-0">
                     {(() => {
                       const ActiveIcon = modules[activeModuleIndex].icon;
                       return <ActiveIcon size={28} />;
@@ -511,7 +506,7 @@ export default function MikroRunPage() {
                 <div className="space-y-3 mb-8">
                   {modules[activeModuleIndex].features.map((feat, idx) => (
                     <div key={idx} className="flex items-center gap-3 text-sm text-slate-700 font-semibold">
-                      <div className="w-5 h-5 rounded-full bg-[#E6007E]/10 text-[#E6007E] flex items-center justify-center shrink-0">
+                      <div className="w-5 h-5 rounded-full bg-[#DC2626]/10 text-[#DC2626] flex items-center justify-center shrink-0">
                         <CheckCircle size={14} />
                       </div>
                       <span>{feat}</span>
@@ -520,83 +515,87 @@ export default function MikroRunPage() {
                 </div>
               </div>
 
-              {/* Performance Stats Cards */}
-              <div className="grid grid-cols-3 gap-3 pt-6 border-t border-slate-100">
-                <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70 text-center shadow-inner">
-                  <div className="text-xl font-bold text-[#E6007E]">{modules[activeModuleIndex].stats.speed}</div>
-                  <div className="text-[11px] text-slate-500 font-medium mt-0.5">İşlem Hızı</div>
-                </div>
-                <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70 text-center shadow-inner">
-                  <div className="text-xl font-bold text-amber-600">{modules[activeModuleIndex].stats.savings}</div>
-                  <div className="text-[11px] text-slate-500 font-medium mt-0.5">Maliyet Tasarrufu</div>
-                </div>
-                <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70 text-center shadow-inner">
-                  <div className="text-xl font-bold text-emerald-600">{modules[activeModuleIndex].stats.compliance}</div>
-                  <div className="text-[11px] text-slate-500 font-medium mt-0.5">Yasal Uyum</div>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Right Live Simulation Widget (Box 2 - Light Luxe Glass) */}
-            <motion.div
-              key={`widget-${modules[activeModuleIndex].id}`}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="lg:col-span-6 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-xl shadow-slate-200/50 relative overflow-hidden"
-            >
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-                <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-[#E6007E]" />
-                  <span className="text-sm font-bold text-slate-900">Resmi Onaylı Canlı Belge Paneli</span>
-                </div>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold">
-                  Sistem Aktif
-                </span>
-              </div>
-
-              {/* Step-by-Step Workflow Ribbon */}
-              <div className="mb-6">
-                <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Adım Adım İş Akış Süreci</div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                  {modules[activeModuleIndex].steps.map((step, idx) => (
-                    <div key={idx} className="bg-slate-50/80 border border-slate-200/70 p-3.5 rounded-xl text-center relative group hover:border-[#E6007E]/40 hover:shadow-md transition-all">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-r from-[#E6007E] to-rose-600 text-white text-xs font-bold flex items-center justify-center mx-auto mb-2 shadow-sm">
-                        {idx + 1}
-                      </div>
-                      <div className="text-[11px] text-slate-700 font-semibold leading-tight">{step}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Digital Stamp Simulation Card */}
-              <div className="bg-gradient-to-br from-rose-50/60 via-slate-50 to-amber-50/40 border border-slate-200/80 p-5 rounded-2xl flex items-center justify-between gap-4 shadow-sm">
+              {/* Bottom Action Ribbon inside Left Box */}
+              <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-600 shrink-0">
-                    <CheckCircle size={20} />
+                    <Shield size={20} />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-slate-900">E-İmza & Zaman Damgası</div>
-                    <div className="text-[10px] text-slate-500">Resmi Standartlarında 5070 Sayılı Kanun Uyumlu</div>
+                    <div className="text-xs font-bold text-slate-900">Dijital Dönüşüm Ekosistemi</div>
+                    <div className="text-[11px] text-slate-500 font-medium">%100 Mevzuat Uyumlu Veri Güvenliği</div>
                   </div>
                 </div>
                 <button
                   onClick={scrollToContact}
-                  className="px-4.5 py-2.5 rounded-xl bg-gradient-to-r from-[#E6007E] to-rose-600 hover:from-[#c9006e] hover:to-rose-700 text-white text-xs font-bold transition-all shadow-md shadow-[#E6007E]/25 shrink-0 transform hover:-translate-y-0.5"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#DC2626] to-red-600 hover:from-[#B91C1C] hover:to-red-700 text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-[#DC2626]/25 shrink-0 transform hover:-translate-y-0.5 flex items-center gap-2"
                 >
-                  Detaylı Bilgi
+                  <span>İletişime Geç</span>
+                  <ArrowRight size={16} />
                 </button>
               </div>
             </motion.div>
+
+            {/* Right Column: 3 Vertically Stacked Performance Stats Cards */}
+            <div className="lg:col-span-4 flex flex-col justify-between gap-4">
+              <motion.div
+                key={`stat-speed-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-[#DC2626]/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">İşlem Hızı</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-[#DC2626]">Otomatik</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-[#DC2626]/10 text-[#DC2626] flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Zap size={24} />
+                </div>
+              </motion.div>
+
+              <motion.div
+                key={`stat-savings-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-amber-500/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Maliyet Tasarrufu</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-amber-600">{modules[activeModuleIndex].stats.savings}</div>
+                  <div className="text-xs text-slate-500 font-medium mt-1">Baskı ve arşiv maliyet düşüşü</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <TrendingUp size={24} />
+                </div>
+              </motion.div>
+
+              <motion.div
+                key={`stat-compliance-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.15 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-emerald-500/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Yasal Uyum</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600">%100</div>
+                  <div className="text-xs text-slate-500 font-medium mt-1">Resmi mevzuat standartları</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Shield size={24} />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Product Showcase Section */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-rose-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-rose-200/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-red-100/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-red-200/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -613,27 +612,27 @@ export default function MikroRunPage() {
               <h3 className="text-lg font-bold mb-3 text-gray-900">Mikro Yazılım Geçiş Sürecini Nasıl Yönetiyoruz:</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
                   Ön Görüşme ve İhtiyaç Analizi
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
                   Mikro RUN Paket Seçimi ve Teklif Onayı
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
                   Hızlı Sistem Kurulumu ve Veri Aktarımı
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
                   Temel Ön Muhasebe ve e-Dönüşüm Eğitimi
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
                   Proje Teslimi ve Canlıya Geçiş
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
                   Uzaktan ve Yerinde Destek
                 </div>
               </div>
@@ -644,7 +643,7 @@ export default function MikroRunPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="relative"
             >
-              <div className="absolute -inset-4 bg-rose-900/10 rounded-2xl blur-xl" />
+              <div className="absolute -inset-4 bg-red-900/10 rounded-2xl blur-xl" />
               <Image 
                 src="/mikrorun.webp" 
                 alt="Mikro RUN KOBİ ERP ve İş Yönetim Sistemi Ekran Görünümü" 
@@ -691,10 +690,10 @@ export default function MikroRunPage() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="flex items-center gap-3.5 p-4.5 bg-white/80 backdrop-blur-md rounded-xl border border-slate-200/60 shadow-sm hover:shadow-md hover:border-[#E6007E]/30 transition-all duration-300 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                transition={{ duration: 0.4, delay: index * 0.03 }}
+                className="flex items-center gap-3.5 p-4.5 bg-white/80 backdrop-blur-md rounded-xl border border-slate-200/60 shadow-sm hover:shadow-md hover:border-[#DC2626]/30 transition-all duration-300 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
               >
-                <CheckCircle size={18} className="text-[#E6007E] flex-shrink-0" />
+                <CheckCircle size={18} className="text-[#DC2626] flex-shrink-0" />
                 <span className="text-slate-800 text-sm font-semibold">{feature}</span>
               </motion.div>
             ))}
@@ -709,16 +708,16 @@ export default function MikroRunPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-[#E6007E] via-rose-700 to-[#c9006e] p-10 sm:p-14 rounded-3xl text-center shadow-2xl shadow-[#E6007E]/20 relative overflow-hidden"
+            className="bg-gradient-to-r from-[#DC2626] via-red-700 to-[#B91C1C] p-10 sm:p-14 rounded-3xl text-center shadow-2xl shadow-[#DC2626]/20 relative overflow-hidden"
           >
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-white/10 rounded-full blur-2xl pointer-events-none" />
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4 text-white tracking-tight">Mikro Run İle İlgili Detaylı Bilgi ve Sunum İçin Bize Ulaşabilirsiniz</h2>
-            <p className="text-base sm:text-lg mb-8 text-pink-100 max-w-3xl mx-auto">Mikro RUN, ek çözümler ve özellikleriyle İlgili detaylı bilgi almak, demo ve sunum talep etmek İçin bizimle İletişime geçin!</p>
+            <p className="text-base sm:text-lg mb-8 text-red-100 max-w-3xl mx-auto">Mikro RUN, ek çözümler ve özellikleriyle İlgili detaylı bilgi almak, demo ve sunum talep etmek İçin bizimle İletişime geçin!</p>
             <motion.button
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               onClick={scrollToContact}
-              className="bg-white text-[#E6007E] py-4 px-10 rounded-xl font-bold hover:bg-slate-50 transition-all shadow-lg hover:shadow-xl"
+              className="bg-white text-[#DC2626] py-4 px-10 rounded-xl font-bold hover:bg-slate-50 transition-all shadow-lg hover:shadow-xl"
             >
               İletişime Geç
             </motion.button>
@@ -747,13 +746,13 @@ export default function MikroRunPage() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/70 overflow-hidden shadow-sm hover:border-[#E6007E]/30 transition-all duration-300"
+                transition={{ duration: 0.4, delay: index * 0.03 }}
+                className="bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/70 overflow-hidden shadow-sm hover:border-[#DC2626]/30 transition-all duration-300"
               >
                 <details className="group">
                   <summary className="flex items-start gap-4 p-6 cursor-pointer list-none">
-                    <span className="w-8 h-8 bg-[#E6007E] rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 shadow-sm">{index + 1}</span>
-                    <h3 className="flex-1 text-lg font-bold text-slate-900 group-hover:text-[#E6007E] transition-colors">{faq.question}</h3>
+                    <span className="w-8 h-8 bg-[#DC2626] rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0 shadow-sm">{index + 1}</span>
+                    <h3 className="flex-1 text-lg font-bold text-slate-900 group-hover:text-[#DC2626] transition-colors">{faq.question}</h3>
                     <svg className="w-5 h-5 flex-shrink-0 mt-1 text-slate-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>

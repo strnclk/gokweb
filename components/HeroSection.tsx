@@ -251,7 +251,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.1]"
             >
               {districtName ? `${districtName} İşletmenizin` : 'İşletmenizin'}
@@ -265,7 +265,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-base md:text-lg text-slate-700 mb-8 max-w-xl leading-relaxed font-semibold"
             >
               {districtDescription || 'Mikro ERP ve E-Dönüşüm çözümleriyle işletmenizi dijital çağa hazırlayın. 20+ yıllık deneyimle yanınızdayız.'}
@@ -274,7 +274,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
               className={`flex flex-col sm:flex-row gap-4 w-full sm:w-auto mb-8 ${district ? 'justify-center' : 'justify-center lg:justify-start'}`}
             >
               <button
@@ -290,7 +290,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
               className={`flex flex-col sm:flex-row flex-wrap gap-3 w-full ${district ? 'justify-center' : 'justify-center lg:justify-start'}`}
             >
               {districtServiceDescription ? (
@@ -316,7 +316,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
                 className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 mt-10 pt-8 border-t border-slate-200/70 w-full max-w-2xl"
               >
                 {[
@@ -412,7 +412,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.8, delay: 0.3 }}
+                  transition={{ duration: 0.6, delay: 0.15 }}
                   className="w-full h-full bg-gradient-to-br from-white via-slate-50 to-blue-50/90 border border-purple-400 rounded-2xl p-5 flex flex-col justify-between relative z-10 text-slate-800 shadow-[0_15px_40px_rgba(168,85,247,0.25)]"
                 >
                   {/* Top bar: brand + window dots */}
@@ -523,7 +523,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="hidden sm:block mt-16 w-full"
         >
           <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10 bg-white/40 backdrop-blur-md rounded-2xl p-6 border border-white/50 shadow-md">

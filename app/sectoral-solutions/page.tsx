@@ -62,7 +62,7 @@ export default function SectoralSolutionsPage() {
   const sectors = [
     { icon: Building2, name: 'İnşaat', desc: 'Hak-ediş hesaplama, satın alma süreci, proje yönetimi', href: '/sectoral-solutions/solutions/#insaat', features: ['Hak-ediş', 'Satın Alma', 'Proje Yönetimi'], valueProp: 'Hak-ediş ve satın almadan proje takibine inşaatın tümü tek sistemde.' },
     { icon: Factory, name: 'Üretim', desc: 'MES çözümleri, üretim planlama, makine entegrasyonu', href: '/sectoral-solutions/solutions/#uretim', features: ['MES', 'Üretim Planlama', 'Makine Entegrasyonu'], valueProp: 'MES ve makine entegrasyonuyla üretimi anlık izleyin ve planlayın.' },
-    { icon: ShoppingCart, name: 'Perakende', desc: 'Hızlı satış, POS entegrasyonu, kampanya yönetimi', href: '/sectoral-solutions/solutions/#perakende', features: ['Hızlı Satış', 'POS', 'Kampanya'], valueProp: 'Hızlı satış ve POS entegrasyonuyla mağazada kesintisiz deneyim.' },
+    { icon: ShoppingCart, name: 'Perakende', desc: 'Hızlı satış, banka entegrasyonu, kampanya yönetimi', href: '/sectoral-solutions/solutions/#perakende', features: ['Hızlı Satış', 'Banka', 'Kampanya'], valueProp: 'Hızlı satış ve banka entegrasyonuyla mağazada kesintisiz deneyim.' },
     { icon: Truck, name: 'Lojistik', desc: 'Barkod yönetimi, depo yönetimi, nakliye takibi', href: '/sectoral-solutions/solutions/#lojistik', features: ['Barkod', 'Depo', 'Nakliye Takibi'], valueProp: 'Barkodlu depo yönetimiyle sevkiyatı uçtan uca izleyin.' },
     { icon: Users, name: 'Gıda', desc: 'Parti/lot takibi, kalite yönetimi, izlenebilirlik', href: '/sectoral-solutions/solutions/#gida', features: ['Lot Takibi', 'Kalite', 'İzlenebilirlik'], valueProp: 'Parti/lot takibiyle gıdada tam izlenebilirlik ve kalite kontrolü.' },
     { icon: Briefcase, name: 'Tekstil', desc: 'Mağazacılık çözümleri, renk/beden takibi, fason yönetim', href: '/sectoral-solutions/solutions/#tekstil', features: ['Renk/Beden', 'Mağazacılık', 'Fason'], valueProp: 'Renk/beden ve fason yönetimiyle tekstilin tüm akışını kontrol edin.' },
@@ -89,7 +89,7 @@ export default function SectoralSolutionsPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
               className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-medium mb-6"
             >
               <Sparkles size={14} />
@@ -99,7 +99,7 @@ export default function SectoralSolutionsPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
             >
               Her Sektör İçin
@@ -110,7 +110,7 @@ export default function SectoralSolutionsPage() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed mx-auto"
             >
               İnşattan üretime, perakendeden lojistiğe kadar her sektörün ihtiyacına özel ERP çözümleri ile işletmenizi dijitalleştirin
@@ -152,7 +152,7 @@ export default function SectoralSolutionsPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  transition={{ duration: 0.4, delay: index * 0.03 }}
                   className={`lg:col-span-2 ${isFirstOfLastRow ? 'lg:col-start-2' : ''}`}
                 >
                   <Link href={sector.href} className="block h-full">

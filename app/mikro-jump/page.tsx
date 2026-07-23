@@ -38,7 +38,7 @@ export default function MikroJumpPage() {
     {
       icon: Receipt,
       title: 'Perakende & Kasa Yönetimi',
-      description: 'Yeni nesil ÖKC & POS entegrasyonu',
+      description: 'Yeni nesil ÖKC & banka entegrasyonu',
       descriptionDetail: 'Hızlı satış & kasa hareketleri'
     },
     {
@@ -81,7 +81,6 @@ export default function MikroJumpPage() {
       description: 'Elektronik fatura kesme, alımı ve tüm resmi onaylı yönetim süreçlerini saniyeler içinde gerçekleştirin.',
       features: ['Otomatik Resmi İletim', 'Güvenli Bulut Arşivleme', 'Cari Hesap Otomatik Entegrasyonu'],
       stats: { speed: '< 2 sn', savings: '%85', compliance: '%100' },
-      steps: ['Fatura Taslağı', 'E-İmza & Onay', 'Resmi İletim', 'Alıcıya Anında Teslim']
     },
     {
       id: 'e-arsiv',
@@ -90,7 +89,6 @@ export default function MikroJumpPage() {
       description: 'Resmi e-Arşiv portalı uyumlu, son kullanıcılara saniyeler içinde e-posta/SMS ile fatura iletimi.',
       features: ['Yasal Dijital Depolama', 'E-posta / SMS Fatura Gönderimi', 'Toplu Faturalama Desteği'],
       stats: { speed: '< 1.5 sn', savings: '%90', compliance: '%100' },
-      steps: ['Fatura Oluşturma', 'Dijital İmzalama', 'Müşteriye İletim', 'Otomatik Arşivleme']
     },
     {
       id: 'e-irsaliye',
@@ -99,7 +97,6 @@ export default function MikroJumpPage() {
       description: 'Mal sevkiyatlarında kağıt irsaliye yerine geçen tam dijital sevkiyat ve anlık doğrulama altyapısı.',
       features: ['Sevkiyat ve Araç/Plaka Takibi', 'Otomatik Stok Eşleşmesi', 'Anlık Kabul/Ret Yanıtı'],
       stats: { speed: '< 3 sn', savings: '%75', compliance: '%100' },
-      steps: ['İrsaliye Düzenleme', 'Araç / Plaka Tanımı', 'Resmi Onay Süreci', 'Teslimat Doğrulama']
     },
     {
       id: 'e-defter',
@@ -108,7 +105,6 @@ export default function MikroJumpPage() {
       description: 'Yevmiye defteri ve Defter-i Kebir kayıtlarının yasal standartlarda dijital olarak tutulması ve berat gönderimi.',
       features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Berat Gönderimi', 'Şifreli Güvenli Arşivleme'],
       stats: { speed: 'Otomatik', savings: '%80', compliance: '%100' },
-      steps: ['Kayıt Kontrolü', 'Berat Oluşturma', 'Resmi Onay & Yükleme', 'Güvenli Depolama']
     },
     {
       id: 'e-mutabakat',
@@ -117,7 +113,6 @@ export default function MikroJumpPage() {
       description: 'Müşteri ve tedarikçilerle cari bakiye mutabakatlarının tek tıkla dijital olarak yapılması ve takibi.',
       features: ['Otomatik E-posta Mutabakatı', 'Anlık Onay / İtiraz Bildirimi', 'Zamandan %90 Tasarruf'],
       stats: { speed: 'Anında', savings: '%90', compliance: 'Canlı Takip' },
-      steps: ['Cari Bakiye Çekimi', 'Mutabakat Gönderimi', 'Taraf Yanıtı', 'Otomatik Rapor']
     },
     {
       id: 'e-bordro',
@@ -126,7 +121,6 @@ export default function MikroJumpPage() {
       description: 'Personel maaş bordrolarının KVKK uyumlu olarak dijital ortamda şifreli iletilmesi ve onay takibi.',
       features: ['SGK Entegrasyonu', 'Özel Şifreli E-posta İletimi', 'Personel Onay Bildirimi'],
       stats: { speed: 'Toplu', savings: '%85', compliance: 'KVKK Uyumlu' },
-      steps: ['Bordro Hesaplama', 'Şifreli Paketleme', 'Personel İletimi', 'Okundu Bildirimi']
     },
     {
       id: 'e-smmm',
@@ -135,7 +129,6 @@ export default function MikroJumpPage() {
       description: 'Serbest Meslek Makbuzu sisteminin dijital ortamda düzenlenmesi, hesaplanması ve yasal iletimi.',
       features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Stopaj & KDV Hesabı', 'Anında Müşteri Teslimi'],
       stats: { speed: '< 2 sn', savings: '%95', compliance: '%100' },
-      steps: ['Makbuz Taslağı', 'Stopaj & KDV Hesabı', 'E-İmza & Onay', 'Müşteriye İletim']
     }
   ];
 
@@ -153,8 +146,8 @@ export default function MikroJumpPage() {
       answer: 'Evet, entegre e-Dönüşüm modülü ile e-Fatura, e-Arşiv, e-İrsaliye ve e-Defter süreçlerinizi mevzuata tam uyumlu yönetebilirsiniz.'
     },
     {
-      question: 'Mikro Jump ile Stoklarımı Detaylı Takip Edebilir Miyim?',
-      answer: 'Evet, depo, parti/lot, seri numarası ve varyant gibi detaylarla stoklarınızı ayrıntılı şekilde takip edebilirsiniz.'
+      question: 'Mikro Jump ile Bankalardan Ekstre Aktarımı Yapabilir Miyim?',
+      answer: 'Evet, banka hesap ekstrelerinizi elektronik olarak aktarıp banka/kasa hareketlerinizle otomatik eşleştirebilirsiniz.'
     },
     {
       question: 'Mikro Jump ile Şube Bazlı Takip Yapabilir Miyim?',
@@ -307,7 +300,7 @@ export default function MikroJumpPage() {
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.6 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-none tracking-tight mb-6 text-[#0F172A]"
               >
                 Mikro{' '}
@@ -319,7 +312,7 @@ export default function MikroJumpPage() {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-base sm:text-lg text-slate-700 mb-8 leading-relaxed max-w-2xl font-normal"
               >
                 Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık'ın uzmanlığı ve Mikro Jump'ın yenilikçi teknolojileriyle, iş süreçlerinizi sektöre özel çözümlerle tek bir platformda yönetin. KOBİ'nizi rekabette öne çıkarmak, işlerinizde fark yaratmak ve geleceğe emin adımlarla ilerlemek için Mikro Jump ile büyük sıçrayışınızı gerçekleştirin!
@@ -328,7 +321,7 @@ export default function MikroJumpPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
                 className="flex flex-wrap items-center gap-4"
               >
                 <div className="relative group">
@@ -352,7 +345,7 @@ export default function MikroJumpPage() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative flex items-center justify-center p-4 sm:p-8"
               >
                 <div className="absolute w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-tr from-purple-500/15 via-indigo-500/18 to-violet-400/12 rounded-full blur-3xl pointer-events-none opacity-80" />
@@ -406,7 +399,7 @@ export default function MikroJumpPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  transition={{ duration: 0.4, delay: index * 0.03 }}
                   className="bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-xl hover:border-purple-500/40 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between group"
                 >
                   <div className="h-1.5 w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-violet-500" />
@@ -452,7 +445,8 @@ export default function MikroJumpPage() {
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 p-2.5 rounded-2xl bg-white/90 backdrop-blur-xl border border-slate-200/80 shadow-lg shadow-slate-200/50">
+          {/* Dynamic Module Navigation Bar (Independent Bordered Pills) */}
+          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3.5 mb-12">
             {modules.map((mod, index) => {
               const Icon = mod.icon;
               const isActive = activeModuleIndex === index;
@@ -460,13 +454,13 @@ export default function MikroJumpPage() {
                 <button
                   key={mod.id}
                   onClick={() => setActiveModuleIndex(index)}
-                  className={`flex items-center gap-2 px-4.5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                  className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:outline-none focus:ring-0 select-none ${
                     isActive
-                      ? 'bg-gradient-to-r from-purple-600 via-indigo-600 to-violet-500 text-white shadow-lg shadow-purple-600/30 scale-105'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80'
+                      ? 'bg-gradient-to-r from-purple-600 via-indigo-600 to-violet-500 text-white shadow-lg shadow-slate-900/15 border-0 scale-105 font-bold'
+                      : 'bg-white hover:bg-slate-50/80 text-slate-700 hover:text-slate-900 border border-slate-200/70 hover:border-slate-300'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-slate-500'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-purple-600'}`} />
                   <span>{mod.name}</span>
                 </button>
               );
@@ -474,12 +468,13 @@ export default function MikroJumpPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Left Main Info Panel (Box 1 - Light Luxe Glass) */}
             <motion.div
               key={modules[activeModuleIndex].id}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="lg:col-span-6 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-xl shadow-slate-200/50 relative overflow-hidden"
+              className="lg:col-span-8 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-xl shadow-slate-200/50 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-48 h-48 bg-purple-600/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -504,6 +499,7 @@ export default function MikroJumpPage() {
                   {modules[activeModuleIndex].description}
                 </p>
 
+                {/* Highlights List */}
                 <div className="space-y-3 mb-8">
                   {modules[activeModuleIndex].features.map((feat, idx) => (
                     <div key={idx} className="flex items-center gap-3 text-sm text-slate-700 font-semibold">
@@ -516,71 +512,79 @@ export default function MikroJumpPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-3 pt-6 border-t border-slate-100">
-                <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70 text-center shadow-inner">
-                  <div className="text-xl font-bold text-purple-600">{modules[activeModuleIndex].stats.speed}</div>
-                  <div className="text-[11px] text-slate-500 font-medium mt-0.5">İşlem Hızı</div>
-                </div>
-                <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70 text-center shadow-inner">
-                  <div className="text-xl font-bold text-indigo-600">{modules[activeModuleIndex].stats.savings}</div>
-                  <div className="text-[11px] text-slate-500 font-medium mt-0.5">Maliyet Tasarrufu</div>
-                </div>
-                <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70 text-center shadow-inner">
-                  <div className="text-xl font-bold text-emerald-600">{modules[activeModuleIndex].stats.compliance}</div>
-                  <div className="text-[11px] text-slate-500 font-medium mt-0.5">Yasal Uyum</div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              key={`widget-${modules[activeModuleIndex].id}`}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="lg:col-span-6 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-xl shadow-slate-200/50 relative overflow-hidden"
-            >
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-                <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-purple-600" />
-                  <span className="text-sm font-bold text-slate-900">Resmi Onaylı Canlı Belge Paneli</span>
-                </div>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold">
-                  Sistem Aktif
-                </span>
-              </div>
-
-              <div className="mb-6">
-                <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Adım Adım İş Akış Süreci</div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                  {modules[activeModuleIndex].steps.map((step, idx) => (
-                    <div key={idx} className="bg-slate-50/80 border border-slate-200/70 p-3.5 rounded-xl text-center relative group hover:border-purple-500/40 hover:shadow-md transition-all">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-xs font-bold flex items-center justify-center mx-auto mb-2 shadow-sm">
-                        {idx + 1}
-                      </div>
-                      <div className="text-[11px] text-slate-700 font-semibold leading-tight">{step}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-purple-50/60 via-slate-50 to-indigo-50/40 border border-slate-200/80 p-5 rounded-2xl flex items-center justify-between gap-4 shadow-sm">
+              {/* Bottom Action Ribbon inside Left Box */}
+              <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-600 shrink-0">
-                    <CheckCircle size={20} />
+                    <Shield size={20} />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-slate-900">E-İmza & Zaman Damgası</div>
-                    <div className="text-[10px] text-slate-500">Resmi Standartlarında 5070 Sayılı Kanun Uyumlu</div>
+                    <div className="text-xs font-bold text-slate-900">Dijital Dönüşüm Ekosistemi</div>
+                    <div className="text-[11px] text-slate-500 font-medium">%100 Mevzuat Uyumlu Veri Güvenliği</div>
                   </div>
                 </div>
                 <button
                   onClick={scrollToContact}
-                  className="px-4.5 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white text-xs font-bold transition-all shadow-md shadow-purple-600/25 shrink-0 transform hover:-translate-y-0.5"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-purple-600/25 shrink-0 transform hover:-translate-y-0.5 flex items-center gap-2"
                 >
-                  Detaylı Bilgi
+                  <span>İletişime Geç</span>
+                  <ArrowRight size={16} />
                 </button>
               </div>
             </motion.div>
+
+            {/* Right Column: 3 Vertically Stacked Performance Stats Cards */}
+            <div className="lg:col-span-4 flex flex-col justify-between gap-4">
+              <motion.div
+                key={`stat-speed-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-purple-500/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">İşlem Hızı</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-purple-600">Otomatik</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-purple-600/10 text-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Zap size={24} />
+                </div>
+              </motion.div>
+
+              <motion.div
+                key={`stat-savings-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-indigo-500/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Maliyet Tasarrufu</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-indigo-600">{modules[activeModuleIndex].stats.savings}</div>
+                  <div className="text-xs text-slate-500 font-medium mt-1">Baskı ve arşiv maliyet düşüşü</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <TrendingUp size={24} />
+                </div>
+              </motion.div>
+
+              <motion.div
+                key={`stat-compliance-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.15 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-emerald-500/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Yasal Uyum</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600">%100</div>
+                  <div className="text-xs text-slate-500 font-medium mt-1">Resmi mevzuat standartları</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Shield size={24} />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -693,7 +697,7 @@ export default function MikroJumpPage() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                transition={{ duration: 0.4, delay: index * 0.03 }}
                 className="bg-white rounded-xl border border-gray-200 hover:border-purple-300 overflow-hidden"
               >
                 <details className="group">

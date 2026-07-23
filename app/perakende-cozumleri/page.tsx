@@ -23,7 +23,7 @@ export default function PerakendeCozumleriPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 border border-orange-200 rounded-full text-orange-700 text-sm font-medium mb-6"
           >
             <Sparkles size={14} className="text-orange-600" />
@@ -33,7 +33,7 @@ export default function PerakendeCozumleriPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-900"
           >
             Perakende Sektörü Çözümleri
@@ -42,10 +42,10 @@ export default function PerakendeCozumleriPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed mx-auto"
           >
-            Mağazalarınızda ve şubelerinizde barkodlu satış, POS cihazı entegrasyonu ve hızlı ödeme altyapıları ile müşteri kuyruklarına son verin.
+            Mağazalarınızda ve şubelerinizde barkodlu satış, banka entegrasyonu ve hızlı ödeme altyapıları ile müşteri kuyruklarına son verin.
           </motion.p>
         </div>
       </section>
@@ -76,7 +76,7 @@ export default function PerakendeCozumleriPage() {
                   <ul className="space-y-3.5 text-gray-700 text-sm sm:text-base">
                     <li className="flex items-start">
                       <span className="text-orange-600 font-bold mr-2.5 mt-0.5">•</span>
-                      <strong>Hızlı Satış (POS):</strong> Dokunmatik ekran uyumlu pratik arayüz ile ürün barkodlarını okutabilir, ödemeyi saniyeler içinde nakit veya kredi kartıyla tamamlayabilirsiniz.
+                      <strong>Hızlı Satış:</strong> Dokunmatik ekran uyumlu pratik arayüz ile ürün barkodlarını okutabilir, ödemeyi saniyeler içinde nakit veya kredi kartıyla tamamlayabilirsiniz.
                     </li>
                     <li className="flex items-start">
                       <span className="text-orange-600 font-bold mr-2.5 mt-0.5">•</span>
@@ -84,7 +84,7 @@ export default function PerakendeCozumleriPage() {
                     </li>
                     <li className="flex items-start">
                       <span className="text-orange-600 font-bold mr-2.5 mt-0.5">•</span>
-                      <strong>ÖKC ve Banka POS Entegrasyonu:</strong> Yeni nesil ödeme kaydedici yazar kasa cihazları ve bankacılık POS terminalleriyle yasal mevzuatlara %100 uyumlu haberleşebilirsiniz.
+                      <strong>ÖKC ve Banka Entegrasyonu:</strong> Yeni nesil ödeme kaydedici yazar kasa cihazları ve banka sistemleriyle yasal mevzuatlara %100 uyumlu haberleşebilirsiniz.
                     </li>
                     <li className="flex items-start">
                       <span className="text-orange-600 font-bold mr-2.5 mt-0.5">•</span>

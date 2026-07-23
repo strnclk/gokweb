@@ -208,7 +208,7 @@ export default function VerticalSolutionsPage() {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-gray-900"
             >
               Mikro Dikey
@@ -219,7 +219,7 @@ export default function VerticalSolutionsPage() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="text-sm sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2"
             >
               Her sektörün ihtiyacına özel olarak tasarlanmış ERP çözümleri ile işletmenizi dijitalleştirin
@@ -228,7 +228,7 @@ export default function VerticalSolutionsPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
               className="mt-8 sm:mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-md mx-auto lg:mx-0"
             >
               {[
@@ -247,7 +247,7 @@ export default function VerticalSolutionsPage() {
           <motion.div
             initial={{ opacity: 0, x: 50, scale: 0.9 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="relative flex justify-center hidden lg:flex"
           >
             <div className="relative w-[560px] h-[480px] select-none">
@@ -415,8 +415,8 @@ export default function VerticalSolutionsPage() {
                   key={index}
                   initial={{ opacity: 0, y: 35 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-40px" }}
-                  transition={{ duration: 0.6, delay: index * 0.08, ease: [0.21, 0.45, 0.27, 0.9] }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.03, ease: [0.21, 0.45, 0.27, 0.9] }}
                   className={`lg:col-span-2 ${isLastCentered ? 'lg:col-start-3' : ''}`}
                 >
                   <Link href={`/solutions/#${industry.tab}`} className="block h-full">

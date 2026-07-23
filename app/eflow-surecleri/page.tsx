@@ -220,7 +220,7 @@ export default function EflowSurecleriPage() {
                 <Database size={18} />
               </div>
               <div className="text-left">
-                <p className="text-xs font-black text-slate-800">Mikro Tiger ERP Yazımı</p>
+                <p className="text-xs font-black text-slate-800">Mikro ERP Yazımı</p>
                 <p className="text-xs text-indigo-600 font-bold">Otomatik &amp; Çift Yönlü</p>
               </div>
             </div>
@@ -354,7 +354,7 @@ export default function EflowSurecleriPage() {
                 <div className="w-24 h-24 bg-white border border-slate-200 rounded-3xl shadow-xl flex flex-col items-center justify-center p-3 gap-1">
                   <Database size={28} className="text-purple-600" aria-hidden="true" />
                   <span className="text-[11px] font-black text-slate-600 text-center leading-tight">
-                    Tiger / Netsis / Mikro
+                    Mikro ERP
                   </span>
                 </div>
               </div>
@@ -382,9 +382,9 @@ export default function EflowSurecleriPage() {
                   <div className="w-8 h-8 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600">
                     <Database size={16} aria-hidden="true" />
                   </div>
-                  <h3 className="text-sm font-bold text-slate-900">Tiger, Netsis ve Mikro Desteği</h3>
+                  <h3 className="text-sm font-bold text-slate-900">Mikro ERP Desteği</h3>
                   <p className="text-sm text-slate-600 font-medium leading-relaxed">
-                    Logo Tiger, Netsis ve Mikro yazılımları için hazır entegrasyon konnektörleriyle
+                    Mikro yazılımları için hazır entegrasyon konnektörleriyle
                     süreçleri dakikalar içinde entegre edin.
                   </p>
                 </div>

@@ -55,7 +55,7 @@ export default function SEOSection() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold mb-16 text-center text-gray-900"
         >
           Mikro ERP ve E-Dönüşüm Rehberi
@@ -72,7 +72,7 @@ export default function SEOSection() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.03 }}
                   className="bg-white rounded-2xl border border-slate-200/60 shadow-sm overflow-hidden"
                 >
                   <button

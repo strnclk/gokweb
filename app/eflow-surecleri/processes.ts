@@ -37,7 +37,7 @@ export const processes: ProcessDetail[] = [
     longDesc:
       'Kağıt formları ve kaybolan e-postaları geride bırakın. Satın Alma ve Talep Süreci, şirket içi ihtiyaç bildirimlerinden başlayarak tedarikçi seçimi, fiyat karşılaştırması ve nihai sipariş oluşturma aşamasına kadar tüm akışı dijitalleştirir.',
     benefits: [
-      'Tiger/Netsis/Mikro ERP sistemlerine otomatik satın alma siparişi veya talep fişi oluşturma.',
+      'Mikro ERP sistemlerine otomatik satın alma siparişi veya talep fişi oluşturma.',
       'Kişi veya departman bazlı bütçe limitlerinin süreç içinde anlık kontrol edilmesi.',
       'Tutar kırılımlarına göre (örn: 10.000 ₺ altı/üstü) dinamik ve kademeli onay yolları.',
       'Sipariş ve fatura kalemlerinin sistem tarafından otomatik olarak karşılaştırılması.',
@@ -65,9 +65,9 @@ export const processes: ProcessDetail[] = [
         color: 'bg-teal-500 text-white',
       },
       {
-        title: 'Tiger/Mikro Entegrasyonu',
+        title: 'Mikro Entegrasyonu',
         role: 'ERP Entegratörü (Otomatik)',
-        desc: 'Onay süreci tamamlanan talep, ERP sisteminize (Tiger, Netsis, Mikro vb.) "Sipariş Fişi" olarak insan eli değmeden hatasız kaydedilir.',
+        desc: 'Onay süreci tamamlanan talep, Mikro ERP sisteminize "Sipariş Fişi" olarak insan eli değmeden hatasız kaydedilir.',
         icon: 'database',
         color: 'bg-indigo-500 text-white',
       },
@@ -111,7 +111,7 @@ export const processes: ProcessDetail[] = [
       {
         title: 'Muhasebeleştirme',
         role: 'ERP Muhasebe Modülü',
-        desc: 'Tüm onayları tamamlanan fatura, ERP sistemine (Tiger/Mikro) otomatik fatura kaydı ve muhasebe fişi olarak işlenir.',
+        desc: 'Tüm onayları tamamlanan fatura, Mikro ERP sistemine otomatik fatura kaydı ve muhasebe fişi olarak işlenir.',
         icon: 'coins',
         color: 'bg-blue-600 text-white',
       },
@@ -260,7 +260,7 @@ export const sss = [
   {
     soru: 'Satın alma süreci ERP sistemime nasıl aktarılır?',
     cevap:
-      'Onay zinciri tamamlanan talep, hazır entegrasyon konnektörleri aracılığıyla ERP sisteminize (Logo Tiger, Netsis, Mikro vb.) doğrudan sipariş fişi veya talep fişi olarak yazılır. Kayıt insan eli değmeden oluştuğu için veri giriş hatası ortadan kalkar.',
+      'Onay zinciri tamamlanan talep, hazır entegrasyon konnektörleri aracılığıyla Mikro ERP sisteminize doğrudan sipariş fişi veya talep fişi olarak yazılır. Kayıt insan eli değmeden oluştuğu için veri giriş hatası ortadan kalkar.',
   },
   {
     soru: 'E-Fatura onay sürecinde sipariş ve irsaliye eşleştirmesi yapılıyor mu?',

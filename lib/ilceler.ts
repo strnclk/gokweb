@@ -74,7 +74,7 @@ const onayli: Record<string, IlceIcerik> = {
     giris:
       "Beyoğlu, İstanbul'un Avrupa Yakası'nda; turizm, perakende ve hizmet sektörünün yoğun olduğu tarihi bir ilçedir. Gökkuşağı Yazılım, resmi Mikro iş ortağı olarak Beyoğlu’ndaki mağaza, restoran, otel ve hizmet işletmelerine ERP, ön muhasebe ve e-dönüşüm çözümleri sağlar.",
     odak: [
-      'Perakende ve mağaza satış (POS) takibi',
+      'Perakende ve mağaza satış takibi',
       'Stok ve sipariş yönetimi',
       'Ön muhasebe, cari ve kasa yönetimi',
       'e-Fatura ve e-Arşiv entegrasyonu',
@@ -107,7 +107,7 @@ const ODAK: Record<Profil, string[]> = {
     'Maliyet ve üretim raporlaması',
   ],
   ticaret: [
-    'Perakende ve mağaza satış (POS) takibi',
+    'Perakende ve mağaza satış takibi',
     'Stok, sipariş ve şubeler arası ürün yönetimi',
     'Ön muhasebe, cari ve kasa yönetimi',
     'e-Fatura ve e-Arşiv entegrasyonu',

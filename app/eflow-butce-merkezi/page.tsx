@@ -69,7 +69,7 @@ export default function ButceMerkeziPage() {
       <Navbar />
 
       {/* 1. Karşılama */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#fcfdff] to-[#f2f8f9] pt-28 md:pt-36 pb-16 md:pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-br from-white via-[#fcfdff] to-[#f2f8f9] pt-36 md:pt-44 pb-16 md:pb-20">
         <div className="absolute top-10 right-10 w-96 h-96 bg-[#40949c]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 w-80 h-80 bg-blue-100/30 rounded-full blur-3xl" />
 

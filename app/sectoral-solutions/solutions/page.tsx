@@ -57,7 +57,7 @@ export default function SectoralSolutionsDetailPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-medium mb-6"
           >
             <Sparkles size={14} />
@@ -67,7 +67,7 @@ export default function SectoralSolutionsDetailPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
           >
             Sektörünüze Özel Çözümler
@@ -76,7 +76,7 @@ export default function SectoralSolutionsDetailPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 max-w-3xl leading-relaxed mx-auto"
           >
             Sektörünüze özel ERP modülleri, depo, hızlı satış ve izlenebilirlik entegrasyonları ile işinizi dijitalleştirin.
@@ -257,7 +257,7 @@ export default function SectoralSolutionsDetailPage() {
                       
                       <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                         <div className="bg-slate-50/50 border border-slate-100/85 rounded-xl p-5 hover:bg-slate-50 transition-colors">
-                          <h5 className="font-bold text-gray-900 text-sm sm:text-base mb-1.5">Hızlı Satış (POS)</h5>
+                          <h5 className="font-bold text-gray-900 text-sm sm:text-base mb-1.5">Hızlı Satış</h5>
                           <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                             Dokunmatik ekran uyumlu pratik arayüz ile ürün barkodlarını okutabilir, ödemeyi saniyeler içinde nakit veya kredi kartıyla tamamlayabilirsiniz.
                           </p>
@@ -269,9 +269,9 @@ export default function SectoralSolutionsDetailPage() {
                           </p>
                         </div>
                         <div className="bg-slate-50/50 border border-slate-100/85 rounded-xl p-5 hover:bg-slate-50 transition-colors">
-                          <h5 className="font-bold text-gray-900 text-sm sm:text-base mb-1.5">ÖKC ve Banka POS Entegrasyonu</h5>
+                          <h5 className="font-bold text-gray-900 text-sm sm:text-base mb-1.5">ÖKC ve Banka Entegrasyonu</h5>
                           <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                            Yeni nesil ödeme kaydedici yazar kasa cihazları ve bankacılık POS terminalleriyle yasal mevzuatlara %100 uyumlu haberleşebilirsiniz.
+                            Yeni nesil ödeme kaydedici yazar kasa cihazları ve banka sistemleriyle yasal mevzuatlara %100 uyumlu haberleşebilirsiniz.
                           </p>
                         </div>
                         <div className="bg-slate-50/50 border border-slate-100/85 rounded-xl p-5 hover:bg-slate-50 transition-colors">
@@ -461,7 +461,7 @@ export default function SectoralSolutionsDetailPage() {
 
                       <div className="mt-8 pt-6 border-t border-gray-200">
                         <p className="text-indigo-600 font-semibold text-sm">
-                          Entegre Çözümler: Mikro Fason Takip, Tekstil POS Perakende Çözümleri, Mikro Jump/Fly Entegrasyonu
+                          Entegre Çözümler: Mikro Fason Takip, Tekstil Perakende Çözümleri, Mikro Jump/Fly Entegrasyonu
                         </p>
                       </div>
                     </div>

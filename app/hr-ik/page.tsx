@@ -101,19 +101,19 @@ export default function HRIKPage() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-white border-b border-gray-100">
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(209,250,229,0.3),rgba(255,255,255,0))] -z-10" />
-        <div className="absolute top-1/4 right-10 w-96 h-96 bg-emerald-200/10 rounded-full blur-3xl -z-10" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(243,232,255,0.3),rgba(255,255,255,0))] -z-10" />
+        <div className="absolute top-1/4 right-10 w-96 h-96 bg-purple-200/10 rounded-full blur-3xl -z-10" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-emerald-50 border border-emerald-200/50 rounded-full text-emerald-600 text-xs sm:text-sm font-bold shadow-sm mb-6">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-purple-50 border border-purple-200/50 rounded-full text-purple-600 text-xs sm:text-sm font-bold shadow-sm mb-6">
               <Sparkles className="w-3.5 h-3.5" />
               İnsan Kaynakları Yönetimi
             </span>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight text-gray-900">
               Çalışanlarınızı Dijitalleştirin:<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-600 to-cyan-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-violet-600 to-fuchsia-600">
                 Mikro Entegre İK & HR
               </span>
             </h1>
@@ -128,9 +128,9 @@ export default function HRIKPage() {
             {stats.map((stat, i) => (
               <div 
                 key={i} 
-                className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-200 hover:-translate-y-1 hover:scale-[1.02] active:scale-98 transition-all duration-300"
+                className="bg-white border border-gray-200 p-6 rounded-2xl shadow-sm hover:shadow-xl hover:shadow-purple-500/10 hover:border-purple-200 hover:-translate-y-1 hover:scale-[1.02] active:scale-98 transition-all duration-300"
               >
-                <div className="text-3xl sm:text-4xl font-black text-emerald-500 mb-1">{stat.value}</div>
+                <div className="text-3xl sm:text-4xl font-black text-purple-500 mb-1">{stat.value}</div>
                 <div className="text-sm font-bold text-gray-800 mb-2">{stat.label}</div>
                 <div className="text-xs text-gray-700 leading-relaxed">{stat.desc}</div>
               </div>
@@ -152,10 +152,10 @@ export default function HRIKPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Column: Definition */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-emerald-500/10 via-teal-500/5 to-white border border-emerald-100 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-500/5 rounded-full blur-2xl" />
+          <div className="lg:col-span-5 bg-gradient-to-br from-purple-500/10 via-violet-500/5 to-white border border-purple-100 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden">
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/5 rounded-full blur-2xl" />
             <div>
-              <div className="w-12 h-12 bg-emerald-50 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-emerald-500/20">
+              <div className="w-12 h-12 bg-purple-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-purple-500/20">
                 <Users size={24} />
               </div>
               <h3 className="text-xl sm:text-2xl font-black text-gray-800 mb-4">
@@ -165,9 +165,9 @@ export default function HRIKPage() {
                 İnsan Kaynakları (HR) Sistemi, çalışanlarınızın işe girişten itibaren özlük belgelerini, izin haklarını, avans/masraf taleplerini ve performans hedeflerini self-servis çalışan portalı ile dijitalleştiren modern bir yönetim yazılımıdır.
               </p>
             </div>
-            <div className="border-t border-emerald-100/60 pt-4 flex items-center gap-3">
-              <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse" />
-              <span className="text-xs font-bold text-emerald-600 uppercase tracking-wider">Mikro ERP Entegrasyonlu</span>
+            <div className="border-t border-purple-100/60 pt-4 flex items-center gap-3">
+              <div className="w-2.5 h-2.5 bg-purple-500 rounded-full animate-pulse" />
+              <span className="text-xs font-bold text-purple-600 uppercase tracking-wider">Mikro ERP Entegrasyonlu</span>
             </div>
           </div>
 
@@ -192,7 +192,7 @@ export default function HRIKPage() {
               }
             ].map((value, idx) => (
               <div key={idx} className="bg-white border border-gray-300/80 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow flex gap-4">
-                <div className="w-6 h-6 bg-emerald-500/10 text-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <div className="w-6 h-6 bg-purple-500/10 text-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5" />
                 </div>
                 <div>
@@ -208,9 +208,9 @@ export default function HRIKPage() {
       {/* Mikro ERP Entegrasyonu Section */}
       <section className="bg-white border-y border-gray-100 py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="bg-gradient-to-br from-emerald-500/5 to-teal-500/5 border border-emerald-200/30 rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-center gap-10">
+          <div className="bg-gradient-to-br from-purple-500/5 to-violet-500/5 border border-purple-200/30 rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-center gap-10">
             <div className="space-y-5 lg:w-3/5">
-              <span className="text-xs font-bold bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full uppercase tracking-wider">
+              <span className="text-xs font-bold bg-purple-100 text-purple-700 px-3 py-1 rounded-full uppercase tracking-wider">
                 Resmi Muhasebe Senkronu
               </span>
               <h3 className="text-2xl sm:text-3xl font-black pt-5">
@@ -227,7 +227,7 @@ export default function HRIKPage() {
                   "Dijital bordro gönderiminde yasal mevzuata tam uyumluluk"
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-gray-700">
-                    <Check className="w-4.5 h-4.5 text-emerald-500 flex-shrink-0" />
+                    <Check className="w-4.5 h-4.5 text-purple-500 flex-shrink-0" />
                     <span className="font-semibold">{item}</span>
                   </div>
                 ))}
@@ -235,9 +235,9 @@ export default function HRIKPage() {
             </div>
             <div className="lg:w-2/5 flex justify-center">
               <div className="relative w-full max-w-[280px] h-[280px] bg-white border border-gray-200 rounded-3xl shadow-xl flex items-center justify-center p-6">
-                <div className="absolute inset-0 bg-gradient-to-r from-emerald-100 to-teal-100 blur-2xl opacity-40 -z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-100 to-violet-100 blur-2xl opacity-40 -z-10" />
                 <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-gradient-to-tr from-emerald-500 to-teal-500 text-white rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/20">
+                  <div className="w-16 h-16 bg-gradient-to-tr from-purple-500 to-violet-500 text-white rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-purple-500/20">
                     <Calendar size={28} />
                   </div>
                   <div className="font-black text-gray-800 text-lg">Mikro SQL Entegrasyonu</div>
@@ -259,16 +259,16 @@ export default function HRIKPage() {
           </h2>
           
           {/* Custom Tabs Toggle */}
-          <div className="inline-flex p-1.5 bg-emerald-600 rounded-2xl border border-emerald-700/50 mt-4 shadow-lg">
+          <div className="inline-flex p-1.5 bg-purple-600 rounded-2xl border border-purple-700/50 mt-4 shadow-lg">
             <button
               onClick={() => setActiveTab('features')}
-              className={`px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${activeTab === 'features' ? 'bg-white text-emerald-600 shadow-sm' : 'text-emerald-100 hover:text-white'}`}
+              className={`px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${activeTab === 'features' ? 'bg-white text-purple-600 shadow-sm' : 'text-purple-100 hover:text-white'}`}
             >
               Ana Özellikler
             </button>
             <button
               onClick={() => setActiveTab('usage')}
-              className={`px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${activeTab === 'usage' ? 'bg-white text-emerald-600 shadow-sm' : 'text-emerald-100 hover:text-white'}`}
+              className={`px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${activeTab === 'usage' ? 'bg-white text-purple-600 shadow-sm' : 'text-purple-100 hover:text-white'}`}
             >
               Nasıl Çalışır?
             </button>
@@ -289,7 +289,7 @@ export default function HRIKPage() {
                 const Icon = feat.icon;
                 return (
                   <div key={i} className="bg-white border border-gray-300/80 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow group">
-                    <div className="w-10 h-10 bg-emerald-500/10 text-emerald-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
+                    <div className="w-10 h-10 bg-purple-500/10 text-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-purple-500 group-hover:text-white transition-colors duration-300">
                       <Icon size={18} />
                     </div>
                     <h4 className="font-bold text-gray-800 text-base mb-2">{feat.title}</h4>
@@ -305,11 +305,11 @@ export default function HRIKPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
-              className="relative border-l border-emerald-200/50 ml-4 md:ml-10 space-y-12"
+              className="relative border-l border-purple-200/50 ml-4 md:ml-10 space-y-12"
             >
               {usageSteps.map((step, i) => (
                 <div key={i} className="relative pl-8 sm:pl-12">
-                  <div className="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 text-white flex items-center justify-center font-black text-xs shadow-md shadow-emerald-500/15">
+                  <div className="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-violet-500 text-white flex items-center justify-center font-black text-xs shadow-md shadow-purple-500/15">
                     {step.step}
                   </div>
                   <h4 className="font-bold text-gray-800 text-base sm:text-lg mb-1">{step.title}</h4>
@@ -326,7 +326,7 @@ export default function HRIKPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <span className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 border border-gray-200 rounded-full text-xs font-bold text-gray-600 mb-4">
-              <HelpCircle className="w-3.5 h-3.5 text-emerald-500" />
+              <HelpCircle className="w-3.5 h-3.5 text-purple-500" />
               Sıkça Sorulan Sorular
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">
@@ -338,7 +338,7 @@ export default function HRIKPage() {
             {sss.map((f, i) => (
               <details key={i} className="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
                 <summary className="flex items-start gap-4 p-5 cursor-pointer list-none font-semibold text-gray-900">
-                  <span className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{i + 1}</span>
+                  <span className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{i + 1}</span>
                   <span className="flex-1">{f.q}</span>
                   <svg className="w-5 h-5 flex-shrink-0 mt-1 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -353,7 +353,7 @@ export default function HRIKPage() {
 
       {/* Premium CTA Section */}
       <section className="py-16 sm:py-24 max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-500 via-teal-600 to-cyan-700 text-white shadow-xl shadow-emerald-500/10 p-8 sm:p-12 md:p-16 text-center">
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-purple-500 via-violet-600 to-fuchsia-700 text-white shadow-xl shadow-purple-500/10 p-8 sm:p-12 md:p-16 text-center">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15),transparent)] pointer-events-none" />
           
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">

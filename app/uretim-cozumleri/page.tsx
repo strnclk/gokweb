@@ -23,7 +23,7 @@ export default function UretimCozumleriPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-amber-50 border border-amber-200 rounded-full text-amber-700 text-sm font-medium mb-6"
           >
             <Sparkles size={14} className="text-amber-600" />
@@ -33,7 +33,7 @@ export default function UretimCozumleriPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-900"
           >
             Üretim Sektörü Çözümleri
@@ -42,7 +42,7 @@ export default function UretimCozumleriPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed mx-auto"
           >
             Fabrika sahanızdaki anlık üretim durumlarını, makine duruşlarını ve operatör bildirimlerini MES entegrasyonu ile canlı yönetin.

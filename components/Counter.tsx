@@ -40,7 +40,7 @@ export default function Counter({ icon, endValue, suffix, label, isInView, delay
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
-      transition={{ duration: 0.8, delay }}
+      transition={{ duration: 0.6, delay }}
       className="text-center"
     >
       <div className="flex justify-center mb-6 text-purple-400">

@@ -39,7 +39,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.6 }}
                 className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6"
               >
                 <Sparkles size={14} />
@@ -49,7 +49,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
+                transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
               >
                 İşletmenizi
@@ -60,7 +60,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl leading-relaxed"
               >
                 20+ yıllık deneyimimizle işletmeniz için en uygun ERP, CRM ve e-dönüşüm çözümlerini birlikte belirleyelim. Ücretsiz danışmanlık için hemen iletişime geçin.
@@ -69,7 +69,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
               >
                 <a
@@ -92,7 +92,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
                 className="mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0"
               >
                 <div className="text-center">
@@ -114,7 +114,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="hidden lg:block"
             >
               <div className="bg-white border border-gray-200 rounded-2xl p-7 shadow-xl">
@@ -262,7 +262,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
                   initial: { opacity: 0, y: 20 },
                   whileInView: { opacity: 1, y: 0 },
                   viewport: { once: true, amount: 0.2 },
-                  transition: { duration: 0.25, delay: index * 0.04 },
+                  transition: { duration: 0.25, delay: index * 0.03 },
                 };
                 const inner = (
                   <>

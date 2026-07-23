@@ -104,7 +104,7 @@ export default function MikroErpKurulumuPage() {
             <motion.div
               initial={{ opacity: 0, x: 30, scale: 0.95 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.6 }}
               className="relative"
             >
               <div className="absolute inset-0 bg-blue-500/10 rounded-3xl blur-3xl" />

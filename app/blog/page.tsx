@@ -62,8 +62,9 @@ export default function BlogPage() {
             <motion.div
               initial={{ opacity: 0, y: -15, x: -15 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
-              className="absolute -top-6 left-8 xl:left-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="absolute -top-6 left-8 xl:left-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <Compass className="w-6 h-6" />
@@ -82,8 +83,9 @@ export default function BlogPage() {
             <motion.div
               initial={{ opacity: 0, y: -15, x: 15 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="absolute -top-3 right-8 xl:right-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="absolute -top-3 right-8 xl:right-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <Cloud className="w-6 h-6" />
@@ -102,8 +104,9 @@ export default function BlogPage() {
             <motion.div
               initial={{ opacity: 0, y: 15, x: -15 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="absolute bottom-0 left-0 xl:left-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="absolute bottom-0 left-0 xl:left-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <TrendingUp className="w-6 h-6" />
@@ -122,8 +125,9 @@ export default function BlogPage() {
             <motion.div
               initial={{ opacity: 0, y: 15, x: 15 }}
               animate={{ opacity: 1, y: 0, x: 0 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="absolute bottom-0 right-0 xl:right-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+              whileHover={{ y: -6 }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="absolute bottom-0 right-0 xl:right-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <Workflow className="w-6 h-6" />
@@ -142,7 +146,7 @@ export default function BlogPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
               className="text-center max-w-4xl mx-auto py-8 sm:py-12 px-4 relative z-30 flex flex-col items-center"
             >
               {/* Yıldız ve 'Blog' Rozeti (Orijinal Canlı Turkuaz) */}
@@ -199,14 +203,21 @@ export default function BlogPage() {
           <div className="mb-8 sm:mb-12">
             <span className="text-xs sm:text-sm font-semibold text-teal-700 uppercase tracking-wider">Öne Çıkan Rehber</span>
           </div>
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <div className={`h-64 sm:h-80 lg:h-full bg-gradient-to-br ${featuredPost.gradient} rounded-2xl flex items-center justify-center p-6 text-center text-white`}>
-              <div>
-                <span className="inline-block px-3.5 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-medium mb-4">{featuredPost.category}</span>
-                <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-3 leading-tight">{featuredPost.title}</h2>
-                <p className="text-sm sm:text-lg text-white/90">{featuredPost.excerpt}</p>
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center bg-slate-50/60 border border-slate-200/80 p-5 sm:p-7 rounded-3xl">
+            <Link href={`/blog/${featuredPost.slug}`} className="group relative block overflow-hidden rounded-2xl w-full h-[260px] sm:h-[340px] lg:h-[360px] shadow-md hover:shadow-xl transition-all duration-300">
+              <BlogCover
+                gradient={featuredPost.gradient}
+                category={featuredPost.category}
+                image={featuredPost.image}
+                alt={featuredPost.title}
+                className="w-full h-full"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-transparent p-6 flex flex-col justify-end text-white">
+                <span className="inline-block px-3 py-1 bg-teal-500/90 text-white backdrop-blur-md rounded-full text-xs font-bold mb-2.5 self-start shadow-sm border border-white/20">{featuredPost.category}</span>
+                <h3 className="text-base sm:text-xl font-bold mb-1.5 leading-snug group-hover:text-teal-200 transition-colors line-clamp-2">{featuredPost.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-200 line-clamp-2 font-medium">{featuredPost.excerpt}</p>
               </div>
-            </div>
+            </Link>
             <div>
               <div className="flex items-center gap-3 text-xs sm:text-sm text-gray-500 mb-4">
                 <span className="px-3 py-1 bg-teal-50 text-teal-700 rounded-full font-medium">{featuredPost.category}</span>
@@ -280,6 +291,8 @@ export default function BlogPage() {
                     <BlogCover
                       gradient={post.gradient}
                       category={post.category}
+                      image={post.image}
+                      alt={post.title}
                       className="w-full aspect-[16/10] rounded-xl"
                       iconClassName="w-12 h-12"
                     />

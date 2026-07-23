@@ -1,5 +1,6 @@
 'use client';
 
+import dynamic from 'next/dynamic';
 import { Workflow, Users, Settings, BarChart3, CheckCircle, TrendingUp, Zap, Shield, Database, Globe, Target, ArrowRight, Sparkles, Smartphone, Layers, FileText, Clock, Award, Lock, Coins, Receipt, Truck, Factory } from 'lucide-react';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -10,7 +11,7 @@ import Link from 'next/link';
 
 const sssBpm = [
   { soru: 'E-Flow BPM nedir?', cevap: 'E-Flow BPM, kod yazmadan sürükle-bırak ile iş akışları ve süreçler tasarlamanızı sağlayan bir süreç yönetimi (BPM) çözümüdür. Onay akışları, formlar ve otomasyonları hızla kurar, süreçlerinizi standartlaştırırsınız.' },
-  { soru: 'Kurulum ve sunucu maliyeti gerekiyor mu?', cevap: 'Hayır. E-Flow BPM, SaaS/kiralama modeliyle sunucu ve yüksek ilk yatırım maliyeti olmadan kullanılabilir; her zaman güncel sürümle çalışırsınız.' },
+  { soru: 'Kurulum ve sunucu maliyeti gerekiyor mu?', cevap: 'E-Flow BPM, SaaS/kiralama modeli sayesinde yüksek donanım maliyetleri olmadan esnek biçimde kullanılabilir. İşletmenizin ihtiyaçlarına özel profesyonel kurulum ve destek süreçleri için kolayca anlaşma sağlayabiliriz.' },
   { soru: 'Mevcut ERP ve Mikro ile entegre olur mu?', cevap: 'Evet. Hazır entegrasyon bileşenleriyle yaygın ERP uygulamalarına ve Mikro’ya bağlanır; süreçleriniz ve ERP verileriniz tek akışta çalışır.' },
   { soru: 'Süreçleri mobilden yönetebilir miyim?', cevap: 'Evet. E-Flow BPM mobil uygulama ve web uyumu ile onay, görev ve süreçlerinizi her yerden yönetmenize imkân verir.' },
 ];
@@ -31,7 +32,7 @@ const faqJsonLdBpm = {
   mainEntity: sssBpm.map((f) => ({ '@type': 'Question', name: f.soru, acceptedAnswer: { '@type': 'Answer', text: f.cevap } })),
 };
 
-import EflowBpmWheel from '@/components/EflowBpmWheel';
+const EflowBpmWheel = dynamic(() => import('@/components/EflowBpmWheel'), { ssr: false });
 
 export default function EflowBpmPage() {
   const router = useRouter();
@@ -105,7 +106,7 @@ export default function EflowBpmPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-start px-6 overflow-hidden bg-gradient-to-br from-white via-[#f4fafb] to-[#fcfefe] pt-32 md:pt-36 pb-16">
+      <section className="relative flex flex-col justify-start px-6 overflow-hidden bg-gradient-to-br from-white via-[#f4fafb] to-[#fcfefe] pt-36 sm:pt-40 pb-16">
         {/* Decorative ambient glowing backdrops */}
         <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-80 h-80 bg-[#40949c]/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s' }} />
         <div className="absolute bottom-10 left-10 sm:bottom-20 sm:left-20 w-72 h-72 bg-blue-100/40 rounded-full blur-3xl" />
@@ -157,8 +158,8 @@ export default function EflowBpmPage() {
                 ]
               }}
               transition={{ 
-                opacity: { duration: 0.6, delay: 0.3 },
-                y: { duration: 0.6, delay: 0.3 },
+                opacity: { duration: 0.6, delay: 0.15 },
+                y: { duration: 0.6, delay: 0.15 },
                 boxShadow: {
                   repeat: Infinity,
                   duration: 2,
@@ -183,7 +184,7 @@ export default function EflowBpmPage() {
           <motion.div
             initial={{ opacity: 0, x: 40, scale: 0.95 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="lg:col-span-5 relative flex flex-col items-center justify-center w-full py-2"
           >
             {/* İnteraktif Vektör Çark Bileşeni */}
@@ -382,24 +383,8 @@ export default function EflowBpmPage() {
                 </div>
                 <h3 className="text-xl font-black text-slate-900">Yapay Zeka (AI) Entegrasyonu</h3>
                 <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                  E-Flow'un yapay zeka entegrasyonu ile süreçlerinizi akıllı asistan yardımıyla tasarlayın. Sistem şablonları anında çıkarır.
+                  Yapay zeka destekli BPM mimarisi, iş süreçlerinizi yalnızca otomatikleştirmekle kalmayıp kurumunuza akıllı çözümler katar. AI destekli analitikler sayesinde veri odaklı kararlar alabilir ve süreçlerinizi kesintisiz olarak iyileştirebilirsiniz. Bu altyapı, işletmenizin değişen koşullara hızla adapte olması ve sürdürülebilir çözümler geliştirmesi için güçlü bir fırsat sunar.
                 </p>
-              </div>
-
-              {/* Chat Simulation */}
-              <div className="mt-8 bg-white border border-slate-200/60 rounded-2xl p-4 shadow-md space-y-3">
-                <div className="flex gap-2.5 items-start">
-                  <div className="w-6 h-6 rounded-full bg-slate-100 border border-slate-200 flex-shrink-0 flex items-center justify-center text-[9px] font-black text-slate-500">SEN</div>
-                  <div className="bg-slate-50 border border-slate-100 rounded-2xl p-2.5 text-[10px] font-medium text-slate-700">
-                    "Satın alma onay süreci tasarlayabilir misin?"
-                  </div>
-                </div>
-                <div className="flex gap-2.5 items-start">
-                  <div className="w-6 h-6 rounded-full bg-[#40949c]/20 flex-shrink-0 flex items-center justify-center text-[9px] font-black text-[#40949c]">AI</div>
-                  <div className="bg-[#40949c]/10 border border-[#40949c]/20 rounded-2xl p-2.5 text-[10px] font-medium text-[#40949c]">
-                    "Satın alma onay şablonu oluşturuldu, ERP kayıt entegrasyonu hazır! 🚀"
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -578,11 +563,11 @@ export default function EflowBpmPage() {
               const Icon = item.icon;
               return (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  key={`finans-${index}`}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  className="bg-white border border-slate-200/50 p-6 rounded-3xl shadow-sm hover:border-emerald-500 hover:shadow-md transition-all duration-200"
+                  transition={{ duration: 0.45, delay: index * 0.03, ease: [0.22, 1, 0.36, 1] }}
+                  className="bg-white border border-slate-200/50 p-6 rounded-3xl shadow-sm hover:border-emerald-500 hover:shadow-md transition-all duration-300"
                 >
                   <div className="w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-600 mb-4">
                     <Icon size={20} />
@@ -604,11 +589,11 @@ export default function EflowBpmPage() {
               const Icon = item.icon;
               return (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  key={`ik-${index}`}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
-                  className="bg-white border border-slate-200/50 p-6 rounded-3xl shadow-sm hover:border-blue-500 hover:shadow-md transition-all duration-200"
+                  transition={{ duration: 0.45, delay: index * 0.03, ease: [0.22, 1, 0.36, 1] }}
+                  className="bg-white border border-slate-200/50 p-6 rounded-3xl shadow-sm hover:border-blue-500 hover:shadow-md transition-all duration-300"
                 >
                   <div className="w-10 h-10 bg-blue-500/10 rounded-xl flex items-center justify-center text-blue-600 mb-4">
                     <Icon size={20} />
@@ -630,10 +615,10 @@ export default function EflowBpmPage() {
               const Icon = item.icon;
               return (
                 <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  key={`lojistik-${index}`}
+                  initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
+                  transition={{ duration: 0.45, delay: index * 0.03, ease: [0.22, 1, 0.36, 1] }}
                   className="bg-white border border-slate-200/50 p-6 rounded-3xl shadow-sm hover:border-green-400 hover:shadow-md transition-all duration-200"
                 >
                   <div className="w-10 h-10 bg-green-500/10 rounded-xl flex items-center justify-center text-green-600 mb-4">
@@ -654,8 +639,8 @@ export default function EflowBpmPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6 }}
             className="relative bg-gradient-to-br from-slate-900 via-slate-850 to-slate-950 p-10 sm:p-16 rounded-[3rem] text-center overflow-hidden shadow-2xl border border-slate-800"
           >
             {/* Glowing neon shapes inside CTA */}

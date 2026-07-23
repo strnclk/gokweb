@@ -23,7 +23,7 @@ export default function TekstilCozumleriPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-200 rounded-full text-indigo-700 text-sm font-medium mb-6"
           >
             <Sparkles size={14} className="text-indigo-600" />
@@ -33,7 +33,7 @@ export default function TekstilCozumleriPage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-900"
           >
             Tekstil Sektörü Çözümleri
@@ -42,10 +42,10 @@ export default function TekstilCozumleriPage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed mx-auto"
           >
-            Tekstil ve hazır giyim şubelerinizde renk/beden matrisi takipleri ve mağazacılık POS uygulamaları ile satış hızınızı artırın.
+            Tekstil ve hazır giyim şubelerinizde renk/beden matrisi takipleri ve mağazacılık uygulamaları ile satış hızınızı artırın.
           </motion.p>
         </div>
       </section>
@@ -88,14 +88,14 @@ export default function TekstilCozumleriPage() {
                     </li>
                     <li className="flex items-start">
                       <span className="text-indigo-600 font-bold mr-2.5 mt-0.5">•</span>
-                      <strong>Mikro ERP Entegrasyonu:</strong> Koleksiyon kartlarını, fason atölye masraflarını ve mağaza POS cirolarını doğrudan Mikro veritabanına aktarabilirsiniz.
+                      <strong>Mikro ERP Entegrasyonu:</strong> Koleksiyon kartlarını, fason atölye masraflarını ve mağaza kasa cirolarını doğrudan Mikro veritabanına aktarabilirsiniz.
                     </li>
                   </ul>
                 </div>
 
                 <div className="mt-8 pt-6 border-t border-gray-200">
                   <p className="text-indigo-600 font-semibold text-sm">
-                    Entegre Çözümler: Mikro Fason Takip, Tekstil POS Perakende Çözümleri, Mikro Jump/Fly Entegrasyonu
+                    Entegre Çözümler: Mikro Fason Takip, Tekstil Perakende Çözümleri, Mikro Jump/Fly Entegrasyonu
                   </p>
                 </div>
               </div>

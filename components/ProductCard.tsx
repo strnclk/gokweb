@@ -49,7 +49,7 @@ export default function ProductCard({ image, images, icon, title, subtitle, desc
             scale: isInView ? 1 : 0.95,
             y: isInView ? 0 : 30
           }}
-          transition={{ duration: 0.8, delay: delay * 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.6, delay: delay * 0.03, ease: "easeOut" }}
           className="text-center"
         >
           {images ? (
@@ -76,7 +76,7 @@ export default function ProductCard({ image, images, icon, title, subtitle, desc
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-              transition={{ duration: 0.6, delay: delay * 0.2 + 0.1, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: delay * 0.03 + 0.1, ease: "easeOut" }}
               className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-12"
             >
               {features.map((feature, index) => (
@@ -93,7 +93,7 @@ export default function ProductCard({ image, images, icon, title, subtitle, desc
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-            transition={{ duration: 0.6, delay: delay * 0.2 + 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: delay * 0.03 + 0.2, ease: "easeOut" }}
             className="mt-10"
           >
             <button 

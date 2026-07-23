@@ -82,7 +82,7 @@ export default function IndustryScenariosSection() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.03 }}
               onMouseEnter={() => setHoveredIndustry(index)}
               onMouseLeave={() => setHoveredIndustry(null)}
               className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl  cursor-pointer border border-gray-100"

@@ -129,7 +129,7 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.6 }}
               className="md:col-span-2 bg-white/90 border border-slate-200/40 p-8 md:p-10 rounded-2xl shadow-[0_8px_30px_rgba(230,225,215,0.25)] flex flex-col justify-center"
             >
               <h3 className="text-xl md:text-2xl font-bold text-slate-800 mb-5 flex items-center gap-2.5">
@@ -175,7 +175,7 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              transition={{ duration: 0.7, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
               className="md:col-span-2 p-[2px] bg-gradient-to-r from-[#FF007F] via-[#7B2CBF] via-[#4361EE] via-[#4CC9F0] to-[#FF007F] rounded-2xl shadow-[0_15px_40px_rgba(168,85,247,0.25)] overflow-visible"
             >
               <div className="w-full h-full bg-[#0E121F] rounded-[14px] p-8 md:p-10 relative overflow-hidden text-white flex flex-col justify-center">
@@ -246,7 +246,7 @@ export default function AboutSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false }}
-              transition={{ duration: 0.7, delay: 0.1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
               className="md:col-span-3 bg-white/90 border border-slate-200/40 p-8 md:p-10 rounded-2xl shadow-[0_8px_30px_rgba(230,225,215,0.25)]"
             >
               <p className="text-base md:text-lg text-slate-600 leading-relaxed font-semibold">

@@ -42,8 +42,10 @@ export default function Footer() {
               <li><Link href="/mikro-run" className="text-slate-300 hover:text-white transition-colors duration-200">Mikro Run</Link></li>
               <li><Link href="/mikro-jump" className="text-slate-300 hover:text-white transition-colors duration-200">Mikro Jump</Link></li>
               <li><Link href="/eflow" className="text-slate-300 hover:text-white transition-colors duration-200">E-Flow</Link></li>
+              <li><Link href="/eflow-surecleri" className="text-slate-300 hover:text-white transition-colors duration-200">E-Flow Süreçleri</Link></li>
               <li><Link href="/eflow-bpm" className="text-slate-300 hover:text-white transition-colors duration-200">E-Flow BPM</Link></li>
               <li><Link href="/eflow-dms" className="text-slate-300 hover:text-white transition-colors duration-200">E-Flow DMS</Link></li>
+              <li><Link href="/eflow-butce-merkezi" className="text-slate-300 hover:text-white transition-colors duration-200">Bütçe Merkezi</Link></li>
             </ul>
           </div>
 
@@ -64,7 +66,6 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <h4 className="text-lg font-semibold mb-4 text-white">Hızlı Linkler</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="text-slate-300 hover:text-white transition-colors duration-200">Ana Sayfa</Link></li>
               <li><Link href="/#hakkimizda" className="text-slate-300 hover:text-white transition-colors duration-200">Hakkımızda</Link></li>
               <li><Link href="/blog" className="text-slate-300 hover:text-white transition-colors duration-200">Blog</Link></li>
               <li><Link href="/solutions" className="text-slate-300 hover:text-white transition-colors duration-200">Çözümler</Link></li>
@@ -160,7 +161,7 @@ export default function Footer() {
             
             <div>
               <h5 className="font-semibold text-white mb-3">E-posta</h5>
-              <p className="text-sm text-slate-300">satis@gokkusagiyazilim.com.tr</p>
+              <a href="mailto:satis@gokkusagiyazilim.com.tr" className="text-sm text-slate-300 hover:text-white transition-colors">satis@gokkusagiyazilim.com.tr</a>
             </div>
             
             <div>

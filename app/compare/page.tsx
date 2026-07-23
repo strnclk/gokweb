@@ -14,7 +14,7 @@ import { Check, Star, Users, Zap, Shield, Database, Globe, DollarSign, Building2
 const sssCompare = [
   { soru: 'Bu karşılaştırma aracı nasıl çalışıyor?', cevap: '3 kısa soruyla işletmenizin büyüklüğünü, sektörünü ve ana ihtiyacını analiz eder; size en uygun Mikro çözümünü eşleşme oranıyla önerir.' },
   { soru: 'Sonuçlar ne kadar güvenilir?', cevap: 'Sonuçlar yönlendirici bir öneri niteliğindedir. Kesin seçim için ihtiyaçlarınızı uzmanlarımızla birlikte değerlendirmenizi öneririz.' },
-  { soru: 'Mikro Run, Jump ve Fly arasındaki fark nedir?', cevap: 'Mikro Run en küçük ölçek ve esnaf için; Mikro Jump büyüyen KOBİ’ler için; Mikro Fly ise kurumsal, e-ticaret ve UFRS ihtiyacı olan işletmeler içindir. Ölçeğinize göre doğru paketi öneririz.' },
+  { soru: 'Mikro Run, Jump ve Fly arasındaki fark nedir?', cevap: 'Mikro Run en küçük ölçek ve esnaf için; Mikro Jump büyüyen KOBİ’ler için; Mikro Fly ise kurumsal ve e-ticaret ihtiyacı olan işletmeler içindir. Ölçeğinize göre doğru paketi öneririz.' },
 ];
 
 const webAppJsonLd = {
@@ -308,7 +308,7 @@ export default function ComparePage() {
       }
       if (ind === 'retail') {
         return [
-          'Hızlı Perakende ve POS satış noktalarıyla gerçek zamanlı entegrasyon',
+          'Hızlı perakende satış noktaları ve banka sistemleriyle gerçek zamanlı entegrasyon',
           'Merkez ve tüm şubeleriniz arasında anlık ciro ve envanter takibi',
           'Müşteri sadakat kartı, puan ve gelişmiş kampanya yönetim modülleri'
         ];
@@ -317,7 +317,7 @@ export default function ComparePage() {
         return [
           'Konsolide nakit akışı yönetimi, bütçe planlama ve finansal analiz',
           'Banka entegrasyonları ile tüm banka hesap hareketlerini otomatik işleme',
-          'Çoklu döviz desteği, kur farkı hesaplama ve UFRS uyumlu muhasebe'
+          'Çoklu döviz desteği ve kur farkı hesaplama'
         ];
       }
       if (need === 'inventory' || size === '51-200' || size === '200+') {
@@ -419,7 +419,7 @@ export default function ComparePage() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl md:text-7xl font-bold leading-tight mb-6 text-gray-900"
           >
             İşletmeniz İçin
@@ -430,7 +430,7 @@ export default function ComparePage() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed"
           >
             İşletmenizin ihtiyaçlarını analiz ederek size en uygun ERP ve e-dönüşüm çözümlerini öneriyoruz.
@@ -439,7 +439,7 @@ export default function ComparePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
             className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12"
           >
             {stats.map((stat, index) => {
@@ -449,7 +449,7 @@ export default function ComparePage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
+                  transition={{ duration: 0.6, delay: 0.1 + index * 0.03 }}
                   className="text-center"
                 >
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-3">
@@ -509,7 +509,7 @@ export default function ComparePage() {
                         onClick={() => handleAnswer(questionnaire[currentStep].id, option.value)}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: idx * 0.05 }}
+                        transition={{ delay: idx * 0.03 }}
                         className={`relative p-4 sm:p-5 rounded-xl border-2 cursor-pointer transition-all text-left group ${
                           isSelected 
                             ? 'border-blue-600 bg-blue-50/50 shadow-md' 
@@ -594,7 +594,7 @@ export default function ComparePage() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.15 }}
               className="text-gray-600 mb-8"
             >
               En uygun çözümleri belirlemek için verilerinizi inceliyoruz...
@@ -673,7 +673,7 @@ export default function ComparePage() {
                     key={item.id}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                    transition={{ duration: 0.6, delay: index * 0.03 }}
                     className="relative"
                   >
                     {isTop && (
@@ -690,7 +690,7 @@ export default function ComparePage() {
                         <motion.div
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.2 + index * 0.15 }}
+                          transition={{ delay: 0.1 + index * 0.03 }}
                           className="w-24 h-24 mx-auto mb-4 rounded-2xl flex items-center justify-center bg-white ring-1 ring-gray-100 shadow-sm p-2.5 overflow-hidden"
                         >
                           {logoUrl ? (
@@ -733,7 +733,7 @@ export default function ComparePage() {
                             <motion.div 
                               initial={{ width: 0 }}
                               animate={{ width: `${item.matchPercentage}%` }}
-                              transition={{ duration: 1, delay: 0.5 + index * 0.15 }}
+                              transition={{ duration: 0.6, delay: 0.1 + index * 0.03 }}
                               className={`bg-gradient-to-r ${gradientColor} h-2.5 rounded-full`}
                             />
                           </div>
@@ -746,7 +746,7 @@ export default function ComparePage() {
                               key={i}
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: 0.6 + index * 0.15 + i * 0.1 }}
+                              transition={{ delay: 0.1 + index * 0.03 + i * 0.1 }}
                               className="flex items-center text-sm text-gray-600"
                             >
                               <CheckCircle2 className={`w-4 h-4 mr-2 flex-shrink-0 ${isTop ? 'text-blue-600' : 'text-emerald-500'}`} />

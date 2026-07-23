@@ -14,6 +14,7 @@ export interface BlogPost {
   readTime: string;
   gradient: string;
   slug: string;
+  image?: string;
   metaDescription: string;
   content: string;
   // Yazının sonunda akordeon olarak gösterilen SSS; ayrıca FAQPage JSON-LD üretir.
@@ -28,6 +29,7 @@ export const featuredPost: BlogPost = {
   readTime: '6 dk',
   gradient: 'from-purple-600 to-blue-600',
   slug: 'erp-sistemleri-2026-trendleri-yapay-zeka-bulut-dijital-donusum',
+  image: '/blog/blog_erp_trends_2026.jpg',
   metaDescription: '2026 yılında ERP sistemlerinde öne çıkan 5 trend: Yapay zeka destekli otomasyon, bulut ERP geçişleri, gerçek zamanlı analitik, mobil ERP ve ESG uyumluluğu. İşletmelerin dijital dönüşüm stratejileri.',
   content: `
     <h2>1. Yapay zeka ve otomasyon</h2>
@@ -94,6 +96,7 @@ export const posts: BlogPost[] = [
     readTime: '6 dk',
     gradient: 'from-green-500 to-green-600',
     slug: 'mikro-erp-verimlilik-artisi-2026-istatistikler-musteri-hikayeleri',
+  image: '/blog/blog_mikro_erp_benefits.jpg',
     metaDescription: 'Mikro ERP nedir ve işletmenize ne kazandırır? Kapsadığı süreçler, avantajları ve Mikro Run/Jump/Fly ürün seçimi. Resmi Mikro bayisi Gökkuşağı Yazılım.',
     content: `
       <h2>Mikro ERP nedir?</h2>
@@ -171,6 +174,7 @@ export const posts: BlogPost[] = [
     readTime: '5 dk',
     gradient: 'from-orange-500 to-orange-600',
     slug: 'insaat-sektorunde-erp-kullanimi-proje-yonetimi-maliyet-kontrolu',
+  image: '/blog/blog_construction_erp.jpg',
     metaDescription: 'İnşaat sektöründe ERP kullanımı: proje yönetimi, maliyet kontrolü, şantiye ve stok yönetimi. İnşaat firmaları için Mikro ERP ve dikey çözümler.',
     content: `
       <h2>İnşaat sektöründe ERP neden gerekli?</h2>
@@ -241,6 +245,7 @@ export const posts: BlogPost[] = [
     readTime: '6 dk',
     gradient: 'from-violet-500 to-violet-600',
     slug: 'dijital-donusumde-basarinin-5-anahtari-strateji-uygulama-rehberi',
+  image: '/blog/blog_digital_transformation.jpg',
     metaDescription: 'Dijital dönüşümde başarının 5 anahtarı: Liderlik desteği, stratejik planlama, personel eğitimi, doğru teknoloji seçimi ve sürekli iyileştirme. İşletmeler için rehber.',
     content: `
       <h2>1. Liderlik desteği</h2>
@@ -315,6 +320,7 @@ export const posts: BlogPost[] = [
     readTime: '6 dk',
     gradient: 'from-emerald-500 to-emerald-600',
     slug: 'mikro-fly-vs-run-vs-jump-karsilastirmasi-2026-fiyat-ozellik-analizi',
+  image: '/blog/blog_mikro_product_compare.jpg',
     metaDescription: 'Mikro Run, Jump ve Fly karşılaştırması: Run esnaf ve mikro işletmeler, Jump 5-50 çalışanlı KOBİ\'ler, Fly 50+ çalışan ve sınırsız kullanıcı için. Hangi Mikro ERP sizin için uygun?',
     content: `
       <h2>Mikro Run, Jump ve Fly nedir?</h2>
@@ -327,7 +333,7 @@ export const posts: BlogPost[] = [
       <p>Mikro Jump; çalışan sayısı yaklaşık 5-50 arasında olan, birden fazla şube veya sektörle ilgilenen küçük ve orta ölçekli işletmeler (KOBİ) içindir. Üretim takibi, İK/bordro, bütçe, şube bazlı takip ve gelişmiş yetkilendirme gibi özelliklerle Run'a göre daha kapsamlıdır. İhtiyacından fazlasını satın almadan kontrollü büyümek isteyen işletmeler için ölçeklenebilir bir çözümdür.</p>
 
       <h2>Mikro Fly kimler için uygundur?</h2>
-      <p>Mikro Fly; çalışan sayısı 50 ve üzeri olan kurumsallaşmış işletmeler ve holdingler içindir. Sınırsız kullanıcı desteği sunar; UFRS ve enflasyon muhasebesine uyum, detaylı fiili maliyet takibi ve çok şirketli/holding entegrasyonu gibi ileri seviye ihtiyaçları karşılar. Muhasebeyi hem VUK'a hem UFRS'ye göre tutup raporlayabilirsiniz.</p>
+      <p>Mikro Fly; çalışan sayısı 50 ve üzeri olan kurumsallaşmış işletmeler ve holdingler içindir. Sınırsız kullanıcı desteği sunar; enflasyon muhasebesine uyum, detaylı fiili maliyet takibi ve çok şirketli/holding entegrasyonu gibi ileri seviye ihtiyaçları karşılar.</p>
 
       <div class="my-6 rounded-xl border-l-4 border-blue-500 bg-blue-50 p-4">
         <p class="text-sm font-semibold text-blue-900 mb-1">Önemli</p>
@@ -352,27 +358,27 @@ export const posts: BlogPost[] = [
             <tr><td class="p-3 text-gray-700 border border-gray-200">Üretim / MRP</td><td class="p-3 text-gray-700 border border-gray-200">—</td><td class="p-3 text-gray-700 border border-gray-200">✓</td><td class="p-3 text-gray-700 border border-gray-200">✓</td></tr>
             <tr><td class="p-3 text-gray-700 border border-gray-200">İK / bordro</td><td class="p-3 text-gray-700 border border-gray-200">—</td><td class="p-3 text-gray-700 border border-gray-200">✓</td><td class="p-3 text-gray-700 border border-gray-200">✓</td></tr>
             <tr><td class="p-3 text-gray-700 border border-gray-200">Şube ve bütçe yönetimi</td><td class="p-3 text-gray-700 border border-gray-200">—</td><td class="p-3 text-gray-700 border border-gray-200">✓</td><td class="p-3 text-gray-700 border border-gray-200">✓</td></tr>
-            <tr><td class="p-3 text-gray-700 border border-gray-200">UFRS / enflasyon muhasebesi</td><td class="p-3 text-gray-700 border border-gray-200">—</td><td class="p-3 text-gray-700 border border-gray-200">—</td><td class="p-3 text-gray-700 border border-gray-200">✓</td></tr>
+            <tr><td class="p-3 text-gray-700 border border-gray-200">Enflasyon muhasebesi</td><td class="p-3 text-gray-700 border border-gray-200">—</td><td class="p-3 text-gray-700 border border-gray-200">—</td><td class="p-3 text-gray-700 border border-gray-200">✓</td></tr>
             <tr><td class="p-3 text-gray-700 border border-gray-200">Holding / çok şirket</td><td class="p-3 text-gray-700 border border-gray-200">—</td><td class="p-3 text-gray-700 border border-gray-200">—</td><td class="p-3 text-gray-700 border border-gray-200">✓</td></tr>
           </tbody>
         </table>
       </div>
 
       <h2>Hangi ürünü seçmelisiniz?</h2>
-      <p>Küçük başlayıp büyüdükçe üst pakete geçebilirsiniz; Mikro ürünleri arasında geçişte verileriniz korunur. Karar verirken çalışan sayınızı, şube yapınızı, üretim ve muhasebe (UFRS) ihtiyacınızı değerlendirin. Ürünleri yan yana görmek için <a href="/compare" class="text-blue-600 underline">karşılaştırma sayfamıza</a> göz atabilir, size en uygun paketi belirlemek için <a href="/contact" class="text-blue-600 underline">bizimle iletişime geçebilirsiniz</a>.</p>
+      <p>Küçük başlayıp büyüdükçe üst pakete geçebilirsiniz; Mikro ürünleri arasında geçişte verileriniz korunur. Karar verirken çalışan sayınızı, şube yapınızı, üretim ve muhasebe ihtiyacınızı değerlendirin. Ürünleri yan yana görmek için <a href="/compare" class="text-blue-600 underline">karşılaştırma sayfamıza</a> göz atabilir, size en uygun paketi belirlemek için <a href="/contact" class="text-blue-600 underline">bizimle iletişime geçebilirsiniz</a>.</p>
     `,
     faq: [
       {
         question: 'Mikro Run, Jump ve Fly arasındaki fark nedir?',
-        answer: 'Üçü işletme ölçeğine göre konumlanır: Run giriş seviyesi (esnaf ve mikro işletmeler), Jump orta segment (yaklaşık 5-50 çalışan; üretim, İK, şube ve bütçe yönetimi) ve Fly üst segmenttir (50+ çalışan, sınırsız kullanıcı, UFRS/enflasyon muhasebesi ve holding yapısı).',
+        answer: 'Üçü işletme ölçeğine göre konumlanır: Run giriş seviyesi (esnaf ve mikro işletmeler), Jump orta segment (yaklaşık 5-50 çalışan; üretim, İK, şube ve bütçe yönetimi) ve Fly üst segmenttir (50+ çalışan, sınırsız kullanıcı, enflasyon muhasebesi ve holding yapısı).',
       },
       {
         question: '5-50 çalışanlı bir işletmeye hangisi uygun?',
         answer: 'Bu ölçekteki küçük ve orta ölçekli işletmeler için Mikro Jump uygundur. Üretim takibi, İK/bordro, bütçe, şube bazlı takip ve gelişmiş yetkilendirme gibi özelliklerle Run\'a göre daha kapsamlıdır.',
       },
       {
-        question: 'UFRS ve enflasyon muhasebesi hangi Mikro üründe var?',
-        answer: 'Mikro Fly\'da. Fly; UFRS ve enflasyon muhasebesine uyum, detaylı fiili maliyet takibi ve çok şirketli/holding entegrasyonu sunar; muhasebeyi hem VUK\'a hem UFRS\'ye göre tutup raporlayabilirsiniz.',
+        question: 'Enflasyon muhasebesi hangi Mikro üründe var?',
+        answer: 'Mikro Fly\'da. Fly; enflasyon muhasebesine uyum, detaylı fiili maliyet takibi ve çok şirketli/holding entegrasyonu sunar.',
       },
       {
         question: 'Alt paketten üst pakete geçebilir miyim?',
@@ -388,6 +394,7 @@ export const posts: BlogPost[] = [
     readTime: '6 dk',
     gradient: 'from-pink-500 to-pink-600',
     slug: 'uretim-sektorunde-stok-yonetimi-mrp-sistemleri-otomasyon-cozumleri',
+  image: '/blog/blog_manufacturing_mrp.jpg',
     metaDescription: 'Üretim sektöründe stok yönetimi ve MRP: malzeme ihtiyaç planlama, otomasyon (barkod/RFID), stok optimizasyon yaklaşımları ve Mikro ERP entegrasyonu.',
     content: `
       <h2>Üretimde stok yönetimi neden kritiktir?</h2>
@@ -450,6 +457,7 @@ export const posts: BlogPost[] = [
     readTime: '7 dk',
     gradient: 'from-red-500 to-red-600',
     slug: 'kobi-icin-erp-secim-rehberi-2026-kriterler-maliyet-oneriler',
+  image: '/blog/blog_sme_erp_guide.jpg',
     metaDescription: 'KOBİ\'ler için ERP seçim rehberi: seçim kriterleri, maliyet (TCO), ölçeklenebilirlik ve Mikro Run/Jump/Fly önerileri. Doğru ERP nasıl seçilir?',
     content: `
       <h2>KOBİ'ler için ERP neden önemlidir?</h2>
@@ -472,7 +480,7 @@ export const posts: BlogPost[] = [
       </ul>
 
       <h2>KOBİ'ler için Mikro hangi ürünü sunuyor?</h2>
-      <p>Mikro, işletme ölçeğine göre kademeli çözümler sunar: en küçük ölçek için <a href="/mikro-run" class="text-blue-600 underline">Mikro Run</a> (esnaf ve mikro işletmeler), büyüyen KOBİ'ler için <a href="/mikro-jump" class="text-blue-600 underline">Mikro Jump</a> (yaklaşık 5-50 çalışan; üretim, İK ve şube yönetimi) ve kurumsallaşan işletmeler için <a href="/mikro-fly" class="text-blue-600 underline">Mikro Fly</a> (50+ çalışan, sınırsız kullanıcı, UFRS). Küçük başlayıp ihtiyaç arttıkça üst pakete geçebilirsiniz.</p>
+      <p>Mikro, işletme ölçeğine göre kademeli çözümler sunar: en küçük ölçek için <a href="/mikro-run" class="text-blue-600 underline">Mikro Run</a> (esnaf ve mikro işletmeler), büyüyen KOBİ'ler için <a href="/mikro-jump" class="text-blue-600 underline">Mikro Jump</a> (yaklaşık 5-50 çalışan; üretim, İK ve şube yönetimi) ve kurumsallaşan işletmeler için <a href="/mikro-fly" class="text-blue-600 underline">Mikro Fly</a> (50+ çalışan, sınırsız kullanıcı). Küçük başlayıp ihtiyaç arttıkça üst pakete geçebilirsiniz.</p>
 
       <h2>ERP maliyeti nasıl değerlendirilmeli?</h2>
       <p>ERP maliyetini yalnızca lisans fiyatı üzerinden değil, toplam sahip olma maliyeti (TCO) üzerinden değerlendirin: kurulum, veri aktarımı, eğitim, yıllık bakım ve olası özel geliştirmeler. Doğru boyutlandırılmış bir ERP, ihtiyacınızdan fazlasını satın almanızı önleyerek bütçenizi korur. Net bir fiyat teklifi için işletmenizin ihtiyaçlarını birlikte değerlendirmek en sağlıklısıdır.</p>
@@ -520,7 +528,7 @@ export const posts: BlogPost[] = [
       },
       {
         question: 'KOBİ\'ye hangi Mikro ürünü uygun?',
-        answer: 'Ölçeğe göre değişir: en küçük ölçek için Mikro Run, büyüyen KOBİ\'ler için Mikro Jump (yaklaşık 5-50 çalışan), kurumsallaşan işletmeler için Mikro Fly (50+ çalışan, sınırsız kullanıcı, UFRS). Küçük başlayıp ihtiyaç arttıkça üst pakete geçebilirsiniz.',
+        answer: 'Ölçeğe göre değişir: en küçük ölçek için Mikro Run, büyüyen KOBİ\'ler için Mikro Jump (yaklaşık 5-50 çalışan), kurumsallaşan işletmeler için Mikro Fly (50+ çalışan, sınırsız kullanıcı). Küçük başlayıp ihtiyaç arttıkça üst pakete geçebilirsiniz.',
       },
     ],
   },
@@ -532,6 +540,7 @@ export const posts: BlogPost[] = [
     readTime: '7 dk',
     gradient: 'from-cyan-500 to-blue-600',
     slug: 'e-fatura-e-arsiv-zorunlulugu-kimler-kapsamda',
+  image: '/blog/blog_einvoice_mandate.jpg',
     metaDescription: 'e-Fatura ve e-Arşiv zorunluluğu: aralarındaki fark, kimlerin kapsamda olduğu, ciro sınırı mantığı, ceza riski ve geçiş süreci. Mikro ile e-Dönüşüme uyum.',
     content: `
       <h2>e-Fatura nedir?</h2>
@@ -595,6 +604,7 @@ export const posts: BlogPost[] = [
     readTime: '7 dk',
     gradient: 'from-rose-500 to-pink-600',
     slug: 'enflasyon-muhasebesi-duzeltmesi-nedir-kimi-kapsar',
+  image: '/blog/blog_inflation_accounting.jpg',
     metaDescription: 'Enflasyon muhasebesi (düzeltmesi) nedir, neden ve hangi şartlarda yapılır, kimi kapsar? Parasal / parasal olmayan kıymetler ve Mikro ile uyum.',
     content: `
       <h2>Enflasyon muhasebesi (düzeltmesi) nedir?</h2>
@@ -633,7 +643,7 @@ export const posts: BlogPost[] = [
       </div>
 
       <h2>Mikro'da enflasyon muhasebesi</h2>
-      <p>Enflasyon düzeltmesi elle yapıldığında yorucu ve hataya açıktır; ERP bu hesaplamaları otomatikleştirir. Mikro'nun üst paketi <a href="/mikro-fly" class="text-blue-600 underline">Mikro Fly</a>, UFRS ve enflasyon muhasebesine uyum ile detaylı maliyet takibini destekler; muhasebeyi hem VUK'a hem UFRS'ye göre tutup raporlayabilirsiniz. İşletmenize uygun kurulumu konuşmak için <a href="/contact" class="text-blue-600 underline">bizimle iletişime geçebilirsiniz</a>.</p>
+      <p>Enflasyon düzeltmesi elle yapıldığında yorucu ve hataya açıktır; ERP bu hesaplamaları otomatikleştirir. Mikro'nun üst paketi <a href="/mikro-fly" class="text-blue-600 underline">Mikro Fly</a>, enflasyon muhasebesine uyum ile detaylı maliyet takibini destekler. İşletmenize uygun kurulumu konuşmak için <a href="/contact" class="text-blue-600 underline">bizimle iletişime geçebilirsiniz</a>.</p>
     `,
     faq: [
       {
@@ -646,7 +656,7 @@ export const posts: BlogPost[] = [
       },
       {
         question: 'Enflasyon muhasebesini Mikro destekliyor mu?',
-        answer: 'Evet. Mikro Fly, UFRS ve enflasyon muhasebesine uyumu destekler; hesaplamaları otomatikleştirerek elle yapılan işlemlerin yükünü ve hata riskini azaltır. Uygulamanın detayları için mali müşavirinizle ve bizimle birlikte çalışmanız önerilir.',
+        answer: 'Evet. Mikro Fly, enflasyon muhasebesine uyumu destekler; hesaplamaları otomatikleştirerek elle yapılan işlemlerin yükünü ve hata riskini azaltır. Uygulamanın detayları için mali müşavirinizle ve bizimle birlikte çalışmanız önerilir.',
       },
     ],
   },
@@ -658,6 +668,7 @@ export const posts: BlogPost[] = [
     readTime: '6 dk',
     gradient: 'from-sky-500 to-indigo-600',
     slug: 'mikroda-e-fatura-gecis-kurulum-rehberi',
+  image: '/blog/blog_einvoice_setup.jpg',
     metaDescription: 'Mikro\'da e-Faturaya geçiş ve kurulum: mali mühür, GİB başvurusu, geçiş yöntemleri (portal / özel entegratör / entegrasyon) ve adım adım kurulum.',
     content: `
       <h2>e-Faturaya geçiş için ön koşullar</h2>
@@ -725,13 +736,14 @@ export const posts: BlogPost[] = [
     readTime: '6 dk',
     gradient: 'from-fuchsia-500 to-purple-600',
     slug: 'perakende-sektorunde-erp-magaza-stok-kasa-yonetimi',
-    metaDescription: 'Perakende sektöründe ERP: mağaza ve kasa (POS) entegrasyonu, stok ve reyon yönetimi, kampanya ve fiyatlama, çok şubeli takip. Mikro perakende çözümleri.',
+  image: '/blog/blog_retail_erp.jpg',
+    metaDescription: 'Perakende sektöründe ERP: mağaza-kasa ve banka entegrasyonu, stok ve reyon yönetimi, kampanya ve fiyatlama, çok şubeli takip. Mikro perakende çözümleri.',
     content: `
       <h2>Perakendede ERP neden gerekli?</h2>
       <p>Perakende; yoğun işlem hacmi, hızlı stok devri, çok sayıda ürün çeşidi ve çoğu zaman birden fazla şube demektir. ERP; satış, stok, kasa, satın alma ve muhasebeyi tek merkezde birleştirerek anlık ve doğru veriyle karar almayı sağlar. Böylece hangi ürün, hangi mağazada, ne kadar satıyor sorusu gerçek zamanlı yanıtlanır.</p>
 
-      <h2>Mağaza ve kasa (POS) entegrasyonu</h2>
-      <p>Kasadaki her satışın anında stoktan düşmesi ve muhasebeye yansıması, perakendenin kalbidir. ERP–POS entegrasyonu; satış, iade, tahsilat ve gün sonu kapanışını otomatikleştirir, kasada oluşan farkları ve hataları azaltır. Nihai tüketiciye kesilen belgeler de e-Arşiv olarak elektronik ortamda düzenlenir.</p>
+      <h2>Mağaza, kasa ve banka entegrasyonu</h2>
+      <p>Kasadaki her satışın anında stoktan düşmesi ve muhasebeye yansıması, perakendenin kalbidir. ERP–banka entegrasyonu; satış, iade, tahsilat ve gün sonu kapanışını otomatikleştirir, kasada oluşan farkları ve hataları azaltır. Nihai tüketiciye kesilen belgeler de e-Arşiv olarak elektronik ortamda düzenlenir.</p>
 
       <h2>Stok, reyon ve çok şubeli yönetim</h2>
       <p>Merkezi stok yönetimiyle her şubenin stoğu tek ekrandan görülür; şubeler arası transfer, reyon bazlı takip ve barkodlu sayım kolaylaşır. Doğru stok seviyeleri hem raf boşluğunu hem de fazla stok maliyetini önler. <a href="/mikro-tablolari" class="text-blue-600 underline">Mikro veritabanı tabloları</a> üzerinden mağaza ve ürün bazlı özel raporlama da mümkündür.</p>
@@ -754,7 +766,7 @@ export const posts: BlogPost[] = [
             </tr>
           </thead>
           <tbody>
-            <tr><td class="p-3 text-gray-700 border border-gray-200">Hızlı satış ve doğru kasa</td><td class="p-3 text-gray-700 border border-gray-200">POS entegrasyonu; anlık stok düşümü ve gün sonu kapanış</td></tr>
+            <tr><td class="p-3 text-gray-700 border border-gray-200">Hızlı satış ve doğru kasa</td><td class="p-3 text-gray-700 border border-gray-200">Banka entegrasyonu; anlık stok düşümü ve gün sonu kapanış</td></tr>
             <tr><td class="p-3 text-gray-700 border border-gray-200">Çok şube stoğu</td><td class="p-3 text-gray-700 border border-gray-200">Merkezi stok, şubeler arası transfer, reyon takibi</td></tr>
             <tr><td class="p-3 text-gray-700 border border-gray-200">Sık değişen fiyat/kampanya</td><td class="p-3 text-gray-700 border border-gray-200">Merkezi fiyat ve kampanya kuralları</td></tr>
             <tr><td class="p-3 text-gray-700 border border-gray-200">Yasal uyum</td><td class="p-3 text-gray-700 border border-gray-200">e-Arşiv, e-Fatura ve muhasebe entegrasyonu</td></tr>
@@ -771,7 +783,7 @@ export const posts: BlogPost[] = [
         answer: 'Perakende; yoğun işlem, hızlı stok devri, çok ürün ve çoğu zaman çok şube demektir. ERP satış, stok, kasa ve muhasebeyi tek merkezde birleştirerek anlık ve doğru veriyle karar almayı sağlar; hangi ürünün hangi mağazada ne kadar sattığı gerçek zamanlı görülür.',
       },
       {
-        question: 'ERP ile kasa (POS) entegrasyonu ne sağlar?',
+        question: 'ERP ile kasa ve banka entegrasyonu ne sağlar?',
         answer: 'Kasadaki her satışın anında stoktan düşmesini ve muhasebeye yansımasını sağlar; satış, iade, tahsilat ve gün sonu kapanışını otomatikleştirir, kasa farklarını ve hataları azaltır. Nihai tüketiciye kesilen belgeler e-Arşiv olarak düzenlenir.',
       },
       {
@@ -788,6 +800,7 @@ export const posts: BlogPost[] = [
     readTime: '5 dk',
     gradient: 'from-lime-500 to-green-600',
     slug: 'mikro-stoklar-tablosu-nedir-alanlari-kullanimi',
+  image: '/blog/blog_database_tables.jpg',
     metaDescription: 'Mikro STOKLAR tablosu nedir, ne işe yarar, tipik alanları ve hangi raporlarda kullanılır? Mikro veritabanı üzerinden özel raporlama ve entegrasyon.',
     content: `
       <h2>STOKLAR tablosu nedir, ne işe yarar?</h2>

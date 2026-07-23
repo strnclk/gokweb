@@ -173,8 +173,11 @@ export default async function BlogYaziPage({
         <BlogCover
           gradient={post.gradient}
           category={post.category}
-          className="w-full h-44 sm:h-60 rounded-2xl mb-8"
+          image={post.image}
+          alt={post.title}
+          className="w-full aspect-[16/9] rounded-2xl mb-8 shadow-lg"
           iconClassName="w-24 h-24"
+          objectPosition="object-top"
         />
 
         {/* Başlık alanı */}

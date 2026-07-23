@@ -1,6 +1,6 @@
 'use client';
 
-import { Landmark, Package, Receipt, BarChart, Users, Wallet, Cpu, Globe, Star, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Zap, Shield, Sparkles, Factory } from 'lucide-react';
+import { Landmark, Package, Receipt, BarChart, Users, Wallet, Cpu, Globe, Star, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Zap, Shield, Sparkles, Factory, TrendingUp } from 'lucide-react';
 import { useState } from 'react';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -44,7 +44,7 @@ export default function MikroFlyPage() {
     {
       icon: Wallet,
       title: 'Genel & Sabit Kıymetler Muhasebesi',
-      description: 'UFRS ve Enflasyon Muhasebesi uyumu',
+      description: 'Enflasyon Muhasebesi uyumu',
       descriptionDetail: 'Amortisman takibi & yasal mevzuat'
     },
     {
@@ -81,7 +81,6 @@ export default function MikroFlyPage() {
       description: 'Elektronik fatura kesme, alımı ve tüm resmi onaylı yönetim süreçlerini saniyeler içinde gerçekleştirin.',
       features: ['Otomatik Resmi İletim', 'Güvenli Bulut Arşivleme', 'Cari Hesap Otomatik Entegrasyonu'],
       stats: { speed: '< 2 sn', savings: '%85', compliance: '%100' },
-      steps: ['Fatura Taslağı', 'E-İmza & Onay', 'Resmi İletim', 'Alıcıya Anında Teslim']
     },
     {
       id: 'e-arsiv',
@@ -90,7 +89,6 @@ export default function MikroFlyPage() {
       description: 'Resmi e-Arşiv portalı uyumlu, son kullanıcılara saniyeler içinde e-posta/SMS ile fatura iletimi.',
       features: ['Yasal Dijital Depolama', 'E-posta / SMS Fatura Gönderimi', 'Toplu Faturalama Desteği'],
       stats: { speed: '< 1.5 sn', savings: '%90', compliance: '%100' },
-      steps: ['Fatura Oluşturma', 'Dijital İmzalama', 'Müşteriye İletim', 'Otomatik Arşivleme']
     },
     {
       id: 'e-irsaliye',
@@ -99,7 +97,6 @@ export default function MikroFlyPage() {
       description: 'Mal sevkiyatlarında kağıt irsaliye yerine geçen tam dijital sevkiyat ve anlık doğrulama altyapısı.',
       features: ['Sevkiyat ve Araç/Plaka Takibi', 'Otomatik Stok Eşleşmesi', 'Anlık Kabul/Ret Yanıtı'],
       stats: { speed: '< 3 sn', savings: '%75', compliance: '%100' },
-      steps: ['İrsaliye Düzenleme', 'Araç / Plaka Tanımı', 'Resmi Onay Süreci', 'Teslimat Doğrulama']
     },
     {
       id: 'e-defter',
@@ -108,7 +105,6 @@ export default function MikroFlyPage() {
       description: 'Yevmiye defteri ve Defter-i Kebir kayıtlarının yasal standartlarda dijital olarak tutulması ve berat gönderimi.',
       features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Berat Gönderimi', 'Şifreli Güvenli Arşivleme'],
       stats: { speed: 'Otomatik', savings: '%80', compliance: '%100' },
-      steps: ['Kayıt Kontrolü', 'Berat Oluşturma', 'Resmi Onay & Yükleme', 'Güvenli Depolama']
     },
     {
       id: 'e-mutabakat',
@@ -117,7 +113,6 @@ export default function MikroFlyPage() {
       description: 'Müşteri ve tedarikçilerle cari bakiye mutabakatlarının tek tıkla dijital olarak yapılması ve takibi.',
       features: ['Otomatik E-posta Mutabakatı', 'Anlık Onay / İtiraz Bildirimi', 'Zamandan %90 Tasarruf'],
       stats: { speed: 'Anında', savings: '%90', compliance: 'Canlı Takip' },
-      steps: ['Cari Bakiye Çekimi', 'Mutabakat Gönderimi', 'Taraf Yanıtı', 'Otomatik Rapor']
     },
     {
       id: 'e-bordro',
@@ -126,7 +121,6 @@ export default function MikroFlyPage() {
       description: 'Personel maaş bordrolarının KVKK uyumlu olarak dijital ortamda şifreli iletilmesi ve onay takibi.',
       features: ['SGK Entegrasyonu', 'Özel Şifreli E-posta İletimi', 'Personel Onay Bildirimi'],
       stats: { speed: 'Toplu', savings: '%85', compliance: 'KVKK Uyumlu' },
-      steps: ['Bordro Hesaplama', 'Şifreli Paketleme', 'Personel İletimi', 'Okundu Bildirimi']
     },
     {
       id: 'e-smmm',
@@ -135,7 +129,6 @@ export default function MikroFlyPage() {
       description: 'Serbest Meslek Makbuzu sisteminin dijital ortamda düzenlenmesi, hesaplanması ve yasal iletimi.',
       features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Stopaj & KDV Hesabı', 'Anında Müşteri Teslimi'],
       stats: { speed: '< 2 sn', savings: '%95', compliance: '%100' },
-      steps: ['Makbuz Taslağı', 'Stopaj & KDV Hesabı', 'E-İmza & Onay', 'Müşteriye İletim']
     },
     {
       id: 'e-mustahsil',
@@ -144,16 +137,14 @@ export default function MikroFlyPage() {
       description: 'Tarımsal ve hayvansal ürün alımlarında e-Müstahsil makbuzunu dijital ortamda anında düzenleyin.',
       features: ['Otomatik Stopaj Hesabı', 'Dijital Arşivleme & Doğrulama', 'Anında Üretici Bildirimi'],
       stats: { speed: '< 2 sn', savings: '%90', compliance: '%100' },
-      steps: ['Ürün Alım Kaydı', 'Stopaj & Bağkur Hesabı', 'E-İmza & Onay', 'Dijital Makbuz İletimi']
     },
     {
       id: 'e-zraporu',
       name: 'e-Z Raporu',
       icon: Activity,
       description: 'Ödeme kaydedici cihazlar ve adisyon sistemleriyle entegre gün sonu e-Z raporlarının otomatik aktarımı.',
-      features: ['ÖKC & POS Entegrasyonu', 'Otomatik Gün Sonu Aktarımı', 'Şifreli Güvenli Arşiv'],
+      features: ['ÖKC & Banka Entegrasyonu', 'Otomatik Gün Sonu Aktarımı', 'Şifreli Güvenli Arşiv'],
       stats: { speed: 'Otomatik', savings: '%85', compliance: '%100' },
-      steps: ['Gün Sonu Kapanışı', 'Z-Raporu Oluşturma', 'Resmi Onay Süreci', 'Otomatik Raporlama']
     },
     {
       id: 'e-gider-pusulasi',
@@ -162,14 +153,13 @@ export default function MikroFlyPage() {
       description: 'Vergi mükellefi olmayan kişilerden alınan mal ve hizmetler için e-Gider Pusulasını saniyeler içinde düzenleyin.',
       features: ['Otomatik Stopaj Hesabı', 'Kişiye Özel Dijital İletim', 'Resmi Standartlarda Arşiv'],
       stats: { speed: '< 2 sn', savings: '%90', compliance: '%100' },
-      steps: ['Hizmet/Mal Alım Kaydı', 'Stopaj Hesaplama', 'E-İmza & Onay', 'Dijital İletim']
     }
   ];
 
   const flyFaqlar = [
     {
       question: 'Mikro FLY\'ı Kimler Tercih Etmeli?',
-      answer: 'Kurumsal ölçekte faaliyet gösteren, UFRS ve enflasyon muhasebesine uyum sağlamak isteyen, kurumsal yapısını daha ileri noktaya taşımak isteyen, üretim yönetiminde detaylı fiili maliyet takibi yapmayı hedefleyen, kurumsal hafıza oluşturmak isteyen işletmeler için Mikro FLY idealdir.'
+      answer: 'Kurumsal ölçekte faaliyet gösteren, enflasyon muhasebesine uyum sağlamak isteyen, kurumsal yapısını daha ileri noktaya taşımak isteyen, üretim yönetiminde detaylı fiili maliyet takibi yapmayı hedefleyen, kurumsal hafıza oluşturmak isteyen işletmeler için Mikro FLY idealdir.'
     },
     {
       question: 'Mikro FLY farklı faaliyet alanı olan grup şirketlerde kullanılabilir mi?',
@@ -334,7 +324,7 @@ export default function MikroFlyPage() {
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.6 }}
                 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-none tracking-tight mb-6 text-[#0F172A]"
               >
                 Mikro{' '}
@@ -346,7 +336,7 @@ export default function MikroFlyPage() {
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-base sm:text-lg text-slate-700 mb-8 leading-relaxed max-w-2xl font-normal"
               >
                 Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin co-pilotu Mikro Fly ile tanışın! Hangi sektörde olursanız olun, tüm operasyonlarınızı tek bir programda kârlı ve verimli bir şekilde yönetin. Mikro Fly, büyük İşletmeler için tasarlanmış güçlü bir ticari yazılım çözümü olarak işletmenizin her adımında yanınızda. Başarıya uçuşunuzu şimdi başlatın!
@@ -355,7 +345,7 @@ export default function MikroFlyPage() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
+                transition={{ duration: 0.6, delay: 0.15 }}
                 className="flex flex-wrap items-center gap-4"
               >
                 <div className="relative group">
@@ -379,7 +369,7 @@ export default function MikroFlyPage() {
               <motion.div
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
                 className="relative flex items-center justify-center p-4 sm:p-8"
               >
                 <div className="absolute w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-tr from-blue-500/15 via-cyan-500/18 to-sky-400/12 rounded-full blur-3xl pointer-events-none opacity-80" />
@@ -433,7 +423,7 @@ export default function MikroFlyPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  transition={{ duration: 0.4, delay: index * 0.03 }}
                   className="bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-xl hover:border-blue-500/40 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between group"
                 >
                   <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-400" />
@@ -479,7 +469,8 @@ export default function MikroFlyPage() {
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12 p-2.5 rounded-2xl bg-white/90 backdrop-blur-xl border border-slate-200/80 shadow-lg shadow-slate-200/50">
+          {/* Dynamic Module Navigation Bar (Independent Bordered Pills) */}
+          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3.5 mb-12">
             {modules.map((mod, index) => {
               const Icon = mod.icon;
               const isActive = activeModuleIndex === index;
@@ -487,13 +478,13 @@ export default function MikroFlyPage() {
                 <button
                   key={mod.id}
                   onClick={() => setActiveModuleIndex(index)}
-                  className={`flex items-center gap-2 px-4.5 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                  className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:outline-none focus:ring-0 select-none ${
                     isActive
-                      ? 'bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-400 text-white shadow-lg shadow-blue-600/30 scale-105'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80'
+                      ? 'bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-400 text-white shadow-lg shadow-slate-900/15 border-0 scale-105 font-bold'
+                      : 'bg-white hover:bg-slate-50/80 text-slate-700 hover:text-slate-900 border border-slate-200/70 hover:border-slate-300'
                   }`}
                 >
-                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-slate-500'}`} />
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-blue-600'}`} />
                   <span>{mod.name}</span>
                 </button>
               );
@@ -501,12 +492,13 @@ export default function MikroFlyPage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Left Main Info Panel (Box 1 - Light Luxe Glass) */}
             <motion.div
               key={modules[activeModuleIndex].id}
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
-              className="lg:col-span-6 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-xl shadow-slate-200/50 relative overflow-hidden"
+              className="lg:col-span-8 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-xl shadow-slate-200/50 relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-48 h-48 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -531,6 +523,7 @@ export default function MikroFlyPage() {
                   {modules[activeModuleIndex].description}
                 </p>
 
+                {/* Highlights List */}
                 <div className="space-y-3 mb-8">
                   {modules[activeModuleIndex].features.map((feat, idx) => (
                     <div key={idx} className="flex items-center gap-3 text-sm text-slate-700 font-semibold">
@@ -543,71 +536,79 @@ export default function MikroFlyPage() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-3 pt-6 border-t border-slate-100">
-                <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70 text-center shadow-inner">
-                  <div className="text-xl font-bold text-blue-600">{modules[activeModuleIndex].stats.speed}</div>
-                  <div className="text-[11px] text-slate-500 font-medium mt-0.5">İşlem Hızı</div>
-                </div>
-                <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70 text-center shadow-inner">
-                  <div className="text-xl font-bold text-cyan-600">{modules[activeModuleIndex].stats.savings}</div>
-                  <div className="text-[11px] text-slate-500 font-medium mt-0.5">Maliyet Tasarrufu</div>
-                </div>
-                <div className="bg-slate-50/80 p-3.5 rounded-xl border border-slate-200/70 text-center shadow-inner">
-                  <div className="text-xl font-bold text-emerald-600">{modules[activeModuleIndex].stats.compliance}</div>
-                  <div className="text-[11px] text-slate-500 font-medium mt-0.5">Yasal Uyum</div>
-                </div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              key={`widget-${modules[activeModuleIndex].id}`}
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
-              className="lg:col-span-6 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-xl shadow-slate-200/50 relative overflow-hidden"
-            >
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-                <div className="flex items-center gap-2">
-                  <Shield className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm font-bold text-slate-900">Resmi Onaylı Canlı Belge Paneli</span>
-                </div>
-                <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold">
-                  Sistem Aktif
-                </span>
-              </div>
-
-              <div className="mb-6">
-                <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-4">Adım Adım İş Akış Süreci</div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                  {modules[activeModuleIndex].steps.map((step, idx) => (
-                    <div key={idx} className="bg-slate-50/80 border border-slate-200/70 p-3.5 rounded-xl text-center relative group hover:border-blue-500/40 hover:shadow-md transition-all">
-                      <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-xs font-bold flex items-center justify-center mx-auto mb-2 shadow-sm">
-                        {idx + 1}
-                      </div>
-                      <div className="text-[11px] text-slate-700 font-semibold leading-tight">{step}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="bg-gradient-to-br from-blue-50/60 via-slate-50 to-cyan-50/40 border border-slate-200/80 p-5 rounded-2xl flex items-center justify-between gap-4 shadow-sm">
+              {/* Bottom Action Ribbon inside Left Box */}
+              <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-600 shrink-0">
-                    <CheckCircle size={20} />
+                    <Shield size={20} />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-slate-900">E-İmza & Zaman Damgası</div>
-                    <div className="text-[10px] text-slate-500">Resmi Standartlarında 5070 Sayılı Kanun Uyumlu</div>
+                    <div className="text-xs font-bold text-slate-900">Dijital Dönüşüm Ekosistemi</div>
+                    <div className="text-[11px] text-slate-500 font-medium">%100 Mevzuat Uyumlu Veri Güvenliği</div>
                   </div>
                 </div>
                 <button
                   onClick={scrollToContact}
-                  className="px-4.5 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-xs font-bold transition-all shadow-md shadow-blue-600/25 shrink-0 transform hover:-translate-y-0.5"
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-blue-600/25 shrink-0 transform hover:-translate-y-0.5 flex items-center gap-2"
                 >
-                  Detaylı Bilgi
+                  <span>İletişime Geç</span>
+                  <ArrowRight size={16} />
                 </button>
               </div>
             </motion.div>
+
+            {/* Right Column: 3 Vertically Stacked Performance Stats Cards */}
+            <div className="lg:col-span-4 flex flex-col justify-between gap-4">
+              <motion.div
+                key={`stat-speed-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-blue-500/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">İşlem Hızı</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-blue-600">Otomatik</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-blue-600/10 text-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Zap size={24} />
+                </div>
+              </motion.div>
+
+              <motion.div
+                key={`stat-savings-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-cyan-500/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Maliyet Tasarrufu</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-cyan-600">{modules[activeModuleIndex].stats.savings}</div>
+                  <div className="text-xs text-slate-500 font-medium mt-1">Baskı ve arşiv maliyet düşüşü</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 text-cyan-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <TrendingUp size={24} />
+                </div>
+              </motion.div>
+
+              <motion.div
+                key={`stat-compliance-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.15 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-emerald-500/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Yasal Uyum</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600">%100</div>
+                  <div className="text-xs text-slate-500 font-medium mt-1">Resmi mevzuat standartları</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Shield size={24} />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -637,7 +638,7 @@ export default function MikroFlyPage() {
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  UFRS, Üretim ve Departman Mimarisi Tasarımı
+                  Üretim ve Departman Mimarisi Tasarımı
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
@@ -720,7 +721,7 @@ export default function MikroFlyPage() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+                transition={{ duration: 0.4, delay: index * 0.03 }}
                 className="bg-white rounded-xl border border-gray-200 hover:border-blue-300 overflow-hidden"
               >
                 <details className="group">

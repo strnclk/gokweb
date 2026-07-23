@@ -289,7 +289,7 @@ export default function CRMCozumleriPage() {
                 const Icon = feat.icon;
                 return (
                   <div key={i} className="bg-white border border-gray-300/80 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow group">
-                    <div className="w-10 h-10 bg-orange-500/10 text-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-50 group-hover:text-white transition-colors duration-300">
+                    <div className="w-10 h-10 bg-orange-500/10 text-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-orange-500 group-hover:text-white transition-colors duration-300">
                       <Icon size={18} />
                     </div>
                     <h4 className="font-bold text-gray-800 text-base mb-2">{feat.title}</h4>
