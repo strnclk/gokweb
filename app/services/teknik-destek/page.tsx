@@ -39,14 +39,14 @@ export default function TeknikDestekPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-br from-sky-50/50 via-white to-blue-50/20">
         <div className="absolute inset-0 pointer-events-none opacity-30">
-          <img src="/rainbw.png" alt="Rainbow Background" className="w-full h-full object-cover" />
+          <img src="/rainbw.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-sky-50 border border-sky-200 rounded-full text-sky-700 text-sm font-semibold mb-6">
                 <Sparkles size={14} className="text-sky-600" />
-                Kesintisiz İş Sürekliliği Garantisi
+                İş Sürekliliği Odaklı Teknik Destek
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-6">
                 Teknik Destek <br />
@@ -109,7 +109,7 @@ export default function TeknikDestekPage() {
                   <div className="bg-gradient-to-r from-sky-600 to-blue-700 p-4 rounded-2xl text-white shadow-md flex items-center justify-between">
                     <div>
                       <span className="text-xs text-sky-100 font-semibold">SQL & Sunucu Uptime</span>
-                      <div className="text-xl font-black mt-0.5">%99.99 Kesintisiz</div>
+                      <div className="text-xl font-black mt-0.5">Yüksek Erişilebilirlik</div>
                     </div>
                     <div className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-lg text-xs font-bold text-white border border-white/30">
                       SLA: 2 Saat

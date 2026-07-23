@@ -508,7 +508,7 @@ export default function FeaturedWorksPage() {
             <span className="text-sm font-medium text-gray-500 mr-1">İlgili:</span>
             {[
               { etiket: 'Hizmetler', href: '/services' },
-              { etiket: 'Özel Yazılım', href: '/custom-software' },
+              { etiket: 'Özel Yazılım', href: '/services/ozel-yazilim-gelistirme' },
               { etiket: 'İletişim', href: '/contact' },
             ].map((b) => (
               <Link key={b.href} href={b.href} className="inline-flex items-center gap-1 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-lg px-3 py-1.5 hover:border-blue-300 transition-colors">

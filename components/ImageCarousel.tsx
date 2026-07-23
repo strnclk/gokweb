@@ -35,8 +35,8 @@ export default function ImageCarousel() {
     {
       image: '/rainbow.jpg',
       title: 'Deneyime Dayalı Güven',
-      description: '20 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
-      features: ['20 Yıl Deneyim', 'Müşteri Odaklı', 'Güvenilir', 'Özelleştirilebilir'],
+      description: '20+ yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
+      features: ['20+ Yıl Deneyim', 'Müşteri Odaklı', 'Güvenilir', 'Özelleştirilebilir'],
       stats: ['20+ Yıl', 'Onlarca Müşteri', 'Kanıtlanmış Başarı'],
       link: '/about'
     }

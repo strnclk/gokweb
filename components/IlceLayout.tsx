@@ -46,7 +46,7 @@ export default function IlceLayout({
         />
         <Navbar />
         <HeroSection district={ilce} />
-        <TrustSection />
+        <TrustSection compact />
         <IndustryScenariosSection />
         <IlceSEOContent ilce={ilce} />
         <IlceIletisim ilce={ilce} />

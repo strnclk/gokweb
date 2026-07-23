@@ -17,7 +17,7 @@ export default function TekstilCozumleriPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-20 flex items-center overflow-hidden bg-white">
         <div className="absolute inset-0 pointer-events-none opacity-30">
-          <img src="/rainbw.png" alt="Rainbow Background" className="w-full h-full object-cover" />
+          <img src="/rainbw.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full text-center">
           <motion.div

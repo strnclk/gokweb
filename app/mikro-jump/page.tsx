@@ -54,39 +54,57 @@ export default function MikroJumpPage() {
   const features = [
     {
       icon: Package,
-      title: 'Stok/Ürün Yönetimi',
-      description: 'Stok ve ürün takibi',
-      descriptionDetail: 'Depo yönetimi'
+      title: 'Gelişmiş Stok & Depo Yönetimi',
+      description: 'Seri No, Lot, Parti Takibi',
+      descriptionDetail: 'Çoklu depo ve lokasyon yönetimi'
     },
     {
       icon: Landmark,
       title: 'Satış ve Müşteri Yönetimi',
-      description: 'Satış süreçleri',
-      descriptionDetail: 'Müşteri takibi'
+      description: 'Sipariş, irsaliye, fatura takibi',
+      descriptionDetail: 'Müşteri bakiye & risk yönetimi'
     },
     {
       icon: Users,
-      title: 'Satın Alma ve Tedarikçi Yönetimi',
-      description: 'Satın alma süreçleri',
-      descriptionDetail: 'Tedarikçi yönetimi'
+      title: 'Satın Alma & Tedarikçi',
+      description: 'Teklif toplama ve sipariş',
+      descriptionDetail: 'Tedarikçi performans analizi'
+    },
+    {
+      icon: Receipt,
+      title: 'Perakende & Kasa Yönetimi',
+      description: 'Yeni nesil ÖKC & POS entegrasyonu',
+      descriptionDetail: 'Hızlı satış & kasa hareketleri'
+    },
+    {
+      icon: Clock,
+      title: 'Personel & Bordro Yönetimi',
+      description: 'Özlük hakları & SGK bildirimleri',
+      descriptionDetail: 'Personel maliyet ve devam takibi'
+    },
+    {
+      icon: Cpu,
+      title: 'Üretim & Reçete Yönetimi',
+      description: 'Basit & standart üretim takibi',
+      descriptionDetail: 'Üretim reçeteleri ve iş emirleri'
+    },
+    {
+      icon: Globe,
+      title: 'Dış Ticaret Yönetimi',
+      description: 'İthalat & İhracat takibi',
+      descriptionDetail: 'Gümrük ve dosya maliyet takibi'
     },
     {
       icon: Wallet,
-      title: 'Masraf Yönetimi',
-      description: 'Masraf kalemlerinin takibi',
-      descriptionDetail: 'Detaylı maliyet analizi'
-    },
-    {
-      icon: BarChart,
-      title: 'Finans Yönetimi',
-      description: 'Finansal süreçler',
-      descriptionDetail: 'Ön muhasebe'
+      title: 'Finans ve Masraf Yönetimi',
+      description: 'Nakit akışı, banka entegrasyonu',
+      descriptionDetail: 'Sınırsız masraf merkezi tanımı'
     },
     {
       icon: TrendingUp,
-      title: 'Bütçe Yönetimi',
-      description: 'Bütçe planlama',
-      descriptionDetail: 'Takip ve analiz'
+      title: 'Bütçe & Raporlama',
+      description: 'Hedeflenen / gerçekleşen analiz',
+      descriptionDetail: 'Yönetim mizanı ve finansal raporlar'
     }
   ];
 
@@ -99,14 +117,14 @@ export default function MikroJumpPage() {
     },
     {
       number: '02',
-      title: '7/24 Destek Hizmeti',
+      title: 'Uzman Destek Hizmeti',
       description: 'Yaşadığınız soruna kolayca çare bulabileceğiniz bir altyapıya ve dilediğinizde bizden daima yardım alabileceğiniz destek hizmetlerine sahibiz.',
       icon: TrendingUp
     },
     {
       number: '03',
       title: 'Deneyime Dayalı Güven',
-      description: '20 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
+      description: '20+ yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
       icon: Award
     }
   ];
@@ -116,18 +134,18 @@ export default function MikroJumpPage() {
       id: 'e-fatura',
       name: 'e-Fatura',
       icon: FileText,
-      description: 'Elektronik fatura kesme, alımı ve tüm GİB onaylı yönetim süreçlerini saniyeler içinde gerçekleştirin.',
-      features: ['Otomatik GİB İletimi', '7/24 Bulut Arşivleme', 'Cari Hesap Otomatik Entegrasyonu'],
-      stats: { speed: '< 2 sn', savings: '%85', compliance: '%100 GİB' },
-      steps: ['Fatura Taslağı', 'E-İmza & Onay', 'GİB İletimi', 'Alıcıya Anında Teslim']
+      description: 'Elektronik fatura kesme, alımı ve tüm resmi onaylı yönetim süreçlerini saniyeler içinde gerçekleştirin.',
+      features: ['Otomatik Resmi İletim', 'Güvenli Bulut Arşivleme', 'Cari Hesap Otomatik Entegrasyonu'],
+      stats: { speed: '< 2 sn', savings: '%85', compliance: '%100' },
+      steps: ['Fatura Taslağı', 'E-İmza & Onay', 'Resmi İletim', 'Alıcıya Anında Teslim']
     },
     {
       id: 'e-arsiv',
       name: 'e-Arşiv Fatura',
       icon: Activity,
-      description: 'GİB e-Arşiv portalı uyumlu, son kullanıcılara saniyeler içinde e-posta/SMS ile fatura iletimi.',
+      description: 'Resmi e-Arşiv portalı uyumlu, son kullanıcılara saniyeler içinde e-posta/SMS ile fatura iletimi.',
       features: ['Yasal Dijital Depolama', 'E-posta / SMS Fatura Gönderimi', 'Toplu Faturalama Desteği'],
-      stats: { speed: '< 1.5 sn', savings: '%90', compliance: '%100 GİB' },
+      stats: { speed: '< 1.5 sn', savings: '%90', compliance: '%100' },
       steps: ['Fatura Oluşturma', 'Dijital İmzalama', 'Müşteriye İletim', 'Otomatik Arşivleme']
     },
     {
@@ -136,8 +154,8 @@ export default function MikroJumpPage() {
       icon: Layers,
       description: 'Mal sevkiyatlarında kağıt irsaliye yerine geçen tam dijital sevkiyat ve anlık doğrulama altyapısı.',
       features: ['Sevkiyat ve Araç/Plaka Takibi', 'Otomatik Stok Eşleşmesi', 'Anlık Kabul/Ret Yanıtı'],
-      stats: { speed: '< 3 sn', savings: '%75', compliance: '%100 GİB' },
-      steps: ['İrsaliye Düzenleme', 'Araç / Plaka Tanımı', 'GİB Onay Süreci', 'Teslimat Doğrulama']
+      stats: { speed: '< 3 sn', savings: '%75', compliance: '%100' },
+      steps: ['İrsaliye Düzenleme', 'Araç / Plaka Tanımı', 'Resmi Onay Süreci', 'Teslimat Doğrulama']
     },
     {
       id: 'e-defter',
@@ -145,8 +163,8 @@ export default function MikroJumpPage() {
       icon: BarChart,
       description: 'Yevmiye defteri ve Defter-i Kebir kayıtlarının yasal standartlarda dijital olarak tutulması ve berat gönderimi.',
       features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Berat Gönderimi', 'Şifreli Güvenli Arşivleme'],
-      stats: { speed: 'Otomatik', savings: '%80', compliance: '%100 GİB' },
-      steps: ['Kayıt Kontrolü', 'Berat Oluşturma', 'GİB Yüklemesi', 'Güvenli Depolama']
+      stats: { speed: 'Otomatik', savings: '%80', compliance: '%100' },
+      steps: ['Kayıt Kontrolü', 'Berat Oluşturma', 'Resmi Onay & Yükleme', 'Güvenli Depolama']
     },
     {
       id: 'e-mutabakat',
@@ -154,7 +172,7 @@ export default function MikroJumpPage() {
       icon: CheckCircle,
       description: 'Müşteri ve tedarikçilerle cari bakiye mutabakatlarının tek tıkla dijital olarak yapılması ve takibi.',
       features: ['Otomatik E-posta Mutabakatı', 'Anlık Onay / İtiraz Bildirimi', 'Zamandan %90 Tasarruf'],
-      stats: { speed: 'Anında', savings: '%90', compliance: '7/24 Canlı' },
+      stats: { speed: 'Anında', savings: '%90', compliance: 'Canlı Takip' },
       steps: ['Cari Bakiye Çekimi', 'Mutabakat Gönderimi', 'Taraf Yanıtı', 'Otomatik Rapor']
     },
     {
@@ -172,8 +190,8 @@ export default function MikroJumpPage() {
       icon: Star,
       description: 'Serbest Meslek Makbuzu sisteminin dijital ortamda düzenlenmesi, hesaplanması ve yasal iletimi.',
       features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Stopaj & KDV Hesabı', 'Anında Müşteri Teslimi'],
-      stats: { speed: '< 2 sn', savings: '%95', compliance: '%100 GİB' },
-      steps: ['Makbuz Taslağı', 'Stopaj & KDV Hesabı', 'E-İmza & GİB', 'Müşteriye İletim']
+      stats: { speed: '< 2 sn', savings: '%95', compliance: '%100' },
+      steps: ['Makbuz Taslağı', 'Stopaj & KDV Hesabı', 'E-İmza & Onay', 'Müşteriye İletim']
     }
   ];
 
@@ -533,7 +551,7 @@ export default function MikroJumpPage() {
                     <h3 className="text-2xl font-bold text-slate-900 tracking-tight">{modules[activeModuleIndex].name}</h3>
                     <div className="flex items-center gap-2 text-xs text-emerald-600 font-semibold mt-1">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                      <span>GİB Uyumlu Canlı Entegrasyon</span>
+                      <span>Mevzuat Uyumlu Canlı Entegrasyon</span>
                     </div>
                   </div>
                 </div>
@@ -580,7 +598,7 @@ export default function MikroJumpPage() {
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-purple-600" />
-                  <span className="text-sm font-bold text-slate-900">GİB Onaylı Canlı Belge Paneli</span>
+                  <span className="text-sm font-bold text-slate-900">Resmi Onaylı Canlı Belge Paneli</span>
                 </div>
                 <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold">
                   Sistem Aktif
@@ -608,7 +626,7 @@ export default function MikroJumpPage() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-slate-900">E-İmza & Zaman Damgası</div>
-                    <div className="text-[10px] text-slate-500">GİB Standartlarında 5070 Sayılı Kanun Uyumlu</div>
+                    <div className="text-[10px] text-slate-500">Resmi Standartlarında 5070 Sayılı Kanun Uyumlu</div>
                   </div>
                 </div>
                 <button
@@ -638,45 +656,33 @@ export default function MikroJumpPage() {
                 Neden <br /> Gökkuşağı Yazılım ve Danışmanlık <br /> ile Mikro Jump'a Geçmelisiniz?
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 20 yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
+              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 20+ yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
               </p>
               <h3 className="text-lg font-bold mb-3 text-gray-900">Mikro Jump Geçiş Sürecini Nasıl Yönetiyoruz:</h3>
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Ön Görüşme
+                  Süreç Analizi ve İşletme Checkup Hizmeti
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Ücretsiz Analiz ve Checkup Hizmeti
+                  Sektörel Modül, Şube ve Depo Yapılandırması
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  İşletmenize En Uygun Paket Seçimi
+                  Özel Sistem Tasarımı ve Veri Aktarımı
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Teklif ve Teklif Onayı
+                  Departman Bazlı Kullanıcı ve Yönetici Eğitimleri
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Uyarlama ve Aktarım
+                  Pilot Test Çalışması ve Proje Teslimi
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Detay Analiz
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Eğitim
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Proje Teslimi
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Uzaktan veya Yerinde Destek
+                  Operasyonel Danışmanlık ve Destek
                 </div>
               </div>
             </motion.div>

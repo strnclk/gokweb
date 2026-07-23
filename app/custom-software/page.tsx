@@ -80,7 +80,7 @@ const kabiliyetler = [
     icon: Store,
     baslik: 'B2B / Bayi Portalları',
     tanim:
-      'Bayilerinizin 7/24 sipariş verip bakiye ve ekstresini görebildiği, Mikro’ya entegre B2B portalları kurarız.',
+      'Bayilerinizin diledikleri an sipariş verip bakiye ve ekstresini görebildiği, Mikro’ya entegre B2B portalları kurarız.',
     aciklama:
       'Bayi ve müşterileriniz kendilerine özel fiyat ve iskontolarla online sipariş verir; bakiye, cari ekstre ve sipariş durumunu anlık görür. Tüm işlemler onay akışıyla Mikro’ya otomatik aktarılır.',
     kapsam: ['Bayi sipariş ekranı', 'Cari / bakiye görüntüleme', 'Özel fiyat ve iskonto', 'Ödeme entegrasyonu', 'Sipariş onay akışı', 'Mikro’ya otomatik aktarım'],

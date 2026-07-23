@@ -33,7 +33,7 @@ export default function EDonusumEntegrasyonuPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-br from-emerald-50/50 via-white to-teal-50/20">
         <div className="absolute inset-0 pointer-events-none opacity-30">
-          <img src="/rainbw.png" alt="Rainbow Background" className="w-full h-full object-cover" />
+          <img src="/rainbw.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">

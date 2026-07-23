@@ -52,7 +52,10 @@ export default function CompaniesSection() {
               <div className="w-full h-20 flex items-center justify-center mb-3">
                 <img
                   src={company.logo}
-                  alt={company.name}
+                  alt={`${company.name} logosu — Gökkuşağı Yazılım referans müşterisi`}
+                  width={80}
+                  height={64}
+                  loading="lazy"
                   className="max-w-20 max-h-16 object-contain"
                 />
               </div>

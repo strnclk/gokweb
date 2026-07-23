@@ -335,7 +335,7 @@ export default function EflowSurecleriPage() {
                 <div className="w-24 h-24 bg-white border border-slate-200 rounded-3xl shadow-xl flex items-center justify-center p-3">
                   <Image
                     src="/eflow3-logo.png"
-                    alt="E-Flow"
+                    alt="E-Flow logosu — İş Süreçleri Yönetimi yazılımı"
                     width={75}
                     height={75}
                     className="object-contain"

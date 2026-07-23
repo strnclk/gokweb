@@ -34,6 +34,30 @@ const faqJsonLdCompare = {
   mainEntity: sssCompare.map((f) => ({ '@type': 'Question', name: f.soru, acceptedAnswer: { '@type': 'Answer', text: f.cevap } })),
 };
 
+// Ürün logolarının Google Görseller'de doğru eşleşmesi için yapılandırılmış veri
+const urunLogolariJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Mikro ERP Çözümleri Karşılaştırması',
+  itemListElement: [
+    { id: 'mikro-run', name: 'Mikro Run', category: 'Esnaf/Mikro İşletme ERP' },
+    { id: 'mikro-jump', name: 'Mikro Jump', category: 'KOBİ ERP' },
+    { id: 'mikro-fly', name: 'Mikro Fly', category: 'E-Ticaret ERP' },
+  ].map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'SoftwareApplication',
+      name: p.name,
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Windows, Web',
+      image: `https://gokkusagiyazilim.com.tr/${p.id}-logo.png`,
+      url: `https://gokkusagiyazilim.com.tr/${p.id}/`,
+      description: `${p.name} — ${p.category}`,
+    },
+  })),
+};
+
 export default function ComparePage() {
   const router = useRouter();
   const [currentStep, setCurrentStep] = useState(0);
@@ -372,6 +396,7 @@ export default function ComparePage() {
     <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLdCompare) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(urunLogolariJsonLd) }} />
       <Navbar />
 
       {/* Hero Section */}
@@ -669,7 +694,7 @@ export default function ComparePage() {
                           className="w-24 h-24 mx-auto mb-4 rounded-2xl flex items-center justify-center bg-white ring-1 ring-gray-100 shadow-sm p-2.5 overflow-hidden"
                         >
                           {logoUrl ? (
-                            <img src={logoUrl} alt={item.name} className="max-w-full max-h-full object-contain" />
+                            <img src={logoUrl} alt={`${item.name} logosu — ${item.category} programı`} width={88} height={88} loading="lazy" className="max-w-full max-h-full object-contain" />
                           ) : (
                             <Icon className="w-9 h-9 text-gray-600" />
                           )}
@@ -813,7 +838,7 @@ export default function ComparePage() {
                               </div>
                             )}
                             <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center shadow-md overflow-hidden bg-white">
-                              <img src={logoUrl} alt={product.name} className="w-6 h-6 md:w-8 md:h-8 object-contain" />
+                              <img src={logoUrl} alt={`${product.name} logosu — ${product.category} programı`} width={32} height={32} loading="lazy" className="w-6 h-6 md:w-8 md:h-8 object-contain" />
                             </div>
                             <span className="text-xs md:text-sm font-bold">{product.name}</span>
                             <span className="text-[10px] md:text-xs opacity-70">{product.category}</span>
@@ -887,7 +912,7 @@ export default function ComparePage() {
                     className="w-full p-4 bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all text-left flex items-center gap-3"
                   >
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-white shadow-md flex-shrink-0 overflow-hidden">
-                      <img src={logoUrl} alt={product.name} className="w-8 h-8 object-contain" />
+                      <img src={logoUrl} alt={`${product.name} logosu — ${product.category} programı`} width={32} height={32} loading="lazy" className="w-8 h-8 object-contain" />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900 text-sm">{product.name}</div>

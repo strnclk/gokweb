@@ -80,7 +80,19 @@ export default function MikroRunPage() {
       icon: Receipt,
       title: 'E-Dönüşüm Çözümleri',
       description: 'E-Fatura, E-Arşiv',
-      descriptionDetail: 'E-İrsaliye, E-Defter'
+      descriptionDetail: 'E-İrsaliye, E-SMMM'
+    },
+    {
+      icon: Globe,
+      title: 'E-Ticaret Entegrasyonu',
+      description: 'Pazaryeri entegrasyonu',
+      descriptionDetail: 'Trendyol, Hepsiburada, N11'
+    },
+    {
+      icon: Cpu,
+      title: 'Esnek Erişim',
+      description: 'Masaüstü, Bulut & Mobil',
+      descriptionDetail: 'Her yerden kesintisiz erişim'
     },
     {
       icon: BarChart,
@@ -99,14 +111,14 @@ export default function MikroRunPage() {
     },
     {
       number: '02',
-      title: '7/24 Destek Hizmeti',
+      title: 'Uzman Destek Hizmeti',
       description: 'Yaşadığınız soruna kolayca çare bulabileceğiniz bir altyapıya ve dilediğinizde bizden daima yardım alabileceğiniz destek hizmetlerine sahibiz.',
       icon: TrendingUp
     },
     {
       number: '03',
       title: 'Deneyime Dayalı Güven',
-      description: '20 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
+      description: '20+ yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
       icon: Award
     }
   ];
@@ -116,18 +128,18 @@ export default function MikroRunPage() {
       id: 'e-fatura',
       name: 'e-Fatura',
       icon: FileText,
-      description: 'Elektronik fatura kesme, alımı ve tüm GİB onaylı yönetim süreçlerini saniyeler içinde gerçekleştirin.',
-      features: ['Otomatik GİB İletimi', '7/24 Bulut Arşivleme', 'Cari Hesap Otomatik Entegrasyonu'],
-      stats: { speed: '< 2 sn', savings: '%85', compliance: '%100 GİB' },
-      steps: ['Fatura Taslağı', 'E-İmza & Onay', 'GİB İletimi', 'Alıcıya Anında Teslim']
+      description: 'Elektronik fatura kesme, alımı ve tüm resmi onaylı yönetim süreçlerini saniyeler içinde gerçekleştirin.',
+      features: ['Otomatik Resmi İletim', 'Güvenli Bulut Arşivleme', 'Cari Hesap Otomatik Entegrasyonu'],
+      stats: { speed: '< 2 sn', savings: '%85', compliance: '%100' },
+      steps: ['Fatura Taslağı', 'E-İmza & Onay', 'Resmi İletim', 'Alıcıya Anında Teslim']
     },
     {
       id: 'e-arsiv',
       name: 'e-Arşiv Fatura',
       icon: Activity,
-      description: 'GİB e-Arşiv portalı uyumlu, son kullanıcılara saniyeler içinde e-posta/SMS ile fatura iletimi.',
+      description: 'Resmi e-Arşiv portalı uyumlu, son kullanıcılara saniyeler içinde e-posta/SMS ile fatura iletimi.',
       features: ['Yasal Dijital Depolama', 'E-posta / SMS Fatura Gönderimi', 'Toplu Faturalama Desteği'],
-      stats: { speed: '< 1.5 sn', savings: '%90', compliance: '%100 GİB' },
+      stats: { speed: '< 1.5 sn', savings: '%90', compliance: '%100' },
       steps: ['Fatura Oluşturma', 'Dijital İmzalama', 'Müşteriye İletim', 'Otomatik Arşivleme']
     },
     {
@@ -136,17 +148,8 @@ export default function MikroRunPage() {
       icon: Layers,
       description: 'Mal sevkiyatlarında kağıt irsaliye yerine geçen tam dijital sevkiyat ve anlık doğrulama altyapısı.',
       features: ['Sevkiyat ve Araç/Plaka Takibi', 'Otomatik Stok Eşleşmesi', 'Anlık Kabul/Ret Yanıtı'],
-      stats: { speed: '< 3 sn', savings: '%75', compliance: '%100 GİB' },
-      steps: ['İrsaliye Düzenleme', 'Araç / Plaka Tanımı', 'GİB Onay Süreci', 'Teslimat Doğrulama']
-    },
-    {
-      id: 'e-defter',
-      name: 'e-Defter',
-      icon: BarChart,
-      description: 'Yevmiye defteri ve Defter-i Kebir kayıtlarının yasal standartlarda dijital olarak tutulması ve berat gönderimi.',
-      features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Berat Gönderimi', 'Şifreli Güvenli Arşivleme'],
-      stats: { speed: 'Otomatik', savings: '%80', compliance: '%100 GİB' },
-      steps: ['Kayıt Kontrolü', 'Berat Oluşturma', 'GİB Yüklemesi', 'Güvenli Depolama']
+      stats: { speed: '< 3 sn', savings: '%75', compliance: '%100' },
+      steps: ['İrsaliye Düzenleme', 'Araç / Plaka Tanımı', 'Resmi Onay Süreci', 'Teslimat Doğrulama']
     },
     {
       id: 'e-mutabakat',
@@ -154,17 +157,8 @@ export default function MikroRunPage() {
       icon: CheckCircle,
       description: 'Müşteri ve tedarikçilerle cari bakiye mutabakatlarının tek tıkla dijital olarak yapılması ve takibi.',
       features: ['Otomatik E-posta Mutabakatı', 'Anlık Onay / İtiraz Bildirimi', 'Zamandan %90 Tasarruf'],
-      stats: { speed: 'Anında', savings: '%90', compliance: '7/24 Canlı' },
+      stats: { speed: 'Anında', savings: '%90', compliance: 'Canlı Takip' },
       steps: ['Cari Bakiye Çekimi', 'Mutabakat Gönderimi', 'Taraf Yanıtı', 'Otomatik Rapor']
-    },
-    {
-      id: 'e-bordro',
-      name: 'e-Bordro',
-      icon: Clock,
-      description: 'Personel maaş bordrolarının KVKK uyumlu olarak dijital ortamda şifreli iletilmesi ve onay takibi.',
-      features: ['SGK Entegrasyonu', 'Özel Şifreli E-posta İletimi', 'Personel Onay Bildirimi'],
-      stats: { speed: 'Toplu', savings: '%85', compliance: 'KVKK Uyumlu' },
-      steps: ['Bordro Hesaplama', 'Şifreli Paketleme', 'Personel İletimi', 'Okundu Bildirimi']
     },
     {
       id: 'e-smmm',
@@ -172,8 +166,8 @@ export default function MikroRunPage() {
       icon: Star,
       description: 'Serbest Meslek Makbuzu sisteminin dijital ortamda düzenlenmesi, hesaplanması ve yasal iletimi.',
       features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Stopaj & KDV Hesabı', 'Anında Müşteri Teslimi'],
-      stats: { speed: '< 2 sn', savings: '%95', compliance: '%100 GİB' },
-      steps: ['Makbuz Taslağı', 'Stopaj & KDV Hesabı', 'E-İmza & GİB', 'Müşteriye İletim']
+      stats: { speed: '< 2 sn', savings: '%95', compliance: '%100' },
+      steps: ['Makbuz Taslağı', 'Stopaj & KDV Hesabı', 'E-İmza & Onay', 'Müşteriye İletim']
     }
   ];
 
@@ -455,16 +449,19 @@ export default function MikroRunPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
+              const isFirstInLastCenteredRow = index === 6;
               return (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-xl hover:border-[#E6007E]/40 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between group"
+                  className={`bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-xl hover:border-[#E6007E]/40 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between group md:col-span-1 lg:col-span-2 ${
+                    isFirstInLastCenteredRow ? 'lg:col-start-2' : ''
+                  }`}
                 >
                   {/* Renkli 3D Üst Vurgu Çıtası */}
                   <div className="h-1.5 w-full bg-gradient-to-r from-[#E6007E] via-rose-500 to-amber-500" />
@@ -557,7 +554,7 @@ export default function MikroRunPage() {
                     <h3 className="text-2xl font-bold text-slate-900 tracking-tight">{modules[activeModuleIndex].name}</h3>
                     <div className="flex items-center gap-2 text-xs text-emerald-600 font-semibold mt-1">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                      <span>GİB Uyumlu Canlı Entegrasyon</span>
+                      <span>Mevzuat Uyumlu Canlı Entegrasyon</span>
                     </div>
                   </div>
                 </div>
@@ -607,7 +604,7 @@ export default function MikroRunPage() {
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-[#E6007E]" />
-                  <span className="text-sm font-bold text-slate-900">GİB Onaylı Canlı Belge Paneli</span>
+                  <span className="text-sm font-bold text-slate-900">Resmi Onaylı Canlı Belge Paneli</span>
                 </div>
                 <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold">
                   Sistem Aktif
@@ -637,7 +634,7 @@ export default function MikroRunPage() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-slate-900">E-İmza & Zaman Damgası</div>
-                    <div className="text-[10px] text-slate-500">GİB Standartlarında 5070 Sayılı Kanun Uyumlu</div>
+                    <div className="text-[10px] text-slate-500">Resmi Standartlarında 5070 Sayılı Kanun Uyumlu</div>
                   </div>
                 </div>
                 <button
@@ -667,42 +664,33 @@ export default function MikroRunPage() {
                 Neden <br /> Gökkuşağı Yazılım ve Danışmanlık <br /> ile Mikro Yazılım'a Geçmelisiniz?
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 20 yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
+              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 20+ yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
               </p>
               <h3 className="text-lg font-bold mb-3 text-gray-900">Mikro Yazılım Geçiş Sürecini Nasıl Yönetiyoruz:</h3>
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Ön Görüşme
+                  Ön Görüşme ve İhtiyaç Analizi
                 </div>
-                
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  İşletmenize En Uygun Paket Seçimi
+                  Mikro RUN Paket Seçimi ve Teklif Onayı
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Teklif ve Teklif Onayı
+                  Hızlı Sistem Kurulumu ve Veri Aktarımı
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Uyarlama ve Aktarım
+                  Temel Ön Muhasebe ve e-Dönüşüm Eğitimi
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Detay Analiz
+                  Proje Teslimi ve Canlıya Geçiş
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Eğitim
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Proje Teslimi
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-rose-900 flex-shrink-0" />
-                  Uzaktan veya Yerinde Destek
+                  Uzaktan ve Yerinde Destek
                 </div>
               </div>
             </motion.div>
@@ -746,7 +734,7 @@ export default function MikroRunPage() {
               'Kolay Ve İşlevsel Çözümler',
               'Daima Güncel Sistem',
               'Anahtar Teslim e-Fatura',
-              '7/24 Canlı Destek Hizmeti',
+              'Canlı Destek & Danışmanlık',
               'Güvenli Yedekleme',
               'E-Ticaret Entegrasyonu',
               'Mobil Uygulama Desteği',

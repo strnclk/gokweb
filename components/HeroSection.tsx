@@ -539,7 +539,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
             <Link href="/mikro-run" aria-label="Mikro Run sayfasına git" className="transition-all hover:scale-105 hover:opacity-100 opacity-80 duration-300">
               <Image
                 src="/mikro-run-logo.png"
-                alt="Mikro Run"
+                alt="Mikro Run logosu — Esnaf ve mikro işletme ERP programı"
                 width={90}
                 height={90}
                 className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
@@ -548,7 +548,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
             <Link href="/mikro-jump" aria-label="Mikro Jump sayfasına git" className="transition-all hover:scale-105 hover:opacity-100 opacity-80 duration-300">
               <Image
                 src="/mikro-jump-logo.png"
-                alt="Mikro Jump"
+                alt="Mikro Jump logosu — KOBİ ERP programı"
                 width={90}
                 height={90}
                 className="h-16 w-16 sm:h-20 sm:w-20 object-contain"
@@ -557,7 +557,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
             <Link href="/mikro-fly" aria-label="Mikro Fly sayfasına git" className="transition-all hover:scale-105 hover:opacity-100 opacity-80 duration-300">
               <Image
                 src="/mikro-fly-logo.png"
-                alt="Mikro Fly"
+                alt="Mikro Fly logosu — E-Ticaret ERP programı"
                 width={90}
                 height={90}
                 className="h-16 w-16 sm:h-20 sm:w-20 object-contain"

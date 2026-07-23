@@ -27,13 +27,14 @@ export default function IlceSEOContent({ ilce }: { ilce: string }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
 
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        {/* Başlık + giriş + Öne Çıkan Çözümler sayfaya göre ortalanır */}
+        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">
           {d.ad}&apos;da Mikro Bayi ve ERP Çözümleri
         </h2>
-        <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-4xl">{d.giris}</p>
+        <p className="text-lg text-gray-600 leading-relaxed mb-10 max-w-4xl mx-auto text-center">{d.giris}</p>
 
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">Öne Çıkan Çözümler</h3>
-        <ul className="space-y-4 mb-12">
+        <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Öne Çıkan Çözümler</h3>
+        <ul className="space-y-4 mb-12 w-fit mx-auto">
           {d.odak.map((o, i) => (
             <li key={i} className="flex items-start gap-3 text-lg text-gray-600 leading-relaxed">
               <CheckCircle className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" />
@@ -42,8 +43,8 @@ export default function IlceSEOContent({ ilce }: { ilce: string }) {
           ))}
         </ul>
 
-        <h3 className="text-2xl font-bold text-gray-900 mb-6">Sıkça Sorulan Sorular</h3>
-        <div className="space-y-3 max-w-4xl">
+        <h3 className="text-2xl font-bold text-gray-900 mb-6 mt-20 text-center">Sıkça Sorulan Sorular</h3>
+        <div className="space-y-3 max-w-4xl mx-auto">
           {d.sss.map((f, i) => (
             <details key={i} className="group rounded-xl border border-gray-200 bg-white overflow-hidden">
               <summary className="flex items-center justify-between gap-4 p-5 cursor-pointer list-none">
@@ -58,7 +59,7 @@ export default function IlceSEOContent({ ilce }: { ilce: string }) {
         </div>
 
         {/* Yerel güven: Google değerlendirme daveti (masaüstünde QR / mobilde buton) */}
-        <GoogleReviewInline variant="card" className="mt-12 max-w-4xl" />
+        <GoogleReviewInline variant="card" className="mt-16 max-w-4xl mx-auto" />
       </div>
     </section>
   );

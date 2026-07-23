@@ -54,75 +54,57 @@ export default function MikroFlyPage() {
   const features = [
     {
       icon: Package,
-      title: 'Stok/Ürün Yönetimi',
-      description: 'Stok ve ürün takibi',
-      descriptionDetail: 'Depo yönetimi'
+      title: 'Stok ve Depo Yönetimi',
+      description: 'Parti, Lot, Seri No, Reyon kırılımı',
+      descriptionDetail: 'Dinamik hedef seviye ve lokasyon planlaması'
     },
     {
       icon: Landmark,
       title: 'Satış ve Müşteri Yönetimi',
-      description: 'Satış süreçleri',
-      descriptionDetail: 'Müşteri takibi'
+      description: 'Tekliften lojistik ve faturalamaya',
+      descriptionDetail: 'Müşteri risk limitleri & plasiyer performans'
     },
     {
       icon: Users,
-      title: 'Satın Alma ve Tedarikçi Yönetimi',
-      description: 'Satın alma süreçleri',
-      descriptionDetail: 'Tedarikçi yönetimi'
-    },
-    {
-      icon: Receipt,
-      title: 'Hizmet Masraf Yönetimi',
-      description: 'Hizmet ve masraf takibi',
-      descriptionDetail: 'Maliyet analizi'
+      title: 'Satın Alma ve Tedarikçi',
+      description: 'Teklif toplama & sipariş uyum denetimi',
+      descriptionDetail: 'Tedarikçi ilişkileri ve performans analizi'
     },
     {
       icon: Factory,
-      title: 'Üretim Yönetimi',
-      description: 'Üretim süreçleri',
-      descriptionDetail: 'MRP planlama'
+      title: 'Gelişmiş Üretim Yönetimi (MRP II)',
+      description: 'Üretim planlama & kapasite optimizasyonu',
+      descriptionDetail: 'Malzeme ihtiyaç hesaplama ve fiili maliyet'
     },
     {
       icon: Wallet,
-      title: 'Genel Muhasebe ve Sabit Kıymet Yönetimi',
-      description: 'Muhasebe işlemleri',
-      descriptionDetail: 'Sabit kıymet takibi'
+      title: 'Genel & Sabit Kıymetler Muhasebesi',
+      description: 'UFRS ve Enflasyon Muhasebesi uyumu',
+      descriptionDetail: 'Amortisman takibi & yasal mevzuat'
+    },
+    {
+      icon: Cpu,
+      title: 'Çoklu Şirket Konsolidasyonu',
+      description: 'Grup şirketleri tek merkezden yönetim',
+      descriptionDetail: 'Konsolide finansal bilanço ve mizan'
     },
     {
       icon: Users,
-      title: 'Personel Yönetimi',
-      description: 'Personel takibi',
-      descriptionDetail: 'Bordro yönetimi'
+      title: 'Personel & İK Yönetimi',
+      description: 'Kapsamlı bordro ve özlük takibi',
+      descriptionDetail: 'Performans, izin & SGK entegrasyonu'
     },
     {
       icon: Globe,
       title: 'Dış Ticaret Yönetimi',
-      description: 'İthalat/İhracat',
-      descriptionDetail: 'Gümrük işlemleri'
+      description: 'Uçtan uca İthalat ve İhracat',
+      descriptionDetail: 'Gümrük, akreditif ve beyanname takibi'
     },
     {
       icon: BarChart,
-      title: 'Karar Destek ve Analiz',
-      description: 'Raporlama',
-      descriptionDetail: 'Dashboard'
-    },
-    {
-      icon: TrendingUp,
-      title: 'Finans Yönetimi',
-      description: 'Finansal süreçler',
-      descriptionDetail: 'Nakit akışı'
-    },
-    {
-      icon: Award,
-      title: 'Bütçe Yönetimi',
-      description: 'Bütçe planlama',
-      descriptionDetail: 'Takip ve analiz'
-    },
-    {
-      icon: Zap,
-      title: 'Ekspress Aktarım',
-      description: 'Hızlı veri aktarımı',
-      descriptionDetail: 'Otomasyon'
+      title: 'İş Zekası (BI) & Karar Destek',
+      description: 'Anlık canlı yönetici dashboard\'ları',
+      descriptionDetail: 'Detaylı finansal ve operasyonel analizler'
     }
   ];
 
@@ -135,14 +117,14 @@ export default function MikroFlyPage() {
     },
     {
       number: '02',
-      title: '7/24 Destek Hizmeti',
+      title: 'Uzman Destek Hizmeti',
       description: 'Yaşadığınız soruna kolayca çare bulabileceğiniz bir altyapıya ve dilediğinizde bizden daima yardım alabileceğiniz destek hizmetlerine sahibiz.',
       icon: TrendingUp
     },
     {
       number: '03',
       title: 'Deneyime Dayalı Güven',
-      description: '20 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
+      description: '20+ yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
       icon: Award
     }
   ];
@@ -152,18 +134,18 @@ export default function MikroFlyPage() {
       id: 'e-fatura',
       name: 'e-Fatura',
       icon: FileText,
-      description: 'Elektronik fatura kesme, alımı ve tüm GİB onaylı yönetim süreçlerini saniyeler içinde gerçekleştirin.',
-      features: ['Otomatik GİB İletimi', '7/24 Bulut Arşivleme', 'Cari Hesap Otomatik Entegrasyonu'],
-      stats: { speed: '< 2 sn', savings: '%85', compliance: '%100 GİB' },
-      steps: ['Fatura Taslağı', 'E-İmza & Onay', 'GİB İletimi', 'Alıcıya Anında Teslim']
+      description: 'Elektronik fatura kesme, alımı ve tüm resmi onaylı yönetim süreçlerini saniyeler içinde gerçekleştirin.',
+      features: ['Otomatik Resmi İletim', 'Güvenli Bulut Arşivleme', 'Cari Hesap Otomatik Entegrasyonu'],
+      stats: { speed: '< 2 sn', savings: '%85', compliance: '%100' },
+      steps: ['Fatura Taslağı', 'E-İmza & Onay', 'Resmi İletim', 'Alıcıya Anında Teslim']
     },
     {
       id: 'e-arsiv',
       name: 'e-Arşiv Fatura',
       icon: Activity,
-      description: 'GİB e-Arşiv portalı uyumlu, son kullanıcılara saniyeler içinde e-posta/SMS ile fatura iletimi.',
+      description: 'Resmi e-Arşiv portalı uyumlu, son kullanıcılara saniyeler içinde e-posta/SMS ile fatura iletimi.',
       features: ['Yasal Dijital Depolama', 'E-posta / SMS Fatura Gönderimi', 'Toplu Faturalama Desteği'],
-      stats: { speed: '< 1.5 sn', savings: '%90', compliance: '%100 GİB' },
+      stats: { speed: '< 1.5 sn', savings: '%90', compliance: '%100' },
       steps: ['Fatura Oluşturma', 'Dijital İmzalama', 'Müşteriye İletim', 'Otomatik Arşivleme']
     },
     {
@@ -172,8 +154,8 @@ export default function MikroFlyPage() {
       icon: Layers,
       description: 'Mal sevkiyatlarında kağıt irsaliye yerine geçen tam dijital sevkiyat ve anlık doğrulama altyapısı.',
       features: ['Sevkiyat ve Araç/Plaka Takibi', 'Otomatik Stok Eşleşmesi', 'Anlık Kabul/Ret Yanıtı'],
-      stats: { speed: '< 3 sn', savings: '%75', compliance: '%100 GİB' },
-      steps: ['İrsaliye Düzenleme', 'Araç / Plaka Tanımı', 'GİB Onay Süreci', 'Teslimat Doğrulama']
+      stats: { speed: '< 3 sn', savings: '%75', compliance: '%100' },
+      steps: ['İrsaliye Düzenleme', 'Araç / Plaka Tanımı', 'Resmi Onay Süreci', 'Teslimat Doğrulama']
     },
     {
       id: 'e-defter',
@@ -181,8 +163,8 @@ export default function MikroFlyPage() {
       icon: BarChart,
       description: 'Yevmiye defteri ve Defter-i Kebir kayıtlarının yasal standartlarda dijital olarak tutulması ve berat gönderimi.',
       features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Berat Gönderimi', 'Şifreli Güvenli Arşivleme'],
-      stats: { speed: 'Otomatik', savings: '%80', compliance: '%100 GİB' },
-      steps: ['Kayıt Kontrolü', 'Berat Oluşturma', 'GİB Yüklemesi', 'Güvenli Depolama']
+      stats: { speed: 'Otomatik', savings: '%80', compliance: '%100' },
+      steps: ['Kayıt Kontrolü', 'Berat Oluşturma', 'Resmi Onay & Yükleme', 'Güvenli Depolama']
     },
     {
       id: 'e-mutabakat',
@@ -190,7 +172,7 @@ export default function MikroFlyPage() {
       icon: CheckCircle,
       description: 'Müşteri ve tedarikçilerle cari bakiye mutabakatlarının tek tıkla dijital olarak yapılması ve takibi.',
       features: ['Otomatik E-posta Mutabakatı', 'Anlık Onay / İtiraz Bildirimi', 'Zamandan %90 Tasarruf'],
-      stats: { speed: 'Anında', savings: '%90', compliance: '7/24 Canlı' },
+      stats: { speed: 'Anında', savings: '%90', compliance: 'Canlı Takip' },
       steps: ['Cari Bakiye Çekimi', 'Mutabakat Gönderimi', 'Taraf Yanıtı', 'Otomatik Rapor']
     },
     {
@@ -208,8 +190,35 @@ export default function MikroFlyPage() {
       icon: Star,
       description: 'Serbest Meslek Makbuzu sisteminin dijital ortamda düzenlenmesi, hesaplanması ve yasal iletimi.',
       features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Stopaj & KDV Hesabı', 'Anında Müşteri Teslimi'],
-      stats: { speed: '< 2 sn', savings: '%95', compliance: '%100 GİB' },
-      steps: ['Makbuz Taslağı', 'Stopaj & KDV Hesabı', 'E-İmza & GİB', 'Müşteriye İletim']
+      stats: { speed: '< 2 sn', savings: '%95', compliance: '%100' },
+      steps: ['Makbuz Taslağı', 'Stopaj & KDV Hesabı', 'E-İmza & Onay', 'Müşteriye İletim']
+    },
+    {
+      id: 'e-mustahsil',
+      name: 'e-Müstahsil Makbuzu',
+      icon: FileText,
+      description: 'Tarımsal ve hayvansal ürün alımlarında e-Müstahsil makbuzunu dijital ortamda anında düzenleyin.',
+      features: ['Otomatik Stopaj Hesabı', 'Dijital Arşivleme & Doğrulama', 'Anında Üretici Bildirimi'],
+      stats: { speed: '< 2 sn', savings: '%90', compliance: '%100' },
+      steps: ['Ürün Alım Kaydı', 'Stopaj & Bağkur Hesabı', 'E-İmza & Onay', 'Dijital Makbuz İletimi']
+    },
+    {
+      id: 'e-zraporu',
+      name: 'e-Z Raporu',
+      icon: Activity,
+      description: 'Ödeme kaydedici cihazlar ve adisyon sistemleriyle entegre gün sonu e-Z raporlarının otomatik aktarımı.',
+      features: ['ÖKC & POS Entegrasyonu', 'Otomatik Gün Sonu Aktarımı', 'Şifreli Güvenli Arşiv'],
+      stats: { speed: 'Otomatik', savings: '%85', compliance: '%100' },
+      steps: ['Gün Sonu Kapanışı', 'Z-Raporu Oluşturma', 'Resmi Onay Süreci', 'Otomatik Raporlama']
+    },
+    {
+      id: 'e-gider-pusulasi',
+      name: 'e-Gider Pusulası',
+      icon: Receipt,
+      description: 'Vergi mükellefi olmayan kişilerden alınan mal ve hizmetler için e-Gider Pusulasını saniyeler içinde düzenleyin.',
+      features: ['Otomatik Stopaj Hesabı', 'Kişiye Özel Dijital İletim', 'Resmi Standartlarda Arşiv'],
+      stats: { speed: '< 2 sn', savings: '%90', compliance: '%100' },
+      steps: ['Hizmet/Mal Alım Kaydı', 'Stopaj Hesaplama', 'E-İmza & Onay', 'Dijital İletim']
     }
   ];
 
@@ -569,7 +578,7 @@ export default function MikroFlyPage() {
                     <h3 className="text-2xl font-bold text-slate-900 tracking-tight">{modules[activeModuleIndex].name}</h3>
                     <div className="flex items-center gap-2 text-xs text-emerald-600 font-semibold mt-1">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                      <span>GİB Uyumlu Canlı Entegrasyon</span>
+                      <span>Mevzuat Uyumlu Canlı Entegrasyon</span>
                     </div>
                   </div>
                 </div>
@@ -616,7 +625,7 @@ export default function MikroFlyPage() {
               <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
                 <div className="flex items-center gap-2">
                   <Shield className="w-5 h-5 text-blue-600" />
-                  <span className="text-sm font-bold text-slate-900">GİB Onaylı Canlı Belge Paneli</span>
+                  <span className="text-sm font-bold text-slate-900">Resmi Onaylı Canlı Belge Paneli</span>
                 </div>
                 <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-700 text-xs font-bold">
                   Sistem Aktif
@@ -644,7 +653,7 @@ export default function MikroFlyPage() {
                   </div>
                   <div>
                     <div className="text-xs font-bold text-slate-900">E-İmza & Zaman Damgası</div>
-                    <div className="text-[10px] text-slate-500">GİB Standartlarında 5070 Sayılı Kanun Uyumlu</div>
+                    <div className="text-[10px] text-slate-500">Resmi Standartlarında 5070 Sayılı Kanun Uyumlu</div>
                   </div>
                 </div>
                 <button
@@ -674,45 +683,33 @@ export default function MikroFlyPage() {
                 Neden <br /> Gökkuşağı Yazılım ve Danışmanlık <br /> ile Mikro Fly'a Geçmelisiniz?
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 20 yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
+              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 20+ yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
               </p>
               <h3 className="text-lg font-bold mb-3 text-gray-900">Mikro Fly Geçiş Sürecini Nasıl Yönetiyoruz:</h3>
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  Ön Görüşme
+                  Kapsamlı Kurumsal ERP ve Canlı Süreç Analizi
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  Ücretsiz Analiz ve Checkup Hizmeti
+                  UFRS, Üretim ve Departman Mimarisi Tasarımı
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  İşletmenize En Uygun Paket Seçimi
+                  Çoklu Şirket Entegrasyonu ve Veri Aktarımı
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  Teklif ve Teklif Onayı
+                  Ekip ve Yönetici Bazlı İleri Seviye ERP Eğitimleri
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  Uyarlama ve Aktarım
+                  Canlı Simülasyon, Pilot Uygulama ve Proje Teslimi
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  Detay Analiz
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  Eğitim
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  Proje Teslimi
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-blue-600 flex-shrink-0" />
-                  Uzaktan veya Yerinde Destek
+                  Proaktif Kurumsal Danışmanlık ve Destek
                 </div>
               </div>
             </motion.div>

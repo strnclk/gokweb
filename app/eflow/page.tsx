@@ -268,7 +268,7 @@ export default function EFlowPage() {
               >
                 <Image
                   src="/eflow3-logo.png"
-                  alt="E-Flow BPM"
+                  alt="E-Flow BPM logosu — İş Süreçleri Yönetimi yazılımı"
                   width={190}
                   height={190}
                   priority
@@ -293,7 +293,7 @@ export default function EFlowPage() {
               >
                 <Image
                   src="/netoloji-logo.svg"
-                  alt="Netoloji Yazılım"
+                  alt="Netoloji Yazılım logosu — E-Flow BPM üreticisi"
                   width={220}
                   height={66}
                   priority

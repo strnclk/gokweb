@@ -234,7 +234,7 @@ export default function ServicesPage() {
                   whileHover={{ scale: 1.05, y: -5, rotate: 6 }}
                   className="w-40 h-40 bg-white border border-gray-200 rounded-3xl rotate-6 shadow-xl flex items-center justify-center p-6 cursor-pointer transition-all duration-300"
                 >
-                  <img src="/logo.png" alt="Gökkuşağı Yazılım" className="w-full h-full object-contain" />
+                  <img src="/logo.png" alt="Gökkuşağı Yazılım ve Danışmanlık logosu" width={112} height={112} loading="lazy" className="w-full h-full object-contain" />
                 </motion.div>
               </div>
 

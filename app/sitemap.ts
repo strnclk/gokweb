@@ -25,21 +25,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // İçerik gerçekten değiştiğinde bu tarihi elle güncelleyin.
   const lastModified = new Date('2026-06-30')
 
+  // Görsel sitemap: sayfayla ilişkili logo/görseller Google Görseller dizinine bildirilir.
+  const gorsel = (dosyalar: string[]) => dosyalar.map((d) => `${baseUrl}${d}`)
+
   const staticPages = [
-    { url: baseUrl, lastModified, changeFrequency: 'daily' as const, priority: 1 },
+    { url: baseUrl, lastModified, changeFrequency: 'daily' as const, priority: 1, images: gorsel(['/logo.png', '/mikro-run-logo.png', '/mikro-jump-logo.png', '/mikro-fly-logo.png']) },
     { url: `${baseUrl}/solutions`, lastModified, changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: `${baseUrl}/contact`, lastModified, changeFrequency: 'monthly' as const, priority: 0.7 },
-    { url: `${baseUrl}/eflow`, lastModified, changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${baseUrl}/eflow`, lastModified, changeFrequency: 'weekly' as const, priority: 0.9, images: gorsel(['/eflow3-logo.png', '/eflow_hero_isometric.jpg']) },
     { url: `${baseUrl}/eflow-surecleri`, lastModified, changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: `${baseUrl}/eflow-bpm`, lastModified, changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: `${baseUrl}/eflow-dms`, lastModified, changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: `${baseUrl}/custom-software`, lastModified, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${baseUrl}/maintenance`, lastModified, changeFrequency: 'monthly' as const, priority: 0.5 },
-    { url: `${baseUrl}/mikro-fly`, lastModified, changeFrequency: 'weekly' as const, priority: 0.9 },
-    { url: `${baseUrl}/mikro-jump`, lastModified, changeFrequency: 'weekly' as const, priority: 0.9 },
-    { url: `${baseUrl}/mikro-run`, lastModified, changeFrequency: 'weekly' as const, priority: 0.9 },
+    { url: `${baseUrl}/mikro-fly`, lastModified, changeFrequency: 'weekly' as const, priority: 0.9, images: gorsel(['/mikro-fly-logo.png', '/mikrofly.webp']) },
+    { url: `${baseUrl}/mikro-jump`, lastModified, changeFrequency: 'weekly' as const, priority: 0.9, images: gorsel(['/mikro-jump-logo.png', '/mikrojump.webp']) },
+    { url: `${baseUrl}/mikro-run`, lastModified, changeFrequency: 'weekly' as const, priority: 0.9, images: gorsel(['/mikro-run-logo.png', '/mikrorun.webp']) },
     { url: `${baseUrl}/blog`, lastModified, changeFrequency: 'daily' as const, priority: 0.9 },
-    { url: `${baseUrl}/compare`, lastModified, changeFrequency: 'monthly' as const, priority: 0.7 },
+    { url: `${baseUrl}/compare`, lastModified, changeFrequency: 'monthly' as const, priority: 0.7, images: gorsel(['/mikro-run-logo.png', '/mikro-jump-logo.png', '/mikro-fly-logo.png']) },
     { url: `${baseUrl}/destek-baglantilari`, lastModified, changeFrequency: 'monthly' as const, priority: 0.6 },
     { url: `${baseUrl}/sectoral-solutions`, lastModified, changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: `${baseUrl}/featured-works`, lastModified, changeFrequency: 'weekly' as const, priority: 0.7 },

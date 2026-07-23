@@ -213,7 +213,7 @@ export default function HRIKPage() {
               <span className="text-xs font-bold bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full uppercase tracking-wider">
                 Resmi Muhasebe Senkronu
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black">
+              <h3 className="text-2xl sm:text-3xl font-black pt-5">
                 Puantaj Hatasız: Mikro Personel Entegrasyon Ayrıntısı
               </h3>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -238,7 +238,7 @@ export default function HRIKPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-emerald-100 to-teal-100 blur-2xl opacity-40 -z-10" />
                 <div className="text-center space-y-4">
                   <div className="w-16 h-16 bg-gradient-to-tr from-emerald-500 to-teal-500 text-white rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-emerald-500/20">
-                    <Database size={28} />
+                    <Calendar size={28} />
                   </div>
                   <div className="font-black text-gray-800 text-lg">Mikro SQL Entegrasyonu</div>
                   <div className="text-xs text-gray-700 leading-relaxed">

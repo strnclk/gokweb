@@ -102,7 +102,7 @@ export default function EFlowProcessesSection() {
               { 
                 title: "%99.9", 
                 subtitle: "Sistem Uptime",
-                desc: "Kesintisiz hizmet ile iş sürekliliği sağlayın"
+                desc: "Güvenilir altyapı ile iş sürekliliği sağlayın"
               },
               { 
                 title: "0", 

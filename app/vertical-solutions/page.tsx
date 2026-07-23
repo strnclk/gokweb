@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Link from 'next/link';
-import { ArrowRight, Building2, Factory, ShoppingCart, Truck, Users, Briefcase, Sparkles, Target, Zap, Shield, TrendingUp, CheckCircle2, ChevronRight, UtensilsCrossed } from 'lucide-react';
+import { ArrowRight, Building2, Factory, ShoppingCart, Truck, Users, Briefcase, Sparkles, Target, Zap, Shield, TrendingUp, CheckCircle2, ChevronLeft, ChevronRight, UtensilsCrossed, Cloud, Package, Store, Smartphone, BarChart3 } from 'lucide-react';
 
 export default function VerticalSolutionsPage() {
   const scrollToContact = () => {
@@ -16,51 +16,107 @@ export default function VerticalSolutionsPage() {
     window.open(whatsappUrl, '_blank');
   };
 
+  // Mikro iş ortağı dikey çözümleri — her kart bir ürünü temsil eder,
+  // mavi hover kutusu (valueProp) çözümü sunan firmayı belirtir.
   const industries = [
     {
       icon: ShoppingCart,
-      name: 'Hızlı Satış Çözümleri',
-      description: 'Hızlı sipariş alma, mobil satış, POS entegrasyonu',
+      name: 'Fastsell Hızlı Satış',
+      description: 'Perakendede satış, stok ve kasa hareketleri tek ekranda',
       color: 'from-blue-600 to-blue-700',
-      tab: 'hizli-satis',
-      features: ['Mobil POS', 'Sipariş Yönetimi', 'Ödeme Entegrasyonu'],
-      valueProp: 'Saha ve mağazada mobil POS ile anında sipariş ve tahsilat.'
+      tab: 'fastsell-hizli-satis',
+      features: ['Dokunmatik Hızlı Satış', 'e-Fatura & e-Arşiv', 'Online/Offline Çalışma'],
+      valueProp: 'Favorim Bilişim imzalı Fastsell ile büfeden markete satış, stok ve dövizli tahsilat tek ekranda.'
+    },
+    {
+      icon: Store,
+      name: 'Mizan Hızlı Satış',
+      description: 'Yazarkasa POS ve VUK 507 uyumlu perakende satış çözümü',
+      color: 'from-blue-600 to-blue-700',
+      tab: 'mizan-hizli-satis',
+      features: ['Yazarkasa POS Uyumu', 'Kampanya Yönetimi', 'Çoklu Döviz Tahsilat'],
+      valueProp: 'Mizan Yazılım çözümüyle mağaza ve marketlerde yazarkasa POS entegre, mevzuata uyumlu hızlı satış.'
+    },
+    {
+      icon: Cloud,
+      name: 'Corbiq Cloud Üretim',
+      description: 'Bulut tabanlı üretim planlama ve sahadan anlık veri toplama',
+      color: 'from-blue-600 to-blue-700',
+      tab: 'corbiq-cloud-uretim',
+      features: ['MRP I / MRP II', 'Saha Veri Toplama', 'Kapasite Yönetimi'],
+      valueProp: 'Corbiq Yazılım imzalı bulut çözümle üretimi planlayın, sahadan anlık veri toplayın.'
     },
     {
       icon: Factory,
-      name: 'Üretim Yönetimi Çözümleri',
-      description: 'İş emri yönetimi, MRP planlama, üretim takibi',
+      name: 'Ussoft Üretim Yönetimi',
+      description: 'ERP ile üretim sahası arasındaki kopukluğu gideren üretim takibi',
       color: 'from-blue-600 to-blue-700',
-      tab: 'uretim-yonetimi',
-      features: ['MRP Planlama', 'İş Emri', 'Kapasite Planlama'],
-      valueProp: 'İş emrinden kapasiteye üretimin her adımını tek ekrandan yönetin.'
+      tab: 'ussoft-uretim',
+      features: ['Barkodlu Operasyon', 'Parti/Lot Takibi', 'Personel Performansı'],
+      valueProp: 'Ussoft Bilişim çözümüyle iş emrinden fire analizine üretimin her adımı dijital ve izlenebilir.'
     },
     {
       icon: Shield,
-      name: 'Kalite Yönetimi Çözümleri',
-      description: 'Kalite kontrol, uyum yönetimi, denetim takibi',
+      name: 'Ussoft Kalite Yönetimi',
+      description: 'Kalite ve hijyen süreçlerinin dijital takibi ve analizi',
       color: 'from-blue-600 to-blue-700',
-      tab: 'kalite-yonetimi',
-      features: ['Kalite Kontrol', 'Uyum Yönetimi', 'Denetim Takibi'],
-      valueProp: 'Denetim ve uyum süreçlerini uçtan uca kayıt altına alın.'
+      tab: 'ussoft-kalite',
+      features: ['Kalite Kontrol', 'Erken Hata Tespiti', 'Uçtan Uca İzlenebilirlik'],
+      valueProp: 'Ussoft Bilişim çözümüyle kalite standartlarını ölçün, hataları erken yakalayın.'
+    },
+    {
+      icon: Package,
+      name: 'Eryaz Zeus WMS',
+      description: 'Mal kabulden sevkiyata yeni nesil depo yönetim sistemi',
+      color: 'from-blue-600 to-blue-700',
+      tab: 'eryaz-zeus-wms',
+      features: ['Cross-Docking', 'Seri/Lot Takibi', 'Raf Adresleme'],
+      valueProp: 'Eryaz Bilgi Teknolojileri imzalı Zeus WMS ile deponuza dijital zekâ: hatasız toplama ve sevkiyat.'
     },
     {
       icon: Truck,
-      name: 'Depo ve Lojistik Yönetimi',
-      description: 'Stok yönetimi, rota optimizasyonu, kargo takibi',
+      name: 'Nitrogen Depo Yönetimi',
+      description: 'Barkod/QR destekli stok, raf ve son kullanma tarihi takibi',
       color: 'from-blue-600 to-blue-700',
-      tab: 'depo-lojistik',
-      features: ['Stok Yönetimi', 'Rota Optimizasyonu', 'Kargo Takibi'],
-      valueProp: 'Stoktan sevkiyata gerçek zamanlı depo ve rota kontrolü.'
+      tab: 'nitrogen-depo',
+      features: ['Barkod & QR Kod', 'SKT Kontrolü', 'Saha Satış Modülü'],
+      valueProp: 'Nitrogen çözümüyle renk, beden, lot ve seri bazında stok kontrolü; mobil ve web erişim.'
     },
     {
       icon: Users,
-      name: 'B2B Bayi Yönetimi',
-      description: 'Bayi ağ yönetimi, sipariş otomasyonu, performans analizi',
+      name: 'Eryaz B2B/B4B Bayi Yönetimi',
+      description: 'Bayi ve saha satış süreçleri için dijital satış platformu',
       color: 'from-blue-600 to-blue-700',
-      tab: 'b2b-bayi',
-      features: ['Bayi Ağ Yönetimi', 'Sipariş Otomasyonu', 'Performans Analizi'],
-      valueProp: 'Bayi siparişlerini otomatikleştirip performansı anlık izleyin.'
+      tab: 'eryaz-b2b',
+      features: ['Yapay Zekâ Destekli', 'Sipariş & Tahsilat', 'Bulut Altyapı'],
+      valueProp: 'Eryaz Bilgi Teknolojileri çözümüyle bayi siparişinden tahsilata tüm saha operasyonu tek platformda.'
+    },
+    {
+      icon: Smartphone,
+      name: 'B2BSOFT Bayi Yönetimi',
+      description: 'Bayi ağınızı tek merkezden yöneten mobil B2B platformu',
+      color: 'from-blue-600 to-blue-700',
+      tab: 'b2bsoft-bayi',
+      features: ['Mobil Bayi Yönetimi', 'Fiyat & İskonto', 'Performans Analizi'],
+      valueProp: 'B2BSOFT çözümüyle bayileriniz stok ve bakiyeyi diledikleri an görür, siparişini kendisi oluşturur.'
+    },
+    {
+      icon: BarChart3,
+      name: 'Ussoft Raporlama ve Analiz',
+      description: 'Finansal ve operasyonel verileriniz tek platformda',
+      color: 'from-blue-600 to-blue-700',
+      tab: 'ussoft-raporlama',
+      features: ['Satış Dashboard', 'Bakiye & Yaşlandırma', 'Esnek Raporlar'],
+      valueProp: 'Ussoft Bilişim çözümüyle Mikro verileriniz anlık dashboard ve özel raporlara dönüşür.'
+    },
+    {
+      icon: UtensilsCrossed,
+      name: 'Fastsell Restoran Yönetimi',
+      description: 'Restoran, kafe ve paket servis operasyonu tek sistemde',
+      color: 'from-blue-600 to-blue-700',
+      tab: 'fastsell-restoran',
+      features: ['QR Menü & Masa', 'Paket Servis & Kurye', 'Pazaryeri Entegrasyonu'],
+      valueProp: 'Favorim Bilişim imzalı Fastsell Restoran ile masadan pakete tüm yiyecek-içecek operasyonu tek yerde.'
     },
     {
       icon: Briefcase,
@@ -69,25 +125,7 @@ export default function VerticalSolutionsPage() {
       color: 'from-blue-600 to-blue-700',
       tab: 'surec-yonetimi',
       features: ['İş Akışı Otomasyonu', 'Süreç Optimizasyonu', 'BPM'],
-      valueProp: 'İş akışlarını otomatikleştirerek manuel iş yükünü azaltın.'
-    },
-    {
-      icon: TrendingUp,
-      name: 'Raporlama ve Analiz Çözümleri',
-      description: 'Dashboard, BI raporlama, veri analitiği',
-      color: 'from-blue-600 to-blue-700',
-      tab: 'raporlama-analiz',
-      features: ['Dashboard', 'BI Raporlama', 'Veri Analitiği'],
-      valueProp: 'Canlı dashboardlarla veriye dayalı kararları hızla alın.'
-    },
-    {
-      icon: UtensilsCrossed,
-      name: 'Restoran Yönetimi Çözümü',
-      description: 'QR menü, masa yönetimi, hızlı sipariş ve ödeme',
-      color: 'from-blue-600 to-blue-700',
-      tab: 'restoran-yonetimi',
-      features: ['QR Menü', 'Masa Yönetimi', 'Paket Sipariş'],
-      valueProp: 'QR menüden masa ve pakete tüm restoran operasyonu tek yerde.'
+      valueProp: 'Netoloji imzalı E-Flow ile iş akışlarını otomatikleştirerek manuel iş yükünü azaltın.'
     },
     {
       icon: Building2,
@@ -96,43 +134,70 @@ export default function VerticalSolutionsPage() {
       color: 'from-blue-600 to-blue-700',
       tab: 'diger',
       features: ['Sektörel Çözümler', 'Özel Entegrasyon', 'Danışmanlık'],
-      valueProp: 'İşletmenize özel entegrasyon ve danışmanlıkla esnek çözümler.'
+      valueProp: 'Gökkuşağı Yazılım danışmanlığıyla işletmenize özel entegrasyon ve esnek çözümler.'
     }
   ];
 
+  // tint: kart zemin/kenarlık rengi; color: ikon kutusunun gradyanı
   const benefits = [
     {
       icon: Target,
       title: 'Sektörel Uzmanlık',
       description: 'Her sektör için özel olarak geliştirilmiş çözümler',
-      color: 'from-blue-500 to-indigo-600'
+      color: 'from-blue-500 to-indigo-600',
+      tint: 'bg-blue-50/60 border-blue-200 hover:border-blue-300'
     },
     {
       icon: Zap,
       title: 'Hızlı Entegrasyon',
       description: 'Mevcut sistemlerinizle kolay entegrasyon',
-      color: 'from-amber-500 to-orange-600'
+      color: 'from-amber-500 to-orange-600',
+      tint: 'bg-amber-50/60 border-amber-200 hover:border-amber-300'
     },
     {
       icon: Shield,
-      title: 'Sürekli Destek',
-      description: 'Uzman teknik destek ve danışmanlık hizmeti',
-      color: 'from-green-500 to-emerald-600'
+      title: 'Uzman Destek ve Eğitim',
+      description: 'Kurulumdan eğitime, uzman ekibimizden yerinde veya uzaktan profesyonel destek',
+      color: 'from-green-500 to-emerald-600',
+      tint: 'bg-emerald-50/60 border-emerald-200 hover:border-emerald-300'
     },
     {
       icon: TrendingUp,
       title: 'Ölçeklenebilirlik',
       description: 'İşletmenizin büyümesiyle birlikte ölçeklenir',
-      color: 'from-purple-500 to-violet-600'
+      color: 'from-purple-500 to-violet-600',
+      tint: 'bg-purple-50/60 border-purple-200 hover:border-purple-300'
+    },
+    {
+      icon: Users,
+      title: 'Uzman İş Ortağı Ekosistemi',
+      description: 'Ussoft, Eryaz, Corbiq, Favorim Bilişim ve Mizan gibi uzman iş ortaklarının çözümleri tek elden',
+      color: 'from-rose-500 to-pink-600',
+      tint: 'bg-rose-50/60 border-rose-200 hover:border-rose-300'
+    },
+    {
+      icon: CheckCircle2,
+      title: 'Mikro ERP ile Tam Entegrasyon',
+      description: 'Tüm dikey çözümler Mikro Run, Jump ve Fly ile entegre çalışır; verileriniz tek merkezde kalır',
+      color: 'from-cyan-500 to-sky-600',
+      tint: 'bg-sky-50/60 border-sky-200 hover:border-sky-300'
     }
   ];
+
+  // Faydalar karuseli: ana sayfadaki Başarı Hikayeleri deseni — 3'erli sayfalar
+  const BENEFITS_PER_PAGE = 3;
+  const benefitPages: (typeof benefits)[] = [];
+  for (let i = 0; i < benefits.length; i += BENEFITS_PER_PAGE) {
+    benefitPages.push(benefits.slice(i, i + BENEFITS_PER_PAGE));
+  }
+  const [benefitPage, setBenefitPage] = useState(0);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] sm:min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center overflow-hidden bg-white pt-16 md:pt-0">
+      <section className="relative min-h-[50vh] sm:min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center overflow-hidden bg-white pt-24 md:pt-16">
         {/* Decorative Elements */}
         <div className="absolute top-20 right-20 w-48 h-48 sm:w-96 sm:h-96 bg-blue-100/50 rounded-full blur-3xl" />
         <div className="absolute bottom-20 left-20 w-40 h-40 sm:w-80 sm:h-80 bg-purple-100/50 rounded-full blur-3xl" />
@@ -195,9 +260,12 @@ export default function VerticalSolutionsPage() {
                 whileHover={{ scale: 1.05, y: -5, rotate: 8 }}
                 className="absolute top-20 left-32 w-36 h-36 bg-gradient-to-br from-red-100 to-red-200 rounded-3xl rotate-6 shadow-lg flex items-center justify-center p-4 cursor-pointer transition-all duration-300 z-10"
               >
-                <img 
-                  src="/mikro-run-logo.png" 
-                  alt="Mikro Run" 
+                <img
+                  src="/mikro-run-logo.png"
+                  alt="Mikro Run logosu — Esnaf ve mikro işletme ERP programı"
+                  width={112}
+                  height={112}
+                  loading="lazy"
                   className="w-full h-full object-contain"
                 />
               </motion.div>
@@ -207,9 +275,12 @@ export default function VerticalSolutionsPage() {
                 whileHover={{ scale: 1.05, y: -5, rotate: -8 }}
                 className="absolute top-28 right-32 w-36 h-36 bg-gradient-to-br from-purple-100 to-purple-200 rounded-3xl -rotate-6 shadow-lg flex items-center justify-center p-4 cursor-pointer transition-all duration-300 z-10"
               >
-                <img 
-                  src="/mikro-jump-logo.png" 
-                  alt="Mikro Jump" 
+                <img
+                  src="/mikro-jump-logo.png"
+                  alt="Mikro Jump logosu — KOBİ ERP programı"
+                  width={112}
+                  height={112}
+                  loading="lazy"
                   className="w-full h-full object-contain"
                 />
               </motion.div>
@@ -219,9 +290,12 @@ export default function VerticalSolutionsPage() {
                 whileHover={{ scale: 1.05, y: -5, rotate: 3 }}
                 className="absolute bottom-16 left-1/2 -translate-x-1/2 w-36 h-36 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-3xl rotate-3 shadow-lg flex items-center justify-center p-4 cursor-pointer transition-all duration-300 z-10"
               >
-                <img 
-                  src="/mikro-fly-logo.png" 
-                  alt="Mikro Fly" 
+                <img
+                  src="/mikro-fly-logo.png"
+                  alt="Mikro Fly logosu — E-Ticaret ERP programı"
+                  width={112}
+                  height={112}
+                  loading="lazy"
                   className="w-full h-full object-contain"
                 />
               </motion.div>
@@ -330,9 +404,12 @@ export default function VerticalSolutionsPage() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* 6 sütunlu grid: her kart 2 sütun kaplar (satırda 3 kart); son satırda
+              tek kalan "Diğer Çözümler" kartı col-start-3 ile tam ortalanır. */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8">
             {industries.map((industry, index) => {
               const Icon = industry.icon;
+              const isLastCentered = index === industries.length - 1 && industries.length % 3 === 1;
               return (
                 <motion.div
                   key={index}
@@ -340,6 +417,7 @@ export default function VerticalSolutionsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.6, delay: index * 0.08, ease: [0.21, 0.45, 0.27, 0.9] }}
+                  className={`lg:col-span-2 ${isLastCentered ? 'lg:col-start-3' : ''}`}
                 >
                   <Link href={`/solutions/#${industry.tab}`} className="block h-full">
                     <Card className="h-full relative overflow-hidden transition-all duration-300 ease-out border-gray-200/90 hover:border-blue-400/80 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2.5 bg-white hover:bg-gradient-to-b hover:from-white hover:to-blue-50/20 group cursor-pointer rounded-2xl">
@@ -369,9 +447,11 @@ export default function VerticalSolutionsPage() {
                           </p>
                         </div>
 
-                        {/* Footer Section: Pill Badges by default, Value Proposition on Hover */}
+                        {/* Footer Section: Pill Badges by default, Value Proposition on Hover.
+                            Konteyner sabit yükseklikte (h-[84px]) — mavi bilgi kutusu tüm
+                            kartlarda birebir aynı boyutta ve aynı konumda görünür. */}
                         <div className="pt-4 border-t border-slate-100 mt-auto">
-                          <div className="relative min-h-[64px] flex items-center">
+                          <div className="relative h-[96px] flex items-center">
                             {/* Default Pill Badges (Fades out on hover) */}
                             <div className="w-full flex flex-wrap gap-1.5 transition-all duration-300 group-hover:opacity-0 group-hover:scale-95 group-hover:pointer-events-none">
                               {industry.features.map((feat, fidx) => (
@@ -385,11 +465,11 @@ export default function VerticalSolutionsPage() {
                               ))}
                             </div>
 
-                            {/* Hover Value Proposition Banner (Sharp 100% Visible Box) */}
-                            <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
-                              <div className="w-full flex items-center gap-2.5 px-3.5 py-2.5 bg-blue-50/95 border-2 border-blue-500/80 rounded-xl text-xs sm:text-sm font-bold text-blue-800 shadow-md shadow-blue-500/10">
+                            {/* Hover Value Proposition Banner — konteyneri tamamen doldurur (sabit boyut) */}
+                            <div className="absolute inset-0 opacity-0 scale-95 group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto">
+                              <div className="w-full h-full flex items-center gap-2.5 px-3.5 py-2 bg-blue-50/95 border-2 border-blue-500/80 rounded-xl text-xs font-bold text-blue-800 shadow-md shadow-blue-500/10 overflow-hidden">
                                 <Sparkles className="w-4 h-4 text-blue-600 shrink-0" />
-                                <span className="leading-snug">{industry.valueProp}</span>
+                                <span className="leading-tight">{industry.valueProp}</span>
                               </div>
                             </div>
                           </div>
@@ -423,31 +503,75 @@ export default function VerticalSolutionsPage() {
             </p>
           </motion.div>
 
-          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="group"
+          {/* Kaydırılabilir fayda karuseli — ana sayfadaki Başarı Hikayeleri deseni */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative"
+          >
+            {/* Negatif margin + padding: overflow-hidden'a rağmen kart gölgeleri görünür kalır */}
+            <div className="overflow-hidden pt-2 -mt-2 pb-6 -mb-6 px-2 -mx-2">
+              <div
+                className="flex transition-transform duration-500 ease-out"
+                style={{ transform: `translateX(-${benefitPage * 100}%)` }}
               >
-                <Card className="h-full hover:shadow-xl transition-all duration-300 border-gray-200 hover:border-gray-300">
-                  <CardContent className="p-4 sm:p-6">
-                    <div className="flex items-start gap-3 sm:gap-4">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gray-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-colors">
-                        <benefit.icon size={20} className="sm:size-24 text-gray-700 group-hover:text-blue-600 transition-colors" />
+                {benefitPages.map((page, pageIndex) => (
+                  <div key={pageIndex} className="min-w-full grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-stretch px-1">
+                    {page.map((benefit) => (
+                      <div key={benefit.title} className="group h-full">
+                        <Card className={`h-full hover:shadow-xl transition-all duration-300 border ${benefit.tint}`}>
+                          <CardContent className="p-4 sm:p-6">
+                            <div className="flex items-start gap-3 sm:gap-4">
+                              <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${benefit.color} shadow-md flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
+                                <benefit.icon size={20} className="sm:size-24 text-white" />
+                              </div>
+                              <div>
+                                <h3 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 text-gray-900">{benefit.title}</h3>
+                                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{benefit.description}</p>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
                       </div>
-                      <div>
-                        <h3 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 text-gray-900">{benefit.title}</h3>
-                        <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">{benefit.description}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Kontroller: ok tuşları + sayfa noktaları (açık zemine uyarlanmış) */}
+            <div className="flex items-center justify-center gap-6 mt-8">
+              <button
+                onClick={() => setBenefitPage((prev) => (prev - 1 + benefitPages.length) % benefitPages.length)}
+                aria-label="Önceki faydalar"
+                className="w-11 h-11 rounded-full bg-white border border-gray-200 text-gray-700 shadow-sm flex items-center justify-center hover:bg-gray-50 hover:border-gray-300 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+              >
+                <ChevronLeft size={22} />
+              </button>
+
+              <div className="flex items-center gap-2.5">
+                {benefitPages.map((_, pageIndex) => (
+                  <button
+                    key={pageIndex}
+                    onClick={() => setBenefitPage(pageIndex)}
+                    aria-label={`Faydalar sayfa ${pageIndex + 1}`}
+                    className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                      benefitPage === pageIndex ? 'w-8 bg-blue-600' : 'w-2.5 bg-gray-300 hover:bg-gray-400'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={() => setBenefitPage((prev) => (prev + 1) % benefitPages.length)}
+                aria-label="Sonraki faydalar"
+                className="w-11 h-11 rounded-full bg-white border border-gray-200 text-gray-700 shadow-sm flex items-center justify-center hover:bg-gray-50 hover:border-gray-300 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+              >
+                <ChevronRight size={22} />
+              </button>
+            </div>
+          </motion.div>
         </div>
       </section>
 

@@ -55,12 +55,12 @@ export default function ProductCard({ image, images, icon, title, subtitle, desc
           {images ? (
             <div className="mb-10 flex justify-center items-center gap-4">
               {images.map((img, idx) => (
-                <img key={idx} src={img} alt={title} className="w-32 h-32 object-contain filter drop-shadow-lg" />
+                <img key={idx} src={img} alt={`${title} logosu — ${subtitle}`} width={128} height={128} loading="lazy" className="w-32 h-32 object-contain filter drop-shadow-lg" />
               ))}
             </div>
           ) : image ? (
             <div className="mb-10">
-              <img src={image} alt={title} className="w-40 h-40 mx-auto object-contain filter drop-shadow-lg" />
+              <img src={image} alt={`${title} logosu — ${subtitle}`} width={160} height={160} loading="lazy" className="w-40 h-40 mx-auto object-contain filter drop-shadow-lg" />
             </div>
           ) : (
             <div className={`inline-flex p-8 rounded-2xl bg-gradient-to-br ${gradient} text-white mb-10 shadow-lg`}>

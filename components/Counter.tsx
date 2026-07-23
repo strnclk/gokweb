@@ -10,9 +10,10 @@ interface CounterProps {
   label: string;
   isInView: boolean;
   delay: number;
+  compact?: boolean; // bir kademe küçük yazı/sayı boyutu (ilçe sayfaları)
 }
 
-export default function Counter({ icon, endValue, suffix, label, isInView, delay }: CounterProps) {
+export default function Counter({ icon, endValue, suffix, label, isInView, delay, compact = false }: CounterProps) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -45,10 +46,10 @@ export default function Counter({ icon, endValue, suffix, label, isInView, delay
       <div className="flex justify-center mb-6 text-purple-400">
         {icon}
       </div>
-      <div className="text-6xl md:text-7xl mb-4">
+      <div className={`${compact ? 'text-5xl md:text-6xl' : 'text-6xl md:text-7xl'} mb-4`}>
         {count}{suffix}
       </div>
-      <div className="text-xl text-gray-300">{label}</div>
+      <div className={`${compact ? 'text-lg' : 'text-xl'} text-gray-300`}>{label}</div>
     </motion.div>
   );
 }

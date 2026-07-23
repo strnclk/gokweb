@@ -71,7 +71,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center">
-              <img src="/logo.png" alt="Gökkuşağı Yazılım" className="h-16 w-auto" />
+              <img src="/logo.png" alt="Gökkuşağı Yazılım ve Danışmanlık logosu" className="h-16 w-auto" />
             </Link>
             
             {/* Animated Contact Info */}

@@ -213,7 +213,7 @@ export default function WMSDepoYonetimiPage() {
               <span className="text-xs font-bold bg-teal-100 text-teal-700 px-3 py-1 rounded-full uppercase tracking-wider">
                 Kesintisiz Stok Eşleşmesi
               </span>
-              <h3 className="text-2xl sm:text-3xl font-black">
+              <h3 className="text-2xl sm:text-3xl font-black pt-5">
                 Hatasız Envanter: Mikro Canlı Entegrasyon Altyapısı
               </h3>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
@@ -238,7 +238,7 @@ export default function WMSDepoYonetimiPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-100 to-emerald-100 blur-2xl opacity-40 -z-10" />
                 <div className="text-center space-y-4">
                   <div className="w-16 h-16 bg-gradient-to-tr from-teal-500 to-emerald-500 text-white rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-teal-500/20">
-                    <Database size={28} />
+                    <Package size={28} />
                   </div>
                   <div className="font-black text-gray-800 text-lg">Mikro SQL Entegrasyonu</div>
                   <div className="text-xs text-gray-700 leading-relaxed">

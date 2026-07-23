@@ -1,12 +1,37 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ArrowRight, Sparkles, Cpu, Database, Zap, Shield, TrendingUp, Building2, Factory, ShoppingCart, Truck, Users, Briefcase, CheckCircle2, ChevronRight } from 'lucide-react';
+import { ArrowRight, Sparkles, Cpu, Database, Zap, Shield, TrendingUp, Building2, Factory, ShoppingCart, Truck, Users, Briefcase, CheckCircle2, ChevronLeft, ChevronRight } from 'lucide-react';
+
+// Referans sözleri — ana sayfadaki Başarı Hikayeleri gibi ok tuşlarıyla gezilir
+const referansSozleri = [
+  {
+    soz: 'Gökkuşağı Yazılım ile çalışmaya başladığımdan bu yana iş süreçlerimiz %90 daha verimli hale geldi. Sektörümüze özel çözümleri ve uzman destekleriyle gerçek bir çözüm ortağı.',
+    ad: 'Recep Güngörmüş',
+    unvan: 'Müşteri',
+  },
+  {
+    soz: 'Üretim planlamamızı MES entegrasyonuyla dijitale taşıdık; makine duruşlarımız azaldı, teslim tarihlerimizi artık net verebiliyoruz. Kurulumdan eğitime her adımda yanımızdaydılar.',
+    ad: 'Necla Türe',
+    unvan: 'Üretim Sektörü Müşterisi',
+  },
+  {
+    soz: 'Mağazalarımızda hızlı satış sistemine geçtiğimizden beri kasa kuyruklarımız kısaldı, stok sayımlarımız dakikalar içinde tamamlanıyor. İhtiyacımızı bizden iyi analiz ettiler.',
+    ad: 'Emre Uçar',
+    unvan: 'Perakende Sektörü Müşterisi',
+  },
+  {
+    soz: 'Depo süreçlerimizi barkodlu sisteme geçirdik; sevkiyat hatalarımız neredeyse sıfırlandı. Sorularımıza aynı gün dönüş almak büyük güven veriyor.',
+    ad: 'İrem Kaya',
+    unvan: 'Lojistik Sektörü Müşterisi',
+  },
+];
 
 const sssSektorel = [
   { soru: 'Sektörel çözüm nedir?', cevap: 'Sektörel çözüm, işletmenizin bulunduğu sektörün özel süreçlerine göre uyarlanmış ERP ve yazılım çözümüdür. Genel bir yazılım yerine, sizin ihtiyaçlarınıza birebir oturan bir yapı sunar.' },
@@ -32,6 +57,8 @@ const faqJsonLdSektorel = {
 };
 
 export default function SectoralSolutionsPage() {
+  const [aktifSoz, setAktifSoz] = useState(0);
+
   const sectors = [
     { icon: Building2, name: 'İnşaat', desc: 'Hak-ediş hesaplama, satın alma süreci, proje yönetimi', href: '/sectoral-solutions/solutions/#insaat', features: ['Hak-ediş', 'Satın Alma', 'Proje Yönetimi'], valueProp: 'Hak-ediş ve satın almadan proje takibine inşaatın tümü tek sistemde.' },
     { icon: Factory, name: 'Üretim', desc: 'MES çözümleri, üretim planlama, makine entegrasyonu', href: '/sectoral-solutions/solutions/#uretim', features: ['MES', 'Üretim Planlama', 'Makine Entegrasyonu'], valueProp: 'MES ve makine entegrasyonuyla üretimi anlık izleyin ve planlayın.' },
@@ -53,7 +80,7 @@ export default function SectoralSolutionsPage() {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-white pt-32 md:pt-44">
         {/* Rainbow Background Image */}
         <div className="absolute inset-0 pointer-events-none opacity-30" style={{ zIndex: 1 }}>
-          <img src="/rainbw.png" alt="Rainbow Background" className="w-full h-full object-cover" />
+          <img src="/rainbw.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
         </div>
         
         {/* Left Side - Content */}
@@ -222,16 +249,62 @@ export default function SectoralSolutionsPage() {
         </div>
       </section>
 
-      {/* Referans - Güven veren söz */}
+      {/* Referans - Güven veren sözler (ana sayfadaki Başarı Hikayeleri gibi ok tuşlarıyla gezilir) */}
       <section className="px-6 py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <svg className="w-12 h-12 text-gray-600 mx-auto mb-8" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.706 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.706 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-          <blockquote className="text-2xl md:text-3xl font-light leading-relaxed mb-8 text-gray-200">
-            Gökkuşağı Yazılım ile çalışmaya başladığımdan bu yana iş süreçlerimiz %90 daha verimli hale geldi. Sektörümüze özel çözümleri ve uzman destekleriyle gerçek bir çözüm ortağı.
-          </blockquote>
-          <div>
-            <div className="font-semibold text-white">Ahmet Yılmaz</div>
-            <div className="text-gray-400 text-sm">Müşteri</div>
+
+          {/* Kayan alıntı slaytları */}
+          <div className="overflow-hidden">
+            <div
+              className="flex transition-transform duration-500 ease-out"
+              style={{ transform: `translateX(-${aktifSoz * 100}%)` }}
+            >
+              {referansSozleri.map((r, i) => (
+                <div key={i} className="min-w-full px-2 flex flex-col">
+                  <blockquote className="text-2xl md:text-3xl font-light leading-relaxed mb-8 text-gray-200">
+                    {r.soz}
+                  </blockquote>
+                  {/* mt-auto: isim bloğu tüm slaytlarda aynı hizada (en altta) durur */}
+                  <div className="mt-auto">
+                    <div className="font-semibold text-white">{r.ad}</div>
+                    <div className="text-gray-400 text-sm">{r.unvan}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Kontroller: ok tuşları + sayfa noktaları */}
+          <div className="flex items-center justify-center gap-6 mt-10">
+            <button
+              onClick={() => setAktifSoz((prev) => (prev - 1 + referansSozleri.length) % referansSozleri.length)}
+              aria-label="Önceki referans"
+              className="w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+            >
+              <ChevronLeft size={22} />
+            </button>
+
+            <div className="flex items-center gap-2.5">
+              {referansSozleri.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setAktifSoz(i)}
+                  aria-label={`Referans ${i + 1}`}
+                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                    aktifSoz === i ? 'w-8 bg-white' : 'w-2.5 bg-white/40 hover:bg-white/60'
+                  }`}
+                />
+              ))}
+            </div>
+
+            <button
+              onClick={() => setAktifSoz((prev) => (prev + 1) % referansSozleri.length)}
+              aria-label="Sonraki referans"
+              className="w-11 h-11 rounded-full bg-white/10 border border-white/20 text-white flex items-center justify-center hover:bg-white/20 hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+            >
+              <ChevronRight size={22} />
+            </button>
           </div>
         </div>
       </section>
