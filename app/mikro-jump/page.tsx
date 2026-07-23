@@ -1,55 +1,20 @@
 'use client';
 
-import { Landmark, Package, Receipt, BarChart, Users, Wallet, Brain, Cpu, Globe, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target, Zap, Shield, Sparkles } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { Metadata } from "next";
+import { Landmark, Package, Receipt, BarChart, Users, Wallet, Cpu, Globe, Star, TrendingUp, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Zap, Shield, Sparkles } from 'lucide-react';
+import { useState } from 'react';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroSection from "@/components/HeroSection";
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from 'motion/react';
 
 
 export default function MikroJumpPage() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const [activeModuleIndex, setActiveModuleIndex] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollableHeight = documentHeight - windowHeight;
-      
-      if (scrollableHeight > 0) {
-        setScrollProgress((scrollPosition / scrollableHeight) * 100);
-      } else {
-        setScrollProgress(0);
-      }
-      
-      setShowScrollTop(scrollPosition > 300);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
 
   const scrollToContact = () => {
     const message = 'Merhaba, Mikro JUMP hakkında bilgi almak istiyorum.';
     window.location.href = `/contact?message=${encodeURIComponent(message)}&subject=teklif`;
   };
-
-  const stats = [
-    { value: '85%', label: 'Verimlilik', icon: TrendingUp },
-    { value: '60%', label: 'Maliyet Düşüşü', icon: Target },
-    { value: '95%', label: 'Hız', icon: Zap },
-    { value: '3x', label: 'Performans', icon: Award }
-  ];
 
   const features = [
     {
@@ -105,27 +70,6 @@ export default function MikroJumpPage() {
       title: 'Bütçe & Raporlama',
       description: 'Hedeflenen / gerçekleşen analiz',
       descriptionDetail: 'Yönetim mizanı ve finansal raporlar'
-    }
-  ];
-
-  const benefits = [
-    {
-      number: '01',
-      title: 'Yazılımdan Daha Fazlası',
-      description: 'Yazılım bağımlılığının olmadığı, abonelik ve kiralama modeline sayesinde, düşük ilk yatırım maliyeti ile kullanmanın keyfini sunuyoruz.',
-      icon: Zap
-    },
-    {
-      number: '02',
-      title: 'Uzman Destek Hizmeti',
-      description: 'Yaşadığınız soruna kolayca çare bulabileceğiniz bir altyapıya ve dilediğinizde bizden daima yardım alabileceğiniz destek hizmetlerine sahibiz.',
-      icon: TrendingUp
-    },
-    {
-      number: '03',
-      title: 'Deneyime Dayalı Güven',
-      description: '20+ yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
-      icon: Award
     }
   ];
 
