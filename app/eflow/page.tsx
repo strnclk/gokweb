@@ -524,49 +524,63 @@ export default function EFlowPage() {
                 {/* Glow backdrop */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#40949c] to-blue-500 rounded-[2.5rem] blur-3xl opacity-15" />
                 
-                {/* Coded dashboard mockup */}
+                {/* Süreç Tasarım Stüdyosu mockup — başlıktaki "modelleme" temasıyla uyumlu */}
                 <div className="relative bg-slate-50/80 backdrop-blur-md p-6 sm:p-8 rounded-[2.5rem] border border-slate-200/60 shadow-2xl w-full">
-                  <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-200/60">
-                    <span className="text-[10px] font-extrabold text-slate-800 tracking-wider uppercase">Süreç Performans Analitiği</span>
-                    <span className="px-2 py-0.5 bg-green-100 text-green-700 text-[9px] font-extrabold rounded-full animate-pulse">Canlı Takip</span>
+                  <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-200/60">
+                    <span className="text-[10px] font-extrabold text-slate-800 tracking-wider uppercase">Süreç Tasarım Stüdyosu</span>
+                    <span className="px-2 py-0.5 bg-[#40949c]/10 text-[#40949c] text-[9px] font-extrabold rounded-full">Sürükle-Bırak</span>
                   </div>
-                  
-                  <div className="space-y-6">
-                    {/* Metric 1 */}
-                    <div>
-                      <div className="flex justify-between items-center mb-1.5">
-                        <span className="text-xs text-slate-500 font-bold">Aktif Süreç Verimliliği</span>
-                        <span className="text-xs font-extrabold text-slate-900">%99.4</span>
+
+                  {/* Tasarım tuvali: noktalı zemin üzerinde bağlantılı akış düğümleri */}
+                  <div className="relative rounded-2xl border border-slate-200/70 bg-white p-4 [background-image:radial-gradient(circle,#cbd5e1_1px,transparent_1px)] [background-size:16px_16px]">
+                    {/* Bağlantı çizgileri */}
+                    <svg className="absolute inset-0 w-full h-full pointer-events-none" aria-hidden="true">
+                      <line x1="50%" y1="42" x2="50%" y2="78" stroke="#40949c" strokeWidth="2" strokeDasharray="4 3" />
+                      <line x1="50%" y1="130" x2="27%" y2="168" stroke="#94a3b8" strokeWidth="2" strokeDasharray="4 3" />
+                      <line x1="50%" y1="130" x2="73%" y2="168" stroke="#94a3b8" strokeWidth="2" strokeDasharray="4 3" />
+                    </svg>
+
+                    {/* Düğüm 1: Başlangıç */}
+                    <div className="relative z-10 mx-auto w-fit flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-[#40949c] to-blue-600 text-white shadow-md shadow-[#40949c]/25">
+                      <Play size={12} />
+                      <span className="text-[10px] font-extrabold">Talep Formu</span>
+                    </div>
+
+                    {/* Düğüm 2: Onay adımı */}
+                    <div className="relative z-10 mx-auto mt-9 w-fit flex items-center gap-2 px-4 py-2 rounded-xl bg-white border-2 border-[#40949c]/50 text-slate-800 shadow-sm">
+                      <Users size={12} className="text-[#40949c]" />
+                      <span className="text-[10px] font-extrabold">Yönetici Onayı</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+                    </div>
+
+                    {/* Dallanma: iki sonuç düğümü */}
+                    <div className="relative z-10 mt-9 grid grid-cols-2 gap-3">
+                      <div className="justify-self-center flex items-center gap-1.5 px-3 py-2 rounded-xl bg-green-50 border border-green-200 text-green-700 shadow-sm">
+                        <Check size={11} />
+                        <span className="text-[9px] font-extrabold">ERP Kaydı</span>
                       </div>
-                      <div className="w-full bg-slate-200/80 rounded-full h-2">
-                        <div className="bg-gradient-to-r from-[#40949c] to-blue-500 h-2 rounded-full w-[99.4%]" />
+                      <div className="justify-self-center flex items-center gap-1.5 px-3 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-500 shadow-sm">
+                        <X size={11} />
+                        <span className="text-[9px] font-extrabold">Revizyona Gönder</span>
                       </div>
                     </div>
-                    
-                    {/* Cards Row */}
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                        <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-wide">Ort. Onay Süresi</p>
-                        <p className="text-xl font-black text-slate-900 mt-1">4.2 Dk</p>
-                        <span className="text-[8px] text-green-600 font-extrabold mt-0.5 inline-block">↓ 32% İyileşme</span>
-                      </div>
-                      <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
-                        <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-wide">Kağıt Tasarrufu</p>
-                        <p className="text-xl font-black text-slate-900 mt-1">%80+</p>
-                        <span className="text-[8px] text-[#40949c] font-extrabold mt-0.5 inline-block">Dijital Arşiv</span>
-                      </div>
-                    </div>
-                    
-                    {/* Mini Chart Mockup */}
-                    <div className="bg-white p-4 rounded-2xl border border-slate-100 shadow-sm">
-                      <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-wide mb-3">Haftalık Akış Performansı</p>
-                      <div className="flex items-end justify-between h-16 pt-2 px-1">
-                        <div className="w-5 bg-slate-100 rounded-t-sm h-[30%]" />
-                        <div className="w-5 bg-slate-100 rounded-t-sm h-[45%]" />
-                        <div className="w-5 bg-slate-100 rounded-t-sm h-[60%]" />
-                        <div className="w-5 bg-gradient-to-t from-[#40949c] to-[#48a9b2] rounded-t-sm h-[85%]" />
-                        <div className="w-5 bg-[#40949c] rounded-t-sm h-full" />
-                      </div>
+                  </div>
+
+                  {/* Bileşen paleti: tuvale sürüklenen hazır parçalar */}
+                  <div className="mt-5">
+                    <p className="text-[9px] text-slate-400 font-extrabold uppercase tracking-wide mb-2.5">Hazır Bileşenler</p>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        { icon: Target, ad: 'Form' },
+                        { icon: Users, ad: 'Onay' },
+                        { icon: Clock, ad: 'Zamanlayıcı' },
+                        { icon: BarChart, ad: 'Rapor' },
+                      ].map((b) => (
+                        <span key={b.ad} className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-dashed border-slate-300 text-slate-600 text-[9px] font-extrabold cursor-grab hover:border-[#40949c]/60 hover:text-[#40949c] transition-colors">
+                          <b.icon size={11} />
+                          {b.ad}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -589,7 +603,7 @@ export default function EFlowPage() {
                 İş Süreçlerinizi
                 <br />
                 <span className="bg-gradient-to-r from-[#40949c] to-blue-600 bg-clip-text text-transparent">
-                  Akıllıca Modelleyn
+                  Akıllıca Modelleyin
                 </span>
               </h2>
 

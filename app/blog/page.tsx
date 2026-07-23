@@ -147,7 +147,7 @@ export default function BlogPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-center max-w-4xl mx-auto py-8 sm:py-12 px-4 relative z-30 flex flex-col items-center"
+              className="text-center max-w-4xl mx-auto py-8 sm:py-12 px-4 relative z-30 flex flex-col items-center pointer-events-none"
             >
               {/* Yıldız ve 'Blog' Rozeti (Orijinal Canlı Turkuaz) */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#023744] border border-[#00B4D8]/30 rounded-full text-xs sm:text-sm font-bold tracking-wide mb-6 shadow-sm backdrop-blur-md">
@@ -184,7 +184,7 @@ export default function BlogPage() {
                     e.preventDefault();
                     document.getElementById('rehberler')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="group inline-flex items-center justify-center gap-3.5 px-9 py-4 bg-gradient-to-r from-[#032B3A] via-[#005F73] to-[#0A9396] hover:from-[#005F73] hover:via-[#0A9396] hover:to-[#02C39A] text-white font-extrabold text-base sm:text-lg rounded-xl shadow-lg shadow-[#032B3A]/20 hover:shadow-xl hover:shadow-[#005F73]/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                  className="group pointer-events-auto inline-flex items-center justify-center gap-3.5 px-9 py-4 bg-gradient-to-r from-[#032B3A] via-[#005F73] to-[#0A9396] hover:from-[#005F73] hover:via-[#0A9396] hover:to-[#02C39A] text-white font-extrabold text-base sm:text-lg rounded-xl shadow-lg shadow-[#032B3A]/20 hover:shadow-xl hover:shadow-[#005F73]/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                 >
                   <span>Tüm Rehberleri Keşfet</span>
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1.5 text-teal-300" />

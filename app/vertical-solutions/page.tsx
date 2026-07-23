@@ -22,7 +22,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: ShoppingCart,
       name: 'Fastsell Hızlı Satış',
-      description: 'Perakendede satış, stok ve kasa hareketleri tek ekranda',
+      description: 'Büfeden markete tüm perakende noktalarında satış, stok ve muhasebe işlemlerini tek platformdan yönetmenizi sağlar.',
       color: 'from-blue-600 to-blue-700',
       tab: 'fastsell-hizli-satis',
       features: ['Dokunmatik Hızlı Satış', 'e-Fatura & e-Arşiv', 'Online/Offline Çalışma'],
@@ -31,16 +31,16 @@ export default function VerticalSolutionsPage() {
     {
       icon: Store,
       name: 'Mizan Hızlı Satış',
-      description: 'Yazarkasa POS ve VUK 507 uyumlu perakende satış çözümü',
+      description: 'Yazarkasa, banka ve VUK 507 uyumuyla mağaza ve marketlerde mevzuata uygun, hızlı ve güvenli satış süreci sunar.',
       color: 'from-blue-600 to-blue-700',
       tab: 'mizan-hizli-satis',
-      features: ['Yazarkasa POS Uyumu', 'Kampanya Yönetimi', 'Çoklu Döviz Tahsilat'],
-      valueProp: 'Mizan Yazılım çözümüyle mağaza ve marketlerde yazarkasa POS entegre, mevzuata uyumlu hızlı satış.'
+      features: ['Yazarkasa & Banka Uyumu', 'Kampanya Yönetimi', 'Çoklu Döviz Tahsilat'],
+      valueProp: 'Mizan Yazılım çözümüyle mağaza ve marketlerde yazarkasa ve banka entegrasyonlu, mevzuata uyumlu hızlı satış.'
     },
     {
       icon: Cloud,
       name: 'Corbiq Cloud Üretim',
-      description: 'Bulut tabanlı üretim planlama ve sahadan anlık veri toplama',
+      description: 'Kurulum gerektirmeyen bulut altyapısıyla üretim planlamayı ve sahadan anlık veri toplamayı tek platformda birleştirir.',
       color: 'from-blue-600 to-blue-700',
       tab: 'corbiq-cloud-uretim',
       features: ['MRP I / MRP II', 'Saha Veri Toplama', 'Kapasite Yönetimi'],
@@ -49,7 +49,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: Factory,
       name: 'Ussoft Üretim Yönetimi',
-      description: 'ERP ile üretim sahası arasındaki kopukluğu gideren üretim takibi',
+      description: 'ERP ile üretim sahası arasındaki kopukluğu gidererek üretimin her adımını izlenebilir bir dijital altyapıya taşır.',
       color: 'from-blue-600 to-blue-700',
       tab: 'ussoft-uretim',
       features: ['Barkodlu Operasyon', 'Parti/Lot Takibi', 'Personel Performansı'],
@@ -58,7 +58,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: Shield,
       name: 'Ussoft Kalite Yönetimi',
-      description: 'Kalite ve hijyen süreçlerinin dijital takibi ve analizi',
+      description: 'Kalite ve hijyen süreçlerini dijitalleştirerek standartların ölçülmesini ve hataların erken tespitini sağlar.',
       color: 'from-blue-600 to-blue-700',
       tab: 'ussoft-kalite',
       features: ['Kalite Kontrol', 'Erken Hata Tespiti', 'Uçtan Uca İzlenebilirlik'],
@@ -67,7 +67,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: Package,
       name: 'Eryaz Zeus WMS',
-      description: 'Mal kabulden sevkiyata yeni nesil depo yönetim sistemi',
+      description: 'Mal kabulden sevkiyata tüm depo operasyonlarını dijitalleştiren yeni nesil bir depo yönetim sistemidir.',
       color: 'from-blue-600 to-blue-700',
       tab: 'eryaz-zeus-wms',
       features: ['Cross-Docking', 'Seri/Lot Takibi', 'Raf Adresleme'],
@@ -76,7 +76,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: Truck,
       name: 'Nitrogen Depo Yönetimi',
-      description: 'Barkod/QR destekli stok, raf ve son kullanma tarihi takibi',
+      description: 'Barkod ve QR destekli stok, raf ve son kullanma tarihi takibiyle depo süreçlerinizi tek sistemden yönetir.',
       color: 'from-blue-600 to-blue-700',
       tab: 'nitrogen-depo',
       features: ['Barkod & QR Kod', 'SKT Kontrolü', 'Saha Satış Modülü'],
@@ -85,7 +85,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: Users,
       name: 'Eryaz B2B/B4B Bayi Yönetimi',
-      description: 'Bayi ve saha satış süreçleri için dijital satış platformu',
+      description: 'Bayi ağınız ve saha satış ekiplerinizle tüm iş süreçlerinizi yapay zekâ destekli tek dijital platformda buluşturur.',
       color: 'from-blue-600 to-blue-700',
       tab: 'eryaz-b2b',
       features: ['Yapay Zekâ Destekli', 'Sipariş & Tahsilat', 'Bulut Altyapı'],
@@ -94,7 +94,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: Smartphone,
       name: 'B2BSOFT Bayi Yönetimi',
-      description: 'Bayi ağınızı tek merkezden yöneten mobil B2B platformu',
+      description: 'Sipariş, tahsilat ve bayi performansını tek merkezden yöneten mobil B2B bayi yönetim platformudur.',
       color: 'from-blue-600 to-blue-700',
       tab: 'b2bsoft-bayi',
       features: ['Mobil Bayi Yönetimi', 'Fiyat & İskonto', 'Performans Analizi'],
@@ -103,7 +103,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: BarChart3,
       name: 'Ussoft Raporlama ve Analiz',
-      description: 'Finansal ve operasyonel verileriniz tek platformda',
+      description: 'Finansal ve operasyonel verilerinizi tek platformda toplayarak hızlı ve doğru analiz yapmanızı sağlar.',
       color: 'from-blue-600 to-blue-700',
       tab: 'ussoft-raporlama',
       features: ['Satış Dashboard', 'Bakiye & Yaşlandırma', 'Esnek Raporlar'],
@@ -112,7 +112,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: UtensilsCrossed,
       name: 'Fastsell Restoran Yönetimi',
-      description: 'Restoran, kafe ve paket servis operasyonu tek sistemde',
+      description: 'Masadan pakete tüm yiyecek-içecek operasyonunu sipariş, ödeme ve raporlamayla tek sistemde yönetir.',
       color: 'from-blue-600 to-blue-700',
       tab: 'fastsell-restoran',
       features: ['QR Menü & Masa', 'Paket Servis & Kurye', 'Pazaryeri Entegrasyonu'],
@@ -121,7 +121,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: Briefcase,
       name: 'Süreç Yönetimi Çözümü',
-      description: 'İş akışı otomasyonu, süreç optimizasyonu, BPM',
+      description: 'İş akışlarınızı kod yazmadan tasarlayıp otomatikleştirerek onay süreçlerinizi ve karar mekanizmalarınızı hızlandırır.',
       color: 'from-blue-600 to-blue-700',
       tab: 'surec-yonetimi',
       features: ['İş Akışı Otomasyonu', 'Süreç Optimizasyonu', 'BPM'],
@@ -130,7 +130,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: Building2,
       name: 'Diğer Çözümler',
-      description: 'İşletmenize özel diğer sektörel Mikro çözümleri',
+      description: 'İşletmenize özel entegrasyon ve danışmanlık ihtiyaçlarınız için esnek Mikro çözümleri sunar.',
       color: 'from-blue-600 to-blue-700',
       tab: 'diger',
       features: ['Sektörel Çözümler', 'Özel Entegrasyon', 'Danışmanlık'],
