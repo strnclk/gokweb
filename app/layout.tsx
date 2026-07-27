@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import Script from "next/script";
 import { AnalyticsProvider } from "@/components/AnalyticsProvider";
-import { CookieConsent } from "@/components/CookieConsent";
 import GravityParticlesClient from "@/components/GravityParticlesClient";
+import ScrollToTop from "@/components/ScrollToTop";
+import SiteBreadcrumb from "@/components/SiteBreadcrumb";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -15,11 +16,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title:
-    "Gökkuşağı Yazılım ve Danışmanlık | Anadolu Yakası Mikro Bayii | ERP CRM Çözümleri",
+    "Gökkuşağı Yazılım ve Danışmanlık | Anadolu Yakası Mikro Bayi | ERP CRM Çözümleri",
   description:
     "Anadolu Yakası'nda resmi Mikro bayi olarak ERP hizmeti, CRM çözümleri, Mikro program entegrasyonu ve özel yazılım geliştirme hizmetleri. Ataşehir'den tüm Türkiye'ye hizmet.",
   keywords:
-    "Anadolu yakası mikro bayii, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayii, İstanbul mikro bayii, ERP entegrasyonu, Mikro entegrasyon, özel yazılım, IT danışmanlık, e-dönüşüm",
+    "Anadolu yakası mikro bayi, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayi, İstanbul mikro bayi, ERP entegrasyonu, Mikro entegrasyon, özel yazılım, IT danışmanlık, e-dönüşüm",
   authors: [{ name: "Gökkuşağı Yazılım ve Danışmanlık" }],
   creator: "Gökkuşağı Yazılım ve Danışmanlık",
   publisher: "Gökkuşağı Yazılım ve Danışmanlık",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Gökkuşağı Yazılım ve Danışmanlık | Anadolu Yakası Mikro Bayii",
+      "Gökkuşağı Yazılım ve Danışmanlık | Anadolu Yakası Mikro Bayi",
     description:
       "ERP, CRM ve Mikro entegrasyon çözümleri. Ataşehir merkezli hizmet.",
     url: "https://gokkusagiyazilim.com.tr",
@@ -37,9 +38,10 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://gokkusagiyazilim.com.tr/og-image.jpg",
+        url: "https://gokkusagiyazilim.com.tr/og-image.png",
         width: 1200,
         height: 630,
+        alt: "Gökkuşağı Yazılım - Resmi Mikro İş Ortağı",
       },
     ],
   },
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Gökkuşağı Yazılım",
     description: "ERP ve Mikro çözümleri",
-    images: ["https://gokkusagiyazilim.com.tr/twitter-image.jpg"],
+    images: ["https://gokkusagiyazilim.com.tr/og-image.png"],
   },
 
   verification: {
@@ -276,36 +278,8 @@ export default function RootLayout({
       </head>
 
       <body className="min-h-screen font-poppins antialiased">
-        {/* Google Ads Global Site Tag */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-1036040582"
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-ads" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', 'AW-1036040582');
-          `}
-        </Script>
-
-        {/* Google Analytics GA4 */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-PX95LTH6QB"
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-PX95LTH6QB');
-          `}
-        </Script>
+        {/* Google Analytics (GA4) + Google Ads artık AnalyticsProvider içinde,
+            YALNIZCA çerez onayı verildikten sonra yükleniyor (KVKK/GDPR uyumu). */}
 
         {/* ✅ JSON-LD doğru yerde */}
         <Script
@@ -323,9 +297,14 @@ export default function RootLayout({
 
         <AnalyticsProvider>
           {children}
-          
-          <CookieConsent />
         </AnalyticsProvider>
+
+        {/* Site geneli breadcrumb — her sayfada navbar altında SABİT konum.
+            Eşleşmeyen rotalarda (anasayfa, ilçe, blog yazısı) kendini gizler. */}
+        <SiteBreadcrumb />
+
+        {/* Tüm sayfalarda: aşağı inince görünen "yukarı çık" butonu */}
+        <ScrollToTop />
       </body>
     </html>
   );

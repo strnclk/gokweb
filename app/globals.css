@@ -2,6 +2,26 @@
 
 @import "tailwindcss";
 
+/* SSS (details/summary) açılışını yumuşat: modern tarayıcılarda yükseklik +
+   opaklık geçişi; desteklemeyen tarayıcılar mevcut anlık davranışı korur. */
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+}
+
+details::details-content {
+  block-size: 0;
+  opacity: 0;
+  overflow: clip;
+  transition: block-size 0.3s ease, opacity 0.3s ease, content-visibility 0.3s allow-discrete;
+}
+
+details[open]::details-content {
+  block-size: auto;
+  opacity: 1;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -12,12 +32,38 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
+  /* Marka renkleri. Sayfalarda dağınık hex yerine bu token'ları kullanın:
+     turuncu için #ec5038 varyantı da vardı, kanonik değer #ed4f37'dir. */
+  --color-brand-orange: #ed4f37;
+  --color-brand-teal: #40949c;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* NOT: Burada create-next-app şablonundan gelen bir `prefers-color-scheme: dark`
+   bloğu vardı; --foreground'u #ededed yapıyordu. Site tamamen açık temalı
+   (80+ sayfa arka planı sabit beyaz/açık, ThemeProvider yok, sayfalarda dark:
+   varyantı yok). Bu yüzden blok koyu tema sağlamıyor, yalnızca rengi açıkça
+   verilmemiş yazıları beyaz zeminde beyaza çevirip okunamaz hale getiriyordu.
+   Koyu tema gerçekten istenirse sayfa arka planları da birlikte tasarlanmalı. */
+
+/* Sayfa içi çapa bağlantıları (#hedef) yumuşak kaysın. Hareket hassasiyeti
+   olan kullanıcılarda aşağıdaki prefers-reduced-motion bloğu bunu auto'ya
+   döndürür. */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Akışkan ölçekleme (yalnızca masaüstü, ≥1024px).
+   Tailwind tipografi/boşluk VE max-w-* kapsayıcıları rem tabanlı olduğundan
+   (max-w-7xl = 80rem), root font-size'ı viewport'a göre değiştirince tüm site
+   birlikte ölçeklenir: küçük masaüstünde (~1280px) içerik hafifçe küçülüp
+   kenarlarda nefes alır, büyük monitörde (~2560px) büyüyüp boş alanı doldurur.
+   Böylece elle sayfa yakınlığı (zoom) ayarlama ihtiyacı büyük ölçüde kalkar.
+   Not: rem tabanlı media-query breakpoint'leri tarayıcının sabit 16px'ine göre
+   değerlendirildiği için bu kural Tailwind breakpoint'lerini KAYDIRMAZ.
+   Mobil/tablet (<1024px) kasıtlı olarak varsayılan 16px'te bırakılmıştır. */
+@media (min-width: 1024px) {
+  html {
+    font-size: clamp(15px, calc(10px + 0.39vw), 20px);
   }
 }
 
@@ -46,3 +92,78 @@ body {
     background-attachment: scroll !important;
   }
 }
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient-shift 6s ease infinite;
+}
+
+/* Giriş animasyonu. display:none -> görünür geçişinde CSS animasyonu yeniden
+   başladığı için sekme panelleri açılırken de tetiklenir. */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.5s ease-out both;
+}
+
+/* Hero'nun yanındaki görsel/kart öğeleri için: yandan kayarak ve/veya hafif
+   büyüyerek beliren giriş animasyonu. --fade-x ve --fade-scale ile yön/miktar
+   ayarlanır; animate-fade-up ile aynı mantık, JS/hydration'a bağımlı değil. */
+@keyframes fade-in-side {
+  from {
+    opacity: 0;
+    transform: translateX(var(--fade-x, 0)) translateY(var(--fade-y, 0)) scale(var(--fade-scale, 1));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-in-side {
+  animation: fade-in-side 0.6s ease-out both;
+}
+
+@keyframes float-y {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--float-distance, -10px));
+  }
+}
+
+.animate-float {
+  animation: float-y var(--float-duration, 5s) ease-in-out infinite;
+}
+
+/* Hareket hassasiyeti olan kullanıcılar için tüm site genelinde animasyonları
+   durdur. Sonsuz tekrarlı dekoratif animasyonlar (blur blob, float, spin)
+   tek kareye iner; içerik ve geçişler erişilebilir kalır. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+

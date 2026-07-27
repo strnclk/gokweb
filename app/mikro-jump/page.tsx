@@ -1,229 +1,317 @@
 'use client';
 
-import { Landmark, Package, Receipt, BarChart, Users, Wallet, Brain, Cpu, Globe, Star, TrendingUp, Award, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Target, Zap } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { Metadata } from "next";
+import { Landmark, Package, Receipt, BarChart, Users, Wallet, Cpu, Globe, Star, TrendingUp, Clock, FileText, Activity, Layers, CheckCircle, ArrowRight, Zap, Shield, Sparkles } from 'lucide-react';
+import { useState } from 'react';
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import HeroSection from "@/components/HeroSection";
-import ScrollIndicator from "@/components/ScrollIndicator";
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { motion } from 'motion/react';
+import AmphitheaterRingsBackground, { AmphitheaterTheme } from '@/components/AmphitheaterRingsBackground';
+
+// Pure Purple/Indigo/Violet Theme
+const jumpAmphitheaterTheme: AmphitheaterTheme = {
+  idPrefix: 'jump',
+  grad1: [
+    { offset: '0%', color: '#7C3AED', opacity: 0.45 },
+    { offset: '40%', color: '#6366F1', opacity: 0.3 },
+    { offset: '75%', color: '#8B5CF6', opacity: 0.2 },
+    { offset: '100%', color: '#a855f7', opacity: 0.04 },
+  ],
+  grad2: [
+    { offset: '0%', color: '#8B5CF6', opacity: 0.35 },
+    { offset: '50%', color: '#4F46E5', opacity: 0.25 },
+    { offset: '100%', color: '#c084fc', opacity: 0.04 },
+  ],
+  grad3: [
+    { offset: '0%', color: '#7C3AED', opacity: 0.25 },
+    { offset: '60%', color: '#8B5CF6', opacity: 0.15 },
+    { offset: '100%', color: '#818cf8', opacity: 0.02 },
+  ],
+  fill: [
+    { offset: '0%', color: '#7C3AED', opacity: 0.06 },
+    { offset: '50%', color: '#6366F1', opacity: 0.02 },
+    { offset: '100%', color: '#ffffff', opacity: 0 },
+  ],
+  glow: [
+    { offset: '0%', color: '#7C3AED', opacity: 0.15 },
+    { offset: '35%', color: '#6366F1', opacity: 0.07 },
+    { offset: '70%', color: '#8B5CF6', opacity: 0.03 },
+    { offset: '100%', color: '#ffffff', opacity: 0 },
+  ],
+};
 
 export default function MikroJumpPage() {
-  const [showScrollTop, setShowScrollTop] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollableHeight = documentHeight - windowHeight;
-      
-      if (scrollableHeight > 0) {
-        setScrollProgress((scrollPosition / scrollableHeight) * 100);
-      } else {
-        setScrollProgress(0);
-      }
-      
-      setShowScrollTop(scrollPosition > 300);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const [activeModuleIndex, setActiveModuleIndex] = useState(0);
 
   const scrollToContact = () => {
     const message = 'Merhaba, Mikro JUMP hakkında bilgi almak istiyorum.';
     window.location.href = `/contact?message=${encodeURIComponent(message)}&subject=teklif`;
   };
 
-  const stats = [
-    { value: '85%', label: 'Verimlilik', icon: TrendingUp },
-    { value: '60%', label: 'Maliyet Düşüşü', icon: Target },
-    { value: '95%', label: 'Hız', icon: Zap },
-    { value: '3x', label: 'Performans', icon: Award }
-  ];
-
   const features = [
     {
       icon: Package,
-      title: 'Stok/Ürün Yönetimi',
-      description: 'Stok ve ürün takibi',
-      descriptionDetail: 'Depo yönetimi'
+      title: 'Gelişmiş Stok & Depo Yönetimi',
+      description: 'Seri No, Lot, Parti Takibi',
+      descriptionDetail: 'Çoklu depo ve lokasyon yönetimi'
     },
     {
       icon: Landmark,
       title: 'Satış ve Müşteri Yönetimi',
-      description: 'Satış süreçleri',
-      descriptionDetail: 'Müşteri takibi'
+      description: 'Sipariş, irsaliye, fatura takibi',
+      descriptionDetail: 'Müşteri bakiye & risk yönetimi'
     },
     {
       icon: Users,
-      title: 'Satın Alma ve Tedarikçi Yönetimi',
-      description: 'Satın alma süreçleri',
-      descriptionDetail: 'Tedarikçi yönetimi'
+      title: 'Satın Alma & Tedarikçi',
+      description: 'Teklif toplama ve sipariş',
+      descriptionDetail: 'Tedarikçi performans analizi'
+    },
+    {
+      icon: Receipt,
+      title: 'Perakende & Kasa Yönetimi',
+      description: 'Yeni nesil ÖKC & banka entegrasyonu',
+      descriptionDetail: 'Hızlı satış & kasa hareketleri'
+    },
+    {
+      icon: Clock,
+      title: 'Personel & Bordro Yönetimi',
+      description: 'Özlük hakları & SGK bildirimleri',
+      descriptionDetail: 'Personel maliyet ve devam takibi'
+    },
+    {
+      icon: Cpu,
+      title: 'Üretim & Reçete Yönetimi',
+      description: 'Basit & standart üretim takibi',
+      descriptionDetail: 'Üretim reçeteleri ve iş emirleri'
+    },
+    {
+      icon: Globe,
+      title: 'Dış Ticaret Yönetimi',
+      description: 'İthalat & İhracat takibi',
+      descriptionDetail: 'Gümrük ve dosya maliyet takibi'
     },
     {
       icon: Wallet,
-      title: 'Masraf Yönetimi',
-      description: 'Masraf kalemlerinin takibi',
-      descriptionDetail: 'Detaylı maliyet analizi'
-    },
-    {
-      icon: BarChart,
-      title: 'Finans Yönetimi',
-      description: 'Finansal süreçler',
-      descriptionDetail: 'Ön muhasebe'
+      title: 'Finans ve Masraf Yönetimi',
+      description: 'Nakit akışı, banka entegrasyonu',
+      descriptionDetail: 'Sınırsız masraf merkezi tanımı'
     },
     {
       icon: TrendingUp,
-      title: 'Bütçe Yönetimi',
-      description: 'Bütçe planlama',
-      descriptionDetail: 'Takip ve analiz'
-    },
-
-  ];
-
-  const benefits = [
-    {
-      number: '01',
-      title: 'Yazılımdan Daha Fazlası',
-      description: 'Yazılım bağımlılığının olmadığı, abonelik ve kiralama modeline sayesinde, düşük ilk yatırım maliyeti ile kullanmanın keyfini sunuyoruz.',
-      icon: Zap
-    },
-    {
-      number: '02',
-      title: '7/24 Destek Hizmeti',
-      description: 'Yaşadığınız soruna kolayca çare bulabileceğiniz bir altyapıya ve dilediğinizde bizden daima yardım alabileceğiniz destek hizmetlerine sahibiz.',
-      icon: TrendingUp
-    },
-    {
-      number: '03',
-      title: 'Deneyime Dayalı Güven',
-      description: '25 yılın bilgi birikimi ve onlarca müşterinin kullanım deneyimi ile geliştiriyor; servislerimizi abonelerimizin ihtiyaçlarına göre şekillendiriyoruz.',
-      icon: Award
+      title: 'Bütçe & Raporlama',
+      description: 'Hedeflenen / gerçekleşen analiz',
+      descriptionDetail: 'Yönetim mizanı ve finansal raporlar'
     }
   ];
 
   const modules = [
     {
+      id: 'e-fatura',
       name: 'e-Fatura',
       icon: FileText,
-      description: 'Elektronik fatura kesme ve yönetim',
-      features: ['Otomatik gönderim', 'Arşivleme']
+      description: 'Elektronik fatura kesme, alımı ve tüm resmi onaylı yönetim süreçlerini saniyeler içinde gerçekleştirin.',
+      features: ['Otomatik Resmi İletim', 'Güvenli Bulut Arşivleme', 'Cari Hesap Otomatik Entegrasyonu'],
+      stats: { speed: '< 2 sn', savings: '%85', compliance: '%100' },
     },
     {
+      id: 'e-arsiv',
       name: 'e-Arşiv Fatura',
       icon: Activity,
-      description: 'Elektronik arşiv fatura sistemi',
-      features: ['Yasal uyum', 'Güvenli depolama', 'Hızlı erişim']
+      description: 'Resmi e-Arşiv portalı uyumlu, son kullanıcılara saniyeler içinde e-posta/SMS ile fatura iletimi.',
+      features: ['Yasal Dijital Depolama', 'E-posta / SMS Fatura Gönderimi', 'Toplu Faturalama Desteği'],
+      stats: { speed: '< 1.5 sn', savings: '%90', compliance: '%100' },
     },
     {
+      id: 'e-irsaliye',
       name: 'e-İrsaliye',
       icon: Layers,
-      description: 'Elektronik irsaliye yönetimi',
-      features: ['Sevkiyat takibi', 'Otomatik eşleşme', 'Raporlama']
+      description: 'Mal sevkiyatlarında kağıt irsaliye yerine geçen tam dijital sevkiyat ve anlık doğrulama altyapısı.',
+      features: ['Sevkiyat ve Araç/Plaka Takibi', 'Otomatik Stok Eşleşmesi', 'Anlık Kabul/Ret Yanıtı'],
+      stats: { speed: '< 3 sn', savings: '%75', compliance: '%100' },
     },
     {
+      id: 'e-defter',
       name: 'e-Defter',
       icon: BarChart,
-      description: 'Elektronik defter sistemi',
-      features: ['Yasal uyum', 'Otomatik kayıt', 'Yedekleme']
+      description: 'Yevmiye defteri ve Defter-i Kebir kayıtlarının yasal standartlarda dijital olarak tutulması ve berat gönderimi.',
+      features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Berat Gönderimi', 'Şifreli Güvenli Arşivleme'],
+      stats: { speed: 'Otomatik', savings: '%80', compliance: '%100' },
     },
     {
+      id: 'e-mutabakat',
       name: 'e-Mutabakat',
       icon: CheckCircle,
-      description: 'Elektronik mutabakat sistemi',
-      features: ['Hızlı mutabakat', 'Otomatik eşleşme', 'Raporlama']
+      description: 'Müşteri ve tedarikçilerle cari bakiye mutabakatlarının tek tıkla dijital olarak yapılması ve takibi.',
+      features: ['Otomatik E-posta Mutabakatı', 'Anlık Onay / İtiraz Bildirimi', 'Zamandan %90 Tasarruf'],
+      stats: { speed: 'Anında', savings: '%90', compliance: 'Canlı Takip' },
     },
     {
+      id: 'e-bordro',
       name: 'e-Bordro',
       icon: Clock,
-      description: 'Elektronik bordro sistemi',
-      features: ['SGK entegrasyonu', 'Otomatik hesaplama', 'Bildirim']
+      description: 'Personel maaş bordrolarının KVKK uyumlu olarak dijital ortamda şifreli iletilmesi ve onay takibi.',
+      features: ['SGK Entegrasyonu', 'Özel Şifreli E-posta İletimi', 'Personel Onay Bildirimi'],
+      stats: { speed: 'Toplu', savings: '%85', compliance: 'KVKK Uyumlu' },
     },
     {
+      id: 'e-smmm',
       name: 'e-SMMM',
       icon: Star,
-      description: 'SMM elektronik sistem',
-      features: ['Yasal uyum', 'Otomatik bildirim', 'Takip']
+      description: 'Serbest Meslek Makbuzu sisteminin dijital ortamda düzenlenmesi, hesaplanması ve yasal iletimi.',
+      features: ['Tam Yasal Mevzuat Uyumu', 'Otomatik Stopaj & KDV Hesabı', 'Anında Müşteri Teslimi'],
+      stats: { speed: '< 2 sn', savings: '%95', compliance: '%100' },
     }
   ];
+
+  const jumpFaqlar = [
+    {
+      question: 'Mikro Jump ile Neler Yapabilirsiniz?',
+      answer: 'Mikro Jump; Ticari Paket (stok, hizmet, masraf, satın alma, satış, müşteri ve finans yönetimi), e-Dönüşüm Çözümleri (e-Fatura, e-Arşiv, e-İrsaliye, e-Defter vb.), Yönetim Raporları ve İş Zekası çözümlerini sunar. İhtiyacınıza göre İK, Üretim, Dış Ticaret gibi ek çözümlerle kapsama alanını genişletebilirsiniz.'
+    },
+    {
+      question: 'Mikro Jump\'ı Kimler Tercih Etmeli?',
+      answer: 'Büyüme yolundaki küçük ve orta ölçekli işletmeler, birden fazla sektörle ilgilenen ve birden fazla şubesi bulunan firmalar, sadece bir ürün değil, kurumsal bir çözüm ortağı arayan işletmeler, iş süreçlerini uçtan uca verimli ve kolay bir şekilde takip etmek isteyen, operasyonel verimliliğe önem veren şirketler, kontrollü büyümeyi hedefleyen ve ihtiyacından fazla fonksiyon satın almak istemeyen işletmeler, Mikro Jump\'ı tercih edebilir. Bu çözüm, işletmenizin ihtiyaçlarına uygun olarak ölçeklenebilir ve gereksiz maliyetlerden kaçınmanızı sağlar.'
+    },
+    {
+      question: 'Mikro Jump ile E-Fatura ve E-Arşiv Faturası Kesebilir Miyim?',
+      answer: 'Evet, entegre e-Dönüşüm modülü ile e-Fatura, e-Arşiv, e-İrsaliye ve e-Defter süreçlerinizi mevzuata tam uyumlu yönetebilirsiniz.'
+    },
+    {
+      question: 'Mikro Jump ile Bankalardan Ekstre Aktarımı Yapabilir Miyim?',
+      answer: 'Evet, banka hesap ekstrelerinizi elektronik olarak aktarıp banka/kasa hareketlerinizle otomatik eşleştirebilirsiniz.'
+    },
+    {
+      question: 'Mikro Jump ile Şube Bazlı Takip Yapabilir Miyim?',
+      answer: 'Evet, şube/depo bazında hareketlerinizi ayrı ayrı takip edip şube kırılımında finans ve stok raporları alabilirsiniz.'
+    },
+  ];
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: jumpFaqlar
+      .filter((f) => f.answer)
+      .map((f) => ({
+        '@type': 'Question',
+        name: f.question,
+        acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      })),
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-10">
-            <div className="w-32 h-32 mx-auto bg-white rounded-2xl flex items-center justify-center shadow-lg">
-              <Image 
-                src="/mikro-jump-logo.png" 
-                alt="Mikro JUMP - Hızlı Satış ve Pazarlama Çözümü" 
-                width={128}
-                height={128}
-                className="w-full h-full object-contain" 
-              />
+      <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-purple-50/40 to-[#F8FAFC] pt-32 md:pt-44 pb-20 lg:pb-28">
+        {/* Giant Concentric Curved Amphitheater Rings & Arches (Pure Purple/Indigo/Violet Theme) */}
+        <AmphitheaterRingsBackground theme={jumpAmphitheaterTheme} />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+            {/* Left Side (Text Block) */}
+            <div className="lg:col-span-6 text-left">
+              <div
+                className="animate-fade-up inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-purple-500/10 via-indigo-500/10 to-violet-500/10 border border-purple-500/20 text-purple-600 text-xs font-semibold tracking-wide uppercase mb-6 shadow-sm"
+                style={{ animationDelay: '0s' }}
+              >
+                <Zap className="w-3.5 h-3.5 text-purple-600" />
+                <span>Hızlı Satış ve Büyüme Çözümü</span>
+              </div>
+
+              <h1
+                className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-none tracking-tight mb-6 text-[#0F172A]"
+                style={{ animationDelay: '0s' }}
+              >
+                Mikro{' '}
+                <span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-violet-500 bg-clip-text text-transparent inline-block drop-shadow-sm">
+                  JUMP
+                </span>
+              </h1>
+
+              <p
+                className="animate-fade-up text-base sm:text-lg text-slate-700 mb-8 leading-relaxed max-w-2xl font-normal"
+                style={{ animationDelay: '0.2s' }}
+              >
+                Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık'ın uzmanlığı ve Mikro Jump'ın yenilikçi teknolojileriyle, iş süreçlerinizi sektöre özel çözümlerle tek bir platformda yönetin. KOBİ'nizi rekabette öne çıkarmak, işlerinizde fark yaratmak ve geleceğe emin adımlarla ilerlemek için Mikro Jump ile büyük sıçrayışınızı gerçekleştirin!
+              </p>
+
+              <div
+                className="animate-fade-up flex flex-wrap items-center gap-4"
+                style={{ animationDelay: '0.15s' }}
+              >
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 via-indigo-600 to-violet-500 rounded-2xl blur-md opacity-75 group-hover:opacity-100 transition duration-500 group-hover:duration-200 animate-pulse pointer-events-none" />
+
+                  <button
+                    onClick={scrollToContact}
+                    className="relative inline-flex items-center justify-center gap-3.5 px-9 py-4.5 bg-gradient-to-r from-purple-600 via-indigo-600 to-violet-500 hover:from-purple-700 hover:via-indigo-700 hover:to-violet-600 text-white rounded-xl font-bold text-lg tracking-wide shadow-xl shadow-purple-600/30 hover:shadow-2xl hover:shadow-indigo-500/40 transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 overflow-hidden"
+                  >
+                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+
+                    <span>Teklif Al</span>
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side (Original Logo Integrated Directly on Page with Ambient Purple Glow & Gentle Floating Animation) */}
+            <div className="lg:col-span-6 flex justify-center lg:justify-end relative">
+              <div
+                className="animate-fade-in-side relative flex items-center justify-center p-4 sm:p-8"
+                style={{ '--fade-y': '1.25rem', '--fade-scale': '0.9', animationDelay: '0.2s' } as React.CSSProperties}
+              >
+                <div className="absolute w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-tr from-purple-500/15 via-indigo-500/18 to-violet-400/12 rounded-full blur-3xl pointer-events-none opacity-80" />
+                <div className="absolute w-64 h-64 sm:w-80 sm:h-80 bg-purple-600/10 rounded-full blur-2xl pointer-events-none" />
+
+                <motion.div
+                  animate={{ y: [0, -7, 0] }}
+                  transition={{ duration: 7.5, repeat: Infinity, ease: 'easeInOut' }}
+                  className="relative z-10 w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] lg:w-[420px] lg:h-[420px] flex items-center justify-center"
+                >
+                  <Image
+                    src="/mikro-jump-logo.png"
+                    alt="Mikro JUMP Orijinal Logosu"
+                    width={440}
+                    height={440}
+                    priority
+                    className="w-full h-full object-contain filter drop-shadow-[0_15px_30px_rgba(124,58,237,0.20)] hover:drop-shadow-[0_22px_40px_rgba(124,58,237,0.30)] transition-all duration-500 transform hover:scale-105"
+                  />
+                </motion.div>
+              </div>
             </div>
           </div>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-6xl font-bold leading-tight mb-4 text-gray-900"
-          >
-            Mikro
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">JUMP</span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-lg md:text-xl text-gray-500 mb-10 max-w-4xl mx-auto leading-relaxed"
-          >
- Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık'ın uzmanlığı ve Mikro Jump'ın yenilikçi teknolojileriyle, iş süreçlerinizi sektöre özel çözümlerle tek bir platformda yönetin. KOBİ'nizi rekabette öne çıkarmak, işlerinizde fark yaratmak ve geleceğe emin adımlarla ilerlemek için Mikro Jump ile büyük sıçrayışınızı gerçekleştirin!
-          </motion.p>
-
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            onClick={scrollToContact}
-            className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg hover:from-purple-700 hover:to-indigo-700 transition-colors font-medium"
-          >
-            Teklif Al
-            <ArrowRight className="w-5 h-5" />
-          </motion.button>
         </div>
-        <ScrollIndicator />
+
+        {/* Smooth Seamless Gradient Transition to Porcelain Section */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent via-[#F8FAFC]/60 to-[#F8FAFC] pointer-events-none z-10" />
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* Features Section (Mikro Jump Ana Paket - Porcelain Zemin & Yüzen Cam Kartlar) */}
+      <section className="relative py-24 bg-[#F8FAFC] overflow-hidden pt-8">
+        <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-purple-600/5 rounded-full blur-[140px] pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Mikro Jump Ana Paket</h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Mikro Jump Ana pakette Neler Var?
+            <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-slate-900 tracking-tight">Mikro Jump Ana Paket</h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-4xl mx-auto leading-relaxed font-normal">
+              Mikro Jump Ana pakette Neler Var? İşletmenizin gelişmiş tüm operasyonel ihtiyaçları tek pakette.
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => {
               const Icon = feature.icon;
               return (
@@ -231,15 +319,21 @@ export default function MikroJumpPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-white p-6 rounded-xl border border-gray-200 hover:border-purple-300"
+                  transition={{ duration: 0.4, delay: index * 0.03 }}
+                  className="bg-white/90 backdrop-blur-md rounded-2xl border border-slate-200/70 shadow-sm hover:shadow-xl hover:border-purple-500/40 hover:-translate-y-1.5 transition-all duration-300 overflow-hidden flex flex-col justify-between group"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center mb-4">
-                    <Icon size={24} className="text-white" />
+                  <div className="h-1.5 w-full bg-gradient-to-r from-purple-600 via-indigo-600 to-violet-500" />
+
+                  <div className="p-7 flex flex-col justify-between flex-grow">
+                    <div>
+                      <div className="w-13 h-13 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-600 shadow-md shadow-purple-600/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                        <Icon size={24} className="text-white" />
+                      </div>
+                      <h3 className="text-lg font-bold mb-2 text-slate-900 group-hover:text-purple-600 transition-colors">{feature.title}</h3>
+                      <p className="text-slate-600 text-sm mb-4 leading-relaxed">{feature.description}</p>
+                    </div>
+                    <p className="text-slate-400 text-xs italic font-medium pt-3 border-t border-slate-100">{feature.descriptionDetail}</p>
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-gray-900">{feature.title}</h3>
-                  <p className="text-gray-600 text-sm mb-2">{feature.description}</p>
-                  <p className="text-gray-500 text-xs italic">{feature.descriptionDetail}</p>
                 </motion.div>
               );
             })}
@@ -247,48 +341,170 @@ export default function MikroJumpPage() {
         </div>
       </section>
 
-      {/* Modules Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* Modules Section - İnteraktif Dijital Dönüşüm Ekosistemi (EDonusumShowcase - Purple Theme) */}
+      <section className="relative py-24 bg-gradient-to-b from-[#F8FAFC] via-purple-50/30 to-[#F8FAFC] overflow-hidden">
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-indigo-500/5 rounded-full blur-[150px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Mikro Jump e-Dönüşüm Çözümleri</h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Mikro Jump İşletmelerin dijital dönüşüm sürecinde ihtiyaç duyduğu tüm e-Dönüşüm çözümlerini tek bir platformda sunarak, iş süreçlerinizi kolaylaştırır ve hızlandırır.
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-600/10 border border-purple-600/20 text-purple-600 text-xs font-semibold tracking-wide uppercase mb-4 shadow-sm">
+              <Sparkles className="w-4 h-4" />
+              <span>İnteraktif e-Dönüşüm Ekosistemi</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 text-slate-900 tracking-tight">
+              Mikro JUMP <span className="bg-gradient-to-r from-purple-600 via-indigo-600 to-violet-500 bg-clip-text text-transparent">e-Dönüşüm Çözümleri</span>
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed font-normal">
+              İşletmenizin dijital dönüşüm sürecinde ihtiyaç duyduğu tüm yasal e-Dönüşüm çözümlerini tek tıkla canlı olarak deneyimleyin.
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-center gap-6">
-            {modules.map((module, index) => {
-              const Icon = module.icon;
+          {/* Dynamic Module Navigation Bar (Independent Bordered Pills) */}
+          <div className="flex flex-wrap justify-center gap-2.5 sm:gap-3.5 mb-12">
+            {modules.map((mod, index) => {
+              const Icon = mod.icon;
+              const isActive = activeModuleIndex === index;
               return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="bg-gray-50 p-6 rounded-xl border border-gray-200 hover:border-purple-300 min-h-[280px] flex flex-col w-full md:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
+                <button
+                  key={mod.id}
+                  onClick={() => setActiveModuleIndex(index)}
+                  className={`flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus-visible:outline-none focus:ring-0 select-none ${
+                    isActive
+                      ? 'bg-gradient-to-r from-purple-600 via-indigo-600 to-violet-500 text-white shadow-lg shadow-slate-900/15 border-0 scale-105 font-bold'
+                      : 'bg-white hover:bg-slate-50/80 text-slate-700 hover:text-slate-900 border border-slate-200/70 hover:border-slate-300'
+                  }`}
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <Icon size={24} className="text-white" />
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-gray-900 text-center">{module.name}</h3>
-                  <p className="text-gray-600 text-center text-sm mb-4">{module.description}</p>
-                  <div className="space-y-2 flex-grow">
-                    {module.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-center text-xs text-gray-600">
-                        <CheckCircle size={12} className="mr-2 text-purple-600" />
-                        {feature}
-                      </div>
-                    ))}
-                  </div>
-                </motion.div>
+                  <Icon className={`w-4 h-4 ${isActive ? 'text-white' : 'text-purple-600'}`} />
+                  <span>{mod.name}</span>
+                </button>
               );
             })}
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+            {/* Left Main Info Panel (Box 1 - Light Luxe Glass) */}
+            <motion.div
+              key={modules[activeModuleIndex].id}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+              className="lg:col-span-8 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-8 flex flex-col justify-between shadow-xl shadow-slate-200/50 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-48 h-48 bg-purple-600/5 rounded-full blur-3xl pointer-events-none" />
+
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-600 to-indigo-600 flex items-center justify-center text-white shadow-lg shadow-purple-600/25 shrink-0">
+                    {(() => {
+                      const ActiveIcon = modules[activeModuleIndex].icon;
+                      return <ActiveIcon size={28} />;
+                    })()}
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-slate-900 tracking-tight">{modules[activeModuleIndex].name}</h3>
+                    <div className="flex items-center gap-2 text-xs text-emerald-600 font-semibold mt-1">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                      <span>Mevzuat Uyumlu Canlı Entegrasyon</span>
+                    </div>
+                  </div>
+                </div>
+
+                <p className="text-slate-600 text-base leading-relaxed mb-6 font-normal">
+                  {modules[activeModuleIndex].description}
+                </p>
+
+                {/* Highlights List */}
+                <div className="space-y-3 mb-8">
+                  {modules[activeModuleIndex].features.map((feat, idx) => (
+                    <div key={idx} className="flex items-center gap-3 text-sm text-slate-700 font-semibold">
+                      <div className="w-5 h-5 rounded-full bg-purple-600/10 text-purple-600 flex items-center justify-center shrink-0">
+                        <CheckCircle size={14} />
+                      </div>
+                      <span>{feat}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Bottom Action Ribbon inside Left Box */}
+              <div className="pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-600 shrink-0">
+                    <Shield size={20} />
+                  </div>
+                  <div>
+                    <div className="text-xs font-bold text-slate-900">Dijital Dönüşüm Ekosistemi</div>
+                    <div className="text-[11px] text-slate-500 font-medium">%100 Mevzuat Uyumlu Veri Güvenliği</div>
+                  </div>
+                </div>
+                <button
+                  onClick={scrollToContact}
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white text-xs sm:text-sm font-bold transition-all shadow-md shadow-purple-600/25 shrink-0 transform hover:-translate-y-0.5 flex items-center gap-2"
+                >
+                  <span>İletişime Geç</span>
+                  <ArrowRight size={16} />
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Right Column: 3 Vertically Stacked Performance Stats Cards */}
+            <div className="lg:col-span-4 flex flex-col justify-between gap-4">
+              <motion.div
+                key={`stat-speed-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-purple-500/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">İşlem Hızı</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-purple-600">Otomatik</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-purple-600/10 text-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Zap size={24} />
+                </div>
+              </motion.div>
+
+              <motion.div
+                key={`stat-savings-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.2 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-indigo-500/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Maliyet Tasarrufu</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-indigo-600">{modules[activeModuleIndex].stats.savings}</div>
+                  <div className="text-xs text-slate-500 font-medium mt-1">Baskı ve arşiv maliyet düşüşü</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <TrendingUp size={24} />
+                </div>
+              </motion.div>
+
+              <motion.div
+                key={`stat-compliance-${modules[activeModuleIndex].id}`}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.4, delay: 0.15 }}
+                className="flex-1 bg-white/90 backdrop-blur-xl border border-slate-200/80 rounded-3xl p-6 flex items-center justify-between shadow-xl shadow-slate-200/50 hover:shadow-2xl hover:border-emerald-500/40 hover:-translate-y-1 transition-all group"
+              >
+                <div>
+                  <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1">Yasal Uyum</div>
+                  <div className="text-2xl sm:text-3xl font-extrabold text-emerald-600">%100</div>
+                  <div className="text-xs text-slate-500 font-medium mt-1">Resmi mevzuat standartları</div>
+                </div>
+                <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
+                  <Shield size={24} />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -308,45 +524,33 @@ export default function MikroJumpPage() {
                 Neden <br /> Gökkuşağı Yazılım ve Danışmanlık <br /> ile Mikro Jump'a Geçmelisiniz?
               </h2>
               <p className="text-gray-600 mb-6 leading-relaxed">
-              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 25 yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
+              Mikro Yazılım iş ortağı Gökkuşağı Yazılım ve Danışmanlık 20+ yıllık tecrübesi ile işletmenizin tüm dijital dönüşüm süreçlerinde yanında.
               </p>
               <h3 className="text-lg font-bold mb-3 text-gray-900">Mikro Jump Geçiş Sürecini Nasıl Yönetiyoruz:</h3>
               <div className="space-y-3">
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Ön Görüşme
+                  Süreç Analizi ve İşletme Checkup Hizmeti
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Ücretsiz Analiz ve Checkup Hizmeti
+                  Sektörel Modül, Şube ve Depo Yapılandırması
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  İşletmenize En Uygun Paket Seçimi
+                  Özel Sistem Tasarımı ve Veri Aktarımı
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Teklif ve Teklif Onayı
+                  Departman Bazlı Kullanıcı ve Yönetici Eğitimleri
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Uyarlama ve Aktarım (Ücretsiz)
+                  Pilot Test Çalışması ve Proje Teslimi
                 </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
+                <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
                   <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Detay Analiz (Ücretsiz)
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Eğitim (Ücretsiz)
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Proje Teslimi
-                </div>
-                <div className="flex items-center gap-3 text-sm text-gray-600">
-                  <CheckCircle size={16} className="text-purple-600 flex-shrink-0" />
-                  Uzaktan veya Yerinde Destek
+                  Operasyonel Danışmanlık ve Destek
                 </div>
               </div>
             </motion.div>
@@ -368,7 +572,6 @@ export default function MikroJumpPage() {
           </div>
         </div>
       </section>
-
 
       {/* CTA Section */}
       <section className="py-20 bg-white">
@@ -409,49 +612,26 @@ export default function MikroJumpPage() {
           </motion.div>
 
           <div className="space-y-4">
-            {[
-              {
-                question: 'Mikro Jump\'ı Kimler Tercih Etmeli?',
-                answer: 'Çalışan sayısı 5 ile 50 arasında olan, küçük ve orta ölçekli işletmeler, birden fazla sektörle ilgilenen ve birden fazla şubesi bulunan firmalar, sadece bir ürün değil, kurumsal bir çözüm ortağı arayan işletmeler, iş süreçlerini uçtan uca verimli ve kolay bir şekilde takip etmek isteyen, operasyonel verimliliğe önem veren şirketler, kontrollü büyümeyi hedefleyen ve ihtiyacından fazla fonksiyon satın almak istemeyen işletmeler, Mikro Jump\'ı tercih edebilir. Bu çözüm, işletmenizin ihtiyaçlarına uygun olarak ölçeklenebilir ve gereksiz maliyetlerden kaçınmanızı sağlar.'
-              },
-              { question: 'Mikro Jump\'ı Aynı Anda Kaç Kullanıcı Kullanabilir?', answer: '' },
-              { question: 'Mikro Jump ile Zimmet Takibi Yapabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump SQL2014 Versiyonunda Çalışıyor Mu?', answer: '' },
-              { question: 'İş Makinesi Kiralaması Yapıyorum. Operasyonlarımı Mikro Jump Üzerinden Yürütebilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Personel Kartlarında Toplu Değişiklik Yapabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump Üzerinden Kasalarla ve Yeni Nesil ÖKC\'ler ile Haberleşebilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Üretim Takibi Yapabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Bankalardan Ekstre Aktarımı Yapabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Ondalıklı/Tartılı Ürün Kaydı ve Satışı Yapabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Birden Fazla Şirket ile Çalışabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile İrsaliyeyi Faturalaştırabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Yeni Tasarlanan Stok Kartı Üzerinden Yetkilendirme Yapabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Cari Kartı Oluştururken Karttan Çıkmadan Adres ve Yetkili Kartlarını da Oluşturabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Satış Bütçesi Yapabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Stok Kartlarındaki Grup Alanlarının İsmini Değiştirince Raporlar da Değişir Mi?', answer: '' },
-              { question: 'Mikro Jump ile Satın Alma Şartı Girebilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Evraklara Excel\'den Aktarım Yapabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile E-Arşiv Faturası Kesebilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Bütçe Takibi Yapabilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Stoklarımı Detaylı Takip Edebilir Miyim?', answer: '' },
-              { question: 'Mikro Jump ile Şube Bazlı Takip Yapabilir Miyim?', answer: '' }
-            ].map((item, index) => (
+            {jumpFaqlar.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="bg-white p-6 rounded-xl border border-gray-200 hover:border-purple-300"
+                transition={{ duration: 0.4, delay: index * 0.03 }}
+                className="bg-white rounded-xl border border-gray-200 hover:border-purple-300 overflow-hidden"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
-                    {index + 1}
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-gray-900 font-bold mb-2">{item.question}</p>
-                    {item.answer && <p className="text-gray-600 text-sm">{item.answer}</p>}
-                  </div>
-                </div>
+                <details className="group">
+                  <summary className="flex items-start gap-4 p-6 cursor-pointer list-none">
+                    <div className="w-8 h-8 bg-purple-600 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                      {index + 1}
+                    </div>
+                    <p className="flex-1 text-gray-900 font-bold">{item.question}</p>
+                    <svg className="w-5 h-5 flex-shrink-0 mt-0.5 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </summary>
+                  {item.answer && <p className="px-6 pb-6 pl-[4.5rem] text-gray-600 text-sm leading-relaxed">{item.answer}</p>}
+                </details>
               </motion.div>
             ))}
           </div>

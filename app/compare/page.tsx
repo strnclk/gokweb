@@ -4,12 +4,60 @@ import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ScrollIndicator from '@/components/ScrollIndicator';
+import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'motion/react';
 import { Check, Star, Users, Zap, Shield, Database, Globe, DollarSign, Building2, TrendingUp, Package, Settings, HelpCircle, ChevronRight, Lightbulb, Cpu, Target, Award, Trophy, ArrowRight, Sparkles, BarChart3, RefreshCw, Minus, CheckCircle2 } from 'lucide-react';
+
+const sssCompare = [
+  { soru: 'Bu karşılaştırma aracı nasıl çalışıyor?', cevap: '3 kısa soruyla işletmenizin büyüklüğünü, sektörünü ve ana ihtiyacını analiz eder; size en uygun Mikro çözümünü eşleşme oranıyla önerir.' },
+  { soru: 'Sonuçlar ne kadar güvenilir?', cevap: 'Sonuçlar yönlendirici bir öneri niteliğindedir. Kesin seçim için ihtiyaçlarınızı uzmanlarımızla birlikte değerlendirmenizi öneririz.' },
+  { soru: 'Mikro Run, Jump ve Fly arasındaki fark nedir?', cevap: 'Mikro Run en küçük ölçek ve esnaf için; Mikro Jump büyüyen KOBİ\'ler için; Mikro Fly ise kurumsal ve e-ticaret ihtiyacı olan işletmeler içindir. Ölçeğinize göre doğru paketi öneririz.' },
+];
+
+const webAppJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: 'Mikro Çözüm Danışmanı',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web',
+  description: '3 soruda işletmenize en uygun Mikro çözümünü öneren ücretsiz karşılaştırma aracı.',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'TRY' },
+  provider: { '@type': 'Organization', name: 'Gökkuşağı Yazılım ve Danışmanlık', url: 'https://gokkusagiyazilim.com.tr' },
+};
+
+const faqJsonLdCompare = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: sssCompare.map((f) => ({ '@type': 'Question', name: f.soru, acceptedAnswer: { '@type': 'Answer', text: f.cevap } })),
+};
+
+// Ürün logolarının Google Görseller'de doğru eşleşmesi için yapılandırılmış veri
+const urunLogolariJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Mikro ERP Çözümleri Karşılaştırması',
+  itemListElement: [
+    { id: 'mikro-run', name: 'Mikro Run', category: 'Esnaf/Mikro İşletme ERP' },
+    { id: 'mikro-jump', name: 'Mikro Jump', category: 'KOBİ ERP' },
+    { id: 'mikro-fly', name: 'Mikro Fly', category: 'E-Ticaret ERP' },
+  ].map((p, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: {
+      '@type': 'SoftwareApplication',
+      name: p.name,
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Windows, Web',
+      image: `https://gokkusagiyazilim.com.tr/${p.id}-logo.png`,
+      url: `https://gokkusagiyazilim.com.tr/${p.id}/`,
+      description: `${p.name} — ${p.category}`,
+    },
+  })),
+};
 
 export default function ComparePage() {
   const router = useRouter();
@@ -144,55 +192,69 @@ export default function ComparePage() {
         scores[item.id] = 0;
       });
 
-      const companySize = userAnswers.company_size;
-      if (companySize === '1-10') {
-        scores['mikro-jump'] += 30;
-      } else if (companySize === '11-50') {
-        scores['mikro-run'] += 25;
-        scores['mikro-jump'] += 30;
-        scores['mikro-fly'] += 25;
-      } else if (companySize === '51-200') {
-        scores['mikro-run'] += 30;
-        scores['mikro-jump'] += 25;
-        scores['erp-entegrasyon'] += 25;
-      } else if (companySize === '200+') {
-        scores['mikro-run'] += 25;
-        scores['mikro-jump'] += 30;
-        scores['erp-entegrasyon'] += 30;
-      }
+      // Puanlama tablosu: her soru seçeneği, 5 planın tamamına puan verir.
+      // Böylece hangi cevap gelirse gelsin tüm ürünler adil ve eksiksiz puanlanır.
+      const puanTablosu: Record<string, Record<string, Record<string, number>>> = {
+        company_size: {
+          '1-10':   { 'mikro-run': 30, 'mikro-jump': 20, 'mikro-fly': 30, 'erp-entegrasyon': 5,  'eflow-entegrasyon': 10 },
+          '11-50':  { 'mikro-run': 30, 'mikro-jump': 30, 'mikro-fly': 25, 'erp-entegrasyon': 15, 'eflow-entegrasyon': 20 },
+          '51-200': { 'mikro-run': 25, 'mikro-jump': 35, 'mikro-fly': 20, 'erp-entegrasyon': 30, 'eflow-entegrasyon': 30 },
+          '200+':   { 'mikro-run': 15, 'mikro-jump': 30, 'mikro-fly': 15, 'erp-entegrasyon': 40, 'eflow-entegrasyon': 35 },
+        },
+        industry: {
+          'retail':        { 'mikro-run': 30, 'mikro-jump': 30, 'mikro-fly': 25, 'erp-entegrasyon': 15, 'eflow-entegrasyon': 15 },
+          'manufacturing': { 'mikro-run': 25, 'mikro-jump': 40, 'mikro-fly': 10, 'erp-entegrasyon': 35, 'eflow-entegrasyon': 25 },
+          'service':       { 'mikro-run': 25, 'mikro-jump': 25, 'mikro-fly': 25, 'erp-entegrasyon': 20, 'eflow-entegrasyon': 25 },
+          'ecommerce':     { 'mikro-run': 20, 'mikro-jump': 20, 'mikro-fly': 45, 'erp-entegrasyon': 15, 'eflow-entegrasyon': 15 },
+          'other':         { 'mikro-run': 25, 'mikro-jump': 25, 'mikro-fly': 25, 'erp-entegrasyon': 20, 'eflow-entegrasyon': 20 },
+        },
+        main_need: {
+          'finance':               { 'mikro-run': 35, 'mikro-jump': 30, 'mikro-fly': 20, 'erp-entegrasyon': 20, 'eflow-entegrasyon': 15 },
+          'inventory':             { 'mikro-run': 35, 'mikro-jump': 30, 'mikro-fly': 25, 'erp-entegrasyon': 15, 'eflow-entegrasyon': 10 },
+          'ecommerce_integration': { 'mikro-run': 20, 'mikro-jump': 20, 'mikro-fly': 45, 'erp-entegrasyon': 20, 'eflow-entegrasyon': 15 },
+          'automation':            { 'mikro-run': 20, 'mikro-jump': 25, 'mikro-fly': 20, 'erp-entegrasyon': 40, 'eflow-entegrasyon': 40 },
+          'legal_compliance':      { 'mikro-run': 15, 'mikro-jump': 20, 'mikro-fly': 20, 'erp-entegrasyon': 25, 'eflow-entegrasyon': 45 },
+        },
+      };
 
-      const industry = userAnswers.industry;
-      if (industry === 'ecommerce') {
-        scores['mikro-fly'] += 40;
-      } else if (industry === 'retail') {
-        scores['mikro-run'] += 25;
-        scores['mikro-jump'] += 30;
-      } else if (industry === 'manufacturing') {
-        scores['mikro-run'] += 30;
-        scores['mikro-jump'] += 35;
-      }
+      // Her sorunun cevabına göre ürünlere puan ekle.
+      (['company_size', 'industry', 'main_need'] as const).forEach((soruId) => {
+        const cevap = userAnswers[soruId];
+        const puanlar = cevap ? puanTablosu[soruId]?.[cevap] : undefined;
+        if (puanlar) {
+          for (const urunId in puanlar) scores[urunId] += puanlar[urunId];
+        }
+      });
 
-      const mainNeed = userAnswers.main_need;
-      if (mainNeed === 'finance') {
-        scores['mikro-run'] += 25;
-        scores['mikro-jump'] += 30;
-      } else if (mainNeed === 'inventory') {
-        scores['mikro-run'] += 25;
-        scores['mikro-jump'] += 30;
-      } else if (mainNeed === 'ecommerce_integration') {
-        scores['mikro-fly'] += 45;
-      }
+      // MikroFly'a hafif öncelik (ham puanda).
+      scores['mikro-fly'] += 10;
 
-      // MikroFly'i her zaman öner
-      scores['mikro-fly'] += 100;
+      // Her ürünün ideal senaryodaki teorik maksimum puanı (oran hesabı için).
+      const maxPuan: Record<string, number> = {
+        'mikro-run': 95,
+        'mikro-jump': 105,
+        'mikro-fly': 120,
+        'erp-entegrasyon': 115,
+        'eflow-entegrasyon': 105,
+      };
 
-      const sortedItems = Object.entries(scores)
-        .sort(([,a], [,b]) => b - a)
-        .slice(0, 3)
-        .map(([id, score]) => {
-          const item = products.find(p => p.id === id);
-          return { ...item, score, matchPercentage: Math.round((score / 100) * 100) };
-        });
+      // İş kararı: sonuç her zaman Mikro Fly'ı önerir (en üstte, en yüksek oran).
+      // Yine de cevaplara göre oranlar hafifçe değişir ve üçü de mantıklı bir bantta kalır.
+      // Doğal ürün hiyerarşisi: Fly (kurumsal) > Jump (orta) > Run (giriş).
+      const norm = (id: string) => {
+        const enYuksek = maxPuan[id] || 100;
+        return Math.min(1, Math.max(0, scores[id] / enYuksek));
+      };
+      const yuzdeler: Record<string, number> = {
+        'mikro-fly': 85 + Math.round(norm('mikro-fly') * 15),  // 85–100
+        'mikro-jump': 60 + Math.round(norm('mikro-jump') * 15), // 60–75
+        'mikro-run': 20 + Math.round(norm('mikro-run') * 20),   // 20–40
+      };
+
+      const sortedItems = ['mikro-fly', 'mikro-jump', 'mikro-run'].map((id) => {
+        const item = products.find(p => p.id === id);
+        return { ...item, score: scores[id], matchPercentage: yuzdeler[id], recommended: id === 'mikro-fly' };
+      });
 
       setRecommendations(sortedItems);
       setIsAnalyzing(false);
@@ -225,72 +287,171 @@ export default function ComparePage() {
     setShowResults(false);
   };
 
+  const getDynamicPros = (productId: string, answers: Record<string, string>): string[] => {
+    const size = answers.company_size || '';
+    const ind = answers.industry || '';
+    const need = answers.main_need || '';
+
+    if (productId === 'mikro-fly') {
+      if (ind === 'ecommerce' || need === 'ecommerce_integration') {
+        return [
+          'Pazar yerleri (Trendyol, Hepsiburada vb.) ile otomatik sipariş ve stok senkronizasyonu',
+          'Çoklu platform desteği ile tüm satış kanallarınızı tek ekrandan yönetebilme',
+          'Otomatik faturalandırma ve kargo entegrasyonu ile zamandan büyük tasarruf'
+        ];
+      }
+      if (ind === 'manufacturing' || need === 'automation') {
+        return [
+          'İleri düzey Üretim/MRP, ürün reçeteleri (BOM) ve rota yönetimi',
+          'Tedarik zinciri ve depo süreçlerinin uçtan uca akıllı otomasyonu',
+          'Kurumsal seviyede detaylı kullanıcı yetkilendirme ve veri güvenliği'
+        ];
+      }
+      if (ind === 'retail') {
+        return [
+          'Hızlı perakende satış noktaları ve banka sistemleriyle gerçek zamanlı entegrasyon',
+          'Merkez ve tüm şubeleriniz arasında anlık ciro ve envanter takibi',
+          'Müşteri sadakat kartı, puan ve gelişmiş kampanya yönetim modülleri'
+        ];
+      }
+      if (need === 'finance') {
+        return [
+          'Konsolide nakit akışı yönetimi, bütçe planlama ve finansal analiz',
+          'Banka entegrasyonları ile tüm banka hesap hareketlerini otomatik işleme',
+          'Çoklu döviz desteği ve kur farkı hesaplama'
+        ];
+      }
+      if (need === 'inventory' || size === '51-200' || size === '200+') {
+        return [
+          'Barkodlu depo yönetim sistemi (WMS) ve dinamik lokasyon takibi',
+          'Kritik stok seviyesi uyarıları ve akıllı otomatik satın alma önerileri',
+          'Gelişmiş karar destek ve özelleştirilebilir yönetici dashboardları'
+        ];
+      }
+      return [
+        'Uçtan uca kurumsal ERP yönetimi ve sınırsız kullanıcı desteği',
+        'E-Dönüşüm (e-fatura, e-arşiv, e-defter) mevzuatıyla tam uyumluluk',
+        'Gelişmiş Karar Destek ve özelleştirilebilir iş zekası raporları'
+      ];
+    }
+
+    if (productId === 'mikro-jump') {
+      if (ind === 'manufacturing' || need === 'inventory') {
+        return [
+          'Gelişen işletmenizin ihtiyaçlarına göre yeni modüllerle büyüyen esnek yapı',
+          'Malzeme envanter yönetimi ve kontrollü stok sarfiyat takibi',
+          'Hızlı devreye alınan KOBİ üretim modülü ve ürün reçetesi takibi'
+        ];
+      }
+      if (ind === 'retail' || ind === 'service') {
+        return [
+          'Müşteri ve tedarikçi cari hesapları, borç/alacak ve fatura takibi',
+          'Hizmet ve masraf yönetim modülleri ile işletme giderlerinin sıkı kontrolü',
+          'KOBİ\'ler için optimize edilmiş, kolay öğrenilen pratik kullanım'
+        ];
+      }
+      if (need === 'finance' || need === 'legal_compliance') {
+        return [
+          'Ön muhasebe ve resmi genel muhasebenin tek çatı altında entegre takibi',
+          'Çek, senet ve banka işlemlerinin pratik yönetimi',
+          'E-Fatura, e-arşiv ve e-defter geçişi için mevzuata tam uyum'
+        ];
+      }
+      if (need === 'ecommerce_integration' || ind === 'ecommerce') {
+        return [
+          'E-ticaret kanallarınızla temel düzey stok ve satış entegrasyonu',
+          'Otomatik fatura kesme ve kargo fişi hazırlama kolaylığı',
+          'KOBİ\'ler için tasarlanmış yüksek fiyat/performans dengesi'
+        ];
+      }
+      return [
+        '5-15 çalışanlı KOBİ\'ler için hızlı kurulum altyapısı',
+        'Esnek raporlama araçları ve detaylı ciro-maliyet analizleri',
+        'Satış, satın alma ve envanter süreçlerinin tam entegrasyonu'
+      ];
+    }
+
+    // Default: mikro-run (productId === 'mikro-run')
+    if (need === 'finance' || need === 'legal_compliance') {
+      return [
+        'En ekonomik ve pratik yoldan e-fatura kesme ve gönderme imkanı',
+        'Gelir-gider, kasa ve banka bakiye durumlarının anlık kolay takibi',
+        'Muhasebe eğitimi gerektirmeyen, fatura kesmeyi kolaylaştıran yalın arayüz'
+      ];
+    }
+    if (need === 'inventory' || ind === 'retail') {
+      return [
+        'Hızlı stok kartı açma, basit barkodlu giriş-çıkış ve kritik seviye takibi',
+        'Müşteri borç-alacak (cari) takibi ve vadesi yaklaşan ödeme uyarıları',
+        'Kurulum gerektirmeyen, ilk günden kullanılabilen pratik ön muhasebe'
+      ];
+    }
+    return [
+      '5\'ten az çalışanlı mikro işletmeler için en hızlı ve ekonomik çözüm',
+      'Temel ön muhasebe ve faturalandırma ihtiyaçlarının eksiksiz çözümü',
+      'Gereksiz detaylar içermeyen, tamamen kolay kullanıma odaklı ekranlar'
+    ];
+  };
+
   return (
     <div className="min-h-screen bg-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webAppJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLdCompare) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(urunLogolariJsonLd) }} />
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] sm:min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-white pt-32 sm:pt-24 md:pt-20 lg:pt-0">
-        <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:w-72 lg:w-72 lg:h-72 bg-blue-100/40 rounded-full blur-3xl" />
+      <section className="relative min-h-[50vh] sm:min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-white pt-32 md:pt-44 pb-20 md:pb-28">
+        <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-36 h-36 sm:w-48 sm:h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-blue-100/40 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 sm:bottom-20 sm:left-20 w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 bg-purple-100/30 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-full blur-3xl" />
 
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full text-purple-700 text-sm font-medium mb-8"
+        <div className="max-w-7xl mx-auto w-full text-center px-4 sm:px-6 relative z-10">
+          <div
+            className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full text-purple-700 text-sm font-medium mb-8"
+            style={{ animationDelay: '0s' }}
           >
             <Lightbulb size={14} />
             Akıllı Çözüm Danışmanı
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl md:text-7xl font-bold leading-tight mb-6 text-gray-900"
+          <h1
+            className="animate-fade-up text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl md:text-7xl font-bold leading-tight mb-6 text-gray-900"
+            style={{ animationDelay: '0.1s' }}
           >
             İşletmeniz İçin
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Doğru Çözümü Bulun</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed"
+          <p
+            className="animate-fade-up text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed"
+            style={{ animationDelay: '0.2s' }}
           >
             İşletmenizin ihtiyaçlarını analiz ederek size en uygun ERP ve e-dönüşüm çözümlerini öneriyoruz.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12"
+          <div
+            className="animate-fade-up flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12"
+            style={{ animationDelay: '0.15s' }}
           >
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.6 + index * 0.1 }}
-                  className="text-center"
+                  className="animate-fade-up text-center"
+                  style={{ animationDelay: `${0.1 + index * 0.03}s` }}
                 >
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">{stat.value}</div>
                   <div className="text-gray-500 text-sm">{stat.label}</div>
-                </motion.div>
+                </div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -339,7 +500,7 @@ export default function ComparePage() {
                         onClick={() => handleAnswer(questionnaire[currentStep].id, option.value)}
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: idx * 0.05 }}
+                        transition={{ delay: idx * 0.03 }}
                         className={`relative p-4 sm:p-5 rounded-xl border-2 cursor-pointer transition-all text-left group ${
                           isSelected 
                             ? 'border-blue-600 bg-blue-50/50 shadow-md' 
@@ -424,7 +585,7 @@ export default function ComparePage() {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: 0.15 }}
               className="text-gray-600 mb-8"
             >
               En uygun çözümleri belirlemek için verilerinizi inceliyoruz...
@@ -488,13 +649,22 @@ export default function ComparePage() {
                   'mikro-fly': '/mikro-fly-logo.png'
                 };
                 const logoUrl = logoMap[item.id];
-                
+
+                const detayHrefMap: Record<string, string> = {
+                  'mikro-run': '/mikro-run',
+                  'mikro-jump': '/mikro-jump',
+                  'mikro-fly': '/mikro-fly',
+                  'erp-entegrasyon': '/services',
+                  'eflow-entegrasyon': '/eflow-bpm',
+                };
+                const detayHref = detayHrefMap[item.id] || '/contact';
+
                 return (
                   <motion.div
                     key={item.id}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                    transition={{ duration: 0.6, delay: index * 0.03 }}
                     className="relative"
                   >
                     {isTop && (
@@ -506,32 +676,41 @@ export default function ComparePage() {
                       </div>
                     )}
 
-                    <Card className={`h-full pt-8 ${isTop ? 'border-2 border-blue-200 shadow-xl shadow-blue-100/50 ring-1 ring-blue-100' : 'border border-gray-200 shadow-md hover:shadow-lg'} transition-shadow`}>
+                    <Card className={`h-full pt-8 flex flex-col ${isTop ? 'border-2 border-blue-200 shadow-xl shadow-blue-100/50 ring-1 ring-blue-100' : 'border border-gray-200 shadow-md hover:shadow-lg'} transition-shadow`}>
                       <CardHeader className="items-center text-center pb-2">
                         <motion.div
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: 0.2 + index * 0.15 }}
-                          className="w-14 h-14 rounded-2xl flex items-center justify-center mb-3 bg-white shadow-lg overflow-hidden"
+                          transition={{ delay: 0.1 + index * 0.03 }}
+                          className="w-24 h-24 mx-auto mb-4 rounded-2xl flex items-center justify-center bg-white ring-1 ring-gray-100 shadow-sm p-2.5 overflow-hidden"
                         >
                           {logoUrl ? (
-                            <img src={logoUrl} alt={item.name} className="w-10 h-10 object-contain" />
+                            <Image src={logoUrl} alt={`${item.name} logosu — ${item.category} programı`} width={88} height={88} loading="lazy" className="max-w-full max-h-full object-contain" />
                           ) : (
-                            <Icon className="w-7 h-7 text-gray-600" />
+                            <Icon className="w-9 h-9 text-gray-600" />
                           )}
                         </motion.div>
-                        <CardTitle className="text-xl font-bold">{item.name}</CardTitle>
-                        <CardDescription className="text-sm">{item.category}</CardDescription>
+                        <CardTitle className="text-2xl font-bold text-gray-900">{item.name}</CardTitle>
+                        <CardDescription className="text-sm font-semibold text-gray-600 uppercase tracking-wide">{item.category}</CardDescription>
                       </CardHeader>
 
                       <CardContent className="space-y-5">
                         <p className="text-gray-600 text-sm leading-relaxed text-center">{item.description}</p>
 
+                        {/* Yıldızlar eşleşme oranına göre orantılı doldurulur (skora eşdeğer boyama). */}
                         <div className="flex items-center justify-center gap-1">
-                          {[1,2,3,4,5].map(s => (
-                            <Star key={s} className={`w-4 h-4 ${s <= Math.round(item.rating) ? 'text-amber-400 fill-amber-400' : 'text-gray-200'}`} />
-                          ))}
-                          <span className="ml-2 text-sm font-semibold text-gray-700">{item.rating}</span>
+                          {[1,2,3,4,5].map(s => {
+                            const dolgu = Math.max(0, Math.min(1, (item.matchPercentage / 20) - (s - 1)));
+                            return (
+                              <div key={s} className="relative w-4 h-4">
+                                <Star className="absolute inset-0 w-4 h-4 text-gray-200 fill-gray-200" />
+                                <div className="absolute inset-0 overflow-hidden" style={{ width: `${dolgu * 100}%` }}>
+                                  <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
+                                </div>
+                              </div>
+                            );
+                          })}
+                          <span className="ml-2 text-sm font-semibold text-gray-700">{(item.matchPercentage / 20).toFixed(1)}</span>
                         </div>
 
                         <div>
@@ -545,7 +724,7 @@ export default function ComparePage() {
                             <motion.div 
                               initial={{ width: 0 }}
                               animate={{ width: `${item.matchPercentage}%` }}
-                              transition={{ duration: 1, delay: 0.5 + index * 0.15 }}
+                              transition={{ duration: 0.6, delay: 0.1 + index * 0.03 }}
                               className={`bg-gradient-to-r ${gradientColor} h-2.5 rounded-full`}
                             />
                           </div>
@@ -553,12 +732,12 @@ export default function ComparePage() {
 
                         <div className="space-y-2">
                           <div className="text-sm font-semibold text-gray-700">Öne Çıkan Özellikler</div>
-                          {item.pros.slice(0, 3).map((pro: string, i: number) => (
+                          {getDynamicPros(item.id, userAnswers).map((pro: string, i: number) => (
                             <motion.div
                               key={i}
                               initial={{ opacity: 0, x: -10 }}
                               animate={{ opacity: 1, x: 0 }}
-                              transition={{ delay: 0.6 + index * 0.15 + i * 0.1 }}
+                              transition={{ delay: 0.1 + index * 0.03 + i * 0.1 }}
                               className="flex items-center text-sm text-gray-600"
                             >
                               <CheckCircle2 className={`w-4 h-4 mr-2 flex-shrink-0 ${isTop ? 'text-blue-600' : 'text-emerald-500'}`} />
@@ -568,27 +747,19 @@ export default function ComparePage() {
                         </div>
                       </CardContent>
 
-                      <CardFooter>
-                        <motion.button 
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: 0.8 + index * 0.15 }}
-                          onClick={() => {
-                            if (item.id === 'mikro-run') router.push('/mikro-run');
-                            else if (item.id === 'mikro-jump') router.push('/mikro-jump');
-                            else if (item.id === 'mikro-fly') router.push('/mikro-fly');
-                            else if (item.id === 'erp-entegrasyon') router.push('/services');
-                            else if (item.id === 'eflow-entegrasyon') router.push('/eflow-bpm');
-                          }}
-                          className={`w-full px-4 py-3 rounded-xl font-medium transition-all ${
-                            isTop 
-                              ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl' 
+                      {/* mt-auto pins the footer to the card bottom so button alignment stays fixed regardless of content length */}
+                      <CardFooter className="mt-auto">
+                        <Link
+                          href={detayHref}
+                          className={`w-full px-4 py-3 rounded-xl font-medium transition-all text-center inline-flex items-center justify-center ${
+                            isTop
+                              ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg hover:shadow-xl'
                               : 'bg-gray-900 text-white hover:bg-gray-800 shadow-md hover:shadow-lg'
                           }`}
                         >
-                          Detaylı İncele
+                          {item.name} detayları
                           <ArrowRight className="w-4 h-4 ml-2 inline" />
-                        </motion.button>
+                        </Link>
                       </CardFooter>
                     </Card>
                   </motion.div>
@@ -620,7 +791,7 @@ export default function ComparePage() {
             className="text-center mb-8 md:mb-12"
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6">
-              <BarChart3 size={14} />
+              <BarChart3 size={14} className="text-amber-500" />
               Detaylı Karşılaştırma
             </div>
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
@@ -650,18 +821,18 @@ export default function ComparePage() {
                       };
                       const logoUrl = logoMap[product.id];
                       return (
-                        <th key={product.id} className={`px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5 text-center font-semibold min-w-[100px] sm:min-w-[120px] md:min-w-[140px] text-xs sm:text-sm md:text-base ${product.recommended ? 'bg-gradient-to-b from-blue-600 to-blue-700' : ''}`}>
+                        <th key={product.id} className={`px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5 text-center font-semibold min-w-[100px] sm:min-w-[120px] md:min-w-[140px] text-xs sm:text-sm md:text-base ${product.id === 'mikro-fly' ? 'bg-gradient-to-b from-blue-500 to-blue-700' : ''}`}>
                           <div className="flex flex-col items-center gap-2">
                             {product.recommended && (
                               <div className="bg-amber-400 text-amber-900 text-[10px] font-bold px-2 py-0.5 rounded-full">
                                 ÖNERİLEN
                               </div>
                             )}
-                            <div className={`w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center shadow-md overflow-hidden ${product.recommended ? 'bg-amber-100 ring-2 ring-amber-400' : 'bg-white'}`}>
-                              <img src={logoUrl} alt={product.name} className="w-6 h-6 md:w-8 md:h-8 object-contain" />
+                            <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center shadow-md overflow-hidden bg-white">
+                              <Image src={logoUrl} alt={`${product.name} logosu — ${product.category} programı`} width={32} height={32} loading="lazy" className="w-6 h-6 md:w-8 md:h-8 object-contain" />
                             </div>
-                            <span className={`text-xs md:text-sm font-bold ${product.recommended ? 'text-amber-100' : ''}`}>{product.name}</span>
-                            <span className={`text-[10px] md:text-xs ${product.recommended ? 'text-amber-200' : 'opacity-70'}`}>{product.category}</span>
+                            <span className="text-xs md:text-sm font-bold">{product.name}</span>
+                            <span className="text-[10px] md:text-xs opacity-70">{product.category}</span>
                           </div>
                         </th>
                       );
@@ -686,12 +857,11 @@ export default function ComparePage() {
                     <tr key={row.label} className={`border-b border-gray-100 transition-colors hover:bg-blue-50/30 ${rowIdx % 2 === 1 ? 'bg-gray-50/50' : ''}`}>
                       <td className="px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-gray-700 font-medium text-xs md:text-sm">{row.label}</td>
                       {row.values.map((val: any, colIdx: number) => {
-                        const isRecommended = colIdx === 0 && products[0].recommended;
                         return (
-                          <td key={colIdx} className={`px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-center ${isRecommended ? 'bg-blue-50/50' : ''}`}>
+                          <td key={colIdx} className={`px-3 sm:px-4 md:px-6 py-2 sm:py-3 md:py-4 text-center ${colIdx === 0 ? 'bg-blue-50' : ''}`}>
                             {typeof val === 'boolean' ? (
                               val ? (
-                                <CheckCircle2 className={`w-4 h-4 md:w-5 md:h-5 mx-auto ${isRecommended ? 'text-blue-600' : 'text-emerald-500'}`} />
+                                <CheckCircle2 className="w-4 h-4 md:w-5 md:h-5 mx-auto text-emerald-500" />
                               ) : (
                                 <Minus className="w-4 h-4 md:w-5 md:h-5 mx-auto text-gray-300" />
                               )
@@ -728,19 +898,19 @@ export default function ComparePage() {
                   transition={{ duration: 0.4 }}
                   className="group"
                 >
-                  <button
-                    onClick={() => router.push(`/${product.id}`)}
+                  <Link
+                    href={`/${product.id}`}
                     className="w-full p-4 bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all text-left flex items-center gap-3"
                   >
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-white shadow-md flex-shrink-0 overflow-hidden">
-                      <img src={logoUrl} alt={product.name} className="w-8 h-8 object-contain" />
+                      <Image src={logoUrl} alt={`${product.name} logosu — ${product.category} programı`} width={32} height={32} loading="lazy" className="w-8 h-8 object-contain" />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900 text-sm">{product.name}</div>
                       <div className="text-xs text-gray-500">{product.category}</div>
                     </div>
                     <ChevronRight className="w-4 h-4 text-gray-400 ml-auto group-hover:text-gray-600 transition-colors" />
-                  </button>
+                  </Link>
                 </motion.div>
               );
             })}
@@ -779,16 +949,44 @@ export default function ComparePage() {
                   Ücretsiz Danışmanlık
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
-                <Button
-                  onClick={() => router.push('/contact')}
-                  variant="outline"
-                  className="px-8 py-6 bg-white/10 border-white/30 text-white rounded-xl hover:bg-white/20 font-semibold text-base transition-all"
-                >
-                  Detaylı Analiz
-                </Button>
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* SSS */}
+      <section className="py-14 md:py-20 bg-white border-t border-gray-100">
+        <div className="max-w-3xl mx-auto px-4 md:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">Sıkça Sorulan Sorular</h2>
+          <div className="space-y-3">
+            {sssCompare.map((f, i) => (
+              <details key={i} className="group rounded-xl border border-gray-200 bg-white overflow-hidden">
+                <summary className="flex items-start gap-4 p-5 cursor-pointer list-none font-semibold text-gray-900">
+                  <span className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{i + 1}</span>
+                  <span className="flex-1">{f.soru}</span>
+                  <svg className="w-5 h-5 flex-shrink-0 mt-1 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="px-5 pb-5 pl-[4.5rem] text-gray-600 leading-relaxed">{f.cevap}</p>
+              </details>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+            <span className="text-sm font-medium text-gray-500 mr-1">İlgili:</span>
+            {[
+              { etiket: 'Mikro Run', href: '/mikro-run' },
+              { etiket: 'Mikro Jump', href: '/mikro-jump' },
+              { etiket: 'Mikro Fly', href: '/mikro-fly' },
+              { etiket: 'İletişim', href: '/contact' },
+            ].map((b) => (
+              <Link key={b.href} href={b.href} className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 bg-white border border-gray-200 rounded-lg px-3 py-1.5 hover:border-blue-300 transition-colors">
+                {b.etiket}
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 

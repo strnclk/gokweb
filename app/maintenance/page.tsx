@@ -186,7 +186,7 @@ export default function MaintenancePage() {
           </svg>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Yapım Aşamasında</h1>
           <p className="text-lg md:text-xl text-white/90 mb-8">
-            Yenilikler İçin biraz beklemeniz gerekiyor. Beklemekten sıkıldıysanız size özel oyunumuzu deneyiniz.
+            Yenilikler için biraz beklemeniz gerekiyor. Beklemekten sıkıldıysanız size özel oyunumuzu deneyiniz.
           </p>
         </div>
 

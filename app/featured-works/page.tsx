@@ -3,9 +3,22 @@
 import { TrendingUp, DollarSign, BarChart3, PieChart, Calculator, ArrowRight, Star, Award, Target, Zap, Shield, Clock, Users, Briefcase, CheckCircle, AlertCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ScrollIndicator from '@/components/ScrollIndicator';
+
+const sssFeatured = [
+  { soru: 'Hangi alanlarda projeler gerçekleştiriyorsunuz?', cevap: 'Finansal yönetim, nakit akışı, raporlama ve ERP entegrasyonu başta olmak üzere işletmelerin dijitalleşme ihtiyaçlarına yönelik projeler gerçekleştiriyoruz.' },
+  { soru: 'Kaç yıllık deneyime ve kaç projeye sahipsiniz?', cevap: '20+ yıllık sektör deneyimimizle 500’den fazla başarılı proje tamamladık; müşteri memnuniyet oranımız %95 seviyesindedir.' },
+  { soru: 'Referans paylaşıyor musunuz?', cevap: 'Evet. Bizimle iletişime geçtiğinizde sektörünüze ve ihtiyacınıza uygun referanslarımızı paylaşabiliriz.' },
+  { soru: 'Bize özel bir çözüm geliştirir misiniz?', cevap: 'Evet. Standart çözümlerin ötesinde, işletmenize özel yazılım ve Mikro entegrasyonları geliştiriyoruz.' },
+];
+
+const faqJsonLdFeatured = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: sssFeatured.map((f) => ({ '@type': 'Question', name: f.soru, acceptedAnswer: { '@type': 'Answer', text: f.cevap } })),
+};
 
 export default function FeaturedWorksPage() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -44,7 +57,7 @@ export default function FeaturedWorksPage() {
     { value: '500+', label: 'Başarılı Proje', icon: Award },
     { value: '95%', label: 'Müşteri Memnuniyeti', icon: Star },
     { value: '20+', label: 'Yıl Deneyim', icon: Clock },
-    { value: '7/24', label: 'Destek', icon: Shield }
+    { value: 'Uzman', label: 'Destek', icon: Shield }
   ];
 
   const financialServices = [
@@ -155,10 +168,11 @@ export default function FeaturedWorksPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLdFeatured) }} />
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] md:min-h-screen flex items-center overflow-hidden bg-white pt-20 md:pt-0">
+      <section className="relative min-h-[80vh] md:min-h-screen flex items-center overflow-hidden bg-white pt-32 md:pt-44 pb-20 md:pb-28">
         {/* Decorative Elements */}
         <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-blue-100 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 sm:bottom-20 sm:left-20 w-40 h-40 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-purple-100 rounded-full blur-3xl" />
@@ -167,41 +181,33 @@ export default function FeaturedWorksPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6"
+              <div
+                className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6"
+                style={{ animationDelay: '0s' }}
               >
                 <Star size={14} />
                 Öne Çıkan Çalışmalar
-              </motion.div>
+              </div>
               
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.1 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900"
+              <h1
+                className="animate-fade-up text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900"
+                style={{ animationDelay: '0.1s' }}
               >
                 Öne Çıkan
                 <br />
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Çalışmalarımız</span>
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-xl leading-relaxed"
+              <p
+                className="animate-fade-up text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-xl leading-relaxed"
+                style={{ animationDelay: '0.2s' }}
               >
                 Finansal yönetim, nakit akışı ve raporlama alanında gerçekleştirdiğimiz başarılı projelerimizle işletmenizi dijitalleştirin
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="flex flex-col sm:flex-row gap-4 mb-12"
+              <div
+                className="animate-fade-up flex flex-col sm:flex-row gap-4 mb-12"
+                style={{ animationDelay: '0.15s' }}
               >
                 <button
                   onClick={scrollToContact}
@@ -210,16 +216,17 @@ export default function FeaturedWorksPage() {
                   Proje Talebi
                   <ArrowRight className="w-4 h-4 ml-2 inline" />
                 </button>
-                <button className="px-6 sm:px-8 py-3 sm:py-4 bg-white border-blue-300 text-gray-900 rounded-xl hover:bg-blue-50 font-medium">
+                <Link
+                  href="/services"
+                  className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white border border-blue-300 text-gray-900 rounded-xl hover:bg-blue-50 font-medium"
+                >
                   Daha Fazla Bilgi
-                </button>
-              </motion.div>
+                </Link>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="grid grid-cols-2 gap-6"
+              <div
+                className="animate-fade-up grid grid-cols-2 gap-6"
+                style={{ animationDelay: '0.15s' }}
               >
                 {stats.map((stat, i) => (
                   <div key={i} className="flex items-center gap-3">
@@ -232,16 +239,14 @@ export default function FeaturedWorksPage() {
                     </div>
                   </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
 
             {/* Right Side - Visual Element */}
             <div className="hidden lg:block relative">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative"
+              <div
+                className="animate-fade-in-side relative"
+                style={{ '--fade-scale': '0.8', animationDelay: '0.2s' } as React.CSSProperties}
               >
                 {/* Main Card */}
                 <div className="bg-white rounded-3xl p-8 border border-blue-200 shadow-2xl">
@@ -265,7 +270,7 @@ export default function FeaturedWorksPage() {
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: '85%' }}
-                          transition={{ duration: 1, delay: 0.5 }}
+                          transition={{ duration: 0.6, delay: 0.15 }}
                           className="h-full bg-gradient-to-r from-emerald-500 to-emerald-600 rounded-full"
                         />
                       </div>
@@ -280,7 +285,7 @@ export default function FeaturedWorksPage() {
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: '96%' }}
-                          transition={{ duration: 1, delay: 0.6 }}
+                          transition={{ duration: 0.6, delay: 0.15 }}
                           className="h-full bg-gradient-to-r from-purple-500 to-purple-600 rounded-full"
                         />
                       </div>
@@ -295,7 +300,7 @@ export default function FeaturedWorksPage() {
                         <motion.div
                           initial={{ width: 0 }}
                           animate={{ width: '82%' }}
-                          transition={{ duration: 1, delay: 0.7 }}
+                          transition={{ duration: 0.6, delay: 0.15 }}
                           className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
                         />
                       </div>
@@ -321,7 +326,7 @@ export default function FeaturedWorksPage() {
                   <div className="text-gray-900 font-bold text-lg">95%</div>
                   <div className="text-gray-500 text-xs">Memnuniyet</div>
                 </motion.div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -350,8 +355,8 @@ export default function FeaturedWorksPage() {
                   key={index}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.5, delay: index * 0.03 }}
+                  viewport={{ once: true }}
                   className="bg-white p-6 rounded-xl border border-blue-200 hover:border-blue-300 group"
                 >
                   <div className="flex items-start gap-6">
@@ -401,7 +406,7 @@ export default function FeaturedWorksPage() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
+                  transition={{ duration: 0.4, delay: index * 0.03 }}
                   className="bg-white p-6 rounded-xl border border-blue-200 hover:border-blue-300"
                 >
                   <div className="w-12 h-12 bg-blue-900 rounded-lg flex items-center justify-center mb-4">
@@ -469,6 +474,40 @@ export default function FeaturedWorksPage() {
 
     
       
+      {/* SSS */}
+      <section className="py-14 md:py-20 bg-white">
+        <div className="max-w-3xl mx-auto px-4 md:px-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">Sıkça Sorulan Sorular</h2>
+          <div className="space-y-3">
+            {sssFeatured.map((f, i) => (
+              <details key={i} className="group rounded-xl border border-gray-200 bg-white overflow-hidden">
+                <summary className="flex items-start gap-4 p-5 cursor-pointer list-none font-semibold text-gray-900">
+                  <span className="w-8 h-8 bg-blue-700 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{i + 1}</span>
+                  <span className="flex-1">{f.soru}</span>
+                  <svg className="w-5 h-5 flex-shrink-0 mt-1 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <p className="px-5 pb-5 pl-[4.5rem] text-gray-600 leading-relaxed">{f.cevap}</p>
+              </details>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-2">
+            <span className="text-sm font-medium text-gray-500 mr-1">İlgili:</span>
+            {[
+              { etiket: 'Hizmetler', href: '/services' },
+              { etiket: 'Özel Yazılım', href: '/services/ozel-yazilim-gelistirme' },
+              { etiket: 'İletişim', href: '/contact' },
+            ].map((b) => (
+              <Link key={b.href} href={b.href} className="inline-flex items-center gap-1 text-sm font-medium text-blue-700 bg-white border border-gray-200 rounded-lg px-3 py-1.5 hover:border-blue-300 transition-colors">
+                {b.etiket}
+                <ArrowRight className="w-3.5 h-3.5" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

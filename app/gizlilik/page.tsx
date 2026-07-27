@@ -12,9 +12,9 @@ export default function GizlilikPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative bg-cover bg-center pt-32 pb-16" style={{ backgroundImage: 'url(/rainbw.png)' }}>
+      <div className="relative bg-cover bg-center pt-32 pb-16" style={{ backgroundImage: 'url(/rainbw.webp)' }}>
         <div className="absolute inset-0 bg-white/80" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Gizlilik Politikası
           </h1>
@@ -36,7 +36,7 @@ export default function GizlilikPage() {
             İşbu Politika'nın amacı, özellikle de Şirketimizin ticari hayatı esnasında bir ilişki kurduğu gerçek kişilere ait kişisel verilerin işlenmesi ve aktarılmasında, başta özel hayatın gizliliği olmak üzere gerçek kişilerin temel haklarını ve özgürlüklerini korumak amacıyla, İlgili Kişi'nin gerek KVKK gerek yürürlükte bulunan ilgili ikincil mevzuatlar çerçevesinde sahip olduğu hakları, açıklamaktır.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
-            İşbu Politika ayrıca, 6698 sayılı Kişisel Verilerin Korunması Kanunu ve ilgili ikincil mevzuatlar kapsamında, kişisel verilerin işlenme amaçlarını, hukuki sebeplerini, aktarılmasını ve toplama yöntemlerini amaçlamayı hedeflemektedir.
+            İşbu Politika ayrıca, 6698 sayılı Kişisel Verilerin Korunması Kanunu ve ilgili ikincil mevzuatlar kapsamında, kişisel verilerin işlenme amaçlarını, hukuki sebeplerini, aktarılmasını ve toplama yöntemlerini açıklamayı hedeflemektedir.
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
             Şirketimiz; Kişisel Verileri İşleme Amaçlarını, Yasal Gerekçelerini, Verileri Toplama ve Aktarma Yöntemlerini ve Kişisel Verilerin Korunması ve İşlenmesi Politikasını değişiklik yapma hakkını saklı tutar.
@@ -281,7 +281,7 @@ export default function GizlilikPage() {
           {/* Last Updated */}
           <div className="mt-12 pt-8 border-t border-gray-200">
             <p className="text-sm text-gray-500">
-              Politika Versiyonu ve en son güncelleme tarihi: V.1.1 – 11.06.2024
+              Politika Versiyonu ve en son güncelleme tarihi: V.1.2 – Nisan 2026
             </p>
           </div>
         </div>

@@ -25,7 +25,7 @@ const industries = [
     title: 'Perakende',
     description: 'Satış ve envanter yönetimi',
     color: 'from-gray-700 to-gray-800',
-    features: ['POS Entegrasyonu', 'Envanter', 'Müşteri Yönetimi']
+    features: ['Banka Entegrasyonu', 'Envanter', 'Müşteri Yönetimi']
   },
   {
     icon: Truck,
@@ -54,7 +54,7 @@ export default function IndustryScenariosSection() {
   const [hoveredIndustry, setHoveredIndustry] = useState<number | null>(null);
 
   return (
-    <section className="py-12 sm:py-20 relative bg-cover bg-center sm:bg-fixed" style={{ backgroundImage: 'url(/rainbw.png)' }}>
+    <section className="py-12 sm:py-20 relative bg-cover bg-center sm:bg-fixed" style={{ backgroundImage: 'url(/rainbw.webp)' }}>
       <div className="absolute inset-0 bg-white/60" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -82,10 +82,10 @@ export default function IndustryScenariosSection() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.03 }}
               onMouseEnter={() => setHoveredIndustry(index)}
               onMouseLeave={() => setHoveredIndustry(null)}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl  cursor-pointer border border-gray-100"
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl cursor-pointer border border-gray-100"
             >
               <div className={`w-16 h-16 bg-gradient-to-br ${industry.color} rounded-2xl flex items-center justify-center mb-6`}>
                 <industry.icon className="w-8 h-8 text-white" />

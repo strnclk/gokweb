@@ -14,10 +14,6 @@ export default function CTASection() {
     router.push('/contact');
   };
 
-  const handleDemoClick = () => {
-    router.push('/contact');
-  };
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -41,8 +37,8 @@ export default function CTASection() {
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl md:text-7xl mb-8 text-gray-900"
+          transition={{ duration: 0.6 }}
+          className="text-5xl md:text-7xl font-bold mb-8 text-gray-900"
         >
           İşinizi dijitalleştirmeye<br />hazır mısınız?
         </motion.h2>
@@ -50,7 +46,7 @@ export default function CTASection() {
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
           className="text-xl text-gray-900 mb-12"
         >
           Size özel çözümlerimiz hakkında bilgi almak için hemen iletişime geçin.
@@ -59,7 +55,7 @@ export default function CTASection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 30 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.15 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <button
@@ -68,12 +64,6 @@ export default function CTASection() {
           >
             Teklif Al
             <ArrowRight className="w-5 h-5" />
-          </button>
-          <button
-            onClick={handleDemoClick}
-            className="px-10 py-5 border-2 border-gray-300 text-gray-900 rounded-full hover:bg-gray-50 transition-all duration-300 hover:scale-105 text-lg"
-          >
-            Demo İsteyin
           </button>
         </motion.div>
       </div>

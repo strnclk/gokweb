@@ -26,16 +26,16 @@ const Footer = dynamic(() => import('@/components/Footer'), {
 });
 
 export const metadata: Metadata = {
-  title: "Anadolu Yakası Mikro Bayii | ERP CRM Çözümleri | Gökkuşağı Yazılım",
+  title: "Anadolu Yakası Mikro Bayi | ERP CRM Çözümleri | Gökkuşağı Yazılım",
   description: "Anadolu Yakası'nda resmi Mikro bayi. Mikro program satışı, ERP hizmeti, CRM çözümleri, e-fatura entegrasyonu. Ataşehir'den tüm Türkiye'ye hizmet.",
-  keywords: "Anadolu yakası mikro bayii, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayii, İstanbul mikro bayii, e-fatura, e-defter, Mikro v3, Mikro 14, özel yazılım",
+  keywords: "Anadolu yakası mikro bayi, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayi, İstanbul mikro bayi, e-fatura, e-defter, Mikro v3, Mikro 14, özel yazılım",
 };
 
 export default function Home() {
   return (
-    <div className="relative" style={{ backgroundImage: 'url(/rainbow-removebg.png)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', minHeight: '100vh' }}>
-      <div className="relative z-10 bg-white/90">
-        <Navbar />
+    <div className="relative" style={{ backgroundColor: '#ffffff', backgroundImage: 'url(/rainbow-lines.svg)', backgroundSize: 'cover', backgroundPosition: 'center top', backgroundRepeat: 'no-repeat', backgroundAttachment: 'fixed', minHeight: '100vh' }}>
+      <Navbar />
+      <div className="relative z-10">
         <HeroSection />
         <ImageCarousel />
         <AboutSection />

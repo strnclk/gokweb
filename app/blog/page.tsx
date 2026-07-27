@@ -1,531 +1,327 @@
 'use client';
 
 import { useState } from 'react';
-import { motion } from 'motion/react';
+import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Sparkles } from 'lucide-react';
+import BlogCover from '@/components/BlogCover';
+import { Sparkles, ArrowRight, Compass, Cloud, TrendingUp, Workflow } from 'lucide-react';
+import { featuredPost, posts, categories } from '@/lib/blog';
 
-const featuredPost = {
-  title: '2026\'da ERP Sistemlerinde Öne Çıkan 5 Trend - Yapay Zeka, Bulut ve Dijital Dönüşüm',
-  excerpt: 'Yapay zeka destekli otomasyon, bulut ERP geçişleri ve gerçek zamanlı analitik gibi trendler işletmelerin dijital dönüşüm stratejilerini yeniden şekillendiriyor.',
-  category: 'ERP',
-  date: '25 Nisan 2026',
-  readTime: '8 dk',
-  gradient: 'from-purple-600 to-blue-600',
-  slug: 'erp-sistemleri-2026-trendleri-yapay-zeka-bulut-dijital-donusum',
-  metaDescription: '2026 yılında ERP sistemlerinde öne çıkan 5 trend: Yapay zeka destekli otomasyon, bulut ERP geçişleri, gerçek zamanlı analitik, mobil ERP ve ESG uyumluluğu. İşletmelerin dijital dönüşüm stratejileri.',
-  content: `
-    <h2>Yapay Zeka Destekli Otomasyon</h2>
-    <p>2026'da ERP sistemlerinde yapay zeka entegrasyonu standart haline geliyor. AI destekli otomasyon, rutin görevleri otomatize ederek çalışanların daha stratejik işlere odaklanmasını sağlıyor. Makine öğrenimi algoritmaları, satış tahminlerinde %85 doğruluk oranına ulaşırken, otomatik faturalandırma süreçlerinde %60 zaman tasarrufu sağlıyor. Ayrıca AI destekli chatbot'lar, müşteri hizmetleri taleplerinin %70'ini otomatik olarak yanıtlayarak insan kaynaklarını daha karmaşık sorunlara yönlendiriyor. İstanbul'da Ataşehir, Beylikdüzü, Kadıköy gibi ilçelerde faaliyet gösteren işletmeler, AI destekli ERP sistemleri ile verimliliklerini %40 artırıyor.</p>
-    
-    <h2>Bulut ERP Geçişleri</h2>
-    <p>Geleneksel on-premise ERP sistemlerinden bulut tabanlı çözümlere geçiş hız kazanıyor. Bulut ERP, daha düşük maliyetler, kolay ölçeklenebilirlik ve uzaktan erişim imkanı sunuyor. 2026'da işletmelerin %65'i bulut ERP kullanıyor ve bu oran her yıl %12 artıyor. Bulut geçişleri, ilk yatırım maliyetlerini %45 düşürürken, sistem güncelleme sürelerini haftalardan saatlere indiriyor. Ayrıca 7/24 erişim imkanı, uzaktan çalışan ekipler için kritik önem taşıyor. Ümraniye, Üsküdar, Kartal gibi İstanbul ilçelerindeki işletmeler, bulut ERP ile çoklu şube yönetimini kolaylaştırıyor.</p>
-    
-    <h2>Gerçek Zamanlı Analitik</h2>
-    <p>Gerçek zamanlı veri analitiği, işletmelerin anında kararlar almasını sağlıyor. Dashboard'lar ve raporlar artık saniyelik gecikmelerle güncelleniyor. İşletmeler, gerçek zamanlı analitik ile envanter maliyetlerini %20, stok outs oranlarını %35 düşürüyor. Öngörücü analitik, talep tahminlerinde %90 doğruluk sağlayarak stok yönetimini optimize ediyor. Ayrıca anlık nakit akışı görünürlüğü, finansal karar alma sürelerini %50 hızlandırıyor. Maltepe, Pendik, Tuzla gibi İstanbul'un Anadolu Yakası ilçelerindeki perakende işletmeleri, gerçek zamanlı analitik ile satış verilerini optimize ediyor.</p>
-    
-    <h2>Mobil ERP</h2>
-    <p>Mobil ERP uygulamaları, yöneticilerin her yerden sisteme erişebilmesini sağlıyor. Satış ekipleri sahadan, yöneticiler seyahatlerden işlerini yönetebiliyor. 2026'da ERP kullanıcılarının %80'i mobil uygulamaları aktif kullanıyor. Mobil ERP ile saha satış ekipleri, sipariş giriş sürelerini %70 hızlandırırken, onay süreçlerini %60 azaltıyor. Push bildirimleri ile kritik uyarılar anında iletiliyor, böylece yanıt süreleri dakikalara iniyor. İstanbul'un tüm ilçelerinde faaliyet gösteren saha ekipleri, mobil ERP ile Beylikdüzü'den Kadıköy'e kadar tüm bölgelerden işlerini yönetebiliyor.</p>
-    
-    <h2>Sürdürülebilirlik ve ESG</h2>
-    <p>ERP sistemleri artık çevresel, sosyal ve yönetişim (ESG) metriklerini takip ediyor. Karbon ayak izi, enerji tüketimi ve sürdürülebilirlik KPI'ları standart özellikler haline geliyor. 2026'da ERP sistemlerinin %90'ı ESG raporlama modülleri içeriyor. Otomatik karbon emisyonu hesaplamaları, işletmelerin çevresel hedeflerini %25 daha iyi takip etmesini sağlıyor. Enerji tüketimi analitiği, operasyonel maliyetleri %15 düşürürken, sürdürülebilirlik sertifikalarına ulaşma sürecini hızlandırıyor. Ataşehir'deki üretim firmalarından Kadıköy'deki hizmet sektörüne kadar tüm İstanbul işletmeleri, ESG uyumlu ERP ile sürdürülebilirlik hedeflerine ulaşıyor.</p>
-  `
+
+// "6 Temmuz 2026" gibi Türkçe tarihi sıralanabilir bir sayıya çevirir.
+const trAylar = ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+const parseTrTarih = (tarih: string): number => {
+  const [gun, ay, yil] = tarih.trim().split(/\s+/);
+  const ayIndex = trAylar.indexOf(ay);
+  if (ayIndex === -1) return 0;
+  return new Date(Number(yil), ayIndex, Number(gun)).getTime();
 };
 
-const categories = [
-  { name: 'Tümü', count: 22 },
-  { name: 'ERP', count: 8 },
-  { name: 'Dijital Dönüşüm', count: 5 },
-  { name: 'Sektörel Çözümler', count: 3 },
-  { name: 'Mikro Ürünler', count: 2 },
-];
-
-const posts = [
-  {
-    title: 'Mikro ERP ile Verimliliğinizi Artırın - 2026 İstatistikler ve Müşteri Hikayeleri',
-    excerpt: 'Mikro ERP çözümlerinin işletme verimliliğine etkisini rakamlarla inceleyelim. Gerçek müşteri hikayeleri ve istatistikler.',
-    category: 'ERP',
-    date: '18 Nisan 2026',
-    readTime: '7 dk',
-    gradient: 'from-green-500 to-green-600',
-    slug: 'mikro-erp-verimlilik-artisi-2026-istatistikler-musteri-hikayeleri',
-    metaDescription: 'Mikro ERP ile işletme verimliliğinizi %40 artırın. Gerçek müşteri hikayeleri, istatistikler ve Mikro ERP avantajları. Türk işletmeleri için ideal ERP çözümü.',
-    content: `
-      <h2>Mikro ERP Nedir?</h2>
-      <p>Mikro ERP, Türk işletmeleri için özel olarak geliştirilmiş kapsamlı bir iş kaynakları planlama (ERP) sistemidir. 30 yılı aşkın deneyimi ile Mikro Yazılım, Türkiye'de 50.000'den fazla işletmeye hizmet vermektedir. Mikro ERP, üretim, satın alma, satış, stok, muhasebe, finans ve insan kaynakları gibi tüm iş süreçlerini tek bir platformda birleştirir. Türkçe arayüzü ve yerel destek avantajları ile öne çıkar. Gökkuşağı Yazılım olarak İstanbul'un tüm ilçelerinde Mikro ERP satış ve kurulum hizmeti sunuyoruz.</p>
-      
-      <h2>Verimlilik Artışı</h2>
-      <p>Mikro ERP kullanan işletmelerde ortalama %40 operasyonel verimlilik artışı gözlemlenmiştir. Bu artış süreç otomasyonu, veri entegrasyonu ve hata azaltımı sayesinde gerçekleşir. Manuel işlemlerin otomatize edilmesi, çalışanların daha stratejik işlere odaklanmasını sağlar. İşletmeler, siparişten sevkiyata kadar geçen süreyi %60 kısaltarak müşteri memnuniyetini artırır. Ataşehir, Beylikdüzü, Kadıköy gibi İstanbul ilçelerindeki işletmeler, Mikro ERP ile verimliliklerini %40 artırıyor.</p>
-      
-      <h2>Gerçek Müşteri Hikayeleri</h2>
-      <p>1000+ müşteri ile Mikro ERP, farklı sektörlerde başarıyla kullanılmaktadır. Üretim, perakende, inşaat ve hizmet sektörlerinde referanslarımız bulunmaktadır. Örneğin, Ümraniye'deki bir üretim firması Mikro ERP ile üretim planlama sürelerini %50 hızlandırmış ve stok devir hızını %30 artırmıştır. Beylikdüzü'deki bir perakende zinciri ise çoklu mağaza yönetimi ile satış verilerini gerçek zamanlı takip ederek stok outs oranlarını %45 düşürmüştür.</p>
-      
-      <h2>İstatistikler</h2>
-      <ul>
-        <li>%40 operasyonel verimlilik artışı</li>
-        <li>%25 stok maliyeti azalması</li>
-        <li>%60 daha hızlı raporlama</li>
-        <li>%90 müşteri memnuniyeti</li>
-        <li>%35 sipariş süresi kısalması</li>
-        <li>%70 faturalandırma hızı artışı</li>
-      </ul>
-      
-      <h2>İstanbul'da Mikro ERP Hizmeti</h2>
-      <p>Gökkuşağı Yazılım olarak İstanbul'un tüm ilçelerinde Mikro ERP satış, kurulum ve destek hizmeti sunuyoruz. Ataşehir merkezli ofisimizden Beylikdüzü'ye, Kadıköy'den Ümraniye'ye kadar tüm İstanbul ilçelerine yerinde kurulum ve eğitim hizmeti sağlıyoruz. Maltepe, Pendik, Tuzla gibi Anadolu Yakası ilçelerindeki işletmeler için özel Mikro ERP çözümleri sunuyoruz.</p>
-      
-      <h2>Özellikler</h2>
-      <p>Mikro ERP, modüler yapısı ile işletmenizin ihtiyaçlarına göre özelleştirilebilir. Temel modüller: Finansal Yönetim, Üretim Yönetimi, Stok Yönetimi, Satın Alma, Satış, CRM, İnsan Kaynakları ve Raporlama. Her modül birbiriyle entegre çalışarak veri bütünlüğünü sağlar.</p>
-    `
-  },
-  {
-    title: 'İnşaat Sektöründe ERP Kullanımı - Proje Yönetimi ve Maliyet Kontrolü',
-    excerpt: 'İnşaat projelerinde ERP sistemlerinin nasıl kullanıldığı, sağladığı avantajlar ve dikkat edilmesi gereken noktalar.',
-    category: 'Sektörel Çözümler',
-    date: '15 Nisan 2026',
-    readTime: '5 dk',
-    gradient: 'from-orange-500 to-orange-600',
-    slug: 'insaat-sektorunde-erp-kullanimi-proje-yonetimi-maliyet-kontrolu',
-    metaDescription: 'İnşaat sektöründe ERP kullanımı: Proje yönetimi, maliyet kontrolü, şantiye yönetimi ve avantajlar. İnşaat firmaları için ideal ERP çözümleri.',
-    content: `
-      <h2>İnşaat Sektöründe ERP</h2>
-      <p>İnşaat sektörü karmaşık proje yönetimi gerektirir. ERP sistemleri bu süreçleri optimize eder. İnşaat projeleri, çok sayıda paydaş, uzun süreçler, yüksek bütçeler ve karmaşık koordinasyon gerektirir. ERP sistemleri, bu karmaşıklığı yönetmek için merkezi bir platform sunar. Türkiye'de inşaat firmalarının %45'i ERP kullanıyor ve bu sayede proje başarı oranlarını %35 artırıyorlar. İstanbul'da Beylikdüzü, Ataşehir, Kadıköy gibi ilçelerdeki inşaat projeleri, ERP sistemleri ile %35 daha yüksek başarı oranlarına ulaşıyor.</p>
-      
-      <h2>Proje Yönetimi</h2>
-      <p>Bütçe takibi, ilerleme raporlaması ve sözleşme yönetimi ERP ile kolaylaşır. ERP ile proje başından sonuna kadar tüm süreçler takip edilebilir. Bütçe sapmaları %25 düşerken, proje teslim süreleri %15 kısalıyor. İlerleme raporları gerçek zamanlı olarak güncellenir, böylece yöneticiler anlık kararlar alabilir. Sözleşme yönetimi modülü ile hakedişler otomatik hesaplanır ve onay süreçleri hızlanır. Ümraniye, Üsküdar, Kartal gibi İstanbul ilçelerindeki inşaat firmaları, ERP ile proje yönetimini optimize ediyor.</p>
-      
-      <h2>Maliyet Kontrolü</h2>
-      <p>Malzeme, işçilik ve ekipman maliyetleri gerçek zamanlı takip edilir. ERP ile şantiye giderleri, malzeme alımları ve işçilik maliyetleri tek bir ekranda görülebilir. Maliyet sapmaları %30 düşerken, karlılık %20 artıyor. Gerçek zamanlı takip sayesinde bütçe aşımları erken tespit edilir ve önlem alınabilir. Malzeme israfı %40 azalırken, kaynak kullanım verimliliği %35 artar.</p>
-      
-      <h2>Şantiye Yönetimi</h2>
-      <p>Şantiye stok yönetimi, personel takibi ve ekipman planlaması ERP ile optimize edilir. Şantiye stokları merkezi olarak yönetilir, malzeme eksikleri önceden tespit edilir. Personel devamsızlığı takip edilir ve işçilik maliyetleri hesaplanır. Ekipman kullanım süreleri optimize edilir, bakım planlaması yapılır. Şantiye yönetiminde %25 zaman tasarrufu sağlanır.</p>
-      
-      <h2>İstanbul'da İnşaat ERP Hizmeti</h2>
-      <p>Gökkuşağı Yazılım olarak İstanbul'un tüm ilçelerinde inşaat sektörü için özel ERP çözümleri sunuyoruz. Beylikdüzü, Ataşehir, Kadıköy, Ümraniye, Üsküdar gibi ilçelerdeki inşaat projeleri için yerinde kurulum ve destek hizmeti sağlıyoruz. Maltepe, Pendik, Tuzla gibi Anadolu Yakası ilçelerindeki inşaat firmaları için özel ERP çözümleri sunuyoruz.</p>
-      
-      <h2>Avantajlar</h2>
-      <ul>
-        <li>Merkezi proje yönetimi - tüm projeler tek ekranda</li>
-        <li>Gerçek zamanlı maliyet takibi - bütçe sapmaları %25 düşer</li>
-        <li>Otomatik faturalandırma - hakediş süreçleri %50 hızlanır</li>
-        <li>Şantiye stok yönetimi - malzeme israfı %40 azalır</li>
-        <li>İşçilik maliyeti takibi - personel verimliliği %30 artar</li>
-        <li>Ekipman planlaması - kullanım maliyetleri %20 düşer</li>
-        <li>Sözleşme yönetimi - onay süreleri %60 kısalır</li>
-      </ul>
-      
-      <h2>Uygulama İpuçları</h2>
-      <ul>
-        <li>Proje başlamadan önce ERP sistemini kurun</li>
-        <li>Personelinizi eğitin ve süreçleri tanımlayın</li>
-        <li>Mobil uygulamaları aktif kullanın</li>
-        <li>Düzenli raporlama yapın</li>
-        <li>Entegrasyonları test edin</li>
-        <li>İstanbul ilçelerinde yerinde destek alın</li>
-      </ul>
-    `
-  },
-  {
-    title: 'Dijital Dönüşümde Başarının 5 Anahtarı - Strateji ve Uygulama Rehberi',
-    excerpt: 'İşletmelerin dijital dönüşüm sürecinde başarılı olmalarını sağlayan 5 kritik faktör ve uygulama stratejileri.',
-    category: 'Dijital Dönüşüm',
-    date: '8 Nisan 2026',
-    readTime: '6 dk',
-    gradient: 'from-violet-500 to-violet-600',
-    slug: 'dijital-donusumde-basarinin-5-anahtari-strateji-uygulama-rehberi',
-    metaDescription: 'Dijital dönüşümde başarının 5 anahtarı: Liderlik desteği, stratejik planlama, personel eğitimi, doğru teknoloji seçimi ve sürekli iyileştirme. İşletmeler için rehber.',
-    content: `
-      <h2>1. Liderlik Desteği</h2>
-      <p>Üst yönetimin desteği dijital dönüşümün başarısı için kritik öneme sahiptir. Başarılı dijital dönüşüm projelerinin %90'ında üst yönetimin aktif katılımı vardır. CEO ve diğer üst yöneticiler, dijital dönüşümü bir öncelik olarak ele almalı ve kaynak ayırmalıdır. Liderlik desteği olmadan, dijital dönüşüm projeleri başarısızlık riskiyle karşı karşıya kalır. Üst yönetim, vizyonu belirlemeli, hedefleri netleştirmeli ve süreci yönlendirmelidir.</p>
-      
-      <h2>2. Stratejik Planlama</h2>
-      <p>Açık hedefler ve yol haritası belirlenmelidir. Dijital dönüşüm, rastgele adımlarla değil, kapsamlı bir strateji ile gerçekleştirilmelidir. İşletmenin mevcut durumu analizi edilmeli, hedefler belirlenmeli ve yol haritası çizilmelidir. Başarılı dijital dönüşüm projelerinin %80'i detaylı bir strateji ile başlar. KPI'lar belirlenmeli, başarı ölçümleri tanımlanmalı ve ilerleme düzenli olarak takip edilmelidir.</p>
-      
-      <h2>3. Personel Eğitimi</h2>
-      <p>Çalışanların yeni sistemlere adapte olması için eğitim şarttır. Dijital dönüşüm sadece teknoloji değişimi değil, aynı zamanda kültürel değişimdir. Çalışanların %70'i yeni teknolojilere direnç gösterir, bu nedenle eğitim ve değişim yönetimi kritik önem taşır. Kapsamlı eğitim programları, workshop'lar ve sürekli destek ile personelin adaptasyonu hızlandırılır. Eğitim, projenin başarısında %45 etkili bir faktördür.</p>
-      
-      <h2>4. Doğru Teknoloji Seçimi</h2>
-      <p>İşletmeye uygun ERP ve dijital çözümler seçilmelidir. Teknoloji seçimi, işletmenin ihtiyaçlarına, büyüklüğüne ve sektörüne göre yapılmalıdır. Yanlış teknoloji seçimi, projenin başarısızlık riskini %60 artırır. ERP sistemi seçerken ölçeklenebilirlik, entegrasyon kolaylığı, kullanıcı dostu arayüz ve yerel destek gibi kriterler göz önünde bulundurulmalıdır.</p>
-      
-      <h2>5. Sürekli İyileştirme</h2>
-      <p>Dijital dönüşüm bir süreçtir, sürekli iyileştirme gerekir. Dijital dönüşüm tek seferlik bir proje değil, sürekli evrilen bir yolculuktur. Başarılı işletmeler, dijital dönüşüm sürecinde sürekli geri bildirim alır, performansı ölçer ve iyileştirmeler yapar. Agil metodolojiler ve iteratif yaklaşım, sürekli iyileştirmeyi kolaylaştırır. Dijital dönüşüm projelerinin %75'i sürekli iyileştirme ile başarıya ulaşır.</p>
-      
-      <h2>Uygulama İpuçları</h2>
-      <ul>
-        <li>Küçük başlayın ve ölçekleyin - pilot projeler ile başlayın</li>
-        <li>Hızlı kazanımlar hedefleyin - erken başarılar motivasyon sağlar</li>
-        <li>Çapraz fonksiyonel ekipler kurun - departmanlar arası işbirliği şart</li>
-        <li>İletişimi güçlendirin - tüm paydaşları bilgilendirin</li>
-        <li>Riskleri yönetin - risk analizi yapın ve önlem alın</li>
-        <li>Dışarıdan uzman desteği alın - danışmanlardan faydalanın</li>
-      </ul>
-      
-      <h2>Ölçülebilir Sonuçlar</h2>
-      <ul>
-        <li>Operasyonel verimlilikte %40 artış</li>
-        <li>Müşteri memnuniyetinde %35 iyileşme</li>
-        <li>İş karar alma sürelerinde %50 hızlanma</li>
-        <li>İş maliyetlerinde %25 düşüş</li>
-        <li>İnovasyon kapasitesinde %60 artış</li>
-      </ul>
-    `
-  },
-  {
-    title: 'Mikro FLY vs RUN vs JUMP Karşılaştırması - 2026 Fiyat ve Özellik Analizi',
-    excerpt: 'Mikro ERP ürün ailesinin üç farklı versiyonunu özellik, fiyat ve kullanım alanı açısından detaylı karşılaştırma.',
-    category: 'Mikro Ürünler',
-    date: '5 Nisan 2026',
-    readTime: '10 dk',
-    gradient: 'from-emerald-500 to-emerald-600',
-    slug: 'mikro-fly-vs-run-vs-jump-karsilastirmasi-2026-fiyat-ozellik-analizi',
-    metaDescription: 'Mikro FLY, RUN ve JUMP karşılaştırması: Özellikler, fiyatlar, kullanıcı kapasitesi ve hangi ürünü seçmelisiniz? 2026 Mikro ERP ürün rehberi.',
-    content: `
-      <h2>Mikro FLY</h2>
-      <p>Mikro FLY, KOBİ'ler için ideal, temel ERP fonksiyonları içerir. Yıllık cirosu 10 milyon TL'ye kadar olan işletmeler için tasarlanmıştır. Temel modüller: Stok Yönetimi, Satın Alma, Satış, Faturalandırma ve Raporlama. 10 kullanıcıya kadar destekler, bulut veya on-premise seçenekleri mevcuttur. Kurulum süresi 1-2 hafta, yıllık maliyet ortalama 50.000-100.000 TL arasındadır. KOBİ'lerin %60'ı Mikro FLY kullanmayı tercih etmektedir.</p>
-      
-      <h2>Mikro RUN</h2>
-      <p>Mikro RUN, orta ölçekli işletmeler için gelişmiş özellikler sunar. Yıllık cirosu 10-100 milyon TL arasındaki işletmeler için uygundur. Ek modüller: Üretim Yönetimi, CRM, İnsan Kaynakları, Bütçe Yönetimi ve Proje Yönetimi. 50 kullanıcıya kadar destekler, çoklu şube yönetimi özelliği vardır. Kurulum süresi 3-4 hafta, yıllık maliyet ortalama 150.000-300.000 TL arasındadır. Orta ölçekli işletmelerin %70'i Mikro RUN kullanmaktadır.</p>
-      
-      <h2>Mikro JUMP</h2>
-      <p>Mikro JUMP, büyük ölçekli işletmeler ve çoklu şube yapısı için tasarlanmıştır. Yıllık cirosu 100 milyon TL ve üzeri olan işletmeler için uygundur. Tüm modüller + Gelişmiş Analitik, AI Entegrasyonu ve Çoklu Döviz Yönetimi. Sınırsız kullanıcı desteği, çoklu şirket yapısı, gelişmiş güvenlik özellikleri. Kurulum süresi 4-8 hafta, yıllık maliyet 500.000 TL'den başlar. Büyük işletmelerin %80'i Mikro JUMP kullanmayı tercih etmektedir.</p>
-      
-      <h2>Detaylı Karşılaştırma Tablosu</h2>
-      <ul>
-        <li>Kullanıcı Kapasitesi: FLY 10, RUN 50, JUMP Sınırsız</li>
-        <li>Şube Sayısı: FLY 1, RUN 5, JUMP 50+</li>
-        <li>Modül Sayısı: FLY 5, RUN 12, JUMP 20+</li>
-        <li>Entegrasyon: FLY Temel, RUN Orta, JUMP Gelişmiş</li>
-        <li>Özel Geliştirme: FLY Yok, RUN Sınırlı, JUMP Tam</li>
-        <li>7/24 Destek: FLY Yok, RUN Var, JUMP Var</li>
-        <li>AI Entegrasyonu: FLY Yok, RUN Var, JUMP Gelişmiş</li>
-      </ul>
-      
-      <h2>Hangi Ürünü Seçmelisiniz?</h2>
-      <p>Her ürün farklı kullanıcı ihtiyaçlarına hitap eder. İşletmenizin büyüklüğüne, çalışan sayısına, şube yapısına ve gereksinimlerine göre seçim yapmalısınız. KOBİ'ler için FLY ideal başlangıçtır. Büyüdükçe RUN'a geçiş yapılabilir. Büyük işletmeler doğrudan JUMP'u tercih edebilir. Tüm ürünler birbirine uyumludur ve geçiş süreci sorunsuz gerçekleşir.</p>
-      
-      <h2>Seçim İpuçları</h2>
-      <ul>
-        <li>Çalışan sayınız 10'dan az ise FLY</li>
-        <li>Çoklu şubeniz varsa RUN veya JUMP</li>
-        <li>Üretim yapıyorsanız RUN veya JUMP</li>
-        <li>AI özelliklerine ihtiyacınız varsa JUMP</li>
-        <li>Bütçenizi belirleyin ve ürünleri karşılaştırın</li>
-        <li>Demo talep edin ve ürünü test edin</li>
-      </ul>
-    `
-  },
-  {
-    title: 'Üretim Sektöründe Stok Yönetimi - MRP Sistemleri ve Otomasyon Çözümleri',
-    excerpt: 'Üretim işletmelerinde etkili stok yönetimi stratejileri, MRP sistemleri ve otomasyon çözümleri.',
-    category: 'Sektörel Çözümler',
-    date: '1 Nisan 2026',
-    readTime: '7 dk',
-    gradient: 'from-pink-500 to-pink-600',
-    slug: 'uretim-sektorunde-stok-yonetimi-mrp-sistemleri-otomasyon-cozumleri',
-    metaDescription: 'Üretim sektöründe stok yönetimi: MRP sistemleri, otomasyon çözümleri, stok optimizasyon stratejileri ve KPI\'lar. Üretim işletmeleri için rehber.',
-    content: `
-      <h2>Stok Yönetiminin Önemi</h2>
-      <p>Üretim işletmelerinde stok yönetimi kritik öneme sahiptir. Etkili stok yönetimi, üretim sürekliliğini sağlar, maliyetleri düşürür ve müşteri memnuniyetini artırır. Yanlış stok yönetimi, üretim durmalarına, müşteri kayıplarına ve yüksek maliyetlere yol açabilir. Türkiye'de üretim işletmelerinin %45'i stok yönetiminde sorun yaşamaktadır. Etkili stok yönetimi ile stok maliyetleri %30, stok outs oranları %40 düşürülmektedir.</p>
-      
-      <h2>MRP Sistemleri</h2>
-      <p>Malzeme gereksinim planlama (MRP) sistemleri, stok maliyetlerini optimize eder. MRP sistemleri, üretim programına göre malzeme ihtiyacını hesaplar, sipariş zamanlarını belirler ve stok seviyelerini optimize eder. MRP kullanımı ile stok devir hızı %25 artarken, stok maliyetleri %20 düşer. Otomatik sipariş önerileri ile manuel sipariş hataları %80 azalır. Üretim işletmelerinin %60'ı MRP sistemlerini kullanmaktadır.</p>
-      
-      <h2>Otomasyon Çözümleri</h2>
-      <p>Barcode ve RFID sistemleri ile stok takibi otomatize edilir. RFID teknolojisi, stok sayım sürelerini %95 hızlandırırken, doğruluk oranını %99'a çıkarır. Barcode sistemleri ise düşük maliyetli bir başlangıç çözümü sunar. Otomatik stok takibi ile insan hatası %90 azalır. IoT sensörleri ile gerçek zamanlı stok görünürlüğü sağlanır. Otomasyon yatırımı, ortalama 12-18 ayda kendini amorti eder.</p>
-      
-      <h2>Stok Optimizasyon Stratejileri</h2>
-      <ul>
-        <li>JIT (Just-in-Time) - Malzemeleri tam ihtiyaç anında temin etme</li>
-        <li>ABC Analizi - Stokları önem derecesine göre sınıflandırma</li>
-        <li>Güvenlik Stoku - Riskleri karşılamak için asgari stok seviyesi</li>
-        <li>Vendor Managed Inventory - Tedarikçilerin stok yönetimi</li>
-        <li>Cross-docking - Depolama süresini azaltma</li>
-      </ul>
-      
-      <h2>Stok Yönetiminde KPI'lar</h2>
-      <ul>
-        <li>Stok Devir Hızı - Yıllık ortalama 8-12 kez</li>
-        <li>Stok Outs Oranı - %5'in altında olmalı</li>
-        <li>Stok Taşıma Maliyeti - Toplam maliyetin %15-20'si</li>
-        <li>Sipariş Döngü Süresi - 2-5 gün arası</li>
-        <li>Tahmin Doğruluğu - %85 ve üzeri</li>
-      </ul>
-      
-      <h2>ERP Entegrasyonu</h2>
-      <p>Stok yönetimi, ERP sistemi ile tam entegre çalışmalıdır. Üretim, satın alma ve satış modülleri ile veri paylaşımı, stok görünürlüğünü artırır. Gerçek zamanlı stok verileri, doğru kararlar alınmasını sağlar. ERP entegrasyonu ile stok yönetimi süreçleri %50 hızlanır. Mikro ERP gibi yerel çözümler, Türk üretim işletmelerinin ihtiyaçlarına özel olarak geliştirilmiştir.</p>
-    `
-  },
-  {
-    title: 'KOBİ\'ler İçin ERP Seçim Rehberi - 2026 Kriterler, Maliyet ve Öneriler',
-    excerpt: 'Küçük ve orta ölçekli işletmelerin ERP seçiminde dikkat etmesi gereken kriterler, maliyet analizi ve öneriler.',
-    category: 'ERP',
-    date: '28 Mart 2026',
-    readTime: '8 dk',
-    gradient: 'from-red-500 to-red-600',
-    slug: 'kobi-icin-erp-secim-rehberi-2026-kriterler-maliyet-oneriler',
-    metaDescription: 'KOBİ\'ler için ERP seçim rehberi: Seçim kriterleri, maliyet analizi, ölçeklenebilirlik ve öneriler. Küçük işletmeler için doğru ERP seçimi.',
-    content: `
-      <h2>KOBİ'ler İçin ERP'nin Önemi</h2>
-      <p>KOBİ'lerin ERP seçerken dikkat etmesi gereken kriterler farklıdır. KOBİ'ler, sınırlı kaynakları, hızlı değişen ihtiyaçları ve büyüme potansiyelleri nedeniyle özel ERP çözümlerine ihtiyaç duyarlar. Türkiye'de KOBİ'lerin sadece %35'i ERP kullanıyor, ancak bu oran hızla artıyor. ERP kullanımı ile KOBİ'lerin operasyonel verimliliği %45 artıyor. KOBİ'ler için doğru ERP seçimi, büyüme yolculuğunda kritik önem taşır.</p>
-      
-      <h2>Maliyet Analizi</h2>
-      <p>Lisans, kurulum ve eğitim maliyetleri hesaplanmalıdır. KOBİ'ler için toplam sahip olma maliyeti (TCO) kritik bir faktördür. Lisans maliyeti dışında, kurulum, eğitim, bakım ve yükseltme maliyetleri de hesaba katılmalıdır. KOBİ'ler için yıllık ERP maliyeti 50.000-150.000 TL arasındadır. Bulut ERP, başlangıç maliyetlerini %60 düşürürken, aylık ödeme modeli ile nakit akışını kolaylaştırır. ROI (Yatırım Getirisi) ortalama 12-18 ayda sağlanır.</p>
-      
-      <h2>Kolay Kullanım</h2>
-      <p>Kullanıcı dostu arayüz önemlidir. KOBİ'lerde genellikle sınırlı IT ekibi vardır, bu nedenle ERP'nin kolay kullanılabilir olması şarttır. Türkçe arayüz, yerel terminoloji ve tanıdık iş akışları adaptasyonu hızlandırır. KOBİ'lerin %70'i kullanım kolaylığını en önemli kriter olarak belirtmektedir. Demo testleri ve kullanıcı eğitimi, seçim sürecinde kritik rol oynar.</p>
-      
-      <h2>Ölçeklenebilirlik</h2>
-      <p>İşletme büyüdükçe sistemin de büyümesi gerekir. KOBİ'ler hızlı büyüme potansiyeline sahiptir, bu nedenle ERP'nin ölçeklenebilir olması şarttır. Kullanıcı sayısı, modül sayısı ve veri hacmi kolayca artırılmalıdır. Mikro FLY'den RUN'a veya JUMP'a geçiş, sorunsuz olmalıdır. Ölçeklenebilir olmayan ERP, işletme büyümesini engeller ve ek maliyetler yaratır.</p>
-      
-      <h2>Yerel Destek</h2>
-      <p>Yerel destek kritik öneme sahiptir. Türkçe arayüz, yerel terminoloji ve tanıdık iş akışları adaptasyonu hızlandırır. Yerel destek, sorunlara hızlı çözüm sağlar. Yabancı ERP çözümleri, yerel destek konusunda sorun yaşayabilir.</p>
-      
-      <h2>Seçim Kriterleri</h2>
-      <ul>
-        <li>İşletme büyüklüğüne uygunluk</li>
-        <li>Sektör özelinde özellikler</li>
-        <li>Kullanım kolaylığı</li>
-        <li>Toplam sahip olma maliyeti</li>
-        <li>Ölçeklenebilirlik</li>
-        <li>Yerel destek</li>
-        <li>Entegrasyon kolaylığı</li>
-        <li>Mobil uygulama desteği</li>
-      </ul>
-      
-      <h2>Yaygın Hatalar</h2>
-      <ul>
-        <li>Aşırı özellikli ERP seçimi - gereksiz maliyetler</li>
-        <li>Demo yapmadan seçim - sürprizler kaçınılmaz</li>
-        <li>Personel eğitimi ihmal - adaptasyon sorunu</li>
-        <li>Uzun sözleşmeler - esneklik kaybı</li>
-        <li>Yerel destek göz ardı - çözüm zorluğu</li>
-      </ul>
-      
-      <h2>Öneriler</h2>
-      <ul>
-        <li>İhtiyaçlarınızı netleştirin</li>
-        <li>3-5 ERP çözümü kısa listeye alın</li>
-        <li>Her biri için demo talep edin</li>
-        <li>Referanslarla konuşun</li>
-        <li>Personelinizi sürece dahil edin</li>
-        <li>Küçük başlayın, ölçekleyin</li>
-      </ul>
-    `
-  },
-];
-
 export default function BlogPage() {
-  const [selectedPost, setSelectedPost] = useState<typeof posts[0] | null>(null);
   const [selectedCategory, setSelectedCategory] = useState('Tümü');
 
-  const filteredPosts = selectedCategory === 'Tümü' 
-    ? posts 
-    : posts.filter(post => post.category === selectedCategory);
+  // Yeniden eskiye sırala (en yeni yazı en üstte).
+  const sortedPosts = [...posts].sort((a, b) => parseTrTarih(b.date) - parseTrTarih(a.date));
+
+  const filteredPosts = selectedCategory === 'Tümü'
+    ? sortedPosts
+    : sortedPosts.filter(post => post.category === selectedCategory);
+
   return (
-    <div className="bg-white">
+    <div className="bg-[#FAFBFD] min-h-screen">
       <Navbar />
 
-      {/* Hero - Modern Estetik Tasarım */}
-      <section className="relative min-h-[60vh] sm:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-purple-50 via-white to-blue-50">
-        {/* Dekoratif Elementler */}
-        <div className="absolute top-20 right-20 w-64 h-64 sm:w-96 sm:h-96 bg-purple-200/30 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-20 w-56 h-56 sm:w-80 sm:h-80 bg-blue-200/30 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] bg-gradient-to-r from-purple-100/20 to-blue-100/20 rounded-full blur-3xl" />
+      {/* Hero Header - Kesintisiz, Çizgisiz Yumuşak Bütünlük Sağlayan Zemin */}
+      <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#A8E6E2] via-[#D8F5F2] via-75% to-[#FAFBFD] pt-32 md:pt-40 pb-16 lg:pb-24">
         
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-50 border border-purple-200 rounded-full text-purple-700 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
-          >
-            <Sparkles size={12} className="sm:size-[14px]" />
-            Blog
-          </motion.div>
-          
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-gray-900"
-          >
-            ERP ve
-            <br />
-            <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Dijital Dönüşüm Rehberi</span>
-          </motion.h1>
+        {/* Soyut Geometrik Ağ & Üst Oval Gökyüzü/Turkuaz Işık Halesi */}
+        <div className="absolute inset-0 pointer-events-none select-none opacity-70">
+          <div className="absolute inset-0 opacity-[0.05] bg-center bg-cover pointer-events-none" style={{ backgroundImage: 'url(/rainbow-lines.svg)' }} />
+          <svg className="w-full h-full text-[#00A896]/20" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none">
+            <defs>
+              <pattern id="blog-hero-grid" width="44" height="44" patternUnits="userSpaceOnUse">
+                <path d="M 44 0 L 0 0 0 44" fill="none" stroke="currentColor" strokeWidth="0.5" strokeDasharray="3 3" />
+                <circle cx="44" cy="44" r="1.2" fill="#00A896" opacity="0.35" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#blog-hero-grid)" />
+          </svg>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-sm sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto leading-relaxed px-2"
-          >
-            ERP sistemleri ve dijital dönüşüm stratejileri hakkında kapsamlı rehberler ve ipuçları
-          </motion.p>
+          {/* Derine Ve Aşağıya Doğru Genişleyen Oval Gökyüzü Mavisi & Turkuaz Işık Halesi */}
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-[1150px] h-[520px] bg-gradient-to-b from-[#38BDF8]/35 via-[#00A896]/30 to-transparent rounded-full blur-[110px] pointer-events-none" />
+        </div>
+
+        {/* Hero İçerik Konteynırı & Yüzen 4 Cam Kutu */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          
+          <div className="relative">
+
+            {/* Kutu 1: Üst Sol (Dijital Yol Haritası Analizi) - Optimal Çapraz Konumlandırma */}
+            <div
+              className="animate-fade-in-side absolute -top-6 left-8 xl:left-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              style={{ '--fade-x': '-0.9375rem', '--fade-y': '-0.9375rem', animationDelay: '0.1s' } as React.CSSProperties}
+            >
+              <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
+                <Compass className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#00A896] tracking-wider uppercase mb-0.5">YOL HARİTASI</div>
+                <div className="text-[15px] font-bold text-[#0F172A] leading-tight mb-1">Dijital Yol Haritası Analizi</div>
+                <div className="text-[13px] text-slate-500 font-medium flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#00A896] shrink-0" />
+                  <span>Stratejik Mimari Planlama</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Kutu 2: Üst Sağ (Bulut & Entegre Sunucular) - Optimal Çapraz Konumlandırma */}
+            <div
+              className="animate-fade-in-side absolute -top-3 right-8 xl:right-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              style={{ '--fade-x': '0.9375rem', '--fade-y': '-0.9375rem', animationDelay: '0.2s' } as React.CSSProperties}
+            >
+              <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
+                <Cloud className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#00A896] tracking-wider uppercase mb-0.5">BULUT ALTYAPISI</div>
+                <div className="text-[15px] font-bold text-[#0F172A] leading-tight mb-1">Bulut & Entegre Sunucular</div>
+                <div className="text-[13px] text-slate-500 font-medium flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#00A896] shrink-0" />
+                  <span>%99.99 Veri Güvenliği</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Kutu 3: Alt Sol (Sektörel Teknoloji Trendleri) - Optimal Çapraz Konumlandırma */}
+            <div
+              className="animate-fade-in-side absolute bottom-0 left-0 xl:left-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              style={{ '--fade-x': '-0.9375rem', '--fade-y': '0.9375rem', animationDelay: '0.15s' } as React.CSSProperties}
+            >
+              <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
+                <TrendingUp className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#00A896] tracking-wider uppercase mb-0.5">SEKTÖREL TRENDLER</div>
+                <div className="text-[15px] font-bold text-[#0F172A] leading-tight mb-1">Sektörel Teknoloji Trendleri</div>
+                <div className="text-[13px] text-slate-500 font-medium flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#00A896] shrink-0" />
+                  <span>Veri Odaklı Metrikler</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Kutu 4: Alt Sağ (ERP Entegrasyon Modelleri) - Optimal Çapraz Konumlandırma */}
+            <div
+              className="animate-fade-in-side absolute bottom-0 right-0 xl:right-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              style={{ '--fade-x': '0.9375rem', '--fade-y': '0.9375rem', animationDelay: '0.15s' } as React.CSSProperties}
+            >
+              <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
+                <Workflow className="w-6 h-6" />
+              </div>
+              <div>
+                <div className="text-xs font-bold text-[#00A896] tracking-wider uppercase mb-0.5">ENTEGRASYON</div>
+                <div className="text-[15px] font-bold text-[#0F172A] leading-tight mb-1">ERP Entegrasyon Modelleri</div>
+                <div className="text-[13px] text-slate-500 font-medium flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-[#00A896] shrink-0" />
+                  <span>Otomatik İş Akışları</span>
+                </div>
+              </div>
+            </div>
+
+            {/* MERKEZİ BAŞLIK VE AÇIKLAMA BLOĞU */}
+            <div
+              className="animate-fade-up text-center max-w-4xl mx-auto py-8 sm:py-12 px-4 relative z-30 flex flex-col items-center pointer-events-none"
+            >
+              {/* Yıldız ve 'Blog' Rozeti (Orijinal Canlı Turkuaz) */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#023744] border border-[#00B4D8]/30 rounded-full text-xs sm:text-sm font-bold tracking-wide mb-6 shadow-sm backdrop-blur-md">
+                <Sparkles className="w-4 h-4 text-[#00E5C0] animate-pulse" />
+                <span className="text-[#00E5C0] font-black">Blog</span>
+              </div>
+
+              {/* Orijinal Canlı Turkuaz Mavi -> Turkuaz -> Yeşil Gradient Başlık */}
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0F172A] leading-[1.2] mb-6">
+                <span className="inline-block">
+                  ERP ve{' '}
+                  <span className="bg-gradient-to-r from-[#00B4D8] via-[#00A896] to-[#02C39A] bg-clip-text text-transparent">
+                    Dijital Dönüşüm
+                  </span>
+                </span>
+                <br />
+                <span className="inline-block bg-gradient-to-r from-[#00A896] via-[#00B8A9] to-[#02C39A] bg-clip-text text-transparent">
+                  Rehberi
+                </span>
+              </h1>
+
+              {/* 3 Spesifik Satıra Bölünmüş Alt Açıklama Metni */}
+              <p className="text-base sm:text-lg lg:text-xl text-slate-700 max-w-3xl leading-relaxed mb-8 font-medium">
+                ERP sistemleri ve dijital dönüşüm stratejileri hakkında <br className="hidden sm:inline" />
+                uzman rehberleri, sektör trendleri ve pratik uygulama <br className="hidden sm:inline" />
+                önerileri.
+              </p>
+
+              {/* Orijinal Eylem Butonu & Şık Hover Animasyonu */}
+              <div className="flex justify-center">
+                <a
+                  href="#rehberler"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('rehberler')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }}
+                  className="group pointer-events-auto inline-flex items-center justify-center gap-3.5 px-9 py-4 bg-gradient-to-r from-[#032B3A] via-[#005F73] to-[#0A9396] hover:from-[#005F73] hover:via-[#0A9396] hover:to-[#02C39A] text-white font-extrabold text-base sm:text-lg rounded-xl shadow-lg shadow-[#032B3A]/20 hover:shadow-xl hover:shadow-[#005F73]/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
+                >
+                  <span>Tüm Rehberleri Keşfet</span>
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1.5 text-teal-300" />
+                </a>
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </section>
 
       {/* Featured Post - Öne Çıkan */}
-      <section className="px-4 sm:px-6 py-12 sm:py-20 bg-white">
+      <section id="rehberler" className="px-4 sm:px-6 py-12 sm:py-20 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8 sm:mb-12">
-            <span className="text-xs sm:text-sm font-semibold text-purple-600 uppercase tracking-wider">Öne Çıkan</span>
+            <span className="text-xs sm:text-sm font-semibold text-teal-700 uppercase tracking-wider">Öne Çıkan Rehber</span>
           </div>
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <div className={`h-64 sm:h-80 lg:h-full bg-gradient-to-br ${featuredPost.gradient} rounded-2xl flex items-center justify-center`}>
-              <div className="text-center text-white px-4 sm:px-8">
-                <span className="inline-block px-3 py-1 sm:px-4 sm:py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">{featuredPost.category}</span>
-                <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold mb-3 sm:mb-4 leading-tight">{featuredPost.title}</h2>
-                <p className="text-sm sm:text-lg text-white/80">{featuredPost.excerpt}</p>
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center bg-slate-50/60 border border-slate-200/80 p-5 sm:p-7 rounded-3xl">
+            <Link href={`/blog/${featuredPost.slug}`} className="group relative block overflow-hidden rounded-2xl w-full h-[260px] sm:h-[340px] lg:h-[360px] shadow-md hover:shadow-xl transition-all duration-300">
+              <BlogCover
+                gradient={featuredPost.gradient}
+                category={featuredPost.category}
+                image={featuredPost.image}
+                alt={featuredPost.title}
+                className="w-full h-full"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-900/30 to-transparent p-6 flex flex-col justify-end text-white">
+                <span className="inline-block px-3 py-1 bg-teal-500/90 text-white backdrop-blur-md rounded-full text-xs font-bold mb-2.5 self-start shadow-sm border border-white/20">{featuredPost.category}</span>
+                <h3 className="text-base sm:text-xl font-bold mb-1.5 leading-snug group-hover:text-teal-200 transition-colors line-clamp-2">{featuredPost.title}</h3>
+                <p className="text-xs sm:text-sm text-slate-200 line-clamp-2 font-medium">{featuredPost.excerpt}</p>
               </div>
-            </div>
+            </Link>
             <div>
-              <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-gray-500 mb-4 sm:mb-6">
-                <span className="px-2 py-1 sm:px-3 sm:py-1 bg-purple-100 text-purple-700 rounded-full font-medium">{featuredPost.category}</span>
+              <div className="flex items-center gap-3 text-xs sm:text-sm text-gray-500 mb-4">
+                <span className="px-3 py-1 bg-teal-50 text-teal-700 rounded-full font-medium">{featuredPost.category}</span>
                 <span>{featuredPost.date}</span>
                 <span>·</span>
                 <span>{featuredPost.readTime} okuma</span>
               </div>
-              <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">{featuredPost.title}</h2>
+              <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">{featuredPost.title}</h2>
               <p className="text-sm sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">{featuredPost.excerpt}</p>
-              <button 
-                onClick={() => setSelectedPost(featuredPost)}
-                className="px-6 py-3 sm:px-8 sm:py-4 bg-slate-900 text-white rounded-lg hover:bg-slate-800 transition-all duration-300 font-medium shadow-md hover:shadow-lg border border-slate-800 flex items-center gap-2 text-sm sm:text-base"
+              <Link
+                href={`/blog/${featuredPost.slug}`}
+                className="inline-flex px-6 py-3.5 bg-gradient-to-r from-[#031d28] to-[#092d3a] text-white rounded-xl hover:opacity-90 transition-all duration-300 font-semibold shadow-md items-center gap-2 text-sm sm:text-base"
               >
-                Devamını Oku
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-              </button>
+                <span>Devamını Oku</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Kategoriler */}
-      <section className="px-4 sm:px-6 py-8 sm:py-12 bg-gray-50 border-y border-gray-200">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-wrap gap-2 sm:gap-3">
-            {categories.map((cat, i) => (
-              <button 
-                key={i} 
-                onClick={() => setSelectedCategory(cat.name)}
-                className={`px-4 py-2 sm:px-5 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${selectedCategory === cat.name ? 'bg-slate-900 text-white shadow-md' : 'bg-white text-gray-700 border border-gray-200 hover:border-slate-900 hover:text-slate-900'}`}
-              >
-                {cat.name}
-                <span className={`ml-2 text-xs ${selectedCategory === cat.name ? 'text-gray-400' : 'text-gray-400'}`}>({cat.count})</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Blog Yazıları - Profesyonel Listeleme */}
-      <section className="px-4 sm:px-6 py-12 sm:py-20 bg-white">
+      {/* Blog Yazıları - Filtre + Profesyonel Listeleme */}
+      <section className="px-4 sm:px-6 py-12 sm:py-20 bg-slate-50/50 border-t border-slate-100">
         <div className="max-w-6xl mx-auto">
           <div className="mb-8 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">Tüm Yazılar</h2>
-          </div>
+            <div className="flex items-baseline flex-wrap gap-x-3 gap-y-1 mb-5 sm:mb-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900">
+                {selectedCategory === 'Tümü' ? 'Tüm Yazılar' : selectedCategory}
+              </h2>
+              <span className="text-sm sm:text-base font-medium text-gray-400">
+                {filteredPosts.length} yazı
+              </span>
+            </div>
 
-          <div className="divide-y divide-gray-200">
-            {filteredPosts.map((post, index) => (
-              <article 
-                key={index} 
-                className="py-6 sm:py-10 first:pt-0 last:pb-0 group cursor-pointer"
-                onClick={() => setSelectedPost(post)}
-              >
-                <div className="grid lg:grid-cols-12 gap-4 sm:gap-6 items-start">
-                  {/* Tarih ve Kategori */}
-                  <div className="lg:col-span-2 flex flex-row lg:flex-col gap-2 sm:gap-3 lg:gap-1">
-                    <span className="text-xs sm:text-sm text-gray-500">{post.date}</span>
-                    <span className={`inline-block px-2 py-1 sm:px-3 sm:py-1 bg-gradient-to-r ${post.gradient} text-white rounded-full text-xs font-medium`}>{post.category}</span>
-                  </div>
-
-                  {/* İçerik */}
-                  <div className="lg:col-span-8">
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-purple-600 transition-colors leading-tight">
-                      {post.title}
-                    </h3>
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                      {post.excerpt}
-                    </p>
-                  </div>
-
-                  {/* Okuma Süresi ve Oku */}
-                  <div className="lg:col-span-2 flex flex-row lg:flex-col items-start lg:items-end gap-2 sm:gap-3 lg:gap-2">
-                    <span className="text-xs sm:text-sm text-gray-400">{post.readTime} okuma</span>
-                    <span className="text-purple-600 font-medium text-xs sm:text-sm flex items-center gap-1 group-hover:gap-2 transition-all">
-                      Oku
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            <div className="flex flex-wrap gap-2 sm:gap-2.5">
+              {categories.map((cat, i) => {
+                const active = selectedCategory === cat.name;
+                return (
+                  <button
+                    key={i}
+                    onClick={() => setSelectedCategory(cat.name)}
+                    aria-pressed={active}
+                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                      active
+                        ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md shadow-teal-600/20'
+                        : 'bg-white text-gray-700 border border-gray-200 hover:border-teal-300 hover:text-teal-700'
+                    }`}
+                  >
+                    {cat.name}
+                    <span
+                      className={`inline-flex items-center justify-center min-w-[1.25rem] h-5 px-1.5 rounded-full text-[11px] font-semibold ${
+                        active ? 'bg-white/25 text-white' : 'bg-gray-100 text-gray-500'
+                      }`}
+                    >
+                      {cat.count}
                     </span>
-                  </div>
-                </div>
-              </article>
-            ))}
+                  </button>
+                );
+              })}
+            </div>
           </div>
+
+          {filteredPosts.length > 0 ? (
+            <div className="grid gap-6">
+              {filteredPosts.map((post, index) => (
+                <article
+                  key={index}
+                  className="bg-white rounded-2xl border border-slate-200/80 p-5 sm:p-7 shadow-xs hover:shadow-md transition-all duration-300 group"
+                >
+                  <Link href={`/blog/${post.slug}`} className="grid sm:grid-cols-[220px_1fr] gap-4 sm:gap-6 items-center">
+                    <BlogCover
+                      gradient={post.gradient}
+                      category={post.category}
+                      image={post.image}
+                      alt={post.title}
+                      className="w-full aspect-[16/10] rounded-xl"
+                      iconClassName="w-12 h-12"
+                    />
+
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-gray-500 mb-2 font-medium">
+                        <span className="inline-block px-2.5 py-0.5 bg-teal-50 text-teal-700 rounded-full text-xs font-medium">{post.category}</span>
+                        <span>{post.date}</span>
+                        <span>·</span>
+                        <span>{post.readTime} okuma</span>
+                      </div>
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 group-hover:text-teal-600 transition-colors leading-tight">
+                        {post.title}
+                      </h3>
+                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+                      <span className="mt-3 text-teal-600 font-semibold text-xs sm:text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                        <span>Oku</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </Link>
+                </article>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-16 sm:py-24 bg-white rounded-2xl border border-slate-200/80">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-full bg-teal-50 flex items-center justify-center">
+                <Sparkles className="w-6 h-6 text-teal-500" />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Bu konuda henüz yazı yok</h3>
+              <p className="text-gray-500 text-sm mb-5">
+                &ldquo;{selectedCategory}&rdquo; kategorisinde şu an içerik bulunmuyor.
+              </p>
+              <button
+                onClick={() => setSelectedCategory('Tümü')}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-teal-600 to-cyan-600 text-white text-sm font-medium hover:shadow-md transition-all"
+              >
+                Tüm yazıları göster
+              </button>
+            </div>
+          )}
         </div>
       </section>
-
-
-      {/* Post Popup */}
-      {selectedPost && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={() => setSelectedPost(null)}
-          className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/50 backdrop-blur-sm"
-        >
-          <motion.div
-            initial={{ scale: 0.95, y: 20 }}
-            animate={{ scale: 1, y: 0 }}
-            exit={{ scale: 0.95, y: 20 }}
-            transition={{ duration: 0.2 }}
-            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] sm:max-h-[85vh] overflow-hidden shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Header */}
-            <div className={`bg-gradient-to-r ${selectedPost.gradient} p-4 sm:p-6 text-white`}>
-              <div className="flex justify-between items-start gap-3 sm:gap-4">
-                <div>
-                  <span className="inline-block px-2 py-1 sm:px-3 sm:py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs sm:text-sm font-medium mb-2 sm:mb-3">{selectedPost.category}</span>
-                  <h2 className="text-lg sm:text-2xl md:text-3xl font-bold leading-tight">{selectedPost.title}</h2>
-                  <div className="flex items-center gap-3 sm:gap-4 text-xs sm:text-sm text-white/80 mt-1 sm:mt-2">
-                    <span>{selectedPost.date}</span>
-                    <span>·</span>
-                    <span>{selectedPost.readTime} okuma</span>
-                  </div>
-                </div>
-                <button
-                  onClick={() => setSelectedPost(null)}
-                  className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors"
-                >
-                  <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-              </div>
-            </div>
-
-            {/* Content */}
-            <div className="p-4 sm:p-6 md:p-8 overflow-y-auto max-h-[50vh] sm:max-h-[60vh]">
-              <div
-                className="space-y-4 sm:space-y-6 [&>h2]:text-lg sm:[&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-gray-900 [&>h2]:mb-3 sm:[&>h2]:mb-4 [&>h2]:leading-tight [&>p]:text-sm sm:[&>p]:text-base [&>p]:text-gray-700 [&>p]:leading-relaxed [&>p]:mb-3 sm:[&>p]:mb-4 [&>ul]:list-disc [&>ul]:pl-4 sm:[&>ul]:pl-6 [&>ul]:space-y-1 sm:[&>ul]:space-y-2 [&>ul]:text-gray-700 [&>li]:leading-relaxed"
-                dangerouslySetInnerHTML={{ __html: selectedPost.content }}
-              />
-            </div>
-
-            {/* Footer */}
-            <div className="p-4 sm:p-6 border-t border-gray-200 flex justify-between items-center">
-              <button
-                onClick={() => setSelectedPost(null)}
-                className="px-4 py-2 sm:px-6 sm:py-3 text-gray-600 hover:text-gray-900 transition-colors text-sm sm:text-base"
-              >
-                Kapat
-              </button>
-              <button className="px-4 py-2 sm:px-6 sm:py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm sm:text-base">
-                Paylaş
-              </button>
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
 
       <Footer />
     </div>

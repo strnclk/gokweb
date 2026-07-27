@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { motion } from 'motion/react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 
 interface ProductCardProps {
   image?: string;
@@ -49,18 +50,18 @@ export default function ProductCard({ image, images, icon, title, subtitle, desc
             scale: isInView ? 1 : 0.95,
             y: isInView ? 0 : 30
           }}
-          transition={{ duration: 0.8, delay: delay * 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.6, delay: delay * 0.03, ease: "easeOut" }}
           className="text-center"
         >
           {images ? (
             <div className="mb-10 flex justify-center items-center gap-4">
               {images.map((img, idx) => (
-                <img key={idx} src={img} alt={title} className="w-32 h-32 object-contain filter drop-shadow-lg" />
+                <Image key={idx} src={img} alt={`${title} logosu — ${subtitle}`} width={128} height={128} loading="lazy" className="w-32 h-32 object-contain filter drop-shadow-lg" />
               ))}
             </div>
           ) : image ? (
             <div className="mb-10">
-              <img src={image} alt={title} className="w-40 h-40 mx-auto object-contain filter drop-shadow-lg" />
+              <Image src={image} alt={`${title} logosu — ${subtitle}`} width={160} height={160} loading="lazy" className="w-40 h-40 mx-auto object-contain filter drop-shadow-lg" />
             </div>
           ) : (
             <div className={`inline-flex p-8 rounded-2xl bg-gradient-to-br ${gradient} text-white mb-10 shadow-lg`}>
@@ -76,7 +77,7 @@ export default function ProductCard({ image, images, icon, title, subtitle, desc
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-              transition={{ duration: 0.6, delay: delay * 0.2 + 0.1, ease: "easeOut" }}
+              transition={{ duration: 0.6, delay: delay * 0.03 + 0.1, ease: "easeOut" }}
               className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto mb-12"
             >
               {features.map((feature, index) => (
@@ -93,7 +94,7 @@ export default function ProductCard({ image, images, icon, title, subtitle, desc
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 20 }}
-            transition={{ duration: 0.6, delay: delay * 0.2 + 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: delay * 0.03 + 0.2, ease: "easeOut" }}
             className="mt-10"
           >
             <button 
