@@ -1,0 +1,25 @@
+# Gökkuşağı Yazılım ve Danışmanlık
+
+> Anadolu Yakası (Ataşehir) merkezli resmi Mikro iş ortağı. Mikro ERP, CRM, e-dönüşüm (e-Fatura/e-Arşiv/e-Defter) ve özel yazılım çözümleri. 20+ yıllık deneyimle Ataşehir'den tüm Türkiye'ye ve İstanbul'un tüm ilçelerine hizmet.
+
+## Ürünler
+- [Mikro Run](https://gokkusagiyazilim.com.tr/mikro-run): Esnaf, serbest meslek sahipleri ve mikro işletmeler için temel ERP + e-Dönüşüm paketi.
+- [Mikro Jump](https://gokkusagiyazilim.com.tr/mikro-jump): 5-50 çalışanlı küçük ve orta ölçekli işletmeler (KOBİ) için ölçeklenebilir kurumsal çözüm.
+- [Mikro Fly](https://gokkusagiyazilim.com.tr/mikro-fly): 50+ çalışanlı işletmeler için sınırsız kullanıcı, UFRS ve enflasyon muhasebesi destekli üst segment çözüm.
+- [Ürünleri Karşılaştır](https://gokkusagiyazilim.com.tr/compare): Mikro Run / Jump / Fly özellik ve segment karşılaştırması.
+
+## Mikro Tablolar (Teknik Referans)
+- [Mikro Tablolar Kütüphanesi](https://gokkusagiyazilim.com.tr/mikro-tablolari): Mikro V16 veritabanının 438 tablosu; alan yapıları, birincil anahtarlar, ilişkiler ve SQL örnekleriyle teknik dokümantasyon.
+
+## Çözümler & Hizmetler
+- [Mikro Dikey Çözümler](https://gokkusagiyazilim.com.tr/vertical-solutions): Sektöre özel ERP dikey çözümleri.
+- [Sektörel Çözümler](https://gokkusagiyazilim.com.tr/sectoral-solutions): Sektör bazlı yazılım çözümleri.
+- [E-Flow (BPM / DMS)](https://gokkusagiyazilim.com.tr/eflow): İş akışı otomasyonu ve doküman yönetim sistemi.
+- [CRM Çözümleri](https://gokkusagiyazilim.com.tr/crm-cozumleri): Müşteri ilişkileri yönetimi çözümleri.
+- [Hizmetler](https://gokkusagiyazilim.com.tr/services): Kurulum, entegrasyon, danışmanlık ve destek.
+
+## Blog
+- [Blog](https://gokkusagiyazilim.com.tr/blog): ERP, dijital dönüşüm, sektörel ERP kullanımı ve Mikro ürünlerine dair rehber içerikler.
+
+## İletişim
+- [İletişim / Teklif Al](https://gokkusagiyazilim.com.tr/contact): Telefon 0539 856 35 78 · E-posta satis@gokkusagiyazilim.com.tr · Ataşehir, İstanbul.
