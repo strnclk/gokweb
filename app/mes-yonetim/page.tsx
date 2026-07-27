@@ -24,7 +24,7 @@ export default function MESYonetimPage() {
     {
       icon: Cpu,
       title: "Anlık Üretim ve Hat İzleme",
-      description: "Üretim hattındaki makinelerin çalışma, duruş and arıza durumlarını canlı panolar (dashboard) üzerinden anlık takip edin."
+      description: "Üretim hattındaki makinelerin çalışma, duruş ve arıza durumlarını canlı panolar (dashboard) üzerinden anlık takip edin."
     },
     {
       icon: BarChart3,
@@ -101,19 +101,19 @@ export default function MESYonetimPage() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-white border-b border-gray-100">
-        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(254,243,199,0.3),rgba(255,255,255,0))] -z-10" />
-        <div className="absolute top-1/4 right-10 w-96 h-96 bg-amber-200/20 rounded-full blur-3xl -z-10" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(207,250,254,0.35),rgba(255,255,255,0))] -z-10" />
+        <div className="absolute top-1/4 right-10 w-96 h-96 bg-cyan-200/20 rounded-full blur-3xl -z-10" />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-amber-50 border border-amber-200/50 rounded-full text-amber-600 text-xs sm:text-sm font-bold shadow-sm mb-6">
+            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 bg-cyan-50 border border-cyan-200/50 rounded-full text-cyan-600 text-xs sm:text-sm font-bold shadow-sm mb-6">
               <Sparkles className="w-3.5 h-3.5" />
               Üretim Sahası Yönetim Sistemi (MES)
             </span>
             
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-6 leading-tight">
               Fabrikanıza Canlı Kontrol:<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-600 to-zinc-800">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 via-cyan-600 to-zinc-800">
                 Mikro Entegre MES
               </span>
             </h1>
@@ -127,7 +127,7 @@ export default function MESYonetimPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mt-12">
             {stats.map((stat, i) => (
               <div key={i} className="bg-white border border-gray-300/80 p-6 rounded-2xl shadow-md shadow-gray-100/50 hover:shadow-lg transition-shadow">
-                <div className="text-3xl sm:text-4xl font-black text-amber-500 mb-1">{stat.value}</div>
+                <div className="text-3xl sm:text-4xl font-black text-cyan-500 mb-1">{stat.value}</div>
                 <div className="text-sm font-bold text-gray-800 mb-2">{stat.label}</div>
                 <div className="text-xs text-gray-700 leading-relaxed">{stat.desc}</div>
               </div>
@@ -149,10 +149,10 @@ export default function MESYonetimPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           {/* Left Column: Definition */}
-          <div className="lg:col-span-5 bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-white border border-amber-100 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden">
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-amber-500/5 rounded-full blur-2xl" />
+          <div className="lg:col-span-5 bg-gradient-to-br from-cyan-500/10 via-cyan-500/5 to-white border border-cyan-100 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-sm relative overflow-hidden">
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/5 rounded-full blur-2xl" />
             <div>
-              <div className="w-12 h-12 bg-amber-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-amber-500/20">
+              <div className="w-12 h-12 bg-cyan-500 text-white rounded-2xl flex items-center justify-center mb-6 shadow-md shadow-cyan-500/20">
                 <Cpu size={24} />
               </div>
               <h3 className="text-xl sm:text-2xl font-black text-gray-800 mb-4">
@@ -162,9 +162,9 @@ export default function MESYonetimPage() {
                 Üretim Yönetim Sistemi (MES), üretim sahasındaki makinelerden ve operatör terminallerinden anlık veri toplayarak duruşları, fireleri, makine durumlarını ve üretim hızını canlı izleyen ve OEE verimliliğini artıran bir sahasal takip yazılımıdır.
               </p>
             </div>
-            <div className="border-t border-amber-100/60 pt-4 flex items-center gap-3">
-              <div className="w-2.5 h-2.5 bg-amber-500 rounded-full animate-pulse" />
-              <span className="text-xs font-bold text-amber-600 uppercase tracking-wider">Mikro ERP Entegrasyonlu</span>
+            <div className="border-t border-cyan-100/60 pt-4 flex items-center gap-3">
+              <div className="w-2.5 h-2.5 bg-cyan-500 rounded-full animate-pulse" />
+              <span className="text-xs font-bold text-cyan-600 uppercase tracking-wider">Mikro ERP Entegrasyonlu</span>
             </div>
           </div>
 
@@ -205,9 +205,9 @@ export default function MESYonetimPage() {
       {/* Mikro ERP Entegrasyonu Section */}
       <section className="bg-white border-y border-gray-100 py-16 sm:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="bg-gradient-to-br from-amber-500/5 to-orange-500/5 border border-amber-200/30 rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-center gap-10">
+          <div className="bg-gradient-to-br from-cyan-400/5 to-cyan-600/5 border border-cyan-200/30 rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-center gap-10">
             <div className="space-y-5 lg:w-3/5">
-              <span className="text-xs font-bold bg-amber-100 text-amber-700 px-3 py-1 rounded-full uppercase tracking-wider">
+              <span className="text-xs font-bold bg-cyan-100 text-cyan-700 px-3 py-1 rounded-full uppercase tracking-wider">
                 Endüstriyel Veri Entegrasyonu
               </span>
               <h3 className="text-2xl sm:text-3xl font-black pt-5">
@@ -224,7 +224,7 @@ export default function MESYonetimPage() {
                   "Operatör bazlı fiili çalışma sürelerinin işçilik maliyeti olarak aktarımı"
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2 text-xs sm:text-sm text-gray-700">
-                    <Check className="w-4.5 h-4.5 text-amber-500 flex-shrink-0" />
+                    <Check className="w-4.5 h-4.5 text-cyan-500 flex-shrink-0" />
                     <span className="font-semibold">{item}</span>
                   </div>
                 ))}
@@ -232,9 +232,9 @@ export default function MESYonetimPage() {
             </div>
             <div className="lg:w-2/5 flex justify-center">
               <div className="relative w-full max-w-[280px] h-[280px] bg-white border border-gray-200 rounded-3xl shadow-xl flex items-center justify-center p-6">
-                <div className="absolute inset-0 bg-gradient-to-r from-amber-100 to-orange-100 blur-2xl opacity-40 -z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-100 to-cyan-200 blur-2xl opacity-40 -z-10" />
                 <div className="text-center space-y-4">
-                  <div className="w-16 h-16 bg-gradient-to-tr from-amber-500 to-orange-500 text-white rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-amber-500/20">
+                  <div className="w-16 h-16 bg-gradient-to-tr from-cyan-500 to-cyan-600 text-white rounded-2xl flex items-center justify-center mx-auto shadow-lg shadow-cyan-500/20">
                     <Cpu size={28} />
                   </div>
                   <div className="font-black text-gray-800 text-lg">Mikro SQL Entegrasyonu</div>
@@ -256,16 +256,16 @@ export default function MESYonetimPage() {
           </h2>
           
           {/* Custom Tabs Toggle */}
-          <div className="inline-flex p-1.5 bg-amber-600 rounded-2xl border border-amber-700/50 mt-4 shadow-lg">
+          <div className="inline-flex p-1.5 bg-cyan-600 rounded-2xl border border-cyan-700/50 mt-4 shadow-lg">
             <button
               onClick={() => setActiveTab('features')}
-              className={`px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${activeTab === 'features' ? 'bg-white text-amber-600 shadow-sm' : 'text-amber-100 hover:text-white'}`}
+              className={`px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${activeTab === 'features' ? 'bg-white text-cyan-600 shadow-sm' : 'text-cyan-100 hover:text-white'}`}
             >
               Ana Özellikler
             </button>
             <button
               onClick={() => setActiveTab('usage')}
-              className={`px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${activeTab === 'usage' ? 'bg-white text-amber-600 shadow-sm' : 'text-amber-100 hover:text-white'}`}
+              className={`px-6 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 ${activeTab === 'usage' ? 'bg-white text-cyan-600 shadow-sm' : 'text-cyan-100 hover:text-white'}`}
             >
               Nasıl Çalışır?
             </button>
@@ -286,7 +286,7 @@ export default function MESYonetimPage() {
                 const Icon = feat.icon;
                 return (
                   <div key={i} className="bg-white border border-gray-300/80 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow group">
-                    <div className="w-10 h-10 bg-amber-500/10 text-amber-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                    <div className="w-10 h-10 bg-cyan-500/10 text-cyan-600 rounded-xl flex items-center justify-center mb-4 group-hover:bg-cyan-500 group-hover:text-white transition-colors duration-300">
                       <Icon size={18} />
                     </div>
                     <h4 className="font-bold text-gray-800 text-base mb-2">{feat.title}</h4>
@@ -302,11 +302,11 @@ export default function MESYonetimPage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
-              className="relative border-l border-amber-200/50 ml-4 md:ml-10 space-y-12"
+              className="relative border-l border-cyan-200/50 ml-4 md:ml-10 space-y-12"
             >
               {usageSteps.map((step, i) => (
                 <div key={i} className="relative pl-8 sm:pl-12">
-                  <div className="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 text-white flex items-center justify-center font-black text-xs shadow-md shadow-amber-500/15">
+                  <div className="absolute -left-[17px] top-0 w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-cyan-600 text-white flex items-center justify-center font-black text-xs shadow-md shadow-cyan-500/15">
                     {step.step}
                   </div>
                   <h4 className="font-bold text-gray-800 text-base sm:text-lg mb-1">{step.title}</h4>
@@ -323,7 +323,7 @@ export default function MESYonetimPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12 sm:mb-16">
             <span className="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 border border-gray-200 rounded-full text-xs font-bold text-gray-600 mb-4">
-              <HelpCircle className="w-3.5 h-3.5 text-amber-500" />
+              <HelpCircle className="w-3.5 h-3.5 text-cyan-500" />
               Sıkça Sorulan Sorular
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight">
@@ -335,7 +335,7 @@ export default function MESYonetimPage() {
             {sss.map((f, i) => (
               <details key={i} className="group rounded-2xl border border-gray-200 bg-white overflow-hidden">
                 <summary className="flex items-start gap-4 p-5 cursor-pointer list-none font-semibold text-gray-900">
-                  <span className="w-8 h-8 bg-amber-600 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{i + 1}</span>
+                  <span className="w-8 h-8 bg-cyan-600 rounded-full flex items-center justify-center text-white text-sm font-bold flex-shrink-0">{i + 1}</span>
                   <span className="flex-1">{f.q}</span>
                   <svg className="w-5 h-5 flex-shrink-0 mt-1 text-gray-400 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -350,7 +350,7 @@ export default function MESYonetimPage() {
 
       {/* Premium CTA Section */}
       <section className="py-16 sm:py-24 max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-amber-500 to-orange-600 text-white shadow-xl shadow-amber-500/10 p-8 sm:p-12 md:p-16 text-center">
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-cyan-500 to-cyan-600 text-white shadow-xl shadow-cyan-500/10 p-8 sm:p-12 md:p-16 text-center">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(255,255,255,0.15),transparent)] pointer-events-none" />
           
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">

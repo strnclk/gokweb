@@ -6,7 +6,39 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from 'next/image';
 import { motion } from 'motion/react';
+import AmphitheaterRingsBackground, { AmphitheaterTheme } from '@/components/AmphitheaterRingsBackground';
 
+// Blue/Cyan/Sky Theme
+const flyAmphitheaterTheme: AmphitheaterTheme = {
+  idPrefix: 'fly',
+  grad1: [
+    { offset: '0%', color: '#0284C7', opacity: 0.45 },
+    { offset: '40%', color: '#06B6D4', opacity: 0.3 },
+    { offset: '75%', color: '#38BDF8', opacity: 0.2 },
+    { offset: '100%', color: '#818cf8', opacity: 0.04 },
+  ],
+  grad2: [
+    { offset: '0%', color: '#2563EB', opacity: 0.35 },
+    { offset: '50%', color: '#0284C7', opacity: 0.25 },
+    { offset: '100%', color: '#67e8f9', opacity: 0.04 },
+  ],
+  grad3: [
+    { offset: '0%', color: '#0284C7', opacity: 0.25 },
+    { offset: '60%', color: '#38BDF8', opacity: 0.15 },
+    { offset: '100%', color: '#93c5fd', opacity: 0.02 },
+  ],
+  fill: [
+    { offset: '0%', color: '#0284C7', opacity: 0.06 },
+    { offset: '50%', color: '#06B6D4', opacity: 0.02 },
+    { offset: '100%', color: '#ffffff', opacity: 0 },
+  ],
+  glow: [
+    { offset: '0%', color: '#0284C7', opacity: 0.15 },
+    { offset: '35%', color: '#06B6D4', opacity: 0.07 },
+    { offset: '70%', color: '#38BDF8', opacity: 0.03 },
+    { offset: '100%', color: '#ffffff', opacity: 0 },
+  ],
+};
 
 export default function MikroFlyPage() {
   const [activeModuleIndex, setActiveModuleIndex] = useState(0);
@@ -202,151 +234,41 @@ export default function MikroFlyPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/40 to-[#F8FAFC] pt-32 md:pt-44 pb-20 lg:pb-28">
         {/* Giant Concentric Curved Amphitheater Rings & Arches (Blue/Cyan/Sky Theme) */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-          <svg
-            className="absolute right-0 bottom-0 w-full h-full max-w-none pointer-events-none"
-            viewBox="0 0 1440 900"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMaxYMax slice"
-          >
-            <defs>
-              <linearGradient id="flyArchGrad1" x1="1440" y1="900" x2="100" y2="50" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#0284C7" stopOpacity="0.45" />
-                <stop offset="40%" stopColor="#06B6D4" stopOpacity="0.3" />
-                <stop offset="75%" stopColor="#38BDF8" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#818cf8" stopOpacity="0.04" />
-              </linearGradient>
-
-              <linearGradient id="flyArchGrad2" x1="1440" y1="900" x2="250" y2="150" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#2563EB" stopOpacity="0.35" />
-                <stop offset="50%" stopColor="#0284C7" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="#67e8f9" stopOpacity="0.04" />
-              </linearGradient>
-
-              <linearGradient id="flyArchGrad3" x1="1440" y1="900" x2="400" y2="250" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#0284C7" stopOpacity="0.25" />
-                <stop offset="60%" stopColor="#38BDF8" stopOpacity="0.15" />
-                <stop offset="100%" stopColor="#93c5fd" stopOpacity="0.02" />
-              </linearGradient>
-
-              <linearGradient id="flyArchFill" x1="1440" y1="900" x2="50" y2="50" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#0284C7" stopOpacity="0.06" />
-                <stop offset="50%" stopColor="#06B6D4" stopOpacity="0.02" />
-                <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
-              </linearGradient>
-              
-              <radialGradient id="flyOriginGlow" cx="1350" cy="850" r="800" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#0284C7" stopOpacity="0.15" />
-                <stop offset="35%" stopColor="#06B6D4" stopOpacity="0.07" />
-                <stop offset="70%" stopColor="#38BDF8" stopOpacity="0.03" />
-                <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
-              </radialGradient>
-
-              <filter id="flyNeonGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="5" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
-
-            <rect x="0" y="0" width="1440" height="900" fill="url(#flyOriginGlow)" />
-
-            <path
-              d="M 1650 1050 C 1180 250, 650 50, -250 150 L -250 1050 Z"
-              fill="url(#flyArchFill)"
-            />
-
-            <path
-              d="M 1650 1050 C 1180 250, 650 50, -250 150"
-              stroke="url(#flyArchGrad1)"
-              strokeWidth="4"
-              filter="url(#flyNeonGlow)"
-            />
-
-            <path
-              d="M 1620 1030 C 1150 230, 630 30, -270 130"
-              stroke="url(#flyArchGrad1)"
-              strokeWidth="1.5"
-              strokeDasharray="10 8"
-              opacity="0.8"
-            />
-
-            <path
-              d="M 1560 1070 C 1110 320, 610 110, -220 220"
-              stroke="url(#flyArchGrad2)"
-              strokeWidth="3"
-            />
-            <path
-              d="M 1530 1050 C 1090 300, 590 90, -240 200"
-              stroke="url(#flyArchGrad2)"
-              strokeWidth="1.2"
-              strokeDasharray="6 6"
-              opacity="0.6"
-            />
-
-            <path
-              d="M 1470 1090 C 1050 390, 570 180, -180 290"
-              stroke="url(#flyArchGrad3)"
-              strokeWidth="2.5"
-            />
-
-            <path
-              d="M 1390 1120 C 990 460, 540 240, -140 360"
-              stroke="url(#flyArchGrad3)"
-              strokeWidth="2"
-              opacity="0.5"
-            />
-
-            <path
-              d="M 1310 1150 C 930 520, 500 300, -100 430"
-              stroke="url(#flyArchGrad1)"
-              strokeWidth="1.5"
-              opacity="0.3"
-            />
-          </svg>
-        </div>
+        <AmphitheaterRingsBackground theme={flyAmphitheaterTheme} />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Side (Text Block) */}
             <div className="lg:col-span-6 text-left">
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-sky-500/10 border border-blue-500/20 text-blue-600 text-xs font-semibold tracking-wide uppercase mb-6 shadow-sm"
+              <div
+                className="animate-fade-up inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 via-cyan-500/10 to-sky-500/10 border border-blue-500/20 text-blue-600 text-xs font-semibold tracking-wide uppercase mb-6 shadow-sm"
+                style={{ animationDelay: '0s' }}
               >
                 <Zap className="w-3.5 h-3.5 text-blue-600" />
                 <span>Büyük İşletmeler İleri ERP Çözümü</span>
-              </motion.div>
+              </div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-none tracking-tight mb-6 text-[#0F172A]"
+              <h1
+                className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-none tracking-tight mb-6 text-[#0F172A]"
+                style={{ animationDelay: '0s' }}
               >
                 Mikro{' '}
                 <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-400 bg-clip-text text-transparent inline-block drop-shadow-sm">
                   FLY
                 </span>
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-base sm:text-lg text-slate-700 mb-8 leading-relaxed max-w-2xl font-normal"
+              <p
+                className="animate-fade-up text-base sm:text-lg text-slate-700 mb-8 leading-relaxed max-w-2xl font-normal"
+                style={{ animationDelay: '0.2s' }}
               >
                 Büyük İşletmelerin Gücüne Güç Katan Çözüm Mikro Fly. En büyüklerin co-pilotu Mikro Fly ile tanışın! Hangi sektörde olursanız olun, tüm operasyonlarınızı tek bir programda kârlı ve verimli bir şekilde yönetin. Mikro Fly, büyük İşletmeler için tasarlanmış güçlü bir ticari yazılım çözümü olarak işletmenizin her adımında yanınızda. Başarıya uçuşunuzu şimdi başlatın!
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="flex flex-wrap items-center gap-4"
+              <div
+                className="animate-fade-up flex flex-wrap items-center gap-4"
+                style={{ animationDelay: '0.15s' }}
               >
                 <div className="relative group">
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-sky-400 rounded-2xl blur-md opacity-75 group-hover:opacity-100 transition duration-500 group-hover:duration-200 animate-pulse pointer-events-none" />
@@ -361,16 +283,14 @@ export default function MikroFlyPage() {
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
                   </button>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Right Side (Original Logo Integrated Directly on Page with Ambient Blue Glow & Gentle Floating Animation) */}
             <div className="lg:col-span-6 flex justify-center lg:justify-end relative">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative flex items-center justify-center p-4 sm:p-8"
+              <div
+                className="animate-fade-in-side relative flex items-center justify-center p-4 sm:p-8"
+                style={{ '--fade-y': '1.25rem', '--fade-scale': '0.9', animationDelay: '0.2s' } as React.CSSProperties}
               >
                 <div className="absolute w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-tr from-blue-500/15 via-cyan-500/18 to-sky-400/12 rounded-full blur-3xl pointer-events-none opacity-80" />
                 <div className="absolute w-64 h-64 sm:w-80 sm:h-80 bg-blue-600/10 rounded-full blur-2xl pointer-events-none" />
@@ -389,7 +309,7 @@ export default function MikroFlyPage() {
                     className="w-full h-full object-contain filter drop-shadow-[0_15px_30px_rgba(2,132,199,0.20)] hover:drop-shadow-[0_22px_40px_rgba(2,132,199,0.30)] transition-all duration-500 transform hover:scale-105"
                   />
                 </motion.div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

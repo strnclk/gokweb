@@ -181,41 +181,33 @@ export default function FeaturedWorksPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 w-full">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6"
+              <div
+                className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6"
+                style={{ animationDelay: '0s' }}
               >
                 <Star size={14} />
                 Öne Çıkan Çalışmalar
-              </motion.div>
+              </div>
               
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900"
+              <h1
+                className="animate-fade-up text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900"
+                style={{ animationDelay: '0.1s' }}
               >
                 Öne Çıkan
                 <br />
                 <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Çalışmalarımız</span>
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-xl leading-relaxed"
+              <p
+                className="animate-fade-up text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-xl leading-relaxed"
+                style={{ animationDelay: '0.2s' }}
               >
                 Finansal yönetim, nakit akışı ve raporlama alanında gerçekleştirdiğimiz başarılı projelerimizle işletmenizi dijitalleştirin
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="flex flex-col sm:flex-row gap-4 mb-12"
+              <div
+                className="animate-fade-up flex flex-col sm:flex-row gap-4 mb-12"
+                style={{ animationDelay: '0.15s' }}
               >
                 <button
                   onClick={scrollToContact}
@@ -230,13 +222,11 @@ export default function FeaturedWorksPage() {
                 >
                   Daha Fazla Bilgi
                 </Link>
-              </motion.div>
+              </div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="grid grid-cols-2 gap-6"
+              <div
+                className="animate-fade-up grid grid-cols-2 gap-6"
+                style={{ animationDelay: '0.15s' }}
               >
                 {stats.map((stat, i) => (
                   <div key={i} className="flex items-center gap-3">
@@ -249,16 +239,14 @@ export default function FeaturedWorksPage() {
                     </div>
                   </div>
                 ))}
-              </motion.div>
+              </div>
             </div>
 
             {/* Right Side - Visual Element */}
             <div className="hidden lg:block relative">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative"
+              <div
+                className="animate-fade-in-side relative"
+                style={{ '--fade-scale': '0.8', animationDelay: '0.2s' } as React.CSSProperties}
               >
                 {/* Main Card */}
                 <div className="bg-white rounded-3xl p-8 border border-blue-200 shadow-2xl">
@@ -338,7 +326,7 @@ export default function FeaturedWorksPage() {
                   <div className="text-gray-900 font-bold text-lg">95%</div>
                   <div className="text-gray-500 text-xs">Memnuniyet</div>
                 </motion.div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>

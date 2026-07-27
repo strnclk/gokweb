@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -14,7 +15,7 @@ import { Check, Star, Users, Zap, Shield, Database, Globe, DollarSign, Building2
 const sssCompare = [
   { soru: 'Bu karşılaştırma aracı nasıl çalışıyor?', cevap: '3 kısa soruyla işletmenizin büyüklüğünü, sektörünü ve ana ihtiyacını analiz eder; size en uygun Mikro çözümünü eşleşme oranıyla önerir.' },
   { soru: 'Sonuçlar ne kadar güvenilir?', cevap: 'Sonuçlar yönlendirici bir öneri niteliğindedir. Kesin seçim için ihtiyaçlarınızı uzmanlarımızla birlikte değerlendirmenizi öneririz.' },
-  { soru: 'Mikro Run, Jump ve Fly arasındaki fark nedir?', cevap: 'Mikro Run en küçük ölçek ve esnaf için; Mikro Jump büyüyen KOBİ’ler için; Mikro Fly ise kurumsal ve e-ticaret ihtiyacı olan işletmeler içindir. Ölçeğinize göre doğru paketi öneririz.' },
+  { soru: 'Mikro Run, Jump ve Fly arasındaki fark nedir?', cevap: 'Mikro Run en küçük ölçek ve esnaf için; Mikro Jump büyüyen KOBİ\'ler için; Mikro Fly ise kurumsal ve e-ticaret ihtiyacı olan işletmeler içindir. Ölçeğinize göre doğru paketi öneririz.' },
 ];
 
 const webAppJsonLd = {
@@ -364,7 +365,7 @@ export default function ComparePage() {
         ];
       }
       return [
-        '5-15 çalışanlı KOBİ’ler için hızlı kurulum altyapısı',
+        '5-15 çalışanlı KOBİ\'ler için hızlı kurulum altyapısı',
         'Esnek raporlama araçları ve detaylı ciro-maliyet analizleri',
         'Satış, satın alma ve envanter süreçlerinin tam entegrasyonu'
       ];
@@ -401,66 +402,56 @@ export default function ComparePage() {
 
       {/* Hero Section */}
       <section className="relative min-h-[50vh] sm:min-h-[60vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-white pt-32 md:pt-44 pb-20 md:pb-28">
-        <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-36 h-36 sm:w-48 sm:h-48 md:w-56 md:w-72 lg:w-72 lg:h-72 bg-blue-100/40 rounded-full blur-3xl" />
+        <div className="absolute top-10 right-10 sm:top-20 sm:right-20 w-36 h-36 sm:w-48 sm:h-48 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-blue-100/40 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 sm:bottom-20 sm:left-20 w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 bg-purple-100/30 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] lg:w-[600px] lg:h-[600px] bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-full blur-3xl" />
 
         <div className="max-w-7xl mx-auto w-full text-center px-4 sm:px-6 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full text-purple-700 text-sm font-medium mb-8"
+          <div
+            className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-purple-50 border border-purple-200 rounded-full text-purple-700 text-sm font-medium mb-8"
+            style={{ animationDelay: '0s' }}
           >
             <Lightbulb size={14} />
             Akıllı Çözüm Danışmanı
-          </motion.div>
+          </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl md:text-7xl font-bold leading-tight mb-6 text-gray-900"
+          <h1
+            className="animate-fade-up text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl md:text-7xl font-bold leading-tight mb-6 text-gray-900"
+            style={{ animationDelay: '0.1s' }}
           >
             İşletmeniz İçin
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Doğru Çözümü Bulun</span>
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed"
+          <p
+            className="animate-fade-up text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 md:mb-16 max-w-3xl mx-auto leading-relaxed"
+            style={{ animationDelay: '0.2s' }}
           >
             İşletmenizin ihtiyaçlarını analiz ederek size en uygun ERP ve e-dönüşüm çözümlerini öneriyoruz.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12"
+          <div
+            className="animate-fade-up flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12"
+            style={{ animationDelay: '0.15s' }}
           >
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
-                <motion.div
+                <div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 + index * 0.03 }}
-                  className="text-center"
+                  className="animate-fade-up text-center"
+                  style={{ animationDelay: `${0.1 + index * 0.03}s` }}
                 >
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center mx-auto mb-3">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-1">{stat.value}</div>
                   <div className="text-gray-500 text-sm">{stat.label}</div>
-                </motion.div>
+                </div>
               );
             })}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -694,7 +685,7 @@ export default function ComparePage() {
                           className="w-24 h-24 mx-auto mb-4 rounded-2xl flex items-center justify-center bg-white ring-1 ring-gray-100 shadow-sm p-2.5 overflow-hidden"
                         >
                           {logoUrl ? (
-                            <img src={logoUrl} alt={`${item.name} logosu — ${item.category} programı`} width={88} height={88} loading="lazy" className="max-w-full max-h-full object-contain" />
+                            <Image src={logoUrl} alt={`${item.name} logosu — ${item.category} programı`} width={88} height={88} loading="lazy" className="max-w-full max-h-full object-contain" />
                           ) : (
                             <Icon className="w-9 h-9 text-gray-600" />
                           )}
@@ -838,7 +829,7 @@ export default function ComparePage() {
                               </div>
                             )}
                             <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl flex items-center justify-center shadow-md overflow-hidden bg-white">
-                              <img src={logoUrl} alt={`${product.name} logosu — ${product.category} programı`} width={32} height={32} loading="lazy" className="w-6 h-6 md:w-8 md:h-8 object-contain" />
+                              <Image src={logoUrl} alt={`${product.name} logosu — ${product.category} programı`} width={32} height={32} loading="lazy" className="w-6 h-6 md:w-8 md:h-8 object-contain" />
                             </div>
                             <span className="text-xs md:text-sm font-bold">{product.name}</span>
                             <span className="text-[10px] md:text-xs opacity-70">{product.category}</span>
@@ -912,7 +903,7 @@ export default function ComparePage() {
                     className="w-full p-4 bg-white rounded-xl border border-gray-200 hover:border-gray-300 hover:shadow-md transition-all text-left flex items-center gap-3"
                   >
                     <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-white shadow-md flex-shrink-0 overflow-hidden">
-                      <img src={logoUrl} alt={`${product.name} logosu — ${product.category} programı`} width={32} height={32} loading="lazy" className="w-8 h-8 object-contain" />
+                      <Image src={logoUrl} alt={`${product.name} logosu — ${product.category} programı`} width={32} height={32} loading="lazy" className="w-8 h-8 object-contain" />
                     </div>
                     <div>
                       <div className="font-semibold text-gray-900 text-sm">{product.name}</div>
@@ -957,13 +948,6 @@ export default function ComparePage() {
                 >
                   Ücretsiz Danışmanlık
                   <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
-                <Button
-                  onClick={() => router.push('/contact')}
-                  variant="outline"
-                  className="px-8 py-6 bg-white/10 border-white/30 text-white rounded-xl hover:bg-white/20 font-semibold text-base transition-all"
-                >
-                  Detaylı Analiz
                 </Button>
               </div>
             </div>

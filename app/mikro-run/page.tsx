@@ -6,7 +6,39 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Image from 'next/image';
 import { motion } from 'motion/react';
+import AmphitheaterRingsBackground, { AmphitheaterTheme } from '@/components/AmphitheaterRingsBackground';
 
+// Vibrant Arch Gradient - Rich Magenta to Golden Amber (Dev Yuvarlak Konsantrik Kemerler - WOW Varyasyonu)
+const runAmphitheaterTheme: AmphitheaterTheme = {
+  idPrefix: 'wow',
+  grad1: [
+    { offset: '0%', color: '#DC2626', opacity: 0.5 },
+    { offset: '40%', color: '#f43f5e', opacity: 0.35 },
+    { offset: '75%', color: '#f59e0b', opacity: 0.22 },
+    { offset: '100%', color: '#38bdf8', opacity: 0.04 },
+  ],
+  grad2: [
+    { offset: '0%', color: '#a855f7', opacity: 0.4 },
+    { offset: '50%', color: '#DC2626', opacity: 0.28 },
+    { offset: '100%', color: '#fb7185', opacity: 0.04 },
+  ],
+  grad3: [
+    { offset: '0%', color: '#DC2626', opacity: 0.28 },
+    { offset: '60%', color: '#f59e0b', opacity: 0.16 },
+    { offset: '100%', color: '#818cf8', opacity: 0.02 },
+  ],
+  fill: [
+    { offset: '0%', color: '#DC2626', opacity: 0.07 },
+    { offset: '50%', color: '#f43f5e', opacity: 0.03 },
+    { offset: '100%', color: '#ffffff', opacity: 0 },
+  ],
+  glow: [
+    { offset: '0%', color: '#DC2626', opacity: 0.16 },
+    { offset: '35%', color: '#f43f5e', opacity: 0.08 },
+    { offset: '70%', color: '#f59e0b', opacity: 0.03 },
+    { offset: '100%', color: '#ffffff', opacity: 0 },
+  ],
+};
 
 export default function MikroRunPage() {
   const [activeModuleIndex, setActiveModuleIndex] = useState(0);
@@ -155,165 +187,41 @@ export default function MikroRunPage() {
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-50 via-gray-50/80 to-[#F8FAFC] pt-32 md:pt-44 pb-20 lg:pb-28">
         {/* Giant Concentric Curved Amphitheater Rings & Arches (Dev Yuvarlak Konsantrik Kemerler - WOW Varyasyonu) */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-          <svg
-            className="absolute right-0 bottom-0 w-full h-full max-w-none pointer-events-none"
-            viewBox="0 0 1440 900"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMaxYMax slice"
-          >
-            <defs>
-              {/* Vibrant Arch Gradient 1 - Rich Magenta to Golden Amber */}
-              <linearGradient id="wowArchGrad1" x1="1440" y1="900" x2="100" y2="50" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#DC2626" stopOpacity="0.5" />
-                <stop offset="40%" stopColor="#f43f5e" stopOpacity="0.35" />
-                <stop offset="75%" stopColor="#f59e0b" stopOpacity="0.22" />
-                <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.04" />
-              </linearGradient>
-
-              {/* Vibrant Arch Gradient 2 - Violet Rose Glow */}
-              <linearGradient id="wowArchGrad2" x1="1440" y1="900" x2="250" y2="150" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#a855f7" stopOpacity="0.4" />
-                <stop offset="50%" stopColor="#DC2626" stopOpacity="0.28" />
-                <stop offset="100%" stopColor="#fb7185" stopOpacity="0.04" />
-              </linearGradient>
-
-              {/* Vibrant Arch Gradient 3 - Warm Gold Magenta */}
-              <linearGradient id="wowArchGrad3" x1="1440" y1="900" x2="400" y2="250" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#DC2626" stopOpacity="0.28" />
-                <stop offset="60%" stopColor="#f59e0b" stopOpacity="0.16" />
-                <stop offset="100%" stopColor="#818cf8" stopOpacity="0.02" />
-              </linearGradient>
-
-              {/* Arch Soft Glass Ribbon Fill */}
-              <linearGradient id="wowArchFill" x1="1440" y1="900" x2="50" y2="50" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#DC2626" stopOpacity="0.07" />
-                <stop offset="50%" stopColor="#f43f5e" stopOpacity="0.03" />
-                <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
-              </linearGradient>
-              
-              {/* Rich Radial Volumetric Glow from Bottom Right */}
-              <radialGradient id="wowOriginGlow" cx="1350" cy="850" r="800" gradientUnits="userSpaceOnUse">
-                <stop offset="0%" stopColor="#DC2626" stopOpacity="0.16" />
-                <stop offset="35%" stopColor="#f43f5e" stopOpacity="0.08" />
-                <stop offset="70%" stopColor="#f59e0b" stopOpacity="0.03" />
-                <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
-              </radialGradient>
-
-              {/* Glow Filter for Main Arch */}
-              <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
-                <feGaussianBlur stdDeviation="5" result="blur" />
-                <feComposite in="SourceGraphic" in2="blur" operator="over" />
-              </filter>
-            </defs>
-
-            {/* Ambient Radial Background Glow */}
-            <rect x="0" y="0" width="1440" height="900" fill="url(#wowOriginGlow)" />
-
-            {/* Sweeping Glass Ribbon Fill Layer */}
-            <path
-              d="M 1650 1050 C 1180 250, 650 50, -250 150 L -250 1050 Z"
-              fill="url(#wowArchFill)"
-            />
-
-            {/* Ring 1 - Primary Outer Glowing Arc (Silky-Smooth Single Bezier Curve) */}
-            <path
-              d="M 1650 1050 C 1180 250, 650 50, -250 150"
-              stroke="url(#wowArchGrad1)"
-              strokeWidth="4"
-              filter="url(#neonGlow)"
-            />
-
-            {/* Ring 1 Accent - Dashed Inner Trace */}
-            <path
-              d="M 1620 1030 C 1150 230, 630 30, -270 130"
-              stroke="url(#wowArchGrad1)"
-              strokeWidth="1.5"
-              strokeDasharray="10 8"
-              opacity="0.8"
-            />
-
-            {/* Ring 2 - Secondary Orb Arc */}
-            <path
-              d="M 1560 1070 C 1110 320, 610 110, -220 220"
-              stroke="url(#wowArchGrad2)"
-              strokeWidth="3"
-            />
-            <path
-              d="M 1530 1050 C 1090 300, 590 90, -240 200"
-              stroke="url(#wowArchGrad2)"
-              strokeWidth="1.2"
-              strokeDasharray="6 6"
-              opacity="0.6"
-            />
-
-            {/* Ring 3 - Middle Concentric Ring */}
-            <path
-              d="M 1470 1090 C 1050 390, 570 180, -180 290"
-              stroke="url(#wowArchGrad3)"
-              strokeWidth="2.5"
-            />
-
-            {/* Ring 4 - Inner Deep Arc */}
-            <path
-              d="M 1390 1120 C 990 460, 540 240, -140 360"
-              stroke="url(#wowArchGrad3)"
-              strokeWidth="2"
-              opacity="0.5"
-            />
-
-            {/* Ring 5 - Innermost Subtle Arch */}
-            <path
-              d="M 1310 1150 C 930 520, 500 300, -100 430"
-              stroke="url(#wowArchGrad1)"
-              strokeWidth="1.5"
-              opacity="0.3"
-            />
-          </svg>
-        </div>
+        <AmphitheaterRingsBackground theme={runAmphitheaterTheme} />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* Left Side (Text Block) */}
             <div className="lg:col-span-6 text-left">
-              <motion.div
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-500/10 via-red-500/10 to-amber-500/10 border border-red-500/20 text-[#DC2626] text-xs font-semibold tracking-wide uppercase mb-6 shadow-sm"
+              <div
+                className="animate-fade-up inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-500/10 via-red-500/10 to-amber-500/10 border border-red-500/20 text-[#DC2626] text-xs font-semibold tracking-wide uppercase mb-6 shadow-sm"
+                style={{ animationDelay: '0s' }}
               >
                 <Zap className="w-3.5 h-3.5 text-[#DC2626]" />
                 <span>e-Dönüşüm ve Ön Muhasebe Çözümü</span>
-              </motion.div>
+              </div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-none tracking-tight mb-6 text-[#0F172A]"
+              <h1
+                className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-none tracking-tight mb-6 text-[#0F172A]"
+                style={{ animationDelay: '0s' }}
               >
                 Mikro{' '}
                 <span className="bg-gradient-to-r from-[#DC2626] via-orange-500 to-amber-500 bg-clip-text text-transparent inline-block drop-shadow-sm">
                   RUN
                 </span>
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-base sm:text-lg text-slate-700 mb-8 leading-relaxed max-w-2xl font-normal"
+              <p
+                className="animate-fade-up text-base sm:text-lg text-slate-700 mb-8 leading-relaxed max-w-2xl font-normal"
+                style={{ animationDelay: '0.2s' }}
               >
                 Esnaf, serbest meslek sahipleri ve mikro işletmeler için ideal bir e-Dönüşüm paketidir. Kolay kullanım, sade ve anlaşılır menülerle, hazır fatura tasarımı, e-fatura kesme özelliği ve anahtar teslim e-fatura çözümleri sunar. Mikro RUN, tüm finansal ve organizasyonel süreçlerinizi yönetmek için mükemmel bir destek sağlar.
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="flex flex-wrap items-center gap-4"
+              <div
+                className="animate-fade-up flex flex-wrap items-center gap-4"
+                style={{ animationDelay: '0.15s' }}
               >
                 <div className="relative group">
                   {/* Animated Pulsing Glowing Aura behind the button */}
@@ -331,16 +239,14 @@ export default function MikroRunPage() {
                     <ArrowRight className="w-5 h-5 group-hover:translate-x-1.5 transition-transform duration-300" />
                   </button>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Right Side (Original Horse Logo Integrated Directly on Page with Ambient Glow & Gentle Floating Animation) */}
             <div className="lg:col-span-6 flex justify-center lg:justify-end relative">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative flex items-center justify-center p-4 sm:p-8"
+              <div
+                className="animate-fade-in-side relative flex items-center justify-center p-4 sm:p-8"
+                style={{ '--fade-y': '1.25rem', '--fade-scale': '0.9', animationDelay: '0.2s' } as React.CSSProperties}
               >
                 {/* Multi-layered Soft Glowing Ambient Aura behind the Horse Logo (Slower & Subtler) */}
                 <div className="absolute w-80 h-80 sm:w-96 sm:h-96 bg-gradient-to-tr from-red-500/15 via-red-500/18 to-amber-400/12 rounded-full blur-3xl pointer-events-none opacity-80" />
@@ -361,7 +267,7 @@ export default function MikroRunPage() {
                     className="w-full h-full object-contain filter drop-shadow-[0_15px_30px_rgba(220,38,38,0.20)] hover:drop-shadow-[0_22px_40px_rgba(220,38,38,0.30)] transition-all duration-500 transform hover:scale-105"
                   />
                 </motion.div>
-              </motion.div>
+              </div>
             </div>
           </div>
         </div>
@@ -612,27 +518,27 @@ export default function MikroRunPage() {
               <h3 className="text-lg font-bold mb-3 text-gray-900">Mikro Yazılım Geçiş Sürecini Nasıl Yönetiyoruz:</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-600 flex-shrink-0" />
                   Ön Görüşme ve İhtiyaç Analizi
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-600 flex-shrink-0" />
                   Mikro RUN Paket Seçimi ve Teklif Onayı
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-600 flex-shrink-0" />
                   Hızlı Sistem Kurulumu ve Veri Aktarımı
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-600 flex-shrink-0" />
                   Temel Ön Muhasebe ve e-Dönüşüm Eğitimi
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-600 flex-shrink-0" />
                   Proje Teslimi ve Canlıya Geçiş
                 </div>
                 <div className="flex items-center gap-3 text-sm text-gray-600 font-medium">
-                  <CheckCircle size={16} className="text-red-900 flex-shrink-0" />
+                  <CheckCircle size={16} className="text-red-600 flex-shrink-0" />
                   Uzaktan ve Yerinde Destek
                 </div>
               </div>
@@ -684,7 +590,8 @@ export default function MikroRunPage() {
               'Masaüstü veya Bulut Uygulama',
               'Masraf Yönetimi',
               'Sektörel Çözümler',
-              'Ek Çözümler'
+              'Ek Çözümler',
+              'Hızlı Kurulum ve Kolay Kullanım'
             ].map((feature, index) => (
               <motion.div
                 key={index}

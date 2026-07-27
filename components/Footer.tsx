@@ -68,7 +68,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li><Link href="/#hakkimizda" className="text-slate-300 hover:text-white transition-colors duration-200">Hakkımızda</Link></li>
               <li><Link href="/blog" className="text-slate-300 hover:text-white transition-colors duration-200">Blog</Link></li>
-              <li><Link href="/solutions" className="text-slate-300 hover:text-white transition-colors duration-200">Çözümler</Link></li>
               <li><Link href="/vertical-solutions" className="text-slate-300 hover:text-white transition-colors duration-200">Dikey Çözümler</Link></li>
               <li><Link href="/sectoral-solutions" className="text-slate-300 hover:text-white transition-colors duration-200">Sektörel Çözümler</Link></li>
               <li><Link href="/featured-works" className="text-slate-300 hover:text-white transition-colors duration-200">Referanslar</Link></li>

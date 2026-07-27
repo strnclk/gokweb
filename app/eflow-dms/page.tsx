@@ -69,54 +69,46 @@ export default function EflowDmsPage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10 w-full">
           {/* Left: Text Content */}
           <div className="lg:col-span-6 text-center lg:text-left flex flex-col items-center lg:items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/10 border border-indigo-200/20 rounded-full text-indigo-600 text-sm font-semibold mb-6"
+            <div
+              className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/10 border border-indigo-200/20 rounded-full text-indigo-600 text-sm font-semibold mb-6"
+              style={{ animationDelay: '0s' }}
             >
               <Sparkles size={14} className="text-violet-500 animate-spin" style={{ animationDuration: '3s' }} />
               <span>No-Code DMS Platformu</span>
-            </motion.div>
+            </div>
             
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 text-slate-900 tracking-tight"
+            <h1
+              className="animate-fade-up text-4xl sm:text-5xl lg:text-6xl font-black leading-tight mb-6 text-slate-900 tracking-tight"
+              style={{ animationDelay: '0.1s' }}
             >
               Kağıtsız Ofise
               <br />
               <span className="bg-gradient-to-r from-indigo-600 via-violet-500 to-[#40949c] bg-clip-text text-transparent">
                 Tek Tıkla Geçin
               </span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium"
+            <p
+              className="animate-fade-up text-lg md:text-xl text-slate-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium"
+              style={{ animationDelay: '0.2s' }}
             >
               İş akışınızda dolaşan tüm belgeleri akıllı klasörlerde organize edin. Yapay zeka ile otomatik okuyun, anında arayıp bulun ve e-imzalayın.
-            </motion.p>
+            </p>
 
             <div className="flex flex-col sm:flex-row gap-4 items-center justify-center lg:justify-start w-full sm:w-auto">
               <motion.button
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: 1, 
-                  y: 0,
+                animate={{
                   boxShadow: "0 10px 30px rgba(99, 102, 241, 0.2)"
                 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05,
                   boxShadow: "0 20px 45px rgba(99, 102, 241, 0.5)",
                   y: -1
                 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => router.push('/contact')}
-                className="group inline-flex items-center gap-3 px-8 py-4.5 bg-gradient-to-r from-indigo-600 via-violet-500 to-[#40949c] text-white rounded-2xl transition-all duration-300 font-bold text-base cursor-pointer shadow-lg w-full sm:w-auto justify-center"
+                className="animate-fade-up group inline-flex items-center gap-3 px-8 py-4.5 bg-gradient-to-r from-indigo-600 via-violet-500 to-[#40949c] text-white rounded-2xl transition-all duration-300 font-bold text-base cursor-pointer shadow-lg w-full sm:w-auto justify-center"
+                style={{ animationDelay: '0.15s' }}
               >
                 <span>Teklif Al</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -125,14 +117,12 @@ export default function EflowDmsPage() {
           </div>
 
           {/* Hero Visual Right (Birebir 9 Balonlu İnteraktif e-flow DMS® Çark Bileşeni - EflowDmsWheel) */}
-          <motion.div
-            initial={{ opacity: 0, x: 40, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-6 relative flex flex-col items-center justify-center w-full py-2"
+          <div
+            className="animate-fade-in-side lg:col-span-6 relative flex flex-col items-center justify-center w-full py-2"
+            style={{ '--fade-x': '2.5rem', '--fade-scale': '0.95', animationDelay: '0.2s' } as React.CSSProperties}
           >
             <EflowDmsWheel />
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -264,7 +254,7 @@ export default function EflowDmsPage() {
                   <div key={index} className="relative flex flex-col md:flex-row items-center justify-between w-full">
                     {/* Left block */}
                     <div className={`w-full md:w-[45%] ${isLeft ? 'text-center md:text-right' : 'order-last text-center md:text-left'}`}>
-                      <div className="bg-[#f8fafc]/70 border border-slate-250/60 p-6 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-300">
+                      <div className="bg-[#f8fafc]/70 border border-slate-200/60 p-6 rounded-[2rem] shadow-sm hover:shadow-md transition-all duration-300">
                         <span className="text-4xl font-black bg-gradient-to-r from-indigo-600 via-violet-500 to-[#40949c] bg-clip-text text-transparent block mb-2">{node.step}</span>
                         <h3 className="text-lg font-black text-slate-800 mb-2">{node.title}</h3>
                         <p className="text-xs text-slate-500 font-medium leading-relaxed">{node.desc}</p>
@@ -505,7 +495,7 @@ export default function EflowDmsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.6 }}
-            className="relative bg-gradient-to-br from-slate-900 via-slate-850 to-slate-950 p-10 sm:p-16 rounded-[3rem] text-center overflow-hidden shadow-2xl border border-slate-800"
+            className="relative bg-gradient-to-br from-slate-900 to-slate-950 p-10 sm:p-16 rounded-[3rem] text-center overflow-hidden shadow-2xl border border-slate-800"
           >
             {/* Glowing neon shapes inside CTA */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#40949c]/10 rounded-full blur-3xl pointer-events-none" />

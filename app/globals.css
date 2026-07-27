@@ -121,6 +121,24 @@ body {
   animation: fade-up 0.5s ease-out both;
 }
 
+/* Hero'nun yanındaki görsel/kart öğeleri için: yandan kayarak ve/veya hafif
+   büyüyerek beliren giriş animasyonu. --fade-x ve --fade-scale ile yön/miktar
+   ayarlanır; animate-fade-up ile aynı mantık, JS/hydration'a bağımlı değil. */
+@keyframes fade-in-side {
+  from {
+    opacity: 0;
+    transform: translateX(var(--fade-x, 0)) translateY(var(--fade-y, 0)) scale(var(--fade-scale, 1));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.animate-fade-in-side {
+  animation: fade-in-side 0.6s ease-out both;
+}
+
 @keyframes float-y {
   0%,
   100% {

@@ -129,21 +129,17 @@ export default function EFlowPage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-start relative z-10 w-full">
           {/* Left Side: Content */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#40949c]/10 border border-[#40949c]/20 rounded-full text-[#40949c] text-sm font-semibold mb-6"
+            <div
+              className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-[#40949c]/10 border border-[#40949c]/20 rounded-full text-[#40949c] text-sm font-semibold mb-6"
+              style={{ animationDelay: '0.1s' }}
             >
               <Sparkles size={14} className="text-amber-500 animate-spin" style={{ animationDuration: '3s' }} />
               <span>No-Code BPM & DMS Platform</span>
-            </motion.div>
+            </div>
             
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6 leading-[1.15]"
+            <h1
+              className="animate-fade-up text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-slate-900 mb-6 leading-[1.15]"
+              style={{ animationDelay: '0.2s' }}
             >
               İş Süreçlerinizi
               <br />
@@ -152,45 +148,39 @@ export default function EFlowPage() {
               </span>
               <br />
               Hızınızı Katlayın!
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
+            <p
+              className="animate-fade-up text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
+              style={{ animationDelay: '0.15s' }}
             >
               Kod yazmadan, sürükle-bırak yöntemiyle iş süreçlerinizi dakikalar içinde tasarlayın.
-            </motion.p>
+            </p>
 
             <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ 
-                opacity: 1, 
-                y: 0,
+              animate={{
                 boxShadow: [
                   "0 10px 30px rgba(237, 79, 55, 0.3)",
                   "0 10px 45px rgba(237, 79, 55, 0.6)",
                   "0 10px 30px rgba(237, 79, 55, 0.3)"
                 ]
               }}
-              transition={{ 
-                opacity: { duration: 0.6, delay: 0.15 },
-                y: { duration: 0.6, delay: 0.15 },
+              transition={{
                 boxShadow: {
                   repeat: Infinity,
                   duration: 2,
                   ease: "easeInOut"
                 }
               }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.06,
                 boxShadow: "0 20px 50px rgba(237, 79, 55, 0.8)",
                 y: -1
               }}
               whileTap={{ scale: 0.97 }}
               onClick={() => router.push('/contact')}
-              className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#ed4f37] via-orange-500 to-amber-500 text-white rounded-2xl transition-all duration-300 font-bold text-lg cursor-pointer"
+              className="animate-fade-up group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-[#ed4f37] via-orange-500 to-amber-500 text-white rounded-2xl transition-all duration-300 font-bold text-lg cursor-pointer"
+              style={{ animationDelay: '0.15s' }}
             >
               <span>Teklif Al</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />

@@ -80,41 +80,35 @@ export default function SectoralSolutionsPage() {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden bg-white pt-32 md:pt-44">
         {/* Rainbow Background Image */}
         <div className="absolute inset-0 pointer-events-none opacity-30" style={{ zIndex: 1 }}>
-          <img src="/rainbw.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
+          <img src="/rainbw.webp" alt="" aria-hidden="true" className="w-full h-full object-cover" />
         </div>
         
         {/* Left Side - Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
           <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-medium mb-6"
+            <div
+              className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-medium mb-6"
+              style={{ animationDelay: '0s' }}
             >
               <Sparkles size={14} />
               Sektörel ERP Çözümleri
-            </motion.div>
+            </div>
             
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+            <h1
+              className="animate-fade-up text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+              style={{ animationDelay: '0.1s' }}
             >
               Her Sektör İçin
               <br />
               <span className="bg-gradient-to-r from-red-600 via-blue-600 to-yellow-600 bg-clip-text text-transparent">Özel Çözümler</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed mx-auto"
+            <p
+              className="animate-fade-up text-lg md:text-xl text-gray-600 mb-8 max-w-xl leading-relaxed mx-auto"
+              style={{ animationDelay: '0.2s' }}
             >
               İnşattan üretime, perakendeden lojistiğe kadar her sektörün ihtiyacına özel ERP çözümleri ile işletmenizi dijitalleştirin
-            </motion.p>
+            </p>
 
             
           </div>

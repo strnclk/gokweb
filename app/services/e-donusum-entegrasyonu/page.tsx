@@ -33,7 +33,7 @@ export default function EDonusumEntegrasyonuPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-br from-emerald-50/50 via-white to-teal-50/20">
         <div className="absolute inset-0 pointer-events-none opacity-30">
-          <img src="/rainbw.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
+          <img src="/rainbw.webp" alt="" aria-hidden="true" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -79,11 +79,9 @@ export default function EDonusumEntegrasyonuPage() {
             </div>
 
             {/* Right Side: GİB e-Belge Instant Dispatch Terminal Mockup */}
-            <motion.div
-              initial={{ opacity: 0, x: 30, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="relative"
+            <div
+              className="animate-fade-in-side relative"
+              style={{ '--fade-x': '1.875rem', '--fade-scale': '0.95', animationDelay: '0s' } as React.CSSProperties}
             >
               <div className="absolute inset-0 bg-emerald-500/10 rounded-3xl blur-3xl" />
               <div className="relative border border-emerald-200/80 bg-white/95 backdrop-blur-xl rounded-3xl p-6 sm:p-7 shadow-2xl shadow-emerald-500/10">
@@ -133,7 +131,7 @@ export default function EDonusumEntegrasyonuPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -233,7 +231,7 @@ export default function EDonusumEntegrasyonuPage() {
       </section>
 
       {/* Visual Flow of Document Sending */}
-      <section className="py-16 sm:py-24 bg-gray-50/50 border-t border-b border-gray-150">
+      <section className="py-16 sm:py-24 bg-gray-50/50 border-t border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-extrabold text-gray-900">Elektronik Fatura Nasıl Gönderilir?</h2>
@@ -303,7 +301,7 @@ export default function EDonusumEntegrasyonuPage() {
 
       {/* CTA Section */}
       <section className="py-16 max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-600 via-teal-650 to-emerald-700 text-white shadow-xl p-8 sm:p-12 md:p-16 text-center">
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white shadow-xl p-8 sm:p-12 md:p-16 text-center">
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
             <h3 className="text-3xl sm:text-4xl font-bold tracking-tight">
               E-Dönüşüm Süreçlerinizi Hızlandırın

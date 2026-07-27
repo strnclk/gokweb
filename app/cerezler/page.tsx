@@ -12,7 +12,7 @@ export default function CerezlerPage() {
       <Navbar />
       
       {/* Hero Section */}
-      <div className="relative bg-cover bg-center pt-32 pb-16" style={{ backgroundImage: 'url(/rainbw.png)' }}>
+      <div className="relative bg-cover bg-center pt-32 pb-16" style={{ backgroundImage: 'url(/rainbw.webp)' }}>
         <div className="absolute inset-0 bg-white/80" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">

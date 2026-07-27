@@ -171,7 +171,7 @@ export default function VerticalSolutionsPage() {
     {
       icon: Users,
       title: 'Uzman İş Ortağı Ekosistemi',
-      description: 'Ussoft, Eryaz, Corbiq, Favorim Bilişim ve Mizan gibi uzman iş ortaklarının çözümleri tek elden',
+      description: 'Ussoft, Eryaz, Corbiq, Favorim Bilişim ve Mizan gibi uzman iş ortaklarının çözümlerini tek elden sunuyoruz',
       color: 'from-rose-500 to-pink-600',
       tint: 'bg-rose-50/60 border-rose-200 hover:border-rose-300'
     },
@@ -205,31 +205,25 @@ export default function VerticalSolutionsPage() {
         
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10">
           <div className="text-center lg:text-left">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-gray-900"
+            <h1
+              className="animate-fade-up text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-gray-900"
+              style={{ animationDelay: '0.1s' }}
             >
               Mikro Dikey
               <br />
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Çözümler</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-sm sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2"
+            <p
+              className="animate-fade-up text-sm sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2"
+              style={{ animationDelay: '0.2s' }}
             >
               Her sektörün ihtiyacına özel olarak tasarlanmış ERP çözümleri ile işletmenizi dijitalleştirin
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="mt-8 sm:mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-md mx-auto lg:mx-0"
+            <div
+              className="animate-fade-up mt-8 sm:mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-md mx-auto lg:mx-0"
+              style={{ animationDelay: '0.15s' }}
             >
               {[
                 { label: 'Sektör', value: '20+' },
@@ -241,14 +235,12 @@ export default function VerticalSolutionsPage() {
                   <div className="text-xs text-gray-500">{stat.label}</div>
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex justify-center hidden lg:flex"
+          <div
+            className="animate-fade-in-side relative flex justify-center hidden lg:flex"
+            style={{ '--fade-x': '3.125rem', '--fade-scale': '0.9', animationDelay: '0.2s' } as React.CSSProperties}
           >
             <div className="relative w-[560px] h-[480px] select-none">
               
@@ -385,7 +377,7 @@ export default function VerticalSolutionsPage() {
               </motion.div>
 
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -494,7 +486,7 @@ export default function VerticalSolutionsPage() {
             className="text-center mb-8 sm:mb-12"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-purple-50 border border-purple-200 rounded-full text-purple-700 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-              <CheckCircle2 size={12} className="sm:size-14" />
+              <CheckCircle2 size={12} className="sm:size-3.5" />
               Neden Dikey Çözümler?
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 text-gray-900">Neden Dikey Çözümler?</h2>
@@ -524,7 +516,7 @@ export default function VerticalSolutionsPage() {
                           <CardContent className="p-4 sm:p-6">
                             <div className="flex items-start gap-3 sm:gap-4">
                               <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br ${benefit.color} shadow-md flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                                <benefit.icon size={20} className="sm:size-24 text-white" />
+                                <benefit.icon size={20} className="sm:size-6 text-white" />
                               </div>
                               <div>
                                 <h3 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 text-gray-900">{benefit.title}</h3>
@@ -589,7 +581,7 @@ export default function VerticalSolutionsPage() {
             
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white/10 border border-white/20 rounded-full text-white/80 text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-                <Sparkles size={12} className="sm:size-14" />
+                <Sparkles size={12} className="sm:size-3.5" />
                 Başlayın
               </div>
               <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-white mb-3 sm:mb-4">

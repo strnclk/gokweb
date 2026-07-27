@@ -9,7 +9,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const sssSolutions = [
-  { soru: 'Hangi çözüm kategorileri sunuyorsunuz?', cevap: 'Hızlı satış, üretim yönetimi, kalite, depo ve lojistik, B2B bayi, süreç yönetimi, raporlama ve restoran yönetimi gibi 9 farklı kategoride çözüm sunuyoruz.' },
+  { soru: 'Hangi çözüm kategorileri sunuyorsunuz?', cevap: 'Hızlı satış, üretim yönetimi, kalite, depo ve lojistik, B2B bayi, süreç yönetimi, raporlama ve restoran yönetimi gibi 13 farklı kategoride çözüm sunuyoruz.' },
   { soru: 'Bu çözümler Mikro ile entegre mi çalışıyor?', cevap: 'Evet. Çözümlerimiz Mikro API ile güvenli entegrasyon sağlar; verileriniz tek merkezde ve tutarlı kalır.' },
   { soru: 'İşletmeme hangi çözümün uygun olduğunu nasıl anlarım?', cevap: 'İhtiyaç analiziyle en uygun çözümü birlikte belirleriz. Ürün tarafında ise çözüm danışmanı testimizle 3 soruda öneri alabilirsiniz.' },
   { soru: 'Sadece yazılım mı, kurulum ve destek de dahil mi?', cevap: 'Kurulum, eğitim ve kurulum sonrası destek dahildir. Amacımız çözümün ilk günden verimli çalışmasıdır.' },
@@ -325,40 +325,34 @@ export default function SolutionsPage() {
       <section className="relative min-h-[50vh] sm:min-h-[60vh] flex items-center overflow-hidden bg-white pt-28">
         {/* Rainbow Background Image */}
         <div className="absolute inset-0 pointer-events-none opacity-30" style={{ zIndex: 1 }}>
-          <img src="/rainbw.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
+          <img src="/rainbw.webp" alt="" aria-hidden="true" className="w-full h-full object-cover" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full">
           <div className="text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-medium mb-6"
+            <div
+              className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-medium mb-6"
+              style={{ animationDelay: '0s' }}
             >
               <Sparkles size={14} />
               ERP Çözümleri
-            </motion.div>
+            </div>
             
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900"
+            <h1
+              className="animate-fade-up text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 text-gray-900"
+              style={{ animationDelay: '0.1s' }}
             >
               Her Ölçekten İşletmenin
               <br />
               <span className="bg-gradient-to-r from-red-600 via-blue-600 to-yellow-600 bg-clip-text text-transparent">İhtiyacına Uygun Çözümler</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl leading-relaxed mx-auto"
+            <p
+              className="animate-fade-up text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl leading-relaxed mx-auto"
+              style={{ animationDelay: '0.2s' }}
             >
               Depo ve lojistikten hızlı satışa, üretimden kalite yönetimine kadar işinize kolaylık ve işletmenize kârlılık sağlayacak Mikro API ile güvenli entegrasyon sağlayan çözümler
-            </motion.p>
+            </p>
           </div>
         </div>
       </section>
@@ -380,7 +374,7 @@ export default function SolutionsPage() {
               Her Ölçekten İşletmenin İhtiyacına Uygun Çözümler
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              9 farklı çözüm kategorisi ile işletmenizi dijitalleştirin
+              13 farklı çözüm kategorisi ile işletmenizi dijitalleştirin
             </p>
           </motion.div>
 

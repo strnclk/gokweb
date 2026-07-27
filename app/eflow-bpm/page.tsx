@@ -62,12 +62,12 @@ export default function EflowBpmPage() {
     {
       icon: Smartphone,
       title: 'Mobil Uygulama',
-      description: 'Süreçlerinizi herhangi bir ek operasyon gerektirmeden mobil uygulama üzerinden yönetin, işinize kesintisiz ulaşın.',
+      description: 'Süreçlerinizi herhangi bir ek operasyon gerektirmeden mobil uygulama üzerinden yönetin, işinize her yerden ulaşın.',
     },
     {
       icon: Layers,
       title: 'Web ve Mobil Uyumlu',
-      description: 'İşlerinizi her an ve her yerden kolaylıkla yönetin, iş süreçlerinize kesintisiz devam edin.',
+      description: 'İşlerinizi her an ve her yerden kolaylıkla yönetin, iş süreçlerinize aralıksız devam edin.',
     }
   ];
 
@@ -114,66 +114,56 @@ export default function EflowBpmPage() {
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-12 items-start relative z-10 w-full">
           {/* Hero Content Left */}
           <div className="lg:col-span-7 text-center lg:text-left flex flex-col items-center lg:items-start">
-            <motion.div
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-[#40949c]/10 border border-[#40949c]/20 rounded-full text-[#40949c] text-sm font-semibold mb-6"
+            <div
+              className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-[#40949c]/10 border border-[#40949c]/20 rounded-full text-[#40949c] text-sm font-semibold mb-6"
+              style={{ animationDelay: '0s' }}
             >
               <Sparkles size={14} className="text-amber-500 animate-spin" style={{ animationDuration: '3s' }} />
               <span>No-Code BPM Platformu</span>
-            </motion.div>
+            </div>
             
-            <motion.h1
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 text-slate-900 tracking-tight"
+            <h1
+              className="animate-fade-up text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 text-slate-900 tracking-tight"
+              style={{ animationDelay: '0.1s' }}
             >
               E-Flow BPM ile
               <br />
               <span className="bg-gradient-to-r from-blue-600 via-[#40949c] to-emerald-500 bg-clip-text text-transparent pb-1 inline-block">
                 Sıfır Kod, Sınırsız Otomasyon!
               </span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 25 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
+            <p
+              className="animate-fade-up text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-medium"
+              style={{ animationDelay: '0.2s' }}
             >
               İş süreçlerinizi yönetmek ve otomatikleştirmek için ihtiyaçlarınızla örtüşen iş akışı yönetim uygulamanızı kod yazmadan tasarlayın ve hemen kullanmaya başlayın.
-            </motion.p>
+            </p>
 
             <motion.button
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ 
-                opacity: 1, 
-                y: 0,
+              animate={{
                 boxShadow: [
                   "0 10px 30px rgba(16, 185, 129, 0.3)",
                   "0 10px 45px rgba(16, 185, 129, 0.6)",
                   "0 10px 30px rgba(16, 185, 129, 0.3)"
                 ]
               }}
-              transition={{ 
-                opacity: { duration: 0.6, delay: 0.15 },
-                y: { duration: 0.6, delay: 0.15 },
+              transition={{
                 boxShadow: {
                   repeat: Infinity,
                   duration: 2,
                   ease: "easeInOut"
                 }
               }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.06,
                 boxShadow: "0 20px 50px rgba(16, 185, 129, 0.8)",
                 y: -1
               }}
               whileTap={{ scale: 0.97 }}
               onClick={() => router.push('/contact')}
-              className="group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-emerald-600 via-teal-500 to-[#40949c] text-white rounded-2xl transition-all duration-300 font-bold text-lg cursor-pointer shadow-lg"
+              className="animate-fade-up group inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-emerald-600 via-teal-500 to-[#40949c] text-white rounded-2xl transition-all duration-300 font-bold text-lg cursor-pointer shadow-lg"
+              style={{ animationDelay: '0.15s' }}
             >
               <span>Teklif Al</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -181,15 +171,13 @@ export default function EflowBpmPage() {
           </div>
 
           {/* Hero Visual Right (Birebir 8 Dilimli İnteraktif 3D Vektör Çark Bileşeni - EflowBpmWheel) */}
-          <motion.div
-            initial={{ opacity: 0, x: 40, scale: 0.95 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="lg:col-span-5 relative flex flex-col items-center justify-center w-full py-2"
+          <div
+            className="animate-fade-in-side lg:col-span-5 relative flex flex-col items-center justify-center w-full py-2"
+            style={{ '--fade-x': '2.5rem', '--fade-scale': '0.95', animationDelay: '0.2s' } as React.CSSProperties}
           >
             {/* İnteraktif Vektör Çark Bileşeni */}
             <EflowBpmWheel />
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -641,7 +629,7 @@ export default function EflowBpmPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.6 }}
-            className="relative bg-gradient-to-br from-slate-900 via-slate-850 to-slate-950 p-10 sm:p-16 rounded-[3rem] text-center overflow-hidden shadow-2xl border border-slate-800"
+            className="relative bg-gradient-to-br from-slate-900 to-slate-950 p-10 sm:p-16 rounded-[3rem] text-center overflow-hidden shadow-2xl border border-slate-800"
           >
             {/* Glowing neon shapes inside CTA */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#40949c]/10 rounded-full blur-3xl pointer-events-none" />

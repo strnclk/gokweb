@@ -3,11 +3,9 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Link from 'next/link';
 import { 
   Briefcase, Check, Sparkles, ArrowRight, Phone, Scissors, Store, Shirt, Layers
 } from 'lucide-react';
-import { motion } from 'motion/react';
 
 export default function TekstilCozumleriPage() {
   return (
@@ -17,47 +15,39 @@ export default function TekstilCozumleriPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-20 flex items-center overflow-hidden bg-white">
         <div className="absolute inset-0 pointer-events-none opacity-30">
-          <img src="/rainbw.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
+          <img src="/rainbw.webp" alt="" aria-hidden="true" className="w-full h-full object-cover" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-200 rounded-full text-indigo-700 text-sm font-medium mb-6"
+          <div
+            className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-indigo-50 border border-indigo-200 rounded-full text-indigo-700 text-sm font-medium mb-6"
+            style={{ animationDelay: '0s' }}
           >
             <Sparkles size={14} className="text-indigo-600" />
             Sektörel Çözümler
-          </motion.div>
+          </div>
           
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-900"
+          <h1
+            className="animate-fade-up text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-900"
+            style={{ animationDelay: '0.1s' }}
           >
             Tekstil Sektörü Çözümleri
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed mx-auto"
+          <p
+            className="animate-fade-up text-base sm:text-lg text-gray-600 mb-8 max-w-3xl leading-relaxed mx-auto"
+            style={{ animationDelay: '0.2s' }}
           >
             Tekstil ve hazır giyim şubelerinizde renk/beden matrisi takipleri ve mağazacılık uygulamaları ile satış hızınızı artırın.
-          </motion.p>
+          </p>
         </div>
       </section>
 
       {/* Main Solution Card - Exactly like /solutions/ page format */}
       <section className="px-4 sm:px-6 pb-20 bg-white">
         <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
+          <div
+            className="animate-fade-up bg-white border border-gray-200 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300"
+            style={{ animationDelay: '0s' }}
           >
             <div className="p-6 sm:p-8 md:p-10">
               <div className="flex items-center gap-4 mb-8">
@@ -100,17 +90,17 @@ export default function TekstilCozumleriPage() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Simple Direct Call Action */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link 
-              href="/contact" 
+            <a
+              href="/contact?sector=tekstil"
               className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white font-extrabold px-8 py-4 rounded-xl shadow-lg hover:shadow-indigo-600/30 hover:scale-105 active:scale-95 transition-all duration-300 text-sm"
             >
               Hemen Teklif Al
               <ArrowRight className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>

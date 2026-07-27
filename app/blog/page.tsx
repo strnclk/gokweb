@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlogCover from '@/components/BlogCover';
@@ -59,12 +58,9 @@ export default function BlogPage() {
           <div className="relative">
 
             {/* Kutu 1: Üst Sol (Dijital Yol Haritası Analizi) - Optimal Çapraz Konumlandırma */}
-            <motion.div
-              initial={{ opacity: 0, y: -15, x: -15 }}
-              animate={{ opacity: 1, y: 0, x: 0 }}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="absolute -top-6 left-8 xl:left-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+            <div
+              className="animate-fade-in-side absolute -top-6 left-8 xl:left-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              style={{ '--fade-x': '-0.9375rem', '--fade-y': '-0.9375rem', animationDelay: '0.1s' } as React.CSSProperties}
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <Compass className="w-6 h-6" />
@@ -77,15 +73,12 @@ export default function BlogPage() {
                   <span>Stratejik Mimari Planlama</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Kutu 2: Üst Sağ (Bulut & Entegre Sunucular) - Optimal Çapraz Konumlandırma */}
-            <motion.div
-              initial={{ opacity: 0, y: -15, x: 15 }}
-              animate={{ opacity: 1, y: 0, x: 0 }}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="absolute -top-3 right-8 xl:right-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+            <div
+              className="animate-fade-in-side absolute -top-3 right-8 xl:right-16 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              style={{ '--fade-x': '0.9375rem', '--fade-y': '-0.9375rem', animationDelay: '0.2s' } as React.CSSProperties}
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <Cloud className="w-6 h-6" />
@@ -98,15 +91,12 @@ export default function BlogPage() {
                   <span>%99.99 Veri Güvenliği</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Kutu 3: Alt Sol (Sektörel Teknoloji Trendleri) - Optimal Çapraz Konumlandırma */}
-            <motion.div
-              initial={{ opacity: 0, y: 15, x: -15 }}
-              animate={{ opacity: 1, y: 0, x: 0 }}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="absolute bottom-0 left-0 xl:left-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+            <div
+              className="animate-fade-in-side absolute bottom-0 left-0 xl:left-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              style={{ '--fade-x': '-0.9375rem', '--fade-y': '0.9375rem', animationDelay: '0.15s' } as React.CSSProperties}
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <TrendingUp className="w-6 h-6" />
@@ -119,15 +109,12 @@ export default function BlogPage() {
                   <span>Veri Odaklı Metrikler</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Kutu 4: Alt Sağ (ERP Entegrasyon Modelleri) - Optimal Çapraz Konumlandırma */}
-            <motion.div
-              initial={{ opacity: 0, y: 15, x: 15 }}
-              animate={{ opacity: 1, y: 0, x: 0 }}
-              whileHover={{ y: -6 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="absolute bottom-0 right-0 xl:right-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 transition-all duration-300 cursor-pointer"
+            <div
+              className="animate-fade-in-side absolute bottom-0 right-0 xl:right-10 hidden lg:flex items-center gap-4.5 p-5 rounded-2xl bg-white/70 backdrop-blur-[15px] border border-white/90 shadow-xl shadow-[#00A896]/10 shadow-[inset_0_1.5px_1px_rgba(255,255,255,0.95)] z-20 max-w-[315px] hover:shadow-2xl hover:shadow-[#00A896]/25 hover:border-[#00A896]/50 hover:bg-white/85 hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
+              style={{ '--fade-x': '0.9375rem', '--fade-y': '0.9375rem', animationDelay: '0.15s' } as React.CSSProperties}
             >
               <div className="w-12 h-12 rounded-full bg-[#E6F4F1]/90 border border-[#CDEAE4] text-[#00A896] flex items-center justify-center shrink-0 shadow-xs backdrop-blur-md">
                 <Workflow className="w-6 h-6" />
@@ -140,14 +127,11 @@ export default function BlogPage() {
                   <span>Otomatik İş Akışları</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* MERKEZİ BAŞLIK VE AÇIKLAMA BLOĞU */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-center max-w-4xl mx-auto py-8 sm:py-12 px-4 relative z-30 flex flex-col items-center pointer-events-none"
+            <div
+              className="animate-fade-up text-center max-w-4xl mx-auto py-8 sm:py-12 px-4 relative z-30 flex flex-col items-center pointer-events-none"
             >
               {/* Yıldız ve 'Blog' Rozeti (Orijinal Canlı Turkuaz) */}
               <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#023744] border border-[#00B4D8]/30 rounded-full text-xs sm:text-sm font-bold tracking-wide mb-6 shadow-sm backdrop-blur-md">
@@ -182,7 +166,7 @@ export default function BlogPage() {
                   href="#rehberler"
                   onClick={(e) => {
                     e.preventDefault();
-                    document.getElementById('rehberler')?.scrollIntoView({ behavior: 'smooth' });
+                    document.getElementById('rehberler')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
                   }}
                   className="group pointer-events-auto inline-flex items-center justify-center gap-3.5 px-9 py-4 bg-gradient-to-r from-[#032B3A] via-[#005F73] to-[#0A9396] hover:from-[#005F73] hover:via-[#0A9396] hover:to-[#02C39A] text-white font-extrabold text-base sm:text-lg rounded-xl shadow-lg shadow-[#032B3A]/20 hover:shadow-xl hover:shadow-[#005F73]/30 hover:-translate-y-1 transition-all duration-300 cursor-pointer"
                 >
@@ -190,7 +174,7 @@ export default function BlogPage() {
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1.5 text-teal-300" />
                 </a>
               </div>
-            </motion.div>
+            </div>
 
           </div>
 

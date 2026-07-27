@@ -138,30 +138,71 @@ const ODAK: Record<Profil, string[]> = {
   ],
 };
 
+// İlçe adının ünlü uyumu/ünsüz benzeşmesine göre doğru hâl eki (bkz. HeroSection.tsx
+// getLocativeSuffix — aynı kurallar, giris metinlerindeki mevcut kullanımla birebir eşleşir).
+const EK: Record<string, string> = {
+  'Adalar': 'da',
+  'Arnavutköy': 'de',
+  'Avcılar': 'da',
+  'Bağcılar': 'da',
+  'Bahçelievler': 'de',
+  'Bakırköy': 'de',
+  'Başakşehir': 'de',
+  'Bayrampaşa': 'da',
+  'Beşiktaş': 'ta',
+  'Beykoz': 'da',
+  'Beylikdüzü': 'nde',
+  'Büyükçekmece': 'de',
+  'Çatalca': 'da',
+  'Çekmeköy': 'de',
+  'Esenler': 'de',
+  'Esenyurt': 'ta',
+  'Eyüpsultan': 'da',
+  'Fatih': 'te',
+  'Gaziosmanpaşa': 'da',
+  'Güngören': 'de',
+  'Kadıköy': 'de',
+  'Kağıthane': 'de',
+  'Kartal': 'da',
+  'Küçükçekmece': 'de',
+  'Maltepe': 'de',
+  'Pendik': 'te',
+  'Sancaktepe': 'de',
+  'Sarıyer': 'de',
+  'Şile': 'de',
+  'Silivri': 'de',
+  'Şişli': 'de',
+  'Sultanbeyli': 'de',
+  'Sultangazi': 'de',
+  'Ümraniye': 'de',
+  'Üsküdar': 'da',
+  'Zeytinburnu': 'nda',
+};
+
 // Profil'e göre ilk (sektöre özel) SSS
 const sssQ1: Record<Profil, (ad: string) => { s: string; c: string }> = {
   uretim: (ad) => ({
-    s: `${ad}'deki sanayi/üretim firmamız için Mikro’nun hangi modülleri gerekir?`,
+    s: `${ad}'${EK[ad] ?? 'de'}ki sanayi/üretim firmamız için Mikro’nun hangi modülleri gerekir?`,
     c: 'Üretim yapan firmalarda genellikle stok, üretim/reçete, cari ve muhasebe modülleri birlikte kullanılır. İş akışınızı inceleyip yalnızca ihtiyaç duyduğunuz modülleri içeren bir kurulum öneririz.',
   }),
   ticaret: (ad) => ({
-    s: `${ad}'deki mağazamız/işletmemiz için hangi Mikro sürümü uygun?`,
+    s: `${ad}'${EK[ad] ?? 'de'}ki mağazamız/işletmemiz için hangi Mikro sürümü uygun?`,
     c: 'Tek şubeli işletmeler için Mikro Jump, büyüyen ve çok şubeli işletmeler için Mikro Run veya Fly uygundur. Ücretsiz ihtiyaç analiziyle size en uygun sürümü birlikte belirleriz.',
   }),
   kurumsal: (ad) => ({
-    s: `${ad}'deki kurumsal firmamız için hangi Mikro sürümü uygun?`,
+    s: `${ad}'${EK[ad] ?? 'de'}ki kurumsal firmamız için hangi Mikro sürümü uygun?`,
     c: 'Çok kullanıcılı ve çok şubeli kurumsal yapılar için genellikle Mikro Fly, daha küçük ekipler için Mikro Run önerilir. İhtiyaç analiziyle en uygun sürümü birlikte belirleriz.',
   }),
   hizmet: (ad) => ({
-    s: `${ad}'deki işletmemiz için hangi Mikro çözümü uygun?`,
+    s: `${ad}'${EK[ad] ?? 'de'}ki işletmemiz için hangi Mikro çözümü uygun?`,
     c: 'Ön muhasebe, cari ve kasa takibi ihtiyacınıza göre Mikro Jump veya Run uygundur. İşletmenizin büyüklüğüne göre en uygun sürümü birlikte belirleriz.',
   }),
   tarim: (ad) => ({
-    s: `${ad}'deki tarım/gıda işletmemiz için Mikro’nun hangi modülleri gerekir?`,
+    s: `${ad}'${EK[ad] ?? 'de'}ki tarım/gıda işletmemiz için Mikro’nun hangi modülleri gerekir?`,
     c: 'Genellikle stok, parti/lot takibi, cari ve muhasebe modülleri birlikte kullanılır. Süreçlerinizi inceleyip ihtiyacınıza uygun bir kurulum öneririz.',
   }),
   insaat: (ad) => ({
-    s: `${ad}'deki inşaat/emlak firmamız için Mikro’nun hangi modülleri gerekir?`,
+    s: `${ad}'${EK[ad] ?? 'de'}ki inşaat/emlak firmamız için Mikro’nun hangi modülleri gerekir?`,
     c: 'İnşaat ve emlak firmalarında genellikle proje/maliyet takibi, stok, cari ve muhasebe modülleri kullanılır. İş akışınıza göre uygun modülleri öneririz.',
   }),
 };

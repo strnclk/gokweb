@@ -30,20 +30,20 @@ export default function OzelYazilimGelistirmePage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-br from-orange-50/50 via-white to-red-50/20">
+      <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-br from-red-50/50 via-white to-red-50/20">
         <div className="absolute inset-0 pointer-events-none opacity-30">
-          <img src="/rainbw.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
+          <img src="/rainbw.webp" alt="" aria-hidden="true" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="text-left">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-50 border border-orange-200 rounded-full text-orange-700 text-sm font-semibold mb-6">
-                <Sparkles size={14} className="text-orange-600" />
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-semibold mb-6">
+                <Sparkles size={14} className="text-red-600" />
                 Özel Süreçlere Özel Kodlama
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-gray-900 leading-tight mb-6">
                 Özel Yazılım Geliştirme <br />
-                <span className="bg-gradient-to-r from-orange-600 via-red-600 to-orange-800 bg-clip-text text-transparent">&amp; Esnek API Çözümleri</span>
+                <span className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent">&amp; Esnek API Çözümleri</span>
               </h1>
               <p className="text-base sm:text-lg text-slate-700 mb-6 leading-relaxed font-medium">
                 Hazır paketlerin sınırlarını aşıyor, işletmenize özgü süreçleri otomatikleştiren web, mobil ve API entegrasyonu yazılımlarını sıfırdan sizin için tasarlayıp kodluyoruz.
@@ -51,26 +51,26 @@ export default function OzelYazilimGelistirmePage() {
 
               {/* Dynamic Live Özel Yazılım Feature Badges (Item 5) */}
               <div className="flex flex-wrap gap-2.5 mb-8">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-orange-50/90 border border-orange-200/90 rounded-xl text-orange-900 text-xs font-extrabold shadow-sm hover:scale-105 hover:bg-orange-100/80 transition-all cursor-default">
-                  <span className="w-2 h-2 rounded-full bg-orange-600 animate-pulse" />
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-red-50/90 border border-red-200/90 rounded-xl text-red-900 text-xs font-extrabold shadow-sm hover:scale-105 hover:bg-red-100/80 transition-all cursor-default">
+                  <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
                   Mikro REST &amp; SOAP API
                 </span>
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-red-50/90 border border-red-200/90 rounded-xl text-red-900 text-xs font-extrabold shadow-sm hover:scale-105 hover:bg-red-100/80 transition-all cursor-default">
                   <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
                   Esnek SQL Veri Mimarisi
                 </span>
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-amber-50/90 border border-amber-200/90 rounded-xl text-amber-900 text-xs font-extrabold shadow-sm hover:scale-105 hover:bg-amber-100/80 transition-all cursor-default">
-                  <span className="w-2 h-2 rounded-full bg-amber-600 animate-pulse" />
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-red-50/90 border border-red-200/90 rounded-xl text-red-900 text-xs font-extrabold shadow-sm hover:scale-105 hover:bg-red-100/80 transition-all cursor-default">
+                  <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
                   Web &amp; Mobil Uygulama
                 </span>
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-orange-50/90 border border-orange-200/90 rounded-xl text-orange-900 text-xs font-extrabold shadow-sm hover:scale-105 hover:bg-orange-100/80 transition-all cursor-default">
-                  <span className="w-2 h-2 rounded-full bg-orange-600 animate-pulse" />
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-red-50/90 border border-red-200/90 rounded-xl text-red-900 text-xs font-extrabold shadow-sm hover:scale-105 hover:bg-red-100/80 transition-all cursor-default">
+                  <span className="w-2 h-2 rounded-full bg-red-600 animate-pulse" />
                   Canlı Çift Yönlü Sync
                 </span>
               </div>
 
               <div className="flex flex-wrap gap-4">
-                <Link href="/contact" className="px-7 py-4 bg-orange-600 hover:bg-orange-700 text-white font-extrabold rounded-xl shadow-lg hover:shadow-orange-600/30 hover:scale-105 active:scale-95 transition-all duration-300 text-sm flex items-center gap-2">
+                <Link href="/contact" className="px-7 py-4 bg-red-600 hover:bg-red-700 text-white font-extrabold rounded-xl shadow-lg hover:shadow-red-600/30 hover:scale-105 active:scale-95 transition-all duration-300 text-sm flex items-center gap-2">
                   Projenizi Bizimle Paylaşın
                   <ArrowRight size={16} />
                 </Link>
@@ -78,21 +78,19 @@ export default function OzelYazilimGelistirmePage() {
             </div>
 
             {/* Right Side: Code & REST API Terminal SaaS Mockup */}
-            <motion.div
-              initial={{ opacity: 0, x: 30, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="relative"
+            <div
+              className="animate-fade-in-side relative"
+              style={{ '--fade-x': '1.875rem', '--fade-scale': '0.95', animationDelay: '0s' } as React.CSSProperties}
             >
-              <div className="absolute inset-0 bg-orange-500/10 rounded-3xl blur-3xl" />
-              <div className="relative border border-slate-800 bg-[#0F172A] rounded-3xl p-6 sm:p-7 shadow-2xl shadow-orange-500/10 text-white">
+              <div className="absolute inset-0 bg-red-500/10 rounded-3xl blur-3xl" />
+              <div className="relative border border-slate-800 bg-[#0F172A] rounded-3xl p-6 sm:p-7 shadow-2xl shadow-red-500/10 text-white">
                 {/* IDE Window Header */}
                 <div className="flex items-center justify-between border-b border-slate-800 pb-3.5 mb-4">
                   <div className="flex items-center gap-2">
                     <span className="text-xs font-mono text-slate-400">POST /api/v1/mikro-sync</span>
                   </div>
-                  <div className="px-3 py-1 bg-orange-500/20 border border-orange-500/40 rounded-full text-[11px] font-mono text-orange-300 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
+                  <div className="px-3 py-1 bg-red-500/20 border border-red-500/40 rounded-full text-[11px] font-mono text-red-300 flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
                     200 OK
                   </div>
                 </div>
@@ -114,7 +112,7 @@ export default function OzelYazilimGelistirmePage() {
                   <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800 flex items-center justify-between">
                     <div>
                       <div className="text-slate-400 text-[11px]">Entegre Teknolojiler</div>
-                      <div className="text-orange-400 font-bold mt-0.5">Next.js • Node.js • MS SQL • REST</div>
+                      <div className="text-red-400 font-bold mt-0.5">Next.js • Node.js • MS SQL • REST</div>
                     </div>
                     <div className="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 font-bold rounded text-[11px]">
                       Çift Yönlü Anlık
@@ -122,7 +120,7 @@ export default function OzelYazilimGelistirmePage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -131,11 +129,11 @@ export default function OzelYazilimGelistirmePage() {
       <section className="py-16 bg-slate-50/70 border-y border-slate-200/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-3xl mx-auto mb-12">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-orange-700 bg-orange-50 border border-orange-200 px-3.5 py-1 rounded-full">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-red-700 bg-red-50 border border-red-200 px-3.5 py-1 rounded-full">
               Mimari Karşılaştırma
             </span>
             <h2 className="text-2xl sm:text-3xl font-black text-slate-900 mt-3">
-              Kalıplaşmış Hazır Paketler vs. <span className="text-orange-600">Gökkuşağı Özel Yazılım</span>
+              Kalıplaşmış Hazır Paketler vs. <span className="text-red-600">Gökkuşağı Özel Yazılım</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2 font-medium">
               İş süreçlerinizi standart paketlere uydurmak yerine, yazılımı işinize %100 özel geliştirin.
@@ -166,22 +164,22 @@ export default function OzelYazilimGelistirmePage() {
             </div>
 
             {/* Gokkusagi Custom Software Solution */}
-            <div className="p-7 bg-gradient-to-b from-orange-50/50 via-white to-red-50/30 border-2 border-orange-500/80 rounded-3xl shadow-xl shadow-orange-500/10 space-y-4 relative overflow-hidden">
-              <div className="w-12 h-12 rounded-2xl bg-orange-600 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-orange-500/30">
+            <div className="p-7 bg-gradient-to-b from-red-50/50 via-white to-red-50/30 border-2 border-red-500/80 rounded-3xl shadow-xl shadow-red-500/10 space-y-4 relative overflow-hidden">
+              <div className="w-12 h-12 rounded-2xl bg-red-600 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-red-500/30">
                 ✓
               </div>
               <h3 className="text-lg font-extrabold text-slate-900">Gökkuşağı Terzi Usulü Özel Kodlama</h3>
               <ul className="space-y-3 text-xs sm:text-sm text-slate-800 font-medium">
                 <li className="flex items-start gap-2.5">
-                  <CheckCircle2 size={16} className="text-orange-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 size={16} className="text-red-600 mt-0.5 shrink-0" />
                   <span>İşletmenizin birebir süreçlerine özel tasarlanmış esnek web, mobil ve API mimarisi.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <CheckCircle2 size={16} className="text-orange-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 size={16} className="text-red-600 mt-0.5 shrink-0" />
                   <span>Mikro ERP veritabanı ile çift yönlü anlık, güvenli SQL transaction senkronizasyonu.</span>
                 </li>
                 <li className="flex items-start gap-2.5">
-                  <CheckCircle2 size={16} className="text-orange-600 mt-0.5 shrink-0" />
+                  <CheckCircle2 size={16} className="text-red-600 mt-0.5 shrink-0" />
                   <span>Sınırsız büyütülebilir kod yapısı ile şirketinize %100 ölçeklenebilir teknoloji.</span>
                 </li>
               </ul>
@@ -203,17 +201,17 @@ export default function OzelYazilimGelistirmePage() {
             {techStack.map((tech, idx) => {
               const TechIcon = tech.icon;
               return (
-                <div key={idx} className="relative overflow-hidden border border-slate-200/90 rounded-2xl p-6 bg-white shadow-sm hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-2 hover:border-orange-400/80 transition-all duration-300 group cursor-pointer">
+                <div key={idx} className="relative overflow-hidden border border-slate-200/90 rounded-2xl p-6 bg-white shadow-sm hover:shadow-xl hover:shadow-red-500/10 hover:-translate-y-2 hover:border-red-400/80 transition-all duration-300 group cursor-pointer">
                   {/* Top Accent Gradient Bar on Hover */}
-                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-orange-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-10 h-10 bg-slate-50 border border-slate-200/80 rounded-xl flex items-center justify-center text-slate-700 group-hover:bg-orange-600 group-hover:border-orange-600 group-hover:text-white group-hover:shadow-md group-hover:shadow-orange-500/25 transition-all duration-300">
+                    <div className="w-10 h-10 bg-slate-50 border border-slate-200/80 rounded-xl flex items-center justify-center text-slate-700 group-hover:bg-red-600 group-hover:border-red-600 group-hover:text-white group-hover:shadow-md group-hover:shadow-red-500/25 transition-all duration-300">
                       <TechIcon size={20} />
                     </div>
                     <div>
-                      <h3 className="text-base font-extrabold text-slate-900 group-hover:text-orange-600 transition-colors duration-300">{tech.name}</h3>
-                      <span className="text-[11px] bg-orange-50/80 border border-orange-200/80 text-orange-800 px-2.5 py-0.5 rounded-md font-mono font-bold mt-1 inline-block">
+                      <h3 className="text-base font-extrabold text-slate-900 group-hover:text-red-600 transition-colors duration-300">{tech.name}</h3>
+                      <span className="text-[11px] bg-red-50/80 border border-red-200/80 text-red-800 px-2.5 py-0.5 rounded-md font-mono font-bold mt-1 inline-block">
                         {tech.tech}
                       </span>
                     </div>
@@ -227,7 +225,7 @@ export default function OzelYazilimGelistirmePage() {
       </section>
 
       {/* Case Studies / Project Examples */}
-      <section className="py-16 sm:py-24 bg-gray-50/50 border-t border-b border-gray-150">
+      <section className="py-16 sm:py-24 bg-gray-50/50 border-t border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-extrabold text-gray-900">Sıkça Kodladığımız Entegrasyon Çözümleri</h2>
@@ -256,11 +254,11 @@ export default function OzelYazilimGelistirmePage() {
       <section className="py-16 sm:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <span className="text-xs font-extrabold uppercase tracking-widest text-orange-700 bg-orange-50 border border-orange-200 px-3.5 py-1 rounded-full">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-red-700 bg-red-50 border border-red-200 px-3.5 py-1 rounded-full">
               Merak Edilenler
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-3">
-              Özel Yazılım &amp; Entegrasyonlar Hakkında <span className="text-orange-600">Sıkça Sorulan Sorular</span>
+              Özel Yazılım &amp; Entegrasyonlar Hakkında <span className="text-red-600">Sıkça Sorulan Sorular</span>
             </h2>
             <p className="text-slate-600 text-sm sm:text-base mt-2 font-medium">
               Mikro API entegrasyonu, veritabanı güvenliği ve proje sahipliği hakkında merak edilenler.
@@ -274,9 +272,9 @@ export default function OzelYazilimGelistirmePage() {
             ].map((item, idx) => (
               <div key={idx} className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
                 <details className="group">
-                  <summary className="w-full flex items-center justify-between gap-3 px-6 py-4.5 text-left font-bold text-gray-800 hover:text-orange-600 transition-colors text-xs sm:text-sm md:text-base cursor-pointer list-none">
+                  <summary className="w-full flex items-center justify-between gap-3 px-6 py-4.5 text-left font-bold text-gray-800 hover:text-red-600 transition-colors text-xs sm:text-sm md:text-base cursor-pointer list-none">
                     <span className="flex items-center gap-3 flex-1 min-w-0">
-                      <span className="w-7 h-7 bg-orange-600 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">{idx + 1}</span>
+                      <span className="w-7 h-7 bg-red-600 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">{idx + 1}</span>
                       <span>{item.q}</span>
                     </span>
                     <ChevronDown className="w-4 h-4 text-gray-400 group-open:rotate-180 transition-transform flex-shrink-0" />
@@ -293,7 +291,7 @@ export default function OzelYazilimGelistirmePage() {
 
       {/* CTA Section */}
       <section className="py-16 max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-orange-600 via-red-650 to-orange-700 text-white shadow-xl p-8 sm:p-12 md:p-16 text-center">
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-red-600 via-red-700 to-red-800 text-white shadow-xl p-8 sm:p-12 md:p-16 text-center">
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
             <h3 className="text-3xl sm:text-4xl font-bold tracking-tight">
               Özel Yazılım Projenizi Başlatın

@@ -36,41 +36,33 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Sol Taraf - İçerik */}
             <div className="text-center lg:text-left">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-                className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6"
+              <div
+                className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6"
+                style={{ animationDelay: '0s' }}
               >
                 <Sparkles size={14} />
                 Profesyonel İletişim
-              </motion.div>
+              </div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+              <h1
+                className="animate-fade-up text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+                style={{ animationDelay: '0.1s' }}
               >
                 İşletmenizi
                 <br />
                 <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">Dijitalleştirelim</span>
-              </motion.h1>
+              </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl leading-relaxed"
+              <p
+                className="animate-fade-up text-lg md:text-xl text-gray-600 mb-8 max-w-2xl leading-relaxed"
+                style={{ animationDelay: '0.2s' }}
               >
                 20+ yıllık deneyimimizle işletmeniz için en uygun ERP, CRM ve e-dönüşüm çözümlerini birlikte belirleyelim. Ücretsiz danışmanlık için hemen iletişime geçin.
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              <div
+                className="animate-fade-up flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                style={{ animationDelay: '0.15s' }}
               >
                 <a
                   href={`tel:+90${whatsappNumber}`}
@@ -86,14 +78,12 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
                   <Mail size={20} />
                   E-posta Gönder
                 </a>
-              </motion.div>
+              </div>
 
               {/* İstatistikler */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.15 }}
-                className="mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0"
+              <div
+                className="animate-fade-up mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0"
+                style={{ animationDelay: '0.15s' }}
               >
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-900">20+</div>
@@ -107,15 +97,13 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
                   <div className="text-2xl font-bold text-gray-900">Uzman</div>
                   <div className="text-xs text-gray-500">Destek</div>
                 </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Sağ Taraf - Özellikler */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="hidden lg:block"
+            <div
+              className="animate-fade-in-side hidden lg:block"
+              style={{ '--fade-x': '3.125rem', animationDelay: '0.2s' } as React.CSSProperties}
             >
               <div className="bg-white border border-gray-200 rounded-2xl p-7 shadow-xl">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Neden Biz?</h3>
@@ -227,7 +215,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -332,6 +320,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
             className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200 overflow-hidden shadow-xl"
           >
             <iframe
+              title="Gökkuşağı Yazılım Ataşehir ofisi konumu"
               src="https://maps.google.com/maps?q=Eryilmazlar+Sokak+No:2+Icerenkoy+Atasehir+Istanbul&t=&z=16&ie=UTF8&iwloc=&output=embed"
               width="100%"
               height="400"

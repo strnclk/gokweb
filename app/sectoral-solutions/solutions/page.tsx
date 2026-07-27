@@ -3,8 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import Link from 'next/link';
-import { 
+import {
   Building2, Factory, ShoppingCart, Truck, Users, Briefcase, Cpu, Database,
   Sparkles, ArrowRight, Phone, Stethoscope, Shirt, Wrench, Package, Apple,
   Calculator, ShoppingBag, Landmark, Scale, ShieldCheck, History, Scissors,
@@ -18,19 +17,50 @@ const sssSectoralDetails = [
   { soru: 'Kurulum ve entegrasyon süresi ne kadardır?', cevap: 'Sektörün ve süreçlerin karmaşıklığına bağlı olarak kurulum, özelleştirme ve eğitim dahil 2 ila 4 hafta arasında canlı kullanıma geçiş tamamlanır.' }
 ];
 
+const VALID_TABS = ['insaat', 'uretim', 'perakende', 'lojistik', 'gida', 'tekstil', 'otomotiv', 'saglik'];
+const ACTIVE_TAB_STORAGE_KEY = 'sectoralSolutionsActiveTab';
+
 export default function SectoralSolutionsDetailPage() {
   const [activeTab, setActiveTab] = useState('insaat');
 
-  // Handle Hash Navigation on load or hash change
+  // Sekme seçimi TEK doğruluk kaynağı olarak sessionStorage'da tutulur.
+  // Not: kasıtlı olarak URL hash'ine bakılmıyor — location.hash = ... her tıklamada
+  // yeni bir tarayıcı geçmişi kaydı oluşturuyordu; bu da /contact'tan "geri" ile
+  // dönüldüğünde hangi hash kaydına inileceğini belirsizleştirip yalnızca ilk
+  // (varsayılan insaat) sekmenin doğru görünmesine, diğerlerinin ise geçmiş
+  // yığınında "atlanmasına" yol açıyordu. sessionStorage, hangi sekmeden
+  // ayrıldığımızdan bağımsız olarak her zaman doğru sekmeyi geri yükler.
+  const restoreActiveTab = () => {
+    const stored = sessionStorage.getItem(ACTIVE_TAB_STORAGE_KEY);
+    if (stored && VALID_TABS.includes(stored)) {
+      setActiveTab(stored);
+    }
+  };
+
   useEffect(() => {
-    const validTabs = ['insaat', 'uretim', 'perakende', 'lojistik', 'gida', 'tekstil', 'otomotiv', 'saglik'];
+    // İlk yüklemede: paylaşılabilir/derin bağlantı linkleri için hash'i de kabul et,
+    // ama asıl geri-dönüş kaynağı sessionStorage'dır.
     const hash = window.location.hash.replace('#', '');
-    if (validTabs.includes(hash)) {
+    if (VALID_TABS.includes(hash)) {
       setActiveTab(hash);
+      sessionStorage.setItem(ACTIVE_TAB_STORAGE_KEY, hash);
       setTimeout(() => {
         document.getElementById('solutions-detail-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 100);
+    } else {
+      restoreActiveTab();
     }
+
+    // Tarayıcı geri/ileri tuşuna basıldığında (popstate) sekmeyi senkronize et —
+    // bileşen yeniden mount olmasa bile devreye girer.
+    window.addEventListener('popstate', restoreActiveTab);
+    // Her sayfa gösteriminde (hem taze yükleme hem bfcache'den geri dönüş) senkronize et.
+    window.addEventListener('pageshow', restoreActiveTab);
+
+    return () => {
+      window.removeEventListener('popstate', restoreActiveTab);
+      window.removeEventListener('pageshow', restoreActiveTab);
+    };
   }, []);
 
   const tabList = [
@@ -51,36 +81,30 @@ export default function SectoralSolutionsDetailPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-20 flex items-center overflow-hidden bg-white">
         <div className="absolute inset-0 pointer-events-none opacity-30">
-          <img src="/rainbw.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
+          <img src="/rainbw.webp" alt="" aria-hidden="true" className="w-full h-full object-cover" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-medium mb-6"
+          <div
+            className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-red-50 border border-red-200 rounded-full text-red-700 text-sm font-medium mb-6"
+            style={{ animationDelay: '0s' }}
           >
             <Sparkles size={14} />
             Sektörel Çözümler
-          </motion.div>
+          </div>
           
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+          <h1
+            className="animate-fade-up text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-gray-900"
+            style={{ animationDelay: '0.1s' }}
           >
             Sektörünüze Özel Çözümler
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 max-w-3xl leading-relaxed mx-auto"
+          <p
+            className="animate-fade-up text-base sm:text-lg md:text-xl text-gray-600 mb-8 max-w-3xl leading-relaxed mx-auto"
+            style={{ animationDelay: '0.2s' }}
           >
             Sektörünüze özel ERP modülleri, depo, hızlı satış ve izlenebilirlik entegrasyonları ile işinizi dijitalleştirin.
-          </motion.p>
+          </p>
         </div>
       </section>
 
@@ -97,7 +121,12 @@ export default function SectoralSolutionsDetailPage() {
                   key={tab.id}
                   onClick={() => {
                     setActiveTab(tab.id);
-                    window.location.hash = tab.id;
+                    // replaceState: URL'de hash görünür kalır (paylaşılabilir) ama
+                    // her sekme tıklamasında YENİ bir geçmiş kaydı OLUŞTURMAZ —
+                    // böylece /contact'tan geri dönüşte tek, öngörülebilir bir
+                    // geçmiş kaydına inilir ve sekme sessionStorage'dan doğru geri yüklenir.
+                    history.replaceState(null, '', `#${tab.id}`);
+                    sessionStorage.setItem(ACTIVE_TAB_STORAGE_KEY, tab.id);
                   }}
                   className={`px-3 sm:px-5 py-2.5 sm:py-3.5 rounded-xl font-semibold transition-all text-xs sm:text-sm flex items-center gap-1.5 cursor-pointer ${
                     isSelected
@@ -590,13 +619,13 @@ export default function SectoralSolutionsDetailPage() {
 
             {/* Simple Direct Call Action */}
             <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link 
-                href="/contact" 
+              <a
+                href={`/contact?sector=${activeTab}`}
                 className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-extrabold px-8 py-4 rounded-xl shadow-lg hover:shadow-red-600/30 hover:scale-105 active:scale-95 transition-all duration-300 text-sm"
               >
                 Hemen Teklif Al
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </a>
             </div>
           </div>
         </div>

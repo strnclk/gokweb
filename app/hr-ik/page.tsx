@@ -184,7 +184,7 @@ export default function HRIKPage() {
               },
               {
                 title: "Yasal Mevzuata ve KVKK'ya Tam Uyum",
-                desc: "Personel özlük dosyaları ve hassas kişisel veriler, şifreli veritabanlarında KVKK standardslarına uygun olarak saklanır."
+                desc: "Personel özlük dosyaları ve hassas kişisel veriler, şifreli veritabanlarında KVKK standartlarına uygun olarak saklanır."
               },
               {
                 title: "Puantaj ve Bordro Entegrasyonu",

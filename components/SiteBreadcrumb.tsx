@@ -24,8 +24,8 @@ const MAP: Record<string, Crumb[]> = {
   '/services/mikro-erp-kurulumu': [{ label: 'Hizmetlerimiz', href: '/services' }, { label: 'Mikro ERP Kurulumu' }],
   '/services/ozel-yazilim-gelistirme': [{ label: 'Hizmetlerimiz', href: '/services' }, { label: 'Özel Yazılım Geliştirme' }],
 
-  '/solutions': [{ label: 'Çözümler' }],
-  '/vertical-solutions': [{ label: 'Çözümler', href: '/solutions' }, { label: 'Mikro Dikey Çözümler' }],
+  '/solutions': [{ label: 'Mikro Dikey Çözümler', href: '/vertical-solutions' }, { label: 'Çözümler' }],
+  '/vertical-solutions': [{ label: 'Mikro Dikey Çözümler' }],
 
   '/sectoral-solutions': [{ label: 'Sektörel Çözümler' }],
   '/sectoral-solutions/solutions': [{ label: 'Sektörel Çözümler', href: '/sectoral-solutions' }, { label: 'Çözüm Detayları' }],

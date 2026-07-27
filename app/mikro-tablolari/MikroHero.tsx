@@ -53,11 +53,9 @@ export default function MikroHero({
         </svg>
         Mikro V16 · Teknik Dokümantasyon
       </span>
-      <motion.h1
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-[40px] md:text-[56px] font-extrabold leading-tight tracking-tight min-h-[2.2em]"
+      <h1
+        className="animate-fade-up text-[40px] md:text-[56px] font-extrabold leading-tight tracking-tight min-h-[2.2em]"
+        style={{ animationDelay: '0.1s' }}
       >
         Mikro Tablolar
         <br />
@@ -68,7 +66,7 @@ export default function MikroHero({
           aria-hidden
           className="inline-block w-[3px] h-[0.8em] ml-[3px] bg-purple-600 rounded-sm animate-pulse align-middle"
         />
-      </motion.h1>
+      </h1>
       <p className="text-gray-500 text-[16.5px] max-w-[620px] mx-auto mt-4 leading-relaxed">
         Mikro V16 veritabanı tablolarını modüllere göre keşfedin. Alan yapıları, ilişkiler ve
         entegrasyon detaylarıyla {tabloSayisi} tablo tek noktada.

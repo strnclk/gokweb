@@ -204,7 +204,7 @@ export default function ButceMerkeziPage() {
       </section>
 
       {/* 3. Örnek görünüm */}
-      <section id="ornek-gorunum" className="py-16 md:py-20 bg-[#fafbfc] border-t border-slate-100">
+      <section id="ornek-gorunum" className="scroll-mt-28 py-16 md:py-20 bg-[#fafbfc] border-t border-slate-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-xs font-extrabold uppercase tracking-widest text-[#40949c] bg-[#40949c]/10 px-3.5 py-1 rounded-full">

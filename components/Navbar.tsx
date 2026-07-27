@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion } from 'motion/react';
+import Image from 'next/image';
 import { Menu, X, ChevronDown, Package, Building, Zap, Briefcase, Factory, FileText, GitCompare, Workflow, FolderOpen, Star, TrendingUp, Phone, Mail, Layers, LifeBuoy, Route, Users, Settings, Receipt, Code2, Compass, GraduationCap, Wallet } from 'lucide-react';
 import MikroHorseIcon from '@/components/MikroHorseIcon';
 
@@ -71,7 +72,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-20">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center">
-              <img src="/logo.png" alt="Gökkuşağı Yazılım ve Danışmanlık logosu" className="h-16 w-auto" />
+              <Image src="/logo.png" alt="Gökkuşağı Yazılım ve Danışmanlık logosu" width={247} height={94} priority className="h-16 w-auto" />
             </Link>
             
             {/* Animated Contact Info */}
@@ -270,7 +271,7 @@ export default function Navbar() {
                   HR (İK) Çözümleri
                 </Link>
                 <Link href="/mes-yonetim" className="flex items-center gap-3 px-5 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200">
-                  <Settings className="w-4 h-4 text-amber-500" />
+                  <Settings className="w-4 h-4 text-cyan-500" />
                   MES (Yönetim)
                 </Link>
                 <div className="border-t border-gray-100 my-1"></div>
@@ -317,7 +318,7 @@ export default function Navbar() {
                   E-Dönüşüm Entegrasyonu
                 </Link>
                 <Link href="/services/ozel-yazilim-gelistirme" className="flex items-center gap-3 px-5 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200">
-                  <Code2 className="w-4 h-4 text-orange-500" />
+                  <Code2 className="w-4 h-4 text-red-500" />
                   Özel Yazılım Geliştirme
                 </Link>
                 <Link href="/services/danismanlik" className="flex items-center gap-3 px-5 py-2.5 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200">
@@ -573,7 +574,7 @@ export default function Navbar() {
                       HR (İK) Çözümleri
                     </Link>
                     <Link href="/mes-yonetim" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
-                      <Settings className="w-4 h-4 text-amber-500" />
+                      <Settings className="w-4 h-4 text-cyan-500" />
                       MES (Yönetim)
                     </Link>
                     <div className="border-t border-gray-100 my-1 mx-4"></div>
@@ -633,7 +634,7 @@ export default function Navbar() {
                       E-Dönüşüm Entegrasyonu
                     </Link>
                     <Link href="/services/ozel-yazilim-gelistirme" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">
-                      <Code2 className="w-4 h-4 text-orange-500" />
+                      <Code2 className="w-4 h-4 text-red-500" />
                       Özel Yazılım Geliştirme
                     </Link>
                     <Link href="/services/danismanlik" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-blue-50/80 hover:text-blue-600 transition-all duration-200 rounded-lg">

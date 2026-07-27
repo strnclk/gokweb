@@ -52,11 +52,11 @@ export default function ServicesPage() {
     {
       icon: LifeBuoy,
       name: 'Teknik Destek ve Bakım',
-      description: 'Sistemlerin kesintisiz çalışması için yedekleme, güncelleme ve SQL veritabanı optimizasyonu.',
+      description: 'Sistemlerin sorunsuz çalışması için yedekleme, güncelleme ve SQL veritabanı optimizasyonu.',
       color: 'from-sky-600 to-sky-700',
       id: 'teknik-destek',
       features: ['Uzaktan Bağlantı', 'SQL Bakım', 'Bulut Yedekleme'],
-      valueProp: 'Uzman destek ile 2 saat içinde garantili müdahale.'
+      valueProp: 'Uzman destek ekibinden hızlı ve öncelikli müdahale.'
     },
     {
       icon: GraduationCap,
@@ -111,44 +111,36 @@ export default function ServicesPage() {
         {/* translate-y: breadcrumb sabit kalırken etiket/başlık/görsel bloğunu bir miktar aşağı alır */}
         <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 grid lg:grid-cols-2 gap-8 sm:gap-12 items-center relative z-10 translate-y-4 md:translate-y-10">
           <div className="text-center lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6 mx-auto lg:mx-0"
+            <div
+              className="animate-fade-up inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-200 rounded-full text-blue-700 text-sm font-medium mb-6 mx-auto lg:mx-0"
+              style={{ animationDelay: '0s' }}
             >
               <Sparkles size={14} className="text-blue-600" />
               Gökkuşağı Hizmetleri
-            </motion.div>
+            </div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-gray-900"
+            <h1
+              className="animate-fade-up text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 sm:mb-6 text-gray-900"
+              style={{ animationDelay: '0.1s' }}
             >
               Profesyonel
               <br />
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Mikro Hizmetleri</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-sm sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2"
+            <p
+              className="animate-fade-up text-sm sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed px-2"
+              style={{ animationDelay: '0.2s' }}
             >
               Kurulum, entegrasyon, özel yazılım, danışmanlık, teknik destek ve eğitim hizmetlerimiz ile işletmenizi yarına hazırlayın
-            </motion.p>
+            </p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="mt-8 sm:mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-md mx-auto lg:mx-0"
+            <div
+              className="animate-fade-up mt-8 sm:mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-md mx-auto lg:mx-0"
+              style={{ animationDelay: '0.15s' }}
             >
               {[
-                { label: 'Uçtan Uca', value: '360°' },
+                { label: 'Müşteri Memnuniyeti', value: 'Yüksek' },
                 { label: 'Proje', value: '500+' },
                 { label: 'Deneyim', value: '20+ Yıl' }
               ].map((stat, i) => (
@@ -157,16 +149,14 @@ export default function ServicesPage() {
                   <div className="text-xs text-gray-500">{stat.label}</div>
                 </div>
               ))}
-            </motion.div>
+            </div>
 
             {/* Mobil etiket kümesi: masaüstündeki büyük kompozisyon telefonda
                 gizli olduğu için (hidden lg:flex), aynı 6 hizmet burada sade bir
                 sarmalanan şerit olarak gösterilir. */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.15 }}
-              className="mt-8 flex flex-wrap justify-center gap-2.5 max-w-md mx-auto lg:hidden"
+            <div
+              className="animate-fade-up mt-8 flex flex-wrap justify-center gap-2.5 max-w-md mx-auto lg:hidden"
+              style={{ animationDelay: '0.15s' }}
             >
               {heroTags.map((t) => {
                 const TagIcon = t.Icon;
@@ -182,14 +172,12 @@ export default function ServicesPage() {
                   </div>
                 );
               })}
-            </motion.div>
+            </div>
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50, scale: 0.9 }}
-            animate={{ opacity: 1, x: 0, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex justify-center hidden lg:flex"
+          <div
+            className="animate-fade-in-side relative flex justify-center hidden lg:flex"
+            style={{ '--fade-x': '3.125rem', '--fade-scale': '0.9', animationDelay: '0.2s' } as React.CSSProperties}
           >
             <div className="relative w-[560px] h-[480px] select-none">
               {/* Decorative background blur */}
@@ -268,7 +256,7 @@ export default function ServicesPage() {
                 );
               })}
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 

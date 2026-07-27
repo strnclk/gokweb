@@ -39,7 +39,7 @@ export default function TeknikDestekPage() {
       {/* Hero Section */}
       <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-br from-sky-50/50 via-white to-blue-50/20">
         <div className="absolute inset-0 pointer-events-none opacity-30">
-          <img src="/rainbw.png" alt="" aria-hidden="true" className="w-full h-full object-cover" />
+          <img src="/rainbw.webp" alt="" aria-hidden="true" className="w-full h-full object-cover" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -60,7 +60,7 @@ export default function TeknikDestekPage() {
               <div className="flex flex-wrap gap-2.5 mb-8">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-sky-50/90 border border-sky-200/90 rounded-xl text-sky-900 text-xs font-extrabold shadow-sm hover:scale-105 hover:bg-sky-100/80 transition-all cursor-default">
                   <span className="w-2 h-2 rounded-full bg-sky-600 animate-pulse" />
-                  Max 2 Saat Müdahale SLA
+                  Hızlı Müdahale Önceliği
                 </span>
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-blue-50/90 border border-blue-200/90 rounded-xl text-blue-900 text-xs font-extrabold shadow-sm hover:scale-105 hover:bg-blue-100/80 transition-all cursor-default">
                   <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
@@ -85,11 +85,9 @@ export default function TeknikDestekPage() {
             </div>
 
             {/* Right Side: Realtime System Health & SLA Monitor Mockup */}
-            <motion.div
-              initial={{ opacity: 0, x: 30, scale: 0.95 }}
-              animate={{ opacity: 1, x: 0, scale: 1 }}
-              transition={{ duration: 0.6 }}
-              className="relative"
+            <div
+              className="animate-fade-in-side relative"
+              style={{ '--fade-x': '1.875rem', '--fade-scale': '0.95', animationDelay: '0s' } as React.CSSProperties}
             >
               <div className="absolute inset-0 bg-sky-500/10 rounded-3xl blur-3xl" />
               <div className="relative border border-sky-200/80 bg-white/95 backdrop-blur-xl rounded-3xl p-6 sm:p-7 shadow-2xl shadow-sky-500/10">
@@ -112,7 +110,7 @@ export default function TeknikDestekPage() {
                       <div className="text-xl font-black mt-0.5">Yüksek Erişilebilirlik</div>
                     </div>
                     <div className="px-3 py-1 bg-white/20 backdrop-blur-md rounded-lg text-xs font-bold text-white border border-white/30">
-                      SLA: 2 Saat
+                      Öncelikli SLA
                     </div>
                   </div>
 
@@ -120,7 +118,7 @@ export default function TeknikDestekPage() {
                     <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
                       <div className="font-extrabold text-slate-800">Kritik Müdahale</div>
                       <div className="text-red-600 font-bold flex items-center gap-1">
-                        <CheckCircle2 size={12} /> max 2 Saat Garantili
+                        <CheckCircle2 size={12} /> Öncelikli Müdahale
                       </div>
                     </div>
                     <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
@@ -139,7 +137,7 @@ export default function TeknikDestekPage() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -196,7 +194,7 @@ export default function TeknikDestekPage() {
                       MÜDAHALE ADIMI 0{activeStep + 1} / 04
                     </span>
                     <span className="text-xs font-extrabold text-blue-600 flex items-center gap-1">
-                      <CheckCircle2 size={14} /> Max 2 Saat SLA Taahhüdü
+                      <CheckCircle2 size={14} /> Önceliklendirilmiş SLA Süreci
                     </span>
                   </div>
 
@@ -261,7 +259,7 @@ export default function TeknikDestekPage() {
       </section>
 
       {/* SSS Section */}
-      <section className="py-16 sm:py-24 bg-white border-t border-gray-150">
+      <section className="py-16 sm:py-24 bg-white border-t border-gray-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <span className="text-xs font-extrabold uppercase tracking-widest text-sky-700 bg-sky-50 border border-sky-200 px-3.5 py-1 rounded-full">
@@ -301,7 +299,7 @@ export default function TeknikDestekPage() {
 
       {/* CTA Section */}
       <section className="py-16 max-w-5xl mx-auto px-4 sm:px-6">
-        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-sky-600 via-blue-650 to-indigo-700 text-white shadow-xl p-8 sm:p-12 md:p-16 text-center">
+        <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-sky-600 via-blue-600 to-indigo-700 text-white shadow-xl p-8 sm:p-12 md:p-16 text-center">
           <div className="relative z-10 max-w-2xl mx-auto space-y-6">
             <h3 className="text-3xl sm:text-4xl font-bold tracking-tight">
               Sistemlerinizi Güvence Altına Alın
