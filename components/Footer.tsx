@@ -183,7 +183,23 @@ export default function Footer() {
             
             <div>
               <h5 className="font-semibold text-white mb-3">Çalışma Saatleri</h5>
-              <p className="text-sm text-slate-300">Pazartesi - Cuma: 09:00 - 18:00</p>
+              {/* Yedi gün tek tek, Pazartesi→Pazar sırasıyla. */}
+              <dl className="text-sm text-slate-300 space-y-1">
+                {[
+                  ['Pazartesi', '09:00 - 18:00'],
+                  ['Salı', '09:00 - 18:00'],
+                  ['Çarşamba', '09:00 - 18:00'],
+                  ['Perşembe', '09:00 - 18:00'],
+                  ['Cuma', '09:00 - 18:00'],
+                  ['Cumartesi', '09:00 - 13:00'],
+                  ['Pazar', 'Kapalı'],
+                ].map(([gun, saat]) => (
+                  <div key={gun} className="flex justify-between gap-3">
+                    <dt>{gun}</dt>
+                    <dd className="whitespace-nowrap">{saat}</dd>
+                  </div>
+                ))}
+              </dl>
             </div>
           </div>
         </div>

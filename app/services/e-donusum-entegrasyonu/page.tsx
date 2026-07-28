@@ -85,17 +85,6 @@ export default function EDonusumEntegrasyonuPage() {
             >
               <div className="absolute inset-0 bg-emerald-500/10 rounded-3xl blur-3xl" />
               <div className="relative border border-emerald-200/80 bg-white/95 backdrop-blur-xl rounded-3xl p-6 sm:p-7 shadow-2xl shadow-emerald-500/10">
-                {/* Window Header */}
-                <div className="flex items-center justify-between border-b border-slate-100 pb-3.5 mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-slate-500">e-mikro.gib-terminal.live</span>
-                  </div>
-                  <div className="px-3 py-1 bg-emerald-50 border border-emerald-200 rounded-full text-[11px] font-extrabold text-emerald-700 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                    Mali Mühür İmzalı
-                  </div>
-                </div>
-
                 {/* Dispatch Stats & Status */}
                 <div className="space-y-3.5">
                   <div className="bg-gradient-to-r from-emerald-600 to-teal-700 p-4 rounded-2xl text-white shadow-md flex items-center justify-between">

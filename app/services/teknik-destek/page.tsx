@@ -91,17 +91,6 @@ export default function TeknikDestekPage() {
             >
               <div className="absolute inset-0 bg-sky-500/10 rounded-3xl blur-3xl" />
               <div className="relative border border-sky-200/80 bg-white/95 backdrop-blur-xl rounded-3xl p-6 sm:p-7 shadow-2xl shadow-sky-500/10">
-                {/* Window Header */}
-                <div className="flex items-center justify-between border-b border-slate-100 pb-3.5 mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-slate-500">system-health.sla-monitor.live</span>
-                  </div>
-                  <div className="px-3 py-1 bg-sky-50 border border-sky-200 rounded-full text-[11px] font-extrabold text-sky-700 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-sky-500 animate-pulse" />
-                    Sistemler Çalışıyor
-                  </div>
-                </div>
-
                 {/* SLA Metrics Cards */}
                 <div className="space-y-3.5">
                   <div className="bg-gradient-to-r from-sky-600 to-blue-700 p-4 rounded-2xl text-white shadow-md flex items-center justify-between">

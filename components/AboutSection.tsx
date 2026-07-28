@@ -73,7 +73,7 @@ export default function AboutSection() {
     { icon: Package, title: 'Barkodlu Depo Yönetimi', description: 'Gıda dağıtım firması için Mikro entegre depo yönetim sistemi. Barkodlu sayım ve sevkiyat ile hata oranında %90 azalma.', sector: 'Gıda & Dağıtım' },
     { icon: Factory, title: 'MES Üretim Takibi', description: 'Tekstil üreticisi için sahadan gerçek zamanlı üretim verisi toplama. Fire oranında %30 iyileşme sağlandı.', sector: 'Tekstil' },
     { icon: Users, title: 'CRM Satış Yönetimi', description: 'Yapı malzemeleri firması için mobil CRM kurulumu. Teklif dönüş süresi 3 kat hızlandı, müşteri takibi tek ekranda toplandı.', sector: 'İnşaat & Yapı Malzemeleri' },
-    { icon: Workflow, title: 'eFlow Süreç Otomasyonu', description: 'Sağlık grubu için satın alma ve onay süreçlerinin dijitalleştirilmesi. Onay süreleri %70 kısaldı.', sector: 'Sağlık' },
+    { icon: Workflow, title: 'E-Flow Süreç Otomasyonu', description: 'Sağlık grubu için satın alma ve onay süreçlerinin dijitalleştirilmesi. Onay süreleri %70 kısaldı.', sector: 'Sağlık' },
     { icon: Code, title: 'Özel Yazılım Geliştirme', description: 'Kimya firması için Mikro ERP entegre kalite kontrol modülü. Raporlama süresi günlerden dakikalara indi.', sector: 'Kimya' },
     { icon: BarChart3, title: 'Bütçe & Finansal Raporlama', description: 'Holding yapısı için konsolide bütçe ve raporlama sistemi. Ay sonu kapanış süreci 5 kat hızlandı.', sector: 'Enerji & Holding' },
   ];
@@ -214,7 +214,7 @@ export default function AboutSection() {
                       <Shield size={22} />
                     </div>
                     <span className="text-slate-200 text-sm md:text-base font-bold group-hover:text-white transition-colors leading-snug">
-                      Uzman teknik destek
+                      Verilerinizin güvenliği ve iş sürekliliği güvencesi
                     </span>
                   </li>
 
@@ -234,7 +234,7 @@ export default function AboutSection() {
                       <Star size={22} />
                     </div>
                     <span className="text-slate-200 text-sm md:text-base font-bold group-hover:text-white transition-colors leading-snug">
-                      Müşteri memnuniyeti odaklı ve veri odaklı iş ortağı yaklaşımı
+                      Müşteri memnuniyeti ve veri odaklı iş ortağı yaklaşımı
                     </span>
                   </li>
                 </ul>

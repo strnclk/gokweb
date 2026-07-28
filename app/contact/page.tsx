@@ -42,7 +42,8 @@ const localBusinessJsonLd = {
     areaServed: 'TR',
     availableLanguage: 'Turkish',
   },
-  openingHours: 'Mo-Fr 09:00-18:00',
+  // Pazar kapalı olduğu için listelenmez (schema.org'da yalnızca açık günler verilir).
+  openingHours: ['Mo-Fr 09:00-18:00', 'Sa 09:00-13:00'],
   areaServed: { '@type': 'City', name: 'İstanbul' },
 };
 
@@ -62,7 +63,7 @@ const contactMethods = [
   {
     iconName: 'MapPin',
     title: 'Adres',
-    value: 'Ataşehir, İstanbul',
+    value: 'İçerenköy, Eryılmazlar Sk. No:2, 34752 Ataşehir/İstanbul, Türkiye',
     link: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
   }
 ];

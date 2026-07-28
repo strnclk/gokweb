@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   compress: true,
+  // Geliştirme sırasında sol altta çıkan Next.js rota/derleme göstergesi gizlenir.
+  devIndicators: false,
   experimental: {
     // optimizeCss: true, // Critters modül sorunu için geçici olarak devre dışı
   },

@@ -84,17 +84,6 @@ export default function OzelYazilimGelistirmePage() {
             >
               <div className="absolute inset-0 bg-red-500/10 rounded-3xl blur-3xl" />
               <div className="relative border border-slate-800 bg-[#0F172A] rounded-3xl p-6 sm:p-7 shadow-2xl shadow-red-500/10 text-white">
-                {/* IDE Window Header */}
-                <div className="flex items-center justify-between border-b border-slate-800 pb-3.5 mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono text-slate-400">POST /api/v1/mikro-sync</span>
-                  </div>
-                  <div className="px-3 py-1 bg-red-500/20 border border-red-500/40 rounded-full text-[11px] font-mono text-red-300 flex items-center gap-1.5">
-                    <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse" />
-                    200 OK
-                  </div>
-                </div>
-
                 {/* Code Terminal Body */}
                 <div className="font-mono text-xs space-y-3">
                   <div className="p-3 bg-slate-900/90 rounded-xl border border-slate-800 text-slate-300">

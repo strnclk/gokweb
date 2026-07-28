@@ -336,14 +336,17 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Blog */}
-            <Link href="/blog" className={`flex items-center gap-2 transition-all duration-300 font-medium text-sm relative group ${isActive('/blog') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>
-              <FileText className="w-4 h-4" />
-              Blog
+            {/* Blog — diğer üst seviye sekmelerle aynı yapı: alt çizgi Link'in
+                değil, sarmalayıcının içinde durur ki kalınlık/konum eşit olsun. */}
+            <div className="relative group py-2">
+              <Link href="/blog" className={`flex items-center gap-2 transition-all duration-300 font-medium text-sm ${isActive('/blog') ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>
+                <FileText className="w-4 h-4" />
+                Blog
+              </Link>
               {!isActive('/blog') && (
                 <div className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 pointer-events-none"></div>
               )}
-            </Link>
+            </div>
 
             {/* Teklif Al Butonu */}
             <Link href="/contact" className="px-5 py-2.5 bg-white text-gray-800 rounded-full border border-gray-200 hover:shadow-xl hover:from-red-500 hover:via-yellow-500 hover:via-green-500 hover:via-blue-500 hover:to-purple-500 hover:bg-gradient-to-r hover:text-white hover:border-transparent transition-all duration-300 hover:scale-105 text-sm font-semibold">

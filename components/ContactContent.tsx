@@ -257,7 +257,8 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
-                    <div>
+                    {/* min-w-0: uzun adres metni dar ekranda kartı taşırmasın, sarsın. */}
+                    <div className="min-w-0">
                       <h3 className="text-lg font-bold mb-1 text-gray-900">{method.title}</h3>
                       {isPhone ? (
                         <div className="space-y-0.5">

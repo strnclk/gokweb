@@ -51,13 +51,14 @@ export default function GoogleReviewInline({
 
   // Koyu footer: masaüstünde küçük QR + link; mobilde yalnızca link.
   if (variant === 'footer') {
+    // QR üstte, davet linki her zaman onun altında ve aynı eksende hizalı.
     return (
-      <div className={className}>
+      <div className={`flex flex-col items-start gap-3 ${className}`}>
         <a
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="hidden lg:inline-block rounded-lg bg-white p-2 shadow ring-1 ring-white/10 transition-transform hover:scale-105"
+          className="hidden lg:block rounded-lg bg-white p-2 shadow ring-1 ring-white/10 transition-transform hover:scale-105"
           aria-label="Google Yorumları sayfasını aç"
         >
           <GoogleReviewQR url={url} size={84} />
@@ -66,7 +67,7 @@ export default function GoogleReviewInline({
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors"
+          className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition-colors"
         >
           <GoogleG className="w-4 h-4 flex-shrink-0" />
           Google&apos;da değerlendirin

@@ -8,6 +8,7 @@ import { motion } from 'motion/react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const sssBpm = [
   { soru: 'E-Flow BPM nedir?', cevap: 'E-Flow BPM, kod yazmadan sürükle-bırak ile iş akışları ve süreçler tasarlamanızı sağlayan bir süreç yönetimi (BPM) çözümüdür. Onay akışları, formlar ve otomasyonları hızla kurar, süreçlerinizi standartlaştırırsınız.' },
@@ -390,17 +391,22 @@ export default function EflowBpmPage() {
 
               {/* Data Sync Mockup */}
               <div className="mt-8 bg-white border border-slate-200/60 rounded-2xl p-4 shadow-md flex items-center justify-between">
-                <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 bg-slate-900 rounded-lg flex items-center justify-center text-white text-[10px] font-black">EF</div>
+                <div className="flex items-center gap-2 min-w-0">
+                  {/* Logolar yatay ve koyu renkli → beyaz zeminli kutuda gösterilir. */}
+                  <div className="h-7 w-12 shrink-0 bg-white border border-slate-200 rounded-lg flex items-center justify-center p-1">
+                    <Image src="/eflow3-logo.png" alt="E-Flow logosu" width={96} height={38} className="h-full w-auto object-contain" />
+                  </div>
                   <span className="text-[11px] font-extrabold text-slate-800">E-Flow</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <div className="w-1.5 h-1.5 rounded-full bg-[#40949c] animate-ping" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-[#40949c]" />
                   <span className="text-[9px] font-black text-[#40949c] tracking-widest uppercase">SENKRONİZE</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 min-w-0">
                   <span className="text-[11px] font-extrabold text-slate-800">Mikro ERP</span>
-                  <div className="w-7 h-7 bg-[#ed4f37] rounded-lg flex items-center justify-center text-white text-[10px] font-black">MK</div>
+                  <div className="h-7 w-12 shrink-0 bg-white border border-slate-200 rounded-lg flex items-center justify-center p-1">
+                    <Image src="/yetkili.png" alt="Mikro Yazılım logosu" width={96} height={60} className="h-full w-auto object-contain" />
+                  </div>
                 </div>
               </div>
             </div>

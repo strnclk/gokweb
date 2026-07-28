@@ -100,8 +100,8 @@ const apps: App[] = [
     extra: { url: 'https://www.alpemix.com/site/AlpemixService.exe', label: 'AlpemixService indir (kalıcı erişim)', note: 'Sunucu/mağaza gibi sürekli bağlanılan cihazlar için kurulan servis sürümü.' },
     platforms: [
       { label: 'Windows', icon: Monitor, hint: 'Kurulumsuz — çalıştırıp bağlanın', direct: { url: 'https://www.alpemix.com/site/Alpemix.exe', label: 'Alpemix.exe indir' }, page: { url: 'https://www.alpemix.com/en/Download', label: 'Resmi sayfa' } },
-      { label: 'Android', icon: Smartphone, hint: 'Telefon ve tabletler', page: { url: 'https://www.alpemix.com/en/Download', label: 'Mobil uygulama' } },
-      { label: 'iOS', icon: Tablet, hint: 'iPhone ve iPad', page: { url: 'https://www.alpemix.com/en/Download', label: 'Mobil uygulama' } },
+      { label: 'Android', icon: Smartphone, hint: 'Telefon ve tabletler', page: { url: 'https://www.alpemix.com/en/Android', label: 'Mobil uygulama' } },
+      { label: 'iOS', icon: Tablet, hint: 'iPhone ve iPad', page: { url: 'https://www.alpemix.com/en/Ios', label: 'Mobil uygulama' } },
     ],
   },
 ];
