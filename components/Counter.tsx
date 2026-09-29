@@ -47,7 +47,7 @@ export default function Counter({ icon, endValue, suffix, label, isInView, delay
         {icon}
       </div>
       <div className={`${compact ? 'text-5xl md:text-6xl' : 'text-6xl md:text-7xl'} mb-4`}>
-        {count}{suffix}
+        {count.toLocaleString('tr-TR')}{suffix}
       </div>
       <div className={`${compact ? 'text-lg' : 'text-xl'} text-gray-300`}>{label}</div>
     </motion.div>

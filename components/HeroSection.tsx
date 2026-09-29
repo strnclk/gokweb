@@ -312,7 +312,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
               >
                 {[
                   { value: '20+', label: 'Yıl Deneyim' },
-                  { value: '500+', label: 'Mutlu Müşteri' },
+                  { value: '4.000+', label: 'Mutlu Müşteri' },
                   { value: 'Uzman', label: 'Teknik Destek' },
                 ].map((stat, i) => (
                   <div key={i} className="flex flex-col items-center">
@@ -435,7 +435,7 @@ export default function HeroSection({ district }: HeroSectionProps) {
                       <div className="text-[15px] font-bold text-white leading-snug">
                         Mikro ERP ile<br />Dijital Dönüşüm
                       </div>
-                      <div className="text-[9px] text-white/70 font-medium mt-1.5">20+ yıl deneyim · 500+ mutlu müşteri</div>
+                      <div className="text-[9px] text-white/70 font-medium mt-1.5">20+ yıl deneyim · 4.000+ mutlu müşteri</div>
                     </div>
                   </div>
 

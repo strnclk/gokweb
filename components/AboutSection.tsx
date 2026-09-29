@@ -54,7 +54,7 @@ function Counter({ target, duration = 1600, suffix = "", colorClass = "from-blue
       className={`text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight bg-gradient-to-r ${colorClass} bg-clip-text text-transparent mb-2`}
       style={{ display: 'inline-block' }}
     >
-      {count}{suffix}
+      {count.toLocaleString('tr-TR')}{suffix}
     </motion.div>
   );
 }
@@ -165,8 +165,8 @@ export default function AboutSection() {
               transition={{ type: "spring", stiffness: 100, damping: 15 }}
               className="md:col-span-1 bg-white/90 border border-slate-200/40 p-8 rounded-2xl shadow-[0_8px_30px_rgba(230,225,215,0.25)] flex flex-col items-center justify-center text-center group hover:-translate-y-1 transition-transform duration-300"
             >
-              <Counter target="500" suffix="+" colorClass="from-purple-600 via-pink-600 to-purple-700" trigger={isSectionInView} />
-              <div className="text-slate-800 font-extrabold text-lg uppercase tracking-wider">Tamamlanan Proje</div>
+              <Counter target="4000" suffix="+" colorClass="from-purple-600 via-pink-600 to-purple-700" trigger={isSectionInView} />
+              <div className="text-slate-800 font-extrabold text-lg uppercase tracking-wider">Mutlu Müşteri</div>
               <div className="text-slate-500 text-sm mt-2 font-semibold">Farklı ölçekte yüzlerce başarı</div>
             </motion.div>
 
@@ -250,7 +250,7 @@ export default function AboutSection() {
               className="md:col-span-3 bg-white/90 border border-slate-200/40 p-8 md:p-10 rounded-2xl shadow-[0_8px_30px_rgba(230,225,215,0.25)]"
             >
               <p className="text-base md:text-lg text-slate-600 leading-relaxed font-semibold">
-                20 yılı aşkın deneyimimiz ve 500'den fazla mutlu müşterimizle, Türkiye'nin lider mikro ERP ve e-dönüşüm çözümleri sağlayıcısıyız. Mikro Fly, Mikro Run ve Mikro Jump ürünlerimiz ile her ölçekteki işletmeye özel çözümler sunuyoruz. E-fatura, e-defter ve e-arşiv sistemlerimiz tamamen yerlidir. Uzman desteğimizle yanınızdayız.
+                20 yılı aşkın deneyimimiz ve 4.000'den fazla mutlu müşterimizle, Türkiye'nin lider mikro ERP ve e-dönüşüm çözümleri sağlayıcısıyız. Mikro Fly, Mikro Run ve Mikro Jump ürünlerimiz ile her ölçekteki işletmeye özel çözümler sunuyoruz. E-fatura, e-defter ve e-arşiv sistemlerimiz tamamen yerlidir. Uzman desteğimizle yanınızdayız.
               </p>
             </motion.div>
 

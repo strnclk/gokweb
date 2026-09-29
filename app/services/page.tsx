@@ -80,7 +80,7 @@ export default function ServicesPage() {
     },
     {
       soru: 'Yerinde servis veya eğitim veriyor musunuz?',
-      cevap: 'Evet. İstanbul Ataşehir merkezimiz üzerinden tüm Anadolu Yakası ve İstanbul geneline yerinde servis desteği, teknik bakım ve kullanıcı eğitimleri sunuyoruz.'
+      cevap: 'Evet. İstanbul Ataşehir merkezimiz üzerinden İstanbul, Ankara ve İzmir’deki işletmelere yerinde servis desteği, teknik bakım ve kullanıcı eğitimleri sunuyoruz.'
     }
   ];
 
@@ -141,7 +141,7 @@ export default function ServicesPage() {
             >
               {[
                 { label: 'Müşteri Memnuniyeti', value: 'Yüksek' },
-                { label: 'Proje', value: '500+' },
+                { label: 'Müşteri', value: '4.000+' },
                 { label: 'Deneyim', value: '20+ Yıl' }
               ].map((stat, i) => (
                 <div key={i} className="text-center">

@@ -58,7 +58,7 @@ export function CookieConsent({ onAccept, onReject }: { onAccept?: () => void; o
               </div>
               <div className="flex-1">
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  Çerez Politikamiz
+                  Çerez Politikamız
                 </h3>
                 <p className="text-sm text-gray-600 mb-3">
                  Web sitemizde kullanıcı deneyimini geliştirmek için Google Analytics ve Microsoft Clarity gibi analiz araçları kullanılmaktadır. Bu araçlar aracılığıyla elde edilen veriler anonimdir ve yalnızca site performansını iyileştirmek amacıyla kullanılmaktadır.

@@ -161,7 +161,7 @@ export default function DestekBaglantilariPage() {
             </span>
             
             <a 
-              href="tel:02165748343" 
+              href="tel:+902165748343" 
               className="group relative inline-flex items-center gap-3 px-5 py-3 bg-white/80 backdrop-blur-md border border-blue-200/50 hover:border-blue-300 hover:bg-white text-slate-800 rounded-2xl shadow-lg shadow-blue-500/5 transition-all duration-300 hover:scale-105 font-bold text-sm sm:text-base"
             >
               {/* Pulsing online status indicator */}

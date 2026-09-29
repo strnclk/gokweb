@@ -1,0 +1,48 @@
+# Apache cache yapılandırması — statik export (out/) için.
+# public/ altında durur, her build'de out/ köküne kopyalanır.
+#
+# Ayrımın mantığı:
+#   _next/static/*  dosya adları içerik hash'li -> güvenle kalıcı cache
+#   .html ve .txt   adresleri sabit ama içlerinde hash'li chunk adları geçer;
+#                   uzun cache deploy sonrası ChunkLoadError üretir -> kısa tutulur
+#
+# SetEnvIf + env= kullanıldı: <If> direktifi Apache 2.4 gerektirir,
+# bu yazım 2.2'de de çalışır.
+
+<IfModule mod_headers.c>
+  <IfModule mod_setenvif.c>
+    SetEnvIf Request_URI "^/_next/static/" NEXT_IMMUTABLE
+  </IfModule>
+
+  # İçerik hash'li varlıklar (JS, CSS, font, görsel): adı değişmeden içeriği değişemez.
+  Header set Cache-Control "public, max-age=31536000, immutable" env=NEXT_IMMUTABLE
+
+  # Sayfalar ve RSC verisi. Bunlar hiçbir zaman _next/static altında olmaz.
+  <FilesMatch "\.(html|txt)$">
+    Header set Cache-Control "public, max-age=300"
+  </FilesMatch>
+
+  # public/ görselleri — hash'siz oldukları için orta ömür.
+  # _next/static altındakiler yukarıdaki immutable kuralında kalır.
+  <FilesMatch "\.(png|jpe?g|webp|avif|svg|ico)$">
+    Header set Cache-Control "public, max-age=86400" env=!NEXT_IMMUTABLE
+  </FilesMatch>
+</IfModule>
+
+# Sıkıştırma. Sunucu varsayılan olarak HTML ve CSS'i sıkıştırıyor ama
+# JavaScript'i sıkıştırmıyordu: Next.js JS'i "text/javascript" olarak sunuyor,
+# yaygın örneklerdeki "application/javascript" kuralı bu tipi ıskalıyor.
+# JS sıkıştırıldığında ~%72 küçülüyor (137 KB -> 37 KB).
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json image/svg+xml
+  AddOutputFilterByType DEFLATE font/ttf font/otf application/vnd.ms-fontobject
+</IfModule>
+
+# Brotli varsa gzip'ten daha iyi sıkıştırır; yoksa bu blok yok sayılır.
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/xml
+  AddOutputFilterByType BROTLI_COMPRESS text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType BROTLI_COMPRESS application/json image/svg+xml
+</IfModule>

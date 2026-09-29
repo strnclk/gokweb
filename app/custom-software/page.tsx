@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Mikro Özel Yazılım ve Entegrasyon Çözümleri | Gökkuşağı Yazılım',
     description:
-      'Mikro ERP entegrasyonları, özel raporlama, e-ticaret senkronizasyonu, B2B portal ve mobil saha uygulamaları. Anadolu Yakası ve İstanbul geneli.',
+      'Mikro ERP entegrasyonları, özel raporlama, e-ticaret senkronizasyonu, B2B portal ve mobil saha uygulamaları. İstanbul, Ankara ve İzmir.',
     url: `${SITE}/custom-software`,
     type: 'website',
   },
@@ -167,7 +167,7 @@ const sss = [
   },
   {
     soru: 'Yerinde mi uzaktan mı çalışıyorsunuz?',
-    cevap: 'Ataşehir merkezli olarak Anadolu Yakası’nda yerinde, İstanbul geneli ve uzaktan bağlantı ile çalışıyoruz. Projenin ihtiyacına göre en uygun yöntemi birlikte belirleriz.',
+    cevap: 'Ataşehir merkezli olarak İstanbul, Ankara ve İzmir’de; yerinde veya uzaktan bağlantı ile çalışıyoruz. Projenin ihtiyacına göre en uygun yöntemi birlikte belirleriz.',
   },
 ];
 
@@ -364,9 +364,9 @@ export default function CustomSoftwarePage() {
       <section className="py-12 md:py-16 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="max-w-4xl mx-auto px-4 md:px-6 text-center">
           <MapPin className="w-8 h-8 mx-auto mb-4 text-blue-600" />
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">Anadolu Yakası ve İstanbul Geneli</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">İstanbul, Ankara ve İzmir</h2>
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Ataşehir merkezli olarak Anadolu Yakası’nda yerinde; İstanbul geneli ve uzaktan bağlantı ile
+            Ataşehir merkezli olarak İstanbul, Ankara ve İzmir’de; yerinde veya uzaktan bağlantı ile
             özel yazılım ve entegrasyon projelerinizi yürütüyoruz.
           </p>
         </div>

@@ -51,7 +51,7 @@ export default function TrustSection({ compact = false }: { compact?: boolean })
           <Counter
             compact={compact}
             icon={<Users className={compact ? 'w-10 h-10' : 'w-12 h-12'} />}
-            endValue={500}
+            endValue={4000}
             suffix="+"
             label="Müşteri"
             isInView={isInView}

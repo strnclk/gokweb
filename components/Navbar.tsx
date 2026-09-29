@@ -31,7 +31,7 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   const contactInfo = [
-    { type: 'phone', icon: Phone, text: '0539 856 35 78', link: 'tel:05398563578' },
+    { type: 'phone', icon: Phone, text: '0539 856 35 78', link: 'tel:+905398563578' },
     { type: 'phone2', icon: Phone, text: '0216 574 83 43', link: 'tel:+902165748343' },
     { type: 'email', icon: Mail, text: 'satis@gokkusagiyazilim.com.tr', link: 'mailto:satis@gokkusagiyazilim.com.tr' }
   ];

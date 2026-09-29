@@ -9,7 +9,7 @@ import Footer from '@/components/Footer';
 
 const sssFeatured = [
   { soru: 'Hangi alanlarda projeler gerçekleştiriyorsunuz?', cevap: 'Finansal yönetim, nakit akışı, raporlama ve ERP entegrasyonu başta olmak üzere işletmelerin dijitalleşme ihtiyaçlarına yönelik projeler gerçekleştiriyoruz.' },
-  { soru: 'Kaç yıllık deneyime ve kaç projeye sahipsiniz?', cevap: '20+ yıllık sektör deneyimimizle 500’den fazla başarılı proje tamamladık; müşteri memnuniyet oranımız %95 seviyesindedir.' },
+  { soru: 'Kaç yıllık deneyime ve kaç müşteriye sahipsiniz?', cevap: '20+ yıllık sektör deneyimimizle 4.000’den fazla müşteriye hizmet verdik; müşteri memnuniyet oranımız %95 seviyesindedir.' },
   { soru: 'Referans paylaşıyor musunuz?', cevap: 'Evet. Bizimle iletişime geçtiğinizde sektörünüze ve ihtiyacınıza uygun referanslarımızı paylaşabiliriz.' },
   { soru: 'Bize özel bir çözüm geliştirir misiniz?', cevap: 'Evet. Standart çözümlerin ötesinde, işletmenize özel yazılım ve Mikro entegrasyonları geliştiriyoruz.' },
 ];
@@ -54,7 +54,7 @@ export default function FeaturedWorksPage() {
   };
 
   const stats = [
-    { value: '500+', label: 'Başarılı Proje', icon: Award },
+    { value: '4.000+', label: 'Mutlu Müşteri', icon: Award },
     { value: '95%', label: 'Müşteri Memnuniyeti', icon: Star },
     { value: '20+', label: 'Yıl Deneyim', icon: Clock },
     { value: 'Uzman', label: 'Destek', icon: Shield }
@@ -314,8 +314,8 @@ export default function FeaturedWorksPage() {
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   className="absolute -top-4 -right-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-4 shadow-xl"
                 >
-                  <div className="text-white font-bold text-lg">+500</div>
-                  <div className="text-white/80 text-xs">Proje</div>
+                  <div className="text-white font-bold text-lg">+4.000</div>
+                  <div className="text-white/80 text-xs">Müşteri</div>
                 </motion.div>
                 
                 <motion.div

@@ -26,9 +26,9 @@ const Footer = dynamic(() => import('@/components/Footer'), {
 });
 
 export const metadata: Metadata = {
-  title: "Anadolu Yakası Mikro Bayi | ERP CRM Çözümleri | Gökkuşağı Yazılım",
-  description: "Anadolu Yakası'nda resmi Mikro bayi. Mikro program satışı, ERP hizmeti, CRM çözümleri, e-fatura entegrasyonu. Ataşehir'den tüm Türkiye'ye hizmet.",
-  keywords: "Anadolu yakası mikro bayi, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayi, İstanbul mikro bayi, e-fatura, e-defter, Mikro v3, Mikro 14, özel yazılım",
+  title: "Gökkuşağı Yazılım | Mikro ERP Satış, Kurulum ve Destek",
+  description: "20+ yıllık resmi Mikro iş ortağı. 4.000+ müşteriye Mikro ERP satış, kurulum, e-dönüşüm ve teknik destek. İstanbul, Ankara ve İzmir'de hizmet.",
+  keywords: "Anadolu yakası mikro bayi, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayi, İstanbul mikro bayi, Ankara mikro bayi, İzmir mikro bayi, e-fatura, e-defter, Mikro v3, Mikro 14, özel yazılım",
 };
 
 export default function Home() {

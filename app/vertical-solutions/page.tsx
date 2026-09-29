@@ -227,7 +227,7 @@ export default function VerticalSolutionsPage() {
             >
               {[
                 { label: 'Sektör', value: '20+' },
-                { label: 'Müşteri', value: '500+' },
+                { label: 'Müşteri', value: '4.000+' },
                 { label: 'Yıl', value: '20+' }
               ].map((stat, i) => (
                 <div key={i} className="text-center">

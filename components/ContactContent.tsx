@@ -65,7 +65,7 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
                 style={{ animationDelay: '0.15s' }}
               >
                 <a
-                  href={`tel:+90${whatsappNumber}`}
+                  href={`tel:+90${whatsappNumber.replace(/\D/g, '').replace(/^0/, '')}`}
                   className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl hover:from-blue-700 hover:to-purple-700 font-medium shadow-xl shadow-blue-500/20 flex items-center justify-center gap-2 transition-all duration-300 hover:scale-105"
                 >
                   <Phone size={20} />
@@ -90,8 +90,8 @@ export default function ContactContent({ whatsappNumber, email, contactMethods }
                   <div className="text-xs text-gray-500">Yıl Deneyim</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">500+</div>
-                  <div className="text-xs text-gray-500">Proje</div>
+                  <div className="text-2xl font-bold text-gray-900">4.000+</div>
+                  <div className="text-xs text-gray-500">Müşteri</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-gray-900">Uzman</div>

@@ -92,47 +92,47 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-white">Hizmet Verdiğimiz Noktalar</h4>
             <div className="grid grid-cols-2 gap-x-4 text-sm">
               <ul className="space-y-1.5">
-                <li><Link href="/atasehir-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Ataşehir</Link></li>
-                <li><Link href="/beylikduzu-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Beylikdüzü</Link></li>
-                <li><Link href="/kadikoy-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Kadıköy</Link></li>
-                <li><Link href="/uskudar-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Üsküdar</Link></li>
-                <li><Link href="/umraniye-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Ümraniye</Link></li>
-                <li><Link href="/adalar-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Adalar</Link></li>
-                <li><Link href="/arnavutkoy-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Arnavutköy</Link></li>
-                <li><Link href="/avcilar-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Avcılar</Link></li>
-                <li><Link href="/bagcilar-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Bağcılar</Link></li>
-                <li><Link href="/bahcelievler-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Bahçelievler</Link></li>
-                <li><Link href="/bakirkoy-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Bakırköy</Link></li>
-                <li><Link href="/basaksehir-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Başakşehir</Link></li>
-                <li><Link href="/bayrampasa-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Bayrampaşa</Link></li>
-                <li><Link href="/besiktas-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Beşiktaş</Link></li>
-                <li><Link href="/beykoz-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Beykoz</Link></li>
-                <li><Link href="/beyoglu-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Beyoğlu</Link></li>
-                <li><Link href="/buyukcekmece-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Büyükçekmece</Link></li>
-                <li><Link href="/catalca-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Çatalca</Link></li>
-                <li><Link href="/cekmekoy-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Çekmeköy</Link></li>
-                <li><Link href="/esenler-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Esenler</Link></li>
+                <li><Link href="/atasehir-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Ataşehir</Link></li>
+                <li><Link href="/beylikduzu-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Beylikdüzü</Link></li>
+                <li><Link href="/kadikoy-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Kadıköy</Link></li>
+                <li><Link href="/uskudar-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Üsküdar</Link></li>
+                <li><Link href="/umraniye-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Ümraniye</Link></li>
+                <li><Link href="/adalar-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Adalar</Link></li>
+                <li><Link href="/arnavutkoy-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Arnavutköy</Link></li>
+                <li><Link href="/avcilar-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Avcılar</Link></li>
+                <li><Link href="/bagcilar-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Bağcılar</Link></li>
+                <li><Link href="/bahcelievler-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Bahçelievler</Link></li>
+                <li><Link href="/bakirkoy-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Bakırköy</Link></li>
+                <li><Link href="/basaksehir-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Başakşehir</Link></li>
+                <li><Link href="/bayrampasa-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Bayrampaşa</Link></li>
+                <li><Link href="/besiktas-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Beşiktaş</Link></li>
+                <li><Link href="/beykoz-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Beykoz</Link></li>
+                <li><Link href="/beyoglu-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Beyoğlu</Link></li>
+                <li><Link href="/buyukcekmece-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Büyükçekmece</Link></li>
+                <li><Link href="/catalca-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Çatalca</Link></li>
+                <li><Link href="/cekmekoy-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Çekmeköy</Link></li>
+                <li><Link href="/esenler-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Esenler</Link></li>
               </ul>
               <ul className="space-y-1.5">
-                <li><Link href="/eyupsultan-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Eyüpsultan</Link></li>
-                <li><Link href="/fatih-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Fatih</Link></li>
-                <li><Link href="/gaziosmanpasa-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Gaziosmanpaşa</Link></li>
-                <li><Link href="/gungoren-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Güngören</Link></li>
-                <li><Link href="/kagithane-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Kağıthane</Link></li>
-                <li><Link href="/kartal-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Kartal</Link></li>
-                <li><Link href="/kucukcekmece-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Küçükçekmece</Link></li>
-                <li><Link href="/maltepe-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Maltepe</Link></li>
-                <li><Link href="/pendik-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Pendik</Link></li>
-                <li><Link href="/sancaktepe-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Sancaktepe</Link></li>
-                <li><Link href="/sariyer-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Sarıyer</Link></li>
-                <li><Link href="/sile-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Şile</Link></li>
-                <li><Link href="/silivri-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Silivri</Link></li>
-                <li><Link href="/sultanbeyli-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Sultanbeyli</Link></li>
-                <li><Link href="/sultangazi-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Sultangazi</Link></li>
-                <li><Link href="/sisli-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Şişli</Link></li>
-                <li><Link href="/tuzla-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Tuzla</Link></li>
-                <li><Link href="/zeytinburnu-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Zeytinburnu</Link></li>
-                <li><Link href="/esenyurt-mikro-bayi" className="text-slate-300 hover:text-white transition-colors duration-200">Esenyurt</Link></li>
+                <li><Link href="/eyupsultan-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Eyüpsultan</Link></li>
+                <li><Link href="/fatih-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Fatih</Link></li>
+                <li><Link href="/gaziosmanpasa-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Gaziosmanpaşa</Link></li>
+                <li><Link href="/gungoren-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Güngören</Link></li>
+                <li><Link href="/kagithane-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Kağıthane</Link></li>
+                <li><Link href="/kartal-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Kartal</Link></li>
+                <li><Link href="/kucukcekmece-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Küçükçekmece</Link></li>
+                <li><Link href="/maltepe-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Maltepe</Link></li>
+                <li><Link href="/pendik-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Pendik</Link></li>
+                <li><Link href="/sancaktepe-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Sancaktepe</Link></li>
+                <li><Link href="/sariyer-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Sarıyer</Link></li>
+                <li><Link href="/sile-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Şile</Link></li>
+                <li><Link href="/silivri-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Silivri</Link></li>
+                <li><Link href="/sultanbeyli-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Sultanbeyli</Link></li>
+                <li><Link href="/sultangazi-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Sultangazi</Link></li>
+                <li><Link href="/sisli-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Şişli</Link></li>
+                <li><Link href="/tuzla-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Tuzla</Link></li>
+                <li><Link href="/zeytinburnu-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Zeytinburnu</Link></li>
+                <li><Link href="/esenyurt-mikro-bayi" prefetch={false} className="text-slate-300 hover:text-white transition-colors duration-200">Esenyurt</Link></li>
               </ul>
             </div>
           </div>

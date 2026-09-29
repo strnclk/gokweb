@@ -1,6 +1,6 @@
 # Gökkuşağı Yazılım ve Danışmanlık
 
-> Anadolu Yakası (Ataşehir) merkezli resmi Mikro iş ortağı. Mikro ERP, CRM, e-dönüşüm (e-Fatura/e-Arşiv/e-Defter) ve özel yazılım çözümleri. 20+ yıllık deneyimle Ataşehir'den tüm Türkiye'ye ve İstanbul'un tüm ilçelerine hizmet.
+> Ataşehir (İstanbul) merkezli resmi Mikro iş ortağı. Mikro ERP, CRM, e-dönüşüm (e-Fatura/e-Arşiv/e-Defter) ve özel yazılım çözümleri. 20+ yıllık deneyim ve 4.000+ müşteriyle İstanbul, Ankara ve İzmir'de hizmet.
 
 ## Ürünler
 - [Mikro Run](https://gokkusagiyazilim.com.tr/mikro-run): Esnaf, serbest meslek sahipleri ve mikro işletmeler için temel ERP + e-Dönüşüm paketi.

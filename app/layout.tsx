@@ -16,11 +16,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title:
-    "Gökkuşağı Yazılım ve Danışmanlık | Anadolu Yakası Mikro Bayi | ERP CRM Çözümleri",
+    "Gökkuşağı Yazılım | Mikro ERP Satış, Kurulum ve Destek",
   description:
-    "Anadolu Yakası'nda resmi Mikro bayi olarak ERP hizmeti, CRM çözümleri, Mikro program entegrasyonu ve özel yazılım geliştirme hizmetleri. Ataşehir'den tüm Türkiye'ye hizmet.",
+    "20+ yıllık resmi Mikro iş ortağı. 4.000+ müşteriye Mikro ERP satış, kurulum, e-dönüşüm ve teknik destek. İstanbul, Ankara ve İzmir'de hizmet.",
   keywords:
-    "Anadolu yakası mikro bayi, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayi, İstanbul mikro bayi, ERP entegrasyonu, Mikro entegrasyon, özel yazılım, IT danışmanlık, e-dönüşüm",
+    "Anadolu yakası mikro bayi, mikro program, ERP hizmeti, CRM çözümleri, Mikro ERP, Ataşehir mikro bayi, İstanbul mikro bayi, Ankara mikro bayi, İzmir mikro bayi, ERP entegrasyonu, Mikro entegrasyon, özel yazılım, IT danışmanlık, e-dönüşüm",
   authors: [{ name: "Gökkuşağı Yazılım ve Danışmanlık" }],
   creator: "Gökkuşağı Yazılım ve Danışmanlık",
   publisher: "Gökkuşağı Yazılım ve Danışmanlık",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
 
   openGraph: {
     title:
-      "Gökkuşağı Yazılım ve Danışmanlık | Anadolu Yakası Mikro Bayi",
+      "Gökkuşağı Yazılım | Mikro ERP Satış, Kurulum ve Destek",
     description:
-      "ERP, CRM ve Mikro entegrasyon çözümleri. Ataşehir merkezli hizmet.",
+      "20+ yıllık resmi Mikro iş ortağı. 4.000+ müşteriye Mikro ERP satış, kurulum, e-dönüşüm ve teknik destek. İstanbul, Ankara ve İzmir'de hizmet.",
     url: "https://gokkusagiyazilim.com.tr",
     siteName: "Gökkuşağı Yazılım",
     locale: "tr_TR",
@@ -68,7 +68,7 @@ const jsonLd = {
   name: "Gökkuşağı Yazılım ve Danışmanlık",
   url: "https://gokkusagiyazilim.com.tr",
   logo: "https://gokkusagiyazilim.com.tr/logo.png",
-  description: "Anadolu Yakası'nda resmi Mikro bayi olarak ERP hizmeti, CRM çözümleri, Mikro program entegrasyonu ve özel yazılım geliştirme hizmetleri.",
+  description: "20+ yıllık resmi Mikro iş ortağı. 4.000+ müşteriye Mikro ERP satış, kurulum, e-dönüşüm ve teknik destek. İstanbul, Ankara ve İzmir'de hizmet.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Ataşehir",
@@ -235,10 +235,11 @@ const jsonLd = {
       name: "Ümraniye"
     }
   ],
-  areaServed: {
-    "@type": "City",
-    name: "İstanbul"
-  },
+  areaServed: [
+    { "@type": "City", name: "İstanbul" },
+    { "@type": "City", name: "Ankara" },
+    { "@type": "City", name: "İzmir" }
+  ],
   priceRange: "$$",
   aggregateRating: {
     "@type": "AggregateRating",
